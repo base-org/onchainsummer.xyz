@@ -2,6 +2,10 @@
   "name": "onchain-summer",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Lazer Technologies",
+    "email": "founders@lazertechnologies.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
