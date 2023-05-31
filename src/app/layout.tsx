@@ -2,6 +2,10 @@ import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import clsx from 'clsx'
+import {
+  ConnectWalletButton,
+  ThirdWebProviderClient,
+} from '../../components/client'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,20 +20,25 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="flex flex-col h-full">
-      <body className={clsx(inter.className, 'flex flex-col h-full')}>
-        <nav className="flex">
-          <ul className="flex gap-4">
-            <li>
-              <Link href={'/'}>Big NAV</Link>
-            </li>
-            <li>
-              <Link href={'sub'}>Sub</Link>
-            </li>
-          </ul>
-        </nav>
-        {children}
-      </body>
-    </html>
+    <ThirdWebProviderClient>
+      <html lang="en" className="flex flex-col h-full">
+        <body className={clsx(inter.className, 'flex flex-col h-full')}>
+          <nav className="flex">
+            <ul className="flex gap-4">
+              <li>
+                <Link href={'/'}>Big NAV</Link>
+              </li>
+              <li>
+                <Link href={'sub'}>Subz</Link>
+              </li>
+              <li>
+                <ConnectWalletButton />
+              </li>
+            </ul>
+          </nav>
+          {children}
+        </body>
+      </html>
+    </ThirdWebProviderClient>
   )
 }
