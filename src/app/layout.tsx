@@ -24,7 +24,7 @@ export default function RootLayout({
               <Link href={'/'}>Big NAV</Link>
             </li>
             <li>
-              <Link href={'sub'}>Sub</Link>
+              <Link href={'cross-mint'}>Cross Mint</Link>
             </li>
           </ul>
         </nav>
