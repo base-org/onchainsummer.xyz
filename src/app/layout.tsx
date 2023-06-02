@@ -1,9 +1,19 @@
 import Link from 'next/link'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { DM_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import clsx from 'clsx'
 
-const inter = Inter({ subsets: ['latin'] })
+const satoshi = localFont({
+  src: './Satoshi-Variable.ttf',
+  variable: '--font-satoshi',
+})
+
+const dmMono = DM_Mono({
+  weight: ['500', '400'],
+  subsets: ['latin'],
+  variable: '--font-dm-mono',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,7 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="flex flex-col h-full">
-      <body className={clsx(inter.className, 'flex flex-col h-full')}>
+      <body
+        className={clsx(
+          satoshi.className,
+          dmMono.variable,
+          satoshi.variable,
+          'flex flex-col h-full'
+        )}
+      >
         <nav className="flex">
           <ul className="flex gap-4">
             <li>
