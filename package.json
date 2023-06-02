@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.5",
+    "@crossmint/client-sdk-react-ui": "^0.2.8-alpha.3",
     "clsx": "^1.2.1",
     "next": "13.4.4",
     "react": "18.2.0",
