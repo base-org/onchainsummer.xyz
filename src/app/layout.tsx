@@ -31,8 +31,8 @@ export default function RootLayout({
 }) {
   return (
     <ThirdWebProviderClient>
-      <html lang="en" className="flex flex-col h-full">
-        <body className={clsx('flex flex-col h-full')}>
+      <html lang="en" className="flex flex-col">
+        <body className={clsx('flex flex-col')}>
           <nav className="flex">
             <ul className="flex gap-4">
               <li>
@@ -45,8 +45,8 @@ export default function RootLayout({
                 <ConnectWalletButton />
               </li>
               <li>
-              <Link href={'contracts'}>Contracts</Link>
-            </li>
+                <Link href={'contracts'}>Contracts</Link>
+              </li>
             </ul>
           </nav>
           {children}
