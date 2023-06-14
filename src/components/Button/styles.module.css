@@ -1,0 +1,13 @@
+button.button-primary {
+  background: linear-gradient(180deg, #010101, #010101 100%) padding-box,
+    linear-gradient(
+        12.93deg,
+        #9360ff 0%,
+        #ff4a82 55%,
+        #ff912c 85%,
+        #ffea2d 100%
+      )
+      border-box;
+  border: 1.5px solid transparent;
+  @apply text-white border-2;
+}
