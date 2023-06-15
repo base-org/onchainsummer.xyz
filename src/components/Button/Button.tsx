@@ -5,7 +5,8 @@ import React from 'react'
 import classes from './styles.module.css'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'PRIMARY' | 'SECONDARY'
+  variant?: 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
+  size?: 'SMALL' | 'LARGE'
   className?: string
   children: React.ReactNode
 }
@@ -14,6 +15,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       variant = 'PRIMARY',
+      size = 'LARGE',
       className = '',
       children,
       type = 'button',
@@ -25,17 +27,22 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const isPrimary = variant === 'PRIMARY'
     const isSecondary = variant === 'SECONDARY'
+    const isTertiary = variant === 'TERTIARY'
+    const isSmall = size === 'SMALL'
+    const isLarge = size === 'LARGE'
 
     return (
       <button
         ref={ref}
         className={clsx(
-          'px-6 py-2 text-lg leading-[180%] text-center text-neutral-900 font-medium items-center rounded-[10px] shadow-button',
+          classes['button'],
           { [classes['button-primary']]: isPrimary },
           {
-            'bg-secondary-button-gradient border border-neutral-900/10':
-              isSecondary,
+            [classes['button-secondary']]: isSecondary,
           },
+          { [classes['button-tertiary']]: isTertiary },
+          { [classes['button-small']]: isSmall },
+          { [classes['button-large']]: isLarge },
           className
         )}
         aria-disabled={disabled}
