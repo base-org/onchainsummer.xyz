@@ -1,11 +1,8 @@
-import Link from 'next/link'
 import './globals.css'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
-import {
-  ConnectWalletButton,
-  ThirdWebProviderClient,
-} from '../components/client'
+import { ThirdWebProviderClient } from '../components/client'
+import { Navbar } from '@/components/Navbar/Navbar'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -59,6 +56,22 @@ const coinbaseSans = localFont({
   ],
 })
 
+const coinbaseMono = localFont({
+  variable: '--font-coinbase-mono',
+  src: [
+    {
+      path: './fonts/Coinbase_Mono-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Coinbase_Mono-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+})
+
 export const metadata = {
   title: 'On Chain Summer',
   description: 'Mint NFTs with OnChainSummer',
@@ -76,25 +89,11 @@ export default function RootLayout({
           className={clsx(
             'flex flex-col h-full',
             coinbaseSans.variable,
-            coinbaseText.variable
+            coinbaseText.variable,
+            coinbaseMono.variable
           )}
         >
-          <nav className="flex">
-            <ul className="flex gap-4">
-              <li>
-                <Link href={'/'}>Big NAV</Link>
-              </li>
-              <li>
-                <Link href={'sub'}>Subz</Link>
-              </li>
-              <li>
-                <ConnectWalletButton />
-              </li>
-              <li>
-                <Link href={'contracts'}>Contracts</Link>
-              </li>
-            </ul>
-          </nav>
+          <Navbar />
           {children}
         </body>
       </html>

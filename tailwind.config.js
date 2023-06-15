@@ -23,6 +23,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-coinbase-sans)'],
         text: ['var(--font-coinbase-text)'],
+        mono: ['var(--font-coinbase-mono)'],
       },
       backgroundImage: {
         'trending-linear-gradient':
