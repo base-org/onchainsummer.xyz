@@ -9,10 +9,6 @@ module.exports = {
     extend: {
       colors: {
         'timer-active': '#26D356',
-        'primary-button-gradient':
-          'linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, darkorchid) border-box',
-        'secondary-button-gradient':
-          'linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.15) 100%), #FFFFFF',
       },
       boxShadow: {
         card: '6px 6px 0px #010101',
