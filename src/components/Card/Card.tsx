@@ -8,12 +8,7 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div
-      className={clsx(
-        'border-[0.8px] border-neutral-900 shadow-card',
-        className
-      )}
-    >
+    <div className={clsx('border border-neutral-900 shadow-card', className)}>
       {children}
     </div>
   )
