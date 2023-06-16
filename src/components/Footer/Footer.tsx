@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col mx-6 my-6">
+    <div className="flex flex-col p-6 bg-footer-gradient bg-cover bg-no-repeat">
       <div className="flex flex-col md:flex-row md:gap-24">
         <div className="md:basis-2/5">
           <HomeIcon />
@@ -66,7 +66,7 @@ export const Footer = () => {
       <div className="mb-6 mt-2">
         <Separator />
       </div>
-      <div className="md:flex md:justify-around">
+      <div className="md:flex md:justify-between">
         <div>
           <p className="text-neutral-500 mb-6">
             ©️ 2023 Onchainsummer. All rights reserved.
