@@ -19,7 +19,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
       <div
         className={classes.blur}
         style={{
-          backgroundImage: `linear-gradient(89.61deg, ${brandColor} 0.34%, ${brandColor}90 99.68%);`,
+          backgroundImage: `linear-gradient(89.61deg, ${brandColor} 0.34%, ${brandColor}90 99.68%)`,
         }}
       />
       <h1 className="font-bold text-[39px] leading-[50px] text-center lg:text-[72px] lg:leading-[82px] md:text-start">
@@ -47,6 +47,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
             src={drop.image}
             alt={`Cover image for '${drop.name}' by ${name}`}
             fill
+            priority
           />
         </Card>
         <div className="flex flex-col gap-6 lg:gap-8 w-full">
