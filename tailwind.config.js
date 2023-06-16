@@ -20,6 +20,13 @@ module.exports = {
         text: ['var(--font-coinbase-text)'],
         mono: ['var(--font-coinbase-mono)'],
       },
+      backgroundImage: {
+        'blue-gradient':
+          'linear-gradient(90deg, #309FA7 0%, #9060FF 50%, #0052FF 100%)',
+        'yellow-gradient':
+          'linear-gradient(336.54deg, #FF912C -67.93%, #FFEA2D 99.39%)',
+        'footer-gradient': 'url(/footer-gradient.png)',
+      },
     },
   },
   plugins: [],
