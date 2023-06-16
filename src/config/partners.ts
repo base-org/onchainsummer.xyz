@@ -28,6 +28,13 @@ export interface Partner {
   icon: string
   iconInverse: string
   drop: NFTDrop
+  externalDrops: {
+    image: string
+    href: string
+    title: string
+    endDate: number
+    price: string
+  }[]
 }
 
 export const partners: Partner[] = [
@@ -74,5 +81,35 @@ export const partners: Partner[] = [
         ],
       },
     },
+    externalDrops: [
+      {
+        image: '/partners/open-sea/external-drops/1.png',
+        href: 'https://opensea.io/collection/lootproject',
+        title: 'The Magic Abstract',
+        endDate: +new Date() + DAY,
+        price: '0.5',
+      },
+      {
+        image: '/partners/open-sea/external-drops/2.png',
+        href: 'https://opensea.io/collection/lootproject',
+        title: 'The Magic Abstract',
+        endDate: +new Date() + DAY,
+        price: '0.5',
+      },
+      {
+        image: '/partners/open-sea/external-drops/3.png',
+        href: 'https://opensea.io/collection/lootproject',
+        title: 'The Magic Abstract',
+        endDate: +new Date() + DAY,
+        price: '0.5',
+      },
+      {
+        image: '/partners/open-sea/external-drops/4.png',
+        href: 'https://opensea.io/collection/lootproject',
+        title: 'The Magic Abstract',
+        endDate: +new Date() + DAY,
+        price: '0.5',
+      },
+    ],
   },
 ]
