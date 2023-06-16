@@ -14,11 +14,21 @@ module.exports = {
         card: '6px 6px 0px #010101',
         button:
           '0px 1px 2px rgba(0, 0, 0, 0.12), 0px 0px 0px rgba(0, 0, 0, 0.08)',
+        'trending-card': '12px 12px 0px #010101',
       },
       fontFamily: {
         sans: ['var(--font-coinbase-sans)'],
         text: ['var(--font-coinbase-text)'],
         mono: ['var(--font-coinbase-mono)'],
+      },
+      backgroundImage: {
+        'trending-linear-gradient':
+          'linear-gradient(89.61deg, #42A4FF 0.34%, #A462F7 25.17%, #FF58A6 50.01%, #FF833D 74.84%, #FFDD2C 99.68%)',
+        'blue-gradient':
+          'linear-gradient(90deg, #309FA7 0%, #9060FF 50%, #0052FF 100%)',
+        'yellow-gradient':
+          'linear-gradient(336.54deg, #FF912C -67.93%, #FFEA2D 99.39%)',
+        'footer-gradient': 'url(/footer-gradient.png)',
       },
     },
   },
