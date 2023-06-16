@@ -53,6 +53,11 @@ const coinbaseSans = localFont({
       weight: '500',
       style: 'italic',
     },
+    {
+      path: './fonts/Coinbase_Sans-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
   ],
 })
 
