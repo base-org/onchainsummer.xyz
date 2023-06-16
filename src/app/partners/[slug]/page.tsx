@@ -6,6 +6,7 @@ import { Separator } from '@/components/Separator'
 import React from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
+import { DropCard } from '@/components/DropCard'
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug
@@ -15,13 +16,13 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     notFound()
   }
 
-  const { drop } = partner
+  const { drop, externalDrops, name, icon } = partner
 
   return (
     <div>
       <main className="relative w-screen overflow-x-hidden">
         <PartnerHero partner={partner} />
-        <section className="px-8 lg:px-[120px] font-text ">
+        <section className="px-8 lg:px-[120px] font-text">
           <Separator />
           {drop.writeup.sections.map((section, index) => (
             <div
@@ -72,6 +73,16 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               ))}
             </div>
           ))}
+        </section>
+        <section className="px-8 lg:px-[120px] mt-16 pb-10 lg:mt-20 lg:pb-20">
+          <h2 className="sr-only">External Drops</h2>
+          <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {externalDrops.map((externalDrop) => (
+              <li key={externalDrop.title}>
+                <DropCard {...externalDrop} partner={name} partnerIcon={icon} />
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
     </div>
