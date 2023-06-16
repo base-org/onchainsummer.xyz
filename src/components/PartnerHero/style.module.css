@@ -1,0 +1,4 @@
+.blur {
+  @apply absolute h-[100vw] left-[-64px] right-[-64px] top-[460px] blur-[120px] rounded-[264px] -z-10;
+  @apply lg:w-[684px] lg:h-[684px] lg:left-[calc(50%-47.5vw/2+58.125vw)] lg:top-[calc(50%-342px)] lg:blur-[200px];
+}
