@@ -13,7 +13,7 @@ const VISIBLE_NFTS = {
 export default function Trending() {
   return (
     <main className="mx-6 mt-6">
-      <div className="max-w-screen-xl mx-auto">
+      <section className="max-w-screen-xl mx-auto">
         <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
           <div>
             <h1 className="font-medium text-[32px] md:text-[40px] md:leading-[50px]">
@@ -108,7 +108,7 @@ export default function Trending() {
         <Separator className="mt-6" />
         {/* <div className="hidden md:block bg-trending-linear-gradient-image bg-cover bg-no-repeat h-20"></div> */}
         <div className="px-5 py-6 md:pl-8 lg:pr-[60px] md:py-10 border border-neutral-900 z-50 shadow-trending-card mt-8 mb-20">
-          {trending.map(({ id, title, subTitle, images }) => (
+          {trending.map(({ id, title, subTitle, images, numMints, price }) => (
             <div key={id} className="w-full mb-[72px] last:mb-0">
               <div className="flex flex-wrap">
                 <div className="flex flex-row flex-wrap md:basis-1/2 order-1">
@@ -117,7 +117,9 @@ export default function Trending() {
                     <h3>{title}</h3>
                   </div>
                   <div className="basis-full">
-                    <p className="text-neutral-600">{subTitle}</p>
+                    <p className="text-neutral-600">
+                      {subTitle} • {numMints} mints last hour • {price} ETH
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-2 md:justify-end md:basis-1/2 order-3 md:order-2 w-full">
@@ -173,7 +175,7 @@ export default function Trending() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   )
 }

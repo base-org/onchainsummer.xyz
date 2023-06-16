@@ -10,7 +10,9 @@ export const trending = [
   {
     id: 1,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
@@ -31,7 +33,9 @@ export const trending = [
   {
     id: 2,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
@@ -52,7 +56,9 @@ export const trending = [
   {
     id: 3,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
@@ -73,7 +79,9 @@ export const trending = [
   {
     id: 4,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
@@ -94,7 +102,9 @@ export const trending = [
   {
     id: 5,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
@@ -115,7 +125,9 @@ export const trending = [
   {
     id: 6,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
@@ -136,7 +148,9 @@ export const trending = [
   {
     id: 7,
     title: 'Bear Market Builders',
-    subTitle: 'Bearbuilder.eth • 500 mints last hour • 0.0004 ETH',
+    subTitle: 'Bearbuilder.eth ',
+    numMints: 500,
+    price: '0.0004',
     images: [
       TrendingImage1,
       TrendingImage2,
