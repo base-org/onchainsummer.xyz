@@ -2,6 +2,7 @@
 import { trending } from '@/config/trending'
 import Image from 'next/image'
 import { Button } from '@/components/Button'
+import { Separator } from '@/components/Separator'
 
 const VISIBLE_NFTS = {
   mobile: 2,
@@ -21,6 +22,14 @@ export default function Trending() {
                 this summer
               </span>
             </h1>
+            <p className="text-xl text-neutral-500 my-2">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod <br />
+              tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            </p>
+            <p className="text-xl text-neutral-500">
+              Powered by <span>mint.fun</span>
+            </p>
           </div>
           <div>
             <div>
@@ -96,9 +105,9 @@ export default function Trending() {
             </div>
           </div>
         </div>
-        <div className="hidden md:inline-block border-t border-neutral-300 w-full mt-8"></div>
+        <Separator className="mt-6" />
         {/* <div className="hidden md:block bg-trending-linear-gradient-image bg-cover bg-no-repeat h-20"></div> */}
-        <div className="px-5 py-6 md:pl-8 lg:pr-[60px] md:py-10 border border-neutral-300 z-50 rounded-2xl shadow-trending-card mt-8 mb-20">
+        <div className="px-5 py-6 md:pl-8 lg:pr-[60px] md:py-10 border border-neutral-900 z-50 shadow-trending-card mt-8 mb-20">
           {trending.map(({ id, title, subTitle, images }) => (
             <div key={id} className="w-full mb-[72px] last:mb-0">
               <div className="flex flex-wrap">
