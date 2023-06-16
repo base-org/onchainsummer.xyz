@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import { HomeIcon } from './HomeIcon'
+import { HomeIcon } from '../HomeIcon'
 import Link from 'next/link'
 import { NavListItems } from './NavListItems'
 

@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
 import { Navbar } from '@/components/Navbar/Navbar'
+import { Footer } from '@/components/Footer'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -95,6 +96,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
     </ThirdWebProviderClient>
