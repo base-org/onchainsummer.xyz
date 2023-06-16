@@ -1,30 +1,23 @@
 import { Button } from '@/components/Button'
-import Image from 'next/image'
+import { PartnerHero } from '@/components/PartnerHero'
+import { partners } from '@/config/partners'
 
-export default function Home() {
+const Home = async () => {
+  const partner = await getCurrentPartner()
   return (
-    <main className="flex h-full flex-col items-center justify-between">
-      <h1>Peep these buttons</h1>
-      <div className="h-full flex items-center gap-20">
-        <div className="flex flex-col items-center gap-10">
-          <Button variant="PRIMARY">Mint NFT</Button>
-          <Button variant="PRIMARY" size="SMALL">
-            Mint NFT
-          </Button>
-        </div>
-        <div className="flex flex-col items-center gap-10">
-          <Button variant="SECONDARY">Mint NFT</Button>
-          <Button variant="SECONDARY" size="SMALL">
-            Mint NFT
-          </Button>
-        </div>
-        <div className="flex flex-col items-center gap-10">
-          <Button variant="TERTIARY">Mint NFT</Button>
-          <Button variant="TERTIARY" size="SMALL">
-            Mint NFT
-          </Button>
-        </div>
-      </div>
-    </main>
+    <div>
+      <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
+        <PartnerHero partner={partner} />
+      </main>
+    </div>
   )
 }
+
+async function getCurrentPartner() {
+  // TODO: get current partner from the current date
+  const partner = partners[0]
+
+  return partner
+}
+
+export default Home
