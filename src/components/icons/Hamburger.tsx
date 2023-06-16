@@ -18,9 +18,9 @@ export const Hamburger: FC<IconProps> = ({
     >
       <path
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
         d="M4.75 5.75h14.5M4.75 18.25h14.5M4.75 12h14.5"
       />
     </svg>

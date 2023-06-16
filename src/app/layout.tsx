@@ -2,7 +2,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
-import { Navbar } from '@/components/Navbar/Navbar'
+import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 
 const coinbaseText = localFont({
@@ -53,6 +53,11 @@ const coinbaseSans = localFont({
       path: './fonts/Coinbase_Sans-Medium_Italic.woff2',
       weight: '500',
       style: 'italic',
+    },
+    {
+      path: './fonts/Coinbase_Sans-Bold.woff2',
+      weight: '700',
+      style: 'normal',
     },
   ],
 })

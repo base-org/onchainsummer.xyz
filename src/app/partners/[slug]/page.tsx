@@ -1,15 +1,12 @@
 import { notFound } from 'next/navigation'
-import { Partner, partners } from '@/config/partners'
-import Image from 'next/image'
-import { Card } from '../../../components/Card'
-import clsx from 'clsx'
-import { Countdown } from '@/components/Countdown'
-import { Separator } from '@/components/Separator'
-import { Button } from '@/components/Button'
+import { partners } from '@/config/partners'
 
-interface PageProps {
-  partner: Partner
-}
+import { PartnerHero } from '@/components/PartnerHero'
+import { Separator } from '@/components/Separator'
+import React from 'react'
+import Image from 'next/image'
+import clsx from 'clsx'
+import { DropCard } from '@/components/DropCard'
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug
@@ -19,80 +16,76 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     notFound()
   }
 
-  const { name, drop, url } = partner
+  const { drop, externalDrops, name, icon } = partner
 
   return (
-    <main className="mt-11 px-20 py-10">
-      <h1 className="font-medium text-[40px] leading-[50px]">
-        Onchain Art From{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9360FF] from-5% via-[#FF912C] to-[#FFEA2D] to-95%">
-          {name}
-        </span>
-      </h1>
-      <section className="flex gap-20 mt-7 pr-20">
-        <Image
-          src={`/partners/${slug}/main.png`}
-          alt={`Cover image for '${drop.name}' by ${name}`}
-          width={445}
-          height={445}
-        />
-        <div className="flex flex-col gap-6 w-full">
-          <div className="flex gap-6 items-center">
-            <Card>
-              <div className="p-2">
+    <div>
+      <main className="relative w-screen overflow-x-hidden">
+        <PartnerHero partner={partner} />
+        <section className="px-8 lg:px-[120px] font-text">
+          <Separator />
+          {drop.writeup.sections.map((section, index) => (
+            <div
+              key={section.heading}
+              className="flex flex-col gap-6 md:gap-10 pt-6 md:pt-10 mx-auto max-w-[800px]"
+            >
+              <div
+                className={clsx(
+                  'relative w-full aspect-video ',
+                  {
+                    'order-3': index === 0,
+                  },
+                  {
+                    'order-1': index !== 0,
+                  }
+                )}
+              >
                 <Image
-                  src={`/partners/${slug}/icon.png`}
-                  alt={`${name} icon`}
-                  width={32}
-                  height={32}
+                  src={section.image}
+                  alt={`Image for ${section.heading}`}
+                  fill
                 />
               </div>
-            </Card>
-            <h3 className="text-neutral-500 font-medium text-xl leading-none font-text tracking-[-0.01em]">
-              Collection by{' '}
-              <a href={url} rel="noopener" className="underline">
-                {name}
-              </a>
-            </h3>
-          </div>
-
-          <h2 className="font-medium text-[40px]">{drop.name}</h2>
-
-          <div className="flex gap-5 font-text">
-            <div>
-              <h4 className="text-sm text-neutral-900/50">Remaining Time</h4>
-              <div className="flex gap-2 items-center font-medium">
-                <div
-                  className={clsx('h-2 w-2 rounded-full', {
-                    'bg-timer-active': drop.endDate > new Date().getTime(),
-                    'bg-red': drop.endDate <= new Date().getTime(),
-                  })}
-                />
-                <div>
-                  <Countdown date={drop.endDate} completedText={'Drop Ended'} />
-                </div>
-              </div>
+              {index === 0 ? (
+                <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%] order-1">
+                  {section.heading}
+                </h2>
+              ) : (
+                <h3 className="text-lg leading-8 md:text-2xl md:leading-[180%] order-2">
+                  {section.heading}
+                </h3>
+              )}
+              {section.contents.map((content, contentIndex) => (
+                <p
+                  key={content}
+                  className="text-neutral-600 leading-7"
+                  style={{
+                    order:
+                      index === 0
+                        ? contentIndex === 0
+                          ? 2
+                          : 4 + contentIndex
+                        : 3 + contentIndex,
+                  }}
+                >
+                  {content}
+                </p>
+              ))}
             </div>
-            <div>
-              <h4 className="text-sm text-neutral-900/50">Price</h4>
-              <div className="font-medium">{drop.price} ETH</div>
-            </div>
-          </div>
-
-          <Separator />
-
-          <p className="leading-7 font-text">{drop.description}</p>
-
-          <Separator />
-          <div className="flex gap-6">
-            <Button className="w-full">Mint NFT</Button>
-            <Button className="w-full" variant="SECONDARY">
-              Read More
-            </Button>
-          </div>
-        </div>
-      </section>
-    </main>
+          ))}
+        </section>
+        <section className="px-8 lg:px-[120px] mt-16 pb-10 lg:mt-20 lg:pb-20">
+          <h2 className="sr-only">External Drops</h2>
+          <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {externalDrops.map((externalDrop) => (
+              <li key={externalDrop.title}>
+                <DropCard {...externalDrop} partner={name} partnerIcon={icon} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+    </div>
   )
 }
 

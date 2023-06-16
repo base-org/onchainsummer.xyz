@@ -15,35 +15,25 @@ button.button-primary {
 }
 
 button.button-secondary {
-  background: linear-gradient(
-      180deg,
-      rgba(223, 225, 231, 0) 0%,
-      rgba(223, 225, 231, 0.15) 100%
-    ),
-    #ffffff;
+  background: linear-gradient(180deg, #ffffff, #f7f8f8 100%) padding-box,
+    linear-gradient(90deg, #309fa7, #9060ff 55%, #0052ff 100%) border-box;
+  border: 2px solid transparent;
 
-  @apply shadow-button border border-neutral-950/10 hover:border-neutral-950 hover:bg-neutral-100;
+  @apply shadow-button hover:bg-neutral-100;
+}
+
+button.button-secondary:hover {
+  background: linear-gradient(180deg, #f6f6f8, #f6f6f8 100%) padding-box,
+    linear-gradient(90deg, #309fa7, #9060ff 55%, #0052ff 100%) border-box;
 }
 
 button.button-tertiary {
-  background: linear-gradient(
-    94.07deg,
-    #9360ff 0%,
-    #e4386d 33.33%,
-    #ff912c 66.67%,
-    #ffea2d 100%
-  );
+  background: linear-gradient(90deg, #309fa7 0%, #9060ff 50%, #0052ff 100%);
 
   @apply text-white shadow-button;
 }
 
 button.button-tertiary:hover {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(
-      94.07deg,
-      #9360ff 0%,
-      #e4386d 33.33%,
-      #ff912c 66.67%,
-      #ffea2d 100%
-    );
+    linear-gradient(90deg, #309fa7 0%, #9060ff 50%, #0052ff 100%);
 }
