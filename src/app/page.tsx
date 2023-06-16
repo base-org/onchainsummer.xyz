@@ -1,5 +1,5 @@
 import { Button } from '@/components/Button'
-import Image from 'next/image'
+import { Tabs } from '@/components/Tabs'
 
 export default function Home() {
   return (
@@ -25,6 +25,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
+      <Tabs />
     </main>
   )
 }
