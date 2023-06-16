@@ -8,8 +8,6 @@ interface PartnerHeroProps {
 
 import classes from './style.module.css'
 import { Card } from '../Card'
-import clsx from 'clsx'
-import { Countdown } from '../Countdown'
 import { Separator } from '../Separator'
 import { Button } from '../Button'
 
@@ -17,7 +15,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { brandColor, name, description, icon, iconInverse, drop, url },
 }) => {
   return (
-    <section className="flex flex-col relative px-6 pt-10 md:px-[120px] md:pt-[120px] overflow-x-hidden">
+    <section className="flex flex-col px-6 pt-10 pb-8 md:pb-20 md:px-[120px] md:pt-[120px]">
       <div
         className={classes.blur}
         style={{
@@ -43,7 +41,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         {description}
       </p>
 
-      <section className="flex flex-col gap-7 mt-10 lg:mt-20 lg:flex-row lg:gap-20">
+      <section className="flex flex-col gap-7 mt-10 px-2 lg:px-0 lg:mt-20 lg:flex-row lg:gap-20">
         <Card className="relative aspect-square w-full max-w-md">
           <Image
             src={drop.image}
