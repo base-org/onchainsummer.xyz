@@ -2,7 +2,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
-import { Navbar } from '@/components/Navbar/Navbar'
+import { Navbar } from '@/components/Navbar'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',

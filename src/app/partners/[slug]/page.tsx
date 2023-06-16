@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { partners } from '@/config/partners'
 
-import { PartnerHero } from '@/components/PartnerHero/PartnerHero'
+import { PartnerHero } from '@/components/PartnerHero'
 import { Separator } from '@/components/Separator'
 import React from 'react'
 import Image from 'next/image'

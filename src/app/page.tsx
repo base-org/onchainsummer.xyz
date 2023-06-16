@@ -1,13 +1,15 @@
 import { Button } from '@/components/Button'
-import { PartnerHero } from '@/components/PartnerHero/PartnerHero'
+import { PartnerHero } from '@/components/PartnerHero'
 import { partners } from '@/config/partners'
 
 const Home = async () => {
   const partner = await getCurrentPartner()
   return (
-    <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
-      <PartnerHero partner={partner} />
-    </main>
+    <div>
+      <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
+        <PartnerHero partner={partner} />
+      </main>
+    </div>
   )
 }
 
