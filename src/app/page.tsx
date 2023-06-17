@@ -36,7 +36,7 @@ const Home = async () => {
             ))}
           </ul>
         </section>
-        <section>
+        <section className="w-full py-12 lg:p-20">
           <Tabs />
         </section>
       </main>
