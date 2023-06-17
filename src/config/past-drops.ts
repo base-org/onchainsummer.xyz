@@ -1,8 +1,18 @@
+import { StaticImageData } from 'next/image'
+
 import OpenSeaBlue from '../../public/home/temp-opensea-blue.png'
 import OpenSeaPurple from '../../public/home/temp-opensea-purple.png'
 import OpenSeaRed from '../../public/home/temp-opensea-red.png'
 
-export const pastDrops = [
+interface PastDrops {
+  id: number
+  title: string
+  releaseDate: string
+  image: StaticImageData
+  description: string
+}
+
+export const pastDrops: PastDrops[] = [
   {
     id: 1,
     title: 'Liquid Abstract Painting',

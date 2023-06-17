@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 import TrendingImage1 from '../../public/trending/trending-temp/image-1.png'
 import TrendingImage2 from '../../public/trending/trending-temp/image-2.png'
 import TrendingImage3 from '../../public/trending/trending-temp/image-3.png'
@@ -6,7 +8,16 @@ import TrendingImage5 from '../../public/trending/trending-temp/image-5.png'
 import TrendingImage6 from '../../public/trending/trending-temp/image-6.png'
 import TrendingImage7 from '../../public/trending/trending-temp/image-7.png'
 
-export const trending = [
+interface TrendingItem {
+  id: number
+  title: string
+  subTitle: string
+  numMints: number
+  price: string
+  images: StaticImageData[]
+}
+
+export const trending: TrendingItem[] = [
   {
     id: 1,
     title: 'Bear Market Builders',
