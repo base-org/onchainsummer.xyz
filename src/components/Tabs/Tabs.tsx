@@ -15,7 +15,7 @@ type TabsComponentProps = {}
 
 export const Tabs: FC<TabsComponentProps> = ({}) => {
   return (
-    <main className="ml-7 md:ml-0 ">
+    <main className="ml-6 md:ml-0 ">
       <h1 className="text-[32px] md:text-[40px] font-medium mb-6 md:mb-8">
         Onchain{' '}
         <span className="text-transparent bg-clip-text bg-blue-gradient">

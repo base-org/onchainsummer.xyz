@@ -29,6 +29,7 @@ module.exports = {
         'yellow-gradient':
           'linear-gradient(336.54deg, #FF912C -67.93%, #FFEA2D 99.39%)',
         'footer-gradient': 'url(/footer-gradient.png)',
+        'footer-gradient-mobile': 'url(/footer-gradient-mobile.png)',
       },
     },
   },
