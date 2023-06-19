@@ -22,13 +22,13 @@ export default function Trending() {
               </span>
               trending
             </h1>
-            <p className="text-xl text-[#010101] opacity-50 my-2 font-medium font-text">
+            <p className="text-sm md:text-xl text-[#010101] opacity-50 my-2 font-medium font-text">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod <br />
               tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </p>
             <div className="flex items-center">
-              <p className="text-xl text-[#010101] opacity-50 mr-3 font-medium font-text">
+              <p className="text-xl text-[#010101] opacity-50 mr-3 font-medium font-text my-2">
                 Powered by{' '}
               </p>
               <Image
@@ -115,19 +115,24 @@ export default function Trending() {
             </div>
           </div>
         </div>
-        <Separator className="mt-8" />
-        {/* <div className="hidden md:block bg-trending-linear-gradient-image bg-cover bg-no-repeat h-20"></div> */}
+        <Separator className="mt-6 md:mt-8" />
         <div className="px-5 py-6 md:pl-8 lg:pr-[60px] md:py-10 border border-neutral-900 z-50 shadow-trending-card mt-8 mb-20">
           {trending.map(({ id, title, subTitle, images, numMints, price }) => (
             <div key={id} className="w-full mb-[72px] last:mb-0">
               <div className="flex flex-wrap">
                 <div className="flex flex-row flex-wrap md:basis-1/2 order-1">
                   <div className="flex basis-full">
-                    <p className="text-neutral-400 mr-[29px]">#{id}</p>
-                    <h3>{title}</h3>
+                    <div className="flex items-center">
+                      <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
+                        #{id}
+                      </p>
+                    </div>
+                    <h3 className="text-black font-sans font-medium text-[20px] md:text-2xl">
+                      {title}
+                    </h3>
                   </div>
                   <div className="basis-full">
-                    <p className="text-neutral-600 md:ml-12">
+                    <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-12">
                       {subTitle} • {numMints} mints last hour • {price} ETH
                     </p>
                   </div>
