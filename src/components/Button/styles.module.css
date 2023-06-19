@@ -1,20 +1,20 @@
 .button {
-  @apply font-medium text-lg;
+  @apply font-medium text-lg inline-block text-center;
 }
 
-button.button-small {
+.button-small {
   @apply px-6 py-2;
 }
 
-button.button-large {
+.button-large {
   @apply px-10 py-3;
 }
 
-button.button-primary {
+.button-primary {
   @apply text-white bg-neutral-950 shadow-button hover:bg-neutral-800;
 }
 
-button.button-secondary {
+.button-secondary {
   background: linear-gradient(180deg, #ffffff, #f7f8f8 100%) padding-box,
     linear-gradient(90deg, #309fa7, #9060ff 55%, #0052ff 100%) border-box;
   border: 2px solid transparent;
@@ -22,18 +22,18 @@ button.button-secondary {
   @apply shadow-button hover:bg-neutral-100;
 }
 
-button.button-secondary:hover {
+.button-secondary:hover {
   background: linear-gradient(180deg, #f6f6f8, #f6f6f8 100%) padding-box,
     linear-gradient(90deg, #309fa7, #9060ff 55%, #0052ff 100%) border-box;
 }
 
-button.button-tertiary {
+.button-tertiary {
   background: linear-gradient(90deg, #309fa7 0%, #9060ff 50%, #0052ff 100%);
 
   @apply text-white shadow-button;
 }
 
-button.button-tertiary:hover {
+.button-tertiary:hover {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(90deg, #309fa7 0%, #9060ff 50%, #0052ff 100%);
 }

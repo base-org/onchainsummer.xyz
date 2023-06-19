@@ -17,7 +17,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
       </NavigationMenu.Item>
       <NavigationMenu.Item>
         <NavigationMenu.Link asChild>
-          <Link href="/" className="font-medium">
+          <Link href="/trending" className="font-medium">
             Trending
           </Link>
         </NavigationMenu.Link>
