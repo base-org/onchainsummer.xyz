@@ -22,12 +22,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           backgroundImage: `linear-gradient(89.61deg, ${brandColor} 0.34%, ${brandColor}90 99.68%)`,
         }}
       />
-      <h1 className="font-bold text-[39px] leading-[50px] text-center lg:text-[72px] lg:leading-[82px] md:text-start">
+      <h1 className="font-bold text-[40px] leading-[50px] text-center lg:text-[72px] lg:leading-[82px] md:text-start">
         Onchain{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#309FA7] via-[#9060FF] to-[#0052FF]">
           Art
         </span>{' '}
-        From{' '}
+        from{' '}
         <span
           className="text-transparent bg-clip-text"
           style={{

@@ -3,6 +3,7 @@ import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
 import { Separator } from '@/components/Separator'
 import { partners } from '@/config/partners'
+import { Tabs } from '@/components/Tabs'
 
 const Home = async () => {
   const partner = await getCurrentPartner()
@@ -34,6 +35,9 @@ const Home = async () => {
               </li>
             ))}
           </ul>
+        </section>
+        <section className="w-full py-12 lg:p-20">
+          <Tabs />
         </section>
       </main>
     </div>
