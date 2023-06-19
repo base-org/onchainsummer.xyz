@@ -121,7 +121,7 @@ export default function Trending() {
             <div key={id} className="w-full mb-[72px] last:mb-0">
               <div className="flex flex-wrap">
                 <div className="flex flex-row flex-wrap md:basis-1/2 order-1">
-                  <div className="flex basis-full">
+                  <div className="flex basis-full mb-3">
                     <div className="flex items-center">
                       <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
                         #{id}
@@ -132,7 +132,7 @@ export default function Trending() {
                     </h3>
                   </div>
                   <div className="basis-full">
-                    <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-12">
+                    <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-[51px]">
                       {subTitle} • {numMints} mints last hour • {price} ETH
                     </p>
                   </div>
