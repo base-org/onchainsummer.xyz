@@ -15,16 +15,16 @@ type TabsComponentProps = {}
 
 export const Tabs: FC<TabsComponentProps> = ({}) => {
   return (
-    <main className="ml-6 md:ml-0 ">
-      <h1 className="text-[32px] md:text-[40px] font-medium mb-6 md:mb-8">
+    <section>
+      <h2 className="text-[32px] md:text-[40px] font-medium mb-6 md:mb-8 ml-6 md:ml-0">
         Onchain{' '}
         <span className="text-transparent bg-clip-text bg-blue-gradient">
           Soon
         </span>
-      </h1>
+      </h2>
       <TabsComponent.Root defaultValue="tab1">
         <TabsComponent.List
-          className="border-b-[1px] border-neutral-400 flex gap-4"
+          className="border-b-[1px] border-neutral-400 flex gap-4 ml-6 md:ml-0"
           aria-label="Manage your account"
         >
           <TabsListItems />
@@ -110,6 +110,6 @@ export const Tabs: FC<TabsComponentProps> = ({}) => {
           ))}
         </TabsComponent.Content>
       </TabsComponent.Root>
-    </main>
+    </section>
   )
 }
