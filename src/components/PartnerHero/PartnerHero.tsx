@@ -56,7 +56,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
               {drop.name}
             </h2>
             <div className="aspect-square w-14 md:w-20 relative">
-              <Image src={iconInverse} alt={`${name} icon`} fill />
+              <Image src={iconInverse} alt={`${name} icon`} fill priority />
             </div>
           </div>
           <div className="flex gap-6 font-text lg:gap-m">
