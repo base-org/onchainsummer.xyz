@@ -132,7 +132,7 @@ export default function Trending() {
                     </h3>
                   </div>
                   <div className="basis-full">
-                    <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-[51px]">
+                    <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-[54px]">
                       {subTitle} • {numMints} mints last hour • {price} ETH
                     </p>
                   </div>
