@@ -10,6 +10,7 @@ import classes from './style.module.css'
 import { Card } from '../Card'
 import { Separator } from '../Separator'
 import { Button } from '../Button'
+import { MintButton } from '../MintButton/MintButton'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { brandColor, name, description, icon, iconInverse, drop, url },
@@ -71,7 +72,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           </div>
           <Separator />
           <p className="text-neutral-600 font-text">{drop.description}</p>
-          <Button>Mint {drop.price} ETH</Button>
+          <MintButton price={drop.price} />
         </div>
       </section>
     </section>
