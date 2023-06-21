@@ -4,6 +4,8 @@ import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import NextAdapterApp from 'next-query-params/app'
+import { QueryParamProvider } from '@/components/QueryParamProvider/QueryParamProvider'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -100,7 +102,8 @@ export default function RootLayout({
           )}
         >
           <Navbar />
-          {children}
+          <QueryParamProvider>{children}</QueryParamProvider>
+
           <Footer />
         </body>
       </html>
