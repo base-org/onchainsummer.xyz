@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import { QueryParamProvider } from '@/components/QueryParamProvider'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -99,9 +100,14 @@ export default function RootLayout({
             coinbaseMono.variable
           )}
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <QueryParamProvider>
+            <>
+              <Navbar />
+              {children}
+
+              <Footer />
+            </>
+          </QueryParamProvider>
         </body>
       </html>
     </ThirdWebProviderClient>

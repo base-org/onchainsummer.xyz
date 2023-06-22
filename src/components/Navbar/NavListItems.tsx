@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import Link from 'next/link'
-import { ConnectWalletButton } from '../client'
+import { Wallet } from './Wallet'
 
 type NavListItemsProps = {}
 
@@ -23,7 +23,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
         </NavigationMenu.Link>
       </NavigationMenu.Item>
       <NavigationMenu.Item asChild>
-        <ConnectWalletButton />
+        <Wallet />
       </NavigationMenu.Item>
     </>
   )
