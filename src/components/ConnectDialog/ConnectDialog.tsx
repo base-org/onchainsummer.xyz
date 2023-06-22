@@ -13,9 +13,11 @@ import { Separator } from '../Separator'
 import { Coinbase } from '../icons/Coinbase'
 import { WalletConnect } from '../icons/WalletConnect'
 import { MetaMask } from '../icons/MetaMask'
+import clsx from 'clsx'
 
 type ConnectDialogProps = {
   title?: React.ReactNode
+  inNavbar?: boolean
 }
 
 const wallets: Record<
@@ -55,6 +57,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
       <div className="bg bg-timer-active h-2 w-2 rounded-full" /> Connect Wallet
     </div>
   ),
+  inNavbar = false,
 }) => {
   const connect = useConnect()
   const [pw] = useQueryParam('pw', withDefault(StringParam, 'coinbase'))
@@ -69,7 +72,9 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>{title}</Button>
+        <Button className={clsx({ 'rounded-lg !py-2 !px-3': inNavbar })}>
+          {title}
+        </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
