@@ -5,6 +5,8 @@ import { ThirdWebProviderClient } from '../components/client'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
+import { cookies } from 'next/headers'
+import { Password } from '@/components/Password/Password'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -89,6 +91,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = cookies()
+  const password = cookieStore.get('ocspw')
+
+  if (!password) {
+    return (
+      <html lang="en" className="flex flex-col h-full">
+        <body>
+          <h1>Password</h1>
+          <Password />
+        </body>
+      </html>
+    )
+  }
+
   return (
     <ThirdWebProviderClient>
       <html lang="en" className="flex flex-col h-full">
