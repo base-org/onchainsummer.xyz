@@ -1,38 +1,22 @@
 'use client'
 
 import { FC } from 'react'
-import { useContract, useClaimNFT, useAddress } from '@thirdweb-dev/react'
-import { Button } from '../Button'
+import { useAddress } from '@thirdweb-dev/react'
 import { ConnectDialog } from '../ConnectDialog'
+import { MintDialog } from '../MintDialog'
 
 type MintButtonProps = {
   price: string
+  address: string
+  crossMintClientId: string
 }
 
-export const MintButton: FC<MintButtonProps> = ({ price }) => {
-  const address = useAddress()
+export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
+  const walletAddress = useAddress()
 
-  const { data: contract } = useContract(
-    '0x93E83744B06Df9EA97846D03330E706c9Ab1221B'
-  )
-
-  const { mutate: claimNft, isLoading } = useClaimNFT(contract)
-
-  if (!address) {
+  if (!walletAddress) {
     return <ConnectDialog />
   }
 
-  return (
-    <Button
-      disabled={isLoading}
-      onClick={() =>
-        claimNft({
-          to: address,
-          quantity: 1,
-        })
-      }
-    >
-      Mint {price} ETH
-    </Button>
-  )
+  return <MintDialog {...mintProps} />
 }

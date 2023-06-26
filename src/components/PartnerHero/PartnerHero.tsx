@@ -72,7 +72,11 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           </div>
           <Separator />
           <p className="text-neutral-600 font-text">{drop.description}</p>
-          <MintButton price={drop.price} />
+          <MintButton
+            price={drop.price}
+            address={drop.address}
+            crossMintClientId={drop.crossMintClientId}
+          />
         </div>
       </section>
     </section>

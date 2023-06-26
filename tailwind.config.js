@@ -15,11 +15,16 @@ module.exports = {
         button:
           '0px 1px 2px rgba(0, 0, 0, 0.12), 0px 0px 0px rgba(0, 0, 0, 0.08)',
         'trending-card': '12px 12px 0px #010101',
+        crossMintEmail:
+          '0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(0, 0, 0, 0.02)',
+        crossMintEmailFocus:
+          '0 0 0 3px hsla(210, 96%, 45%, 25%), 0 1px 1px 0 rgba(0, 0, 0, 0.08)',
       },
       fontFamily: {
         sans: ['var(--font-coinbase-sans)'],
         text: ['var(--font-coinbase-text)'],
         mono: ['var(--font-coinbase-mono)'],
+        inter: ['var(--font-inter)'],
       },
       backgroundImage: {
         'trending-linear-gradient':

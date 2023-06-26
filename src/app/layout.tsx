@@ -1,4 +1,5 @@
 import './globals.css'
+import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
@@ -6,6 +7,10 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
 import { QueryClientProvider } from '../components/client'
+import { cookies } from 'next/headers'
+import { Password } from '@/components/Password/Password'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -90,6 +95,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = cookies()
+  const password = cookieStore.get('ocspw')
+
+  if (!password) {
+    return (
+      <html lang="en" className="flex flex-col h-full">
+        <body>
+          <h1>Password</h1>
+          <Password />
+        </body>
+      </html>
+    )
+  }
+
   return (
     <ThirdWebProviderClient>
       <html lang="en" className="flex flex-col h-full">
@@ -98,7 +117,8 @@ export default function RootLayout({
             'flex flex-col h-full',
             coinbaseSans.variable,
             coinbaseText.variable,
-            coinbaseMono.variable
+            coinbaseMono.variable,
+            inter.variable
           )}
         >
           <QueryClientProvider>
