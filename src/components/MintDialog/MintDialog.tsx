@@ -10,6 +10,7 @@ import { CrossMintForm } from './CrossMintForm'
 import { MintFailure } from '../icons/MintFailure'
 import { MintSuccess } from '../icons/MintSuccess'
 import clsx from 'clsx'
+import { BigNumber } from 'ethers'
 
 type MintDialogProps = {
   address: Address
@@ -34,6 +35,10 @@ export const MintDialog: FC<MintDialogProps> = ({
   const userAddress = useAddress()
   const [mintState, setMintState] = useState(MintState.INITIAL)
   const { data: contract } = useContract(address)
+  const [nftDetails, setNftDetails] = useState<{
+    address: string
+    tokenId: number
+  } | null>(null)
 
   const { mutateAsync: claimNft, isLoading } = useClaimNFT(contract)
 
@@ -124,6 +129,14 @@ export const MintDialog: FC<MintDialogProps> = ({
                         to: userAddress,
                         quantity: 1,
                       })
+                      console.log('result', result)
+                      // @ts-expect-error
+                      const data = result[0] as { id: BigNumber }
+
+                      const id = BigNumber.from(data?.id)
+
+                      const tokenId = id.toNumber()
+                      setNftDetails({ address, tokenId })
 
                       // TODO: Determine if result has success indicator?
                       setMintState(MintState.PROCESSED)
@@ -146,6 +159,25 @@ export const MintDialog: FC<MintDialogProps> = ({
               </div>
             </>
           )}
+          {nftDetails ? (
+            <div className="flex flex-col gap-2">
+              <p className="text-sm">Your NFT is ready:</p>
+              <div>
+                <b>Address :</b> {nftDetails.address}
+              </div>
+              <div>
+                <b>Token ID :</b> {nftDetails.tokenId}
+              </div>
+              <a
+                className="text-sm text-blue-500"
+                href={`https://opensea.io/assets/${nftDetails.address}/${nftDetails.tokenId}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View on OpenSea
+              </a>
+            </div>
+          ) : null}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

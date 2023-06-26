@@ -44,6 +44,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
       ) : null}
       <CrossmintPaymentElement
         clientId={clientId}
+        // TODO: Move this back to a dynamic environment variable once we deploy
         environment={'staging'}
         recipient={{
           email: email,
@@ -55,7 +56,6 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
           type: 'erc-721',
           quantity: '1',
           totalPrice: price,
-          // your custom minting arguments...
         }}
         uiConfig={{
           fontSizeBase: '1rem',
@@ -64,6 +64,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         }}
         //@ts-expect-error
         onEvent={function onEvent(event) {
+          console.log(event)
           switch (event.type) {
             case 'payment:preparation.succeeded':
               setMintState(MintState.PREPARED_CM)
@@ -76,7 +77,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               setMintState(MintState.PREPARED_CM)
               // Triggered when the price is calculated or if the price changes.
               break
-            case 'payment:process.succeeded':
+            case 'transaction:fulfillment.succeeded':
               // Triggered when payment has been successfully captured.
               setMintState(MintState.PROCESSED)
               break
