@@ -5,7 +5,7 @@ const nextConfig = {
     return config
   },
   images: {
-    domains: ['media.contextcdn.com', 'mint.fun'],
+    domains: ['media.contextcdn.com', 'mint.fun', 'image.mux.com'],
   },
 }
 

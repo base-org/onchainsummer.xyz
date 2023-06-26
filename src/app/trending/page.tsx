@@ -160,18 +160,18 @@ export default function Trending() {
                 ({ name, contract, mintsLastHour, recentMints }, idx) => (
                   <div key={idx} className="w-full mb-[72px] last:mb-0">
                     <div className="flex flex-wrap">
-                      <div className="flex flex-row flex-wrap lg:basis-[55%] order-1">
-                        <div className="flex basis-full mb-3">
+                      <div className="flex flex-row flex-wrap lg:basis-[55%] order-1 w-full">
+                        <div className="flex basis-full mb-3 overflow-hidden">
                           <div className="flex items-center">
                             <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
                               #{idx + 1}
                             </p>
                           </div>
-                          <h3 className="text-black font-sans font-medium text-[20px] md:text-2xl">
+                          <h3 className="text-black font-sans font-medium text-[20px] md:text-2xl whitespace-normal overflow-hidden break-all">
                             {name}
                           </h3>
                         </div>
-                        <div className="basis-full">
+                        <div className="basis-full whitespace-normal overflow-hidden break-all">
                           <p className="text-neutral-600 font-text text-sm md:text-base font-medium lg:ml-[54px]">
                             {contract} • {mintsLastHour} mints last hour
                           </p>
