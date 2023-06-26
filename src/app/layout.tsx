@@ -1,4 +1,5 @@
 import './globals.css'
+import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { ThirdWebProviderClient } from '../components/client'
@@ -7,6 +8,8 @@ import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -113,7 +116,8 @@ export default function RootLayout({
             'flex flex-col h-full',
             coinbaseSans.variable,
             coinbaseText.variable,
-            coinbaseMono.variable
+            coinbaseMono.variable,
+            inter.variable
           )}
         >
           <QueryParamProvider>
