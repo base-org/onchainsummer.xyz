@@ -21,6 +21,7 @@
     "@thirdweb-dev/chains": "^0.1.21",
     "@thirdweb-dev/react": "^3.12.3",
     "@thirdweb-dev/sdk": "^3.10.18",
+    "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "ethers": "^5",
     "next": "13.4.4",
@@ -28,6 +29,7 @@
     "react": "18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
     "use-query-params": "^2.2.1"
   },
   "devDependencies": {

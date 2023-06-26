@@ -4,6 +4,9 @@ const nextConfig = {
     config.externals.push('pino-pretty', 'lokijs', 'encoding')
     return config
   },
+  images: {
+    domains: ['media.contextcdn.com', 'mint.fun'],
+  },
 }
 
 module.exports = nextConfig

@@ -5,6 +5,7 @@ import { ThirdWebProviderClient } from '../components/client'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
+import { QueryClientProvider } from '../components/client'
 
 const coinbaseText = localFont({
   variable: '--font-coinbase-text',
@@ -100,14 +101,15 @@ export default function RootLayout({
             coinbaseMono.variable
           )}
         >
-          <QueryParamProvider>
-            <>
-              <Navbar />
-              {children}
-
-              <Footer />
-            </>
-          </QueryParamProvider>
+          <QueryClientProvider>
+            <QueryParamProvider>
+              <>
+                <Navbar />
+                {children}
+                <Footer />
+              </>
+            </QueryParamProvider>
+          </QueryClientProvider>
         </body>
       </html>
     </ThirdWebProviderClient>
