@@ -64,7 +64,6 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         }}
         //@ts-expect-error
         onEvent={function onEvent(event) {
-          console.log(event)
           switch (event.type) {
             case 'payment:preparation.succeeded':
               setMintState(MintState.PREPARED_CM)
@@ -79,17 +78,14 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               break
             case 'payment:process.succeeded':
               // Triggered when payment has been successfully captured.
-
               setMintState(MintState.PROCESSED)
               break
             case 'payment:process.rejected':
               // Triggered if a user's card has been rejected.
-
               setMintState(MintState.REJECTED)
               break
             case 'payment:preparation.failed':
               // Triggered if a failure has occurred after checkout.
-
               setMintState(MintState.ERROR)
               break
           }
