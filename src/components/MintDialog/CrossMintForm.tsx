@@ -44,7 +44,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
       ) : null}
       <CrossmintPaymentElement
         clientId={clientId}
-        environment={environment}
+        environment={'staging'}
         recipient={{
           email: email,
           wallet: walletAddress,
