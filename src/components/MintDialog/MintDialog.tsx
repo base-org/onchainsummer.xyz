@@ -93,7 +93,11 @@ export const MintDialog: FC<MintDialogProps> = ({
             <div className="flex flex-col gap-6 items-center w-full">
               <MintSuccess />
               <Dialog.Close asChild>
-                <Button variant="TERTIARY" className="!rounded-lg w-full">
+                <Button
+                  variant="TERTIARY"
+                  className="!rounded-lg w-full"
+                  onClick={() => setMintState(MintState.INITIAL)}
+                >
                   Return
                 </Button>
               </Dialog.Close>
