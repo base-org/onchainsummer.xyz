@@ -160,7 +160,7 @@ export default function Trending() {
                 ({ name, contract, mintsLastHour, recentMints }, idx) => (
                   <div key={idx} className="w-full mb-[72px] last:mb-0">
                     <div className="flex flex-wrap">
-                      <div className="flex flex-row flex-wrap md:basis-1/2 order-1">
+                      <div className="flex flex-row flex-wrap lg:basis-[55%] order-1">
                         <div className="flex basis-full mb-3">
                           <div className="flex items-center">
                             <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
@@ -172,16 +172,16 @@ export default function Trending() {
                           </h3>
                         </div>
                         <div className="basis-full">
-                          <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-[54px]">
+                          <p className="text-neutral-600 font-text text-sm md:text-base font-medium lg:ml-[54px]">
                             {contract} • {mintsLastHour} mints last hour
                           </p>
                         </div>
                       </div>
-                      <div className="flex gap-2 md:justify-end md:basis-1/2 order-3 md:order-2 w-full">
+                      <div className="flex gap-2 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full">
                         <Button
                           size="SMALL"
                           variant="PRIMARY"
-                          className="mx-0 md:ml-2 md:mx-2 grow lg:grow-0 max-h-[50px]"
+                          className="mx-0 lg:ml-2 lg:mx-2 grow lg:grow-0 max-h-[50px]"
                         >
                           Mint
                         </Button>
@@ -193,7 +193,7 @@ export default function Trending() {
                           View More
                         </Button>
                       </div>
-                      <div className="flex gap-4 items-center order-2 md:order-3 mt-5 mb-4 md:mt-8 md:mb-0  md:ml-12">
+                      <div className="flex gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">
                         {recentMints.map(({ imageURI }, idx) => (
                           <div
                             key={idx}
@@ -214,19 +214,21 @@ export default function Trending() {
                             />
                           </div>
                         ))}
-                        <div className="flex items-center justify-center lg:hidden p-[2px] bg-trending-linear-gradient">
-                          <div className="flex justify-center items-center h-[65px] w-[65px] bg-[#F5F5F5]">
-                            <span className="sm:hidden">
-                              +{recentMints.length - VISIBLE_NFTS.mobile - 1}
-                            </span>
-                            <span className="hidden sm:block md:hidden">
-                              +{recentMints.length - VISIBLE_NFTS.sm - 1}
-                            </span>
-                            <span className="hidden md:block">
-                              +{recentMints.length - VISIBLE_NFTS.md - 1}
-                            </span>
+                        {recentMints.length > 4 && (
+                          <div className="flex items-center justify-center lg:hidden p-[2px] bg-trending-linear-gradient">
+                            <div className="flex justify-center items-center h-[65px] w-[65px] bg-[#F5F5F5]">
+                              <span className="sm:hidden">
+                                +{recentMints.length - VISIBLE_NFTS.mobile - 1}
+                              </span>
+                              <span className="hidden sm:block md:hidden">
+                                +{recentMints.length - VISIBLE_NFTS.sm - 1}
+                              </span>
+                              <span className="hidden md:block">
+                                +{recentMints.length - VISIBLE_NFTS.md - 1}
+                              </span>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>
