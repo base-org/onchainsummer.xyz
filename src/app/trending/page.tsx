@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { Button } from '@/components/Button'
+import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { Separator } from '@/components/Separator'
 import { useQuery } from 'react-query'
 
@@ -151,80 +152,86 @@ export default function Trending() {
         </div>
         <Separator className="mt-6 md:mt-8" />
         <div className="px-5 py-6 md:pl-8 lg:pr-[60px] md:py-10 border border-neutral-900 z-50 shadow-trending-card mt-8 mb-20">
-          {collections?.map(
-            ({ name, contract, mintsLastHour, recentMints }, idx) => (
-              <div key={idx} className="w-full mb-[72px] last:mb-0">
-                <div className="flex flex-wrap">
-                  <div className="flex flex-row flex-wrap md:basis-1/2 order-1">
-                    <div className="flex basis-full mb-3">
-                      <div className="flex items-center">
-                        <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
-                          #{idx + 1}
-                        </p>
+          {isLoading
+            ? Array.from({ length: 10 }, (_, index) => (
+                <CollectionPlaceholder key={index} />
+              ))
+            : collections?.map(
+                ({ name, contract, mintsLastHour, recentMints }, idx) => (
+                  <div key={idx} className="w-full mb-[72px] last:mb-0">
+                    <div className="flex flex-wrap">
+                      <div className="flex flex-row flex-wrap md:basis-1/2 order-1">
+                        <div className="flex basis-full mb-3">
+                          <div className="flex items-center">
+                            <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
+                              #{idx + 1}
+                            </p>
+                          </div>
+                          <h3 className="text-black font-sans font-medium text-[20px] md:text-2xl">
+                            {name}
+                          </h3>
+                        </div>
+                        <div className="basis-full">
+                          <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-[54px]">
+                            {contract} • {mintsLastHour} mints last hour
+                          </p>
+                        </div>
                       </div>
-                      <h3 className="text-black font-sans font-medium text-[20px] md:text-2xl">
-                        {name}
-                      </h3>
-                    </div>
-                    <div className="basis-full">
-                      <p className="text-neutral-600 font-text text-sm md:text-base font-medium md:ml-[54px]">
-                        {contract} • {mintsLastHour} mints last hour
-                      </p>
+                      <div className="flex gap-2 md:justify-end md:basis-1/2 order-3 md:order-2 w-full">
+                        <Button
+                          size="SMALL"
+                          variant="PRIMARY"
+                          className="mx-0 md:ml-2 md:mx-2 grow lg:grow-0 max-h-[50px]"
+                        >
+                          Mint
+                        </Button>
+                        <Button
+                          size="SMALL"
+                          variant="SECONDARY"
+                          className="grow lg:grow-0 max-h-[50px] text-2xl"
+                        >
+                          View More
+                        </Button>
+                      </div>
+                      <div className="flex gap-4 items-center order-2 md:order-3 mt-5 mb-4 md:mt-8 md:mb-0  md:ml-12">
+                        {recentMints.map(({ imageURI }, idx) => (
+                          <div
+                            key={idx}
+                            className={`${
+                              idx > VISIBLE_NFTS.mobile ? 'hidden' : 'block'
+                            } sm:${
+                              idx > VISIBLE_NFTS.sm ? 'hidden' : 'block'
+                            } md:${
+                              idx > VISIBLE_NFTS.md ? 'hidden' : 'block'
+                            } lg:block`}
+                          >
+                            <Image
+                              src={imageURI}
+                              alt="Image Alt"
+                              width={65}
+                              height={65}
+                              priority
+                            />
+                          </div>
+                        ))}
+                        <div className="flex items-center justify-center lg:hidden p-[2px] bg-trending-linear-gradient">
+                          <div className="flex justify-center items-center h-[65px] w-[65px] bg-[#F5F5F5]">
+                            <span className="sm:hidden">
+                              +{recentMints.length - VISIBLE_NFTS.mobile - 1}
+                            </span>
+                            <span className="hidden sm:block md:hidden">
+                              +{recentMints.length - VISIBLE_NFTS.sm - 1}
+                            </span>
+                            <span className="hidden md:block">
+                              +{recentMints.length - VISIBLE_NFTS.md - 1}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex gap-2 md:justify-end md:basis-1/2 order-3 md:order-2 w-full">
-                    <Button
-                      size="SMALL"
-                      variant="PRIMARY"
-                      className="mx-0 md:ml-2 md:mx-2 grow lg:grow-0"
-                    >
-                      Mint
-                    </Button>
-                    <Button
-                      size="SMALL"
-                      variant="SECONDARY"
-                      className="grow lg:grow-0 text-2xl"
-                    >
-                      View More
-                    </Button>
-                  </div>
-                  <div className="flex gap-4 items-center order-2 md:order-3 mt-5 mb-4 md:mt-8 md:mb-0  md:ml-12">
-                    {recentMints.map(({ imageURI }, idx) => (
-                      <div
-                        key={idx}
-                        className={`${
-                          idx > VISIBLE_NFTS.mobile ? 'hidden' : 'block'
-                        } sm:${idx > VISIBLE_NFTS.sm ? 'hidden' : 'block'} md:${
-                          idx > VISIBLE_NFTS.md ? 'hidden' : 'block'
-                        } lg:block`}
-                      >
-                        <Image
-                          src={imageURI}
-                          alt="Image Alt"
-                          width={65}
-                          height={65}
-                          priority
-                        />
-                      </div>
-                    ))}
-                    <div className="flex items-center justify-center lg:hidden p-[2px] bg-trending-linear-gradient">
-                      <div className="flex justify-center items-center h-[65px] w-[65px] bg-[#F5F5F5]">
-                        <span className="sm:hidden">
-                          +{recentMints.length - VISIBLE_NFTS.mobile - 1}
-                        </span>
-                        <span className="hidden sm:block md:hidden">
-                          +{recentMints.length - VISIBLE_NFTS.sm - 1}
-                        </span>
-                        <span className="hidden md:block">
-                          +{recentMints.length - VISIBLE_NFTS.md - 1}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          )}
+                )
+              )}
         </div>
       </section>
     </main>
