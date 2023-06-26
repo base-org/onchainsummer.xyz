@@ -9,6 +9,7 @@ import { Separator } from '../Separator'
 import { CrossMintForm } from './CrossMintForm'
 import { MintFailure } from '../icons/MintFailure'
 import { MintSuccess } from '../icons/MintSuccess'
+import clsx from 'clsx'
 
 type MintDialogProps = {
   address: Address
@@ -97,42 +98,47 @@ export const MintDialog: FC<MintDialogProps> = ({
                 </Button>
               </Dialog.Close>
             </div>
-          ) : mintState === MintState.PROCESSING ? (
-            <div className="flex flex-col gap-6 items-center w-full">
-              <p>Minting...</p>
-            </div>
           ) : (
             <>
-              <Button
-                variant="SECONDARY"
-                className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
-                disabled={isDisabled}
-                onClick={async () => {
-                  setMintState(MintState.PROCESSING)
-
-                  try {
-                    const result = await claimNft({
-                      to: userAddress,
-                      quantity: 1,
-                    })
-
-                    // TODO: Determine if result has success indicator?
-                    setMintState(MintState.PROCESSED)
-                  } catch {
-                    setMintState(MintState.ERROR)
-                  }
-                }}
+              {mintState === MintState.PROCESSING ? (
+                <div className="flex flex-col gap-6 items-center w-full">
+                  <p>Minting...</p>
+                </div>
+              ) : null}
+              <div
+                className={clsx({ hidden: mintState === MintState.PROCESSING })}
               >
-                <span>MINT WITH ETH</span>
-              </Button>
-              <Separator className="my-6" />
-              <div className="flex flex-col items-center justify-start">
-                <CrossMintForm
-                  clientId={crossMintClientId}
-                  price={price}
-                  mintState={mintState}
-                  setMintState={setMintState}
-                />
+                <Button
+                  variant="SECONDARY"
+                  className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
+                  disabled={isDisabled}
+                  onClick={async () => {
+                    setMintState(MintState.PROCESSING)
+
+                    try {
+                      const result = await claimNft({
+                        to: userAddress,
+                        quantity: 1,
+                      })
+
+                      // TODO: Determine if result has success indicator?
+                      setMintState(MintState.PROCESSED)
+                    } catch {
+                      setMintState(MintState.ERROR)
+                    }
+                  }}
+                >
+                  <span>MINT WITH ETH</span>
+                </Button>
+                <Separator className="my-6" />
+                <div className="flex flex-col items-center justify-start">
+                  <CrossMintForm
+                    clientId={crossMintClientId}
+                    price={price}
+                    mintState={mintState}
+                    setMintState={setMintState}
+                  />
+                </div>
               </div>
             </>
           )}
