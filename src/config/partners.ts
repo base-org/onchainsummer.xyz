@@ -53,11 +53,11 @@ export const partners: Partner[] = [
       createdBy: 'Charlie Baker',
       description:
         'Discover a world where art meets blockchain technology. Our platform empowers artists, creators, and collectors to participate in the digital revolution of non-fungible tokens (NFTs).',
-      crossMintClientId: '57c79280-ce57-466f-9e9b-a4aa26a29fcf',
-      address: '0x932937FAAE4Ec7dC59fA96089f28D33709B45204',
+      crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
+      address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
       startDate: +new Date() - DAY,
       endDate: +new Date() + DAY,
-      price: '0.5',
+      price: '0.0001',
       writeup: {
         sections: [
           {
