@@ -5,6 +5,7 @@ import { Button } from '@/components/Button'
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { Separator } from '@/components/Separator'
 import { useQuery } from 'react-query'
+import { MintDotFunMinter } from '@/components/MintDotFunMinter/MintDotFunMinter'
 
 interface Mint {
   imageURI: string
@@ -15,6 +16,17 @@ interface Collection {
   contract: string
   mintsLastHour: number
   recentMints: Mint[]
+  mintStatus: {
+    price: string
+    isMintable: boolean
+    tx: {
+      data: string
+      quantity: string
+      to: `0x${string}`
+      tokenId: string
+      value: string
+    }
+  }
 }
 
 interface QueryResult {
@@ -158,7 +170,10 @@ export default function Trending() {
                 <CollectionPlaceholder key={index} />
               ))
             : collections?.map(
-                ({ name, contract, mintsLastHour, recentMints }, idx) => (
+                (
+                  { name, contract, mintsLastHour, recentMints, mintStatus },
+                  idx
+                ) => (
                   <div key={idx} className="w-full mb-[72px] last:mb-0">
                     <div className="flex flex-wrap">
                       <div className="flex flex-row flex-wrap lg:basis-[55%] order-1 w-full">
@@ -179,13 +194,7 @@ export default function Trending() {
                         </div>
                       </div>
                       <div className="flex gap-2 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full">
-                        <Button
-                          size="SMALL"
-                          variant="PRIMARY"
-                          className="mx-0 lg:ml-2 lg:mx-2 grow lg:grow-0 max-h-[50px]"
-                        >
-                          Mint
-                        </Button>
+                        <MintDotFunMinter mintStatus={mintStatus} />
                         <Button
                           size="SMALL"
                           variant="SECONDARY"

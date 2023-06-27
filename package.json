@@ -31,7 +31,8 @@
     "react-countdown": "^2.3.5",
     "react-dom": "18.2.0",
     "react-query": "^3.39.3",
-    "use-query-params": "^2.2.1"
+    "use-query-params": "^2.2.1",
+    "viem": "^1.1.8"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.6.5",
