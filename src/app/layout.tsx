@@ -6,6 +6,7 @@ import { ThirdWebProviderClient } from '../components/client'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
+import { QueryClientProvider } from '../components/client'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
 
@@ -120,14 +121,15 @@ export default function RootLayout({
             inter.variable
           )}
         >
-          <QueryParamProvider>
-            <>
-              <Navbar />
-              {children}
-
-              <Footer />
-            </>
-          </QueryParamProvider>
+          <QueryClientProvider>
+            <QueryParamProvider>
+              <>
+                <Navbar />
+                {children}
+                <Footer />
+              </>
+            </QueryParamProvider>
+          </QueryClientProvider>
         </body>
       </html>
     </ThirdWebProviderClient>
