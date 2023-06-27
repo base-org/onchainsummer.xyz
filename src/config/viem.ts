@@ -4,8 +4,7 @@ import { mainnet } from 'viem/chains'
 let client: ReturnType<typeof createWalletClient> | null = null
 
 export const getWalletClient = async () => {
-  // @ts-expect-error
-  if (typeof document === undefined || !window.ethereum) {
+  if (typeof document === undefined) {
     return null
   }
 
