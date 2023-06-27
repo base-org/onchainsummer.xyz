@@ -7,12 +7,17 @@ import {
   useConnect,
   metamaskWallet,
   coinbaseWallet,
+  rainbowWallet,
+  trustWallet,
   walletConnect,
 } from '@thirdweb-dev/react'
 import { Separator } from '../Separator'
 import { Coinbase } from '../icons/Coinbase'
 import { WalletConnect } from '../icons/WalletConnect'
 import { MetaMask } from '../icons/MetaMask'
+import { Trust } from '../icons/Trust'
+import { Rainbow } from '../icons/Rainbow'
+
 import clsx from 'clsx'
 
 type ConnectDialogProps = {
@@ -41,6 +46,18 @@ const wallets: Record<
     icon: <Coinbase />,
     // @ts-expect-error
     config: coinbaseWallet(),
+  },
+  rainbow: {
+    slug: 'rainbow',
+    title: 'Rainbow Wallet',
+    icon: <Rainbow />,
+    config: rainbowWallet(),
+  },
+  trust: {
+    slug: 'trust',
+    title: 'Trust Wallet',
+    icon: <Trust />,
+    config: trustWallet(),
   },
   'wallet-connect': {
     slug: 'wallet-connect',
