@@ -47,12 +47,13 @@ const wallets: Record<
     // @ts-expect-error
     config: coinbaseWallet(),
   },
-  rainbow: {
-    slug: 'rainbow',
-    title: 'Rainbow Wallet',
-    icon: <Rainbow />,
-    config: rainbowWallet(),
-  },
+  // Rainbow wallet is not supported yet, they are currently working on a browswr extension.
+  // rainbow: {
+  //   slug: 'rainbow',
+  //   title: 'Rainbow Wallet',
+  //   icon: <Rainbow />,
+  //   config: rainbowWallet(),
+  // },
   trust: {
     slug: 'trust',
     title: 'Trust Wallet',
