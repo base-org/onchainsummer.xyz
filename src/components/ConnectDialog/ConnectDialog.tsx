@@ -7,12 +7,15 @@ import {
   useConnect,
   metamaskWallet,
   coinbaseWallet,
+  trustWallet,
   walletConnect,
 } from '@thirdweb-dev/react'
 import { Separator } from '../Separator'
 import { Coinbase } from '../icons/Coinbase'
 import { WalletConnect } from '../icons/WalletConnect'
 import { MetaMask } from '../icons/MetaMask'
+import { Trust } from '../icons/Trust'
+
 import clsx from 'clsx'
 
 type ConnectDialogProps = {
@@ -44,6 +47,20 @@ const wallets: Record<
     // @ts-expect-error
     config: coinbaseWallet(),
     createLink: 'https://go.cb-w.com/',
+  },
+  // Rainbow wallet is not supported yet, they are currently working on a browswr extension.
+  // rainbow: {
+  //   slug: 'rainbow',
+  //   title: 'Rainbow Wallet',
+  //   icon: <Rainbow />,
+  //   config: rainbowWallet(),
+  // },
+  trust: {
+    slug: 'trust',
+    title: 'Trust Wallet',
+    icon: <Trust />,
+    config: trustWallet(),
+    createLink: 'https://trustwallet.com/browser-extension/',
   },
   'wallet-connect': {
     slug: 'wallet-connect',
