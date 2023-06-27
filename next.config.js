@@ -6,6 +6,7 @@ const nextConfig = {
   },
   images: {
     domains: ['media.contextcdn.com', 'mint.fun', 'image.mux.com'],
+    dangerouslyAllowSVG: true,
   },
 }
 
