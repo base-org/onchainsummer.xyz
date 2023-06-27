@@ -60,6 +60,7 @@ const wallets: Record<
     title: 'Trust Wallet',
     icon: <Trust />,
     config: trustWallet(),
+    createLink: 'https://trustwallet.com/browser-extension/',
   },
   'wallet-connect': {
     slug: 'wallet-connect',
