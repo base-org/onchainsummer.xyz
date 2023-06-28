@@ -1,5 +1,7 @@
-import { notFound } from 'next/navigation'
-import { partners } from '@/config/partners'
+import { notFound, redirect } from 'next/navigation'
+import compareAsc from 'date-fns/compareAsc'
+import format from 'date-fns/format'
+import { schedule } from '@/config/schedule'
 
 import { PartnerHero } from '@/components/PartnerHero'
 import { Separator } from '@/components/Separator'
@@ -90,7 +92,24 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 }
 
 async function getPartner(slug: string) {
-  const partner = partners.find((p) => p.slug === slug)
+  const now = new Date().getTime()
+  const today = format(new Date(now), 'yyyy-MM-dd')
+
+  const date = Object.keys(schedule).find(
+    (date) => schedule[date].slug === slug
+  )
+
+  if (!date) {
+    return notFound()
+  }
+
+  const comparison = compareAsc(new Date(today), new Date(date))
+
+  if (comparison < 0) {
+    redirect('/#drops')
+  }
+
+  const partner = schedule[date]
 
   return partner
 }
