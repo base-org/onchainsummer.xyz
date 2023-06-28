@@ -1,13 +1,45 @@
 import { FC, useState } from 'react'
-import { CrossmintPaymentElement } from '@crossmint/client-sdk-react-ui'
+import {
+  CrossmintPaymentElement,
+  CheckoutEventMap,
+} from '@crossmint/client-sdk-react-ui'
 import { useAddress } from '@thirdweb-dev/react'
+import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { MintState } from './MintDialog'
+
+interface TransactionFulfillmentPayload {
+  contractAddress: string
+  tokenIds: string[]
+}
+
+function isTransactionFulfillmentPayload(
+  payload: unknown
+): payload is TransactionFulfillmentPayload {
+  return (
+    typeof payload === 'object' &&
+    payload !== null &&
+    'contractAddress' in payload &&
+    'tokenIds' in payload
+  )
+}
+
+function isPaymentProcessedPayload(
+  payload: unknown
+): payload is CheckoutEventMap['payment:process.succeeded'] {
+  return (
+    typeof payload === 'object' &&
+    payload !== null &&
+    typeof (payload as CheckoutEventMap['payment:process.succeeded'])
+      .orderIdentifier === 'string'
+  )
+}
 
 interface CrossMintFormProps {
   clientId: string
   price: string
   mintState: MintState
   setMintState: React.Dispatch<MintState>
+  setNftDetails: React.Dispatch<{ address: string; tokenIds: string[] } | null>
 }
 
 const environment =
@@ -18,9 +50,39 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   price,
   mintState,
   setMintState,
+  setNftDetails,
 }) => {
   const walletAddress = useAddress()
   const [email, setEmail] = useState('')
+  const [orderIdentifier, setOrderIdentifier] = useState('')
+
+  const { listenToMintingEvents } = useCrossmintEvents({
+    environment: 'staging',
+  }) // Specifying the environment is optional. It defaults to "production"
+
+  listenToMintingEvents({ orderIdentifier }, (event) => {
+    switch (event.type) {
+      case 'order:process.started':
+        break
+      case 'order:process.finished':
+        break
+      case 'transaction:fulfillment.succeeded':
+        if (isTransactionFulfillmentPayload(event.payload)) {
+          const { contractAddress, tokenIds } = event.payload
+          setNftDetails({
+            address: contractAddress,
+            tokenIds,
+          })
+        }
+        setMintState(MintState.PROCESSED)
+        break
+      case 'transaction:fulfillment.failed':
+        setMintState(MintState.ERROR)
+        break
+      default:
+        break
+    }
+  })
 
   return (
     <>
@@ -44,6 +106,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
       ) : null}
       <CrossmintPaymentElement
         clientId={clientId}
+        // TODO: Move this back to a dynamic environment variable once we deploy
         environment={'staging'}
         recipient={{
           email: email,
@@ -55,7 +118,6 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
           type: 'erc-721',
           quantity: '1',
           totalPrice: price,
-          // your custom minting arguments...
         }}
         uiConfig={{
           fontSizeBase: '1rem',
@@ -77,8 +139,11 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               // Triggered when the price is calculated or if the price changes.
               break
             case 'payment:process.succeeded':
+              if (isPaymentProcessedPayload(event.payload)) {
+                const { orderIdentifier } = event.payload
+                setOrderIdentifier(orderIdentifier)
+              }
               // Triggered when payment has been successfully captured.
-              setMintState(MintState.PROCESSED)
               break
             case 'payment:process.rejected':
               // Triggered if a user's card has been rejected.
