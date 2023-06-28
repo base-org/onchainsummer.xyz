@@ -7,6 +7,7 @@ import { Separator } from '@/components/Separator'
 import { useQuery } from 'react-query'
 import { MintDotFunMinter } from '@/components/MintDotFunMinter/MintDotFunMinter'
 import { useAddress } from '@thirdweb-dev/react'
+import { formatEther } from 'viem'
 
 interface Mint {
   imageURI: string
@@ -17,6 +18,8 @@ interface Collection {
   contract: string
   mintsLastHour: number
   recentMints: Mint[]
+  externalURL: string
+  deployer: string
   mintStatus: {
     price: string
     isMintable: boolean
@@ -175,7 +178,15 @@ export default function Trending() {
               ))
             : collections?.map(
                 (
-                  { name, contract, mintsLastHour, recentMints, mintStatus },
+                  {
+                    name,
+                    deployer,
+                    contract,
+                    mintsLastHour,
+                    recentMints,
+                    mintStatus,
+                    externalURL,
+                  },
                   idx
                 ) => (
                   <div key={idx} className="w-full mb-[72px] last:mb-0">
@@ -193,7 +204,8 @@ export default function Trending() {
                         </div>
                         <div className="basis-full whitespace-normal overflow-hidden break-all">
                           <p className="text-neutral-600 font-text text-sm md:text-base font-medium lg:ml-[54px]">
-                            {contract} • {mintsLastHour} mints last hour
+                            {deployer} • {mintsLastHour} mints last hour •{' '}
+                            {formatEther(BigInt(mintStatus.price))} ETH
                           </p>
                         </div>
                       </div>
@@ -203,6 +215,7 @@ export default function Trending() {
                           size="SMALL"
                           variant="SECONDARY"
                           className="grow lg:grow-0 text-2xl"
+                          href={externalURL}
                         >
                           View More
                         </Button>
