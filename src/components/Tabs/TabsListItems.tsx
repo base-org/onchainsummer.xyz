@@ -4,9 +4,15 @@ import { FC } from 'react'
 import React from 'react'
 import * as Tabs from '@radix-ui/react-tabs'
 
-type TabsListItems = {}
+type TabsListItemsProps = {
+  upcomingLength: number
+  pastLength: number
+}
 
-export const TabsListItems: FC<TabsListItems> = ({}) => {
+export const TabsListItems: FC<TabsListItemsProps> = ({
+  upcomingLength,
+  pastLength,
+}) => {
   return (
     <>
       <Tabs.Trigger
@@ -16,7 +22,7 @@ export const TabsListItems: FC<TabsListItems> = ({}) => {
         <div className="flex items-center">
           Upcoming{' '}
           <div className="w-5 h-5 text-[12px] bg-neutral-950 text-white rounded-full flex items-center justify-center mx-2">
-            <span className="text-center">7</span>
+            <span className="text-center">{upcomingLength}</span>
           </div>
         </div>
 
@@ -29,7 +35,7 @@ export const TabsListItems: FC<TabsListItems> = ({}) => {
         <div className="flex items-center">
           Past{' '}
           <div className="w-5 h-5 text-[12px] bg-neutral-300 text-neutral-600 rounded-full flex items-center justify-center mx-2">
-            <span className="text-center">4</span>
+            <span className="text-center">{pastLength}</span>
           </div>
         </div>
         <div className="py-1" />

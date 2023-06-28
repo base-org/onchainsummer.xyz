@@ -1,12 +1,14 @@
+import format from 'date-fns/format'
+import compareAsc from 'date-fns/compareAsc'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
 import { Separator } from '@/components/Separator'
-import { partners } from '@/config/partners'
-import { Tabs } from '@/components/Tabs'
+import { schedule } from '@/config/schedule'
+import { Tabs, TabsComponentProps } from '@/components/Tabs'
 
 const Home = async () => {
-  const partner = await getCurrentPartner()
+  const { partner, tabs } = await getPageData()
   const { drop, externalDrops, name, icon } = partner
   return (
     <div>
@@ -40,19 +42,46 @@ const Home = async () => {
             ))}
           </ul>
         </section>
-        <section className="w-full py-12 lg:p-20">
-          <Tabs />
+        <section className="w-full py-12 lg:p-20" id="drops">
+          <Tabs {...tabs} />
         </section>
       </main>
     </div>
   )
 }
 
-async function getCurrentPartner() {
-  // TODO: get current partner from the current date
-  const partner = partners[0]
+const INITIAL_TABS: TabsComponentProps = {
+  upcomingDrops: [],
+  pastDrops: [],
+}
 
-  return partner
+async function getPageData() {
+  const now = new Date().getTime()
+  const today = format(new Date(now), 'yyyy-MM-dd')
+  const partner = schedule[today] || schedule[Object.keys(schedule)[0]]
+
+  const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
+    const comparison = compareAsc(now, new Date(date).getTime())
+    const partner = schedule[date]
+
+    if (comparison === 0 || typeof partner === 'undefined') {
+      return acc
+    }
+
+    if (comparison === -1) {
+      return {
+        ...acc,
+        upcomingDrops: [...acc.upcomingDrops, partner.drop],
+      }
+    }
+
+    return {
+      ...acc,
+      pastDrops: [...acc.pastDrops, partner.drop],
+    }
+  }, INITIAL_TABS)
+
+  return { partner, tabs }
 }
 
 export default Home
