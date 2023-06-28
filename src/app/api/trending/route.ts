@@ -1,10 +1,16 @@
 import axios from 'axios'
 import { NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 
-export async function GET() {
+import { ethers } from 'ethers'
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const connectedWallet = searchParams.get('connectedWallet')
+
   try {
     const response = await axios.get(
-      `https://api.mint.fun/api/v1/collections?connectedWallet=''`,
+      `https://api.mint.fun/api/v1/collections?connectedWallet=${connectedWallet}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.MINT_FUN_API_KEY}`,
@@ -14,6 +20,6 @@ export async function GET() {
 
     return NextResponse.json(response?.data)
   } catch (error) {
-    return NextResponse.json({ error: 'Error fetching data' })
+    return NextResponse.json({ error })
   }
 }
