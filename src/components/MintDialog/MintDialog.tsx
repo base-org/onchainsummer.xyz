@@ -37,7 +37,7 @@ export const MintDialog: FC<MintDialogProps> = ({
   const { data: contract } = useContract(address)
   const [nftDetails, setNftDetails] = useState<{
     address: string
-    tokenId: number
+    tokenIds: string[]
   } | null>(null)
 
   const { mutateAsync: claimNft, isLoading } = useClaimNFT(contract)
@@ -135,8 +135,8 @@ export const MintDialog: FC<MintDialogProps> = ({
 
                       const id = BigNumber.from(data?.id)
 
-                      const tokenId = id.toNumber()
-                      setNftDetails({ address, tokenId })
+                      const tokenId = id.toString()
+                      setNftDetails({ address, tokenIds: [tokenId] })
 
                       // TODO: Determine if result has success indicator?
                       setMintState(MintState.PROCESSED)
@@ -154,6 +154,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                     price={price}
                     mintState={mintState}
                     setMintState={setMintState}
+                    setNftDetails={setNftDetails}
                   />
                 </div>
               </div>
@@ -166,16 +167,17 @@ export const MintDialog: FC<MintDialogProps> = ({
                 <b>Address :</b> {nftDetails.address}
               </div>
               <div>
-                <b>Token ID :</b> {nftDetails.tokenId}
+                <b>Token IDs :</b>{' '}
+                {nftDetails.tokenIds.map((id) => id).join(', ')}
               </div>
-              <a
+              {/* <a
                 className="text-sm text-blue-500"
                 href={`https://opensea.io/assets/${nftDetails.address}/${nftDetails.tokenId}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 View on OpenSea
-              </a>
+              </a> */}
             </div>
           ) : null}
         </Dialog.Content>
