@@ -7,12 +7,15 @@ import {
   useConnect,
   metamaskWallet,
   coinbaseWallet,
+  trustWallet,
   walletConnect,
 } from '@thirdweb-dev/react'
 import { Separator } from '../Separator'
 import { Coinbase } from '../icons/Coinbase'
 import { WalletConnect } from '../icons/WalletConnect'
 import { MetaMask } from '../icons/MetaMask'
+import { Trust } from '../icons/Trust'
+
 import clsx from 'clsx'
 
 type ConnectDialogProps = {
@@ -27,6 +30,7 @@ const wallets: Record<
     title: string
     icon: React.ReactNode
     config: ReturnType<typeof metamaskWallet>
+    createLink: string
   }
 > = {
   metamask: {
@@ -34,6 +38,7 @@ const wallets: Record<
     title: 'MetaMask',
     icon: <MetaMask />,
     config: metamaskWallet(),
+    createLink: 'https://metamask.io/download/',
   },
   coinbase: {
     slug: 'coinbase',
@@ -41,6 +46,21 @@ const wallets: Record<
     icon: <Coinbase />,
     // @ts-expect-error
     config: coinbaseWallet(),
+    createLink: 'https://go.cb-w.com/',
+  },
+  // Rainbow wallet is not supported yet, they are currently working on a browswr extension.
+  // rainbow: {
+  //   slug: 'rainbow',
+  //   title: 'Rainbow Wallet',
+  //   icon: <Rainbow />,
+  //   config: rainbowWallet(),
+  // },
+  trust: {
+    slug: 'trust',
+    title: 'Trust Wallet',
+    icon: <Trust />,
+    config: trustWallet(),
+    createLink: 'https://trustwallet.com/browser-extension/',
   },
   'wallet-connect': {
     slug: 'wallet-connect',
@@ -48,6 +68,7 @@ const wallets: Record<
     icon: <WalletConnect />,
     // @ts-expect-error
     config: walletConnect(),
+    createLink: 'https://go.cb-w.com/',
   },
 }
 
@@ -85,9 +106,14 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
             </Dialog.Title>
             <Dialog.Description className="text-black/50 gap-2 font-text font-medium">
               Don&apos;t have a wallet?{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#309FA7] via-[#9060FF] to-[#0052FF]">
+              <a
+                className="text-transparent bg-clip-text bg-gradient-to-r from-[#309FA7] via-[#9060FF] to-[#0052FF]"
+                href={preferredWallet.createLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Create one here.
-              </span>
+              </a>
             </Dialog.Description>
             <Dialog.Close asChild>
               <button
