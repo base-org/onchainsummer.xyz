@@ -1,8 +1,5 @@
 import axios from 'axios'
 import { NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
-
-import { ethers } from 'ethers'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
