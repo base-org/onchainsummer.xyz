@@ -1,4 +1,4 @@
-import { Partner } from '@/config/partners'
+import { Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
 
