@@ -88,7 +88,10 @@ export const MintDialog: FC<MintDialogProps> = ({
             <div className="flex flex-col gap-6 items-center w-full">
               <MintFailure />
               <Button
-                onClick={() => setMintState(MintState.INITIAL)}
+                onClick={() => {
+                  setMintState(MintState.INITIAL)
+                  setNftDetails(null)
+                }}
                 className="!rounded-lg w-full"
               >
                 Try again
@@ -101,7 +104,10 @@ export const MintDialog: FC<MintDialogProps> = ({
                 <Button
                   variant="TERTIARY"
                   className="!rounded-lg w-full"
-                  onClick={() => setMintState(MintState.INITIAL)}
+                  onClick={() => {
+                    setMintState(MintState.INITIAL)
+                    setNftDetails(null)
+                  }}
                 >
                   Return
                 </Button>
