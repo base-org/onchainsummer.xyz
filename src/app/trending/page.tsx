@@ -6,6 +6,7 @@ import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { Separator } from '@/components/Separator'
 import { useQuery } from 'react-query'
 import { MintDotFunMinter } from '@/components/MintDotFunMinter/MintDotFunMinter'
+import { useAddress } from '@thirdweb-dev/react'
 
 interface Mint {
   imageURI: string
@@ -33,8 +34,8 @@ interface QueryResult {
   collections: Collection[]
 }
 
-async function fetchData() {
-  const res = await fetch('/api/trending')
+async function fetchData(connectedWallet: string) {
+  const res = await fetch(`/api/trending?connectedWallet=${connectedWallet}`)
 
   if (!res.ok) {
     throw new Error(`HTTP error! status: ${res.status}`)
@@ -52,10 +53,13 @@ const VISIBLE_NFTS = {
 }
 
 export default function Trending() {
-  const { data, error, isLoading } = useQuery<QueryResult>(
-    'collections',
-    fetchData
-  )
+  const connectedWallet = useAddress()
+
+  console.log(connectedWallet)
+  const { data, error, isLoading } = useQuery<QueryResult>({
+    queryKey: ['trending', connectedWallet],
+    queryFn: ({ queryKey }) => fetchData(queryKey[1] as string),
+  })
 
   const collections = data?.collections
 
@@ -193,12 +197,12 @@ export default function Trending() {
                           </p>
                         </div>
                       </div>
-                      <div className="flex gap-2 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full">
+                      <div className="flex gap-2 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full max-h-[50px]">
                         <MintDotFunMinter mintStatus={mintStatus} />
                         <Button
                           size="SMALL"
                           variant="SECONDARY"
-                          className="grow lg:grow-0 max-h-[50px] text-2xl"
+                          className="grow lg:grow-0 text-2xl"
                         >
                           View More
                         </Button>
