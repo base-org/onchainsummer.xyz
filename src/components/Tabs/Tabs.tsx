@@ -10,11 +10,11 @@ import * as TabsComponent from '@radix-ui/react-tabs'
 import { TabsListItems } from './TabsListItems'
 import { Button } from '../Button'
 import { Separator } from '../Separator'
-import { NFTDrop } from '@/config/partners/types'
+import { HeadlineDrop } from '@/config/partners/types'
 
 export interface TabsComponentProps {
-  upcomingDrops: NFTDrop[]
-  pastDrops: NFTDrop[]
+  upcomingDrops: HeadlineDrop[]
+  pastDrops: HeadlineDrop[]
 }
 
 export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
