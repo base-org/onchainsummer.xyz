@@ -2,7 +2,7 @@ import { openSea, sushi, openSeason, coke } from './partners'
 import { Partner } from './partners/types'
 
 export const schedule: Record<string, Partner> = {
-  '2023-06-26': openSea,
+  '2023-06-26': coke,
   '2023-06-27': openSea,
   '2023-06-28': sushi,
   '2023-06-29': coke,
