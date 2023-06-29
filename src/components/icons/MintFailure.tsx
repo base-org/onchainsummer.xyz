@@ -9,7 +9,7 @@ export const MintFailure: FC = ({}) => {
       fill="none"
       viewBox="0 0 80 81"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path fill="#fff" d="M0 .5h80v80H0z" />
         <path
           fill="url(#b)"
@@ -29,8 +29,8 @@ export const MintFailure: FC = ({}) => {
           y2="-7.187"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".34" stop-color="#FF2C2C" />
-          <stop offset="1" stop-color="#FF922D" />
+          <stop offset=".34" stopColor="#FF2C2C" />
+          <stop offset="1" stopColor="#FF922D" />
         </linearGradient>
         <clipPath id="a">
           <path fill="#fff" d="M0 .5h80v80H0z" />

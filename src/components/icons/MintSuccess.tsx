@@ -9,7 +9,7 @@ export const MintSuccess: FC = ({}) => {
       fill="none"
       viewBox="0 0 160 143"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           fill="#775EFF"
           d="M23.758 36.555a1.39 1.39 0 0 1-1.944-.29 1.391 1.391 0 0 1 .317-1.94 1.391 1.391 0 0 1 1.944.29 1.39 1.39 0 0 1-.317 1.94Z"
@@ -323,7 +323,7 @@ export const MintSuccess: FC = ({}) => {
           d="M88.187 63.18s1.177-.952 2.51-.044c1.17.796 1.616.364 1.616.364s-.499-2.066-.222-3.669c.21-1.216 1.286-2.13 1.286-2.13s-.68.466-2.532-.309c-.57-.238-1.367-.945-1.367-.945s-.89 1.681-1.227 3.118c-.338 1.436-.064 3.614-.064 3.614Z"
         />
       </g>
-      <g clip-path="url(#b)">
+      <g clipPath="url(#b)">
         <path fill="#fff" d="M40 49h80v80H40z" />
         <path
           fill="url(#c)"
@@ -331,8 +331,8 @@ export const MintSuccess: FC = ({}) => {
         />
         <path
           stroke="#fff"
-          stroke-linecap="square"
-          stroke-width="6"
+          strokeLinecap="square"
+          strokeWidth="6"
           d="M90.4 81 73.785 97 68.8 92.205"
         />
       </g>
@@ -351,8 +351,8 @@ export const MintSuccess: FC = ({}) => {
           y2="41.313"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".34" stop-color="#FF912C" />
-          <stop offset="1" stop-color="#FFEA2D" />
+          <stop offset=".34" stopColor="#FF912C" />
+          <stop offset="1" stopColor="#FFEA2D" />
         </linearGradient>
       </defs>
     </svg>
