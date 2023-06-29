@@ -7,8 +7,8 @@ const cokeConfig: Partner = {
   description:
     'Coca-Cola is the most popular and biggest-selling soft drink in history, as well as the best-known product in the world. Created in Atlanta, Georgia, by Dr. John S. Pemberton, Coca-Cola was first offered as a fountain beverage by mixing Coca-Cola syrup with carbonated water. Coca-Cola was introduced in 1886, patented in 1887, registered as a trademark in 1893 and by 1895 it was being sold in every state and territory in the United States. In 1899, The Coca-Cola Company began franchised bottling operations in the United States.',
   brandColor: '#F40009',
-  icon: '/partners/icon/icon.svg',
-  iconInverse: '/partners/icon/icon-inverse.svg',
+  icon: '/partners/coke/icon.svg',
+  iconInverse: '/partners/coke/icon.svg',
   drop: {
     image: '/partners/coke/drop/coke.webp',
     name: 'Coke NFT Drop',
