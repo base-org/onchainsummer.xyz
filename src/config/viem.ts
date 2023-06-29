@@ -1,5 +1,6 @@
 import { createWalletClient, custom } from 'viem'
-import { mainnet } from 'viem/chains'
+import { mainnet, goerli } from 'viem/chains'
+import { isProd } from './chain'
 
 let client: ReturnType<typeof createWalletClient> | null = null
 
@@ -13,7 +14,7 @@ export const getWalletClient = async () => {
   }
 
   client = createWalletClient({
-    chain: mainnet,
+    chain: isProd ? mainnet : goerli,
     // @ts-expect-error
     transport: custom(window.ethereum),
   })
