@@ -4,24 +4,8 @@ import {
   CheckoutEventMap,
 } from '@crossmint/client-sdk-react-ui'
 import { useAddress } from '@thirdweb-dev/react'
-import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { MintState } from './MintDialog'
-
-interface TransactionFulfillmentPayload {
-  contractAddress: string
-  tokenIds: string[]
-}
-
-function isTransactionFulfillmentPayload(
-  payload: unknown
-): payload is TransactionFulfillmentPayload {
-  return (
-    typeof payload === 'object' &&
-    payload !== null &&
-    'contractAddress' in payload &&
-    'tokenIds' in payload
-  )
-}
+import { isProd } from '@/config/chain'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -39,50 +23,23 @@ interface CrossMintFormProps {
   price: string
   mintState: MintState
   setMintState: React.Dispatch<MintState>
-  setNftDetails: React.Dispatch<{ address: string; tokenIds: string[] } | null>
+  orderIdentifier: string
+  setOrderIdentifier: React.Dispatch<string>
 }
 
-const environment =
-  process.env.NODE_ENV === 'production' ? 'production' : 'staging'
+const environment = isProd ? 'production' : 'staging'
 
 export const CrossMintForm: FC<CrossMintFormProps> = ({
   clientId,
   price,
   mintState,
   setMintState,
-  setNftDetails,
+  orderIdentifier,
+  setOrderIdentifier,
 }) => {
+  const paymentProcessing = mintState === MintState.PROCESSING
   const walletAddress = useAddress()
   const [email, setEmail] = useState('')
-  const [orderIdentifier, setOrderIdentifier] = useState('')
-
-  const { listenToMintingEvents } = useCrossmintEvents({
-    environment: 'staging',
-  }) // Specifying the environment is optional. It defaults to "production"
-
-  listenToMintingEvents({ orderIdentifier }, (event) => {
-    switch (event.type) {
-      case 'order:process.started':
-        break
-      case 'order:process.finished':
-        break
-      case 'transaction:fulfillment.succeeded':
-        if (isTransactionFulfillmentPayload(event.payload)) {
-          const { contractAddress, tokenIds } = event.payload
-          setNftDetails({
-            address: contractAddress,
-            tokenIds,
-          })
-        }
-        setMintState(MintState.PROCESSED)
-        break
-      case 'transaction:fulfillment.failed':
-        setMintState(MintState.ERROR)
-        break
-      default:
-        break
-    }
-  })
 
   return (
     <>
@@ -106,8 +63,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
       ) : null}
       <CrossmintPaymentElement
         clientId={clientId}
-        // TODO: Move this back to a dynamic environment variable once we deploy
-        environment={'staging'}
+        environment={environment}
         recipient={{
           email: email,
           wallet: walletAddress,
@@ -128,20 +84,28 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         onEvent={function onEvent(event) {
           switch (event.type) {
             case 'payment:preparation.succeeded':
-              setMintState(MintState.PREPARED_CM)
+              if (!paymentProcessing) {
+                setMintState(MintState.PREPARED_CM)
+              }
               break
             case 'payment:process.started':
               // Triggered when the user has finished entering their card details and clicked Pay.
               setMintState(MintState.PROCESSING)
               break
             case 'quote:status.changed':
-              setMintState(MintState.PREPARED_CM)
+              if (!paymentProcessing) {
+                setMintState(MintState.PREPARED_CM)
+              }
               // Triggered when the price is calculated or if the price changes.
               break
             case 'payment:process.succeeded':
               if (isPaymentProcessedPayload(event.payload)) {
-                const { orderIdentifier } = event.payload
-                setOrderIdentifier(orderIdentifier)
+                const { orderIdentifier: payloadOrderIdentifier } =
+                  event.payload
+
+                if (orderIdentifier !== payloadOrderIdentifier) {
+                  setOrderIdentifier(payloadOrderIdentifier)
+                }
               }
               // Triggered when payment has been successfully captured.
               break

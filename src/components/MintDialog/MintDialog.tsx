@@ -1,5 +1,6 @@
 import { Address } from '@thirdweb-dev/sdk'
 import * as Dialog from '@radix-ui/react-dialog'
+import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { FC, useState } from 'react'
 import { Button } from '../Button'
 import { Close } from '../icons/Close'
@@ -27,6 +28,24 @@ export enum MintState {
   ERROR,
 }
 
+interface TransactionFulfillmentPayload {
+  contractAddress: string
+  tokenIds: string[]
+  txId: string
+}
+
+function isTransactionFulfillmentPayload(
+  payload: unknown
+): payload is TransactionFulfillmentPayload {
+  return (
+    typeof payload === 'object' &&
+    payload !== null &&
+    'contractAddress' in payload &&
+    'tokenIds' in payload &&
+    'txId' in payload
+  )
+}
+
 export const MintDialog: FC<MintDialogProps> = ({
   price,
   address,
@@ -39,10 +58,50 @@ export const MintDialog: FC<MintDialogProps> = ({
     address: string
     tokenIds: string[]
   } | null>(null)
+  const [orderIdentifier, setOrderIdentifier] = useState('')
 
   const { mutateAsync: claimNft, isLoading } = useClaimNFT(contract)
 
   const isDisabled = isLoading
+
+  const { listenToMintingEvents } = useCrossmintEvents({
+    environment: 'staging',
+  }) // Specifying the environment is optional. It defaults to "production"
+
+  listenToMintingEvents({ orderIdentifier }, (event) => {
+    console.log(event)
+    switch (event.type) {
+      case 'order:process.started':
+        break
+      case 'order:process.finished':
+        break
+      case 'transaction:fulfillment.succeeded':
+        if (isTransactionFulfillmentPayload(event.payload)) {
+          const { contractAddress, tokenIds } = event.payload
+
+          setNftDetails({
+            address: contractAddress,
+            tokenIds,
+          })
+          setMintState(MintState.PROCESSED)
+        }
+        break
+      case 'transaction:fulfillment.failed':
+        setMintState(MintState.ERROR)
+        break
+      default:
+        break
+    }
+  })
+
+  const buttonTitle =
+    mintState === MintState.ERROR
+      ? 'Payment Failed - Try Again'
+      : mintState === MintState.PROCESSED
+      ? 'Success'
+      : mintState === MintState.PROCESSING
+      ? 'Minting...'
+      : `Mint ${price} ETH`
 
   const title =
     mintState === MintState.ERROR
@@ -61,7 +120,7 @@ export const MintDialog: FC<MintDialogProps> = ({
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>Mint {price} ETH</Button>
+        <Button>{buttonTitle}</Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
@@ -91,6 +150,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                 onClick={() => {
                   setMintState(MintState.INITIAL)
                   setNftDetails(null)
+                  setOrderIdentifier('')
                 }}
                 className="!rounded-lg w-full"
               >
@@ -107,6 +167,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                   onClick={() => {
                     setMintState(MintState.INITIAL)
                     setNftDetails(null)
+                    setOrderIdentifier('')
                   }}
                 >
                   Return
@@ -160,7 +221,8 @@ export const MintDialog: FC<MintDialogProps> = ({
                     price={price}
                     mintState={mintState}
                     setMintState={setMintState}
-                    setNftDetails={setNftDetails}
+                    orderIdentifier={orderIdentifier}
+                    setOrderIdentifier={setOrderIdentifier}
                   />
                 </div>
               </div>
