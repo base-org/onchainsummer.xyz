@@ -20,6 +20,7 @@ function isPaymentProcessedPayload(
 
 interface CrossMintFormProps {
   clientId: string
+  type: 'erc-721' | 'zora-erc-1155' | 'external'
   price: string
   mintState: MintState
   setMintState: React.Dispatch<MintState>
@@ -36,6 +37,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   setMintState,
   orderIdentifier,
   setOrderIdentifier,
+  type,
 }) => {
   const paymentProcessing = mintState === MintState.PROCESSING
   const walletAddress = useAddress()
@@ -71,7 +73,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
         mintConfig={{
-          type: 'erc-721',
+          type,
           quantity: '1',
           totalPrice: price,
         }}

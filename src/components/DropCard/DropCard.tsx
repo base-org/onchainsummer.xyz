@@ -9,8 +9,8 @@ type DropCardProps = {
   partnerIcon: string
   partner: string
   image: string
-  href: string
-  title: string
+  externalLink?: string
+  name: string
   endDate: number
   price: string
 }
@@ -19,8 +19,8 @@ export const DropCard: FC<DropCardProps> = ({
   partnerIcon,
   image,
   partner,
-  title,
-  href,
+  name,
+  externalLink,
   endDate,
   price,
 }) => {
@@ -34,16 +34,16 @@ export const DropCard: FC<DropCardProps> = ({
       <div className="relative w-full aspect-[4/3]">
         <Image
           src={image}
-          alt={`${title} from ${partner}`}
+          alt={`${name} from ${partner}`}
           fill
           style={{ objectFit: 'cover' }}
         />
       </div>
       <a
-        href={href}
+        href={externalLink}
         className="font-medium text-lg after:absolute after:inset-0"
       >
-        {title}
+        {name}
       </a>
       <div className="flex gap-10 font-text">
         <div>

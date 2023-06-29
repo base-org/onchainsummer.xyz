@@ -9,6 +9,7 @@ type MintButtonProps = {
   price: string
   address: string
   crossMintClientId: string
+  type: 'erc-721' | 'zora-erc-1155' | 'external'
 }
 
 export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {

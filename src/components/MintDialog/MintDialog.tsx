@@ -17,6 +17,7 @@ type MintDialogProps = {
   address: Address
   crossMintClientId: string
   price: string
+  type: 'erc-721' | 'zora-erc-1155' | 'external'
 }
 
 export enum MintState {
@@ -50,6 +51,7 @@ export const MintDialog: FC<MintDialogProps> = ({
   price,
   address,
   crossMintClientId,
+  type,
 }) => {
   const userAddress = useAddress()
   const [mintState, setMintState] = useState(MintState.INITIAL)
@@ -221,6 +223,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                     setMintState={setMintState}
                     orderIdentifier={orderIdentifier}
                     setOrderIdentifier={setOrderIdentifier}
+                    type={type}
                   />
                 </div>
               </div>

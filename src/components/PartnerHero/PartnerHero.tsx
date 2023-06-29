@@ -9,7 +9,6 @@ interface PartnerHeroProps {
 import classes from './style.module.css'
 import { Card } from '../Card'
 import { Separator } from '../Separator'
-import { Button } from '../Button'
 import { MintButton } from '../MintButton/MintButton'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
@@ -76,6 +75,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
             price={drop.price}
             address={drop.address}
             crossMintClientId={drop.crossMintClientId}
+            type={drop.type}
           />
         </div>
       </section>

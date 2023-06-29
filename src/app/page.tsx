@@ -9,7 +9,7 @@ import { Tabs, TabsComponentProps } from '@/components/Tabs'
 
 const Home = async () => {
   const { partner, tabs } = await getPageData()
-  const { drop, externalDrops, name, icon } = partner
+  const { drop, otherDrops, name, icon } = partner
   return (
     <div>
       <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
@@ -35,9 +35,9 @@ const Home = async () => {
         <section className="px-8 lg:px-20 mt-16 pb-10 lg:mt-20 lg:pb-20 w-full">
           <h2 className="sr-only">External Drops</h2>
           <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {externalDrops.map((externalDrop) => (
-              <li key={externalDrop.title}>
-                <DropCard {...externalDrop} partner={name} partnerIcon={icon} />
+            {otherDrops.map((drop) => (
+              <li key={drop.name}>
+                <DropCard {...drop} partner={name} partnerIcon={icon} />
               </li>
             ))}
           </ul>
