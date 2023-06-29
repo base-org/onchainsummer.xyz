@@ -69,7 +69,6 @@ export const MintDialog: FC<MintDialogProps> = ({
   }) // Specifying the environment is optional. It defaults to "production"
 
   listenToMintingEvents({ orderIdentifier }, (event) => {
-    console.log(event)
     switch (event.type) {
       case 'order:process.started':
         break
