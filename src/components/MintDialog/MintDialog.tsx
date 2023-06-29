@@ -195,7 +195,6 @@ export const MintDialog: FC<MintDialogProps> = ({
                         to: userAddress,
                         quantity: 1,
                       })
-                      console.log('result', result)
                       // @ts-expect-error
                       const data = result[0] as { id: BigNumber }
 

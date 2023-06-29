@@ -58,7 +58,6 @@ const VISIBLE_NFTS = {
 export default function Trending() {
   const connectedWallet = useAddress()
 
-  console.log(connectedWallet)
   const { data, error, isLoading } = useQuery<QueryResult>({
     queryKey: ['trending', connectedWallet],
     queryFn: ({ queryKey }) => fetchData(queryKey[1] as string),
