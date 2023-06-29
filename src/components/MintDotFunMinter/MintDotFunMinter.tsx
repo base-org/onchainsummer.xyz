@@ -3,7 +3,8 @@ import { Button } from '../Button'
 import { useAddress } from '@thirdweb-dev/react'
 import { ConnectDialog } from '../ConnectDialog'
 import { getWalletClient } from '@/config/viem'
-import { mainnet } from 'viem/chains'
+import { mainnet, goerli } from 'viem/chains'
+import { isProd } from '@/config/chain'
 
 type MintDotFunMinterProps = {
   mintStatus: {
@@ -42,7 +43,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({ mintStatus }) => {
           account,
           to: mintStatus.tx.to,
           value: BigInt(mintStatus.tx.value),
-          chain: mainnet,
+          chain: isProd ? mainnet : goerli,
           // @ts-expect-error
           data: mintStatus.tx.data,
         })
