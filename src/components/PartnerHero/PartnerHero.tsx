@@ -10,9 +10,10 @@ import classes from './style.module.css'
 import { Card } from '../Card'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
+import { Button } from '../Button'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
-  partner: { brandColor, name, description, icon, iconInverse, drop, url },
+  partner: { brandColor, name, description, iconInverse, drop },
 }) => {
   return (
     <section className="flex flex-col px-6 pt-10 pb-8 md:pb-20 md:px-[120px] md:pt-[120px]">
@@ -71,12 +72,16 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           </div>
           <Separator />
           <p className="text-neutral-600 font-text">{drop.description}</p>
-          <MintButton
-            price={drop.price}
-            address={drop.address}
-            crossMintClientId={drop.crossMintClientId}
-            type={drop.type}
-          />
+          {drop.externalLink ? (
+            <Button href={drop.externalLink}>Mint {drop.price} ETH</Button>
+          ) : (
+            <MintButton
+              price={drop.price}
+              address={drop.address}
+              crossMintClientId={drop.crossMintClientId}
+              type={drop.type}
+            />
+          )}
         </div>
       </section>
     </section>

@@ -1,5 +1,7 @@
 export const DAY = 1000 * 60 * 60 * 24
 
+export type DropType = 'erc-721' | 'zora-erc-1155' | 'external'
+
 export interface Drop {
   image: string
   name: string
@@ -8,7 +10,7 @@ export interface Drop {
   price: string
   address: `0x${string}`
   crossMintClientId: string
-  type: 'erc-721' | 'zora-erc-1155' | 'external'
+  type: DropType
   externalLink?: string
 }
 

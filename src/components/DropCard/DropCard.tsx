@@ -4,8 +4,13 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { Countdown } from '../Countdown'
 import { Button } from '../Button'
+import { MintButton } from '../MintButton'
+import { DropType } from '@/config/partners/types'
 
 type DropCardProps = {
+  address: string
+  crossMintClientId: string
+  type: DropType
   partnerIcon: string
   partner: string
   image: string
@@ -16,7 +21,10 @@ type DropCardProps = {
 }
 
 export const DropCard: FC<DropCardProps> = ({
+  address,
+  crossMintClientId,
   partnerIcon,
+  type,
   image,
   partner,
   name,
@@ -39,12 +47,16 @@ export const DropCard: FC<DropCardProps> = ({
           style={{ objectFit: 'cover' }}
         />
       </div>
-      <a
-        href={externalLink}
-        className="font-medium text-lg after:absolute after:inset-0"
-      >
-        {name}
-      </a>
+      {externalLink ? (
+        <a
+          href={externalLink}
+          className="font-medium text-lg after:absolute after:inset-0"
+        >
+          {name}
+        </a>
+      ) : (
+        <span className="font-medium text-lg">{name}</span>
+      )}
       <div className="flex gap-10 font-text">
         <div>
           <h4 className="text-xs text-neutral-900/50">Remaining Time</h4>
@@ -65,7 +77,16 @@ export const DropCard: FC<DropCardProps> = ({
           <div className="font-medium">{price} ETH</div>
         </div>
       </div>
-      <Button tabIndex={-1}>Mint ({price} ETH)</Button>
+      {externalLink ? (
+        <Button tabIndex={-1}>Mint ({price} ETH)</Button>
+      ) : (
+        <MintButton
+          price={price}
+          address={address}
+          crossMintClientId={crossMintClientId}
+          type={type}
+        />
+      )}
     </Card>
   )
 }

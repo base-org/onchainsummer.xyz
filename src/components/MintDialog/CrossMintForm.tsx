@@ -6,6 +6,7 @@ import {
 import { useAddress } from '@thirdweb-dev/react'
 import { MintState } from './MintDialog'
 import { isProd } from '@/config/chain'
+import { DropType } from '@/config/partners/types'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -20,7 +21,7 @@ function isPaymentProcessedPayload(
 
 interface CrossMintFormProps {
   clientId: string
-  type: 'erc-721' | 'zora-erc-1155' | 'external'
+  type: DropType
   price: string
   mintState: MintState
   setMintState: React.Dispatch<MintState>

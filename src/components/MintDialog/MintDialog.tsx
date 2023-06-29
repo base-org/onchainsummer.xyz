@@ -12,12 +12,13 @@ import { MintFailure } from '../icons/MintFailure'
 import { MintSuccess } from '../icons/MintSuccess'
 import clsx from 'clsx'
 import { BigNumber } from 'ethers'
+import { DropType } from '@/config/partners/types'
 
 type MintDialogProps = {
   address: Address
   crossMintClientId: string
   price: string
-  type: 'erc-721' | 'zora-erc-1155' | 'external'
+  type: DropType
 }
 
 export enum MintState {
@@ -102,7 +103,7 @@ export const MintDialog: FC<MintDialogProps> = ({
       ? 'Success'
       : mintState === MintState.PROCESSING
       ? 'Minting...'
-      : `Mint ${price} ETH`
+      : `Mint (${price} ETH)`
 
   const title =
     mintState === MintState.ERROR

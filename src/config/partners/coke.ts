@@ -47,25 +47,25 @@ const cokeConfig: Partner = {
   otherDrops: [
     {
       image: '/partners/open-sea/external-drops/1.png',
-      externalLink: 'https://opensea.io/collection/lootproject',
+      externalLink: '',
       name: 'Closer to the Sun',
       startDate: +new Date(),
       endDate: +new Date() + DAY,
       crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
       address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
       type: 'erc-721',
-      price: '0.5',
+      price: '0.0001',
     },
     {
       image: '/partners/open-sea/external-drops/2.png',
-      externalLink: 'https://opensea.io/collection/lootproject',
+      externalLink: '',
       name: 'Runaway',
       startDate: +new Date(),
       endDate: +new Date() + DAY,
       crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
       address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
       type: 'erc-721',
-      price: '0.5',
+      price: '0.0001',
     },
     {
       image: '/partners/open-sea/external-drops/3.png',
@@ -76,7 +76,7 @@ const cokeConfig: Partner = {
       crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
       address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
       type: 'erc-721',
-      price: '0.5',
+      price: '0.0001',
     },
     {
       image: '/partners/open-sea/external-drops/4.png',
@@ -87,7 +87,7 @@ const cokeConfig: Partner = {
       crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
       address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
       type: 'erc-721',
-      price: '0.5',
+      price: '0.0001',
     },
   ],
 }
