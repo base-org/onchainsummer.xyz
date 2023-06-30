@@ -8,6 +8,10 @@ import { useQuery } from 'react-query'
 import { MintDotFunMinter } from '@/components/MintDotFunMinter/MintDotFunMinter'
 import { useAddress } from '@thirdweb-dev/react'
 import { formatEther } from 'viem'
+import { ThirdWeb } from '@/components/icons/ThirdWeb'
+import { Zora } from '@/components/icons/Zora'
+import { Manifold } from '@/components/icons/Manifold'
+import { MintDotFun } from '@/components/icons/MintDotFun'
 
 interface Mint {
   imageURI: string
@@ -85,14 +89,8 @@ export default function Trending() {
               <p className="text-xl text-[#010101] opacity-50 mr-3 font-medium font-text my-2">
                 Powered by{' '}
               </p>
-              <Image
-                src="/trending/mint-fun.png"
-                alt="Image Alt"
-                width={128}
-                height={20}
-                priority
-                className=""
-              />
+              <MintDotFun />
+              <span className="sr-only">mint.fun</span>
             </div>
           </div>
           <div>
@@ -100,71 +98,35 @@ export default function Trending() {
               <p className="text-neutral-500 text-sm md:text-lg mb-4 font-text font-medium">
                 Join the party. Create on Base.
               </p>
+
               <div className="flex gap-1 sm:gap-2 lg:gap-7">
-                <Image
-                  src="/trending/crypto-icon-1.png"
-                  alt="Image Alt"
-                  width={48}
-                  height={48}
-                  priority
-                  className="hidden md:inline-block"
-                />
-                <Image
-                  src="/trending/crypto-icon-1-mobile.png "
-                  alt="Image Alt"
-                  width={32}
-                  height={32}
-                  priority
-                  className="md:hidden mr-3"
-                />
-                <Image
-                  src="/trending/crypto-icon-2.png "
-                  alt="Image Alt"
-                  width={48}
-                  height={48}
-                  priority
-                  className="hidden md:inline-block"
-                />
-                <Image
-                  src="/trending/crypto-icon-2-mobile.png "
-                  alt="Image Alt"
-                  width={32}
-                  height={32}
-                  priority
-                  className="md:hidden mr-3"
-                />
-                <Image
-                  src="/trending/crypto-icon-1.png "
-                  alt="Image Alt"
-                  width={48}
-                  height={48}
-                  priority
-                  className="hidden md:inline-block"
-                />
-                <Image
-                  src="/trending/crypto-icon-1-mobile.png "
-                  alt="Image Alt"
-                  width={32}
-                  height={32}
-                  priority
-                  className="md:hidden mr-3"
-                />
-                <Image
-                  src="/trending/crypto-icon-2.png "
-                  alt="Image Alt"
-                  width={48}
-                  height={48}
-                  priority
-                  className="hidden md:inline-block"
-                />
-                <Image
-                  src="/trending/crypto-icon-2-mobile.png "
-                  alt="Image Alt"
-                  width={32}
-                  height={32}
-                  priority
-                  className="md:hidden mr-3"
-                />
+                <a
+                  href="https://thirdweb.com/thirdweb.eth/OpenEditionERC721"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="aspect-square"
+                >
+                  <ThirdWeb />
+                  <span className="sr-only">ThirdWeb</span>
+                </a>
+                <a
+                  href="https://zora.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="aspect-square"
+                >
+                  <Zora />
+                  <span className="sr-only">Zora</span>
+                </a>
+                <a
+                  href="https://studio.manifold.xyz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="aspect-square"
+                >
+                  <Manifold />
+                  <span className="sr-only">Manifold</span>
+                </a>
               </div>
             </div>
           </div>
