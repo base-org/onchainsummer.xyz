@@ -1,4 +1,3 @@
-import { Address } from '@thirdweb-dev/sdk'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { FC, useState } from 'react'
@@ -15,7 +14,7 @@ import { BigNumber } from 'ethers'
 import { DropType } from '@/config/partners/types'
 
 type MintDialogProps = {
-  address: Address
+  address: string
   crossMintClientId: string
   price: string
   type: DropType
@@ -217,7 +216,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                 </Button>
                 <Separator className="my-6" />
                 <div className="flex flex-col items-center justify-start">
-                  <CrossMintForm
+                  {/* <CrossMintForm
                     clientId={crossMintClientId}
                     price={price}
                     mintState={mintState}
@@ -225,7 +224,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                     orderIdentifier={orderIdentifier}
                     setOrderIdentifier={setOrderIdentifier}
                     type={type}
-                  />
+                  /> */}
                 </div>
               </div>
             </>
