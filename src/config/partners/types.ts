@@ -17,6 +17,7 @@ export interface Drop {
 export interface HeadlineDrop extends Drop {
   createdBy: string
   description: string
+  aarweaveDigest: string
   writeup: {
     sections: {
       heading: string

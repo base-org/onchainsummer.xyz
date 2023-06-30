@@ -12,6 +12,7 @@ const sushiConfig: Partner = {
   drop: {
     image: '/partners/sushi/drop/sushi.jpeg',
     name: 'Sushi Drop',
+    aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
     createdBy: 'Meebits',
     description:
       'Sushi is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',

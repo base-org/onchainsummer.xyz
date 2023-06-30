@@ -11,6 +11,7 @@ const cokeConfig: Partner = {
   iconInverse: '/partners/coke/icon.svg',
   drop: {
     image: '/partners/coke/drop/coke.webp',
+    aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
     name: 'Coke NFT Drop',
     createdBy: 'Coke',
     description:
