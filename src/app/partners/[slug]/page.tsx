@@ -79,8 +79,12 @@ async function getPartner(slug: string) {
 
   const partner = schedule[date]
 
+  if (!partner) {
+    return notFound()
+  }
+
   const digest = await SDK.GetMirrorTransactions({
-    digest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+    digest: partner.drop.aarweaveDigest,
   })
 
   const articleId = digest.transactions.edges[0].node.id
