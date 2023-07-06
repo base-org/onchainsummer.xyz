@@ -12,6 +12,7 @@ const openSeaConfig: Partner = {
   drop: {
     image: '/partners/open-sea/drop/main.png',
     name: 'Space Light Dark',
+    aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
     createdBy: 'Charlie Baker',
     description:
       'Discover a world where art meets blockchain technology. Our platform empowers artists, creators, and collectors to participate in the digital revolution of non-fungible tokens (NFTs).',

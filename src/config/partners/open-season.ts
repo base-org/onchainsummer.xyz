@@ -12,6 +12,7 @@ const openSeason: Partner = {
   drop: {
     image: '/partners/open-sea/drop/duck.jpeg',
     name: 'Duck Season NFT Drop',
+    aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
     createdBy: 'Duck Season',
     description:
       'Duck season, rabbit season, duck season, rabbit season, duck season, rabbit season... FIRE!',

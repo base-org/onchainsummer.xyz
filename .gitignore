@@ -26,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -33,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# graphql codegenerated files
+
+/src/graphql/_generated/*
+!/src/graphql/_generated/.gitkeep
