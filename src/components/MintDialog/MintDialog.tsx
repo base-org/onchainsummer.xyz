@@ -55,7 +55,7 @@ export const MintDialog: FC<MintDialogProps> = ({
 }) => {
   const userAddress = useAddress()
   const [mintState, setMintState] = useState(MintState.INITIAL)
-  const { data: contract } = useContract(address)
+  const { contract } = useContract(address)
   const [nftDetails, setNftDetails] = useState<{
     address: string
     tokenIds: string[]
@@ -224,6 +224,7 @@ export const MintDialog: FC<MintDialogProps> = ({
                     orderIdentifier={orderIdentifier}
                     setOrderIdentifier={setOrderIdentifier}
                     type={type}
+                    quantity={1}
                   /> */}
                 </div>
               </div>

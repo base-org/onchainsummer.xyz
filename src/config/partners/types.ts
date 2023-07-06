@@ -1,6 +1,6 @@
 export const DAY = 1000 * 60 * 60 * 24
 
-export type DropType = 'erc-721' | 'zora-erc-1155' | 'external'
+export type DropType = 'erc-721' | 'zora-erc-721' | 'external'
 
 export interface Drop {
   image: string

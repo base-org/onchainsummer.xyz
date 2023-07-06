@@ -16,9 +16,9 @@ const openSeason: Partner = {
     createdBy: 'Duck Season',
     description:
       'Duck season, rabbit season, duck season, rabbit season, duck season, rabbit season... FIRE!',
-    crossMintClientId: '3ad9bb08-090f-41b9-b451-85fd1357e0e9',
-    address: '0xF9a2CC9C41944B4116f1f62850e06fd6a790266C',
-    type: 'erc-721',
+    crossMintClientId: '8a69bec9-bf70-4ac2-a156-37615cc42ff6',
+    address: '0x1fa4562ee54e02df9ef1a723ee2d4aaddf80df79',
+    type: 'zora-erc-721',
     startDate: new Date('2023-06-27').getTime(),
     endDate: new Date('2023-06-27').getTime() + DAY * 2,
     price: '0.0001',

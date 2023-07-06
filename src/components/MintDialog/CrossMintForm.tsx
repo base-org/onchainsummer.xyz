@@ -7,6 +7,7 @@ import { useAddress } from '@thirdweb-dev/react'
 import { MintState } from './MintDialog'
 import { isProd } from '@/config/chain'
 import { DropType } from '@/config/partners/types'
+import { formatEther, parseEther } from 'viem'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -27,6 +28,7 @@ interface CrossMintFormProps {
   setMintState: React.Dispatch<MintState>
   orderIdentifier: string
   setOrderIdentifier: React.Dispatch<string>
+  quantity: number
 }
 
 const environment = isProd ? 'production' : 'staging'
@@ -39,10 +41,15 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   orderIdentifier,
   setOrderIdentifier,
   type,
+  quantity,
 }) => {
   const paymentProcessing = mintState === MintState.PROCESSING
   const walletAddress = useAddress()
   const [email, setEmail] = useState('')
+
+  const zoraFee = type === 'zora-erc-721' ? parseEther('0.000777') : BigInt(0)
+
+  const totalPrice = formatEther(parseEther(price) * BigInt(quantity) + zoraFee)
 
   return (
     <>
@@ -75,15 +82,14 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         locale="en-US" // TODO: Do we support es-ES?
         mintConfig={{
           type,
-          quantity: '1',
-          totalPrice: price,
+          quantity,
+          totalPrice: totalPrice,
         }}
         uiConfig={{
           fontSizeBase: '1rem',
           spacingUnit: '0.25rem',
           borderRadius: '0.25rem',
         }}
-        // @ts-expect-error
         onEvent={function onEvent(event) {
           switch (event.type) {
             case 'payment:preparation.succeeded':
