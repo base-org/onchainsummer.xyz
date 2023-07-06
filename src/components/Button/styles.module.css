@@ -1,39 +1,27 @@
 .button {
-  @apply font-medium text-lg inline-block text-center;
+  @apply font-normal inline-flex justify-center items-center gap-1 text-center font-mono rounded-[100px];
 }
 
 .button-small {
-  @apply px-6 py-2;
+  @apply px-4 py-1.5;
 }
 
 .button-large {
-  @apply px-10 py-3;
+  @apply px-8 py-4;
 }
 
-.button-primary {
-  @apply text-white bg-neutral-950 shadow-button hover:bg-neutral-800;
+.button-dark {
+  @apply text-button-dark-text bg-button-dark-bg hover:bg-button-dark-hover-bg;
 }
 
-.button-secondary {
-  background: linear-gradient(180deg, #ffffff, #f7f8f8 100%) padding-box,
-    linear-gradient(90deg, #309fa7, #9060ff 55%, #0052ff 100%) border-box;
-  border: 2px solid transparent;
-
-  @apply shadow-button hover:bg-neutral-100;
+.button-light {
+  @apply text-button-light-text bg-button-light-bg hover:bg-button-light-hover-bg;
 }
 
-.button-secondary:hover {
-  background: linear-gradient(180deg, #f6f6f8, #f6f6f8 100%) padding-box,
-    linear-gradient(90deg, #309fa7, #9060ff 55%, #0052ff 100%) border-box;
+.button-text {
+  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text hover:border-b border-button-text-text;
 }
 
-.button-tertiary {
-  background: linear-gradient(90deg, #309fa7 0%, #9060ff 50%, #0052ff 100%);
-
-  @apply text-white shadow-button;
-}
-
-.button-tertiary:hover {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(90deg, #309fa7 0%, #9060ff 50%, #0052ff 100%);
+.button-round {
+  @apply rounded-full w-12 h-12 !p-3;
 }

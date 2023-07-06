@@ -164,7 +164,6 @@ export const MintDialog: FC<MintDialogProps> = ({
               <MintSuccess />
               <Dialog.Close asChild>
                 <Button
-                  variant="TERTIARY"
                   className="!rounded-lg w-full"
                   onClick={() => {
                     setMintState(MintState.INITIAL)
@@ -187,7 +186,6 @@ export const MintDialog: FC<MintDialogProps> = ({
                 className={clsx({ hidden: mintState === MintState.PROCESSING })}
               >
                 <Button
-                  variant="SECONDARY"
                   className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
                   disabled={isDisabled}
                   onClick={async () => {

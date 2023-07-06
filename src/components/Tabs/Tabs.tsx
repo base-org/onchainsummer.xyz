@@ -73,9 +73,7 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
                     </p>
                   </div>
                   <div className="md:hidden">
-                    <Button variant="SECONDARY" className="w-full">
-                      View More
-                    </Button>
+                    <Button className="w-full">View More</Button>
                   </div>
                 </div>
                 <Separator className="my-4" />
@@ -120,9 +118,7 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
                     </p>
                   </div>
                   <div className="md:hidden">
-                    <Button variant="SECONDARY" className="w-full">
-                      View More
-                    </Button>
+                    <Button className="w-full">View More</Button>
                   </div>
                 </div>
                 <Separator className="my-4" />

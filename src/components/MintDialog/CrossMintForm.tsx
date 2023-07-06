@@ -83,7 +83,6 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
           spacingUnit: '0.25rem',
           borderRadius: '0.25rem',
         }}
-        //@ts-expect-error
         onEvent={function onEvent(event) {
           switch (event.type) {
             case 'payment:preparation.succeeded':
