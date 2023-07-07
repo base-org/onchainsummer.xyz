@@ -5,7 +5,7 @@ import { NativeMintButton } from '../../elements/NativeMintButton'
 import { ModalPage } from '../../types'
 import { Separator } from '@/components/Separator'
 import { Countdown } from '@/components/Countdown'
-import { shortenAddress } from '@/utils/address'
+import { AddressPill } from '@/components/AddressPill'
 
 interface NativeMintProps {
   partnerIcon: string
@@ -54,10 +54,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title className="text-[32px]">{dropName}</Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
-        <span className="max-w-full overflow-hidden rounded-[58px] bg-ocs-pink p-1 pr-2 w-max flex gap-2 items-center text-sm leading-none mb-4">
-          <div className="h-4 w-4 aspect-square rounded-[58px] bg-ocs-black" />
-          {shortenAddress(creatorAddress)}
-        </span>
+        <AddressPill address={creatorAddress} />
         <Separator className="bg-ocs-red" />
         <Countdown
           title="Ends"
