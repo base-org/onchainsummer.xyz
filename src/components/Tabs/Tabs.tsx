@@ -2,7 +2,6 @@
 
 import { FC } from 'react'
 import React from 'react'
-import Image from 'next/image'
 import * as TabsComponent from '@radix-ui/react-tabs'
 import { TabsListItems } from './TabsListItems'
 import { HeadlineDrop } from '@/config/partners/types'
