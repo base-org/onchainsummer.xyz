@@ -11,10 +11,9 @@ import { Card } from '../Card'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
-import { Close } from '../icons/Close'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
-  partner: { brandColor, name, description, iconInverse, drop },
+  partner: { brandColor, name, description, iconInverse, drop, icon },
 }) => {
   return (
     <section className="flex flex-col px-6 pt-10 pb-8 md:pb-20 md:px-[120px] md:pt-[120px]">
@@ -77,10 +76,15 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
             <Button href={drop.externalLink}>Mint {drop.price} ETH</Button>
           ) : (
             <MintButton
-              price={drop.price}
               address={drop.address}
               crossMintClientId={drop.crossMintClientId}
-              type={drop.type}
+              price={drop.price}
+              partnerIcon={icon}
+              partnerName={name}
+              dropImage={drop.image}
+              dropName={drop.name}
+              dropEndTime={drop.endDate}
+              creatorAddress={drop.creator}
             />
           )}
         </div>

@@ -1,123 +1,151 @@
 import { Address } from '@thirdweb-dev/sdk'
 import * as Dialog from '@radix-ui/react-dialog'
-import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
-import { FC, useState } from 'react'
+
+import { FC, useMemo, useState } from 'react'
 import { Button } from '../Button'
 import { Close } from '../icons/Close'
 
-import { useAddress, useClaimNFT, useContract } from '@thirdweb-dev/react'
-import { Separator } from '../Separator'
-import { CrossMintForm } from './CrossMintForm'
-import { MintFailure } from '../icons/MintFailure'
-import { MintSuccess } from '../icons/MintSuccess'
-import clsx from 'clsx'
-import { BigNumber } from 'ethers'
-import { DropType } from '@/config/partners/types'
+import { Drop, DropType } from '@/config/partners/types'
+import { ModalPage } from './types'
+import { MintError } from './pages/MintError'
+import { Success } from './pages/Success'
+import { CrossMint } from './pages/CrossMint'
+import { NativeMint } from './pages/NativeMint'
+import { Bridge } from './pages/Bridge'
+import { InsufficientFunds } from './pages/InsufficientFunds'
 
-type MintDialogProps = {
+export interface MintDialogProps {
   address: Address
-  crossMintClientId: string
+  crossMintClientId?: string
   price: string
-  type: DropType
-}
-
-export enum MintState {
-  INITIAL,
-  PREPARED_CM,
-  PROCESSING,
-  PROCESSED,
-  REJECTED,
-  ERROR,
-}
-
-interface TransactionFulfillmentPayload {
-  contractAddress: string
-  tokenIds: string[]
-  txId: string
-}
-
-function isTransactionFulfillmentPayload(
-  payload: unknown
-): payload is TransactionFulfillmentPayload {
-  return (
-    typeof payload === 'object' &&
-    payload !== null &&
-    'contractAddress' in payload &&
-    'tokenIds' in payload &&
-    'txId' in payload
-  )
+  partnerIcon: string
+  partnerName: string
+  dropImage: string
+  dropName: string
+  dropEndTime: number
+  creatorAddress: string
 }
 
 export const MintDialog: FC<MintDialogProps> = ({
   price,
   address,
   crossMintClientId,
-  type,
+  partnerIcon,
+  partnerName,
+  dropImage,
+  dropName,
+  dropEndTime,
+  creatorAddress,
 }) => {
-  const userAddress = useAddress()
-  const [mintState, setMintState] = useState(MintState.INITIAL)
-  const { data: contract } = useContract(address)
+  const [page, setPage] = useState(ModalPage.NATIVE_MINT)
+
   const [nftDetails, setNftDetails] = useState<{
     address: string
     tokenIds: string[]
   } | null>(null)
-  const [orderIdentifier, setOrderIdentifier] = useState('')
 
-  const { mutateAsync: claimNft, isLoading } = useClaimNFT(contract)
+  const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
+  const [quantity, setQuantity] = useState(1)
+  const [totalPrice, setTotalPrice] = useState(price)
 
-  const isDisabled = isLoading
-
-  const { listenToMintingEvents } = useCrossmintEvents({
-    environment: 'staging',
-  }) // Specifying the environment is optional. It defaults to "production"
-
-  listenToMintingEvents({ orderIdentifier }, (event) => {
-    switch (event.type) {
-      case 'order:process.started':
-        break
-      case 'order:process.finished':
-        break
-      case 'transaction:fulfillment.succeeded':
-        if (isTransactionFulfillmentPayload(event.payload)) {
-          const { contractAddress, tokenIds } = event.payload
-
-          setNftDetails({
-            address: contractAddress,
-            tokenIds,
-          })
-          setMintState(MintState.PROCESSED)
-        }
-        break
-      case 'transaction:fulfillment.failed':
-        setMintState(MintState.ERROR)
-        break
+  const buttonTitle = useMemo(() => {
+    switch (page) {
+      case ModalPage.MINT_ERROR:
+        return 'Tx Failed'
+      case ModalPage.MINT_SUCCESS:
+        return 'Success'
+      case ModalPage.CROSS_MINT_PENDING:
+      case ModalPage.NATIVE_MINTING_PENDING:
+        return 'Minting...'
+      case ModalPage.NATIVE_MINT:
+        return `Mint (${price} ETH)`
+      case ModalPage.BRIDGE:
+        return 'Bridge'
+      case ModalPage.BRIDGE_PENDING:
+        return 'Bridging funds...'
+      case ModalPage.BRIDGE_SUCCESS:
+        return 'Success'
+      case ModalPage.INSUFFICIENT_FUNDS:
+        return 'Insufficient Funds'
+      case ModalPage.CROSS_MINT_FORM:
+        return 'Complete Payment'
+      case ModalPage.CROSS_MINT_PAYMENT_FAILED:
+        return 'Payment Failed - Try Again'
       default:
-        break
+        return ''
     }
-  })
+  }, [page, price])
 
-  const buttonTitle =
-    mintState === MintState.ERROR
-      ? 'Payment Failed - Try Again'
-      : mintState === MintState.PROCESSED
-      ? 'Success'
-      : mintState === MintState.PROCESSING
-      ? 'Minting...'
-      : `Mint (${price} ETH)`
-
-  const title =
-    mintState === MintState.ERROR
-      ? 'Payment Failed'
-      : mintState === MintState.PROCESSED
-      ? 'Success'
-      : 'Mint'
-
-  const description =
-    mintState === MintState.INITIAL || mintState === MintState.PREPARED_CM
-      ? 'Either Mint with ETH or your credit card below.'
-      : mintState === MintState.PROCESSING
-      ? 'Minting...'
-      : ''
+  const dialogContent = useMemo(() => {
+    switch (page) {
+      case ModalPage.MINT_ERROR:
+        return (
+          <MintError
+            setPage={setPage}
+            setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
+          />
+        )
+      case ModalPage.MINT_SUCCESS:
+        return (
+          <Success
+            setPage={setPage}
+            setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
+          />
+        )
+      case ModalPage.CROSS_MINT_FORM:
+      case ModalPage.CROSS_MINT_PENDING:
+      case ModalPage.CROSS_MINT_PAYMENT_FAILED:
+        return crossMintClientId ? (
+          <CrossMint
+            setPage={setPage}
+            page={page}
+            crossMintClientId={crossMintClientId}
+            quantity={quantity}
+            totalPrice={totalPrice}
+            orderIdentifier={crossMintOrderIdentifier}
+            setOrderIdentifier={setCrossMintOrderIdentifier}
+          />
+        ) : null
+      case ModalPage.NATIVE_MINTING_PENDING:
+      case ModalPage.NATIVE_MINT:
+        return (
+          <NativeMint
+            partnerIcon={partnerIcon}
+            partnerName={partnerName}
+            dropImage={dropImage}
+            dropName={dropName}
+            page={page}
+            setPage={setPage}
+            address={address}
+            quantity={quantity}
+            dropEndTime={dropEndTime}
+            creatorAddress={creatorAddress}
+            totalPrice={totalPrice}
+          />
+        )
+      case ModalPage.BRIDGE:
+      case ModalPage.BRIDGE_PENDING:
+      case ModalPage.BRIDGE_SUCCESS:
+        return <Bridge />
+      case ModalPage.INSUFFICIENT_FUNDS:
+        return <InsufficientFunds />
+      default:
+        return ''
+    }
+  }, [
+    address,
+    creatorAddress,
+    crossMintClientId,
+    crossMintOrderIdentifier,
+    dropEndTime,
+    dropImage,
+    dropName,
+    page,
+    partnerIcon,
+    partnerName,
+    quantity,
+    totalPrice,
+  ])
 
   return (
     <Dialog.Root>
@@ -125,129 +153,18 @@ export const MintDialog: FC<MintDialogProps> = ({
         <Button>{buttonTitle}</Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
-        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-lg px-6 py-8 bg-white focus:outline-none z-40 overflow-auto">
-          <div className="relative flex flex-col w-full items-center">
-            <Dialog.Title className="text-neutral-900 m-0 text-2xl font-medium">
-              {title}
-            </Dialog.Title>
-            <Dialog.Description className="text-black/50 gap-2 font-text font-medium mt-3">
-              {description}
-            </Dialog.Description>
-            <Dialog.Close asChild>
-              <button
-                className="text-black absolute top-0 right-0 inline-flex h-[32px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
-                aria-label="Close"
-              >
-                <Close />
-              </button>
-            </Dialog.Close>
-          </div>
-          <Separator className="my-6" />
-
-          {mintState === MintState.ERROR ? (
-            <div className="flex flex-col gap-6 items-center w-full">
-              <MintFailure />
-              <Button
-                onClick={() => {
-                  setMintState(MintState.INITIAL)
-                  setNftDetails(null)
-                  setOrderIdentifier('')
-                }}
-                className="!rounded-lg w-full"
-              >
-                Try again
-              </Button>
-            </div>
-          ) : mintState === MintState.PROCESSED ? (
-            <div className="flex flex-col gap-6 items-center w-full">
-              <MintSuccess />
-              <Dialog.Close asChild>
-                <Button
-                  className="!rounded-lg w-full"
-                  onClick={() => {
-                    setMintState(MintState.INITIAL)
-                    setNftDetails(null)
-                    setOrderIdentifier('')
-                  }}
-                >
-                  Return
-                </Button>
-              </Dialog.Close>
-            </div>
-          ) : (
-            <>
-              {mintState === MintState.PROCESSING ? (
-                <div className="flex flex-col gap-6 items-center w-full">
-                  <p>Minting...</p>
-                </div>
-              ) : null}
-              <div
-                className={clsx({ hidden: mintState === MintState.PROCESSING })}
-              >
-                <Button
-                  className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
-                  disabled={isDisabled}
-                  onClick={async () => {
-                    setMintState(MintState.PROCESSING)
-
-                    try {
-                      const result = await claimNft({
-                        to: userAddress,
-                        quantity: 1,
-                      })
-                      // @ts-expect-error
-                      const data = result[0] as { id: BigNumber }
-
-                      const id = BigNumber.from(data?.id)
-
-                      const tokenId = id.toString()
-                      setNftDetails({ address, tokenIds: [tokenId] })
-
-                      // TODO: Determine if result has success indicator?
-                      setMintState(MintState.PROCESSED)
-                    } catch {
-                      setMintState(MintState.ERROR)
-                    }
-                  }}
-                >
-                  <span>MINT WITH ETH</span>
-                </Button>
-                <Separator className="my-6" />
-                <div className="flex flex-col items-center justify-start">
-                  <CrossMintForm
-                    clientId={crossMintClientId}
-                    price={price}
-                    mintState={mintState}
-                    setMintState={setMintState}
-                    orderIdentifier={orderIdentifier}
-                    setOrderIdentifier={setOrderIdentifier}
-                    type={type}
-                  />
-                </div>
-              </div>
-            </>
-          )}
-          {nftDetails ? (
-            <div className="flex flex-col gap-2">
-              <p className="text-sm">Your NFT is ready:</p>
-              <div>
-                <b>Address :</b> {nftDetails.address}
-              </div>
-              <div>
-                <b>Token IDs :</b>{' '}
-                {nftDetails.tokenIds.map((id) => id).join(', ')}
-              </div>
-              {/* <a
-                className="text-sm text-blue-500"
-                href={`https://opensea.io/assets/${nftDetails.address}/${nftDetails.tokenId}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on OpenSea
-              </a> */}
-            </div>
-          ) : null}
+        <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 overflow-auto">
+          <Dialog.Close asChild>
+            <button
+              className="hidden md:inline-flex absolute top-10 right-10 h-[24px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_1px] focus:outline-none"
+              aria-label="Close"
+            >
+              <Close />
+              <span className="sr-only">Close</span>
+            </button>
+          </Dialog.Close>
+          {dialogContent}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

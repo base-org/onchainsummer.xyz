@@ -4,9 +4,8 @@ import {
   CheckoutEventMap,
 } from '@crossmint/client-sdk-react-ui'
 import { useAddress } from '@thirdweb-dev/react'
-import { MintState } from './MintDialog'
 import { isProd } from '@/config/chain'
-import { DropType } from '@/config/partners/types'
+import { ModalPage } from '../../types'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -21,33 +20,34 @@ function isPaymentProcessedPayload(
 
 interface CrossMintFormProps {
   clientId: string
-  type: DropType
-  price: string
-  mintState: MintState
-  setMintState: React.Dispatch<MintState>
+  page: ModalPage
+  setPage: React.Dispatch<ModalPage>
   orderIdentifier: string
   setOrderIdentifier: React.Dispatch<string>
+  quantity: number
+  totalPrice: string
 }
 
 const environment = isProd ? 'production' : 'staging'
 
 export const CrossMintForm: FC<CrossMintFormProps> = ({
   clientId,
-  price,
-  mintState,
-  setMintState,
+  page,
+  setPage,
   orderIdentifier,
   setOrderIdentifier,
-  type,
+  quantity,
+  totalPrice,
 }) => {
-  const paymentProcessing = mintState === MintState.PROCESSING
+  const [prepared, setPrepared] = useState(false)
+  const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
   const walletAddress = useAddress()
   const [email, setEmail] = useState('')
 
   return (
     <>
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
-      {mintState === MintState.PREPARED_CM ? (
+      {prepared ? (
         <div className="w-full max-w-[300px] flex flex-col gap-1 mb-2.5 font-inter mt-0.5 ml-0.5 mr-0.5 px-0.5">
           <label
             htmlFor="crossmint-email"
@@ -74,9 +74,8 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
         mintConfig={{
-          type,
-          quantity: '1',
-          totalPrice: price,
+          quantity,
+          totalPrice,
         }}
         uiConfig={{
           fontSizeBase: '1rem',
@@ -88,16 +87,16 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
           switch (event.type) {
             case 'payment:preparation.succeeded':
               if (!paymentProcessing) {
-                setMintState(MintState.PREPARED_CM)
+                setPrepared(true)
               }
               break
             case 'payment:process.started':
               // Triggered when the user has finished entering their card details and clicked Pay.
-              setMintState(MintState.PROCESSING)
+              setPage(ModalPage.CROSS_MINT_PENDING)
               break
             case 'quote:status.changed':
               if (!paymentProcessing) {
-                setMintState(MintState.PREPARED_CM)
+                setPrepared(true)
               }
               // Triggered when the price is calculated or if the price changes.
               break
@@ -114,11 +113,11 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               break
             case 'payment:process.rejected':
               // Triggered if a user's card has been rejected.
-              setMintState(MintState.REJECTED)
+              setPage(ModalPage.CROSS_MINT_PAYMENT_FAILED)
               break
             case 'payment:preparation.failed':
-              // Triggered if a failure has occurred after checkout.
-              setMintState(MintState.ERROR)
+              // TODO: Inform error
+              setPage(ModalPage.MINT_ERROR)
               break
           }
         }}
