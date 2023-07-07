@@ -30,7 +30,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
         } else {
           return (
             <span>
-              {hours}:{minutes}:{seconds}
+              {hours}H:{minutes}M:{seconds}S
             </span>
           )
         }
