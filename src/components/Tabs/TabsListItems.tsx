@@ -16,29 +16,26 @@ export const TabsListItems: FC<TabsListItemsProps> = ({
   return (
     <>
       <Tabs.Trigger
-        className="text-neutral-600 data-[state=active]:border-b-[2px] data-[state=active]:text-neutral-950 border-neutral-950 relative top-[1px]"
+        className="text-neutral-900 data-[state=active]:bg-[#FCD22D] px-2 pt-6 pb-4 md:px-4 rounded-2xl relative"
         value="tab1"
       >
-        <div className="flex items-center">
-          Upcoming{' '}
-          <div className="w-5 h-5 text-[12px] bg-neutral-950 text-white rounded-full flex items-center justify-center mx-2">
-            <span className="text-center">{upcomingLength}</span>
+        <div className="flex items-center text-2xl md:text-[32px] font-light ">
+          upcoming{' '}
+          <div className="px-[4px] py-[1px] text-[12px] bg-neutral-950 text-white rounded-xl flex items-center justify-center mx-2 relative bottom-3">
+            <span className="text-center text-lg">{upcomingLength}</span>
           </div>
         </div>
-
-        <div className="py-1" />
       </Tabs.Trigger>
       <Tabs.Trigger
-        className="text-neutral-600 data-[state=active]:border-b-[2px] data-[state=active]:text-neutral-950 border-neutral-950 relative top-[1px]"
+        className="text-neutral-900 data-[state=active]:bg-[#FCD22D] px-2 pt-6 pb-4 md:px-4 rounded-2xl relative"
         value="tab2"
       >
-        <div className="flex items-center">
-          Past{' '}
-          <div className="w-5 h-5 text-[12px] bg-neutral-300 text-neutral-600 rounded-full flex items-center justify-center mx-2">
-            <span className="text-center">{pastLength}</span>
+        <div className="flex items-center text-2xl md:text-[32px] font-light">
+          past{' '}
+          <div className="px-[4px] py-[1px] text-[12px] bg-neutral-950 text-white rounded-xl flex items-center justify-center mx-2 relative bottom-3">
+            <span className="text-center text-lg">{pastLength}</span>
           </div>
         </div>
-        <div className="py-1" />
       </Tabs.Trigger>
     </>
   )
