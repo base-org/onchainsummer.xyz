@@ -11,6 +11,7 @@ import { Card } from '../Card'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
+import { Close } from '../icons/Close'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { brandColor, name, description, iconInverse, drop },

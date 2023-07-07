@@ -9,12 +9,16 @@ module.exports = {
     extend: {
       colors: {
         'timer-active': '#26D356',
+        'button-dark-bg': '#151515',
+        'button-dark-text': '#FFFFFF',
+        'button-dark-hover-bg': '#444444',
+        'button-light-bg': '#EFEFEF',
+        'button-light-text': '#151515',
+        'button-light-hover-bg': '#BFBFBF',
+        'button-text-text': '#858585',
       },
       boxShadow: {
         card: '6px 6px 0px #010101',
-        button:
-          '0px 1px 2px rgba(0, 0, 0, 0.12), 0px 0px 0px rgba(0, 0, 0, 0.08)',
-        'trending-card': '12px 12px 0px #010101',
         crossMintEmail:
           '0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(0, 0, 0, 0.02)',
         crossMintEmailFocus:

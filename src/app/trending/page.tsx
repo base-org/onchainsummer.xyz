@@ -174,7 +174,6 @@ export default function Trending() {
                         <MintDotFunMinter mintStatus={mintStatus} />
                         <Button
                           size="SMALL"
-                          variant="SECONDARY"
                           className="grow lg:grow-0 text-2xl"
                           href={externalURL}
                         >
