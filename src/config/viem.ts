@@ -15,7 +15,7 @@ export const getWalletClient = async () => {
 
   client = createWalletClient({
     chain: isProd ? mainnet : goerli,
-
+    // @ts-expect-error
     transport: custom(window.ethereum),
   })
 
