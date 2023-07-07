@@ -42,17 +42,13 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
           </h3>
           <h2 className="text-[32px] leading-8 mb-4">{name}</h2>
           <p className="text-neutral-600 leading-7 mb-8">{description}</p>
-          <div className="h-full flex items-end flex-row">
-            <div className="mr-4 relative bottom-1">
-              <Clock />
-            </div>
-            <div className="flex flex-col text-[#0052FF] text-[14px]">
-              <div>
-                <p className="font-mono font-medium uppercase ">Launches</p>
-              </div>
-              <Countdown date={endDate} completedText={'Drop Ended'} />
-            </div>
-          </div>
+
+          <Countdown
+            date={endDate}
+            completedText={'Drop Ended'}
+            title="Launches"
+            className="text-ocs-blue"
+          />
         </div>
       </div>
     </>

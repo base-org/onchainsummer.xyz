@@ -59,7 +59,12 @@ export const NativeMint: FC<NativeMintProps> = ({
           {shortenAddress(creatorAddress)}
         </span>
         <Separator className="bg-ocs-red" />
-        <Countdown completedText="Drop Ended" date={dropEndTime} />
+        <Countdown
+          title="Ends"
+          completedText="Drop Ended"
+          date={dropEndTime}
+          className="text-ocs-red"
+        />
       </Dialog.Description>
       <NativeMintButton
         page={page}
