@@ -6,7 +6,7 @@ import classes from './styles.module.css'
 import Link from 'next/link'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
+  variant?: 'DARK' | 'LIGHT' | 'TEXT' | 'ROUND'
   size?: 'SMALL' | 'LARGE'
   className?: string
   children: React.ReactNode
@@ -16,7 +16,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      variant = 'PRIMARY',
+      variant = 'DARK',
       size = 'LARGE',
       className = '',
       children,
@@ -28,29 +28,29 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const isPrimary = variant === 'PRIMARY'
-    const isSecondary = variant === 'SECONDARY'
-    const isTertiary = variant === 'TERTIARY'
+    const isDark = variant === 'DARK'
+    const isLight = variant === 'LIGHT'
+    const isText = variant === 'TEXT'
+    const isRound = variant === 'ROUND'
     const isSmall = size === 'SMALL'
     const isLarge = size === 'LARGE'
 
+    const buttonClassName = clsx(
+      classes['button'],
+      { [classes['button-dark']]: isDark || isRound },
+      {
+        [classes['button-light']]: isLight,
+      },
+      { [classes['button-text']]: isText },
+      { [classes['button-round']]: isRound },
+      { [classes['button-small']]: isSmall },
+      { [classes['button-large']]: isLarge },
+      className
+    )
+
     if (href) {
       return (
-        <Link
-          href={href}
-          className={clsx(
-            classes['button'],
-            { [classes['button-primary']]: isPrimary },
-            {
-              [classes['button-secondary']]: isSecondary,
-            },
-            { [classes['button-tertiary']]: isTertiary },
-            { [classes['button-small']]: isSmall },
-            { [classes['button-large']]: isLarge },
-            className
-          )}
-          aria-disabled={disabled}
-        >
+        <Link href={href} className={buttonClassName} aria-disabled={disabled}>
           {children}
         </Link>
       )
@@ -59,17 +59,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={clsx(
-          classes['button'],
-          { [classes['button-primary']]: isPrimary },
-          {
-            [classes['button-secondary']]: isSecondary,
-          },
-          { [classes['button-tertiary']]: isTertiary },
-          { [classes['button-small']]: isSmall },
-          { [classes['button-large']]: isLarge },
-          className
-        )}
+        className={buttonClassName}
         aria-disabled={disabled}
         type={type}
         onClick={disabled ? () => {} : onClick}

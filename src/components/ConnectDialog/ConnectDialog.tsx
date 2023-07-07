@@ -126,7 +126,6 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
           </div>
           <Separator className="my-6" />
           <Button
-            variant="SECONDARY"
             className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
             onClick={async () => {
               await connect(preferredWallet.config)
@@ -139,7 +138,6 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
             {otherWallets.map((wallet) => (
               <Button
                 key={wallet.slug}
-                variant="SECONDARY"
                 className="!flex text-black text-lg font-medium w-full justify-between rounded-lg !border !border-neutral-100 !bg-white"
                 onClick={async () => {
                   await connect(wallet.config)

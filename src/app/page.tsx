@@ -22,11 +22,7 @@ const Home = async () => {
           <div className="mt-6 lg:mt-3 lg:columns-2 lg:gap-20">
             <p>{drop.writeup.sections[0].contents[0]}</p>
             <Separator className="mt-6 lg:hidden" />
-            <Button
-              variant="SECONDARY"
-              className="w-full mt-6"
-              href="/partners/open-sea"
-            >
+            <Button className="w-full mt-6" href="/partners/open-sea">
               Read More
             </Button>
           </div>
