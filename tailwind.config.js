@@ -16,6 +16,9 @@ module.exports = {
         'button-light-text': '#151515',
         'button-light-hover-bg': '#BFBFBF',
         'button-text-text': '#858585',
+        'ocs-pink': '#FF7DCB',
+        'ocs-black': '#151515',
+        'ocs-red': '#FF2D2D',
       },
       boxShadow: {
         card: '6px 6px 0px #010101',
@@ -23,6 +26,8 @@ module.exports = {
           '0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(0, 0, 0, 0.02)',
         crossMintEmailFocus:
           '0 0 0 3px hsla(210, 96%, 45%, 25%), 0 1px 1px 0 rgba(0, 0, 0, 0.08)',
+        large:
+          '0px 2px 30px 0px rgba(0, 0, 0, 0.15), 0px 0px 4px 0px rgba(0, 0, 0, 0.15)',
       },
       fontFamily: {
         sans: ['var(--font-coinbase-sans)'],
