@@ -98,16 +98,16 @@ export default function RootLayout({
   const cookieStore = cookies()
   const password = cookieStore.get('ocspw')
 
-  if (!password) {
-    return (
-      <html lang="en" className="flex flex-col h-full">
-        <body>
-          <h1>Password</h1>
-          <Password />
-        </body>
-      </html>
-    )
-  }
+  // if (!password) {
+  //   return (
+  //     <html lang="en" className="flex flex-col h-full">
+  //       <body>
+  //         <h1>Password</h1>
+  //         <Password />
+  //       </body>
+  //     </html>
+  //   )
+  // }
 
   return (
     <ThirdWebProviderClient>
