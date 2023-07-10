@@ -70,12 +70,12 @@ export default function Trending() {
   const collections = data?.collections
 
   return (
-    <main className="mx-6 mt-6">
+    <main className="mx-6 mt-12">
       <section className="max-w-screen-xl mx-auto">
         <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
           <div className="basis-1/2">
             <UpArrow />
-            <h1 className="text-[32px] md:text-[40px] md:leading-[50px] md:my-6">
+            <h1 className="text-[32px] md:text-[40px] md:leading-[50px] my-6">
               Trending
             </h1>
             <p className="text-sm md:text-xl my-2 font-light">
@@ -129,9 +129,9 @@ export default function Trending() {
             </div>
           </div>
         </div>
-        <div className="p-3 md:p-6 mt-8 mb-20 bg-gray-200/80 rounded-2xl">
+        <div className="p-3 md:p-6 mt-8 mb-32 bg-gray-200/80 rounded-2xl">
           {isLoading
-            ? Array.from({ length: 10 }, (_, index) => (
+            ? Array.from({ length: 5 }, (_, index) => (
                 <CollectionPlaceholder key={index} />
               ))
             : collections?.map(
@@ -148,28 +148,28 @@ export default function Trending() {
                 ) => (
                   <div
                     key={idx}
-                    className="w-full mb-6 last:mb-0 bg-white rounded-2xl px-3 py-6"
+                    className="w-full mb-6 last:mb-0 bg-white rounded-2xl p-6"
                   >
                     <div className="flex flex-wrap">
                       <div className="flex flex-row flex-wrap lg:basis-[55%] order-1 w-full">
-                        <div className="flex basis-full mb-3 overflow-hidden">
-                          <div className="flex items-center">
-                            <p className="text-neutral-400 mr-3 md:mr-[29px] font-medium text-base md:text-lg">
+                        <div className="flex flex-wrap md:flex-nowrap basis-full md:mb-3 overflow-hidden">
+                          <div className="flex items-center w-full md:w-auto">
+                            <p className="text-neutral-400 mr-3 md:mr-[29px] text-mono md:text-lg">
                               #{idx + 1}
                             </p>
                           </div>
-                          <h3 className="text-black font-sans font-medium text-[20px] md:text-2xl whitespace-normal overflow-hidden break-all">
+                          <h3 className="text-black text-[20px] md:text-2xl whitespace-normal overflow-hidden break-all">
                             {name}
                           </h3>
                         </div>
                         <div className="basis-full whitespace-normal overflow-hidden break-all">
-                          <p className="text-neutral-600 font-text text-sm md:text-base font-medium lg:ml-[54px]">
-                            {deployer} • {mintsLastHour} mints last hour •{' '}
+                          <p className="text-[#858585] font-mono text-sm md:text-base lg:ml-[54px]">
+                            {mintsLastHour} mints last hour •{' '}
                             {formatEther(BigInt(mintStatus.price))} ETH
                           </p>
                         </div>
                       </div>
-                      <div className="flex gap-2 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full max-h-[50px]">
+                      <div className="flex gap-4 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full max-h-[50px]">
                         <MintDotFunMinter mintStatus={mintStatus} />
                         <Button
                           size="SMALL"
