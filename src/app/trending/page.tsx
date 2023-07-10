@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
-import { Separator } from '@/components/Separator'
 import { useQuery } from 'react-query'
 import { MintDotFunMinter } from '@/components/MintDotFunMinter/MintDotFunMinter'
 import { useAddress } from '@thirdweb-dev/react'
@@ -12,6 +11,7 @@ import { ThirdWeb } from '@/components/icons/ThirdWeb'
 import { Zora } from '@/components/icons/Zora'
 import { Manifold } from '@/components/icons/Manifold'
 import { MintDotFun } from '@/components/icons/MintDotFun'
+import { UpArrow } from '@/components/icons/UpArrow'
 
 interface Mint {
   imageURI: string
@@ -73,30 +73,28 @@ export default function Trending() {
     <main className="mx-6 mt-6">
       <section className="max-w-screen-xl mx-auto">
         <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
-          <div>
-            <h1 className="font-medium text-[32px] md:text-[40px] md:leading-[50px]">
-              <span className="text-transparent bg-clip-text bg-blue-gradient">
-                Onchain{' '}
-              </span>
-              trending
+          <div className="basis-1/2">
+            <UpArrow />
+            <h1 className="text-[32px] md:text-[40px] md:leading-[50px] md:my-6">
+              Trending
             </h1>
-            <p className="text-sm md:text-xl text-[#010101] opacity-50 my-2 font-medium font-text">
+            <p className="text-sm md:text-xl my-2 font-light">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod <br />
-              tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+              erat volutpat.
             </p>
             <div className="flex items-center">
-              <p className="text-xl text-[#010101] opacity-50 mr-3 font-medium font-text my-2">
+              <p className="text-xl text-[#010101] opacity-50 mr-3 font-mono uppercase my-2">
                 Powered by{' '}
               </p>
               <MintDotFun />
               <span className="sr-only">mint.fun</span>
             </div>
           </div>
-          <div>
+          <div className="basis-1/2 flex justify-end">
             <div>
-              <p className="text-neutral-500 text-sm md:text-lg mb-4 font-text font-medium">
-                Join the party. Create on Base.
+              <p className="text-neutral-800 text-sm mb-4 font-mono">
+                Create on Base.
               </p>
 
               <div className="flex gap-1 sm:gap-2 lg:gap-7">
@@ -131,8 +129,7 @@ export default function Trending() {
             </div>
           </div>
         </div>
-        <Separator className="mt-6 md:mt-8" />
-        <div className="px-5 py-6 md:pl-8 lg:pr-[60px] md:py-10 border border-neutral-900 z-50 shadow-trending-card mt-8 mb-20">
+        <div className="p-3 md:p-6 mt-8 mb-20 bg-gray-200/80 rounded-2xl">
           {isLoading
             ? Array.from({ length: 10 }, (_, index) => (
                 <CollectionPlaceholder key={index} />
@@ -142,7 +139,6 @@ export default function Trending() {
                   {
                     name,
                     deployer,
-                    contract,
                     mintsLastHour,
                     recentMints,
                     mintStatus,
@@ -150,7 +146,10 @@ export default function Trending() {
                   },
                   idx
                 ) => (
-                  <div key={idx} className="w-full mb-[72px] last:mb-0">
+                  <div
+                    key={idx}
+                    className="w-full mb-6 last:mb-0 bg-white rounded-2xl px-3 py-6"
+                  >
                     <div className="flex flex-wrap">
                       <div className="flex flex-row flex-wrap lg:basis-[55%] order-1 w-full">
                         <div className="flex basis-full mb-3 overflow-hidden">
@@ -174,7 +173,8 @@ export default function Trending() {
                         <MintDotFunMinter mintStatus={mintStatus} />
                         <Button
                           size="SMALL"
-                          className="grow lg:grow-0 text-2xl"
+                          className="grow lg:grow-0 uppercase border border-1 border-black !bg-white"
+                          variant="LIGHT"
                           href={externalURL}
                         >
                           View More
@@ -198,6 +198,7 @@ export default function Trending() {
                               width={65}
                               height={65}
                               priority
+                              className="rounded-xl"
                             />
                           </div>
                         ))}
