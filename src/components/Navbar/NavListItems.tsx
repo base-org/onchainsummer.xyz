@@ -7,24 +7,37 @@ type NavListItemsProps = {}
 
 export const NavListItems: FC<NavListItemsProps> = ({}) => {
   return (
-    <>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link asChild>
-          <Link href="/" className="font-medium">
-            Home
-          </Link>
-        </NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link asChild>
-          <Link href="/trending" className="font-medium">
-            Trending
-          </Link>
-        </NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item asChild>
-        <Wallet />
-      </NavigationMenu.Item>
-    </>
+    <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-0">
+      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-6">
+        <NavigationMenu.Item className="my-2">
+          <NavigationMenu.Link asChild>
+            <Link
+              href="/"
+              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-3"
+            >
+              Home
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link asChild>
+            <Link
+              href="/trending"
+              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-3"
+            >
+              Trending
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-4">
+        <p className="uppercase font-mono text-zinc-400">
+          Celebration of Onchain Fun
+        </p>
+        <NavigationMenu.Item asChild>
+          <Wallet />
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+    </div>
   )
 }

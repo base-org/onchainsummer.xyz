@@ -37,8 +37,10 @@ module.exports = {
           'linear-gradient(90deg, #309FA7 0%, #9060FF 50%, #0052FF 100%)',
         'yellow-gradient':
           'linear-gradient(336.54deg, #FF912C -67.93%, #FFEA2D 99.39%)',
-        'footer-gradient': 'url(/footer-gradient.png)',
-        'footer-gradient-mobile': 'url(/footer-gradient-mobile.png)',
+        'footer-gradient':
+          'linear-gradient(to bottom, #0052FF 0%, #0052FF 20%, #54DCE7 20%, #54DCE7 40%, #735DFF 40%, #735DFF 60%, #FCD22D 60%, #FCD22D 80%, #FF7DCB 80%, #FF7DCB 100%)',
+        'footer-background-gradient':
+          'linear-gradient(to bottom, #FCD22D 0%, #FCD22D 5%, #FF7DCB 5%, #FF7DCB 7.5%, #0052FF 7.5%, #0052FF 10%, #FCD22D 10%, #FCD22D 12.5%, #735DFF 12.5%, #735DFF 15%, #FF7DCB 15%, #FF7DCB 17.5%, #735DFF 17.5%, #735DFF 20%, #54DCE7 20%, #54DCE7 22.5%, #FCD22D 22.5%, #FCD22D 32.5%, #735DFF 32.5%, #735DFF 50%,  #0052FF 50%, #0052FF 100%)',
       },
       keyframes: {
         overlayShow: {
