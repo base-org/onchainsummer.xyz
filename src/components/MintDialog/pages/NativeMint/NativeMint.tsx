@@ -3,16 +3,11 @@ import * as Dialog from '@radix-ui/react-dialog'
 import Image from 'next/image'
 import { NativeMintButton } from '../../elements/NativeMintButton'
 import { ModalPage } from '../../types'
-import { Separator } from '@/components/Separator'
-import { Countdown } from '@/components/Countdown'
-import { AddressPill } from '@/components/AddressPill'
 import { Button } from '@/components/Button'
-import { ArrowRight } from '@/components/icons/ArrowRight'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
 import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
-import { Layout } from '../../elements/Layout'
 
 interface NativeMintProps {
   page: ModalPage
@@ -36,7 +31,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   const isPending = page === ModalPage.NATIVE_MINTING_PENDING
 
   return (
-    <Layout>
+    <>
       <div className={clsx({ hidden: !isPending })}>
         <Dialog.Title className="sr-only">Mint Tx Pending</Dialog.Title>
         <Dialog.Description className="flex flex-col w-full gap-4">
@@ -82,6 +77,6 @@ export const NativeMint: FC<NativeMintProps> = ({
           Buy with credit card
         </Button>
       </div>
-    </Layout>
+    </>
   )
 }

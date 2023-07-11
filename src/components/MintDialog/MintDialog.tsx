@@ -15,6 +15,7 @@ import { Bridge } from './pages/Bridge'
 import { InsufficientFunds } from './pages/InsufficientFunds'
 import { ArrowRight } from '../icons/ArrowRight'
 import { useMintDialogContext } from './Context/useMintDialogContext'
+import { Layout } from './elements/Layout'
 
 export type TxDetails = {
   hash: string
@@ -141,17 +142,17 @@ export const MintDialog: FC = () => {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
-        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 overflow-auto">
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 overflow-auto lg:p-16">
           <Dialog.Close asChild>
             <button
-              className="hidden md:inline-flex absolute top-10 right-10 h-[24px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_1px] focus:outline-none"
+              className="hidden lg:inline-flex absolute top-10 right-10 h-[24px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_1px] focus:outline-none"
               aria-label="Close"
             >
               <Close />
               <span className="sr-only">Close</span>
             </button>
           </Dialog.Close>
-          {dialogContent}
+          <Layout>{dialogContent}</Layout>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

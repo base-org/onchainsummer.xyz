@@ -4,11 +4,9 @@ import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
-import Image from 'next/image'
 import { AddressPill } from '@/components/AddressPill'
 import { isProd } from '@/config/chain'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
-import { Layout } from '../../elements/Layout'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 interface SuccessProps {
@@ -27,7 +25,7 @@ export const Success: FC<SuccessProps> = ({
   const { dropImage, dropName, partnerIcon, partnerName, creatorAddress } =
     useMintDialogContext()
   return (
-    <Layout>
+    <>
       <PartnerInfo />
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title className="text-[32px]">It&apos;s Yours!</Dialog.Title>
@@ -52,6 +50,6 @@ export const Success: FC<SuccessProps> = ({
           View on BaseScan
         </Button>
       </Dialog.Close>
-    </Layout>
+    </>
   )
 }

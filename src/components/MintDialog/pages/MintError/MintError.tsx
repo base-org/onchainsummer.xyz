@@ -2,14 +2,12 @@ import { Button } from '@/components/Button'
 
 import { FC, useMemo } from 'react'
 import { ModalPage } from '../../types'
-import Image from 'next/image'
 import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowRight } from '@/components/icons/ArrowRight'
 import { useAddress, useBalance } from '@thirdweb-dev/react'
 import { useDifference } from '../../elements/useDifference'
 import { Copy } from '@/components/icons/Copy'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
-import { Layout } from '../../elements/Layout'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 interface MintErrorProps {
@@ -122,7 +120,7 @@ export const MintError: FC<MintErrorProps> = ({
   }, [reason, setPage])
 
   return (
-    <Layout>
+    <>
       <PartnerInfo />
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title className="text-[32px]">{title}</Dialog.Title>
@@ -130,6 +128,6 @@ export const MintError: FC<MintErrorProps> = ({
         {content}
       </Dialog.Description>
       {actions}
-    </Layout>
+    </>
   )
 }
