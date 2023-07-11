@@ -11,6 +11,8 @@ import { Card } from '../Card'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
+import { AddressPill } from '../AddressPill'
+import { Countdown } from '@/components/Countdown'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { brandColor, name, description, iconInverse, drop, icon },
@@ -72,6 +74,14 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           </div>
           <Separator />
           <p className="text-neutral-600 font-text">{drop.description}</p>
+          <AddressPill address={drop.createdBy} />
+          <Separator className="bg-ocs-red" />
+          <Countdown
+            title="Ends"
+            completedText="Drop Ended"
+            date={drop.endDate}
+            className="text-ocs-red"
+          />
           {drop.externalLink ? (
             <Button href={drop.externalLink}>Mint {drop.price} ETH</Button>
           ) : (

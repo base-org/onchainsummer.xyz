@@ -3,6 +3,7 @@ import { Button } from '../../Button'
 import { ModalPage } from '../types'
 import { useAddress, useClaimNFT, useContract } from '@thirdweb-dev/react'
 import { BigNumber } from 'ethers'
+import { TxDetails } from '../MintDialog'
 
 interface NativeMintButtonProps {
   page: ModalPage
@@ -10,6 +11,8 @@ interface NativeMintButtonProps {
   address: string
   quantity: number
   totalPrice: string
+  setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
+  setMintError: React.Dispatch<React.SetStateAction<any | null>>
 }
 
 export const NativeMintButton: FC<NativeMintButtonProps> = ({
@@ -18,6 +21,8 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   address,
   quantity,
   totalPrice,
+  setTxDetails,
+  setMintError,
 }) => {
   const userAddress = useAddress()
   const { data: contract } = useContract(address)
@@ -38,16 +43,23 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
             quantity,
           })
           // @ts-expect-error
-          const data = result[0] as { id: BigNumber }
+          const data = result[0] as {
+            id: BigNumber
+            receipt: { transactionHash: string }
+          }
 
           const id = BigNumber.from(data?.id)
 
           const tokenId = id.toString()
-          // setNftDetails({ address, tokenIds: [tokenId] })
+          setTxDetails((prev) => ({
+            hash: data?.receipt?.transactionHash,
+            nft: { address, tokenIds: [tokenId] },
+          }))
 
           setPage(ModalPage.MINT_SUCCESS)
-        } catch {
+        } catch (e) {
           // TODO: Inform error
+          setMintError(e)
           setPage(ModalPage.MINT_ERROR)
         }
       }}

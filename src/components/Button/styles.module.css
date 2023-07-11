@@ -1,5 +1,5 @@
 .button {
-  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px];
+  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase;
 }
 
 .button-small {
@@ -15,11 +15,11 @@
 }
 
 .button-light {
-  @apply text-button-light-text bg-button-light-bg hover:bg-button-light-hover-bg;
+  @apply text-button-light-text bg-button-light-bg hover:bg-button-light-hover-bg border border-black;
 }
 
 .button-text {
-  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text hover:border-b border-button-text-text;
+  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text hover:border-b border-button-text-text capitalize;
 }
 
 .button-round {

@@ -1,3 +1,4 @@
+import { Loading } from '@/components/icons/Loading'
 import clsx from 'clsx'
 import { FC } from 'react'
 
@@ -8,11 +9,12 @@ interface PendingProps {
 export const Pending: FC<PendingProps> = ({ isPending }) => {
   return (
     <div
-      className={clsx('flex flex-col gap-6 items-center w-full', {
+      className={clsx('flex flex-col gap-6 items-center w-full my-40', {
         hidden: !isPending,
       })}
     >
-      <p>Minting...</p>
+      <Loading className="animate-spin" />
+      <span className="text-2xl">Loading Transaction</span>
     </div>
   )
 }

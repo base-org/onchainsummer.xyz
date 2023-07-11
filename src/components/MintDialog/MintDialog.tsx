@@ -13,36 +13,25 @@ import { CrossMint } from './pages/CrossMint'
 import { NativeMint } from './pages/NativeMint'
 import { Bridge } from './pages/Bridge'
 import { InsufficientFunds } from './pages/InsufficientFunds'
+import { ArrowRight } from '../icons/ArrowRight'
+import { useMintDialogContext } from './Context/useMintDialogContext'
 
-export interface MintDialogProps {
-  address: Address
-  crossMintClientId?: string
-  price: string
-  partnerIcon: string
-  partnerName: string
-  dropImage: string
-  dropName: string
-  dropEndTime: number
-  creatorAddress: string
-}
-
-export const MintDialog: FC<MintDialogProps> = ({
-  price,
-  address,
-  crossMintClientId,
-  partnerIcon,
-  partnerName,
-  dropImage,
-  dropName,
-  dropEndTime,
-  creatorAddress,
-}) => {
-  const [page, setPage] = useState(ModalPage.NATIVE_MINT)
-
-  const [nftDetails, setNftDetails] = useState<{
+export type TxDetails = {
+  hash: string
+  nft: {
     address: string
     tokenIds: string[]
-  } | null>(null)
+  }
+}
+
+export const MintDialog: FC = () => {
+  const { price, crossMintClientId } = useMintDialogContext()
+
+  const [open, setOpen] = useState(false)
+  const [page, setPage] = useState(ModalPage.NATIVE_MINT)
+
+  const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
+  const [mintError, setMintError] = useState<any | null>(null)
 
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
@@ -58,7 +47,11 @@ export const MintDialog: FC<MintDialogProps> = ({
       case ModalPage.NATIVE_MINTING_PENDING:
         return 'Minting...'
       case ModalPage.NATIVE_MINT:
-        return `Mint (${price} ETH)`
+        return (
+          <>
+            Mint (${price} ETH) <ArrowRight />
+          </>
+        )
       case ModalPage.BRIDGE:
         return 'Bridge'
       case ModalPage.BRIDGE_PENDING:
@@ -81,8 +74,10 @@ export const MintDialog: FC<MintDialogProps> = ({
       case ModalPage.MINT_ERROR:
         return (
           <MintError
+            mintError={mintError}
             setPage={setPage}
             setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
+            totalPrice={totalPrice}
           />
         )
       case ModalPage.MINT_SUCCESS:
@@ -90,6 +85,8 @@ export const MintDialog: FC<MintDialogProps> = ({
           <Success
             setPage={setPage}
             setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
+            txHash={txDetails?.hash ?? ''}
+            closeModal={() => setOpen(false)}
           />
         )
       case ModalPage.CROSS_MINT_FORM:
@@ -110,17 +107,12 @@ export const MintDialog: FC<MintDialogProps> = ({
       case ModalPage.NATIVE_MINT:
         return (
           <NativeMint
-            partnerIcon={partnerIcon}
-            partnerName={partnerName}
-            dropImage={dropImage}
-            dropName={dropName}
             page={page}
             setPage={setPage}
-            address={address}
             quantity={quantity}
-            dropEndTime={dropEndTime}
-            creatorAddress={creatorAddress}
             totalPrice={totalPrice}
+            setTxDetails={setTxDetails}
+            setMintError={setMintError}
           />
         )
       case ModalPage.BRIDGE:
@@ -133,22 +125,17 @@ export const MintDialog: FC<MintDialogProps> = ({
         return ''
     }
   }, [
-    address,
-    creatorAddress,
     crossMintClientId,
     crossMintOrderIdentifier,
-    dropEndTime,
-    dropImage,
-    dropName,
+    mintError,
     page,
-    partnerIcon,
-    partnerName,
     quantity,
     totalPrice,
+    txDetails,
   ])
 
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <Button>{buttonTitle}</Button>
       </Dialog.Trigger>
