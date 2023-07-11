@@ -123,7 +123,7 @@ export const MintError: FC<MintErrorProps> = ({
     <>
       <PartnerInfo />
       {/* TODO: Add Coinbase Display font */}
-      <Dialog.Title className="text-[32px]">{title}</Dialog.Title>
+      <Dialog.Title className="text-[32px] lg:mt-4">{title}</Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
         {content}
       </Dialog.Description>

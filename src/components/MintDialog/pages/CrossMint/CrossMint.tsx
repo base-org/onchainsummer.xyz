@@ -6,6 +6,7 @@ import { isTransactionFulfillmentPayload } from './helpers'
 import { CrossMintForm } from './CrossMintForm'
 import clsx from 'clsx'
 import { Pending } from '../../elements/Pending'
+import { Button } from '@/components/Button'
 
 interface CrossMintProps {
   page: ModalPage
@@ -58,6 +59,14 @@ export const CrossMint: FC<CrossMintProps> = ({
     <>
       <Pending isPending={isPending} />
       <div className={clsx({ hidden: isPending })}>
+        <Button
+          variant="TEXT"
+          onClick={() => {
+            setPage(ModalPage.NATIVE_MINT)
+          }}
+        >
+          {'<'} Back
+        </Button>
         <CrossMintForm
           page={page}
           orderIdentifier={orderIdentifier}

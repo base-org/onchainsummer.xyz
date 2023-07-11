@@ -8,6 +8,8 @@ import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
 import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
+import { AddressPill } from '@/components/AddressPill'
+import { PartnerInfo } from '../../elements/PartnerInfo'
 
 interface NativeMintProps {
   page: ModalPage
@@ -26,32 +28,25 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
 }) => {
-  const { dropImage, dropName, partnerIcon, partnerName, address } =
+  const { creatorAddress, dropName, partnerIcon, partnerName, address } =
     useMintDialogContext()
   const isPending = page === ModalPage.NATIVE_MINTING_PENDING
 
   return (
     <>
-      <div className={clsx({ hidden: !isPending })}>
-        <Dialog.Title className="sr-only">Mint Tx Pending</Dialog.Title>
-        <Dialog.Description className="flex flex-col w-full gap-4">
-          <Pending isPending={isPending} />
-        </Dialog.Description>
-      </div>
+      <PartnerInfo />
+      {/* TODO: Add Coinbase Display font */}
+      <Dialog.Title className="text-[32px] lg:mt-2">
+        {isPending ? 'Mint Tx Pending' : dropName}
+      </Dialog.Title>
+
+      <Pending isPending={isPending} />
+
       <div
-        className={clsx('flex flex-col w-full gap-4', {
-          hidden: isPending,
-        })}
+        className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
       >
-        <div className="flex gap-2">
-          <div className="relative z-20 h-6 w-6">
-            <Image src={partnerIcon} alt={`${partnerName} Icon`} fill />
-          </div>
-          <span className="font-medium">{partnerName}</span>
-        </div>
-        {/* TODO: Add Coinbase Display font */}
-        <Dialog.Title className="text-[32px]">{dropName}</Dialog.Title>
         <Dialog.Description className="flex flex-col w-full gap-4">
+          <AddressPill address={creatorAddress} />
           <div className="text-button-text-text flex justify-between mb-4">
             <span>
               {quantity} NFT{quantity > 1 ? 's' : ''}

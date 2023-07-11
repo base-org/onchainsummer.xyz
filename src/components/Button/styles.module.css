@@ -19,7 +19,7 @@
 }
 
 .button-text {
-  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text hover:border-b border-button-text-text capitalize;
+  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text border-b border-transparent hover:border-button-text-text capitalize;
 }
 
 .button-round {
