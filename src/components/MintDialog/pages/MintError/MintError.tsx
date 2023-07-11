@@ -9,6 +9,8 @@ import { useAddress, useBalance } from '@thirdweb-dev/react'
 import { useDifference } from '../../elements/useDifference'
 import { Copy } from '@/components/icons/Copy'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
+import { Layout } from '../../elements/Layout'
+import { PartnerInfo } from '../../elements/PartnerInfo'
 
 interface MintErrorProps {
   setPage: React.Dispatch<ModalPage>
@@ -120,28 +122,14 @@ export const MintError: FC<MintErrorProps> = ({
   }, [reason, setPage])
 
   return (
-    <div className="relative flex flex-col w-full gap-4">
-      <div className="relative z-20 w-full aspect-video mb-1">
-        <Image
-          src={dropImage}
-          alt={dropName}
-          fill
-          className="object-cover rounded-lg"
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <div className="relative z-20 h-6 w-6">
-          <Image src={partnerIcon} alt={`${partnerName} Icon`} fill />
-        </div>
-        <span className="font-medium">{partnerName}</span>
-      </div>
+    <Layout>
+      <PartnerInfo />
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title className="text-[32px]">{title}</Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
         {content}
       </Dialog.Description>
       {actions}
-    </div>
+    </Layout>
   )
 }

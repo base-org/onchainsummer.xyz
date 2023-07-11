@@ -12,6 +12,7 @@ import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
 import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
+import { Layout } from '../../elements/Layout'
 
 interface NativeMintProps {
   page: ModalPage
@@ -35,7 +36,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   const isPending = page === ModalPage.NATIVE_MINTING_PENDING
 
   return (
-    <>
+    <Layout>
       <div className={clsx({ hidden: !isPending })}>
         <Dialog.Title className="sr-only">Mint Tx Pending</Dialog.Title>
         <Dialog.Description className="flex flex-col w-full gap-4">
@@ -43,19 +44,10 @@ export const NativeMint: FC<NativeMintProps> = ({
         </Dialog.Description>
       </div>
       <div
-        className={clsx('relative flex flex-col w-full gap-4', {
+        className={clsx('flex flex-col w-full gap-4', {
           hidden: isPending,
         })}
       >
-        <div className="relative z-20 w-full aspect-video mb-1">
-          <Image
-            src={dropImage}
-            alt={dropName}
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
-
         <div className="flex gap-2">
           <div className="relative z-20 h-6 w-6">
             <Image src={partnerIcon} alt={`${partnerName} Icon`} fill />
@@ -90,6 +82,6 @@ export const NativeMint: FC<NativeMintProps> = ({
           Buy with credit card
         </Button>
       </div>
-    </>
+    </Layout>
   )
 }

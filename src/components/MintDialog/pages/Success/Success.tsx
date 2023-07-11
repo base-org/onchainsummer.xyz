@@ -8,6 +8,8 @@ import Image from 'next/image'
 import { AddressPill } from '@/components/AddressPill'
 import { isProd } from '@/config/chain'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
+import { Layout } from '../../elements/Layout'
+import { PartnerInfo } from '../../elements/PartnerInfo'
 
 interface SuccessProps {
   setPage: React.Dispatch<ModalPage>
@@ -25,22 +27,8 @@ export const Success: FC<SuccessProps> = ({
   const { dropImage, dropName, partnerIcon, partnerName, creatorAddress } =
     useMintDialogContext()
   return (
-    <div className="relative flex flex-col w-full gap-4">
-      <div className="relative z-20 w-full aspect-video mb-1">
-        <Image
-          src={dropImage}
-          alt={dropName}
-          fill
-          className="object-cover rounded-lg"
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <div className="relative z-20 h-6 w-6">
-          <Image src={partnerIcon} alt={`${partnerName} Icon`} fill />
-        </div>
-        <span className="font-medium">{partnerName}</span>
-      </div>
+    <Layout>
+      <PartnerInfo />
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title className="text-[32px]">It&apos;s Yours!</Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
@@ -64,6 +52,6 @@ export const Success: FC<SuccessProps> = ({
           View on BaseScan
         </Button>
       </Dialog.Close>
-    </div>
+    </Layout>
   )
 }

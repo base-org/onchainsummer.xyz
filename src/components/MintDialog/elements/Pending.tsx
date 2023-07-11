@@ -9,7 +9,7 @@ interface PendingProps {
 export const Pending: FC<PendingProps> = ({ isPending }) => {
   return (
     <div
-      className={clsx('flex flex-col gap-6 items-center w-full my-40', {
+      className={clsx('flex flex-col gap-6 items-center w-full my-20', {
         hidden: !isPending,
       })}
     >

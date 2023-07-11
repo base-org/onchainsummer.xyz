@@ -10,7 +10,6 @@ import { DropType } from '@/config/partners/types'
 type DropCardProps = {
   address: string
   crossMintClientId: string
-  type: DropType
   partnerIcon: string
   partner: string
   image: string
@@ -18,19 +17,20 @@ type DropCardProps = {
   name: string
   endDate: number
   price: string
+  creator: string
 }
 
 export const DropCard: FC<DropCardProps> = ({
   address,
   crossMintClientId,
   partnerIcon,
-  type,
   image,
   partner,
   name,
   externalLink,
   endDate,
   price,
+  creator,
 }) => {
   return (
     <Card className="p-5 relative flex flex-col w-full gap-4 font-text">
@@ -68,7 +68,11 @@ export const DropCard: FC<DropCardProps> = ({
               })}
             />
             <div>
-              <Countdown date={endDate} completedText={'Drop Ended'} />
+              <Countdown
+                date={endDate}
+                title="Ends"
+                completedText={'Drop Ended'}
+              />
             </div>
           </div>
         </div>
@@ -84,7 +88,12 @@ export const DropCard: FC<DropCardProps> = ({
           price={price}
           address={address}
           crossMintClientId={crossMintClientId}
-          type={type}
+          partnerIcon={partnerIcon}
+          partnerName={partner}
+          dropImage={image}
+          dropName={name}
+          dropEndTime={endDate}
+          creatorAddress={creator}
         />
       )}
     </Card>
