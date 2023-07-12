@@ -13,6 +13,7 @@ import { MintSuccess } from '../icons/MintSuccess'
 import clsx from 'clsx'
 import { BigNumber } from 'ethers'
 import { DropType } from '@/config/partners/types'
+import { RightArrow } from '../icons/RightArrow'
 
 type MintDialogProps = {
   address: Address
@@ -122,7 +123,9 @@ export const MintDialog: FC<MintDialogProps> = ({
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>{buttonTitle}</Button>
+        <Button tabIndex={-1} className="!flex !justify-between">
+          {buttonTitle} <RightArrow />
+        </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
