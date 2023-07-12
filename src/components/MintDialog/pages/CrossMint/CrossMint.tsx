@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { ModalPage } from '../../types'
 import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { isProd } from '@/config/chain'
@@ -6,7 +6,6 @@ import { isTransactionFulfillmentPayload } from './helpers'
 import { CrossMintForm } from './CrossMintForm'
 import clsx from 'clsx'
 import { Pending } from '../../elements/Pending'
-import { Button } from '@/components/Button'
 
 interface CrossMintProps {
   page: ModalPage
@@ -58,15 +57,7 @@ export const CrossMint: FC<CrossMintProps> = ({
   return (
     <>
       <Pending isPending={isPending} />
-      <div className={clsx({ hidden: isPending })}>
-        <Button
-          variant="TEXT"
-          onClick={() => {
-            setPage(ModalPage.NATIVE_MINT)
-          }}
-        >
-          {'<'} Back
-        </Button>
+      <div className={clsx({ hidden: isPending }, 'flex flex-col w-full')}>
         <CrossMintForm
           page={page}
           orderIdentifier={orderIdentifier}

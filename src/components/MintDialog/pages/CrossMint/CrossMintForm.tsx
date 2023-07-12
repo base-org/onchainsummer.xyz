@@ -6,6 +6,7 @@ import {
 import { useAddress } from '@thirdweb-dev/react'
 import { isProd } from '@/config/chain'
 import { ModalPage } from '../../types'
+import { Button } from '@/components/Button'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -45,10 +46,10 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   const [email, setEmail] = useState('')
 
   return (
-    <>
+    <div className="flex flex-col w-full h-full items-center overflow-scroll">
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
       {prepared ? (
-        <div className="w-full max-w-[300px] flex flex-col gap-1 mb-2.5 font-inter mt-0.5 ml-0.5 mr-0.5 px-0.5">
+        <div className="w-full max-w-[294px] flex flex-col gap-1 mb-2.5 font-inter mt-0.5 ml-0.5 mr-0.5 px-0.5">
           <label
             htmlFor="crossmint-email"
             className="text-sm font-medium leading-[1.15] text-black"
@@ -60,7 +61,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-[#e6e6e6] rounded-[4px] text-[16px] leading-[18.8px] outline-none shadow-crossMintEmail focus:border-[hsla(210,96%,45%,50%)] focus:shadow-crossMintEmailFocus transition-[background_0.15s_ease,border_0.15s_ease,box-shadow_0.15s_ease,color_0.15s_ease]"
+            className="p-3 border border-[#e6e6e6] rounded-[100px] text-[16px] leading-[18.8px] outline-none shadow-crossMintEmail focus:border-[hsla(210,96%,45%,50%)] focus:shadow-crossMintEmailFocus transition-[background_0.15s_ease,border_0.15s_ease,box-shadow_0.15s_ease,color_0.15s_ease]"
           />
         </div>
       ) : null}
@@ -80,7 +81,8 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         uiConfig={{
           fontSizeBase: '1rem',
           spacingUnit: '0.25rem',
-          borderRadius: '0.25rem',
+          borderRadius: '100px',
+          fontWeightSecondary: '500',
         }}
         // @ts-expect-error
         onEvent={function onEvent(event) {
@@ -92,7 +94,6 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               break
             case 'payment:process.started':
               // Triggered when the user has finished entering their card details and clicked Pay.
-              setPage(ModalPage.CROSS_MINT_PENDING)
               break
             case 'quote:status.changed':
               if (!paymentProcessing) {
@@ -108,6 +109,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
                 if (orderIdentifier !== payloadOrderIdentifier) {
                   setOrderIdentifier(payloadOrderIdentifier)
                 }
+                setPage(ModalPage.CROSS_MINT_PENDING)
               }
               // Triggered when payment has been successfully captured.
               break
@@ -122,6 +124,16 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
           }
         }}
       />
-    </>
+
+      <Button
+        variant="LIGHT"
+        className="w-full max-w-[294px] flex flex-col gap-1 mt-4 !font-inter !py-2 !capitalize"
+        onClick={() => {
+          setPage(ModalPage.NATIVE_MINT)
+        }}
+      >
+        Go Back
+      </Button>
+    </div>
   )
 }
