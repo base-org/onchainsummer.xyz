@@ -34,7 +34,7 @@ export const DropCard: FC<DropCardProps> = ({
   const truncatedAddress = address.slice(0, 6) + '...' + address.slice(-4)
 
   return (
-    <Card className="relative flex flex-col w-full gap-4 font-text">
+    <Card className="relative flex flex-col gap-4 font-text w-[320px]">
       <Card className="absolute aspect-square p-2 top-9 right-9 z-20 bg-white">
         <div className="relative z-20 h-8 w-8">
           <Image src={partnerIcon} alt={`${partner} Icon`} fill />

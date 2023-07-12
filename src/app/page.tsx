@@ -12,7 +12,6 @@ const Home = async () => {
   const { partner, tabs } = await getPageData()
   const { drop, otherDrops, name, icon } = partner
 
-  console.log(otherDrops, 'otherDrops')
   return (
     <div>
       <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
@@ -44,14 +43,20 @@ const Home = async () => {
                 </p>
               </div>
             </div>
-            <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-              {otherDrops.map((drop) => (
-                <li key={drop.name}>
-                  <DropCard {...drop} partner={name} partnerIcon={icon} />
-                </li>
-              ))}
-            </ul>
-            <div className="flex border border-1 border-gray-400/80 rounded-xl px-6 py-7 mt-4">
+            <div className="-mr-4">
+              <div className="overflow-scroll hide-scrollbar">
+                <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                  <ul className="flex flex-row gap-8 last:pr-4">
+                    {otherDrops.map((drop) => (
+                      <li key={drop.name}>
+                        <DropCard {...drop} partner={name} partnerIcon={icon} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-6 md:border md:border-1 md:border-gray-400/80 rounded-xl md:px-6 pt-4 mt-4 md:py-7">
               <div className="basis-1/2">
                 <h2 className="text-[32px]">
                   The Process of Alex Masmej, Showtime

@@ -20,7 +20,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     notFound()
   }
 
-  const { drop, otherDrops, name, icon } = partner
+  const { otherDrops, name, icon } = partner
 
   return (
     <div className="mb-[120px]">
@@ -28,11 +28,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         <PartnerHero partner={partner} />
         <section className="px-8 lg:px-[120px] font-text">
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-xl">
-            <div className="px-32 pt-[54px] m-4 border border-gray-400 border-1 rounded-xl">
+            <div className="md:px-16 lg:px-32 md:py-[54px] m-4 md:border md:border-gray-400 md:border-1 rounded-xl break-words">
               <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%]">
                 {article.content.title}
               </h2>
-
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 className={unreset.unreset}
@@ -40,20 +39,27 @@ const Page = async ({ params }: { params: { slug: string } }) => {
                 {article.content.body}
               </ReactMarkdown>
             </div>
-            <div className="mt-16 mb-4 lg:mt-10 mx-4">
-              <h2 className="sr-only">External Drops</h2>
-              <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 2xl:grid-cols-4">
-                {otherDrops.map((drop) => (
-                  <li key={drop.name}>
-                    <DropCard {...drop} partner={name} partnerIcon={icon} />
-                  </li>
-                ))}
-              </ul>
+            <div className="mb-4 mx-4">
+              <div className="-mr-4">
+                <div className="overflow-scroll hide-scrollbar">
+                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                    <ul className="flex flex-row gap-8 last:pr-4">
+                      {otherDrops.map((drop) => (
+                        <li key={drop.name}>
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        {/* <section className="px-8 lg:px-[120px] mt-16 pb-10 lg:mt-20 lg:pb-20">
-        </section> */}
       </main>
     </div>
   )

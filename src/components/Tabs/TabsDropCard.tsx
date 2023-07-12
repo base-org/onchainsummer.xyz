@@ -20,7 +20,6 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
   image,
   description,
 }) => {
-  console.log(endDate, 'endDate')
   return (
     <>
       <div
