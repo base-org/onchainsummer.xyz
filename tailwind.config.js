@@ -34,6 +34,7 @@ module.exports = {
         sans: ['var(--font-coinbase-sans)'],
         text: ['var(--font-coinbase-text)'],
         mono: ['var(--font-coinbase-mono)'],
+        display: ['var(--font-coinbase-display)'],
         inter: ['var(--font-inter)'],
       },
       backgroundImage: {
