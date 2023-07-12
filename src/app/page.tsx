@@ -1,6 +1,7 @@
 import format from 'date-fns/format'
 import compareAsc from 'date-fns/compareAsc'
 import Image from 'next/image'
+import { SDK } from '@/utils/graphqlSdk'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
@@ -9,7 +10,7 @@ import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
 
 const Home = async () => {
-  const { partner, tabs } = await getPageData()
+  const { partner, tabs, article } = await getPageData()
   const { drop, otherDrops, name, icon } = partner
 
   return (
@@ -56,21 +57,12 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-6 md:border md:border-1 md:border-gray-400/80 rounded-xl md:px-6 pt-4 mt-4 md:py-7">
+            <div className="flex flex-col md:flex-row gap-6 md:border md:border-1 md:border-gray-400/80 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
               <div className="basis-1/2">
-                <h2 className="text-[32px]">
-                  The Process of Alex Masmej, Showtime
-                </h2>
+                <h2 className="text-[32px]">{article.content.title}</h2>
               </div>
               <div className="basis-1/2">
-                <p>
-                  Highlight has curated work from three esteemed generative
-                  artists — James Merrill, Leander Herzog, and Melissa
-                  Wiederrecht — brought onchain to Base and powered by
-                  Highlight. Nathaniel Emodi, founder of Highlight, joined us to
-                  discuss the vision behind the drop and how Base is setting the
-                  stage for the future of onchain art.
-                </p>
+                <p>{article.content.body.slice(0, 500)} ...</p>
                 <Button
                   className="uppercase border border-1 border-black !bg-transparent !text-black mt-6"
                   href="/partners/base"
@@ -120,7 +112,19 @@ async function getPageData() {
     }
   }, INITIAL_TABS)
 
-  return { partner, tabs }
+  const digest = await SDK.GetMirrorTransactions({
+    digest: partner.drop.aarweaveDigest,
+  })
+
+  const articleId = digest.transactions.edges[0].node.id
+
+  const res = await fetch(`https://arweave.net/${articleId}`)
+
+  const article = (await res.json()) as {
+    content: { body: string; title: string }
+  }
+
+  return { partner, tabs, article }
 }
 
 export default Home
