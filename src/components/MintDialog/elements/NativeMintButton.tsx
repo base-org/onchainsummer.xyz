@@ -58,6 +58,11 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
 
           setPage(ModalPage.MINT_SUCCESS)
         } catch (e) {
+          // @ts-expect-error
+          if (e.reason === 'user rejected transaction') {
+            setPage(ModalPage.NATIVE_MINT)
+            return
+          }
           // TODO: Inform error
           setMintError(e)
           setPage(ModalPage.MINT_ERROR)
