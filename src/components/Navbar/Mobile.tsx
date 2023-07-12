@@ -9,7 +9,7 @@ type MobileProps = {}
 
 export const Mobile: FC<MobileProps> = ({}) => {
   return (
-    <NavigationMenu.Root className="relative z-[1] flex w-screen md:hidden [&>div]:w-full">
+    <NavigationMenu.Root className="relative z-[1] flex w-screen lg:hidden [&>div]:w-full">
       <NavigationMenu.List className="flex justify-between px-6 py-8 w-full items-center border-b border-black/10">
         <NavigationMenu.Link asChild>
           <Link href="/">

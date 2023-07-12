@@ -142,6 +142,7 @@ export default function RootLayout({
             <QueryParamProvider>
               <>
                 <Navbar />
+                <div className="bg-subnav-background-gradient min-h-[135px] z-0" />
                 {children}
                 <Footer />
               </>

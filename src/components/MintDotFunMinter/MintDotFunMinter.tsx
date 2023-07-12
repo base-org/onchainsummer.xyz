@@ -30,7 +30,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({ mintStatus }) => {
   return (
     <Button
       size="SMALL"
-      className="mx-0 lg:ml-2 lg:mx-2 grow lg:grow-0"
+      className="mx-0 lg:ml-2 lg:mx-2 grow lg:grow-0 !uppercase"
       onClick={async () => {
         const walletClient = await getWalletClient()
         if (!walletClient) {

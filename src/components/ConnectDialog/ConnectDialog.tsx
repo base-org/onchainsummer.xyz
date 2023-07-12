@@ -73,11 +73,7 @@ const wallets: Record<
 }
 
 export const ConnectDialog: FC<ConnectDialogProps> = ({
-  title = (
-    <div className="flex gap-2.5 items-center">
-      <div className="bg bg-timer-active h-2 w-2 rounded-full" /> Connect Wallet
-    </div>
-  ),
+  title = <div className="flex gap-2.5 items-center px-3">Connect</div>,
   inNavbar = false,
 }) => {
   const connect = useConnect()

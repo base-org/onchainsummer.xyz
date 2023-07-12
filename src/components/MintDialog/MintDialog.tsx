@@ -5,7 +5,6 @@ import { FC, useMemo, useState } from 'react'
 import { Button } from '../Button'
 import { Close } from '../icons/Close'
 
-import { Drop, DropType } from '@/config/partners/types'
 import { ModalPage } from './types'
 import { MintError } from './pages/MintError'
 import { Success } from './pages/Success'
@@ -17,6 +16,7 @@ import { ArrowRight } from '../icons/ArrowRight'
 import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
+import { RightArrow } from '../icons/RightArrow'
 
 export type TxDetails = {
   hash: string
@@ -140,7 +140,9 @@ export const MintDialog: FC = () => {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <Button>{buttonTitle}</Button>
+        <Button tabIndex={-1} className="!flex !justify-between">
+          {buttonTitle} <RightArrow />
+        </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
