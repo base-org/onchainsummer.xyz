@@ -7,6 +7,7 @@ import { useAddress } from '@thirdweb-dev/react'
 import { isProd } from '@/config/chain'
 import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
+import clsx from 'clsx'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -127,13 +128,27 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
 
       <Button
         variant="LIGHT"
-        className="w-full max-w-[294px] flex flex-col gap-1 mt-4 !font-inter !py-2 !capitalize"
+        className={clsx(
+          'w-full max-w-[294px] flex flex-col gap-1 mb-4 !font-inter !py-2 !capitalize',
+          { '-mt-5': prepared }
+        )}
         onClick={() => {
           setPage(ModalPage.NATIVE_MINT)
         }}
       >
         Go Back
       </Button>
+      <p className="w-full max-w-[294px] text-xs text-center">
+        By paying, you accept{' '}
+        <a
+          className="underline"
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://www.crossmint.com/legal/terms-of-service"
+        >
+          Crossmint&apos;s Terms
+        </a>
+      </p>
     </div>
   )
 }
