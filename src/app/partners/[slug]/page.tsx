@@ -4,10 +4,7 @@ import format from 'date-fns/format'
 import { schedule } from '@/config/schedule'
 
 import { PartnerHero } from '@/components/PartnerHero'
-import { Separator } from '@/components/Separator'
 import React from 'react'
-import Image from 'next/image'
-import clsx from 'clsx'
 import { DropCard } from '@/components/DropCard'
 import { SDK } from '@/utils/graphqlSdk'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
@@ -23,36 +20,45 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     notFound()
   }
 
-  const { drop, otherDrops, name, icon } = partner
+  const { otherDrops, name, icon } = partner
 
   return (
-    <div>
-      <main className="relative w-screen overflow-x-hidden">
+    <div className="mb-[120px]">
+      <main className="relative w-screen overflow-x-hidden ">
         <PartnerHero partner={partner} />
         <section className="px-8 lg:px-[120px] font-text">
-          <Separator />
-          <div className="flex flex-col gap-6 md:gap-10 pt-6 md:pt-10 mx-auto max-w-[800px]">
-            <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%]">
-              {article.content.title}
-            </h2>
-
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              className={unreset.unreset}
-            >
-              {article.content.body}
-            </ReactMarkdown>
+          <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-xl">
+            <div className="md:px-16 lg:px-32 md:py-[54px] m-4 md:border md:border-gray-400 md:border-1 rounded-xl break-words">
+              <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%]">
+                {article.content.title}
+              </h2>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                className={unreset.unreset}
+              >
+                {article.content.body}
+              </ReactMarkdown>
+            </div>
+            <div className="mb-4 mx-4">
+              <div className="-mr-4">
+                <div className="overflow-scroll hide-scrollbar">
+                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                    <ul className="flex flex-row gap-8 last:pr-4">
+                      {otherDrops.map((drop) => (
+                        <li key={drop.name}>
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
-        <section className="px-8 lg:px-[120px] mt-16 pb-10 lg:mt-20 lg:pb-20">
-          <h2 className="sr-only">External Drops</h2>
-          <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {otherDrops.map((drop) => (
-              <li key={drop.name}>
-                <DropCard {...drop} partner={name} partnerIcon={icon} />
-              </li>
-            ))}
-          </ul>
         </section>
       </main>
     </div>

@@ -1,5 +1,7 @@
 import format from 'date-fns/format'
 import compareAsc from 'date-fns/compareAsc'
+import Image from 'next/image'
+import { SDK } from '@/utils/graphqlSdk'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
@@ -8,8 +10,9 @@ import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
 
 const Home = async () => {
-  const { partner, tabs } = await getPageData()
+  const { partner, tabs, article } = await getPageData()
   const { drop, otherDrops, name, icon } = partner
+
   return (
     <div>
       <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
@@ -29,14 +32,46 @@ const Home = async () => {
           <Separator className="hidden lg:block mt-12" />
         </section>
         <section className="px-8 lg:px-20 mt-16 pb-10 lg:mt-20 lg:pb-20 w-full">
-          <h2 className="sr-only">External Drops</h2>
-          <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {otherDrops.map((drop) => (
-              <li key={drop.name}>
-                <DropCard {...drop} partner={name} partnerIcon={icon} />
-              </li>
-            ))}
-          </ul>
+          <div className="bg-gray-200/80 p-4 rounded-xl">
+            <div className="mb-4 flex gap-2 items-end">
+              <div className="relative z-20 h-20 w-20">
+                <Image src={icon} alt={`${partner} Icon`} fill />
+              </div>
+              <div className="">
+                <h2 className="text-[32px]">{name}</h2>
+                <p className="text-[16px] uppercase text-[#858585]">
+                  Collection
+                </p>
+              </div>
+            </div>
+            <div className="-mr-4">
+              <div className="overflow-scroll hide-scrollbar">
+                <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                  <ul className="flex flex-row gap-8 last:pr-4">
+                    {otherDrops.map((drop) => (
+                      <li key={drop.name}>
+                        <DropCard {...drop} partner={name} partnerIcon={icon} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-6 md:border md:border-1 md:border-gray-400/80 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
+              <div className="basis-1/2">
+                <h2 className="text-[32px]">{article.content.title}</h2>
+              </div>
+              <div className="basis-1/2">
+                <p>{article.content.body.slice(0, 500)} ...</p>
+                <Button
+                  className="uppercase border border-1 border-black !bg-transparent !text-black mt-6"
+                  href="/partners/base"
+                >
+                  Read More
+                </Button>
+              </div>
+            </div>
+          </div>
         </section>
         <section className="w-full py-12 lg:p-20" id="drops">
           <Tabs {...tabs} />
@@ -77,7 +112,19 @@ async function getPageData() {
     }
   }, INITIAL_TABS)
 
-  return { partner, tabs }
+  const digest = await SDK.GetMirrorTransactions({
+    digest: partner.drop.aarweaveDigest,
+  })
+
+  const articleId = digest.transactions.edges[0].node.id
+
+  const res = await fetch(`https://arweave.net/${articleId}`)
+
+  const article = (await res.json()) as {
+    content: { body: string; title: string }
+  }
+
+  return { partner, tabs, article }
 }
 
 export default Home
