@@ -16,6 +16,7 @@ interface NativeMintProps {
   setPage: React.Dispatch<ModalPage>
   quantity: number
   totalPrice: string
+  txDetails: TxDetails | null
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
 }
@@ -25,6 +26,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   setPage,
   quantity,
   totalPrice,
+  txDetails,
   setTxDetails,
   setMintError,
 }) => {
@@ -34,13 +36,15 @@ export const NativeMint: FC<NativeMintProps> = ({
 
   return (
     <>
-      <PartnerInfo />
+      {!isPending ? <PartnerInfo /> : null}
       {/* TODO: Add Coinbase Display font */}
-      <Dialog.Title className="text-[32px] lg:mt-2">
+      <Dialog.Title
+        className={clsx('text-[32px] lg:mt-2', { hidden: isPending })}
+      >
         {isPending ? 'Mint Tx Pending' : dropName}
       </Dialog.Title>
 
-      <Pending isPending={isPending} />
+      <Pending isPending={isPending} txHash={txDetails?.hash} />
 
       <div
         className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
