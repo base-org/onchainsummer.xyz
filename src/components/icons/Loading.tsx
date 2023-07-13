@@ -16,7 +16,7 @@ export const Loading: FC<IconProps> = ({
       fill="none"
       className={className}
     >
-      <g clip-path="url(#clip0_1743_49941)">
+      <g clipPath="url(#clip0_1743_49941)">
         <path
           opacity="0.6"
           d="M24.5 8C26.7091 8 28.5 6.20914 28.5 4C28.5 1.79086 26.7091 0 24.5 0C22.2909 0 20.5 1.79086 20.5 4C20.5 6.20914 22.2909 8 24.5 8Z"
