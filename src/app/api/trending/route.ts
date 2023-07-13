@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const connectedWallet = searchParams.get('connectedWallet')
 
-  const url = `${API_URL}/collections?connectedWallet=${connectedWallet}`
+  const url = `${API_URL}/collections?connectedWallet=${connectedWallet}&chain=84531`
 
   try {
     const response = await axios.get(url, {
