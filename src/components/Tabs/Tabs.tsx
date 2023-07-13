@@ -6,6 +6,7 @@ import * as TabsComponent from '@radix-ui/react-tabs'
 import { TabsListItems } from './TabsListItems'
 import { Partner } from '@/config/partners/types'
 import { TabsDropCard } from './TabsDropCard'
+import { partners } from '@/config/partners'
 
 export interface TabsComponentProps {
   upcomingDrops: Partner[]
@@ -23,23 +24,28 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
           />
         </TabsComponent.List>
         <TabsComponent.Content value="tab1">
-          {upcomingDrops.map(({ name, drops, icon, description }, idx) => (
-            <div key={idx} className="my-4 last:mb-0">
-              <TabsDropCard
-                address={drops[0].address}
-                name={name}
-                startDate={drops[0].startDate}
-                endDate={drops[0].endDate}
-                image={icon}
-                description={description}
-              />
-            </div>
-          ))}
+          {upcomingDrops.map(
+            ({ name, drops, icon, description, slug }, idx) => (
+              <div key={idx} className="my-4 last:mb-0">
+                <TabsDropCard
+                  slug={slug}
+                  address={drops[0].address}
+                  name={name}
+                  startDate={drops[0].startDate}
+                  endDate={drops[0].endDate}
+                  image={icon}
+                  description={description}
+                />
+              </div>
+            )
+          )}
         </TabsComponent.Content>
         <TabsComponent.Content className="" value="tab2">
-          {pastDrops.map(({ name, drops, icon, description }, idx) => (
+          {pastDrops.map(({ name, drops, icon, description, slug }, idx) => (
             <div key={idx} className="my-4 last:mb-0">
               <TabsDropCard
+                link
+                slug={slug}
                 address={drops[0].address}
                 name={name}
                 startDate={drops[0].startDate}
