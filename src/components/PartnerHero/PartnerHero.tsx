@@ -40,7 +40,6 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <p className="md:hidden">{drop.description}</p>
           <Separator className="bg-ocs-red mt-4" />
           <Countdown
-            title="Ends"
             completedText="Drop Ended"
             date={drop.endDate}
             className="text-ocs-red"

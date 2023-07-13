@@ -5,13 +5,12 @@ import { SDK } from '@/utils/graphqlSdk'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
-import { Separator } from '@/components/Separator'
 import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
 
 const Home = async () => {
   const { partner, tabs, article } = await getPageData()
-  const { drop, otherDrops, name, icon } = partner
+  const { otherDrops, name, icon } = partner
 
   return (
     <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
@@ -43,7 +42,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-6 md:border md:border-1 md:border-gray-400/80 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
+            <div className="flex flex-col md:flex-row gap-6 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
               <div className="basis-1/2">
                 <h2 className="text-[32px]">{article.content.title}</h2>
               </div>
@@ -51,7 +50,7 @@ const Home = async () => {
                 <p>{article.content.body.slice(0, 500)} ...</p>
                 <Button
                   className="uppercase border border-1 border-black !bg-transparent !text-black mt-6"
-                  href="/partners/base"
+                  href={`/partners/${partner.slug}`}
                 >
                   Read More
                 </Button>

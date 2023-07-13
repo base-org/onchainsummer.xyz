@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import { HomeIcon } from '../HomeIcon'
+import { OCSLogo } from '../icons/OCSLogo'
 import Link from 'next/link'
 import { NavListItems } from './NavListItems'
 
@@ -12,7 +12,7 @@ export const Desktop: FC<DesktopProps> = ({}) => {
       <NavigationMenu.List className="flex basis-[10%] justify-between px-20 py-[18px] w-full items-center">
         <NavigationMenu.Link asChild>
           <Link href="/">
-            <HomeIcon />
+            <OCSLogo />
           </Link>
         </NavigationMenu.Link>
         <div className="basis-[90%]">
