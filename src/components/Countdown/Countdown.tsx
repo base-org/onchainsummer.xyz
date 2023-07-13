@@ -22,12 +22,8 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
-  if (!mounted) {
-    return <>...</>
-  }
-
   return (
-    <div className={clsx('h-full flex items-end flex-row', className)}>
+    <div className={clsx('flex items-end flex-row', className)}>
       <div className="mr-4 relative bottom-1">
         <Clock />
       </div>
@@ -35,20 +31,24 @@ export const Countdown: FC<CustomCountdownProps> = ({
         <div>
           <p>{title}</p>
         </div>
-        <ReactCountdown
-          {...props}
-          renderer={({ hours, minutes, seconds, completed }) => {
-            if (completed) {
-              return <>{completedText}</>
-            } else {
-              return (
-                <span>
-                  {hours}H:{minutes}M:{seconds}S
-                </span>
-              )
-            }
-          }}
-        />
+        {mounted ? (
+          <ReactCountdown
+            {...props}
+            renderer={({ hours, minutes, seconds, completed }) => {
+              if (completed) {
+                return <>{completedText}</>
+              } else {
+                return (
+                  <span>
+                    {hours}H:{minutes}M:{seconds}S
+                  </span>
+                )
+              }
+            }}
+          />
+        ) : (
+          <>...</>
+        )}
       </div>
     </div>
   )
