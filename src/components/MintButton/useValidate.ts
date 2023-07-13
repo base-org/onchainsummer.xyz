@@ -2,6 +2,7 @@ import {
   useContract,
   useActiveClaimCondition,
   useUnclaimedNFTSupply,
+  useContractType,
 } from '@thirdweb-dev/react'
 
 import { constants } from 'ethers'
@@ -14,11 +15,15 @@ type Validation = {
 
 export const useValidate = (address: string): Validation => {
   const { contract } = useContract(address)
+  const { data: contractType, isLoading: isLoadingContractType } =
+    useContractType(address)
   const { data: claimConditions, isLoading } = useActiveClaimCondition(contract)
   const { data: unclaimedSupply, isLoading: isLoadingUnclaimedSupply } =
     useUnclaimedNFTSupply(contract)
 
-  const soldOut = unclaimedSupply?.lte(constants.Zero) || true
+  const isLimitedSupply = contractType === 'nft-drop'
+  const soldOut =
+    isLimitedSupply && (unclaimedSupply?.lte(constants.Zero) || true)
   const startTime = claimConditions?.startTime
   const now = Date.now()
 
