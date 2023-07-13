@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { format } from 'date-fns'
-import { Clock } from '../icons/Clock'
 import { Countdown } from '../Countdown'
 
 interface TabsDropCardProps {
@@ -37,7 +36,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
         </div>
         <div className="md:basis-[72%] md:flex md:flex-col md:justify-start p-4 md:mt-0">
           <h3 className="text-sm font-mono uppercase text-[#858585] mb-3">
-            {format(new Date(startDate), 'MMM. d')}
+            {format(new Date(startDate), 'MMMM d')}
           </h3>
           <h2 className="text-[32px] leading-8 mb-4">{name}</h2>
           <p className="text-neutral-600 leading-7 mb-8">{description}</p>
