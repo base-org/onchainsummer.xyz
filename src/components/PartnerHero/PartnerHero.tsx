@@ -18,13 +18,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { brandColor, name, description, iconInverse, drop, icon },
 }) => {
   return (
-    <section className="flex flex-col px-6 pt-10 pb-8 md:pb-20 md:px-[120px] md:pt-[120px]">
-      <div
-        className={classes.blur}
-        style={{
-          backgroundImage: `linear-gradient(89.61deg, ${brandColor} 0.34%, ${brandColor}90 99.68%)`,
-        }}
-      />
+    <section className="flex flex-col p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full">
       <h1 className="font-bold text-[40px] leading-[50px] text-center lg:text-[72px] lg:leading-[82px] md:text-start">
         Onchain{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#309FA7] via-[#9060FF] to-[#0052FF]">
