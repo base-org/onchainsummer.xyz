@@ -25,7 +25,7 @@ export const MintError: FC<MintErrorProps> = ({
   const { dropImage, dropName, partnerIcon, partnerName } =
     useMintDialogContext()
 
-  const reason = mintError.reason
+  const reason = mintError?.reason
   const { data: balance } = useBalance()
   const address = useAddress()
 

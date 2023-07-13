@@ -47,7 +47,7 @@ export const Success: FC<SuccessProps> = ({
             closeModal()
           }}
         >
-          View on BaseScan
+          View on Explorer
         </Button>
       </Dialog.Close>
     </>

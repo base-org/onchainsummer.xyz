@@ -148,7 +148,7 @@ export const MintDialog: FC = () => {
         <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 overflow-hidden lg:p-16',
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 md:overflow-hidden lg:p-16 overflow-auto',
             { 'h-full': page === ModalPage.CROSS_MINT_FORM }
           )}
         >
