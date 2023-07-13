@@ -14,24 +14,10 @@ const Home = async () => {
   const { drop, otherDrops, name, icon } = partner
 
   return (
-    <div>
-      <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden">
+    <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
+      <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden px-6 pb-36 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
-        <section className="px-8 lg:px-[120px] font-text w-full">
-          <Separator />
-          <h2 className="text-lg font-medium leading-8 mt-6 lg:mt-12">
-            {drop.writeup.sections[0].heading}
-          </h2>
-          <div className="mt-6 lg:mt-3 lg:columns-2 lg:gap-20">
-            <p>{drop.writeup.sections[0].contents[0]}</p>
-            <Separator className="mt-6 lg:hidden" />
-            <Button className="w-full mt-6" href="/partners/open-sea">
-              Read More
-            </Button>
-          </div>
-          <Separator className="hidden lg:block mt-12" />
-        </section>
-        <section className="px-8 lg:px-20 mt-16 pb-10 lg:mt-20 lg:pb-20 w-full">
+        <section className="w-full">
           <div className="bg-gray-200/80 p-4 rounded-xl">
             <div className="mb-4 flex gap-2 items-end">
               <div className="relative z-20 h-20 w-20">
@@ -49,7 +35,7 @@ const Home = async () => {
                 <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
                   <ul className="flex flex-row gap-8 last:pr-4">
                     {otherDrops.map((drop) => (
-                      <li key={drop.name}>
+                      <li key={drop.name} className="flex flex-col">
                         <DropCard {...drop} partner={name} partnerIcon={icon} />
                       </li>
                     ))}
@@ -73,7 +59,7 @@ const Home = async () => {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 lg:p-20" id="drops">
+        <section className="w-full" id="drops">
           <Tabs {...tabs} />
         </section>
       </main>
