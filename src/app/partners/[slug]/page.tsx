@@ -24,7 +24,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
-      <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 md:px-0 gap-10 md:gap-[54px]">
+      <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
         <section className="w-full font-text">
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-xl">
