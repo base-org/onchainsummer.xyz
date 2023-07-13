@@ -6,6 +6,7 @@ import { isTransactionFulfillmentPayload } from './helpers'
 import { CrossMintForm } from './CrossMintForm'
 import clsx from 'clsx'
 import { Pending } from '../../elements/Pending'
+import { TxDetails } from '../../MintDialog'
 
 interface CrossMintProps {
   page: ModalPage
@@ -15,6 +16,7 @@ interface CrossMintProps {
   totalPrice: string
   orderIdentifier: string
   setOrderIdentifier: React.Dispatch<string>
+  setTxDetails: React.Dispatch<TxDetails | null>
 }
 
 export const CrossMint: FC<CrossMintProps> = ({
@@ -25,6 +27,7 @@ export const CrossMint: FC<CrossMintProps> = ({
   totalPrice,
   orderIdentifier,
   setOrderIdentifier,
+  setTxDetails,
 }) => {
   const { listenToMintingEvents } = useCrossmintEvents({
     environment: isProd ? 'production' : 'staging',
@@ -38,8 +41,14 @@ export const CrossMint: FC<CrossMintProps> = ({
         break
       case 'transaction:fulfillment.succeeded':
         if (isTransactionFulfillmentPayload(event.payload)) {
-          const { contractAddress, tokenIds } = event.payload
-
+          const { contractAddress, tokenIds, txId } = event.payload
+          setTxDetails({
+            hash: txId,
+            nft: {
+              address: contractAddress,
+              tokenIds,
+            },
+          })
           setPage(ModalPage.MINT_SUCCESS)
         }
         break

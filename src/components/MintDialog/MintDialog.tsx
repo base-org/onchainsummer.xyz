@@ -96,6 +96,7 @@ export const MintDialog: FC = () => {
       case ModalPage.CROSS_MINT_PAYMENT_FAILED:
         return crossMintClientId ? (
           <CrossMint
+            setTxDetails={setTxDetails}
             setPage={setPage}
             page={page}
             crossMintClientId={crossMintClientId}

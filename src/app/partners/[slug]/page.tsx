@@ -45,7 +45,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
                   <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
                     <ul className="flex flex-row gap-8 last:pr-4">
                       {otherDrops.map((drop) => (
-                        <li key={drop.name}>
+                        <li key={drop.name} className="flex flex-col">
                           <DropCard
                             {...drop}
                             partner={name}

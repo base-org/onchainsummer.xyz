@@ -15,7 +15,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
           src={dropImage}
           alt={dropName}
           fill
-          className="object-cover rounded-lg"
+          className="object-cover rounded-lg md:rounded-[20px]"
         />
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll">
