@@ -11,7 +11,9 @@ import { Tabs, TabsComponentProps } from '@/components/Tabs'
 
 const Home = async () => {
   const { partner, tabs, article } = await getPageData()
-  const { drop, otherDrops, name, icon } = partner
+  const { drops, name, icon } = partner
+
+  const otherDrops = drops.filter((_, index) => index !== 0)
 
   return (
     <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
@@ -75,7 +77,7 @@ const INITIAL_TABS: TabsComponentProps = {
 async function getPageData() {
   const now = new Date().getTime()
   const today = format(new Date(now), 'yyyy-MM-dd')
-  const partner = schedule[today] || schedule[Object.keys(schedule)[0]]
+  const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
   const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
     const comparison = compareAsc(now, new Date(date).getTime())
@@ -85,21 +87,27 @@ async function getPageData() {
       return acc
     }
 
+    if (partner === featuredPartner) {
+      return {
+        ...acc,
+      }
+    }
+
     if (comparison === -1) {
       return {
         ...acc,
-        upcomingDrops: [...acc.upcomingDrops, partner.drop],
+        upcomingDrops: [...acc.upcomingDrops, partner],
       }
     }
 
     return {
       ...acc,
-      pastDrops: [...acc.pastDrops, partner.drop],
+      pastDrops: [...acc.pastDrops, partner],
     }
   }, INITIAL_TABS)
 
   const digest = await SDK.GetMirrorTransactions({
-    digest: partner.drop.aarweaveDigest,
+    digest: featuredPartner.aarweaveDigest,
   })
 
   const articleId = digest.transactions.edges[0].node.id
@@ -110,7 +118,7 @@ async function getPageData() {
     content: { body: string; title: string }
   }
 
-  return { partner, tabs, article }
+  return { partner: featuredPartner, tabs, article }
 }
 
 export default Home

@@ -20,7 +20,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     notFound()
   }
 
-  const { otherDrops, name, icon } = partner
+  const { drops, name, icon } = partner
+
+  const otherDrops = drops.filter((_, index) => index !== 0)
 
   return (
     <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
@@ -90,7 +92,7 @@ async function getPartner(slug: string) {
   }
 
   const digest = await SDK.GetMirrorTransactions({
-    digest: partner.drop.aarweaveDigest,
+    digest: partner.aarweaveDigest,
   })
 
   const articleId = digest.transactions.edges[0].node.id

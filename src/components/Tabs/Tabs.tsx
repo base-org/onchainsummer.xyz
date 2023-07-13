@@ -4,12 +4,12 @@ import { FC } from 'react'
 import React from 'react'
 import * as TabsComponent from '@radix-ui/react-tabs'
 import { TabsListItems } from './TabsListItems'
-import { HeadlineDrop } from '@/config/partners/types'
+import { Partner } from '@/config/partners/types'
 import { TabsDropCard } from './TabsDropCard'
 
 export interface TabsComponentProps {
-  upcomingDrops: HeadlineDrop[]
-  pastDrops: HeadlineDrop[]
+  upcomingDrops: Partner[]
+  pastDrops: Partner[]
 }
 
 export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
@@ -23,42 +23,32 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
           />
         </TabsComponent.List>
         <TabsComponent.Content value="tab1">
-          {upcomingDrops.map(
-            (
-              { address, name, startDate, endDate, image, description },
-              idx
-            ) => (
-              <div key={idx} className="my-4 last:mb-0">
-                <TabsDropCard
-                  address={address}
-                  name={name}
-                  startDate={startDate}
-                  endDate={endDate}
-                  image={image}
-                  description={description}
-                />
-              </div>
-            )
-          )}
+          {upcomingDrops.map(({ name, drops, icon, description }, idx) => (
+            <div key={idx} className="my-4 last:mb-0">
+              <TabsDropCard
+                address={drops[0].address}
+                name={name}
+                startDate={drops[0].startDate}
+                endDate={drops[0].endDate}
+                image={icon}
+                description={description}
+              />
+            </div>
+          ))}
         </TabsComponent.Content>
         <TabsComponent.Content className="" value="tab2">
-          {pastDrops.map(
-            (
-              { address, name, startDate, endDate, image, description },
-              idx
-            ) => (
-              <div key={idx} className="my-4 last:mb-0">
-                <TabsDropCard
-                  address={address}
-                  name={name}
-                  startDate={startDate}
-                  endDate={endDate}
-                  image={image}
-                  description={description}
-                />
-              </div>
-            )
-          )}
+          {pastDrops.map(({ name, drops, icon, description }, idx) => (
+            <div key={idx} className="my-4 last:mb-0">
+              <TabsDropCard
+                address={drops[0].address}
+                name={name}
+                startDate={drops[0].startDate}
+                endDate={drops[0].endDate}
+                image={icon}
+                description={description}
+              />
+            </div>
+          ))}
         </TabsComponent.Content>
       </TabsComponent.Root>
     </section>
