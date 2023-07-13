@@ -28,9 +28,6 @@ export const Countdown: FC<CustomCountdownProps> = ({
         <Clock />
       </div>
       <div className="flex flex-col text-[14px] font-mono font-medium uppercase">
-        <div>
-          <p>{title}</p>
-        </div>
         {mounted ? (
           <ReactCountdown
             {...props}
@@ -39,9 +36,14 @@ export const Countdown: FC<CustomCountdownProps> = ({
                 return <>{completedText}</>
               } else {
                 return (
-                  <span>
-                    {hours}H:{minutes}M:{seconds}S
-                  </span>
+                  <>
+                    <div>
+                      <p>{title}</p>
+                    </div>
+                    <span>
+                      {hours}H:{minutes}M:{seconds}S
+                    </span>
+                  </>
                 )
               }
             }}

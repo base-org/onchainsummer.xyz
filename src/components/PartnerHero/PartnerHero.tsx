@@ -13,14 +13,15 @@ import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
-  partner: { brandColor, name, description, iconInverse, drop, icon },
+  partner: { name, drops, icon, description },
 }) => {
+  const headline = drops[0]
   return (
     <section className="grid p-5 md:py-6 md:px-10 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
       <div className="relative w-full aspect-[287/212] mb-1 lg:mb-0 order-1 md:order-2">
         <Image
-          src={drop.image}
-          alt={drop.name}
+          src={headline.image}
+          alt={headline.name}
           fill
           className="object-cover rounded-2xl"
         />
@@ -33,30 +34,32 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <span className="font-medium">{name}</span>
         </div>
         <h1 className="text-[32px] leading-none font-display md:text-[46px]">
-          {drop.name}
+          {headline.name}
         </h1>
-        <AddressPill address={drop.creator} />
+        <AddressPill address={headline.creator} />
         <div className="flex flex-col w-full gap-4 mt-auto">
-          <p className="md:hidden">{drop.description}</p>
+          <p className="md:hidden">{description}</p>
           <Separator className="bg-ocs-red mt-4" />
           <Countdown
             completedText="Drop Ended"
-            date={drop.endDate}
+            date={headline.endDate}
             className="text-ocs-red"
           />
-          {drop.externalLink ? (
-            <Button href={drop.externalLink}>Mint {drop.price} ETH</Button>
+          {headline.externalLink ? (
+            <Button href={headline.externalLink}>
+              Mint {headline.price} ETH
+            </Button>
           ) : (
             <MintButton
-              address={drop.address}
-              crossMintClientId={drop.crossMintClientId}
-              price={drop.price}
+              address={headline.address}
+              crossMintClientId={headline.crossMintClientId}
+              price={headline.price}
               partnerIcon={icon}
               partnerName={name}
-              dropImage={drop.image}
-              dropName={drop.name}
-              dropEndTime={drop.endDate}
-              creatorAddress={drop.creator}
+              dropImage={headline.image}
+              dropName={headline.name}
+              dropEndTime={headline.endDate}
+              creatorAddress={headline.creator}
             />
           )}
         </div>

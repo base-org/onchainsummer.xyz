@@ -15,19 +15,6 @@ export interface Drop {
   creator: string
 }
 
-export interface HeadlineDrop extends Drop {
-  createdBy: string
-  description: string
-  aarweaveDigest: string
-  writeup: {
-    sections: {
-      heading: string
-      contents: string[]
-      image: string
-    }[]
-  }
-}
-
 export interface Partner {
   slug: string
   name: string
@@ -36,6 +23,6 @@ export interface Partner {
   brandColor: string
   icon: string
   iconInverse: string
-  drop: HeadlineDrop
-  otherDrops: Drop[]
+  drops: Drop[]
+  aarweaveDigest: string
 }
