@@ -11,6 +11,7 @@ const openSeason: Partner = {
   iconInverse: '/partners/open-sea/icon-inverse.svg',
   drop: {
     image: '/partners/open-sea/drop/duck.jpeg',
+    creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
     name: 'Duck Season NFT Drop',
     aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
     createdBy: 'Duck Season',
@@ -48,6 +49,7 @@ const openSeason: Partner = {
   otherDrops: [
     {
       image: '/partners/open-sea/external-drops/1.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Bass Face',
       startDate: +new Date(),
@@ -59,6 +61,7 @@ const openSeason: Partner = {
     },
     {
       image: '/partners/open-sea/external-drops/2.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Collateral Damage',
       startDate: +new Date(),
@@ -70,6 +73,7 @@ const openSeason: Partner = {
     },
     {
       image: '/partners/open-sea/external-drops/3.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Qunitessence',
       startDate: +new Date(),
@@ -81,6 +85,7 @@ const openSeason: Partner = {
     },
     {
       image: '/partners/open-sea/external-drops/4.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Bad Trip',
       startDate: +new Date(),

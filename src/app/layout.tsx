@@ -85,6 +85,22 @@ const coinbaseMono = localFont({
   ],
 })
 
+const coinbaseDisplay = localFont({
+  variable: '--font-coinbase-display',
+  src: [
+    {
+      path: './fonts/Coinbase_Display-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Coinbase_Display-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+})
+
 export const metadata = {
   title: 'On Chain Summer',
   description: 'Mint NFTs with OnChainSummer',
@@ -118,6 +134,7 @@ export default function RootLayout({
             coinbaseSans.variable,
             coinbaseText.variable,
             coinbaseMono.variable,
+            coinbaseDisplay.variable,
             inter.variable
           )}
         >

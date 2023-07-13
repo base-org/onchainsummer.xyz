@@ -14,7 +14,7 @@ export interface TabsComponentProps {
 
 export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
   return (
-    <section className="mx-5 p-4 md:px-4 bg-gray-200/80 rounded-2xl">
+    <section className="p-4 bg-gray-200/80 rounded-2xl">
       <TabsComponent.Root defaultValue="tab1">
         <TabsComponent.List className="" aria-label="Manage your account">
           <TabsListItems

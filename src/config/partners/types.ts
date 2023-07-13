@@ -12,6 +12,7 @@ export interface Drop {
   crossMintClientId: string
   type: DropType
   externalLink?: string
+  creator: string
 }
 
 export interface HeadlineDrop extends Drop {

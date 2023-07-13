@@ -11,6 +11,7 @@ const sushiConfig: Partner = {
   iconInverse: '/partners/sushi/icon.svg',
   drop: {
     image: '/partners/sushi/drop/sushi.jpeg',
+    creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
     name: 'Sushi Drop',
     aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
     createdBy: 'Meebits',
@@ -50,6 +51,7 @@ const sushiConfig: Partner = {
     {
       image: '/partners/open-sea/external-drops/1.png',
       externalLink: 'https://opensea.io/collection/lootproject',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Bass Face',
       startDate: +new Date(),
       endDate: +new Date() + DAY,
@@ -60,6 +62,7 @@ const sushiConfig: Partner = {
     },
     {
       image: '/partners/open-sea/external-drops/2.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Collateral Damage',
       startDate: +new Date(),
@@ -71,6 +74,7 @@ const sushiConfig: Partner = {
     },
     {
       image: '/partners/open-sea/external-drops/3.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Qunitessence',
       startDate: +new Date(),
@@ -82,6 +86,7 @@ const sushiConfig: Partner = {
     },
     {
       image: '/partners/open-sea/external-drops/4.png',
+      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Bad Trip',
       startDate: +new Date(),

@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import type { ButtonHTMLAttributes } from 'react'
 import React from 'react'
@@ -11,6 +13,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   children: React.ReactNode
   href?: string
+  external?: boolean
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -24,6 +27,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       onClick,
       href,
+      external,
       ...rest
     },
     ref
@@ -49,8 +53,30 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
 
     if (href) {
+      if (external) {
+        return (
+          <a
+            href={href}
+            className={buttonClassName}
+            aria-disabled={disabled}
+            target="_blank"
+            rel="noopener noreferrer"
+            // @ts-expect-error
+            onClick={disabled ? () => {} : () => onClick?.()}
+          >
+            {children}
+          </a>
+        )
+      }
+
       return (
-        <Link href={href} className={buttonClassName} aria-disabled={disabled}>
+        <Link
+          href={href}
+          className={buttonClassName}
+          aria-disabled={disabled}
+          // @ts-expect-error
+          onClick={disabled ? () => {} : () => onClick?.()}
+        >
           {children}
         </Link>
       )

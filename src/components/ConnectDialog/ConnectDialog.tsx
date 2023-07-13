@@ -113,7 +113,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
             </Dialog.Description>
             <Dialog.Close asChild>
               <button
-                className="text-black absolute top-[50%] translate-y-[-50%] right-0 inline-flex h-[32px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
+                className="text-black absolute top-0 right-0 inline-flex h-[32px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
                 aria-label="Close"
               >
                 <Close />
@@ -122,7 +122,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
           </div>
           <Separator className="my-6" />
           <Button
-            className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
+            className="justify-between"
             onClick={async () => {
               await connect(preferredWallet.config)
             }}
@@ -134,7 +134,8 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
             {otherWallets.map((wallet) => (
               <Button
                 key={wallet.slug}
-                className="!flex text-black text-lg font-medium w-full justify-between rounded-lg !border !border-neutral-100 !bg-white"
+                className="justify-between"
+                variant="LIGHT"
                 onClick={async () => {
                   await connect(wallet.config)
                 }}
