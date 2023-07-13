@@ -8,7 +8,7 @@ type NavListItemsProps = {}
 export const NavListItems: FC<NavListItemsProps> = ({}) => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-0">
-      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-6">
+      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-6 ">
         <NavigationMenu.Item className="my-2">
           <NavigationMenu.Link asChild>
             <Link
@@ -30,8 +30,8 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
           </NavigationMenu.Link>
         </NavigationMenu.Item>
       </NavigationMenu.List>
-      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-4">
-        <p className="uppercase font-mono text-zinc-400">
+      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-4 w-max">
+        <p className="uppercase font-mono text-zinc-400 whitespace-nowrap">
           Celebration of Onchain Fun
         </p>
         <NavigationMenu.Item asChild>

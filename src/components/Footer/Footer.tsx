@@ -77,11 +77,6 @@ export const Footer = () => {
                 <MirrorLogo />
               </div>
             </div>
-            <div className="flex items-end">
-              <p className="text-[#151515]">
-                ©️ 2023 Onchainsummer. All rights reserved.
-              </p>
-            </div>
           </div>
         </div>
       </footer>

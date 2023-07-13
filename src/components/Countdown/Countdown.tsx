@@ -6,7 +6,7 @@ import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
 
 interface CustomCountdownProps extends CountdownProps {
-  title: string
+  title?: string
   completedText: React.ReactNode
 }
 
@@ -23,8 +23,8 @@ export const Countdown: FC<CustomCountdownProps> = ({
   }, [])
 
   return (
-    <div className={clsx('flex items-end flex-row', className)}>
-      <div className="mr-4 relative bottom-1">
+    <div className={clsx('flex items-center flex-row', className)}>
+      <div className="mr-4">
         <Clock />
       </div>
       <div className="flex flex-col text-[14px] font-mono font-medium uppercase">
