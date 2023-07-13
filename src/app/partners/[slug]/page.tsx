@@ -23,10 +23,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const { otherDrops, name, icon } = partner
 
   return (
-    <div className="mb-[120px]">
-      <main className="relative w-screen overflow-x-hidden ">
+    <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
+      <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 md:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
-        <section className="px-8 lg:px-[120px] font-text">
+        <section className="w-full font-text">
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-xl">
             <div className="md:px-16 lg:px-32 md:py-[54px] m-4 md:border md:border-gray-400 md:border-1 rounded-xl break-words">
               <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%]">

@@ -17,7 +17,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
 }) => {
   return (
     <section className="grid p-5 md:py-6 md:px-10 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
-      <div className="relative z-20 w-full aspect-[287/212] mb-1 lg:mb-0 order-1 md:order-2">
+      <div className="relative w-full aspect-[287/212] mb-1 lg:mb-0 order-1 md:order-2">
         <Image
           src={drop.image}
           alt={drop.name}
@@ -27,7 +27,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll order-2 md:order-1 md:gap-8">
         <div className="flex gap-2 md:mt-6">
-          <div className="relative z-20 h-6 w-6">
+          <div className="relative h-6 w-6">
             <Image src={icon} alt={`${name} Icon`} fill />
           </div>
           <span className="font-medium">{name}</span>

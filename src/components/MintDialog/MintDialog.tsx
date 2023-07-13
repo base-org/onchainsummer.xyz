@@ -141,7 +141,7 @@ export const MintDialog: FC = () => {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <Button tabIndex={-1} className="!flex !justify-between">
-          {buttonTitle} <RightArrow />
+          {buttonTitle}
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>

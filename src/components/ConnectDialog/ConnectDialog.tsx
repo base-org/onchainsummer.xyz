@@ -113,7 +113,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
             </Dialog.Description>
             <Dialog.Close asChild>
               <button
-                className="text-black absolute top-[50%] translate-y-[-50%] right-0 inline-flex h-[32px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
+                className="text-black absolute top-0 right-0 inline-flex h-[32px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
                 aria-label="Close"
               >
                 <Close />

@@ -15,7 +15,7 @@ const Home = async () => {
 
   return (
     <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
-      <main className="flex h-full flex-col items-center justify-between relative overflow-x-hidden px-6 pb-36 gap-10 md:gap-[54px]">
+      <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 md:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
         <section className="w-full">
           <div className="bg-gray-200/80 p-4 rounded-xl">
