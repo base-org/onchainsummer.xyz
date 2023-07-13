@@ -35,11 +35,6 @@ export const DropCard: FC<DropCardProps> = ({
 
   return (
     <Card className="relative flex flex-col gap-4 font-text w-[320px] flex-auto">
-      <Card className="absolute aspect-square p-2 top-9 right-9 z-20 bg-white">
-        <div className="relative z-20 h-8 w-8">
-          <Image src={partnerIcon} alt={`${partner} Icon`} fill />
-        </div>
-      </Card>
       <div className="relative w-full aspect-[4/3]">
         <Image
           src={image}
