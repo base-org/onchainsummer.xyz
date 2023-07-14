@@ -69,7 +69,6 @@ export default function Trending() {
   const { data, error, isLoading } = useQuery<QueryResult>({
     queryKey: [connectedWallet, chain],
     queryFn: ({ queryKey }) => {
-      console.log('queryKey', queryKey)
       const [connectedWallet, chain] = queryKey
       return fetchData(connectedWallet as string, chain as string)
     },
