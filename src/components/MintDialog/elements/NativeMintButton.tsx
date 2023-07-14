@@ -7,6 +7,7 @@ import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
 
 interface NativeMintButtonProps {
+  page: ModalPage
   setPage: React.Dispatch<ModalPage>
   quantity: number
   totalPrice: string
@@ -15,45 +16,47 @@ interface NativeMintButtonProps {
 }
 
 export const NativeMintButton: FC<NativeMintButtonProps> = ({
+  page,
   setPage,
   quantity,
   totalPrice,
   setTxDetails,
   setMintError,
 }) => {
+  const isPending =
+    page === ModalPage.NATIVE_MINTING_PENDING_TX ||
+    page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const { address } = useMintDialogContext()
   const userAddress = useAddress()
-  const { data: contract } = useContract(address)
-  const { mutateAsync: claimNft, isLoading } = useClaimNFT(contract)
-
-  const isPending = isLoading
+  const { data: contract, isLoading } = useContract(address)
 
   return (
     <Button
       className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
-      disabled={isPending}
+      disabled={isPending || isLoading}
       onClick={async () => {
-        setPage(ModalPage.NATIVE_MINTING_PENDING_TX)
-
+        if (!contract) {
+          return
+        }
         try {
-          const result = await claimNft({
-            to: userAddress,
-            quantity,
-          })
-          // @ts-expect-error
-          const data = result[0] as {
-            id: BigNumber
-            receipt: { transactionHash: string }
+          const tx = await contract.erc721.claim.prepare(quantity)
+
+          setPage(ModalPage.NATIVE_MINT_PENDING_CONFIRMATION)
+          // just submit the tx
+          const sentTransaction = await tx.send()
+
+          const hash = sentTransaction.hash
+          setTxDetails({ hash })
+          setPage(ModalPage.NATIVE_MINTING_PENDING_TX)
+
+          // wait for confirmation
+          const receipt = await sentTransaction.wait()
+
+          if (receipt.status === 1) {
+            setPage(ModalPage.MINT_SUCCESS)
+          } else {
+            setPage(ModalPage.MINT_ERROR)
           }
-
-          const id = BigNumber.from(data?.id)
-
-          const tokenId = id.toString()
-          setTxDetails((prev) => ({
-            hash: data?.receipt?.transactionHash,
-          }))
-
-          setPage(ModalPage.MINT_SUCCESS)
         } catch (e) {
           // @ts-expect-error
           if (e.reason === 'user rejected transaction') {

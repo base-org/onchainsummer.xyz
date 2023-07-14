@@ -42,6 +42,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <Separator className="bg-ocs-red mt-4" />
           <Countdown
             completedText="Drop Ended"
+            title="Ends"
             date={headline.endDate}
             className="text-ocs-red"
           />

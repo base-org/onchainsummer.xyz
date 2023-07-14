@@ -75,6 +75,7 @@ export const NativeMint: FC<NativeMintProps> = ({
           <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />
         ) : (
           <NativeMintButton
+            page={page}
             setPage={setPage}
             quantity={quantity}
             totalPrice={totalPrice}

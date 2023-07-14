@@ -11,15 +11,13 @@ import { PartnerInfo } from '../../elements/PartnerInfo'
 import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
 
 interface SuccessProps {
-  setPage: React.Dispatch<ModalPage>
-  setCrossMintOrderIdentifier: React.Dispatch<string>
+  resetModal: () => void
   txHash: string
   closeModal: () => void
 }
 
 export const Success: FC<SuccessProps> = ({
-  setPage,
-  setCrossMintOrderIdentifier,
+  resetModal,
   txHash,
   closeModal,
 }) => {
@@ -42,8 +40,7 @@ export const Success: FC<SuccessProps> = ({
         <ViewOnExplorer
           txHash={txHash}
           onClick={() => {
-            setPage(ModalPage.NATIVE_MINT)
-            setCrossMintOrderIdentifier('')
+            resetModal()
             closeModal()
           }}
         />
