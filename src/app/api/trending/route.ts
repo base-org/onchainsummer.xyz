@@ -7,8 +7,9 @@ const API_KEY = process.env.NEXT_PUBLIC_MINT_DOT_FUN_API_KEY
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const connectedWallet = searchParams.get('connectedWallet')
+  const chain = searchParams.get('chain')
 
-  const url = `${API_URL}/collections?connectedWallet=${connectedWallet}`
+  const url = `${API_URL}/collections?connectedWallet=${connectedWallet}&chain=${chain}`
 
   try {
     const response = await axios.get(url, {

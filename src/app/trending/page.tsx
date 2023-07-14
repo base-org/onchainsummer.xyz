@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { useChainId } from '@thirdweb-dev/react'
 import { Button } from '@/components/Button'
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { useQuery } from 'react-query'
@@ -41,8 +42,10 @@ interface QueryResult {
   collections: Collection[]
 }
 
-async function fetchData(connectedWallet: string) {
-  const res = await fetch(`/api/trending?connectedWallet=${connectedWallet}`)
+async function fetchData(connectedWallet: string, chain: string) {
+  const res = await fetch(
+    `/api/trending?connectedWallet=${connectedWallet}&chain=${chain}`
+  )
 
   if (!res.ok) {
     throw new Error(`HTTP error! status: ${res.status}`)
@@ -61,10 +64,14 @@ const VISIBLE_NFTS = {
 
 export default function Trending() {
   const connectedWallet = useAddress()
+  const chain = useChainId()
 
   const { data, error, isLoading } = useQuery<QueryResult>({
-    queryKey: ['trending', connectedWallet],
-    queryFn: ({ queryKey }) => fetchData(queryKey[1] as string),
+    queryKey: [connectedWallet, chain],
+    queryFn: ({ queryKey }) => {
+      const [connectedWallet, chain] = queryKey
+      return fetchData(connectedWallet as string, chain as string)
+    },
   })
 
   const collections = data?.collections
