@@ -36,7 +36,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
               src={image}
               alt="Hero"
               fill
-              className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none h-full w-full"
+              className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
             />
           </div>
         </div>
