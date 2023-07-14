@@ -7,11 +7,12 @@ import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
 import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
+import { ReactMarkdown } from '@/components/ReactMarkdown'
 
 const Home = async () => {
   const { partner, tabs, article } = await getPageData()
-  const { drops, name, icon } = partner
 
+  const { drops, name, icon } = partner
   const otherDrops = drops.filter((_, index) => index !== 0)
 
   return (
@@ -49,7 +50,10 @@ const Home = async () => {
                 <h2 className="text-[32px]">{article.content.title}</h2>
               </div>
               <div className="basis-1/2">
-                <p>{article.content.body.slice(0, 500)} ...</p>
+                <ReactMarkdown
+                  content={`${article.content.body.slice(0, 500)} ...`}
+                />
+                <p></p>
                 <Button
                   className="uppercase border border-1 border-black !bg-transparent !text-black mt-6"
                   href={`/partners/${partner.slug}`}

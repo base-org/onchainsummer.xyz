@@ -2,15 +2,11 @@ import { notFound, redirect } from 'next/navigation'
 import compareAsc from 'date-fns/compareAsc'
 import format from 'date-fns/format'
 import { schedule } from '@/config/schedule'
-
 import { PartnerHero } from '@/components/PartnerHero'
+import { ReactMarkdown } from '@/components/ReactMarkdown'
 import React from 'react'
 import { DropCard } from '@/components/DropCard'
 import { SDK } from '@/utils/graphqlSdk'
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import remarkGfm from 'remark-gfm'
-
-import unreset from './unreset.module.scss'
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug
@@ -34,12 +30,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%]">
                 {article.content.title}
               </h2>
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                className={unreset.unreset}
-              >
-                {article.content.body}
-              </ReactMarkdown>
+              <ReactMarkdown content={article.content.body} />
             </div>
             <div className="mb-4 mx-4">
               <div className="-mr-4">

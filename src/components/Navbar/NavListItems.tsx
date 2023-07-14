@@ -7,7 +7,7 @@ type NavListItemsProps = {}
 
 export const NavListItems: FC<NavListItemsProps> = ({}) => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-0">
+    <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6">
       <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-6 ">
         <NavigationMenu.Item className="my-2">
           <NavigationMenu.Link asChild>
