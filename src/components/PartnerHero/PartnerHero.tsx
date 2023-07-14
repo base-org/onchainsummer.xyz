@@ -58,7 +58,6 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
               partnerName={name}
               dropImage={headline.image}
               dropName={headline.name}
-              dropEndTime={headline.endDate}
               creatorAddress={headline.creator}
             />
           )}

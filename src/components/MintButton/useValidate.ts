@@ -1,3 +1,4 @@
+import { MintStatus } from '@/utils/mintDotFunTypes'
 import {
   useContract,
   useActiveClaimCondition,
@@ -13,13 +14,24 @@ type Validation = {
   isValidating: boolean
 }
 
-export const useValidate = (address: string): Validation => {
+export const useValidate = (
+  address: string,
+  mintDotFunStatus?: MintStatus
+): Validation => {
   const { contract } = useContract(address)
   const { data: contractType, isLoading: isLoadingContractType } =
     useContractType(address)
   const { data: claimConditions, isLoading } = useActiveClaimCondition(contract)
   const { data: unclaimedSupply, isLoading: isLoadingUnclaimedSupply } =
     useUnclaimedNFTSupply(contract)
+
+  if (mintDotFunStatus) {
+    return {
+      valid: mintDotFunStatus.isMintable,
+      message: mintDotFunStatus.isMintable ? '' : 'Mint not Available',
+      isValidating: false,
+    }
+  }
 
   const isLimitedSupply = contractType === 'nft-drop'
   const soldOut =

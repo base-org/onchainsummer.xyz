@@ -16,14 +16,9 @@ import { ArrowRight } from '../icons/ArrowRight'
 import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
-import { RightArrow } from '../icons/RightArrow'
 
 export type TxDetails = {
   hash: string
-  nft: {
-    address: string
-    tokenIds: string[]
-  }
 }
 
 export const MintDialog: FC = () => {
@@ -45,13 +40,15 @@ export const MintDialog: FC = () => {
         return 'Tx Failed'
       case ModalPage.MINT_SUCCESS:
         return 'Success'
+      case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
+        return 'Confirming...'
       case ModalPage.CROSS_MINT_PENDING:
-      case ModalPage.NATIVE_MINTING_PENDING:
+      case ModalPage.NATIVE_MINTING_PENDING_TX:
         return 'Minting...'
       case ModalPage.NATIVE_MINT:
         return (
           <>
-            Mint (${price} ETH) <ArrowRight />
+            Mint ({price} ETH) <ArrowRight />
           </>
         )
       case ModalPage.BRIDGE:
@@ -80,6 +77,7 @@ export const MintDialog: FC = () => {
             setPage={setPage}
             setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
             totalPrice={totalPrice}
+            txHash={txDetails?.hash ?? ''}
           />
         )
       case ModalPage.MINT_SUCCESS:
@@ -106,7 +104,8 @@ export const MintDialog: FC = () => {
             setOrderIdentifier={setCrossMintOrderIdentifier}
           />
         ) : null
-      case ModalPage.NATIVE_MINTING_PENDING:
+      case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
+      case ModalPage.NATIVE_MINTING_PENDING_TX:
       case ModalPage.NATIVE_MINT:
         return (
           <NativeMint

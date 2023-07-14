@@ -2,7 +2,10 @@ import { FC } from 'react'
 import { ModalPage } from '../../types'
 import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { isProd } from '@/config/chain'
-import { isTransactionFulfillmentPayload } from './helpers'
+import {
+  isTransactionFulfillmentFailedPayload,
+  isTransactionFulfillmentPayload,
+} from './helpers'
 import { CrossMintForm } from './CrossMintForm'
 import clsx from 'clsx'
 import { Pending } from '../../elements/Pending'
@@ -44,16 +47,15 @@ export const CrossMint: FC<CrossMintProps> = ({
           const { contractAddress, tokenIds, txId } = event.payload
           setTxDetails({
             hash: txId,
-            nft: {
-              address: contractAddress,
-              tokenIds,
-            },
           })
           setPage(ModalPage.MINT_SUCCESS)
         }
         break
       case 'transaction:fulfillment.failed':
-        // TODO: Inform error
+        if (isTransactionFulfillmentFailedPayload(event.payload)) {
+          const { orderIdentifier } = event.payload
+          // TODO: Get txhash from crossmint
+        }
         setPage(ModalPage.MINT_ERROR)
         break
       default:
@@ -65,7 +67,7 @@ export const CrossMint: FC<CrossMintProps> = ({
 
   return (
     <>
-      <Pending isPending={isPending} />
+      <Pending isPendingTx={isPending} isPendingConfirmation={false} />
       <div className={clsx({ hidden: isPending }, 'flex flex-col w-full')}>
         <CrossMintForm
           page={page}

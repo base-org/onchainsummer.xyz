@@ -27,12 +27,9 @@ export const DropCard: FC<DropCardProps> = ({
   partner,
   name,
   externalLink,
-  endDate,
   price,
   creator,
 }) => {
-  const truncatedAddress = address.slice(0, 6) + '...' + address.slice(-4)
-
   return (
     <Card className="relative flex flex-col gap-4 font-text w-[320px] flex-auto">
       <div className="relative w-full aspect-[4/3]">
@@ -71,7 +68,6 @@ export const DropCard: FC<DropCardProps> = ({
             partnerName={partner}
             dropImage={image}
             dropName={name}
-            dropEndTime={endDate}
             creatorAddress={creator}
           />
         )}

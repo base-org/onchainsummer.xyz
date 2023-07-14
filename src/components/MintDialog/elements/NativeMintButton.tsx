@@ -4,11 +4,10 @@ import { ModalPage } from '../types'
 import { useAddress, useClaimNFT, useContract } from '@thirdweb-dev/react'
 import { BigNumber } from 'ethers'
 import { TxDetails } from '../MintDialog'
+import { useMintDialogContext } from '../Context/useMintDialogContext'
 
 interface NativeMintButtonProps {
-  page: ModalPage
   setPage: React.Dispatch<ModalPage>
-  address: string
   quantity: number
   totalPrice: string
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
@@ -16,14 +15,13 @@ interface NativeMintButtonProps {
 }
 
 export const NativeMintButton: FC<NativeMintButtonProps> = ({
-  page,
   setPage,
-  address,
   quantity,
   totalPrice,
   setTxDetails,
   setMintError,
 }) => {
+  const { address } = useMintDialogContext()
   const userAddress = useAddress()
   const { data: contract } = useContract(address)
   const { mutateAsync: claimNft, isLoading } = useClaimNFT(contract)
@@ -35,7 +33,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
       className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
       disabled={isPending}
       onClick={async () => {
-        setPage(ModalPage.NATIVE_MINTING_PENDING)
+        setPage(ModalPage.NATIVE_MINTING_PENDING_TX)
 
         try {
           const result = await claimNft({
@@ -53,7 +51,6 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
           const tokenId = id.toString()
           setTxDetails((prev) => ({
             hash: data?.receipt?.transactionHash,
-            nft: { address, tokenIds: [tokenId] },
           }))
 
           setPage(ModalPage.MINT_SUCCESS)

@@ -10,7 +10,7 @@ export const Provider: FC<MintDialogProviderProps> = ({
   ...context
 }) => {
   return (
-    <MintDialogContext.Provider value={context}>
+    <MintDialogContext.Provider value={{ ...context }}>
       {children}
     </MintDialogContext.Provider>
   )

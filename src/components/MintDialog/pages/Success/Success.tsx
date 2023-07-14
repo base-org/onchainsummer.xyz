@@ -8,6 +8,7 @@ import { AddressPill } from '@/components/AddressPill'
 import { isProd } from '@/config/chain'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { PartnerInfo } from '../../elements/PartnerInfo'
+import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
 
 interface SuccessProps {
   setPage: React.Dispatch<ModalPage>
@@ -38,17 +39,14 @@ export const Success: FC<SuccessProps> = ({
       </Dialog.Description>
 
       <Dialog.Close asChild>
-        <Button
-          external
-          href={`https://${isProd ? '' : 'goerli.'}basescan.org/tx/${txHash}`}
+        <ViewOnExplorer
+          txHash={txHash}
           onClick={() => {
             setPage(ModalPage.NATIVE_MINT)
             setCrossMintOrderIdentifier('')
             closeModal()
           }}
-        >
-          View on Explorer
-        </Button>
+        />
       </Dialog.Close>
     </>
   )
