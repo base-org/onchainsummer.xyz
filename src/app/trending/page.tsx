@@ -1,11 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { useChainId } from '@thirdweb-dev/react'
 import { Button } from '@/components/Button'
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { useQuery } from 'react-query'
-import { MintDotFunMinter } from '@/components/MintDotFunMinter/MintDotFunMinter'
 import { useAddress } from '@thirdweb-dev/react'
 import { formatEther } from 'viem'
 import { ThirdWeb } from '@/components/icons/ThirdWeb'
@@ -13,39 +11,15 @@ import { Zora } from '@/components/icons/Zora'
 import { Manifold } from '@/components/icons/Manifold'
 import { MintDotFun } from '@/components/icons/MintDotFun'
 import { UpArrow } from '@/components/icons/UpArrow'
-
-interface Mint {
-  imageURI: string
-}
-
-interface Collection {
-  name: string
-  contract: string
-  mintsLastHour: number
-  recentMints: Mint[]
-  externalURL: string
-  deployer: string
-  mintStatus: {
-    price: string
-    isMintable: boolean
-    tx: {
-      data: string
-      quantity: string
-      to: `0x${string}`
-      tokenId: string
-      value: string
-    }
-  }
-}
+import { MintButton } from '@/components/MintButton'
+import { Collection } from '@/utils/mintDotFunTypes'
 
 interface QueryResult {
   collections: Collection[]
 }
 
-async function fetchData(connectedWallet: string, chain: string) {
-  const res = await fetch(
-    `/api/trending?connectedWallet=${connectedWallet}&chain=${chain}`
-  )
+async function fetchData(connectedWallet: string) {
+  const res = await fetch(`/api/trending?connectedWallet=${connectedWallet}`)
 
   if (!res.ok) {
     throw new Error(`HTTP error! status: ${res.status}`)
@@ -64,13 +38,12 @@ const VISIBLE_NFTS = {
 
 export default function Trending() {
   const connectedWallet = useAddress()
-  const chain = useChainId()
 
   const { data, error, isLoading } = useQuery<QueryResult>({
-    queryKey: [connectedWallet, chain],
+    queryKey: [connectedWallet],
     queryFn: ({ queryKey }) => {
-      const [connectedWallet, chain] = queryKey
-      return fetchData(connectedWallet as string, chain as string)
+      const [connectedWallet] = queryKey
+      return fetchData(connectedWallet as string)
     },
   })
 
@@ -150,11 +123,12 @@ export default function Trending() {
                     recentMints,
                     mintStatus,
                     externalURL,
+                    imageURL,
                   },
                   idx
                 ) => (
                   <div
-                    key={idx}
+                    key={externalURL}
                     className="w-full mb-6 last:mb-0 bg-white rounded-2xl p-6"
                   >
                     <div className="flex flex-wrap">
@@ -177,7 +151,18 @@ export default function Trending() {
                         </div>
                       </div>
                       <div className="flex gap-4 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full max-h-[50px]">
-                        <MintDotFunMinter mintStatus={mintStatus} />
+                        <MintButton
+                          price={formatEther(BigInt(mintStatus.tx.value))}
+                          address={mintStatus.tx.to}
+                          partnerIcon={''}
+                          partnerName={name}
+                          dropImage={
+                            imageURL || recentMints?.[0]?.imageURI || ''
+                          }
+                          dropName={name}
+                          creatorAddress={mintStatus.tx.to}
+                          mintDotFunStatus={mintStatus}
+                        />
                         <Button
                           size="SMALL"
                           className="grow lg:grow-0 uppercase border border-1 border-black !bg-white"
@@ -190,7 +175,7 @@ export default function Trending() {
                       <div className="flex gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">
                         {recentMints.map(({ imageURI }, idx) => (
                           <div
-                            key={idx}
+                            key={imageURI}
                             className={`${
                               idx > VISIBLE_NFTS.mobile ? 'hidden' : 'block'
                             } sm:${

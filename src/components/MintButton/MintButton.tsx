@@ -13,7 +13,10 @@ interface MintButtonProps extends MintDialogContextType {}
 
 export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
   const walletAddress = useAddress()
-  const { valid, message, isValidating } = useValidate(mintProps.address)
+  const { valid, message, isValidating } = useValidate(
+    mintProps.address,
+    mintProps.mintDotFunStatus
+  )
 
   if (!walletAddress) {
     return <ConnectDialog />

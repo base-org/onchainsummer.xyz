@@ -3,7 +3,12 @@ import { useMintDialogContext } from '../Context/useMintDialogContext'
 import Image from 'next/image'
 
 export const PartnerInfo: FC = () => {
-  const { partnerIcon, partnerName } = useMintDialogContext()
+  const { partnerIcon, partnerName, mintDotFunStatus } = useMintDialogContext()
+
+  if (!!mintDotFunStatus) {
+    return null
+  }
+
   return (
     <div className="flex gap-2">
       <div className="relative z-20 h-6 w-6">

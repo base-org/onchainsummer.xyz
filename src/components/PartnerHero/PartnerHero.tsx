@@ -42,6 +42,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <Separator className="bg-ocs-red mt-4" />
           <Countdown
             completedText="Drop Ended"
+            title="Ends"
             date={headline.endDate}
             className="text-ocs-red"
           />
@@ -58,7 +59,6 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
               partnerName={name}
               dropImage={headline.image}
               dropName={headline.name}
-              dropEndTime={headline.endDate}
               creatorAddress={headline.creator}
             />
           )}

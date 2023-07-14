@@ -6,7 +6,7 @@ import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
 
 interface CustomCountdownProps extends CountdownProps {
-  title?: string
+  title: string
   completedText: React.ReactNode
 }
 

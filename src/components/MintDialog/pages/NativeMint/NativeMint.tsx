@@ -10,6 +10,8 @@ import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
+import { is } from 'date-fns/locale'
+import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
 
 interface NativeMintProps {
   page: ModalPage
@@ -30,9 +32,14 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
 }) => {
-  const { creatorAddress, dropName, partnerIcon, partnerName, address } =
+  const { creatorAddress, dropName, address, mintDotFunStatus } =
     useMintDialogContext()
-  const isPending = page === ModalPage.NATIVE_MINTING_PENDING
+  const isPendingConfirmation =
+    page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
+  const isPendingTx = page === ModalPage.NATIVE_MINTING_PENDING_TX
+  const isPending = isPendingConfirmation || isPendingTx
+
+  const isMintDotFun = typeof mintDotFunStatus === 'object'
 
   return (
     <>
@@ -46,7 +53,11 @@ export const NativeMint: FC<NativeMintProps> = ({
         {isPending ? 'Mint Tx Pending' : dropName}
       </Dialog.Title>
 
-      <Pending isPending={isPending} txHash={txDetails?.hash} />
+      <Pending
+        isPendingTx={isPendingTx}
+        isPendingConfirmation={isPendingConfirmation}
+        txHash={txDetails?.hash}
+      />
 
       <div
         className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
@@ -60,23 +71,29 @@ export const NativeMint: FC<NativeMintProps> = ({
             <span>{totalPrice} ETH</span>
           </div>
         </Dialog.Description>
-        <NativeMintButton
-          page={page}
-          setPage={setPage}
-          address={address}
-          quantity={quantity}
-          totalPrice={totalPrice}
-          setTxDetails={setTxDetails}
-          setMintError={setMintError}
-        />
-        <Button
-          variant="LIGHT"
-          onClick={() => {
-            setPage(ModalPage.CROSS_MINT_FORM)
-          }}
-        >
-          Buy with credit card
-        </Button>
+        {isMintDotFun ? (
+          <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />
+        ) : (
+          <NativeMintButton
+            page={page}
+            setPage={setPage}
+            quantity={quantity}
+            totalPrice={totalPrice}
+            setTxDetails={setTxDetails}
+            setMintError={setMintError}
+          />
+        )}
+
+        {!isMintDotFun ? (
+          <Button
+            variant="LIGHT"
+            onClick={() => {
+              setPage(ModalPage.CROSS_MINT_FORM)
+            }}
+          >
+            Buy with credit card
+          </Button>
+        ) : null}
       </div>
     </>
   )

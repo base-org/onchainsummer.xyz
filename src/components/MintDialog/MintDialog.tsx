@@ -16,14 +16,10 @@ import { ArrowRight } from '../icons/ArrowRight'
 import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
-import { RightArrow } from '../icons/RightArrow'
+import { formatEther, parseEther } from 'viem'
 
 export type TxDetails = {
   hash: string
-  nft: {
-    address: string
-    tokenIds: string[]
-  }
 }
 
 export const MintDialog: FC = () => {
@@ -37,7 +33,17 @@ export const MintDialog: FC = () => {
 
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
-  const [totalPrice, setTotalPrice] = useState(price)
+  const totalPrice = useMemo(() => {
+    return formatEther(parseEther(price) * BigInt(quantity))
+  }, [quantity, price])
+
+  const resetModal = () => {
+    setPage(ModalPage.NATIVE_MINT)
+    setTxDetails(null)
+    setMintError(null)
+    setCrossMintOrderIdentifier('')
+    setQuantity(1)
+  }
 
   const buttonTitle = useMemo(() => {
     switch (page) {
@@ -45,13 +51,15 @@ export const MintDialog: FC = () => {
         return 'Tx Failed'
       case ModalPage.MINT_SUCCESS:
         return 'Success'
+      case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
+        return 'Confirming...'
       case ModalPage.CROSS_MINT_PENDING:
-      case ModalPage.NATIVE_MINTING_PENDING:
+      case ModalPage.NATIVE_MINTING_PENDING_TX:
         return 'Minting...'
       case ModalPage.NATIVE_MINT:
         return (
           <>
-            Mint (${price} ETH) <ArrowRight />
+            Mint ({price} ETH) <ArrowRight />
           </>
         )
       case ModalPage.BRIDGE:
@@ -78,15 +86,13 @@ export const MintDialog: FC = () => {
           <MintError
             mintError={mintError}
             setPage={setPage}
-            setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
-            totalPrice={totalPrice}
+            txHash={txDetails?.hash ?? ''}
           />
         )
       case ModalPage.MINT_SUCCESS:
         return (
           <Success
-            setPage={setPage}
-            setCrossMintOrderIdentifier={setCrossMintOrderIdentifier}
+            resetModal={resetModal}
             txHash={txDetails?.hash ?? ''}
             closeModal={() => setOpen(false)}
           />
@@ -106,7 +112,8 @@ export const MintDialog: FC = () => {
             setOrderIdentifier={setCrossMintOrderIdentifier}
           />
         ) : null
-      case ModalPage.NATIVE_MINTING_PENDING:
+      case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
+      case ModalPage.NATIVE_MINTING_PENDING_TX:
       case ModalPage.NATIVE_MINT:
         return (
           <NativeMint
