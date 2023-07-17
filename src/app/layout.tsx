@@ -102,7 +102,7 @@ const coinbaseDisplay = localFont({
 })
 
 export const metadata = {
-  title: 'On Chain Summer',
+  title: 'Onchain Summer',
   description: 'Mint NFTs with OnChainSummer',
 }
 
