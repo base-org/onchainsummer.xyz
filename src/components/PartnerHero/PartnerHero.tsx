@@ -26,7 +26,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           className="object-cover rounded-2xl"
         />
       </div>
-      <div className="flex flex-col w-full gap-4 h-full overflow-scroll order-2 md:order-1 md:gap-8">
+      <div className="flex flex-col w-full gap-4 h-full overflow-scroll order-2 md:order-1 md:gap-8 hide-scrollbar">
         <div className="flex gap-2 md:mt-6">
           <div className="relative h-6 w-6">
             <Image src={icon} alt={`${name} Icon`} fill />

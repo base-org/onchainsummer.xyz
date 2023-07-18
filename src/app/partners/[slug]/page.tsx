@@ -7,7 +7,7 @@ import { ReactMarkdown } from '@/components/ReactMarkdown'
 import React from 'react'
 import { DropCard } from '@/components/DropCard'
 import { SDK } from '@/utils/graphqlSdk'
-
+import { PageContainer } from '@/components/PageContainer'
 const Page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug
   const { partner, article } = await getPartner(slug)
@@ -21,7 +21,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const otherDrops = drops.filter((_, index) => index !== 0)
 
   return (
-    <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
+    <PageContainer>
       <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
         <section className="w-full font-text">
@@ -54,7 +54,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
           </div>
         </section>
       </main>
-    </div>
+    </PageContainer>
   )
 }
 
