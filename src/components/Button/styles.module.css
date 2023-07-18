@@ -1,5 +1,5 @@
 .button {
-  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase;
+  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase whitespace-nowrap;
 }
 
 .button-small {
