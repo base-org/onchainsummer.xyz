@@ -1,20 +1,25 @@
 "use client"
 import { useCallback, useMemo } from 'react'
-import { useSigner } from "@thirdweb-dev/react";
+import { useSigner, useAddress } from "@thirdweb-dev/react";
 import * as OP from "@eth-optimism/sdk";
+import { ethers } from 'ethers';
 
 export default function Bridge () {
     const signer = useSigner();
+    const address = useAddress();
 
     const messenger = useMemo(() => {
-        if (!signer) return null;
+        if (!signer || !address) return null;
+
+        const l2 = new ethers.providers.JsonRpcProvider("https://goerli.base.org").getSigner(address);
+
         return new OP.CrossChainMessenger({
             l1ChainId: OP.L1ChainID.GOERLI,
             l2ChainId: OP.L2ChainID.BASE_GOERLI,
             l1SignerOrProvider: signer!,
-            l2SignerOrProvider: signer!
+            l2SignerOrProvider: l2
         })
-    }, [signer])
+    }, [signer, address])
 
     const bridge = useCallback(async () => {
         const start = new Date()
@@ -24,18 +29,18 @@ export default function Bridge () {
         console.log(`Transaction hash (on L1): ${response.hash}`)
         await response.wait()
         console.log("Waiting for status to change to RELAYED")
-        console.log(`Time so far ${(new Date().getSeconds() - start.getSeconds())/1000} seconds`)
+        console.log(`Time so far ${(new Date().getSeconds() - start.getSeconds())} seconds`)
         await messenger.waitForMessageStatus(response.hash, 
                                                         OP.MessageStatus.RELAYED) 
 
         await reportBalances()    
-        console.log(`depositETH took ${(new Date().getSeconds()-start.getSeconds())/1000} seconds\n\n`)
+        console.log(`depositETH took ${(new Date().getSeconds()-start.getSeconds())} seconds\n\n`)
 
     }, [messenger])
 
     const reportBalances = useCallback(async () => {
         if (!messenger) return;
-        
+
         const l1Balance = (await messenger.l1Signer.getBalance()).toString().slice(0,-9)
         const l2Balance = (await messenger.l2Signer.getBalance()).toString().slice(0,-9)
       
