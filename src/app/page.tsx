@@ -8,15 +8,15 @@ import { PartnerHero } from '@/components/PartnerHero'
 import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
+import { PageContainer } from '@/components/PageContainer'
 
 const Home = async () => {
   const { partner, tabs, article } = await getPageData()
-
   const { drops, name, icon } = partner
   const otherDrops = drops.filter((_, index) => index !== 0)
 
   return (
-    <div className="-mt-[100px] md:-mt-14 w-full max-w-6xl mx-auto">
+    <PageContainer>
       <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
         <section className="w-full">
@@ -45,7 +45,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-6 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
+            <div className="flex flex-col lg:flex-row gap-6 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
               <div className="basis-1/2">
                 <h2 className="text-[32px]">{article.content.title}</h2>
               </div>
@@ -53,9 +53,8 @@ const Home = async () => {
                 <ReactMarkdown
                   content={`${article.content.body.slice(0, 500)} ...`}
                 />
-                <p></p>
                 <Button
-                  className="uppercase border border-1 border-black !bg-transparent !text-black mt-6"
+                  className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 !w-1/2 md:!w-1/3"
                   href={`/partners/${partner.slug}`}
                 >
                   Read More
@@ -68,7 +67,7 @@ const Home = async () => {
           <Tabs {...tabs} />
         </section>
       </main>
-    </div>
+    </PageContainer>
   )
 }
 
