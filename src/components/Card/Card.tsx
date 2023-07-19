@@ -8,6 +8,8 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={clsx('rounded-2xl bg-white', className)}>{children}</div>
+    <div className={clsx('rounded-2xl md:rounded-3xl bg-white', className)}>
+      {children}
+    </div>
   )
 }

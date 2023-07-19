@@ -8,6 +8,7 @@ import React from 'react'
 import { DropCard } from '@/components/DropCard'
 import { SDK } from '@/utils/graphqlSdk'
 import { PageContainer } from '@/components/PageContainer'
+
 const Page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug
   const { partner, article } = await getPartner(slug)
@@ -25,9 +26,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
         <section className="w-full font-text">
-          <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-xl">
-            <div className="md:px-16 lg:px-32 md:py-[54px] m-4 md:border md:border-gray-400 md:border-1 rounded-xl break-words">
-              <h2 className="text-lg leading-8 md:text-[32px] md:leading-[180%]">
+          <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-3xl">
+            <div className="p-6 md:px-16 lg:px-32 md:py-[54px] md:border md:border-gray-400/50 md:border-1 rounded-2xl break-words">
+              <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
                 {article.content.title}
               </h2>
               <ReactMarkdown content={article.content.body} />
