@@ -17,7 +17,7 @@ const Home = async () => {
 
   return (
     <PageContainer>
-      <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
+      <div className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero partner={partner} />
         <section className="w-full">
           <div className="bg-gray-200/80 p-4 rounded-xl">
@@ -66,7 +66,7 @@ const Home = async () => {
         <section className="w-full" id="drops">
           <Tabs {...tabs} />
         </section>
-      </main>
+      </div>
     </PageContainer>
   )
 }

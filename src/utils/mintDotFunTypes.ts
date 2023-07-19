@@ -10,17 +10,28 @@ export type MintStatus = {
   }
 }
 
-interface Mint {
+interface MediaObject {
+  ethPrice: string
   imageURI: string
+  mimeType: string
+  mintTime: string
+  title: string
+  tokenID: string
+  value: string
+}
+
+interface Media {
+  contract: string
+  media: MediaObject[]
 }
 
 export interface Collection {
   name: string
   contract: string
   mintsLastHour: number
-  recentMints: Mint[]
   externalURL: string
   imageURL: string | null
   deployer: string
   mintStatus: MintStatus
+  images: Media
 }
