@@ -30,7 +30,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   const switchChain = useSwitchChain()
   const chain = useChain()
   const disconnect = useDisconnect()
-  const { l1Balance, l2Balance } = useBalances()
+  const { l1Balance, l2Balance, isLoading: isLoadingBalance } = useBalances()
 
   if (!address || !chain) {
     return null
@@ -113,11 +113,15 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
 
             <div className="flex flex-col gap-4 font-mono text-sm">
               <div className="flex justify-between items-center">
-                <Eth /> {formatEther(l1Balance).slice(0, 10)} ETH
+                <Eth />{' '}
+                {isLoadingBalance ? '...' : formatEther(l1Balance).slice(0, 10)}{' '}
+                ETH
               </div>
               <Separator />
               <div className="flex justify-between items-center">
-                <Base /> {formatEther(l2Balance).slice(0, 10)} Base ETH
+                <Base />{' '}
+                {isLoadingBalance ? '...' : formatEther(l2Balance).slice(0, 10)}{' '}
+                Base ETH
               </div>
             </div>
 

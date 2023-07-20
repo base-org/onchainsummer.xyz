@@ -1,30 +1,31 @@
-import { ethers } from 'ethers'
+import { constants } from 'ethers'
 
-import { useEffect, useState } from 'react'
-import { useCrossChainMessenger } from './useCrossChainMessenger'
+import { useQuery } from 'react-query'
+import { useAddress } from '@thirdweb-dev/react'
+import { getJsonRpcProviders } from './getJsonRpcProviders'
 
 const useBalances = () => {
-  const [balances, setBalances] = useState({
-    l1Balance: ethers.BigNumber.from(0),
-    l2Balance: ethers.BigNumber.from(0),
+  const address = useAddress()
+  const { data, isLoading } = useQuery({
+    queryKey: ['balances', address],
+    queryFn: async ({ queryKey }) => {
+      const [_, address] = queryKey as ['balances', string | undefined]
+      const { l1Provider, l2Provider } = getJsonRpcProviders()
+
+      const l1Signer = l1Provider.getSigner(address)
+      const l2Signer = l2Provider.getSigner(address)
+
+      const l1Balance = await l1Signer.getBalance()
+      const l2Balance = await l2Signer.getBalance()
+      return { l1Balance, l2Balance }
+    },
   })
-  const crossChainMessenger = useCrossChainMessenger()
 
-  useEffect(() => {
-    const calcBalances = async () => {
-      const l1Balance = await crossChainMessenger.l1Signer.getBalance()
-
-      const l2Balance = await crossChainMessenger.l2Signer.getBalance()
-
-      setBalances({
-        l1Balance,
-        l2Balance,
-      })
-    }
-    calcBalances()
-  }, [crossChainMessenger])
-
-  return balances
+  return {
+    l1Balance: data?.l1Balance || constants.Zero,
+    l2Balance: data?.l2Balance || constants.Zero,
+    isLoading,
+  }
 }
 
 export default useBalances

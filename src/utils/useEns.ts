@@ -1,7 +1,6 @@
 'use client'
 
 import { mainnet } from 'viem/chains'
-import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import { useAddress } from '@thirdweb-dev/react'
 import { useQuery } from 'react-query'
