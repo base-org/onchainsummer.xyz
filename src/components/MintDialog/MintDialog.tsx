@@ -68,18 +68,17 @@ export const MintDialog: FC = () => {
       case ModalPage.CROSS_MINT_PENDING:
       case ModalPage.NATIVE_MINTING_PENDING_TX:
         return 'Minting...'
+      case ModalPage.BRIDGE:
       case ModalPage.NATIVE_MINT:
         return (
           <>
             Mint ({price} ETH) <ArrowRight />
           </>
         )
-      case ModalPage.BRIDGE:
-        return 'Bridge'
       case ModalPage.BRIDGE_PENDING:
         return 'Bridging funds...'
       case ModalPage.BRIDGE_SUCCESS:
-        return 'Success'
+        return 'Bridge Success'
       case ModalPage.INSUFFICIENT_FUNDS:
         return 'Insufficient Funds'
       case ModalPage.CROSS_MINT_FORM:
