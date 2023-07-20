@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import { Button } from '../../Button'
 import { ModalPage } from '../types'
-import { useAddress, useClaimNFT, useContract } from '@thirdweb-dev/react'
-import { BigNumber } from 'ethers'
+import { useContract } from '@thirdweb-dev/react'
 import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
 
@@ -27,7 +26,6 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
     page === ModalPage.NATIVE_MINTING_PENDING_TX ||
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const { address } = useMintDialogContext()
-  const userAddress = useAddress()
   const { data: contract, isLoading } = useContract(address)
 
   return (

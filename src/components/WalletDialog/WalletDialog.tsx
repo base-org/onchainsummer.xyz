@@ -5,7 +5,6 @@ import clsx from 'clsx'
 import {
   useAddress,
   useChain,
-  useConnectedWallet,
   useDisconnect,
   useNetworkMismatch,
   useSwitchChain,
@@ -19,11 +18,13 @@ import { Separator } from '../Separator'
 import { Base } from '../icons/Base'
 import { ArrowRight } from '../icons/ArrowRight'
 import { BaseGoerli } from '@thirdweb-dev/chains'
+import { useEns } from '@/utils/useEns'
 
 interface WalletDialogProps {}
 
 export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   const address = useAddress()
+  const { name, avatar } = useEns()
   const isMismatched = useNetworkMismatch()
   const switchChain = useSwitchChain()
   const chain = useChain()
@@ -34,13 +35,14 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
     return null
   }
 
-  // TODO: ENS
-  const ens = shortenAddress(address)
+  const shortenedAddress = shortenAddress(address)
 
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button className={'rounded-lg !py-2 !px-3'}>{ens}</Button>
+        <Button className={'rounded-lg !py-2 !px-3'}>
+          {name || shortenedAddress}
+        </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40 lg:hidden" />
@@ -54,12 +56,13 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
         >
           <div className="flex flex-col gap-6">
             <div className="flex gap-3">
-              <div className="h-10 w-10 bg-black rounded-full" />
+              <div
+                className="h-10 w-10 bg-black rounded-full bg-cover"
+                style={{ backgroundImage: `url(${avatar})` }}
+              />
               <div className="flex flex-col ">
-                <span className="font-medium">{ens}</span>
-                <span className="font-mono text-sm">
-                  {shortenAddress(address)}
-                </span>
+                <span className="font-medium">{name}</span>
+                <span className="font-mono text-sm">{shortenedAddress}</span>
               </div>
             </div>
 
@@ -70,6 +73,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
             <div className="flex flex-col gap-4">
               <span className="flex gap-2 items-center font-medium font-mono text-sm uppercase">
                 {chain.icon ? (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={`https://ipfs.io/ipfs/${chain.icon.url.slice(7)}`}
                     className="h-4 w-4 rounded-full"
