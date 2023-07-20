@@ -10,13 +10,13 @@ export const getClients = async () => {
 
   const publicClient = createPublicClient({
     chain: isProd ? mainnet : goerli,
-    // @ts-expect-error
+    // @ts-ignore
     transport: custom(window.ethereum),
   })
 
   const walletClient = createWalletClient({
     chain: isProd ? mainnet : goerli,
-    // @ts-expect-error
+    // @ts-ignore
     transport: custom(window.ethereum),
   })
 
