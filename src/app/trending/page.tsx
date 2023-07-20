@@ -14,6 +14,7 @@ import { UpArrow } from '@/components/icons/UpArrow'
 import { MintButton } from '@/components/MintButton'
 import { Collection } from '@/utils/mintDotFunTypes'
 import { PageContainer } from '@/components/PageContainer'
+import clsx from 'clsx'
 
 interface QueryResult {
   collections: Collection[]
@@ -50,7 +51,7 @@ export default function Trending() {
 
   return (
     <PageContainer>
-      <div className="mx-6 mt-36">
+      <div className="mx-6 mt-32">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
             <div className="basis-1/2">
@@ -109,7 +110,7 @@ export default function Trending() {
               </div>
             </div>
           </div>
-          <div className="p-3 md:p-6 mt-8 mb-32 bg-gray-200/80 rounded-2xl">
+          <div className="p-3 md:p-6 mt-8 mb-32 bg-gray-200/80 rounded-[30px]">
             {isLoading
               ? Array.from({ length: 5 }, (_, index) => (
                   <CollectionPlaceholder key={index} />
@@ -130,7 +131,7 @@ export default function Trending() {
                       key={externalURL}
                       className="w-full mb-6 last:mb-0 bg-white rounded-2xl p-6"
                     >
-                      <div className="flex flex-wrap">
+                      <div className="flex flex-wrap justify-between">
                         <div className="flex flex-row flex-wrap order-1 w-full lg:w-1/2">
                           <div className="flex flex-wrap md:flex-nowrap basis-full md:mb-3 overflow-hidden">
                             <div className="flex items-center w-full md:w-auto">
@@ -149,7 +150,12 @@ export default function Trending() {
                             </p>
                           </div>
                         </div>
-                        <div className="flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full lg:w-1/2 lg:max-h-[50px]">
+                        <div
+                          className={clsx(
+                            'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-1/2 lg:w-1/3 lg:max-h-[50px]',
+                            !connectedWallet && 'flex-wrap sm:flex-nowrap'
+                          )}
+                        >
                           <MintButton
                             price={formatEther(BigInt(mintStatus.tx.value))}
                             address={mintStatus.tx.to}
@@ -188,7 +194,7 @@ export default function Trending() {
                                 width={64}
                                 height={64}
                                 priority
-                                className="rounded-xl"
+                                className="rounded-lg"
                               />
                             </div>
                           ))}
