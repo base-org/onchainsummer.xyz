@@ -12,16 +12,13 @@ export const useNeedsBridging = (totalPrice: string, open: boolean) => {
   const diff = parseEther(totalPrice).sub(data?.value || constants.Zero)
 
   if (!open) {
-    console.log('not open')
     return { needsBriding: false }
   }
 
   if (typeof needsBriding === 'boolean') {
-    console.log('already set')
     return { needsBriding }
   }
 
-  console.log('confirm')
   const result = confirm('To bridge or not to bridge?')
   setNeedsBridging(result)
   return {
