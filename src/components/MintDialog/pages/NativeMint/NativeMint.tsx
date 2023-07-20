@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import Image from 'next/image'
 import { NativeMintButton } from '../../elements/NativeMintButton'
 import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
@@ -10,7 +9,6 @@ import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
-import { is } from 'date-fns/locale'
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
 
 interface NativeMintProps {

@@ -33,8 +33,6 @@ async function fetchData(connectedWallet: string) {
 
 const VISIBLE_NFTS = {
   mobile: 2,
-  sm: 7,
-  md: 10,
 }
 
 export default function Trending() {
@@ -50,10 +48,9 @@ export default function Trending() {
 
   const collections = data?.collections
 
-  console.log(collections)
   return (
     <PageContainer>
-      <div className="mx-6 mt-24">
+      <div className="mx-6 mt-36">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
             <div className="basis-1/2">
@@ -134,7 +131,7 @@ export default function Trending() {
                       className="w-full mb-6 last:mb-0 bg-white rounded-2xl p-6"
                     >
                       <div className="flex flex-wrap">
-                        <div className="flex flex-row flex-wrap lg:basis-[55%] order-1 w-full">
+                        <div className="flex flex-row flex-wrap order-1 w-full lg:w-1/2">
                           <div className="flex flex-wrap md:flex-nowrap basis-full md:mb-3 overflow-hidden">
                             <div className="flex items-center w-full md:w-auto">
                               <p className="text-neutral-400 mr-3 md:mr-[29px] text-mono md:text-lg">
@@ -152,7 +149,7 @@ export default function Trending() {
                             </p>
                           </div>
                         </div>
-                        <div className="flex gap-4 lg:justify-end lg:basis-[45%] order-3 lg:order-2 w-full max-h-[50px]">
+                        <div className="flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full lg:w-1/2 lg:max-h-[50px]">
                           <MintButton
                             price={formatEther(BigInt(mintStatus.tx.value))}
                             address={mintStatus.tx.to}
@@ -164,56 +161,44 @@ export default function Trending() {
                             dropName={name}
                             creatorAddress={mintStatus.tx.to}
                             mintDotFunStatus={mintStatus}
+                            trendingPageNativeMint={true}
+                            mintButtonStyles="w-1/2 sm:!max-w-fit !py-[8px]"
                           />
+
                           <Button
                             size="SMALL"
-                            className="grow lg:grow-0 uppercase border border-1 border-black !bg-white"
+                            className="grow lg:grow-0 uppercase border border-1 border-black !bg-white w-1/2 sm:max-w-fit"
                             variant="LIGHT"
                             href={externalURL}
                           >
                             View More
                           </Button>
                         </div>
-                        <div className="flex gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">
+                        <div className="grid grid-cols-4 [@media(min-width:600px)]:grid-cols-10 gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">
                           {images.media.map(({ imageURI }, idx) => (
                             <div
                               key={imageURI}
                               className={`${
                                 idx > VISIBLE_NFTS.mobile ? 'hidden' : 'block'
-                              } sm:${
-                                idx > VISIBLE_NFTS.sm ? 'hidden' : 'block'
-                              } md:${
-                                idx > VISIBLE_NFTS.md ? 'hidden' : 'block'
-                              } lg:block`}
+                              } [@media(min-width:600px)]:block `}
                             >
                               <Image
                                 src={imageURI}
                                 alt="Image Alt"
-                                width={65}
-                                height={65}
+                                width={64}
+                                height={64}
                                 priority
                                 className="rounded-xl"
                               />
                             </div>
                           ))}
-                          {/* {images.media.length > 4 && (
-                            <div className="flex items-center justify-center lg:hidden p-[2px] bg-trending-linear-gradient">
-                              <div className="flex justify-center items-center h-[65px] w-[65px] bg-[#F5F5F5]">
-                                <span className="sm:hidden">
-                                  +
-                                  {images.media.length -
-                                    VISIBLE_NFTS.mobile -
-                                    1}
-                                </span>
-                                <span className="hidden sm:block md:hidden">
-                                  +{images.media.length - VISIBLE_NFTS.sm - 1}
-                                </span>
-                                <span className="hidden md:block">
-                                  +{images.media.length - VISIBLE_NFTS.md - 1}
-                                </span>
-                              </div>
+                          {images.media.length > 4 && (
+                            <div className="flex [@media(min-width:600px)]:hidden justify-center items-center h-full w-full bg-transparent border-dashed border-2 border-[#BFBFBF] rounded-lg">
+                              <span className="[@media(min-width:600px)]:hidden">
+                                +{images.media.length - VISIBLE_NFTS.mobile - 1}
+                              </span>
                             </div>
-                          )} */}
+                          )}
                         </div>
                       </div>
                     </div>

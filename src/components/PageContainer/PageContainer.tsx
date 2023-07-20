@@ -13,7 +13,7 @@ export const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
   const heroMarginTop = isMismatched ? 'mt-28 md:mt-6' : '-mt-[100px] md:-mt-16'
 
   return (
-    <main className={clsx('w-full max-w-6xl mx-auto', heroMarginTop)}>
+    <main className={clsx('w-full max-w-[1248px] mx-auto', heroMarginTop)}>
       {children}
     </main>
   )
