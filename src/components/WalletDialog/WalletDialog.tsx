@@ -19,17 +19,18 @@ import { Base } from '../icons/Base'
 import { ArrowRight } from '../icons/ArrowRight'
 import { BaseGoerli } from '@thirdweb-dev/chains'
 import { useEns } from '@/utils/useEns'
+import { Loading } from '../icons/Loading'
 
 interface WalletDialogProps {}
 
 export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   const address = useAddress()
-  const { name, avatar } = useEns()
+  const { name, avatar, isLoading: isLoadingEns } = useEns()
   const isMismatched = useNetworkMismatch()
   const switchChain = useSwitchChain()
   const chain = useChain()
   const disconnect = useDisconnect()
-  const { l1Balance, l2Balance } = useBalances()
+  const { l1Balance, l2Balance, isLoading: isLoadingBalance } = useBalances()
 
   if (!address || !chain) {
     return null
@@ -57,11 +58,25 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
           <div className="flex flex-col gap-6">
             <div className="flex gap-3">
               <div
-                className="h-10 w-10 bg-black rounded-full bg-cover"
+                className={clsx(
+                  'h-10 w-10 bg-black rounded-full bg-cover relative',
+                  { 'animate-spin': isLoadingEns }
+                )}
                 style={{ backgroundImage: `url(${avatar})` }}
-              />
+              >
+                {isLoadingEns ? (
+                  <Loading
+                    height={16}
+                    width={16}
+                    color="white"
+                    className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+                  />
+                ) : null}
+              </div>
               <div className="flex flex-col ">
-                <span className="font-medium">{name}</span>
+                <span className="font-medium">
+                  {isLoadingEns ? '...' : name}
+                </span>
                 <span className="font-mono text-sm">{shortenedAddress}</span>
               </div>
             </div>
@@ -98,11 +113,15 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
 
             <div className="flex flex-col gap-4 font-mono text-sm">
               <div className="flex justify-between items-center">
-                <Eth /> {formatEther(l1Balance).slice(0, 10)} ETH
+                <Eth />{' '}
+                {isLoadingBalance ? '...' : formatEther(l1Balance).slice(0, 10)}{' '}
+                ETH
               </div>
               <Separator />
               <div className="flex justify-between items-center">
-                <Base /> {formatEther(l2Balance).slice(0, 10)} Base ETH
+                <Base />{' '}
+                {isLoadingBalance ? '...' : formatEther(l2Balance).slice(0, 10)}{' '}
+                Base ETH
               </div>
             </div>
 

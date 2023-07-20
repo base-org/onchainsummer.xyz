@@ -40,12 +40,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <AddressPill address={headline.creator} />
         <div className="flex flex-col w-full gap-4 mt-auto">
           <p className="md:hidden text-[#444]">{description}</p>
-          <Separator className="bg-ocs-red mt-6" />
+          <Separator className="bg-ocs-blue mt-6" />
           <Countdown
             completedText="Drop Ended"
             title="Ends"
             date={headline.endDate}
-            className="text-ocs-red"
+            className="text-ocs-blue"
           />
           {headline.externalLink ? (
             <Button href={headline.externalLink}>
