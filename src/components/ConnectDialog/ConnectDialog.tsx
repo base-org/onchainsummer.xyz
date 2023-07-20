@@ -10,7 +10,6 @@ import {
   trustWallet,
   walletConnect,
 } from '@thirdweb-dev/react'
-import { Separator } from '../Separator'
 import { Coinbase } from '../icons/Coinbase'
 import { WalletConnect } from '../icons/WalletConnect'
 import { MetaMask } from '../icons/MetaMask'
@@ -22,6 +21,9 @@ type ConnectDialogProps = {
   title?: React.ReactNode
   inNavbar?: boolean
 }
+
+const coinbase = coinbaseWallet({ qrmodal: 'coinbase' })
+coinbase.meta.name = 'Onchain Summer'
 
 const wallets: Record<
   'metamask' | 'coinbase' | 'wallet-connect',
@@ -35,17 +37,17 @@ const wallets: Record<
 > = {
   metamask: {
     slug: 'metamask',
-    title: 'MetaMask',
+    title: 'Metamask',
     icon: <MetaMask />,
     config: metamaskWallet(),
     createLink: 'https://metamask.io/download/',
   },
   coinbase: {
     slug: 'coinbase',
-    title: 'CB Wallet',
+    title: 'Coinbase',
     icon: <Coinbase />,
     // @ts-expect-error
-    config: coinbaseWallet(),
+    config: coinbase,
     createLink: 'https://go.cb-w.com/',
   },
   // Rainbow wallet is not supported yet, they are currently working on a browswr extension.
@@ -72,6 +74,9 @@ const wallets: Record<
   },
 }
 
+const buttonClassName =
+  'py-4 px-6 rounded-[100px] flex items-center gap-3 font-medium w-full hover:bg-[#EFEFEF] leading-[24px]'
+
 export const ConnectDialog: FC<ConnectDialogProps> = ({
   title = <div className="flex gap-2.5 items-center px-3">Connect Wallet</div>,
   inNavbar = false,
@@ -95,53 +100,51 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
-        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-lg px-6 py-8 bg-white focus:outline-none z-40">
-          <div className="relative flex flex-col w-full items-center">
-            <Dialog.Title className="text-neutral-900 m-0 text-2xl font-medium">
-              Connect Your Wallet
+        <Dialog.Content
+          className={clsx(
+            'fixed data-[state=open]:animate-contentShow',
+            'top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-xl translate-x-[-50%] translate-y-[-50%]',
+            'rounded-[20px] p-16 bg-white focus:outline-none z-40 lg:shadow-large'
+          )}
+        >
+          <div className="flex flex-col w-full">
+            <Dialog.Title className="text-[32px] font-display mb-6">
+              Connect a wallet
             </Dialog.Title>
-            <Dialog.Description className="text-black/50 gap-2 font-text font-medium">
-              Don&apos;t have a wallet?{' '}
-              <a
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#309FA7] via-[#9060FF] to-[#0052FF]"
-                href={preferredWallet.createLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Create one here.
-              </a>
-            </Dialog.Description>
             <Dialog.Close asChild>
               <button
-                className="text-black absolute top-0 right-0 inline-flex h-[32px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
+                className="text-black absolute top-10 right-10 inline-flex h-6 w-6 appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
                 aria-label="Close"
               >
                 <Close />
               </button>
             </Dialog.Close>
           </div>
-          <Separator className="my-6" />
-          <Button
-            className="justify-between"
+          <button
+            className={clsx(buttonClassName, 'bg-[#EFEFEF] hover:bg-[#DFDFDF]')}
             onClick={async () => {
               await connect(preferredWallet.config)
             }}
           >
-            <span>{preferredWallet.title}</span> {preferredWallet.icon}
-          </Button>
-          <Separator className="my-6" />
-          <div className="flex flex-col gap-4 w-full">
+            {preferredWallet.icon}
+            <span className="flex flex-col items-start">
+              <span>{preferredWallet.title}</span>
+              <span className="text-sm font-mono font-normal leading-snug">
+                Recommended
+              </span>
+            </span>
+          </button>
+          <div className="flex flex-col w-full">
             {otherWallets.map((wallet) => (
-              <Button
+              <button
                 key={wallet.slug}
-                className="justify-between"
-                variant="LIGHT"
+                className={clsx(buttonClassName)}
                 onClick={async () => {
                   await connect(wallet.config)
                 }}
               >
-                <span>{wallet.title}</span> {wallet.icon}
-              </Button>
+                {wallet.icon} <span>{wallet.title}</span>
+              </button>
             ))}
           </div>
         </Dialog.Content>

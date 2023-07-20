@@ -23,7 +23,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           src={headline.image}
           alt={headline.name}
           fill
-          className="object-cover rounded-2xl"
+          className="object-cover rounded-xl"
         />
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll order-2 md:order-1 md:gap-8 hide-scrollbar">
@@ -38,13 +38,13 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         </h1>
         <AddressPill address={headline.creator} />
         <div className="flex flex-col w-full gap-4 mt-auto">
-          <p className="md:hidden">{description}</p>
-          <Separator className="bg-ocs-red mt-4" />
+          <p className="md:hidden text-[#444]">{description}</p>
+          <Separator className="bg-ocs-blue mt-6" />
           <Countdown
             completedText="Drop Ended"
             title="Ends"
             date={headline.endDate}
-            className="text-ocs-red"
+            className="text-ocs-blue"
           />
           {headline.externalLink ? (
             <Button href={headline.externalLink}>

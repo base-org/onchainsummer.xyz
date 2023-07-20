@@ -30,14 +30,9 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
         className="flex flex-col md:flex-row md:pr-6 bg-white rounded-2xl relative"
         key={address}
       >
-        <div className="flex flex-[1_0_auto] w-[329px] p-4">
+        <div className="flex flex-[1_0_auto] p-4 w-full md:w-[329px]">
           <div className="relative aspect-square my-auto w-full">
-            <Image
-              src={image}
-              alt="Hero"
-              fill
-              className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
-            />
+            <Image src={image} alt="Hero" fill />
           </div>
         </div>
         <div className="md:flex md:flex-col md:justify-start p-4 md:mt-0">
@@ -46,19 +41,19 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
           </h3>
           {link ? (
             <Link
-              className="text-[32px] leading-8 mb-4 after:absolute after:inset-0"
+              className="text-[32px] leading-8after:absolute after:inset-0"
               href={`/partners/${slug}`}
             >
               {name}
             </Link>
           ) : (
-            <h2 className="text-[32px] leading-8 mb-4">{name}</h2>
+            <h2 className="text-[32px] leading-8">{name}</h2>
           )}
 
-          <p className="text-neutral-600 leading-7 mb-8">{description}</p>
+          <p className="text-neutral-600 leading-7 mt-4 mb-8">{description}</p>
 
           <Countdown
-            date={startDate}
+            date={endDate}
             completedText={'Drop Ended'}
             title="Launches"
             className="text-ocs-blue"

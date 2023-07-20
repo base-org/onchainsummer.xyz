@@ -31,7 +31,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
         {mounted ? (
           <ReactCountdown
             {...props}
-            renderer={({ hours, minutes, seconds, completed }) => {
+            renderer={({ days, hours, minutes, seconds, completed }) => {
               if (completed) {
                 return <>{completedText}</>
               } else {
@@ -41,7 +41,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                       <p>{title}</p>
                     </div>
                     <span>
-                      {hours}H:{minutes}M:{seconds}S
+                      {days ? `${days}D` : ''} {hours}H:{minutes}M:{seconds}S
                     </span>
                   </>
                 )

@@ -1,4 +1,3 @@
-import { Address } from '@thirdweb-dev/sdk'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { FC, useMemo, useState } from 'react'
