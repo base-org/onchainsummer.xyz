@@ -21,6 +21,7 @@ module.exports = {
         'ocs-red': '#FF2D2D',
         'ocs-blue': '#0052FF',
         'ocs-turquoise': '#54DCE7',
+        'light-palette-line': 'rgba(91, 97, 110, 0.20)',
       },
       boxShadow: {
         card: '6px 6px 0px #010101',

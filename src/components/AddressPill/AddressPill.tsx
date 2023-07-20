@@ -18,7 +18,7 @@ export const AddressPill: FC<AddressPillProps> = ({
         className
       )}
     >
-      <div className="h-4 w-4 aspect-square rounded-[58px] bg-ocs-black" />
+      <span className="h-4 w-4 aspect-square rounded-[58px] bg-ocs-black" />
       {shortenAddress(address)}
     </span>
   )

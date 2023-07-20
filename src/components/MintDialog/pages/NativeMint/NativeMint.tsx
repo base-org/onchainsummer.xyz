@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import Image from 'next/image'
 import { NativeMintButton } from '../../elements/NativeMintButton'
 import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
@@ -10,7 +9,7 @@ import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
-import { is } from 'date-fns/locale'
+
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
 
 interface NativeMintProps {
@@ -64,12 +63,12 @@ export const NativeMint: FC<NativeMintProps> = ({
       >
         <Dialog.Description className="flex flex-col w-full gap-4">
           <AddressPill address={creatorAddress} />
-          <div className="text-button-text-text flex justify-between mb-4">
+          <span className="text-button-text-text flex justify-between mb-4">
             <span>
               {quantity} NFT{quantity > 1 ? 's' : ''}
             </span>
             <span>{totalPrice} ETH</span>
-          </div>
+          </span>
         </Dialog.Description>
         {isMintDotFun ? (
           <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />
