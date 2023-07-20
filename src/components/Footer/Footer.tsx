@@ -7,13 +7,13 @@ export const Footer = () => {
       <footer className="flex flex-col mx-6 bg-white bg-bottom rounded-3xl md:mb-10 relative bottom-24 md:bottom-16 font-mono">
         <div className="h-16 bg-footer-gradient rounded-t-3xl"></div>
         <div className="px-6 pb-6">
-          <div className="flex flex-col md:flex-row md:gap-72">
+          <div className="flex flex-col md:flex-row md:justify-between">
             <div className="md:basis-2/5">
               <p className="mt-6 mb-2 md:mb-8 text-[#151515] text-sm">
-                Display your minted NFTs in a stunning virtual gallery that
-                captivates collectors worldwide. Seamlessly list your creations
-                for sale, and leverage our growing community to connect with art
-                enthusiasts and passionate collectors.
+                Onchain Summer is a multi-week celebration of onchain art,
+                gaming, music, and more, powered by Base. It runs August 9 – 30,
+                2023. Visit every day for onchain drops that will brighten your
+                summer.
               </p>
             </div>
             <div className="flex flex-wrap md:basis-3/5 mt-6 text-sm md:pb-24">
