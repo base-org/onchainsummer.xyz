@@ -5,6 +5,9 @@ import { formatEther } from 'ethers/lib/utils'
 import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
 import useBalances from '@/utils/useBalances'
+import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
+import { isProd } from '@/config/chain'
+import { goerli, mainnet } from 'viem/chains'
 
 interface NotStartedProps {
   amount: string
@@ -13,12 +16,19 @@ interface NotStartedProps {
   bridge: () => Promise<void>
 }
 
+const l1ChainId = isProd ? mainnet.id : goerli.id
+
 export const NotStarted: FC<NotStartedProps> = ({
   amount,
   setAmount,
   minAmount,
   bridge,
 }) => {
+  const switchChain = useSwitchChain()
+  const chainId = useChainId()
+
+  const wrongChain = chainId !== l1ChainId
+
   const { l1Balance } = useBalances()
   return (
     <div className="flex flex-col md:my-auto">
@@ -71,7 +81,11 @@ export const NotStarted: FC<NotStartedProps> = ({
             <span>{formatEther(l1Balance)} ETH</span>
           </div>
         </div>
-        <Button onClick={bridge}>Bridge now</Button>
+        {wrongChain ? (
+          <Button onClick={() => switchChain(l1ChainId)}>Switch to L1</Button>
+        ) : (
+          <Button onClick={bridge}>Bridge now</Button>
+        )}
       </div>
     </div>
   )

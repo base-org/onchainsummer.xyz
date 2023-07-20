@@ -1,5 +1,5 @@
 import { BigNumber, ethers } from 'ethers'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { goerli, baseGoerli, mainnet, base } from 'viem/chains'
 import * as OP from '@eth-optimism/sdk'
 import { useAddress, useSigner, useSwitchChain } from '@thirdweb-dev/react'
@@ -56,7 +56,7 @@ export const useBridge = (amount: BigNumber) => {
   const address = useAddress()
   const signer = useSigner()
 
-  const setup = useCallback(async () => {
+  const messenger = useMemo(() => {
     const l2Signer = new ethers.providers.JsonRpcProvider(
       l2Chain.rpcUrls.default.http[0]
     ).getSigner(address)
@@ -72,6 +72,9 @@ export const useBridge = (amount: BigNumber) => {
   const depositETH = useCallback(
     async (crossChainMessenger: OP.CrossChainMessenger) => {
       try {
+        const currentBlock =
+          await crossChainMessenger.l2Provider.getBlockNumber()
+
         setBridgeState(BridgeState.AWAITING_CONFIRMATION)
 
         const response = await crossChainMessenger.depositETH(amount)
@@ -80,11 +83,21 @@ export const useBridge = (amount: BigNumber) => {
 
         await response.wait()
 
-        setBridgeState(BridgeState.L1_TX_PROCESSED)
+        setBridgeState(BridgeState.L2_TX_PROCESSING)
         const messageReceipt = await crossChainMessenger.waitForMessageReceipt(
-          response.hash
+          response.hash,
+          {
+            fromBlockOrBlockHash: currentBlock,
+          }
         )
-        setL1TxHash(messageReceipt.transactionReceipt.transactionHash)
+        setL2TxHash(messageReceipt.transactionReceipt.transactionHash)
+
+        setBridgeState(BridgeState.L2_TX_PROCESSED)
+        await crossChainMessenger.l2Provider.waitForTransaction(
+          messageReceipt.transactionReceipt.transactionHash
+        )
+
+        setBridgeState(BridgeState.BRIDGED)
       } catch (e) {
         console.log('deposit', e)
         // @ts-expect-error
@@ -98,66 +111,17 @@ export const useBridge = (amount: BigNumber) => {
     [amount]
   )
 
-  const withdrawETH = useCallback(
-    async (crossChainMessenger: OP.CrossChainMessenger) => {
-      setBridgeState(BridgeState.AWAITING_CONFIRMATION)
-
-      const response = await crossChainMessenger.withdrawETH(amount)
-      setBridgeState(BridgeState.L2_TX_PROCESSING)
-      setL2TxHash(response.hash)
-
-      await response.wait()
-
-      const messageReceipt = await crossChainMessenger.waitForMessageReceipt(
-        response.hash
-      )
-
-      setBridgeState(BridgeState.L2_TX_PROCESSED)
-      setL2TxHash(messageReceipt.transactionReceipt.transactionHash)
-
-      await crossChainMessenger.proveMessage(response.hash)
-
-      await crossChainMessenger.waitForMessageStatus(
-        response.hash,
-        OP.MessageStatus.READY_FOR_RELAY
-      )
-
-      await crossChainMessenger.finalizeMessage(response.hash)
-
-      await crossChainMessenger.waitForMessageStatus(
-        response,
-        OP.MessageStatus.RELAYED
-      )
-
-      setBridgeState(BridgeState.BRIDGED)
-    }, // withdrawETH()
-    [amount]
-  )
-
   const bridge = useCallback(
     async () => {
-      const crossChainMessenger = await setup()
-
-      if (!crossChainMessenger) return
-
       console.log('validateChain')
-      const depositChainValid = await validateChain(goerli.id)
+      const depositChainValid = await validateChain(l1Chain.id)
       if (!depositChainValid) {
         return
       }
 
-      console.log('deposit')
-      await depositETH(crossChainMessenger)
-
-      console.log('validate again')
-      const withdrawChainValid = await validateChain(goerli.id)
-      if (!withdrawChainValid) {
-        return
-      }
-      console.log('withdraw')
-      await withdrawETH(crossChainMessenger)
+      await depositETH(messenger)
     }, // main
-    [depositETH, setup, validateChain, withdrawETH]
+    [depositETH, messenger, validateChain]
   )
 
   return {

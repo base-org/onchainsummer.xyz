@@ -1,6 +1,7 @@
 import { Button, ButtonProps } from '@/components/Button'
 import { RightArrow } from '@/components/icons/RightArrow'
 import { isProd } from '@/config/chain'
+import { scanUrl } from '@/utils/scanUrl'
 import React from 'react'
 
 interface ViewOnExplorerProps {
@@ -23,7 +24,7 @@ export const ViewOnExplorer = React.forwardRef<
       external
       onClick={onClick}
       ref={ref}
-      href={`https://${isProd ? '' : 'goerli.'}basescan.org/tx/${txHash}`}
+      href={scanUrl(false, txHash)}
     >
       View on Explorer <RightArrow />
     </Button>

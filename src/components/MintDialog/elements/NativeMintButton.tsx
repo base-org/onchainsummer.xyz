@@ -1,10 +1,12 @@
 import { FC } from 'react'
 import { Button } from '../../Button'
 import { ModalPage } from '../types'
-import { useContract } from '@thirdweb-dev/react'
+import { useChainId, useContract, useSwitchChain } from '@thirdweb-dev/react'
 import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
+import { isProd } from '@/config/chain'
 
+import { base, baseGoerli } from 'viem/chains'
 interface NativeMintButtonProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -14,6 +16,8 @@ interface NativeMintButtonProps {
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
 }
 
+const l2ChainId = isProd ? base.id : baseGoerli.id
+
 export const NativeMintButton: FC<NativeMintButtonProps> = ({
   page,
   setPage,
@@ -22,13 +26,19 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   setTxDetails,
   setMintError,
 }) => {
+  const switchChain = useSwitchChain()
+  const chainId = useChainId()
+
+  const wrongChain = chainId !== l2ChainId
   const isPending =
     page === ModalPage.NATIVE_MINTING_PENDING_TX ||
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const { address } = useMintDialogContext()
   const { data: contract, isLoading } = useContract(address)
 
-  return (
+  return wrongChain ? (
+    <Button onClick={() => switchChain(l2ChainId)}>Switch to Base</Button>
+  ) : (
     <Button
       className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
       disabled={isPending || isLoading}

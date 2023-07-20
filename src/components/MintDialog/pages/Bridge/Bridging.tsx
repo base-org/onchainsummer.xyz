@@ -1,8 +1,10 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 import { BridgeState } from '../../elements/useBridge'
 import { ArrowRight } from '@/components/icons/ArrowRight'
+
+import { scanUrl } from '@/utils/scanUrl'
 
 interface BridgingProps {
   bridgeState: BridgeState
@@ -14,17 +16,19 @@ const Step = ({
   isStep,
   txHash,
   label,
+  l1 = false,
 }: {
   isStep: boolean
   txHash: string
   label: string
+  l1?: boolean
 }) => {
   return (
     <div className="h-1/4 flex flex-col gap-2 leading-none">
       <div className={clsx({ 'text-ocs-blue': isStep })}>{label}</div>
       {txHash && isStep ? (
         <a
-          href={`https://etherscan.io/tx/${txHash}`}
+          href={scanUrl(l1, txHash)}
           target="_blank"
           rel="noreferrer"
           className="text-sm font-medium flex gap-2 items-center ml-8"
@@ -85,11 +89,13 @@ export const Bridging: FC<BridgingProps> = ({
               label="1. Ethereum tx processing"
               isStep={isStep1}
               txHash={l1TxHash}
+              l1
             />
             <Step
               label="2. Ethereum tx completed"
               isStep={isStep2}
               txHash={l1TxHash}
+              l1
             />
             <Step
               label="3. Waiting for Base tx"

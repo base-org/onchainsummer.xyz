@@ -3,6 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { EthBase } from '@/components/icons/EthBase'
 import { Button } from '@/components/Button'
 import { ModalPage } from '../../types'
+import { scanUrl } from '@/utils/scanUrl'
 
 interface SuccessProps {
   setPage: React.Dispatch<ModalPage>
@@ -20,11 +21,7 @@ export const Success: FC<SuccessProps> = ({ amount, l2TxHash, setPage }) => {
 
       <div className="flex flex-col gap-4">
         <Button onClick={() => setPage(ModalPage.NATIVE_MINT)}>Mint NFT</Button>
-        <Button
-          href={`https://basescan.io/tx/${l2TxHash}`}
-          external
-          variant="LIGHT"
-        >
+        <Button href={scanUrl(false, l2TxHash)} external variant="LIGHT">
           View on explorer
         </Button>
       </div>
