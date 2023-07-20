@@ -4,7 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { formatEther } from 'ethers/lib/utils'
 import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
-import useBalances from '../../elements/useBalances'
+import useBalances from '@/utils/useBalances'
 
 interface NotStartedProps {
   amount: string
