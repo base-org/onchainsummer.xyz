@@ -37,7 +37,11 @@ export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
   }
 
   if (!valid) {
-    return <Button disabled>{message}</Button>
+    return (
+      <Button disabled className="text-[14px] md:text-base">
+        {message}
+      </Button>
+    )
   }
 
   return <MintDialog {...mintProps} />

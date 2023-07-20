@@ -31,13 +31,13 @@ export const DropCard: FC<DropCardProps> = ({
   creator,
 }) => {
   return (
-    <Card className="relative flex flex-col gap-4 font-text w-[320px] flex-auto">
+    <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto">
       <div className="relative w-full aspect-[4/3]">
         <Image
           src={image}
           alt={`${name} from ${partner}`}
           fill
-          className="object-cover rounded-t-2xl"
+          className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
       <div className="p-4 flex flex-col flex-auto">
