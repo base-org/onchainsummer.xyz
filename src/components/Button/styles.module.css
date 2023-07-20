@@ -1,9 +1,9 @@
 .button {
-  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase;
+  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase whitespace-nowrap;
 }
 
 .button-small {
-  @apply px-4 py-1.5;
+  @apply px-4 py-2.5;
 }
 
 .button-large {
