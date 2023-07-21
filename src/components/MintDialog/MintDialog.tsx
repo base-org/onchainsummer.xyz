@@ -24,8 +24,8 @@ export type TxDetails = {
 }
 
 export const MintDialog: FC = () => {
-  const { price, crossMintClientId } = useMintDialogContext()
-
+  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
+    useMintDialogContext()
   const [open, setOpen] = useState(false)
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
@@ -57,6 +57,20 @@ export const MintDialog: FC = () => {
     setQuantity(1)
   }
 
+  const NativeMintButtonContent = () => {
+    return (
+      <>
+        {trendingPageNativeMint ? (
+          <span className="w-full">Mint</span>
+        ) : (
+          <>
+            Mint ({price} ETH) <ArrowRight />
+          </>
+        )}
+      </>
+    )
+  }
+
   const buttonTitle = useMemo(() => {
     switch (page) {
       case ModalPage.MINT_ERROR:
@@ -72,7 +86,7 @@ export const MintDialog: FC = () => {
       case ModalPage.NATIVE_MINT:
         return (
           <>
-            Mint ({price} ETH) <ArrowRight />
+            <NativeMintButtonContent />
           </>
         )
       case ModalPage.BRIDGE_PENDING:
@@ -159,7 +173,10 @@ export const MintDialog: FC = () => {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <Button tabIndex={-1} className="!flex !justify-between">
+        <Button
+          tabIndex={-1}
+          className={clsx('!flex !justify-between', mintButtonStyles)}
+        >
           {buttonTitle}
         </Button>
       </Dialog.Trigger>

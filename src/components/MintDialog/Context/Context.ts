@@ -12,6 +12,8 @@ export interface MintDialogContextType {
   dropName: string
   creatorAddress: string
   mintDotFunStatus?: MintStatus
+  trendingPageNativeMint?: boolean
+  mintButtonStyles?: string
 }
 
 export const MintDialogContext = createContext<MintDialogContextType>({

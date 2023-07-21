@@ -9,7 +9,6 @@ import { QueryParamProvider } from '@/components/QueryParamProvider'
 import { QueryClientProvider } from '../components/client'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
-import { ChainChecker } from '@/components/ChainChecker/ChainChecker'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -143,9 +142,6 @@ export default function RootLayout({
             <QueryParamProvider>
               <>
                 <Navbar />
-                <div className="flex justify-center items-center bg-subnav-background-gradient min-h-[135px] z-0">
-                  <ChainChecker />
-                </div>
                 {children}
                 <Footer />
               </>
