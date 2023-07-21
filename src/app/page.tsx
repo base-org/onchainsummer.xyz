@@ -98,10 +98,17 @@ async function getPageData() {
     }
 
     if (comparison === -1) {
+      if (acc.upcomingDrops.find((drop) => drop.slug === partner.slug)) {
+        return acc
+      }
       return {
         ...acc,
         upcomingDrops: [...acc.upcomingDrops, partner],
       }
+    }
+
+    if (acc.pastDrops.find((drop) => drop.slug === partner.slug)) {
+      return acc
     }
 
     return {

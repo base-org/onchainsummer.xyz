@@ -29,10 +29,10 @@ export const Success: FC<SuccessProps> = ({
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title className="text-[32px]">It&apos;s Yours!</Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
-        <p>
+        <span>
           Your mint is confirmed — you’re officially the new owner of {dropName}
           .
-        </p>
+        </span>
         <AddressPill address={creatorAddress} />
       </Dialog.Description>
 

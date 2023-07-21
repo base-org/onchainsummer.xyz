@@ -62,12 +62,12 @@ export const NativeMint: FC<NativeMintProps> = ({
       >
         <Dialog.Description className="flex flex-col w-full gap-4">
           <AddressPill address={creatorAddress} />
-          <div className="text-button-text-text flex justify-between mb-4">
+          <span className="text-button-text-text flex justify-between mb-4">
             <span>
               {quantity} NFT{quantity > 1 ? 's' : ''}
             </span>
             <span>{totalPrice} ETH</span>
-          </div>
+          </span>
         </Dialog.Description>
         {isMintDotFun ? (
           <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />

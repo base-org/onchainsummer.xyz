@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 
-import { FC, useMemo, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 import { Button } from '../Button'
 import { Close } from '../icons/Close'
 
@@ -16,6 +16,8 @@ import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
+import { useNeedsBridging } from './elements/useNeedsBridging'
+import { useBridge } from './elements/useBridge'
 
 export type TxDetails = {
   hash: string
@@ -25,7 +27,6 @@ export const MintDialog: FC = () => {
   const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
     useMintDialogContext()
   const [open, setOpen] = useState(false)
-  const [page, setPage] = useState(ModalPage.NATIVE_MINT)
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
@@ -35,6 +36,18 @@ export const MintDialog: FC = () => {
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
+
+  const { needsBriding } = useNeedsBridging(totalPrice, open)
+
+  const [page, setPage] = useState(
+    needsBriding ? ModalPage.BRIDGE : ModalPage.NATIVE_MINT
+  )
+
+  useEffect(() => {
+    if (needsBriding) {
+      setPage(ModalPage.BRIDGE)
+    }
+  }, [needsBriding])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -69,18 +82,17 @@ export const MintDialog: FC = () => {
       case ModalPage.CROSS_MINT_PENDING:
       case ModalPage.NATIVE_MINTING_PENDING_TX:
         return 'Minting...'
+      case ModalPage.BRIDGE:
       case ModalPage.NATIVE_MINT:
         return (
           <>
             <NativeMintButtonContent />
           </>
         )
-      case ModalPage.BRIDGE:
-        return 'Bridge'
       case ModalPage.BRIDGE_PENDING:
         return 'Bridging funds...'
       case ModalPage.BRIDGE_SUCCESS:
-        return 'Success'
+        return 'Bridge Success'
       case ModalPage.INSUFFICIENT_FUNDS:
         return 'Insufficient Funds'
       case ModalPage.CROSS_MINT_FORM:
@@ -142,7 +154,7 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE:
       case ModalPage.BRIDGE_PENDING:
       case ModalPage.BRIDGE_SUCCESS:
-        return <Bridge />
+        return <Bridge minAmount="0.001" setPage={setPage} />
       case ModalPage.INSUFFICIENT_FUNDS:
         return <InsufficientFunds />
       default:
