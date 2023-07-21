@@ -3,7 +3,7 @@
   "short_name": "Onchain Summer",
   "icons": [
     {
-      "src": "public/android-chrome-144x144.png",
+      "src": "android-chrome-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     }

@@ -6,7 +6,7 @@ export const website = {
   url: 'https://onchainsummer.xyz',
   siteName: 'Onchain Summer',
   logo: {
-    url: '/public/logo.png',
+    url: '/logo.png',
     width: 3840,
     height: 2160,
     alt: 'Onchain Summer',
@@ -17,5 +17,5 @@ export const website = {
   },
   keywords: ['NFT', 'OnchainSummer', 'Coinbase'],
   themeColor: '#FF7DCB',
-  manifest: '/public/manifest.json',
+  manifest: '/manifest.json',
 }
