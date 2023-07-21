@@ -17,7 +17,6 @@ import { Layout } from './elements/Layout'
 import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
 import { useNeedsBridging } from './elements/useNeedsBridging'
-import { useBridge } from './elements/useBridge'
 
 export type TxDetails = {
   hash: string
@@ -44,10 +43,14 @@ export const MintDialog: FC = () => {
   )
 
   useEffect(() => {
-    if (needsBriding) {
+    if (needsBriding && page === ModalPage.NATIVE_MINT) {
       setPage(ModalPage.BRIDGE)
     }
-  }, [needsBriding])
+
+    if (!needsBriding && page === ModalPage.BRIDGE) {
+      setPage(ModalPage.NATIVE_MINT)
+    }
+  }, [needsBriding, page])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -55,20 +58,6 @@ export const MintDialog: FC = () => {
     setMintError(null)
     setCrossMintOrderIdentifier('')
     setQuantity(1)
-  }
-
-  const NativeMintButtonContent = () => {
-    return (
-      <>
-        {trendingPageNativeMint ? (
-          <span className="w-full">Mint</span>
-        ) : (
-          <>
-            Mint ({price} ETH) <ArrowRight />
-          </>
-        )}
-      </>
-    )
   }
 
   const buttonTitle = useMemo(() => {
@@ -86,7 +75,13 @@ export const MintDialog: FC = () => {
       case ModalPage.NATIVE_MINT:
         return (
           <>
-            <NativeMintButtonContent />
+            {trendingPageNativeMint ? (
+              <span className="w-full">Mint</span>
+            ) : (
+              <>
+                Mint ({price} ETH) <ArrowRight />
+              </>
+            )}
           </>
         )
       case ModalPage.BRIDGE_PENDING:
@@ -102,7 +97,7 @@ export const MintDialog: FC = () => {
       default:
         return ''
     }
-  }, [page, price])
+  }, [trendingPageNativeMint, price, page])
 
   const dialogContent = useMemo(() => {
     switch (page) {
@@ -184,8 +179,8 @@ export const MintDialog: FC = () => {
         <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 md:overflow-hidden lg:p-16 overflow-auto',
-            { 'h-full': page === ModalPage.CROSS_MINT_FORM }
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-auto h-full lg:h-auto lg:overflow-hidden',
+            { '!h-full': page === ModalPage.CROSS_MINT_FORM }
           )}
         >
           <Dialog.Close asChild>

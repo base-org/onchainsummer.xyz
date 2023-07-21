@@ -8,36 +8,6 @@ import { isProd } from '@/config/chain'
 const l1Chain = isProd ? mainnet : goerli
 const l2Chain = isProd ? base : baseGoerli
 
-const useValidateChain = () => {
-  const switchChain = useSwitchChain()
-  const getChain = useCallback(async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum, 'any')
-
-    const network = await provider.getNetwork()
-    return network.chainId
-  }, [])
-
-  return useCallback(
-    async (chainId: number) => {
-      const currentChain = await getChain()
-      try {
-        if (!currentChain) {
-          return false
-        }
-
-        if (currentChain !== chainId) {
-          await switchChain(chainId)
-        }
-
-        return true
-      } catch (e) {
-        return false
-      }
-    },
-    [getChain]
-  )
-}
-
 export enum BridgeState {
   NOT_STARTED,
   AWAITING_CONFIRMATION,
@@ -52,7 +22,6 @@ export const useBridge = (amount: BigNumber) => {
   const [l1TxHash, setL1TxHash] = useState('')
   const [l2TxHash, setL2TxHash] = useState('')
   const [bridgeState, setBridgeState] = useState(BridgeState.NOT_STARTED)
-  const validateChain = useValidateChain()
   const address = useAddress()
   const signer = useSigner()
 
@@ -113,15 +82,9 @@ export const useBridge = (amount: BigNumber) => {
 
   const bridge = useCallback(
     async () => {
-      console.log('validateChain')
-      const depositChainValid = await validateChain(l1Chain.id)
-      if (!depositChainValid) {
-        return
-      }
-
       await depositETH(messenger)
     }, // main
-    [depositETH, messenger, validateChain]
+    [depositETH, messenger]
   )
 
   return {

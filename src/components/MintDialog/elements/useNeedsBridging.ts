@@ -19,7 +19,11 @@ export const useNeedsBridging = (totalPrice: string, open: boolean) => {
         if (l2Balance.lt(priceEstimate)) {
           if (l1Balance.gt(priceEstimate)) {
             setNeedsBridging(true)
+          } else {
+            setNeedsBridging(false)
           }
+        } else {
+          setNeedsBridging(false)
         }
       }
     }
