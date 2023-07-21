@@ -25,4 +25,5 @@ export interface Partner {
   iconInverse: string
   drops: Drop[]
   aarweaveDigest: string
+  twitter: string
 }

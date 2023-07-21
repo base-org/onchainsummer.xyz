@@ -10,6 +10,7 @@ const openSeason: Partner = {
   icon: '/partners/open-sea/icon.svg',
   iconInverse: '/partners/open-sea/icon-inverse.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  twitter: '@opensea',
   drops: [
     {
       image: '/partners/open-sea/drop/duck.jpeg',

@@ -10,6 +10,7 @@ const sushiConfig: Partner = {
   icon: '/partners/sushi/icon.svg',
   iconInverse: '/partners/sushi/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  twitter: '@SushiSwap',
   drops: [
     {
       image: '/partners/sushi/drop/sushi.jpeg',
