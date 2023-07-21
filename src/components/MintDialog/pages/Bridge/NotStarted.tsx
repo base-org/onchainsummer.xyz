@@ -9,6 +9,8 @@ import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
 import { isProd } from '@/config/chain'
 import { goerli, mainnet } from 'viem/chains'
 
+import dialogClasses from '@/components/dialog.module.css'
+
 interface NotStartedProps {
   amount: string
   setAmount: React.Dispatch<string>
@@ -32,7 +34,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   const { l1Balance } = useBalances()
   return (
     <div className="flex flex-col md:my-auto">
-      <Dialog.Title className={'text-[32px] font-display'}>
+      <Dialog.Title className={dialogClasses.title}>
         Bridge ETH to Base
       </Dialog.Title>
 

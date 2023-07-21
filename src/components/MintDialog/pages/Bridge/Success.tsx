@@ -4,7 +4,7 @@ import { EthBase } from '@/components/icons/EthBase'
 import { Button } from '@/components/Button'
 import { ModalPage } from '../../types'
 import { scanUrl } from '@/utils/scanUrl'
-
+import dialogClasses from '@/components/dialog.module.css'
 interface SuccessProps {
   setPage: React.Dispatch<ModalPage>
   amount: string
@@ -15,7 +15,7 @@ export const Success: FC<SuccessProps> = ({ amount, l2TxHash, setPage }) => {
   return (
     <div className="flex flex-col md:my-auto gap-6 md:gap-8">
       <EthBase height={68} width={68} />
-      <Dialog.Title className={'text-[32px] font-display'}>
+      <Dialog.Title className={dialogClasses.title}>
         Awesome! You’ve bridged {amount} ETH onto Base.
       </Dialog.Title>
 

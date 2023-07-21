@@ -20,6 +20,7 @@ import { ArrowRight } from '../icons/ArrowRight'
 import { BaseGoerli } from '@thirdweb-dev/chains'
 import { useEns } from '@/utils/useEns'
 import { Loading } from '../icons/Loading'
+import dialogClasses from '@/components/dialog.module.css'
 
 interface WalletDialogProps {}
 
@@ -53,7 +54,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40 lg:hidden" />
+        <Dialog.Overlay className={clsx(dialogClasses.overlay, 'lg:hidden')} />
         <Dialog.Content
           className={clsx(
             'fixed',

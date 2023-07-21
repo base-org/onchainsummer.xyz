@@ -6,6 +6,8 @@ import { ArrowRight } from '@/components/icons/ArrowRight'
 
 import { scanUrl } from '@/utils/scanUrl'
 
+import dialogClasses from '@/components/dialog.module.css'
+
 interface BridgingProps {
   bridgeState: BridgeState
   l1TxHash: string
@@ -52,9 +54,7 @@ export const Bridging: FC<BridgingProps> = ({
 
   return (
     <div className="flex flex-col w-full h-full items-center overflow-scroll">
-      <Dialog.Title className={'text-[32px] font-display'}>
-        Bridging...
-      </Dialog.Title>
+      <Dialog.Title className={dialogClasses.title}>Bridging...</Dialog.Title>
 
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
