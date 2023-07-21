@@ -8,10 +8,24 @@ import React from 'react'
 import { DropCard } from '@/components/DropCard'
 import { SDK } from '@/utils/graphqlSdk'
 import { PageContainer } from '@/components/PageContainer'
+import { Metadata, ResolvingMetadata } from 'next'
+import { website } from '@/config/website'
+import { getDrops } from '@/utils/getDrops'
 
-const Page = async ({ params }: { params: { slug: string } }) => {
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+const Page = async ({ params, searchParams }: Props) => {
   const slug = params.slug
   const { partner, article } = await getPartner(slug)
+
+  const dropAddressParam = searchParams.drop
+
+  const dropAddress = Array.isArray(dropAddressParam)
+    ? dropAddressParam[0]
+    : dropAddressParam
 
   if (!partner) {
     notFound()
@@ -19,12 +33,16 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   const { drops, name, icon } = partner
 
-  const otherDrops = drops.filter((_, index) => index !== 0)
+  const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
 
   return (
     <PageContainer subNavBgColor={partner.brandColor}>
       <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
-        <PartnerHero partner={partner} />
+        <PartnerHero
+          partner={partner}
+          headline={featuredDrop}
+          staticHeadline={!!dropAddress}
+        />
         <section className="w-full font-text p-1">
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-3xl">
             <div className="p-6 md:px-16 lg:px-32 md:py-[54px] md:border md:border-gray-400/50 md:border-1 rounded-2xl break-words m-4">
@@ -38,7 +56,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
                 <div className="overflow-scroll hide-scrollbar">
                   <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
                     <ul className="flex flex-row gap-8 last:pr-4">
-                      {otherDrops.map((drop) => (
+                      {remainingDrops.map((drop) => (
                         <li key={drop.name} className="flex flex-col">
                           <DropCard
                             {...drop}
@@ -59,7 +77,54 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   )
 }
 
-async function getPartner(slug: string) {
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const slug = params.slug
+  const dropAddressParam = searchParams.drop
+
+  const dropAddress = Array.isArray(dropAddressParam)
+    ? dropAddressParam[0]
+    : dropAddressParam
+
+  // fetch data
+  const { partner } = await getPartner(slug)
+
+  const { featuredDrop } = getDrops(partner.drops, dropAddress)
+
+  return {
+    title: partner.name,
+    description: partner.description,
+    openGraph: {
+      title: `${partner.name} | Onchain Summer`,
+      description: partner.description,
+      url: `https://onchainsummer.xyz/partner/${partner.slug}${
+        dropAddress ? `?drop=${dropAddress}` : ''
+      }`,
+      siteName: 'Onchain Summer',
+      images: [
+        {
+          url: featuredDrop.image,
+          alt: featuredDrop.name,
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${partner.name} | Onchain Summer`,
+      description: partner.description,
+      site: website.twitter.site,
+      creator: partner.twitter,
+      images: [featuredDrop.image],
+    },
+  }
+}
+
+async function getPartner(slug: string, dropAddress?: string | string[]) {
   const now = new Date().getTime()
   const today = format(new Date(now), 'yyyy-MM-dd')
 

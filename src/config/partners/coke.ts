@@ -10,6 +10,7 @@ const cokeConfig: Partner = {
   icon: '/partners/coke/icon.svg',
   iconInverse: '/partners/coke/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  twitter: '@CocaCola',
   drops: [
     {
       image: '/partners/coke/drop/coke.webp',

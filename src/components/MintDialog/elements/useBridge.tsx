@@ -68,7 +68,6 @@ export const useBridge = (amount: BigNumber) => {
 
         setBridgeState(BridgeState.BRIDGED)
       } catch (e) {
-        console.log('deposit', e)
         // @ts-expect-error
         if (e.reason === 'user rejected transaction') {
           setBridgeState(BridgeState.NOT_STARTED)
