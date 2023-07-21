@@ -11,6 +11,10 @@ import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
+import { isProd } from '@/config/chain'
+
+import { base, baseGoerli } from 'viem/chains'
+import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
 
 interface NativeMintProps {
   page: ModalPage
@@ -22,6 +26,8 @@ interface NativeMintProps {
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
 }
 
+const l2ChainId = isProd ? base.id : baseGoerli.id
+
 export const NativeMint: FC<NativeMintProps> = ({
   page,
   setPage,
@@ -31,6 +37,10 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
 }) => {
+  const switchChain = useSwitchChain()
+  const chainId = useChainId()
+
+  const wrongChain = chainId !== l2ChainId
   const { creatorAddress, dropName, address, mintDotFunStatus } =
     useMintDialogContext()
   const isPendingConfirmation =
@@ -70,7 +80,10 @@ export const NativeMint: FC<NativeMintProps> = ({
             <span>{totalPrice} ETH</span>
           </span>
         </Dialog.Description>
-        {isMintDotFun ? (
+
+        {wrongChain ? (
+          <Button onClick={() => switchChain(l2ChainId)}>Switch to Base</Button>
+        ) : isMintDotFun ? (
           <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />
         ) : (
           <NativeMintButton
