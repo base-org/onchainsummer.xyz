@@ -181,7 +181,7 @@ export default function Trending() {
                           </Button>
                         </div>
                         <div className="grid grid-cols-4 [@media(min-width:600px)]:grid-cols-10 gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">
-                          {images.media.map(({ imageURI }, idx) => (
+                          {images.media.map(({ imageURI, title }, idx) => (
                             <div
                               key={imageURI}
                               className={`${
@@ -190,7 +190,7 @@ export default function Trending() {
                             >
                               <Image
                                 src={imageURI}
-                                alt="Image Alt"
+                                alt=""
                                 width={64}
                                 height={64}
                                 priority
