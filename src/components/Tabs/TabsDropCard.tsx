@@ -6,8 +6,8 @@ import Link from 'next/link'
 interface TabsDropCardProps {
   address: string
   name: string
-  startDate: Date | string | number
-  endDate: Date | string | number
+  startDate: string
+  endDate: string
   image: string
   description: string
   slug: string
@@ -52,12 +52,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
 
           <p className="text-neutral-600 leading-7 mt-4 mb-8">{description}</p>
 
-          <Countdown
-            date={endDate}
-            completedText={'Drop Ended'}
-            title="Launches"
-            className="text-ocs-blue"
-          />
+          <Countdown date={endDate} startDate={startDate} />
         </div>
       </div>
     </>

@@ -28,6 +28,7 @@
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
     "ethers": "^5",
     "graphql": "^16.7.1",
     "graphql-request": "^6.1.0",

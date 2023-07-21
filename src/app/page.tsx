@@ -14,7 +14,7 @@ const Home = async () => {
   const { partner, tabs, article } = await getPageData()
   const { drops, name, icon } = partner
   const otherDrops = drops.filter((_, index) => index !== 0)
-
+  console.log(drops, 'drops')
   return (
     <PageContainer>
       <main className="flex h-full flex-col items-center justify-between relative px-6 pb-32 xl:px-0 gap-10 md:gap-[54px]">

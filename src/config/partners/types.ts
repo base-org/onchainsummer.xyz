@@ -5,8 +5,8 @@ export type DropType = 'erc-721' | 'zora-erc-1155' | 'external'
 export interface Drop {
   image: string
   name: string
-  startDate: number
-  endDate: number
+  startDate: string
+  endDate: string
   price: string
   address: `0x${string}`
   crossMintClientId: string

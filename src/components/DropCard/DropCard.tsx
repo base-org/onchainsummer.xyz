@@ -14,7 +14,7 @@ type DropCardProps = {
   image: string
   externalLink?: string
   name: string
-  endDate: number
+  endDate: string
   price: string
   creator: string
 }

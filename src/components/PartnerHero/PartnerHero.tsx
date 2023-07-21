@@ -1,6 +1,8 @@
 import { Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
+import clsx from 'clsx'
+import { isBefore, isAfter } from 'date-fns'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -16,6 +18,16 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, drops, icon, description },
 }) => {
   const headline = drops[0]
+
+  const isBeforeStartDate = isBefore(new Date(), new Date(headline.startDate))
+  const isAfterEndDate = isAfter(new Date(), new Date(headline.endDate))
+
+  const separatorBackgroundColor = isBeforeStartDate
+    ? '!bg-black'
+    : isAfterEndDate
+    ? '!bg-[#858585]'
+    : '!bg-ocs-blue'
+
   return (
     <section className="grid p-5 md:py-6 md:px-10 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
       <div className="relative w-full aspect-[287/212] mb-1 lg:mb-0 order-1 md:order-2">
@@ -38,14 +50,9 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         </h1>
         <AddressPill address={headline.creator} />
         <div className="flex flex-col w-full gap-4 mt-auto">
-          <p className="md:hidden text-[#444]">{description}</p>
-          <Separator className="bg-ocs-blue mt-6" />
-          <Countdown
-            completedText="Drop Ended"
-            title="Ends"
-            date={headline.endDate}
-            className="text-ocs-blue"
-          />
+          <p className="md:hidden">{description}</p>
+          <Separator className={clsx(separatorBackgroundColor)} />
+          <Countdown startDate={headline.startDate} date={headline.endDate} />
           {headline.externalLink ? (
             <Button href={headline.externalLink}>
               Mint {headline.price} ETH
