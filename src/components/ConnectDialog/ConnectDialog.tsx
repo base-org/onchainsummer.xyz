@@ -14,8 +14,9 @@ import { Coinbase } from '../icons/Coinbase'
 import { WalletConnect } from '../icons/WalletConnect'
 import { MetaMask } from '../icons/MetaMask'
 import { Trust } from '../icons/Trust'
-
 import clsx from 'clsx'
+
+import dialogClasses from '@/components/dialog.module.css'
 
 type ConnectDialogProps = {
   title?: React.ReactNode
@@ -99,7 +100,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
+        <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
             'fixed data-[state=open]:animate-contentShow',
@@ -108,7 +109,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
           )}
         >
           <div className="flex flex-col w-full">
-            <Dialog.Title className="text-[32px] font-display mb-6">
+            <Dialog.Title className={clsx(dialogClasses.title, 'mb-6')}>
               Connect a wallet
             </Dialog.Title>
             <Dialog.Close asChild>

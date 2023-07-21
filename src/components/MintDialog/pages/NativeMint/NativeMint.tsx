@@ -15,7 +15,7 @@ import { isProd } from '@/config/chain'
 
 import { base, baseGoerli } from 'viem/chains'
 import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
-
+import dialogClasses from '@/components/dialog.module.css'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -24,6 +24,7 @@ interface NativeMintProps {
   txDetails: TxDetails | null
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
+  insufficientFunds: boolean
 }
 
 const l2ChainId = isProd ? base.id : baseGoerli.id
@@ -36,6 +37,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   txDetails,
   setTxDetails,
   setMintError,
+  insufficientFunds,
 }) => {
   const switchChain = useSwitchChain()
   const chainId = useChainId()
@@ -55,7 +57,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       {!isPending ? <PartnerInfo /> : null}
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title
-        className={clsx('text-[32px] lg:mt-2 font-display', {
+        className={clsx(dialogClasses.title, 'lg:mt-2', {
           hidden: isPending,
         })}
       >
@@ -83,8 +85,16 @@ export const NativeMint: FC<NativeMintProps> = ({
 
         {wrongChain ? (
           <Button onClick={() => switchChain(l2ChainId)}>Switch to Base</Button>
+        ) : insufficientFunds ? (
+          <Button onClick={() => setPage(ModalPage.INSUFFICIENT_FUNDS)}>
+            Mint ({totalPrice} ETH)
+          </Button>
         ) : isMintDotFun ? (
-          <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />
+          <MintDotFunMinter
+            totalPrice={totalPrice}
+            setTxDetails={setTxDetails}
+            setPage={setPage}
+          />
         ) : (
           <NativeMintButton
             page={page}

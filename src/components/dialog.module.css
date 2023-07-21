@@ -1,0 +1,7 @@
+.overlay {
+  @apply bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40;
+}
+
+.title {
+  @apply font-display text-[32px] leading-[120%];
+}

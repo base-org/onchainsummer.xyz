@@ -11,13 +11,15 @@ import { tr } from 'date-fns/locale'
 interface MintDotFunMinterProps {
   setPage: React.Dispatch<ModalPage>
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
+  totalPrice: string
 }
 
 export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
   setPage,
   setTxDetails,
+  totalPrice,
 }) => {
-  const { mintDotFunStatus, price } = useMintDialogContext()
+  const { mintDotFunStatus } = useMintDialogContext()
 
   if (!mintDotFunStatus) {
     // TODO: This should never happen. Maybe a toast?
@@ -62,7 +64,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
         }
       }}
     >
-      Mint ({price} ETH)
+      Mint ({totalPrice} ETH)
     </Button>
   )
 }

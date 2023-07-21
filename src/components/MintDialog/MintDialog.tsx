@@ -16,8 +16,8 @@ import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
-import { useNeedsBridging } from './elements/useNeedsBridging'
-
+import { useFundsStatus } from './elements/useFundsStatus'
+import dialogClasses from '@/components/dialog.module.css'
 export type TxDetails = {
   hash: string
 }
@@ -36,21 +36,34 @@ export const MintDialog: FC = () => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
-  const { needsBriding } = useNeedsBridging(totalPrice, open)
+  const { fundsStatus } = useFundsStatus(totalPrice, open)
 
-  const [page, setPage] = useState(
-    needsBriding ? ModalPage.BRIDGE : ModalPage.NATIVE_MINT
-  )
+  const [page, setPage] = useState(() => {
+    switch (fundsStatus) {
+      case 'sufficient':
+        return ModalPage.NATIVE_MINT
+      case 'bridge':
+        return ModalPage.BRIDGE
+      case 'insufficient':
+      default:
+        return ModalPage.NATIVE_MINT
+    }
+  })
 
   useEffect(() => {
-    if (needsBriding && page === ModalPage.NATIVE_MINT) {
+    const needsBridge = fundsStatus === 'bridge'
+    if (needsBridge && page === ModalPage.NATIVE_MINT) {
       setPage(ModalPage.BRIDGE)
     }
 
-    if (!needsBriding && page === ModalPage.BRIDGE) {
+    const sufficientFunds = fundsStatus === 'sufficient'
+    if (
+      (sufficientFunds && page === ModalPage.BRIDGE) ||
+      (sufficientFunds && page === ModalPage.INSUFFICIENT_FUNDS)
+    ) {
       setPage(ModalPage.NATIVE_MINT)
     }
-  }, [needsBriding, page])
+  }, [fundsStatus, page])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -144,6 +157,7 @@ export const MintDialog: FC = () => {
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
+            insufficientFunds={fundsStatus === 'insufficient'}
           />
         )
       case ModalPage.BRIDGE:
@@ -151,13 +165,14 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE_SUCCESS:
         return <Bridge minAmount="0.001" setPage={setPage} />
       case ModalPage.INSUFFICIENT_FUNDS:
-        return <InsufficientFunds />
+        return <InsufficientFunds minimalBalance={''} setPage={setPage} />
       default:
         return ''
     }
   }, [
     crossMintClientId,
     crossMintOrderIdentifier,
+    fundsStatus,
     mintError,
     page,
     quantity,
@@ -176,7 +191,7 @@ export const MintDialog: FC = () => {
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
+        <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
             'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-auto h-full lg:h-auto lg:overflow-hidden',
