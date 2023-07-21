@@ -41,8 +41,15 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button className={'rounded-lg !py-2 !px-3'}>
-          {name || shortenedAddress}
+        <Button className={'rounded-lg !py-1.5 !px-4 !lowercase !gap-2'}>
+          {avatar ? (
+            <div
+              className="h-5 w-5 bg-black rounded-full bg-cover relative"
+              style={{ backgroundImage: `url(${avatar})` }}
+            />
+          ) : null}
+
+          <span className="leading-[140%]">{name || shortenedAddress}</span>
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
