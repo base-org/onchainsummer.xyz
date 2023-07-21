@@ -9,6 +9,7 @@ import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
+
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
 
 interface NativeMintProps {
