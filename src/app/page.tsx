@@ -26,6 +26,8 @@ const Home = async ({ searchParams }: Props) => {
     : dropAddressParam
 
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
+  console.log(partner, 'partner')
+  console.log(featuredDrop, 'featuredDrop')
 
   return (
     <PageContainer>

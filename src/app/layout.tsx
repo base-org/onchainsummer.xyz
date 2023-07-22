@@ -10,6 +10,7 @@ import { QueryClientProvider } from '../components/client'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
 import { website } from '@/config/website'
+import { Teaser } from '@/components/Teaser/Teaser'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -102,6 +103,8 @@ const coinbaseDisplay = localFont({
   ],
 })
 
+const SHOW_TEASER = process.env.TEASER === 'true'
+
 export const metadata = {
   title: {
     template: `%s | ${website.siteName}`,
@@ -179,11 +182,17 @@ export default function RootLayout({
         >
           <QueryClientProvider>
             <QueryParamProvider>
-              <>
-                <Navbar />
-                {children}
-                <Footer />
-              </>
+              {SHOW_TEASER ? (
+                <>
+                  <Teaser />
+                </>
+              ) : (
+                <>
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </>
+              )}
             </QueryParamProvider>
           </QueryClientProvider>
         </body>
