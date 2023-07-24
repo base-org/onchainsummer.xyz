@@ -1,12 +1,11 @@
 import { FC } from 'react'
 import { Button } from '../../Button'
 import { getClients } from '@/config/viem'
-import { mainnet, goerli } from 'viem/chains'
+import { base, baseGoerli } from 'viem/chains'
 import { isProd } from '@/config/chain'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
 import { ModalPage } from '../types'
 import { TxDetails } from '../MintDialog'
-import { tr } from 'date-fns/locale'
 
 interface MintDotFunMinterProps {
   setPage: React.Dispatch<ModalPage>
@@ -43,7 +42,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
           account,
           to: mintDotFunStatus.tx.to,
           value: BigInt(mintDotFunStatus.tx.value),
-          chain: isProd ? mainnet : goerli,
+          chain: isProd ? base : baseGoerli,
           // @ts-expect-error
           data: mintDotFunStatus.tx.data,
         })

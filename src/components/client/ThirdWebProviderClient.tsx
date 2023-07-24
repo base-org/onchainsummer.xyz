@@ -1,7 +1,10 @@
 'use client'
 import { ReactNode } from 'react'
 import { ThirdwebProvider } from '@thirdweb-dev/react'
-import { BaseGoerli } from '@thirdweb-dev/chains'
+import { Base, BaseGoerli } from '@thirdweb-dev/chains'
+import { isProd } from '@/config/chain'
+
+const l2 = isProd ? Base : BaseGoerli
 
 interface ThirdWebProviderClientProps {
   children: ReactNode
@@ -10,7 +13,5 @@ interface ThirdWebProviderClientProps {
 export default function ThirdWebProviderClient({
   children,
 }: ThirdWebProviderClientProps) {
-  return (
-    <ThirdwebProvider activeChain={BaseGoerli}>{children}</ThirdwebProvider>
-  )
+  return <ThirdwebProvider activeChain={l2}>{children}</ThirdwebProvider>
 }
