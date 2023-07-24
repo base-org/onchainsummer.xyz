@@ -37,7 +37,7 @@ export const DropCard: FC<DropCardProps> = ({
           src={image}
           alt={`${name} from ${partner}`}
           fill
-          className="object-cover rounded-t-2xl md:rounded-t-3xl hover:hidden"
+          className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
       <div className="p-4 flex flex-col flex-auto">
