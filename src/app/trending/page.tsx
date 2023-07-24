@@ -49,13 +49,16 @@ export default function Trending() {
 
   const collections = data?.collections
 
+  console.log(collections, 'collections')
   return (
     <PageContainer>
       <div className="mx-6 mt-32">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
             <div className="basis-1/2">
-              <UpArrow />
+              <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FCD22D]">
+                <UpArrow />
+              </div>
               <h1 className="text-[32px] md:text-[40px] md:leading-[50px] my-6">
                 Trending
               </h1>
@@ -70,43 +73,6 @@ export default function Trending() {
                 </p>
                 <MintDotFun />
                 <span className="sr-only">mint.fun</span>
-              </div>
-            </div>
-            <div className="basis-1/2 flex justify-end">
-              <div>
-                <p className="text-neutral-800 text-sm mb-4 font-mono">
-                  Create on Base.
-                </p>
-
-                <div className="flex gap-1 sm:gap-2 lg:gap-7">
-                  <a
-                    href="https://thirdweb.com/thirdweb.eth/OpenEditionERC721"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="aspect-square"
-                  >
-                    <ThirdWeb />
-                    <span className="sr-only">ThirdWeb</span>
-                  </a>
-                  <a
-                    href="https://zora.co/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="aspect-square"
-                  >
-                    <Zora />
-                    <span className="sr-only">Zora</span>
-                  </a>
-                  <a
-                    href="https://studio.manifold.xyz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="aspect-square"
-                  >
-                    <Manifold />
-                    <span className="sr-only">Manifold</span>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
