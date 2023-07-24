@@ -1,10 +1,9 @@
 import { ethers } from 'ethers'
 import { isProd } from '@/config/chain'
-import { baseGoerli, goerli, mainnet } from 'viem/chains'
+import { base, baseGoerli, goerli, mainnet } from 'viem/chains'
 
 const l1Chain = isProd ? mainnet : goerli
-// TODO: Add base once it's launched
-const l2Chain = isProd ? mainnet : baseGoerli
+const l2Chain = isProd ? base : baseGoerli
 
 let l1Provider = new ethers.providers.JsonRpcProvider(
   l1Chain.rpcUrls.default.http[0]
