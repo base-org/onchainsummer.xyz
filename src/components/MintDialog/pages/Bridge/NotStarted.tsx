@@ -6,10 +6,9 @@ import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
 import useBalances from '@/utils/useBalances'
 import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
-import { isProd } from '@/config/chain'
-import { goerli, mainnet } from 'viem/chains'
 
 import dialogClasses from '@/components/dialog.module.css'
+import { l1 } from '@/config/chain'
 
 interface NotStartedProps {
   amount: string
@@ -17,8 +16,6 @@ interface NotStartedProps {
   minAmount: string
   bridge: () => Promise<void>
 }
-
-const l1ChainId = isProd ? mainnet.id : goerli.id
 
 export const NotStarted: FC<NotStartedProps> = ({
   amount,
@@ -29,7 +26,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   const switchChain = useSwitchChain()
   const chainId = useChainId()
 
-  const wrongChain = chainId !== l1ChainId
+  const wrongChain = chainId !== l1.chainId
 
   const { l1Balance } = useBalances()
   return (
@@ -84,7 +81,7 @@ export const NotStarted: FC<NotStartedProps> = ({
           </div>
         </div>
         {wrongChain ? (
-          <Button onClick={() => switchChain(l1ChainId)}>Switch to L1</Button>
+          <Button onClick={() => switchChain(l1.chainId)}>Switch to L1</Button>
         ) : (
           <Button onClick={bridge}>Bridge now</Button>
         )}

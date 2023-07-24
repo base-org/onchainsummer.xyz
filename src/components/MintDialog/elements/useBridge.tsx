@@ -2,7 +2,7 @@ import { BigNumber, ethers } from 'ethers'
 import { useCallback, useMemo, useState } from 'react'
 import { goerli, baseGoerli, mainnet, base } from 'viem/chains'
 import * as OP from '@eth-optimism/sdk'
-import { useAddress, useSigner, useSwitchChain } from '@thirdweb-dev/react'
+import { useAddress, useSigner } from '@thirdweb-dev/react'
 import { isProd } from '@/config/chain'
 
 const l1Chain = isProd ? mainnet : goerli

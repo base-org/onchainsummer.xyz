@@ -11,11 +11,9 @@ import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
-import { isProd } from '@/config/chain'
-
-import { base, baseGoerli } from 'viem/chains'
 import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
 import dialogClasses from '@/components/dialog.module.css'
+import { l2 } from '@/config/chain'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -26,8 +24,6 @@ interface NativeMintProps {
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
   insufficientFunds: boolean
 }
-
-const l2ChainId = isProd ? base.id : baseGoerli.id
 
 export const NativeMint: FC<NativeMintProps> = ({
   page,
@@ -42,7 +38,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   const switchChain = useSwitchChain()
   const chainId = useChainId()
 
-  const wrongChain = chainId !== l2ChainId
+  const wrongChain = chainId !== l2.chainId
   const { creatorAddress, dropName, address, mintDotFunStatus } =
     useMintDialogContext()
   const isPendingConfirmation =
@@ -84,7 +80,9 @@ export const NativeMint: FC<NativeMintProps> = ({
         </Dialog.Description>
 
         {wrongChain ? (
-          <Button onClick={() => switchChain(l2ChainId)}>Switch to Base</Button>
+          <Button onClick={() => switchChain(l2.chainId)}>
+            Switch to Base
+          </Button>
         ) : insufficientFunds ? (
           <Button onClick={() => setPage(ModalPage.INSUFFICIENT_FUNDS)}>
             Mint ({totalPrice} ETH)
