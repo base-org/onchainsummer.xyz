@@ -113,7 +113,7 @@ export default function Trending() {
           <div className="p-3 md:p-6 mt-8 mb-32 bg-gray-200/80 rounded-[30px]">
             {isLoading
               ? Array.from({ length: 5 }, (_, index) => (
-                  <CollectionPlaceholder key={index} />
+                  <CollectionPlaceholder key={index} height={214} />
                 ))
               : collections?.map(
                   (
