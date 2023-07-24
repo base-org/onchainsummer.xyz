@@ -16,7 +16,10 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
   return (
     <section className="p-4 bg-gray-200/80 rounded-3xl">
       <TabsComponent.Root defaultValue="tab1">
-        <TabsComponent.List className="" aria-label="Manage your account">
+        <TabsComponent.List
+          className="flex [@media(max-width:374px)]:flex-wrap gap-2"
+          aria-label="Manage your account"
+        >
           <TabsListItems
             upcomingLength={upcomingDrops.length}
             pastLength={pastDrops.length}
