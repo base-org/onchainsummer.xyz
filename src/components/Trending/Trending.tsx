@@ -47,7 +47,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
     },
   })
 
-  const collections = data?.collections.slice(0, 3) || []
+  const collections = data?.collections?.slice(0, 3) || []
   return (
     <section className="p-4 bg-gray-white rounded-3xl shadow-large">
       <div className="flex justify-between mb-4">
