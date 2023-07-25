@@ -1,4 +1,5 @@
 import { Partner } from './types'
+import { unlimited, limited } from '../test-contracts'
 
 const highlight: Partner = {
   slug: 'highlight',
@@ -15,8 +16,7 @@ const highlight: Partner = {
       image: '/partners/highlight/drops/drop.svg',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Highlight Drop',
-      crossMintClientId: '3ad9bb08-090f-41b9-b451-85fd1357e0e9',
-      address: '0xF9a2CC9C41944B4116f1f62850e06fd6a790266C',
+      ...limited,
       type: 'erc-721',
       startDate: new Date('2023-08-15').getTime(),
       endDate: new Date('2023-08-16').getTime(),

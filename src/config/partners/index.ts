@@ -1,6 +1,5 @@
 import openSea from './open-sea'
 import openSeason from './open-season'
-import sushi from './sushi'
 import coke from './coke'
 import fwb from './fwb'
 import parallel from './parallel'
@@ -12,7 +11,7 @@ import pixelmon from './pixelmon'
 
 export const partners = [
   openSea,
-  sushi,
+
   coke,
   fwb,
   parallel,
@@ -26,7 +25,6 @@ export const partners = [
 export {
   openSea,
   openSeason,
-  sushi,
   coke,
   fwb,
   parallel,

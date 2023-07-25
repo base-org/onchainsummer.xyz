@@ -1,4 +1,5 @@
 import { Partner } from './types'
+import { unlimited, limited } from '../test-contracts'
 
 const parallel: Partner = {
   slug: 'parallel',
@@ -15,8 +16,7 @@ const parallel: Partner = {
       image: '/partners/parallel/drops/drop.svg',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Parallel Finance',
-      crossMintClientId: '3ad9bb08-090f-41b9-b451-85fd1357e0e9',
-      address: '0xF9a2CC9C41944B4116f1f62850e06fd6a790266C',
+      ...unlimited,
       type: 'erc-721',
       startDate: new Date('2023-08-11').getTime(),
       endDate: new Date('2023-08-12').getTime(),
