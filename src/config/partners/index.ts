@@ -10,6 +10,7 @@ import pixelmon from './pixelmon'
 import showtime from './showtime'
 import mirrorWellness from './mirror-wellness'
 import indelible from './indelible'
+import manifold from './manifold'
 
 export const partners = [
   openSea,
@@ -24,6 +25,7 @@ export const partners = [
   showtime,
   mirrorWellness,
   indelible,
+  manifold,
 ]
 
 export {
@@ -39,4 +41,5 @@ export {
   showtime,
   mirrorWellness,
   indelible,
+  manifold,
 }
