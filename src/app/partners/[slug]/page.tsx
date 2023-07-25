@@ -45,7 +45,7 @@ const Page = async ({ params, searchParams }: Props) => {
         />
         <section className="w-full font-text p-1">
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-3xl">
-            <div className="p-6 md:px-16 lg:px-32 md:py-[54px] md:border md:border-gray-400/50 md:border-1 rounded-2xl break-words m-4">
+            <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
               <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
                 {article.content.title}
               </h2>
