@@ -9,6 +9,7 @@ import zora from './zora'
 import pixelmon from './pixelmon'
 import showtime from './showtime'
 import mirrorWellness from './mirror-wellness'
+import indelible from './indelible'
 
 export const partners = [
   openSea,
@@ -22,6 +23,7 @@ export const partners = [
   pixelmon,
   showtime,
   mirrorWellness,
+  indelible,
 ]
 
 export {
@@ -36,4 +38,5 @@ export {
   pixelmon,
   showtime,
   mirrorWellness,
+  indelible,
 }
