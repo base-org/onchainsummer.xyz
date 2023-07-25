@@ -13,6 +13,7 @@ import indelible from './indelible'
 import manifold from './manifold'
 import blackbird from './blackbird'
 import nestcoin from './nestcoin'
+import optimism from './optimism'
 
 export const partners = [
   openSea,
@@ -30,6 +31,7 @@ export const partners = [
   manifold,
   blackbird,
   nestcoin,
+  optimism,
 ]
 
 export {
@@ -48,4 +50,5 @@ export {
   manifold,
   blackbird,
   nestcoin,
+  optimism,
 }
