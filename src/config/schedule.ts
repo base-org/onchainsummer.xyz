@@ -13,6 +13,7 @@ import {
   indelible,
   manifold,
   blackbird,
+  nestcoin,
 } from './partners'
 
 import { Partner } from './partners/types'
@@ -32,6 +33,7 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-20': indelible,
       '2023-08-21': manifold,
       '2023-08-22': blackbird,
+      '2023-08-23': nestcoin,
     }
   : {
       '2023-07-18': fwb,
@@ -46,5 +48,6 @@ export const schedule: Record<string, Partner> = isProd
       '2023-07-27': mirrorWellness,
       '2023-07-28': indelible,
       '2023-07-29': manifold,
-      '2023-07-2': blackbird,
+      '2023-07-30': blackbird,
+      '2023-07-31': nestcoin,
     }

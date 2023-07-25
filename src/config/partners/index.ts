@@ -12,6 +12,7 @@ import mirrorWellness from './mirror-wellness'
 import indelible from './indelible'
 import manifold from './manifold'
 import blackbird from './blackbird'
+import nestcoin from './nestcoin'
 
 export const partners = [
   openSea,
@@ -28,6 +29,7 @@ export const partners = [
   indelible,
   manifold,
   blackbird,
+  nestcoin,
 ]
 
 export {
@@ -45,4 +47,5 @@ export {
   indelible,
   manifold,
   blackbird,
+  nestcoin,
 }
