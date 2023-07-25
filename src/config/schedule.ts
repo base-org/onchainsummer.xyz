@@ -1,6 +1,14 @@
 import { isProd } from './chain'
-import { coke, fwb, parallel, anotherblock, standWithCrypto } from './partners'
-import highlight from './partners/highlight'
+import {
+  coke,
+  fwb,
+  parallel,
+  anotherblock,
+  standWithCrypto,
+  highlight,
+  zora,
+} from './partners'
+
 import { Partner } from './partners/types'
 
 export const schedule: Record<string, Partner> = isProd
@@ -11,6 +19,7 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-13': anotherblock,
       '2023-08-14': standWithCrypto,
       '2023-08-15': highlight,
+      '2023-08-16': zora,
     }
   : {
       '2023-07-18': fwb,
@@ -19,4 +28,5 @@ export const schedule: Record<string, Partner> = isProd
       '2023-07-21': anotherblock,
       '2023-07-22': standWithCrypto,
       '2023-07-23': highlight,
+      '2023-07-24': zora,
     }

@@ -6,6 +6,8 @@ import fwb from './fwb'
 import parallel from './parallel'
 import anotherblock from './anotherblock'
 import standWithCrypto from './stand-with-crypto'
+import highlight from './highlight'
+import zora from './zora'
 
 export const partners = [
   openSea,
@@ -15,6 +17,8 @@ export const partners = [
   parallel,
   anotherblock,
   standWithCrypto,
+  highlight,
+  zora,
 ]
 
 export {
@@ -26,4 +30,6 @@ export {
   parallel,
   anotherblock,
   standWithCrypto,
+  highlight,
+  zora,
 }
