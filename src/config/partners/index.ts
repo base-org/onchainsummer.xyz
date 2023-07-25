@@ -8,6 +8,7 @@ import anotherblock from './anotherblock'
 import standWithCrypto from './stand-with-crypto'
 import highlight from './highlight'
 import zora from './zora'
+import pixelmon from './pixelmon'
 
 export const partners = [
   openSea,
@@ -19,6 +20,7 @@ export const partners = [
   standWithCrypto,
   highlight,
   zora,
+  pixelmon,
 ]
 
 export {
@@ -32,4 +34,5 @@ export {
   standWithCrypto,
   highlight,
   zora,
+  pixelmon,
 }
