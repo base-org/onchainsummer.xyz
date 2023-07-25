@@ -5,6 +5,6 @@ import coke from './coke'
 import fwb from './fwb'
 import parallel from './parallel'
 
-export const partners = [openSea, openSeason, sushi, coke, fwb, parallel]
+export const partners = [openSea, sushi, coke, fwb, parallel]
 
 export { openSea, openSeason, sushi, coke, fwb, parallel }

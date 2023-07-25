@@ -6,11 +6,12 @@ export const schedule: Record<string, Partner> = isProd
   ? {
       '2023-08-09': fwb,
       '2023-08-10': parallel,
+      '2023-08-11': coke,
     }
   : {
       '2023-07-18': fwb,
       '2023-07-19': parallel,
-      '2023-07-20': openSeason,
+      '2023-07-20': coke,
       '2023-07-21': openSeason,
       '2023-07-22': sushi,
       '2023-07-23': sushi,
