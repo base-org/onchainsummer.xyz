@@ -8,6 +8,7 @@ import highlight from './highlight'
 import zora from './zora'
 import pixelmon from './pixelmon'
 import showtime from './showtime'
+import mirrorWellness from './mirror-wellness'
 
 export const partners = [
   openSea,
@@ -20,6 +21,7 @@ export const partners = [
   zora,
   pixelmon,
   showtime,
+  mirrorWellness,
 ]
 
 export {
@@ -33,4 +35,5 @@ export {
   zora,
   pixelmon,
   showtime,
+  mirrorWellness,
 }
