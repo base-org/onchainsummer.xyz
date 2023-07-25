@@ -15,6 +15,7 @@ import {
   blackbird,
   nestcoin,
   optimism,
+  atari,
 } from './partners'
 
 import { Partner } from './partners/types'
@@ -36,6 +37,7 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-22': blackbird,
       '2023-08-23': nestcoin,
       '2023-08-24': optimism,
+      '2023-08-25': atari,
     }
   : {
       '2023-07-18': fwb,
@@ -53,4 +55,5 @@ export const schedule: Record<string, Partner> = isProd
       '2023-07-30': blackbird,
       '2023-07-31': nestcoin,
       '2023-08-01': optimism,
+      '2023-07-02': atari,
     }
