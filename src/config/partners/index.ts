@@ -11,6 +11,7 @@ import showtime from './showtime'
 import mirrorWellness from './mirror-wellness'
 import indelible from './indelible'
 import manifold from './manifold'
+import blackbird from './blackbird'
 
 export const partners = [
   openSea,
@@ -26,6 +27,7 @@ export const partners = [
   mirrorWellness,
   indelible,
   manifold,
+  blackbird,
 ]
 
 export {
@@ -42,4 +44,5 @@ export {
   mirrorWellness,
   indelible,
   manifold,
+  blackbird,
 }
