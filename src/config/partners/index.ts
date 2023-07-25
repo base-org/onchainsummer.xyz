@@ -15,6 +15,8 @@ import blackbird from './blackbird'
 import nestcoin from './nestcoin'
 import optimism from './optimism'
 import atari from './atari'
+import rainbowWallet from './rainbow-wallet'
+import iskra from './iskra'
 
 export const partners = [
   openSea,
@@ -34,6 +36,8 @@ export const partners = [
   nestcoin,
   optimism,
   atari,
+  rainbowWallet,
+  iskra,
 ]
 
 export {
@@ -54,4 +58,6 @@ export {
   nestcoin,
   optimism,
   atari,
+  rainbowWallet,
+  iskra,
 }
