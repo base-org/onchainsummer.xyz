@@ -8,7 +8,6 @@ const sushiConfig: Partner = {
     'Sushi is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',
   brandColor: '#FF6B00',
   icon: '/partners/sushi/icon.svg',
-  iconInverse: '/partners/sushi/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@SushiSwap',
   drops: [
