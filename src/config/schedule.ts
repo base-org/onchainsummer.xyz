@@ -8,6 +8,7 @@ import {
   highlight,
   zora,
   pixelmon,
+  showtime,
 } from './partners'
 
 import { Partner } from './partners/types'
@@ -22,6 +23,7 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-15': highlight,
       '2023-08-16': zora,
       '2023-08-17': pixelmon,
+      '2023-08-18': showtime,
     }
   : {
       '2023-07-18': fwb,
@@ -32,4 +34,5 @@ export const schedule: Record<string, Partner> = isProd
       '2023-07-23': highlight,
       '2023-07-24': zora,
       '2023-07-25': pixelmon,
+      '2023-07-26': showtime,
     }

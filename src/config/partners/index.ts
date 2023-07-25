@@ -1,5 +1,4 @@
 import openSea from './open-sea'
-import openSeason from './open-season'
 import coke from './coke'
 import fwb from './fwb'
 import parallel from './parallel'
@@ -8,10 +7,10 @@ import standWithCrypto from './stand-with-crypto'
 import highlight from './highlight'
 import zora from './zora'
 import pixelmon from './pixelmon'
+import showtime from './showtime'
 
 export const partners = [
   openSea,
-
   coke,
   fwb,
   parallel,
@@ -20,11 +19,11 @@ export const partners = [
   highlight,
   zora,
   pixelmon,
+  showtime,
 ]
 
 export {
   openSea,
-  openSeason,
   coke,
   fwb,
   parallel,
@@ -33,4 +32,5 @@ export {
   highlight,
   zora,
   pixelmon,
+  showtime,
 }
