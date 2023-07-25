@@ -1,6 +1,4 @@
 import openSea from './open-sea'
-import openSeason from './open-season'
-import sushi from './sushi'
 import coke from './coke'
 import fwb from './fwb'
 import parallel from './parallel'
@@ -9,10 +7,17 @@ import standWithCrypto from './stand-with-crypto'
 import highlight from './highlight'
 import zora from './zora'
 import pixelmon from './pixelmon'
+import showtime from './showtime'
+import mirrorWellness from './mirror-wellness'
+import indelible from './indelible'
+import manifold from './manifold'
+import blackbird from './blackbird'
+import nestcoin from './nestcoin'
+import optimism from './optimism'
+import atari from './atari'
 
 export const partners = [
   openSea,
-  sushi,
   coke,
   fwb,
   parallel,
@@ -21,12 +26,18 @@ export const partners = [
   highlight,
   zora,
   pixelmon,
+  showtime,
+  mirrorWellness,
+  indelible,
+  manifold,
+  blackbird,
+  nestcoin,
+  optimism,
+  atari,
 ]
 
 export {
   openSea,
-  openSeason,
-  sushi,
   coke,
   fwb,
   parallel,
@@ -35,4 +46,12 @@ export {
   highlight,
   zora,
   pixelmon,
+  showtime,
+  mirrorWellness,
+  indelible,
+  manifold,
+  blackbird,
+  nestcoin,
+  optimism,
+  atari,
 }

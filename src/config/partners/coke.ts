@@ -1,4 +1,5 @@
-import { DAY, Partner } from './types'
+import { Partner } from './types'
+import { unlimited, limited } from '../test-contracts'
 
 const cokeConfig: Partner = {
   slug: 'coke',
@@ -15,8 +16,7 @@ const cokeConfig: Partner = {
       image: '/partners/coke/drop/coke.webp',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Coke NFT Drop',
-      crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
-      address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
+      ...unlimited,
       type: 'erc-721',
       startDate: new Date('2023-08-12').getTime(),
       endDate: new Date('2023-08-13').getTime(),
@@ -29,8 +29,7 @@ const cokeConfig: Partner = {
       name: 'Closer to the Sun',
       startDate: new Date('2023-08-12').getTime(),
       endDate: new Date('2023-08-13').getTime(),
-      crossMintClientId: '04a71fe3-29a3-42b4-8dec-a5c633fe5029',
-      address: '0x4406EF711207f60f7bA6EEf2757F3b404D28a0b7',
+      ...limited,
       type: 'erc-721',
       price: '0.0001',
     },
