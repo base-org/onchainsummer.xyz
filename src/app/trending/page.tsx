@@ -49,20 +49,19 @@ export default function Trending() {
 
   const collections = data?.collections
 
-  console.log(collections, 'collections')
   return (
     <PageContainer>
       <div className="mx-6 mt-32">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
-            <div className="basis-1/2">
+            <div className="w-full sm:w-[55%]">
               <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FCD22D]">
                 <UpArrow />
               </div>
-              <h1 className="text-[32px] md:text-[40px] md:leading-[50px] my-6">
+              <h1 className="text-[46px] md:text-[40px] md:leading-[50px] my-6">
                 Trending
               </h1>
-              <p className="text-sm md:text-xl my-2 font-light">
+              <p className="text-xl md:text-2xl my-2 font-light">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna
                 aliquam erat volutpat.
