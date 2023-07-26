@@ -19,6 +19,7 @@ import iskra from './iskra'
 import oak from './oak'
 import openSea from './open-sea'
 import fwbBonfire from './fwb-bonfire'
+import fini from './fini'
 
 export const partners = [
   fwb,
@@ -42,6 +43,7 @@ export const partners = [
   oak,
   openSea,
   fwbBonfire,
+  fini,
 ]
 
 export {
@@ -66,4 +68,5 @@ export {
   oak,
   openSea,
   fwbBonfire,
+  fini,
 }
