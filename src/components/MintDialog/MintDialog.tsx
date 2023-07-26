@@ -186,6 +186,11 @@ export const MintDialog: FC = () => {
     txDetails,
   ])
 
+  const isDisplayingCrossMintForm =
+    page === ModalPage.CROSS_MINT_FORM ||
+    page === ModalPage.CROSS_MINT_PENDING ||
+    page === ModalPage.CROSS_MINT_PAYMENT_FAILED
+
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
@@ -201,7 +206,7 @@ export const MintDialog: FC = () => {
         <Dialog.Content
           className={clsx(
             'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-auto h-full lg:h-auto lg:overflow-hidden',
-            { '!h-full': page === ModalPage.CROSS_MINT_FORM }
+            { '!h-full': isDisplayingCrossMintForm }
           )}
         >
           <Dialog.Close asChild>
