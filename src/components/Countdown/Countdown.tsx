@@ -6,6 +6,7 @@ import { isBefore, isAfter } from 'date-fns'
 import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
 import { format, parseISO } from 'date-fns'
+import { utcToZonedTime } from 'date-fns-tz'
 
 interface CustomCountdownProps extends CountdownProps {
   startDate: number
@@ -22,8 +23,14 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
-  const isBeforeStartDate = isBefore(new Date(), new Date(props.startDate))
-  const isAfterEndDate = isAfter(new Date(), new Date(props.date))
+  const isBeforeStartDate = isBefore(
+    new Date().getTime(),
+    new Date(props.startDate).getTime()
+  )
+  const isAfterEndDate = isAfter(
+    new Date().getTime(),
+    new Date(props.date).getTime()
+  )
 
   const textColor = isBeforeStartDate
     ? 'text-black'
@@ -46,14 +53,19 @@ export const Countdown: FC<CustomCountdownProps> = ({
         {mounted ? (
           <ReactCountdown
             {...props}
-            renderer={({ days, hours, minutes, seconds, completed }) => {
-              if (completed) {
+            renderer={({ days, hours, minutes, seconds }) => {
+              if (isAfterEndDate) {
                 return (
                   <>
                     <div>
                       <p>Ended</p>
                     </div>
-                    <span>{format(props.date, 'do MMMM yyyy')}</span>
+                    <span>
+                      {format(
+                        utcToZonedTime(props.date, 'UTC'),
+                        'do MMMM yyyy'
+                      )}
+                    </span>
                   </>
                 )
               } else if (isBeforeStartDate) {
@@ -62,7 +74,12 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Launches</p>
                     </div>
-                    <span>{format(props.startDate, 'do MMMM yyyy')}</span>
+                    <span>
+                      {format(
+                        utcToZonedTime(props.startDate, 'UTC'),
+                        'do MMMM yyyy'
+                      )}
+                    </span>
                   </>
                 )
               } else {

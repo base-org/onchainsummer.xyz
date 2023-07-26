@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 import clsx from 'clsx'
 import { isBefore, isAfter } from 'date-fns'
+import { utcToZonedTime } from 'date-fns-tz'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -20,8 +21,14 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
   headline,
 }) => {
-  const isBeforeStartDate = isBefore(new Date(), new Date(headline.startDate))
-  const isAfterEndDate = isAfter(new Date(), new Date(headline.endDate))
+  const isBeforeStartDate = isBefore(
+    new Date().getTime(),
+    new Date(headline.startDate).getTime()
+  )
+  const isAfterEndDate = isAfter(
+    new Date().getTime(),
+    new Date(headline.endDate).getTime()
+  )
 
   const separatorBackgroundColor = isBeforeStartDate
     ? '!bg-black'
