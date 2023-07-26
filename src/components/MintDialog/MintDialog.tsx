@@ -165,7 +165,13 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE_SUCCESS:
         return <Bridge minAmount="0.001" setPage={setPage} />
       case ModalPage.INSUFFICIENT_FUNDS:
-        return <InsufficientFunds minimalBalance={''} setPage={setPage} />
+        return (
+          <InsufficientFunds
+            minimalBalance={''}
+            setPage={setPage}
+            totalPrice={totalPrice}
+          />
+        )
       default:
         return ''
     }
