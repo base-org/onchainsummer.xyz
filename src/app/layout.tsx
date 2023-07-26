@@ -183,9 +183,9 @@ export default function RootLayout({
           <QueryClientProvider>
             <QueryParamProvider>
               {SHOW_TEASER ? (
-                <>
+                <div className="bg-teaser-gradient h-fit flex-grow">
                   <Teaser />
-                </>
+                </div>
               ) : (
                 <>
                   <Navbar />
