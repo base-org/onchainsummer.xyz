@@ -5,11 +5,13 @@ import { ethers } from 'ethers'
 import { useAddress } from '@thirdweb-dev/react'
 import { useQuery } from 'react-query'
 
-export function useEns() {
-  const address = useAddress()
+export function useEns(address?: string) {
+  const userAddress = useAddress()
+
+  const _address = address || userAddress
 
   const { data, isLoading } = useQuery({
-    queryKey: ['ens', address],
+    queryKey: ['ens', _address],
     queryFn: async ({ queryKey }) => {
       const [_, address] = queryKey as ['ens', string]
       const [ethUrl] = mainnet.rpcUrls.default.http
