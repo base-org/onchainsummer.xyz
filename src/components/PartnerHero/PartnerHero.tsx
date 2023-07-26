@@ -1,4 +1,4 @@
-import { Partner } from '@/config/partners/types'
+import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
 import clsx from 'clsx'
@@ -6,6 +6,8 @@ import { isBefore, isAfter } from 'date-fns'
 
 interface PartnerHeroProps {
   partner: Partner
+  headline: Drop
+  staticHeadline: boolean
 }
 
 import { Separator } from '../Separator'
@@ -15,10 +17,9 @@ import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
-  partner: { name, drops, icon, description },
+  partner: { name, icon, description },
+  headline,
 }) => {
-  const headline = drops[0]
-
   const isBeforeStartDate = isBefore(new Date(), new Date(headline.startDate))
   const isAfterEndDate = isAfter(new Date(), new Date(headline.endDate))
 

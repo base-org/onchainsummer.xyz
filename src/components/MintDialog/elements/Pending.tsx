@@ -1,5 +1,3 @@
-import { Button } from '@/components/Button'
-import { isProd } from '@/config/chain'
 import clsx from 'clsx'
 import { FC } from 'react'
 import { ViewOnExplorer } from './ViewOnExplorer'

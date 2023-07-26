@@ -1,23 +1,24 @@
 import { FC } from 'react'
 import { Button } from '../../Button'
 import { getClients } from '@/config/viem'
-import { mainnet, goerli } from 'viem/chains'
+import { base, baseGoerli } from 'viem/chains'
 import { isProd } from '@/config/chain'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
 import { ModalPage } from '../types'
 import { TxDetails } from '../MintDialog'
-import { tr } from 'date-fns/locale'
 
 interface MintDotFunMinterProps {
   setPage: React.Dispatch<ModalPage>
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
+  totalPrice: string
 }
 
 export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
   setPage,
   setTxDetails,
+  totalPrice,
 }) => {
-  const { mintDotFunStatus, price } = useMintDialogContext()
+  const { mintDotFunStatus } = useMintDialogContext()
 
   if (!mintDotFunStatus) {
     // TODO: This should never happen. Maybe a toast?
@@ -41,7 +42,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
           account,
           to: mintDotFunStatus.tx.to,
           value: BigInt(mintDotFunStatus.tx.value),
-          chain: isProd ? mainnet : goerli,
+          chain: isProd ? base : baseGoerli,
           // @ts-expect-error
           data: mintDotFunStatus.tx.data,
         })
@@ -62,7 +63,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
         }
       }}
     >
-      Mint ({price} ETH)
+      Mint ({totalPrice} ETH)
     </Button>
   )
 }

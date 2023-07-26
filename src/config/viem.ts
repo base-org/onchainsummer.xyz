@@ -1,6 +1,6 @@
 import { createWalletClient, custom, createPublicClient } from 'viem'
 
-import { mainnet, goerli } from 'viem/chains'
+import { base, baseGoerli } from 'viem/chains'
 import { isProd } from './chain'
 
 export const getClients = async () => {
@@ -9,13 +9,13 @@ export const getClients = async () => {
   }
 
   const publicClient = createPublicClient({
-    chain: isProd ? mainnet : goerli,
+    chain: isProd ? base : baseGoerli,
     // @ts-ignore
     transport: custom(window.ethereum),
   })
 
   const walletClient = createWalletClient({
-    chain: isProd ? mainnet : goerli,
+    chain: isProd ? base : baseGoerli,
     // @ts-ignore
     transport: custom(window.ethereum),
   })

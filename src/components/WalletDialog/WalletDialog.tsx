@@ -20,6 +20,7 @@ import { ArrowRight } from '../icons/ArrowRight'
 import { BaseGoerli } from '@thirdweb-dev/chains'
 import { useEns } from '@/utils/useEns'
 import { Loading } from '../icons/Loading'
+import dialogClasses from '@/components/dialog.module.css'
 
 interface WalletDialogProps {}
 
@@ -41,12 +42,19 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button className={'rounded-lg !py-2 !px-3'}>
-          {name || shortenedAddress}
+        <Button className={'rounded-lg !py-1.5 !px-4 !lowercase !gap-2'}>
+          {avatar ? (
+            <div
+              className="h-5 w-5 bg-black rounded-full bg-cover relative"
+              style={{ backgroundImage: `url(${avatar})` }}
+            />
+          ) : null}
+
+          <span className="leading-[140%]">{name || shortenedAddress}</span>
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/40 backdrop-blur-[6px] data-[state=open]:animate-overlayShow fixed inset-0 z-40 lg:hidden" />
+        <Dialog.Overlay className={clsx(dialogClasses.overlay, 'lg:hidden')} />
         <Dialog.Content
           className={clsx(
             'fixed',

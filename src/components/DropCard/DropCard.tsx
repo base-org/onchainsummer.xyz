@@ -14,7 +14,7 @@ type DropCardProps = {
   image: string
   externalLink?: string
   name: string
-  endDate: string
+  endDate: number
   price: string
   creator: string
 }
@@ -55,9 +55,8 @@ export const DropCard: FC<DropCardProps> = ({
           <AddressPill address={creator} className="bg-ocs-turquoise" />
         </div>
         {externalLink ? (
-          <Button tabIndex={-1} className="!flex !justify-between">
-            Mint ({price} ETH)
-            <RightArrow />
+          <Button tabIndex={-1} className="!flex !justify-center">
+            Mint on {partner}
           </Button>
         ) : (
           <MintButton

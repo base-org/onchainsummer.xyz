@@ -29,6 +29,16 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
             </Link>
           </NavigationMenu.Link>
         </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link asChild>
+            <Link
+              href="/community"
+              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-3"
+            >
+              Community
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
       </NavigationMenu.List>
       <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-4 w-max">
         <p className="uppercase font-mono text-zinc-400 whitespace-nowrap">

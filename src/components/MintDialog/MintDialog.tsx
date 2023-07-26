@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 
-import { FC, useMemo, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 import { Button } from '../Button'
 import { Close } from '../icons/Close'
 
@@ -16,16 +16,16 @@ import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
-
+import { useFundsStatus } from './elements/useFundsStatus'
+import dialogClasses from '@/components/dialog.module.css'
 export type TxDetails = {
   hash: string
 }
 
 export const MintDialog: FC = () => {
-  const { price, crossMintClientId } = useMintDialogContext()
-
+  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
+    useMintDialogContext()
   const [open, setOpen] = useState(false)
-  const [page, setPage] = useState(ModalPage.NATIVE_MINT)
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
@@ -35,6 +35,35 @@ export const MintDialog: FC = () => {
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
+
+  const { fundsStatus } = useFundsStatus(totalPrice, open)
+
+  const [page, setPage] = useState(() => {
+    switch (fundsStatus) {
+      case 'sufficient':
+        return ModalPage.NATIVE_MINT
+      case 'bridge':
+        return ModalPage.BRIDGE
+      case 'insufficient':
+      default:
+        return ModalPage.NATIVE_MINT
+    }
+  })
+
+  useEffect(() => {
+    const needsBridge = fundsStatus === 'bridge'
+    if (needsBridge && page === ModalPage.NATIVE_MINT) {
+      setPage(ModalPage.BRIDGE)
+    }
+
+    const sufficientFunds = fundsStatus === 'sufficient'
+    if (
+      (sufficientFunds && page === ModalPage.BRIDGE) ||
+      (sufficientFunds && page === ModalPage.INSUFFICIENT_FUNDS)
+    ) {
+      setPage(ModalPage.NATIVE_MINT)
+    }
+  }, [fundsStatus, page])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -55,18 +84,23 @@ export const MintDialog: FC = () => {
       case ModalPage.CROSS_MINT_PENDING:
       case ModalPage.NATIVE_MINTING_PENDING_TX:
         return 'Minting...'
+      case ModalPage.BRIDGE:
       case ModalPage.NATIVE_MINT:
         return (
           <>
-            Mint ({price} ETH) <ArrowRight />
+            {trendingPageNativeMint ? (
+              <span className="w-full">Mint</span>
+            ) : (
+              <>
+                Mint ({price} ETH) <ArrowRight />
+              </>
+            )}
           </>
         )
-      case ModalPage.BRIDGE:
-        return 'Bridge'
       case ModalPage.BRIDGE_PENDING:
         return 'Bridging funds...'
       case ModalPage.BRIDGE_SUCCESS:
-        return 'Success'
+        return 'Bridge Success'
       case ModalPage.INSUFFICIENT_FUNDS:
         return 'Insufficient Funds'
       case ModalPage.CROSS_MINT_FORM:
@@ -76,7 +110,7 @@ export const MintDialog: FC = () => {
       default:
         return ''
     }
-  }, [page, price])
+  }, [trendingPageNativeMint, price, page])
 
   const dialogContent = useMemo(() => {
     switch (page) {
@@ -123,20 +157,22 @@ export const MintDialog: FC = () => {
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
+            insufficientFunds={fundsStatus === 'insufficient'}
           />
         )
       case ModalPage.BRIDGE:
       case ModalPage.BRIDGE_PENDING:
       case ModalPage.BRIDGE_SUCCESS:
-        return <Bridge />
+        return <Bridge minAmount="0.001" setPage={setPage} />
       case ModalPage.INSUFFICIENT_FUNDS:
-        return <InsufficientFunds />
+        return <InsufficientFunds minimalBalance={''} setPage={setPage} />
       default:
         return ''
     }
   }, [
     crossMintClientId,
     crossMintOrderIdentifier,
+    fundsStatus,
     mintError,
     page,
     quantity,
@@ -147,16 +183,19 @@ export const MintDialog: FC = () => {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <Button tabIndex={-1} className="!flex !justify-between">
+        <Button
+          tabIndex={-1}
+          className={clsx('!flex !justify-between', mintButtonStyles)}
+        >
           {buttonTitle}
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/40 data-[state=open]:animate-overlayShow fixed inset-0 z-40" />
+        <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 md:overflow-hidden lg:p-16 overflow-auto',
-            { 'h-full': page === ModalPage.CROSS_MINT_FORM }
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-auto h-full lg:h-auto lg:overflow-hidden',
+            { '!h-full': page === ModalPage.CROSS_MINT_FORM }
           )}
         >
           <Dialog.Close asChild>

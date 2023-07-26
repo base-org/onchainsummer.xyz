@@ -8,6 +8,7 @@ import { MintDialogContextType } from '../MintDialog/Context/Context'
 import { useValidate } from './useValidate'
 import { Button } from '../Button'
 import { Loading } from '../icons/Loading'
+import clsx from 'clsx'
 
 interface MintButtonProps extends MintDialogContextType {}
 
@@ -38,7 +39,7 @@ export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
 
   if (!valid) {
     return (
-      <Button disabled className="text-[14px] md:text-base">
+      <Button disabled className={clsx('text-[14px] md:text-base')}>
         {message}
       </Button>
     )

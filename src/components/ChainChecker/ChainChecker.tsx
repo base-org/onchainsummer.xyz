@@ -1,12 +1,12 @@
 'use client'
 
 import { useNetworkMismatch } from '@thirdweb-dev/react'
-import { BaseGoerli } from '@thirdweb-dev/chains'
 import { useSwitchChain } from '@thirdweb-dev/react'
 import { useChain } from '@thirdweb-dev/react'
 
 import { Button } from '../Button/Button'
 import { ChainSwitch } from '../icons/ChainSwitch'
+import { l2 } from '@/config/chain'
 
 export const ChainChecker: React.FC = () => {
   const isMismatched = useNetworkMismatch()
@@ -29,7 +29,7 @@ export const ChainChecker: React.FC = () => {
           <div className="w-full md:w-auto md:basis-[1/3] flex justify-end">
             <Button
               variant="LIGHT"
-              onClick={() => switchChain(BaseGoerli.chainId)}
+              onClick={() => switchChain(l2.chainId)}
               className="mt-4 md:mt-0 basis-full md:basis-1/2 text-sm md:text-base !flex !justify-start md:!justify-between !bg-transparent !py-3"
             >
               Switch to Base

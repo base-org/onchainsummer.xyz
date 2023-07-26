@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { IconProps } from './type'
 
-export const UpArrow: FC<IconProps> = ({ height = 48, width = 48 }) => {
+export const UpArrow: FC<IconProps> = ({ height = 32, width = 32 }) => {
   return (
     <svg
       width={width}

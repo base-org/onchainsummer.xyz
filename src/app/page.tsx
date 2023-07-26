@@ -9,17 +9,34 @@ import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
 import { PageContainer } from '@/components/PageContainer'
+import { getDrops } from '@/utils/getDrops'
+import { Trending } from '@/components/Trending'
 
-const Home = async () => {
+type Props = {
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+const Home = async ({ searchParams }: Props) => {
   const { partner, tabs, article } = await getPageData()
   const { drops, name, icon } = partner
-  const otherDrops = drops.filter((_, index) => index !== 0)
-  console.log(drops, 'drops')
+
+  const dropAddressParam = searchParams.drop
+
+  const dropAddress = Array.isArray(dropAddressParam)
+    ? dropAddressParam[0]
+    : dropAddressParam
+
+  const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
+
   return (
     <PageContainer>
-      <main className="flex h-full flex-col items-center justify-between relative px-6 pb-32 xl:px-0 gap-10 md:gap-[54px]">
-        <PartnerHero partner={partner} />
-        <section className="w-full">
+      <div className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
+        <PartnerHero
+          partner={partner}
+          headline={featuredDrop}
+          staticHeadline={!!dropAddress}
+        />
+        <section className="w-full shadow-large rounded-3xl">
           <div className="bg-gray-200/80 p-4 rounded-3xl">
             <div className="mb-4 flex gap-2 items-end">
               <div className="relative z-20 h-20 w-20">
@@ -36,7 +53,7 @@ const Home = async () => {
               <div className="overflow-scroll hide-scrollbar">
                 <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
                   <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
-                    {otherDrops.map((drop) => (
+                    {remainingDrops.map((drop) => (
                       <li key={drop.name} className="flex flex-col">
                         <DropCard {...drop} partner={name} partnerIcon={icon} />
                       </li>
@@ -65,10 +82,13 @@ const Home = async () => {
             </div>
           </div>
         </section>
+        <section className="w-full">
+          <Trending />
+        </section>
         <section className="w-full" id="drops">
           <Tabs {...tabs} />
         </section>
-      </main>
+      </div>
     </PageContainer>
   )
 }
@@ -98,10 +118,17 @@ async function getPageData() {
     }
 
     if (comparison === -1) {
+      if (acc.upcomingDrops.find((drop) => drop.slug === partner.slug)) {
+        return acc
+      }
       return {
         ...acc,
         upcomingDrops: [...acc.upcomingDrops, partner],
       }
+    }
+
+    if (acc.pastDrops.find((drop) => drop.slug === partner.slug)) {
+      return acc
     }
 
     return {

@@ -8,8 +8,8 @@ import clsx from 'clsx'
 import { format, parseISO } from 'date-fns'
 
 interface CustomCountdownProps extends CountdownProps {
-  startDate: string
-  date: string
+  startDate: number
+  date: number
 }
 
 export const Countdown: FC<CustomCountdownProps> = ({
@@ -53,7 +53,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Ended</p>
                     </div>
-                    <span>{format(parseISO(props.date), 'do MMMM yyyy')}</span>
+                    <span>{format(props.date, 'do MMMM yyyy')}</span>
                   </>
                 )
               } else if (isBeforeStartDate) {
@@ -62,9 +62,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Launches</p>
                     </div>
-                    <span>
-                      {format(parseISO(props.startDate), 'do MMMM yyyy')}
-                    </span>
+                    <span>{format(props.startDate, 'do MMMM yyyy')}</span>
                   </>
                 )
               } else {

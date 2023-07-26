@@ -6,8 +6,8 @@ import Link from 'next/link'
 interface TabsDropCardProps {
   address: string
   name: string
-  startDate: string
-  endDate: string
+  startDate: number
+  endDate: number
   image: string
   description: string
   slug: string
@@ -32,7 +32,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
       >
         <div className="flex flex-[1_0_auto] p-4 w-full md:w-[329px]">
           <div className="relative aspect-square my-auto w-full">
-            <Image src={image} alt="Hero" fill />
+            <Image src={image} alt={name} fill />
           </div>
         </div>
         <div className="md:flex md:flex-col md:justify-start p-4 md:mt-0">

@@ -5,7 +5,8 @@ import { ModalPage } from '../../types'
 import * as Dialog from '@radix-ui/react-dialog'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
-
+import dialogClasses from '@/components/dialog.module.css'
+import clsx from 'clsx'
 interface MintErrorProps {
   setPage: React.Dispatch<ModalPage>
   mintError: any | null
@@ -80,7 +81,7 @@ export const MintError: FC<MintErrorProps> = ({
     <>
       <PartnerInfo />
 
-      <Dialog.Title className="text-[32px] lg:mt-4 font-display">
+      <Dialog.Title className={clsx(dialogClasses.title, 'lg:mt-4')}>
         {title}
       </Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">

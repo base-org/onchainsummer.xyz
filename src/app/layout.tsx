@@ -9,7 +9,7 @@ import { QueryParamProvider } from '@/components/QueryParamProvider'
 import { QueryClientProvider } from '../components/client'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
-import { ChainChecker } from '@/components/ChainChecker/ChainChecker'
+import { website } from '@/config/website'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -103,8 +103,46 @@ const coinbaseDisplay = localFont({
 })
 
 export const metadata = {
-  title: 'Onchain Summer',
-  description: 'Mint NFTs with OnChainSummer',
+  title: {
+    template: `%s | ${website.siteName}`,
+    default: website.siteName, // a default is required when creating a template
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  generator: 'Next.js',
+  applicationName: website.siteName,
+  referrer: 'origin-when-cross-origin',
+  keywords: website.keywords,
+  description: website.description,
+  themeColor: website.themeColor,
+  openGraph: {
+    title: website.title,
+    description: website.title,
+    url: 'https://onchainsummer.xyz',
+    siteName: website.siteName,
+    images: [website.logo],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: website.title,
+    description: website.description,
+    site: website.twitter.site,
+    creator: website.twitter.creator,
+    images: [website.logo.url],
+  },
 }
 
 export default function RootLayout({
@@ -143,9 +181,6 @@ export default function RootLayout({
             <QueryParamProvider>
               <>
                 <Navbar />
-                <div className="flex justify-center items-center bg-subnav-background-gradient min-h-[135px] z-0">
-                  <ChainChecker />
-                </div>
                 {children}
                 <Footer />
               </>

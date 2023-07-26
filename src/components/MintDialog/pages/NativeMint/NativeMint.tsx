@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import Image from 'next/image'
 import { NativeMintButton } from '../../elements/NativeMintButton'
 import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
@@ -10,9 +9,11 @@ import { TxDetails } from '../../MintDialog'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
-import { is } from 'date-fns/locale'
-import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
 
+import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
+import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
+import dialogClasses from '@/components/dialog.module.css'
+import { l2 } from '@/config/chain'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -21,6 +22,7 @@ interface NativeMintProps {
   txDetails: TxDetails | null
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
+  insufficientFunds: boolean
 }
 
 export const NativeMint: FC<NativeMintProps> = ({
@@ -31,7 +33,12 @@ export const NativeMint: FC<NativeMintProps> = ({
   txDetails,
   setTxDetails,
   setMintError,
+  insufficientFunds,
 }) => {
+  const switchChain = useSwitchChain()
+  const chainId = useChainId()
+
+  const wrongChain = chainId !== l2.chainId
   const { creatorAddress, dropName, address, mintDotFunStatus } =
     useMintDialogContext()
   const isPendingConfirmation =
@@ -46,7 +53,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       {!isPending ? <PartnerInfo /> : null}
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title
-        className={clsx('text-[32px] lg:mt-2 font-display', {
+        className={clsx(dialogClasses.title, 'lg:mt-2', {
           hidden: isPending,
         })}
       >
@@ -64,15 +71,28 @@ export const NativeMint: FC<NativeMintProps> = ({
       >
         <Dialog.Description className="flex flex-col w-full gap-4">
           <AddressPill address={creatorAddress} />
-          <div className="text-button-text-text flex justify-between mb-4">
+          <span className="text-button-text-text flex justify-between mb-4">
             <span>
               {quantity} NFT{quantity > 1 ? 's' : ''}
             </span>
             <span>{totalPrice} ETH</span>
-          </div>
+          </span>
         </Dialog.Description>
-        {isMintDotFun ? (
-          <MintDotFunMinter setTxDetails={setTxDetails} setPage={setPage} />
+
+        {wrongChain ? (
+          <Button onClick={() => switchChain(l2.chainId)}>
+            Switch to Base
+          </Button>
+        ) : insufficientFunds ? (
+          <Button onClick={() => setPage(ModalPage.INSUFFICIENT_FUNDS)}>
+            Mint ({totalPrice} ETH)
+          </Button>
+        ) : isMintDotFun ? (
+          <MintDotFunMinter
+            totalPrice={totalPrice}
+            setTxDetails={setTxDetails}
+            setPage={setPage}
+          />
         ) : (
           <NativeMintButton
             page={page}
