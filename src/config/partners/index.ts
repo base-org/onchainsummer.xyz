@@ -20,10 +20,9 @@ import iskra from './iskra'
 import oak from './oak'
 
 export const partners = [
-  openSea,
-  coke,
   fwb,
   parallel,
+  coke,
   anotherblock,
   standWithCrypto,
   highlight,
@@ -40,13 +39,13 @@ export const partners = [
   rainbowWallet,
   iskra,
   oak,
+  openSea,
 ]
 
 export {
-  openSea,
-  coke,
   fwb,
   parallel,
+  coke,
   anotherblock,
   standWithCrypto,
   highlight,
@@ -63,4 +62,5 @@ export {
   rainbowWallet,
   iskra,
   oak,
+  openSea,
 }
