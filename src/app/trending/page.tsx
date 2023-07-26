@@ -49,7 +49,6 @@ export default function Trending() {
 
   const collections = data?.collections
 
-  console.log(collections, 'collections')
   return (
     <PageContainer>
       <div className="mx-6 mt-32">
