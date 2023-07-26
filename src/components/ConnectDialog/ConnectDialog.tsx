@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Close } from '../icons/Close'
 import { Button } from '../Button'
@@ -91,6 +91,12 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
   const otherWallets = Object.values(wallets).filter(
     (wallet) => wallet.slug !== preferredWallet.slug
   )
+
+  useEffect(() => {
+    if (window?.ethereum?.isCoinbaseBrowser) {
+      connect(coinbaseWallet())
+    }
+  }, [connect])
 
   return (
     <Dialog.Root>
