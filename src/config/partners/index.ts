@@ -17,6 +17,7 @@ import optimism from './optimism'
 import atari from './atari'
 import rainbowWallet from './rainbow-wallet'
 import iskra from './iskra'
+import oak from './oak'
 
 export const partners = [
   openSea,
@@ -38,6 +39,7 @@ export const partners = [
   atari,
   rainbowWallet,
   iskra,
+  oak,
 ]
 
 export {
@@ -60,4 +62,5 @@ export {
   atari,
   rainbowWallet,
   iskra,
+  oak,
 }

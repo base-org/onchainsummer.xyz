@@ -18,6 +18,7 @@ import {
   atari,
   rainbowWallet,
   iskra,
+  oak,
 } from './partners'
 
 import { Partner } from './partners/types'
@@ -42,6 +43,7 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-25': atari,
       '2023-08-26': rainbowWallet,
       '2023-08-27': iskra,
+      '2023-08-28': oak,
     }
   : {
       '2023-07-18': fwb,
@@ -61,5 +63,6 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-01': optimism,
       '2023-08-02': atari,
       '2023-08-03': rainbowWallet,
-      '2023-07-04': iskra,
+      '2023-08-04': iskra,
+      '2023-07-05': oak,
     }
