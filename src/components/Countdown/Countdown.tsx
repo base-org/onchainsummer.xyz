@@ -23,13 +23,16 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
+  const zonedEndDate = utcToZonedTime(props.date, 'EST')
+  const zonedStartDate = utcToZonedTime(props.startDate, 'EST')
+
   const isBeforeStartDate = isBefore(
     new Date().getTime(),
-    new Date(props.startDate).getTime()
+    new Date(zonedStartDate).getTime()
   )
   const isAfterEndDate = isAfter(
     new Date().getTime(),
-    new Date(props.date).getTime()
+    new Date(zonedEndDate).getTime()
   )
 
   const textColor = isBeforeStartDate
@@ -53,6 +56,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
         {mounted ? (
           <ReactCountdown
             {...props}
+            date={zonedEndDate}
             renderer={({ days, hours, minutes, seconds }) => {
               if (isAfterEndDate) {
                 return (
@@ -60,12 +64,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Ended</p>
                     </div>
-                    <span>
-                      {format(
-                        utcToZonedTime(props.date, 'UTC'),
-                        'do MMMM yyyy'
-                      )}
-                    </span>
+                    <span>{format(zonedEndDate, 'do MMMM yyyy')}</span>
                   </>
                 )
               } else if (isBeforeStartDate) {
@@ -74,12 +73,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Launches</p>
                     </div>
-                    <span>
-                      {format(
-                        utcToZonedTime(props.startDate, 'UTC'),
-                        'do MMMM yyyy'
-                      )}
-                    </span>
+                    <span>{format(zonedStartDate, 'do MMMM yyyy')}</span>
                   </>
                 )
               } else {
