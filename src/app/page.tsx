@@ -10,6 +10,7 @@ import { Tabs, TabsComponentProps } from '@/components/Tabs'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
 import { PageContainer } from '@/components/PageContainer'
 import { getDrops } from '@/utils/getDrops'
+import { Trending } from '@/components/Trending'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -35,7 +36,7 @@ const Home = async ({ searchParams }: Props) => {
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
         />
-        <section className="w-full">
+        <section className="w-full shadow-large rounded-3xl">
           <div className="bg-gray-200/80 p-4 rounded-3xl">
             <div className="mb-4 flex gap-2 items-end">
               <div className="relative z-20 h-20 w-20">
@@ -80,6 +81,9 @@ const Home = async ({ searchParams }: Props) => {
               </div>
             </div>
           </div>
+        </section>
+        <section className="w-full">
+          <Trending />
         </section>
         <section className="w-full" id="drops">
           <Tabs {...tabs} />
