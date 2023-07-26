@@ -5,8 +5,7 @@ import ReactCountdown, { CountdownProps } from 'react-countdown'
 import { isBefore, isAfter } from 'date-fns'
 import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
-import { format, parseISO } from 'date-fns'
-import { utcToZonedTime } from 'date-fns-tz'
+import { format } from 'date-fns'
 
 interface CustomCountdownProps extends CountdownProps {
   startDate: number
@@ -23,17 +22,8 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
-  const zonedEndDate = utcToZonedTime(props.date, 'EST')
-  const zonedStartDate = utcToZonedTime(props.startDate, 'EST')
-
-  const isBeforeStartDate = isBefore(
-    new Date().getTime(),
-    new Date(zonedStartDate).getTime()
-  )
-  const isAfterEndDate = isAfter(
-    new Date().getTime(),
-    new Date(zonedEndDate).getTime()
-  )
+  const isBeforeStartDate = isBefore(new Date().getTime(), props.startDate)
+  const isAfterEndDate = isAfter(new Date().getTime(), props.date)
 
   const textColor = isBeforeStartDate
     ? 'text-black'
@@ -56,15 +46,15 @@ export const Countdown: FC<CustomCountdownProps> = ({
         {mounted ? (
           <ReactCountdown
             {...props}
-            date={zonedEndDate}
-            renderer={({ days, hours, minutes, seconds }) => {
-              if (isAfterEndDate) {
+            date={props.date}
+            renderer={({ days, hours, minutes, seconds, completed }) => {
+              if (completed) {
                 return (
                   <>
                     <div>
                       <p>Ended</p>
                     </div>
-                    <span>{format(zonedEndDate, 'do MMMM yyyy')}</span>
+                    <span>{format(props.date, 'do MMMM yyyy')}</span>
                   </>
                 )
               } else if (isBeforeStartDate) {
@@ -73,7 +63,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Launches</p>
                     </div>
-                    <span>{format(zonedStartDate, 'do MMMM yyyy')}</span>
+                    <span>{format(props.startDate, 'do MMMM yyyy')}</span>
                   </>
                 )
               } else {
