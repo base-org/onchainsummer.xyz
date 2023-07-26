@@ -20,6 +20,7 @@ import {
   iskra,
   oak,
   openSea,
+  fwbBonfire,
 } from './partners'
 
 import { Partner } from './partners/types'
@@ -46,6 +47,7 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-27': iskra,
       '2023-08-28': oak,
       '2023-08-29': openSea,
+      '2023-08-30': fwbBonfire,
     }
   : {
       '2023-07-18': fwb,
@@ -67,5 +69,6 @@ export const schedule: Record<string, Partner> = isProd
       '2023-08-03': rainbowWallet,
       '2023-08-04': iskra,
       '2023-08-05': oak,
-      '2023-07-06': openSea,
+      '2023-08-06': openSea,
+      '2023-07-07': fwbBonfire,
     }

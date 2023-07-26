@@ -1,7 +1,6 @@
-import openSea from './open-sea'
-import coke from './coke'
 import fwb from './fwb'
 import parallel from './parallel'
+import coke from './coke'
 import anotherblock from './anotherblock'
 import standWithCrypto from './stand-with-crypto'
 import highlight from './highlight'
@@ -18,6 +17,8 @@ import atari from './atari'
 import rainbowWallet from './rainbow-wallet'
 import iskra from './iskra'
 import oak from './oak'
+import openSea from './open-sea'
+import fwbBonfire from './fwb-bonfire'
 
 export const partners = [
   fwb,
@@ -40,6 +41,7 @@ export const partners = [
   iskra,
   oak,
   openSea,
+  fwbBonfire,
 ]
 
 export {
@@ -63,4 +65,5 @@ export {
   iskra,
   oak,
   openSea,
+  fwbBonfire,
 }
