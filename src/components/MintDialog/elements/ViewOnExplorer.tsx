@@ -8,12 +8,14 @@ interface ViewOnExplorerProps {
   txHash: string | undefined
   buttonVariant?: ButtonProps['variant']
   onClick?: React.MouseEventHandler<HTMLButtonElement>
+  isl1?: boolean
+  title?: React.ReactNode
 }
 
 export const ViewOnExplorer = React.forwardRef<
   HTMLButtonElement,
   ViewOnExplorerProps
->(({ txHash, buttonVariant, onClick }, ref) => {
+>(({ txHash, buttonVariant, onClick, isl1 = false, title = '' }, ref) => {
   if (!txHash) {
     return null
   }
@@ -24,9 +26,15 @@ export const ViewOnExplorer = React.forwardRef<
       external
       onClick={onClick}
       ref={ref}
-      href={scanUrl(false, txHash)}
+      href={scanUrl(isl1, txHash)}
     >
-      View on Explorer <RightArrow />
+      {title ? (
+        title
+      ) : (
+        <>
+          View on Explorer <RightArrow />
+        </>
+      )}
     </Button>
   )
 })
