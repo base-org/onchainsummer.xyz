@@ -47,7 +47,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
         {media ? (
           media?.variants?.[0]?.content_type === 'video/mp4' ? (
             <video
-              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700"
+              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px]"
               controls
               autoPlay
               muted
@@ -58,7 +58,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             </video>
           ) : (
             <img
-              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700"
+              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px]"
               src={media.preview_image_url || media.url}
               alt="tweet media"
             />
