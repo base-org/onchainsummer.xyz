@@ -99,12 +99,16 @@ const INITIAL_TABS: TabsComponentProps = {
 }
 
 async function getPageData() {
-  const now = new Date().getTime()
-  const today = format(new Date(now), 'yyyy-MM-dd')
+  const now = new Date().getTime() - 4 * 60 * 60 * 1000
+  const today = format(now, 'yyyy-MM-dd')
+
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
   const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
-    const comparison = compareAsc(now, new Date(date).getTime())
+    const comparison = compareAsc(
+      now,
+      new Date(date).getTime() + 4 * 60 * 60 * 1000
+    )
     const partner = schedule[date]
 
     if (comparison === 0 || typeof partner === 'undefined') {
