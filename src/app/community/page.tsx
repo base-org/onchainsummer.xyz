@@ -29,12 +29,14 @@ const Community = async () => {
           </p>
         </div>
       </section>
-      <section className="mx-6 mt-16">
-        <h2 className="text-[32px] text-[#444]">From our builders</h2>
-        <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
-          {tweets && <TwitterModule tweets={tweets} />}
-        </div>
-      </section>
+      {tweets && (
+        <section className="mx-6 mt-16">
+          <h2 className="text-[32px] text-[#444]">From our builders</h2>
+          <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
+            <TwitterModule tweets={tweets} />
+          </div>
+        </section>
+      )}
       <section className="mx-6 mt-8">
         <h2 className="text-[32px] text-[#444]">Grants</h2>
         <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32">

@@ -87,32 +87,34 @@ const Home = async ({ searchParams }: Props) => {
             </div>
           </div>
         </section>
-        <section className="bg-[#EFEFEF] rounded-3xl p-4">
-          <div className="flex justify-between mb-4">
-            <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
-              <div className="flex gap-4 items-center">
-                <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
-                  <Heart />
-                </div>
-                <div className="">
-                  <h2 className="text-[32px] text-display">Community</h2>
+        {tweets && (
+          <section className="bg-[#EFEFEF] rounded-3xl p-4">
+            <div className="flex justify-between mb-4">
+              <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
+                <div className="flex gap-4 items-center">
+                  <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
+                    <Heart />
+                  </div>
+                  <div className="">
+                    <h2 className="text-[32px] text-display">Community</h2>
+                  </div>
                 </div>
               </div>
+              <Link
+                href="/community"
+                className="hidden [@media(min-width:724px)]:inline-block"
+              >
+                <div className="flex h-full items-start sm:items-center gap-6 uppercase text-mono pr-6">
+                  <span>View Community</span>
+                  <div>
+                    <RightArrow fill="black" />
+                  </div>
+                </div>
+              </Link>
             </div>
-            <Link
-              href="/community"
-              className="hidden [@media(min-width:724px)]:inline-block"
-            >
-              <div className="flex h-full items-start sm:items-center gap-6 uppercase text-mono pr-6">
-                <span>View Community</span>
-                <div>
-                  <RightArrow fill="black" />
-                </div>
-              </div>
-            </Link>
-          </div>
-          {tweets && <TwitterModule tweets={tweets} />}
-        </section>
+            <TwitterModule tweets={tweets} />
+          </section>
+        )}
         <section className="w-full">
           <Trending />
         </section>
