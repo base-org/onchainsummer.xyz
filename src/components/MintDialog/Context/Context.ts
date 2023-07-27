@@ -14,6 +14,7 @@ export interface MintDialogContextType {
   mintDotFunStatus?: MintStatus
   trendingPageNativeMint?: boolean
   mintButtonStyles?: string
+  maxClaimablePerWallet?: string
 }
 
 export const MintDialogContext = createContext<MintDialogContextType>({
