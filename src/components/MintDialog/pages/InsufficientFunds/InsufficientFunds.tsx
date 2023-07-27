@@ -8,19 +8,23 @@ import { ModalPage } from '../../types'
 import { useAddress } from '@thirdweb-dev/react'
 import { Copy } from '@/components/icons/Copy'
 import { Checkmark } from '@/components/icons/Checkmark'
+import { usePollBalance } from './usePollBalance'
 
 interface InsufficientFundsProps {
   minimalBalance: string
   setPage: React.Dispatch<ModalPage>
+  totalPrice: string
 }
 
 export const InsufficientFunds: FC<InsufficientFundsProps> = ({
   minimalBalance,
   setPage,
+  totalPrice,
 }) => {
   const { l2Balance } = useBalances()
   const address = useAddress()
   const [isCopied, setIsCopied] = useState(false)
+  usePollBalance(setPage, totalPrice)
   return (
     <div className="flex flex-col md:my-auto gap-6">
       <Dialog.Title className={dialogClasses.title}>

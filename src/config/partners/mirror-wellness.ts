@@ -1,5 +1,5 @@
 import { Partner } from './types'
-import { unlimited } from '../test-contracts'
+import { limited2 } from '../test-contracts'
 
 const mirrorWellness: Partner = {
   slug: 'mirror-wellness',
@@ -16,10 +16,10 @@ const mirrorWellness: Partner = {
       image: '/partners/mirror-wellness/drops/drop.webp',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Mirror Wellness Drop',
-      ...unlimited,
+      ...limited2,
       type: 'erc-721',
-      startDate: new Date('2023-08-19').getTime(),
-      endDate: new Date('2023-08-20').getTime(),
+      startDate: Date.UTC(2023, 7, 19, 13, 0, 0, 0),
+      endDate: Date.UTC(2023, 7, 20, 13, 0, 0, 0),
       price: '0.0001',
     },
   ],

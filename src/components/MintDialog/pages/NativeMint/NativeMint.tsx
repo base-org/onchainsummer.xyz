@@ -14,10 +14,12 @@ import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
 import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
 import dialogClasses from '@/components/dialog.module.css'
 import { l2 } from '@/config/chain'
+import { Quantity } from '../../elements/Quantity'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
   quantity: number
+  setQuantity: React.Dispatch<React.SetStateAction<number>>
   totalPrice: string
   txDetails: TxDetails | null
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
@@ -29,6 +31,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   page,
   setPage,
   quantity,
+  setQuantity,
   totalPrice,
   txDetails,
   setTxDetails,
@@ -71,6 +74,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       >
         <Dialog.Description className="flex flex-col w-full gap-4">
           <AddressPill address={creatorAddress} />
+          <Quantity quantity={quantity} setQuantity={setQuantity} />
           <span className="text-button-text-text flex justify-between mb-4">
             <span>
               {quantity} NFT{quantity > 1 ? 's' : ''}
