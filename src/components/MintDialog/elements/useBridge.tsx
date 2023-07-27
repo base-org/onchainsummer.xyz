@@ -16,6 +16,7 @@ export enum BridgeState {
   L2_TX_PROCESSING,
   L2_TX_PROCESSED,
   BRIDGED,
+  ERROR,
 }
 
 export const useBridge = (amount: BigNumber) => {
@@ -73,7 +74,7 @@ export const useBridge = (amount: BigNumber) => {
           setBridgeState(BridgeState.NOT_STARTED)
           return
         }
-        throw e
+        setBridgeState(BridgeState.ERROR)
       }
     }, // depositETH()
     [amount]

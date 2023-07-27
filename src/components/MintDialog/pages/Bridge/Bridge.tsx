@@ -8,6 +8,7 @@ import { NotStarted } from './NotStarted'
 import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
+import { BridgeError } from './BridgeError'
 
 interface BridgeProps {
   minAmount: string
@@ -53,6 +54,14 @@ export const Bridge: FC<BridgeProps> = ({ minAmount = '0.251', setPage }) => {
         )
       case BridgeState.BRIDGED:
         return <Success l2TxHash={l2TxHash} setPage={setPage} amount={amount} />
+      case BridgeState.ERROR:
+        return (
+          <BridgeError
+            setPage={setPage}
+            l1TxHash={l1TxHash}
+            l2TxHash={l2TxHash}
+          />
+        )
       default:
         return null
     }
