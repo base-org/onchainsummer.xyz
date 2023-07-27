@@ -26,35 +26,41 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
           />
         </TabsComponent.List>
         <TabsComponent.Content value="tab1">
-          {upcomingDrops.map(({ name, drops, icon, description, slug }) => (
-            <div key={name} className="my-8 first:mt-6 last:mb-0">
-              <TabsDropCard
-                slug={slug}
-                address={drops[0].address}
-                name={name}
-                startDate={drops[0].startDate}
-                endDate={drops[0].endDate}
-                image={icon}
-                description={description}
-              />
-            </div>
-          ))}
+          {upcomingDrops.map(
+            ({ name, drops, icon, description, slug, brandColor }) => (
+              <div key={name} className="my-8 first:mt-6 last:mb-0">
+                <TabsDropCard
+                  slug={slug}
+                  address={drops[0].address}
+                  name={name}
+                  startDate={drops[0].startDate}
+                  endDate={drops[0].endDate}
+                  image={icon}
+                  description={description}
+                  brandColor={brandColor}
+                />
+              </div>
+            )
+          )}
         </TabsComponent.Content>
         <TabsComponent.Content className="" value="tab2">
-          {pastDrops.map(({ name, drops, icon, description, slug }) => (
-            <div key={name} className="my-8 first:mt-6 last:mb-0">
-              <TabsDropCard
-                link
-                slug={slug}
-                address={drops[0].address}
-                name={name}
-                startDate={drops[0].startDate}
-                endDate={drops[0].endDate}
-                image={icon}
-                description={description}
-              />
-            </div>
-          ))}
+          {pastDrops.map(
+            ({ name, drops, icon, description, slug, brandColor }) => (
+              <div key={name} className="my-8 first:mt-6 last:mb-0">
+                <TabsDropCard
+                  link
+                  slug={slug}
+                  address={drops[0].address}
+                  name={name}
+                  startDate={drops[0].startDate}
+                  endDate={drops[0].endDate}
+                  image={icon}
+                  description={description}
+                  brandColor={brandColor}
+                />
+              </div>
+            )
+          )}
         </TabsComponent.Content>
       </TabsComponent.Root>
     </section>

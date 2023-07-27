@@ -40,7 +40,7 @@ export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
         value={quantity}
         onChange={(e) => {
           const next = Number(e.target.value)
-          console.log(next)
+
           if (next < 1) {
             setQuantity(1)
           } else {

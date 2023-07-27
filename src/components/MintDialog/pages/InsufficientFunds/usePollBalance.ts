@@ -14,8 +14,6 @@ export const usePollBalance = (
 
     const status = await checkBalances(address, totalPrice)
 
-    console.log('status', status)
-
     if (status === 'sufficient') {
       setPage(ModalPage.NATIVE_MINT)
     } else if (status === 'bridge') {
