@@ -153,6 +153,7 @@ export const MintDialog: FC = () => {
             page={page}
             setPage={setPage}
             quantity={quantity}
+            setQuantity={setQuantity}
             totalPrice={totalPrice}
             txDetails={txDetails}
             setTxDetails={setTxDetails}
