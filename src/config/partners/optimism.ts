@@ -7,7 +7,7 @@ const optimism: Partner = {
   url: 'https://www.optimism.io/',
   description:
     'optimism is a community owned platform for creators to monetize their digital work.',
-  brandColor: 'rgb(216,46,42)',
+  brandColor: 'rgb(234,52,49)',
   icon: '/partners/optimism/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@optimismFND',

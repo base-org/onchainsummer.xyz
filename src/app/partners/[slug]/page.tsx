@@ -136,8 +136,6 @@ async function getPartner(slug: string, dropAddress?: string | string[]) {
     return notFound()
   }
 
-  console.log('today', today)
-
   const comparison = compareAsc(new Date(today), new Date(date))
 
   if (comparison < 0) {
