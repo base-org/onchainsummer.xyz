@@ -1,5 +1,5 @@
 import { Partner } from './types'
-import { unlimited, limited } from '../test-contracts'
+import { limited2 } from '../test-contracts'
 
 const pixelmon: Partner = {
   slug: 'pixelmon',
@@ -16,7 +16,7 @@ const pixelmon: Partner = {
       image: '/partners/pixelmon/drops/drop.webp',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Pixelmon Drop',
-      ...unlimited,
+      ...limited2,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 17, 13, 0, 0, 0),
       endDate: Date.UTC(2023, 7, 18, 13, 0, 0, 0),
