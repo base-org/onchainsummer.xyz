@@ -1,6 +1,6 @@
 // @ts-check
 const _ = require('lodash')
-const { writeFile, readFile } = require('fs')
+const { writeFile, readFile, unlink } = require('fs')
 const { config } = require('dotenv')
 
 config()
@@ -10,23 +10,18 @@ const prefix = 'export const tweets = '
 
 const generateHighlightedTweets = async () => {
   const bearer_token = process.env.TWITTER_BEARER_TOKEN
-  const tweetIds = ['1683992343479824386', '1683884817794969617']
+  const tweetIds = [
+    '1679531085171167232',
+    '1673748309696200704',
+    '1676800332616310785',
+  ]
 
   try {
-    const fileContent = await new Promise((resolve, reject) =>
-      readFile(filePath, 'utf8', (err, data) => {
-        !!err ? reject(err) : resolve(JSON.parse(data.replace(prefix, '')))
+    await new Promise((resolve, reject) =>
+      unlink(filePath, (err) => {
+        !!err ? reject(err) : resolve({})
       })
     )
-
-    const tweets = _.get(fileContent, 'data', null)
-    const savedTweetIds = _.map(tweets, ({ id }) => id)
-    const hasChanged = tweetIds.some((id) => !savedTweetIds.includes(id))
-
-    if (!hasChanged) {
-      console.log('No changes made')
-      return
-    }
   } catch (ex) {}
 
   if (!bearer_token) throw new Error('TWITTER_BEARER_TOKEN is not defined')
