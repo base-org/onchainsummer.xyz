@@ -1,3 +1,4 @@
+// deprecated: using built in fetch funcionality on page load
 // @ts-check
 const _ = require('lodash')
 const { writeFile, readFile, unlink } = require('fs')

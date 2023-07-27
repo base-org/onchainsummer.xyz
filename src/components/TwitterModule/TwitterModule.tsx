@@ -1,12 +1,15 @@
 import { FunctionComponent } from 'react'
 
-import { TweetCard } from '../TweetCard'
+import { ITweetResponse } from '@/models/Tweet'
+import { TweetCard } from '@/components/TweetCard'
 
-import { tweets } from '../../config/tweets'
+export interface ICommunityTabProps {
+  tweets: ITweetResponse
+}
 
-export interface ICommunityTabProps {}
-
-export const TwitterModule: FunctionComponent<ICommunityTabProps> = ({}) => {
+export const TwitterModule: FunctionComponent<ICommunityTabProps> = ({
+  tweets,
+}) => {
   return (
     <div className="flex gap-4 w-full flex-wrap">
       {tweets.data.map((tweet) => {

@@ -4,7 +4,13 @@ import ReactMarkdown from 'react-markdown'
 import { FunctionComponent } from 'react'
 
 import { TwitterVerified } from '@/components/icons/TwitterVerified'
-import { ITweetCardProps } from './types'
+import { ITweet, ITweetMedia, ITweetAuthor } from '@/models/Tweet'
+
+export interface ITweetCardProps {
+  author: ITweetAuthor
+  media?: ITweetMedia
+  tweet: ITweet
+}
 
 export const TweetCard: FunctionComponent<ITweetCardProps> = ({
   author,
@@ -41,13 +47,17 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               ),
             }}
           >
-            {tweet.text}
+            {tweet.text.length > 100
+              ? `${tweet.text.substring(0, 100)} [...](https://twitter.com/${
+                  author.username
+                }/status/${tweet.id})`
+              : tweet.text}
           </ReactMarkdown>
         </div>
         {media ? (
           media?.variants?.[0]?.content_type === 'video/mp4' ? (
             <video
-              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px]"
+              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
               controls
               autoPlay
               muted
@@ -58,7 +68,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             </video>
           ) : (
             <img
-              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px]"
+              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
               src={media.preview_image_url || media.url}
               alt="tweet media"
             />

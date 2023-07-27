@@ -4,8 +4,10 @@ import { communityData } from '../../config/community'
 import Image from 'next/image'
 import { format } from 'date-fns'
 import { TwitterModule } from '@/components/TwitterModule'
+import { getTweets } from '@/utils/getTweets'
 
-const Community = () => {
+const Community = async () => {
+  const { tweets } = await getPageData()
   return (
     <PageContainer>
       <section className="mx-6 mt-36 md:mt-28">
@@ -30,7 +32,7 @@ const Community = () => {
       <section className="mx-6 mt-16">
         <h2 className="text-[32px] text-[#444]">From our builders</h2>
         <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
-          <TwitterModule />
+          {tweets && <TwitterModule tweets={tweets} />}
         </div>
       </section>
       <section className="mx-6 mt-8">
@@ -99,6 +101,12 @@ const Community = () => {
       </section>
     </PageContainer>
   )
+}
+
+async function getPageData() {
+  const tweets = await getTweets()
+
+  return { tweets }
 }
 
 export default Community
