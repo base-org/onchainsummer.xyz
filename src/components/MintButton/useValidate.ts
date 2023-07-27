@@ -4,6 +4,8 @@ import {
   useActiveClaimCondition,
   useUnclaimedNFTSupply,
   useContractType,
+  useActiveClaimConditionForWallet,
+  useAddress,
 } from '@thirdweb-dev/react'
 
 import { constants } from 'ethers'
@@ -19,12 +21,17 @@ export const useValidate = (
   address: string,
   mintDotFunStatus?: MintStatus
 ): Validation => {
+  const walletAddress = useAddress()
   const { contract } = useContract(address)
   const { data: contractType, isLoading: isLoadingContractType } =
     useContractType(address)
   const { data: claimConditions, isLoading } = useActiveClaimCondition(contract)
   const { data: unclaimedSupply, isLoading: isLoadingUnclaimedSupply } =
     useUnclaimedNFTSupply(contract)
+  const {
+    data: activeClaimConditionForWallet,
+    isLoading: isLoadingActiveClaimConditionForWallet,
+  } = useActiveClaimConditionForWallet(contract, walletAddress)
 
   if (mintDotFunStatus) {
     return {
@@ -40,6 +47,21 @@ export const useValidate = (
   const startTime = claimConditions?.startTime
   const now = Date.now()
   const maxClaimablePerWallet = claimConditions?.maxClaimablePerWallet
+
+  if (!Number.isNaN(Number(maxClaimablePerWallet))) {
+    const currentMintSupply = Number(
+      activeClaimConditionForWallet?.currentMintSupply
+    )
+
+    if (currentMintSupply === Number(maxClaimablePerWallet)) {
+      return {
+        valid: false,
+        message: 'Already minted',
+        isValidating: false,
+        maxClaimablePerWallet,
+      }
+    }
+  }
 
   const hasStarted = startTime ? new Date(startTime).getTime() < now : false
 

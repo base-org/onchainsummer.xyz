@@ -126,7 +126,7 @@ export async function generateMetadata(
 
 async function getPartner(slug: string, dropAddress?: string | string[]) {
   const now = new Date().getTime()
-  const today = format(new Date(now), 'yyyy-MM-dd')
+  const today = format(now - 4 * 60 * 60 * 1000, 'yyyy-MM-dd')
 
   const date = Object.keys(schedule).find(
     (date) => schedule[date].slug === slug
@@ -135,6 +135,8 @@ async function getPartner(slug: string, dropAddress?: string | string[]) {
   if (!date) {
     return notFound()
   }
+
+  console.log('today', today)
 
   const comparison = compareAsc(new Date(today), new Date(date))
 
