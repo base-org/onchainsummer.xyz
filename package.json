@@ -13,7 +13,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "generate": "graphql-codegen --config codegen.ts"
+    "generate": "graphql-codegen --config codegen.ts",
+    "generate:tweets": "npx node scripts/generateHighlightedTweets.js"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.5",
@@ -31,6 +32,7 @@
     "ethers": "^5",
     "graphql": "^16.7.1",
     "graphql-request": "^6.1.0",
+    "lodash": "^4.17.21",
     "next": "13.4.4",
     "next-query-params": "^4.2.2",
     "react": "18.2.0",
@@ -55,6 +57,7 @@
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "dotenv": "^16.3.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "eslint-config-prettier": "^8.8.0",
