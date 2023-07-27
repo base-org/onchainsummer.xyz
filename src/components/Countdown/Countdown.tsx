@@ -2,17 +2,17 @@
 
 import { FC, useEffect, useState } from 'react'
 import ReactCountdown, { CountdownProps } from 'react-countdown'
+import { isBefore, isAfter } from 'date-fns'
 import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
+import { format } from 'date-fns'
 
 interface CustomCountdownProps extends CountdownProps {
-  title: string
-  completedText: React.ReactNode
+  startDate: number
+  date: number
 }
 
 export const Countdown: FC<CustomCountdownProps> = ({
-  completedText,
-  title,
   className,
   ...props
 }) => {
@@ -22,23 +22,55 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
+  const isBeforeStartDate = isBefore(new Date().getTime(), props.startDate)
+  const isAfterEndDate = isAfter(new Date().getTime(), props.date)
+
+  const textColor = isBeforeStartDate
+    ? 'text-black'
+    : isAfterEndDate
+    ? 'text-[#858585]'
+    : 'text-ocs-blue'
+
   return (
-    <div className={clsx('flex items-center flex-row', className)}>
-      <div className="mr-4">
+    <div
+      className={clsx(
+        'flex items-center flex-row text-[#858585]',
+        textColor,
+        className
+      )}
+    >
+      <div className="mr-4 ">
         <Clock />
       </div>
-      <div className="flex flex-col text-[14px] font-mono font-medium uppercase">
+      <div className="flex flex-col text-[14px] font-mono uppercase">
         {mounted ? (
           <ReactCountdown
             {...props}
+            date={props.date}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (completed) {
-                return <>{completedText}</>
+                return (
+                  <>
+                    <div>
+                      <p>Ended</p>
+                    </div>
+                    <span>{format(props.date, 'do MMMM yyyy')}</span>
+                  </>
+                )
+              } else if (isBeforeStartDate) {
+                return (
+                  <>
+                    <div>
+                      <p>Launches</p>
+                    </div>
+                    <span>{format(props.startDate, 'do MMMM yyyy')}</span>
+                  </>
+                )
               } else {
                 return (
                   <>
                     <div>
-                      <p>{title}</p>
+                      <p>Ends</p>
                     </div>
                     <span>
                       {days ? `${days}D` : ''} {hours}H:{minutes}M:{seconds}S

@@ -1,5 +1,5 @@
-import { Partner } from './types'
-import { unlimited, limited } from '../test-contracts'
+import { DAY, Partner } from './types'
+import { unlimited } from '../test-contracts'
 
 const openSeaConfig: Partner = {
   slug: 'open-sea',
@@ -18,8 +18,8 @@ const openSeaConfig: Partner = {
       name: 'Space Light Dark',
       ...unlimited,
       type: 'erc-721',
-      startDate: new Date('2023-08-29').getTime(),
-      endDate: new Date('2023-08-30').getTime(),
+      startDate: Date.UTC(2023, 7, 29, 13, 0, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, 13, 0, 0, 0),
       price: '0.0001',
     },
     {
@@ -27,8 +27,8 @@ const openSeaConfig: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Closer to the Sun',
-      startDate: new Date('2023-08-29').getTime(),
-      endDate: new Date('2023-08-30').getTime(),
+      startDate: Date.UTC(2023, 7, 29, 13, 0, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, 13, 0, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',
@@ -39,8 +39,8 @@ const openSeaConfig: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Runaway',
-      startDate: new Date('2023-08-29').getTime(),
-      endDate: new Date('2023-08-30').getTime(),
+      startDate: Date.UTC(2023, 7, 29, 13, 0, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, 13, 0, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',
@@ -51,8 +51,8 @@ const openSeaConfig: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Yu-Gi-Oh!',
-      startDate: new Date('2023-08-29').getTime(),
-      endDate: new Date('2023-08-30').getTime(),
+      startDate: Date.UTC(2023, 7, 29, 13, 0, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, 13, 0, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',
@@ -63,8 +63,8 @@ const openSeaConfig: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Number 1',
-      startDate: new Date('2023-08-29').getTime(),
-      endDate: new Date('2023-08-30').getTime(),
+      startDate: Date.UTC(2023, 7, 29, 13, 0, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, 13, 0, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',

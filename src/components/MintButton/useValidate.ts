@@ -12,6 +12,7 @@ type Validation = {
   valid: boolean
   message: string
   isValidating: boolean
+  maxClaimablePerWallet?: string
 }
 
 export const useValidate = (
@@ -38,6 +39,7 @@ export const useValidate = (
     isLimitedSupply && (unclaimedSupply?.lte(constants.Zero) || true)
   const startTime = claimConditions?.startTime
   const now = Date.now()
+  const maxClaimablePerWallet = claimConditions?.maxClaimablePerWallet
 
   const hasStarted = startTime ? new Date(startTime).getTime() < now : false
 
@@ -51,5 +53,6 @@ export const useValidate = (
     valid: !soldOut && hasStarted,
     message: message,
     isValidating: isLoading || isLoadingUnclaimedSupply,
+    maxClaimablePerWallet,
   }
 }
