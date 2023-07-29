@@ -63,38 +63,17 @@ const Community = async () => {
                     className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
                   />
                 </div>
-                <div className="flex flex-col md:w-[70%] justify-between p-4 md:mt-0">
-                  <div className="md:flex md:flex-col md:justify-start">
-                    <span className="text-sm font-sans uppercase text-[#858585] mb-3">
-                      {format(new Date(startDate), 'MMMM d')} -{' '}
-                      {format(new Date(endDate), 'MMMM d')}
-                    </span>
-                    <h2 className="font-display text-[32px]">{title}</h2>
-                    <h4 className="text-black font-sans leading-7 mb-4 md:my-4">
-                      {subTitle}
-                    </h4>
-                    <ul className="list-disc ml-6">
-                      {list.map((item) => (
-                        <li key={item} className="text-sm font-sans text-black">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-6 md:mt-0 text-sm">
-                    <p className="font-mono text-ocs-blue">
-                      Total: $
-                      {(grantValue * grantsAvailable)
-                        .toString()
-                        .substring(0, 2)}
-                      K
-                    </p>
-                    <p className="font-mono text-ocs-blue">
-                      {' '}
-                      {grantsAvailable} x $
-                      {grantValue.toString().substring(0, 2)}K
-                    </p>
-                  </div>
+                <div className="mt-6 md:mt-0 text-sm">
+                  <p className="font-mono text-ocs-blue">
+                    Total:
+                    {(grantValue * grantsAvailable).toString().substring(0, 2)}
+                    ETH
+                  </p>
+                  <p className="font-mono text-ocs-blue">
+                    {' '}
+                    {grantsAvailable} x ${grantValue.toString().substring(0, 2)}
+                    ETH
+                  </p>
                 </div>
               </div>
             )

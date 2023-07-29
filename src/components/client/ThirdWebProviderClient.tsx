@@ -13,5 +13,12 @@ interface ThirdWebProviderClientProps {
 export default function ThirdWebProviderClient({
   children,
 }: ThirdWebProviderClientProps) {
-  return <ThirdwebProvider activeChain={l2}>{children}</ThirdwebProvider>
+  return (
+    <ThirdwebProvider
+      activeChain={l2}
+      clientId={process.env.NEXT_PUBLIC_THIRD_WEB_CLIENT_ID}
+    >
+      {children}
+    </ThirdwebProvider>
+  )
 }
