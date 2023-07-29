@@ -2983,7 +2983,7 @@
     "@tanstack/query-core" "4.32.0"
     use-sync-external-store "^1.2.0"
 
-"@thirdweb-dev/chains@0.1.40", "@thirdweb-dev/chains@^0.1.40":
+"@thirdweb-dev/chains@0.1.40":
   version "0.1.40"
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/chains/-/chains-0.1.40.tgz#be4521570aa2a9c0fd45080d6c8f223bf2ed9ac5"
   integrity sha512-3/dTr1TBI646QXIoQz75oupWQLQgf+KhVl1U3ul0h4owXIrCesOGrJtv6JOfsW+HMlvlp8MjgNObnDAqB6Dy0g==
@@ -3019,7 +3019,7 @@
     mime "3.0.0"
     tiny-invariant "^1.2.0"
 
-"@thirdweb-dev/react@^3.14.22":
+"@thirdweb-dev/react@3.14.22":
   version "3.14.22"
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/react/-/react-3.14.22.tgz#3429a93dd19f24e73e7cb6417e6c50974e645bc9"
   integrity sha512-FWMfGbzjV2lkJtfXnZmanJS7aVo6XAXyrKbDIwwF48skJhSaOM5U+hZV6HYOYOv3MhD1P+5VSoMky/yPurJ5nw==
@@ -3046,7 +3046,7 @@
     react-qr-code "^2.0.11"
     tiny-invariant "^1.2.0"
 
-"@thirdweb-dev/sdk@3.10.42", "@thirdweb-dev/sdk@^3.10.42":
+"@thirdweb-dev/sdk@3.10.42":
   version "3.10.42"
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-3.10.42.tgz#9c80099cdf1b69c038a28be33f7fdffe155bd6d0"
   integrity sha512-OxE3jnQpCnq94tvtC7o2ox/PCdj7vX/yvKg7kAjsAoE495X2Sp7940eIqoEq2Bpe/q1tcSdup/vpaIBKsDWiMA==
