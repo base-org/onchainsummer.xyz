@@ -129,7 +129,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
               <div className="flex justify-between items-center">
                 <Base />{' '}
                 {isLoadingBalance ? '...' : formatEther(l2Balance).slice(0, 10)}{' '}
-                Base ETH
+                ETH
               </div>
             </div>
 
