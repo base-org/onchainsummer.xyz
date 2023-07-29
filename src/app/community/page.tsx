@@ -70,13 +70,13 @@ const Community = () => {
                 </div>
                 <div className="mt-6 md:mt-0 text-sm">
                   <p className="font-mono text-ocs-blue">
-                    Total: $
-                    {(grantValue * grantsAvailable).toString().substring(0, 2)}K
+                    Total:
+                    {(grantValue * grantsAvailable).toString().substring(0, 2)}ETH
                   </p>
                   <p className="font-mono text-ocs-blue">
                     {' '}
                     {grantsAvailable} x ${grantValue.toString().substring(0, 2)}
-                    K
+                    ETH
                   </p>
                 </div>
               </div>
