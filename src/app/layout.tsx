@@ -182,7 +182,9 @@ export default function RootLayout({
         >
           <QueryClientProvider>
             <QueryParamProvider>
-              {SHOW_TEASER ? (
+              {SHOW_TEASER ||
+              // @ts-ignore remove this when we have a better way to check for
+              children?.props?.childProp?.segment === 'teaser' ? (
                 <div className="bg-teaser-gradient h-fit flex-grow">
                   <Teaser />
                 </div>
