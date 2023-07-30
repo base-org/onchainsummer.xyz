@@ -87,7 +87,7 @@ const Home = async ({ searchParams }: Props) => {
             </div>
           </div>
         </section>
-        {tweets && (
+        {tweets && Array.isArray(tweets.data) && (
           <section className="bg-[#EFEFEF] rounded-3xl p-4">
             <div className="flex justify-between mb-4">
               <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">

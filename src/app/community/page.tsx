@@ -20,7 +20,7 @@ const Community = async () => {
           </h1>
         </div>
       </section>
-      {tweets && (
+      {tweets && Array.isArray(tweets.data) && (
         <section className="mx-6 mt-16">
           <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
             <TwitterModule tweets={tweets} />
@@ -54,7 +54,7 @@ const Community = async () => {
                   />
                 </div>
                 <div className="flex flex-col md:w-[70%] justify-between p-4 md:mt-0">
-                <div className="md:flex md:flex-col md:justify-start">
+                  <div className="md:flex md:flex-col md:justify-start">
                     <span className="text-sm font-sans uppercase text-[#858585] mb-3">
                       {format(new Date(startDate), 'MMMM d')} -{' '}
                       {format(new Date(endDate), 'MMMM d')}
@@ -72,18 +72,21 @@ const Community = async () => {
                     </ul>
                   </div>
                   <div className="mt-6 md:mt-0 text-sm">
-                  <p className="font-mono text-ocs-blue">
-                    Total:
-                    {(grantValue * grantsAvailable).toString().substring(0, 2)}
-                    ETH
-                  </p>
-                  <p className="font-mono text-ocs-blue">
-                    {' '}
-                    {grantsAvailable} x ${grantValue.toString().substring(0, 2)}
-                    ETH
-                  </p>
+                    <p className="font-mono text-ocs-blue">
+                      Total:
+                      {(grantValue * grantsAvailable)
+                        .toString()
+                        .substring(0, 2)}
+                      ETH
+                    </p>
+                    <p className="font-mono text-ocs-blue">
+                      {' '}
+                      {grantsAvailable} x $
+                      {grantValue.toString().substring(0, 2)}
+                      ETH
+                    </p>
+                  </div>
                 </div>
-              </div>
               </div>
             )
           )}
