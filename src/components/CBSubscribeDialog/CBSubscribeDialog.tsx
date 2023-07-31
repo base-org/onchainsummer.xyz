@@ -2,7 +2,7 @@
 
 import clsx from 'clsx'
 import * as Dialog from '@radix-ui/react-dialog'
-import { FC, useState, PropsWithChildren } from 'react'
+import { FC, PropsWithChildren } from 'react'
 import { Close } from '../icons/Close'
 import dialogClasses from '@/components/dialog.module.css'
 import { CoinbaseWallet } from '@/components/icons/CoinbaseWallet'
@@ -14,10 +14,8 @@ export interface CBSubscribeDialogProps {}
 export const CBSubscribeDialog: FC<
   PropsWithChildren<CBSubscribeDialogProps>
 > = ({ children }) => {
-  const [open, setOpen] = useState(false)
-
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
+    <Dialog.Root>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={dialogClasses.overlay} />
