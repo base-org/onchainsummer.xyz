@@ -41,7 +41,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
         </NavigationMenu.Item>
       </NavigationMenu.List>
       <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-4 w-max">
-        <p className="uppercase font-mono text-zinc-400 whitespace-nowrap">
+        <p className="uppercase font-mono text-zinc-400 whitespace-nowrap block min-[1184px]:block min-[1024px]:hidden">
           Celebration of Onchain Fun
         </p>
         <NavigationMenu.Item asChild>
