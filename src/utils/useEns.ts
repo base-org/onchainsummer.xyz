@@ -12,6 +12,11 @@ export function useEns(address?: string) {
 
   const { data, isLoading } = useQuery({
     queryKey: ['ens', _address],
+    staleTime: 10 * (60 * 1000), // 10 mins
+    cacheTime: 15 * (60 * 1000), // 15 mins
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+    refetchOnWindowFocus: false,
     queryFn: async ({ queryKey }) => {
       const [_, address] = queryKey as ['ens', string]
       const [ethUrl] = mainnet.rpcUrls.default.http
