@@ -5,7 +5,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { FC, useState, PropsWithChildren } from 'react'
 import { Close } from '../icons/Close'
 import dialogClasses from '@/components/dialog.module.css'
-import { Coinbase } from '@/components/icons/Coinbase'
+import { CoinbaseWallet } from '@/components/icons/CoinbaseWallet'
 import { QRCode } from '@/components/icons/QRCode'
 import { Button } from '../Button'
 
@@ -38,7 +38,7 @@ export const CBSubscribeDialog: FC<
           <div className="flex gap-4">
             <div className="flex-1">
               <div className="block lg:hidden py-8">
-                <Coinbase />
+                <CoinbaseWallet width={40} height={40} />
               </div>
               <h2 className="text-2xl mb-4 font-normal">
                 Subscribe for daily updates on Coinbase Wallet
