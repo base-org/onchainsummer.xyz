@@ -39,20 +39,22 @@ export const MintDialog: FC = () => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
-  const { fundsStatus } = useFundsStatus(totalPrice, open)
+  const [page, setPage] = useState<ModalPage>(ModalPage.NATIVE_MINT)
+  const { fundsStatus } = useFundsStatus(totalPrice, open, page)
 
-  const [page, setPage] = useState(() => {
-    switch (fundsStatus) {
-      case 'sufficient':
-        return ModalPage.NATIVE_MINT
-      case 'bridge':
-        return ModalPage.BRIDGE
-      case 'insufficient':
-      default:
-        return ModalPage.NATIVE_MINT
-    }
-  })
-
+  useEffect(() => {
+    setPage(() => {
+      switch (fundsStatus) {
+        case 'sufficient':
+          return ModalPage.NATIVE_MINT
+        case 'bridge':
+          return ModalPage.BRIDGE
+        case 'insufficient':
+        default:
+          return ModalPage.NATIVE_MINT
+      }
+    })
+  }, [fundsStatus])
   useEffect(() => {
     const needsBridge = fundsStatus === 'bridge'
     if (needsBridge && page === ModalPage.NATIVE_MINT) {
