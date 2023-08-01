@@ -40,8 +40,7 @@ export const NotStarted: FC<NotStartedProps> = ({
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span>
             You need ETH on Base to mint! We recommend bridging 0.25 ETH, but
-            you&apos;ll need at least{' '}
-            {Number(formatEther(parseEther(minAmount))).toFixed(3)} ETH.{' '}
+            you&apos;ll need at least {minAmount} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"

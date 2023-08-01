@@ -169,7 +169,7 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE_SUCCESS:
         return (
           <Bridge
-            minAmount={Number(formatEtherByEthers(l1PriceEstimate)).toString()}
+            minAmount={Number(formatEtherByEthers(l1PriceEstimate)).toFixed(2)}
             setPage={setPage}
           />
         )
