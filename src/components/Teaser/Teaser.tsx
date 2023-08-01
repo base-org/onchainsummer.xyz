@@ -1,14 +1,21 @@
 'use client'
 
 import { FC } from 'react'
+import openSeaConfig from '../../config/partners/open-sea'
+import { PartnerHero } from '../PartnerHero'
+import { EmailSubscriptionDialog } from '../EmailSubscriptionDialog'
 import { Button } from '@/components/Button'
-import openSeaConfig from '@/config/partners/open-sea'
-import { PartnerHero } from '@/components/PartnerHero'
 import { CBSubscribeDialog } from '@/components/CBSubscribeDialog'
 
-interface TeaserProps {}
+interface TeaserProps {
+  mirrorSubscribeUrl?: string | undefined
+  mirrorProjectAddress?: string | undefined
+}
 
-export const Teaser: FC<TeaserProps> = ({}) => {
+export const Teaser: FC<TeaserProps> = ({
+  mirrorProjectAddress,
+  mirrorSubscribeUrl,
+}) => {
   const partner = openSeaConfig
   const featuredDrop = partner.drops[0]
 
@@ -24,9 +31,10 @@ export const Teaser: FC<TeaserProps> = ({}) => {
             SUBSCRIBE WITH WALLET
           </Button>
         </CBSubscribeDialog>
-        <Button className="flex-1" variant="LIGHT">
-          SUBSCRIBE WITH EMAIL
-        </Button>
+        <EmailSubscriptionDialog
+          mirrorProjectAddress={mirrorProjectAddress}
+          mirrorSubscribeUrl={mirrorSubscribeUrl}
+        />
       </div>
       <div className="mb-20">
         <PartnerHero

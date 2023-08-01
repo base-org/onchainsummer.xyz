@@ -1,3 +1,4 @@
+import { formatEther as formatEtherByEthers } from 'ethers/lib/utils'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { FC, useEffect, useMemo, useState } from 'react'
@@ -18,6 +19,7 @@ import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
 import { useFundsStatus } from './elements/useFundsStatus'
 import dialogClasses from '@/components/dialog.module.css'
+import { usePriceEstimate } from './elements/usePriceEstimate'
 export type TxDetails = {
   hash: string
 }
@@ -30,26 +32,29 @@ export const MintDialog: FC = () => {
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
 
+  const { l2PriceEstimate } = usePriceEstimate()
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
-  const { fundsStatus } = useFundsStatus(totalPrice, open)
+  const [page, setPage] = useState<ModalPage>()
+  const { fundsStatus } = useFundsStatus(totalPrice, open, page)
 
-  const [page, setPage] = useState(() => {
-    switch (fundsStatus) {
-      case 'sufficient':
-        return ModalPage.NATIVE_MINT
-      case 'bridge':
-        return ModalPage.BRIDGE
-      case 'insufficient':
-      default:
-        return ModalPage.NATIVE_MINT
-    }
-  })
-
+  useEffect(() => {
+    setPage(() => {
+      switch (fundsStatus) {
+        case 'sufficient':
+          return ModalPage.NATIVE_MINT
+        case 'bridge':
+          return ModalPage.BRIDGE
+        case 'insufficient':
+        default:
+          return ModalPage.NATIVE_MINT
+      }
+    })
+  }, [fundsStatus, page])
   useEffect(() => {
     const needsBridge = fundsStatus === 'bridge'
     if (needsBridge && page === ModalPage.NATIVE_MINT) {
@@ -165,7 +170,12 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE:
       case ModalPage.BRIDGE_PENDING:
       case ModalPage.BRIDGE_SUCCESS:
-        return <Bridge minAmount="0.001" setPage={setPage} />
+        return (
+          <Bridge
+            minAmount={Number(formatEtherByEthers(l2PriceEstimate)).toFixed(3)}
+            setPage={setPage}
+          />
+        )
       case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <InsufficientFunds
