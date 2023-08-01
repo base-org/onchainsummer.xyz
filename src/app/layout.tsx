@@ -104,6 +104,8 @@ const coinbaseDisplay = localFont({
 })
 
 const SHOW_TEASER = process.env.TEASER === 'true'
+const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
+const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
 
 export const metadata = {
   title: {
@@ -184,7 +186,10 @@ export default function RootLayout({
             <QueryParamProvider>
               {SHOW_TEASER ? (
                 <div className="bg-teaser-gradient h-fit flex-grow">
-                  <Teaser />
+                  <Teaser
+                    mirrorSubscribeUrl={MIRROR_SUBSCRIBE_URL}
+                    mirrorProjectAddress={MIRROR_PROJECT_ADDRESS}
+                  />
                 </div>
               ) : (
                 <>
