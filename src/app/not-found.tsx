@@ -1,13 +1,15 @@
-import Link from 'next/link'
+import { Button } from '@/components/Button'
 
 export default function NotFound() {
   return (
-    <div className="flex h-full flex-col items-center relative px-6 pb-36 pt-10 xl:px-0">
-      <h1>Not Found</h1>
-      <p>Could not find requested resource</p>
-      <p>
-        View <Link href="/">home</Link>
-      </p>
+    <div className="flex h-full w-full justify-center items-center px-6 pt-21 pb-36 xl:px-0">
+      <div className="max-w-[374px] min-h-[152px]">
+        <h2 className="text-center text-[32px] mb-4">Oops, page not found!</h2>
+        <p className="text-center mb-8 text-[#444444]">
+          We couldn&rsquo;t find what you were looking for.
+        </p>
+        <Button href="/">GO TO HOME</Button>
+      </div>
     </div>
   )
 }
