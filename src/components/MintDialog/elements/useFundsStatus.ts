@@ -18,7 +18,7 @@ export const useFundsStatus = (
 
   useEffect(() => {
     const getFundsStatus = async () => {
-      if (!address || !open) return
+      if (!address || !open || page !== ModalPage.BRIDGE_SUCCESS) return
 
       const status = await checkBalances(address, totalPrice)
 
