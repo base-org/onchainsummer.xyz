@@ -1,5 +1,8 @@
 import Link from 'next/link'
-import { MirrorLogo } from '@/components/icons/Mirror'
+import { MirrorSubscriptionForm } from '../MirrorSubscriptionForm'
+
+const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
+const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
 
 export const Footer = () => {
   return (
@@ -70,13 +73,11 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="md:flex md:justify-between md:mt-14">
-            <div className="flex items-center w-full md:basis-[35%] px-8 bg-gray-200/80 rounded-full border-[1px] border-black border-solid py-4 my-6 md:my-0">
-              <div className="flex justify-between w-full">
-                <p className="uppercase">Follow on Mirror</p>
-                <MirrorLogo />
-              </div>
-            </div>
+          <div className="md:w-[75%] lg:w-[45%]">
+            <MirrorSubscriptionForm
+              mirrorProjectAddress={MIRROR_PROJECT_ADDRESS}
+              mirrorSubscribeUrl={MIRROR_SUBSCRIBE_URL}
+            />
           </div>
         </div>
       </footer>
