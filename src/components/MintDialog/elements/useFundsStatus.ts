@@ -10,7 +10,7 @@ type FundsStatus = 'insufficient' | 'sufficient' | 'bridge'
 export const useFundsStatus = (
   totalPrice: string,
   open: boolean,
-  page: ModalPage
+  page?: ModalPage
 ) => {
   const address = useAddress()
 
@@ -18,7 +18,12 @@ export const useFundsStatus = (
 
   useEffect(() => {
     const getFundsStatus = async () => {
-      if (!address || !open || page !== ModalPage.BRIDGE_SUCCESS) return
+      if (
+        !address ||
+        !open ||
+        (page !== ModalPage.NATIVE_MINT && page !== ModalPage.BRIDGE_SUCCESS)
+      )
+        return
 
       const status = await checkBalances(address, totalPrice)
 

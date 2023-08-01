@@ -39,7 +39,7 @@ export const MintDialog: FC = () => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
-  const [page, setPage] = useState<ModalPage>(ModalPage.NATIVE_MINT)
+  const [page, setPage] = useState<ModalPage>()
   const { fundsStatus } = useFundsStatus(totalPrice, open, page)
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export const MintDialog: FC = () => {
           return ModalPage.NATIVE_MINT
       }
     })
-  }, [fundsStatus])
+  }, [fundsStatus, page])
   useEffect(() => {
     const needsBridge = fundsStatus === 'bridge'
     if (needsBridge && page === ModalPage.NATIVE_MINT) {
