@@ -32,7 +32,7 @@ export const MintDialog: FC = () => {
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
 
-  const { l1PriceEstimate } = usePriceEstimate()
+  const { l2PriceEstimate } = usePriceEstimate()
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
   const totalPrice = useMemo(() => {
@@ -169,7 +169,7 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE_SUCCESS:
         return (
           <Bridge
-            minAmount={Number(formatEtherByEthers(l1PriceEstimate)).toFixed(2)}
+            minAmount={Number(formatEtherByEthers(l2PriceEstimate)).toFixed(3)}
             setPage={setPage}
           />
         )

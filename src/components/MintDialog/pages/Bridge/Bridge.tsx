@@ -1,3 +1,4 @@
+import { formatEther } from 'ethers/lib/utils'
 import { FC, useMemo, useState } from 'react'
 import { BridgeState, useBridge } from '../../elements/useBridge'
 import { Pending } from '../../elements/Pending'
@@ -9,6 +10,7 @@ import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
 import { BridgeError } from './BridgeError'
+import useBalances from '@/utils/useBalances'
 
 interface BridgeProps {
   minAmount: string
@@ -16,7 +18,17 @@ interface BridgeProps {
 }
 
 export const Bridge: FC<BridgeProps> = ({ minAmount = '0.251', setPage }) => {
-  const [amount, setAmount] = useState(minAmount)
+  const { l1Balance } = useBalances()
+  const [amount, setAmount] = useState(
+    Math.min(
+      0.25,
+      Math.max(
+        Number(formatEther(l1Balance)),
+        0.2 * Number(formatEther(l1Balance)),
+        Number(formatEther(parseEther(minAmount)))
+      )
+    ).toFixed(2)
+  )
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
     parseEther(amount || '0')
   )
