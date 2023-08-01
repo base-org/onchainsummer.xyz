@@ -25,6 +25,7 @@ interface NativeMintProps {
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
   insufficientFunds: boolean
+  crossMintClientId: string | undefined
 }
 
 export const NativeMint: FC<NativeMintProps> = ({
@@ -37,6 +38,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
   insufficientFunds,
+  crossMintClientId,
 }) => {
   const switchChain = useSwitchChain()
   const chainId = useChainId()
@@ -108,7 +110,7 @@ export const NativeMint: FC<NativeMintProps> = ({
           />
         )}
 
-        {!isMintDotFun ? (
+        {!isMintDotFun && crossMintClientId ? (
           <Button
             variant="LIGHT"
             onClick={() => {

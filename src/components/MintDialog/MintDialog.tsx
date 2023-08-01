@@ -164,6 +164,7 @@ export const MintDialog: FC = () => {
             setTxDetails={setTxDetails}
             setMintError={setMintError}
             insufficientFunds={fundsStatus === 'insufficient'}
+            crossMintClientId={crossMintClientId}
           />
         )
       case ModalPage.BRIDGE:

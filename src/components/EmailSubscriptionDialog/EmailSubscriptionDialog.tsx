@@ -18,7 +18,7 @@ export const EmailSubscriptionDialog: React.FC<
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button variant="LIGHT" className="max-w-fit">
+        <Button variant="LIGHT" className="w-full md:max-w-fit !py-[11px]">
           Subscribe with Email
         </Button>
       </Dialog.Trigger>
