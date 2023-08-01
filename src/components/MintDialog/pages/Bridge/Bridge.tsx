@@ -18,7 +18,7 @@ interface BridgeProps {
 export const Bridge: FC<BridgeProps> = ({ minAmount = '0.251', setPage }) => {
   const [amount, setAmount] = useState(minAmount)
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
-    parseEther(amount)
+    parseEther(amount || '0')
   )
 
   const awaitingConfirmation = bridgeState === BridgeState.AWAITING_CONFIRMATION

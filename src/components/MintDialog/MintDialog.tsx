@@ -1,3 +1,4 @@
+import { formatEther as formatEtherByEthers } from 'ethers/lib/utils'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { FC, useEffect, useMemo, useState } from 'react'
@@ -18,6 +19,7 @@ import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
 import { useFundsStatus } from './elements/useFundsStatus'
 import dialogClasses from '@/components/dialog.module.css'
+import { usePriceEstimate } from './elements/usePriceEstimate'
 export type TxDetails = {
   hash: string
 }
@@ -30,6 +32,7 @@ export const MintDialog: FC = () => {
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
 
+  const { l1PriceEstimate } = usePriceEstimate()
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
   const totalPrice = useMemo(() => {
@@ -164,7 +167,12 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE:
       case ModalPage.BRIDGE_PENDING:
       case ModalPage.BRIDGE_SUCCESS:
-        return <Bridge minAmount="0.001" setPage={setPage} />
+        return (
+          <Bridge
+            minAmount={Number(formatEtherByEthers(l1PriceEstimate)).toString()}
+            setPage={setPage}
+          />
+        )
       case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <InsufficientFunds

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 
-import { formatEther } from 'ethers/lib/utils'
+import { formatEther, parseEther } from 'ethers/lib/utils'
 import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
 import useBalances from '@/utils/useBalances'
@@ -29,6 +29,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   const wrongChain = chainId !== l1.chainId
 
   const { l1Balance } = useBalances()
+
   return (
     <div className="flex flex-col md:my-auto">
       <Dialog.Title className={dialogClasses.title}>
@@ -39,7 +40,8 @@ export const NotStarted: FC<NotStartedProps> = ({
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span>
             You need ETH on Base to mint! We recommend bridging 0.25 ETH, but
-            you&apos;ll need at least 0.007 ETH.{' '}
+            you&apos;ll need at least{' '}
+            {Number(formatEther(parseEther(minAmount))).toFixed(3)} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"
@@ -83,7 +85,9 @@ export const NotStarted: FC<NotStartedProps> = ({
         {wrongChain ? (
           <Button onClick={() => switchChain(l1.chainId)}>Switch to L1</Button>
         ) : (
-          <Button onClick={bridge}>Bridge now</Button>
+          <Button disabled={!amount} onClick={bridge}>
+            Bridge now
+          </Button>
         )}
       </div>
     </div>
