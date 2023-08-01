@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+import clsx from 'clsx'
 import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import { OCSLogo } from '../icons/OCSLogo'
@@ -9,8 +13,19 @@ import { NavListItems } from './NavListItems'
 type MobileProps = {}
 
 export const Mobile: FC<MobileProps> = ({}) => {
+  const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false)
+
+  const toggleHamburgerMenu = () => {
+    setHamburgerMenuOpen(!hamburgerMenuOpen)
+  }
+
   return (
-    <NavigationMenu.Root className="relative z-40 flex w-screen lg:hidden [&>div]:w-full">
+    <NavigationMenu.Root
+      className={clsx(
+        'z-40 flex w-screen lg:hidden [&>div]:w-full',
+        hamburgerMenuOpen ? 'fixed bg-white' : 'relative'
+      )}
+    >
       <NavigationMenu.List className="flex justify-between px-6 py-8 w-full items-center border-b border-black/10">
         <NavigationMenu.Link asChild>
           <Link href="/">
@@ -19,7 +34,10 @@ export const Mobile: FC<MobileProps> = ({}) => {
         </NavigationMenu.Link>
 
         <NavigationMenu.Item className="flex items-center ">
-          <NavigationMenu.Trigger className="group z-40 relative">
+          <NavigationMenu.Trigger
+            className="group z-40 relative"
+            onClick={toggleHamburgerMenu}
+          >
             <div className="group-data-[state=open]:hidden">
               <Hamburger />
             </div>
