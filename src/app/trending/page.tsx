@@ -6,9 +6,6 @@ import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { useQuery } from 'react-query'
 import { useAddress } from '@thirdweb-dev/react'
 import { formatEther } from 'viem'
-import { ThirdWeb } from '@/components/icons/ThirdWeb'
-import { Zora } from '@/components/icons/Zora'
-import { Manifold } from '@/components/icons/Manifold'
 import { MintDotFun } from '@/components/icons/MintDotFun'
 import { UpArrow } from '@/components/icons/UpArrow'
 import { MintButton } from '@/components/MintButton'
@@ -62,9 +59,7 @@ export default function Trending() {
                 Trending
               </h1>
               <p className="text-xl md:text-2xl my-2 font-light">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat.
+                Discover and mint trending NFTs from across Base
               </p>
               <div className="flex items-center">
                 <p className="text-xl text-[#010101] opacity-50 mr-3 font-mono uppercase my-2">
