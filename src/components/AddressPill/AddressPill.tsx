@@ -1,4 +1,5 @@
 'use client'
+
 import { shortenAddress } from '@/utils/address'
 import { useEns } from '@/utils/useEns'
 import clsx from 'clsx'
