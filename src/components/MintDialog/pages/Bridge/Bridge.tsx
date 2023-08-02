@@ -3,17 +3,17 @@ import { FC, useMemo, useState } from 'react'
 import { BridgeState, useBridge } from '../../elements/useBridge'
 import { Pending } from '../../elements/Pending'
 
-import { parseEther } from 'ethers/lib/utils'
 
 import { NotStarted } from './NotStarted'
 import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
 import { BridgeError } from './BridgeError'
+import { parseEther } from 'viem'
 import { BigNumber } from 'ethers'
 
 interface BridgeProps {
-  l1Balance: BigNumber
+  l1Balance: bigint
   minAmount: string
   setPage: React.Dispatch<ModalPage>
 }
@@ -30,7 +30,7 @@ export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPag
     ) * 100) / 100).toString()
   )
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
-    parseEther(amount || '0')
+    BigNumber.from(parseEther(amount || '0').toString())
   )
 
   const awaitingConfirmation = bridgeState === BridgeState.AWAITING_CONFIRMATION
