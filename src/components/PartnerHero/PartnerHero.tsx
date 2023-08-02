@@ -3,14 +3,6 @@ import Image from 'next/image'
 import { FC } from 'react'
 import clsx from 'clsx'
 import { isBefore, isAfter } from 'date-fns'
-import { utcToZonedTime } from 'date-fns-tz'
-
-interface PartnerHeroProps {
-  partner: Partner
-  headline: Drop
-  staticHeadline: boolean
-}
-
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
@@ -18,9 +10,17 @@ import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
 
+interface PartnerHeroProps {
+  partner: Partner
+  headline: Drop
+  staticHeadline: boolean
+  teaser?: boolean
+}
+
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
   headline,
+  teaser,
 }) => {
   const isBeforeStartDate = isBefore(
     new Date().getTime(),
@@ -38,7 +38,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
     : '!bg-ocs-blue'
 
   return (
-    <section className="grid p-5 md:py-6 md:px-10 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
+    <section className="grid p-5 md:p-6  rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
       <div className="relative w-full aspect-[287/212] mb-1 lg:mb-0 order-1 md:order-2">
         <Image
           src={headline.image}
@@ -57,9 +57,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <h1 className="text-[32px] leading-none font-display md:text-[46px]">
           {headline.name}
         </h1>
-        <AddressPill address={headline.creator as Address} />
+        <AddressPill
+          address={headline.creator as Address}
+          className={clsx(teaser && '!bg-ocs-blue !text-white')}
+        />
+        <h2 className="font-sans text-[#444]">{description}</h2>
         <div className="flex flex-col w-full gap-4 mt-auto">
-          <p className="md:hidden">{description}</p>
           <Separator className={clsx(separatorBackgroundColor)} />
           <Countdown startDate={headline.startDate} date={headline.endDate} />
           {headline.externalLink ? (

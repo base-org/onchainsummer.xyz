@@ -11,6 +11,7 @@ import ThirdWebProviderClient from '@/components/client/QueryClientProvider'
 import QueryClientProvider from '@/components/client/QueryClientProvider'
 import { Teaser } from '@/components/Teaser/Teaser'
 import { Navbar } from '@/components/Navbar'
+import { TeaserNav } from '@/components/Teaser/TeaserNav'
 import { Footer } from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -171,6 +172,13 @@ export default function RootLayout({
     )
   }
 
+  const isTeaser =
+    SHOW_TEASER ||
+    // @ts-ignore
+    children?.props?.childProp?.segment === 'teaser' ||
+    // @ts-ignore
+    children?.props?.childProp?.segment === '0308'
+
   return (
     // we should be able to remove thirdweb here, but I am leaving for now
     <ThirdWebProviderClient>
@@ -188,10 +196,9 @@ export default function RootLayout({
           <QueryClientProvider>
             <QueryParamProvider>
               <Providers>
-                {SHOW_TEASER ||
-                // @ts-ignore remove this when we have a better way to check for
-                children?.props?.childProp?.segment === 'teaser' ? (
-                  <div className="bg-teaser-gradient h-fit flex-grow">
+                {isTeaser ? (
+                  <div className="h-fit flex-grow">
+                    <TeaserNav />
                     <Teaser
                       mirrorSubscribeUrl={MIRROR_SUBSCRIBE_URL}
                       mirrorProjectAddress={MIRROR_PROJECT_ADDRESS}

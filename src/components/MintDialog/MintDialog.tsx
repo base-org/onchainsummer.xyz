@@ -104,7 +104,15 @@ export const MintDialog: FC = () => {
               <span className="w-full">Mint</span>
             ) : (
               <>
-                Mint ({price} ETH) <ArrowRight />
+                {price === '0' ? (
+                  <>
+                    Mint For Free <ArrowRight />
+                  </>
+                ) : (
+                  <>
+                    Mint ({price} ETH) <ArrowRight />
+                  </>
+                )}
               </>
             )}
           </>
