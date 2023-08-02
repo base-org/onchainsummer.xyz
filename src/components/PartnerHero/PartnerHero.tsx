@@ -3,20 +3,18 @@ import Image from 'next/image'
 import { FC } from 'react'
 import clsx from 'clsx'
 import { isBefore, isAfter } from 'date-fns'
-import { utcToZonedTime } from 'date-fns-tz'
-
-interface PartnerHeroProps {
-  partner: Partner
-  headline: Drop
-  staticHeadline: boolean
-}
-
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
+
+interface PartnerHeroProps {
+  partner: Partner
+  headline: Drop
+  staticHeadline: boolean
+}
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },

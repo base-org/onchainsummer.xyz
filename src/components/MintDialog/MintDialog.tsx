@@ -29,7 +29,7 @@ export const MintDialog: FC = () => {
   const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
     useMintDialogContext()
   const [open, setOpen] = useState(false)
-  const {l1Balance} = useBalances();
+  const { l1Balance } = useBalances()
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
@@ -40,7 +40,6 @@ export const MintDialog: FC = () => {
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
-
   const [page, setPage] = useState<ModalPage>()
   const { fundsStatus } = useFundsStatus(totalPrice, open, page)
 
@@ -109,7 +108,15 @@ export const MintDialog: FC = () => {
               <span className="w-full">Mint</span>
             ) : (
               <>
-                Mint ({price} ETH) <ArrowRight />
+                {price === '0' ? (
+                  <>
+                    Mint For Free <ArrowRight />
+                  </>
+                ) : (
+                  <>
+                    Mint ({price} ETH) <ArrowRight />
+                  </>
+                )}
               </>
             )}
           </>
