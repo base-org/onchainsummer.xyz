@@ -2,15 +2,16 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
-import { ThirdWebProviderClient } from '../components/client'
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
-import { QueryClientProvider } from '../components/client'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
 import { website } from '@/config/website'
+import { Providers } from './providers'
+import ThirdWebProviderClient from '@/components/client/QueryClientProvider'
+import QueryClientProvider from '@/components/client/QueryClientProvider'
 import { Teaser } from '@/components/Teaser/Teaser'
+import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -170,6 +171,7 @@ export default function RootLayout({
   }
 
   return (
+    // we should be able to remove thirdweb here, but I am leaving for now
     <ThirdWebProviderClient>
       <html lang="en" className="flex flex-col h-full">
         <body
@@ -184,7 +186,8 @@ export default function RootLayout({
         >
           <QueryClientProvider>
             <QueryParamProvider>
-              {SHOW_TEASER ||
+                <Providers>
+                {SHOW_TEASER ||
               // @ts-ignore remove this when we have a better way to check for
               children?.props?.childProp?.segment === 'teaser' ? (
                 <div className="bg-teaser-gradient h-fit flex-grow">
@@ -200,6 +203,7 @@ export default function RootLayout({
                   <Footer />
                 </>
               )}
+                </Providers>
             </QueryParamProvider>
           </QueryClientProvider>
         </body>

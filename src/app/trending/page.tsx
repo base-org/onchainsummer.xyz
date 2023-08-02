@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { useQuery } from 'react-query'
-import { useAddress } from '@thirdweb-dev/react'
 import { formatEther } from 'viem'
 import { MintDotFun } from '@/components/icons/MintDotFun'
 import { UpArrow } from '@/components/icons/UpArrow'
@@ -12,6 +11,7 @@ import { MintButton } from '@/components/MintButton'
 import { Collection } from '@/utils/mintDotFunTypes'
 import { PageContainer } from '@/components/PageContainer'
 import clsx from 'clsx'
+import { useAccount } from 'wagmi'
 
 interface QueryResult {
   collections: Collection[]
@@ -34,7 +34,7 @@ const VISIBLE_NFTS = {
 }
 
 export default function Trending() {
-  const connectedWallet = useAddress()
+  const {address: connectedWallet} = useAccount()
 
   const { data, error, isLoading } = useQuery<QueryResult>({
     queryKey: [connectedWallet],

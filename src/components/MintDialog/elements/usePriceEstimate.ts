@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useAddress } from '@thirdweb-dev/react'
 import { parseEther } from 'ethers/lib/utils'
 
 import { getPriceEstimate } from './getPriceEstimate'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
+import { useAccount } from 'wagmi'
 
 export const usePriceEstimate = () => {
-  const address = useAddress()
+  const {address} = useAccount()
   const { price } = useMintDialogContext()
 
   const [response, setResponse] = useState<

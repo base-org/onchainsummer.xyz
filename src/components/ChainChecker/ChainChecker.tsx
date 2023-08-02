@@ -1,17 +1,16 @@
 'use client'
 
-import { useNetworkMismatch } from '@thirdweb-dev/react'
-import { useSwitchChain } from '@thirdweb-dev/react'
-import { useChain } from '@thirdweb-dev/react'
-
+import { useNetwork, useSwitchNetwork } from 'wagmi'
 import { Button } from '../Button/Button'
 import { ChainSwitch } from '../icons/ChainSwitch'
 import { l2 } from '@/config/chain'
+import { useIsMisMatched } from '@/utils/useIsMismatched'
 
 export const ChainChecker: React.FC = () => {
-  const isMismatched = useNetworkMismatch()
-  const switchChain = useSwitchChain()
-  const chain = useChain()
+  const { chain } = useNetwork()
+  const { switchNetwork } =
+  useSwitchNetwork()
+  const isMismatched = useIsMisMatched();
 
   return (
     <>
@@ -29,7 +28,8 @@ export const ChainChecker: React.FC = () => {
           <div className="w-full md:w-auto md:basis-[1/3] flex justify-end">
             <Button
               variant="LIGHT"
-              onClick={() => switchChain(l2.chainId)}
+              disabled={!switchNetwork}
+              onClick={() => switchNetwork!(l2.id)}
               className="mt-4 md:mt-0 basis-full md:basis-1/2 text-sm md:text-base !flex !justify-start md:!justify-between !bg-transparent !py-3"
             >
               Switch to Base

@@ -1,14 +1,14 @@
 import { useInterval } from '@/utils/useInterval'
-import { useAddress } from '@thirdweb-dev/react'
 import { useCallback } from 'react'
 import { ModalPage } from '../../types'
 import { checkBalances } from '../../elements/checkBalances'
+import { useAccount } from 'wagmi'
 
 export const usePollBalance = (
   setPage: React.Dispatch<ModalPage>,
   totalPrice: string
 ) => {
-  const address = useAddress()
+  const {address} = useAccount()
   const cb = useCallback(async () => {
     if (!address) return
 

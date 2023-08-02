@@ -4,9 +4,10 @@ import { shortenAddress } from '@/utils/address'
 import { useEns } from '@/utils/useEns'
 import clsx from 'clsx'
 import { FC } from 'react'
+import { Address } from 'viem'
 
 interface AddressPillProps {
-  address: string
+  address: Address
   className?: string
 }
 
