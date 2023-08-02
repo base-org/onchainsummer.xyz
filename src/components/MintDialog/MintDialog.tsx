@@ -20,6 +20,7 @@ import { formatEther, parseEther } from 'viem'
 import { useFundsStatus } from './elements/useFundsStatus'
 import dialogClasses from '@/components/dialog.module.css'
 import { usePriceEstimate } from './elements/usePriceEstimate'
+import useBalances from '@/utils/useBalances'
 export type TxDetails = {
   hash: string
 }
@@ -28,6 +29,7 @@ export const MintDialog: FC = () => {
   const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
     useMintDialogContext()
   const [open, setOpen] = useState(false)
+  const {l1Balance} = useBalances();
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
@@ -182,6 +184,7 @@ export const MintDialog: FC = () => {
       case ModalPage.BRIDGE_SUCCESS:
         return (
           <Bridge
+            l1Balance={l1Balance}
             minAmount={Number(formatEtherByEthers(l2PriceEstimate)).toFixed(3)}
             setPage={setPage}
           />

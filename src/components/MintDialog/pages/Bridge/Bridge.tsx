@@ -10,24 +10,24 @@ import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
 import { BridgeError } from './BridgeError'
-import useBalances from '@/utils/useBalances'
+import { BigNumber } from 'ethers'
 
 interface BridgeProps {
+  l1Balance: BigNumber
   minAmount: string
   setPage: React.Dispatch<ModalPage>
 }
 
-export const Bridge: FC<BridgeProps> = ({ minAmount = '0.251', setPage }) => {
-  const { l1Balance } = useBalances()
+export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPage }) => {
   const [amount, setAmount] = useState(
-    Math.min(
+    (Math.floor(Math.min(
       0.25,
       Math.max(
         Number(formatEther(l1Balance)),
         0.2 * Number(formatEther(l1Balance)),
         Number(formatEther(parseEther(minAmount)))
       )
-    ).toFixed(2)
+    ) * 100) / 100).toString()
   )
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
     parseEther(amount || '0')
