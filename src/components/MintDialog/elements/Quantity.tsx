@@ -11,7 +11,7 @@ const buttonClassName = 'py-1.5 px-4 rounded-[100px] border border-[#EFEFEF]'
 export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
   const { maxClaimablePerWallet } = useMintDialogContext()
 
-  if (maxClaimablePerWallet !== 'unlimited') {
+  if (maxClaimablePerWallet !== (2n ** 256n - 1n).toString()) {
     return null
   }
 

@@ -3,11 +3,11 @@ import {
   CrossmintPaymentElement,
   CheckoutEventMap,
 } from '@crossmint/client-sdk-react-ui'
-import { useAddress } from '@thirdweb-dev/react'
 import { isProd } from '@/config/chain'
 import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import clsx from 'clsx'
+import { useAccount } from 'wagmi'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -43,7 +43,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
 }) => {
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
-  const walletAddress = useAddress()
+  const {address: walletAddress} = useAccount()
   const [email, setEmail] = useState('')
 
   return (

@@ -3,11 +3,11 @@ import { Card } from '../Card'
 import Image from 'next/image'
 import { Button } from '../Button'
 import { MintButton } from '../MintButton'
-import { RightArrow } from '../icons/RightArrow'
 import { AddressPill } from '../AddressPill'
+import { Address } from 'wagmi'
 
 type DropCardProps = {
-  address: string
+  address: Address
   crossMintClientId: string
   partnerIcon: string
   partner: string
@@ -52,7 +52,7 @@ export const DropCard: FC<DropCardProps> = ({
           <span className="text-[32px]">{name}</span>
         )}
         <div className="mt-4 mb-8">
-          <AddressPill address={creator} className="bg-ocs-turquoise" />
+          <AddressPill address={creator as Address} className="bg-ocs-turquoise" />
         </div>
         {externalLink ? (
           <Button tabIndex={-1} className="!flex !justify-center">

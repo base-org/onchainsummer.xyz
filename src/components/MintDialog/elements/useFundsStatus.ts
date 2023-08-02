@@ -1,9 +1,7 @@
-import { useAddress } from '@thirdweb-dev/react'
-
 import { useEffect, useState } from 'react'
-
 import { checkBalances } from './checkBalances'
 import { ModalPage } from '../types'
+import { useAccount } from 'wagmi'
 
 type FundsStatus = 'insufficient' | 'sufficient' | 'bridge'
 
@@ -12,7 +10,7 @@ export const useFundsStatus = (
   open: boolean,
   page?: ModalPage
 ) => {
-  const address = useAddress()
+  const {address} = useAccount()
 
   const [fundsStatus, setFundsStatus] = useState<FundsStatus>('sufficient')
 

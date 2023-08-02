@@ -1,6 +1,6 @@
 import { MintStatus } from '@/utils/mintDotFunTypes'
-import { Address } from '@thirdweb-dev/sdk'
 import { createContext } from 'react'
+import { Address } from 'wagmi'
 
 export interface MintDialogContextType {
   address: Address
@@ -18,7 +18,7 @@ export interface MintDialogContextType {
 }
 
 export const MintDialogContext = createContext<MintDialogContextType>({
-  address: '',
+  address: '0x0',
   price: '',
   partnerIcon: '',
   partnerName: '',

@@ -16,6 +16,7 @@ import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
+import { Address } from 'viem'
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
@@ -56,7 +57,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <h1 className="text-[32px] leading-none font-display md:text-[46px]">
           {headline.name}
         </h1>
-        <AddressPill address={headline.creator} />
+        <AddressPill address={headline.creator as Address} />
         <div className="flex flex-col w-full gap-4 mt-auto">
           <p className="md:hidden">{description}</p>
           <Separator className={clsx(separatorBackgroundColor)} />
