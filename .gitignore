@@ -38,3 +38,6 @@ next-env.d.ts
 
 /src/graphql/_generated/*
 !/src/graphql/_generated/.gitkeep
+
+# intellij
+.idea/
