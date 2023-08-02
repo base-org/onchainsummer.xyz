@@ -39,37 +39,26 @@ export const CBSubscribeDialog: FC<
                 <CoinbaseWallet width={40} height={40} />
               </div>
               <h2 className="text-2xl mb-4 font-normal">
-                Subscribe for daily updates on Coinbase Wallet
+                Say “gm” and get Onchain Summer updates straight to your wallet
               </h2>
-              <p className="text-base text-[#5B616E]">
-                <span>
-                  Turn on encrypted messaging in Coinbase Wallet’s mobile app to
-                  get updates on Onchain Summer drops. Coinbase Wallet is the
-                  only wallet with built-in messaging, powered by XMTP. Securely
-                  import your keys to Coinbase Wallet today to give it a try.
-                </span>
-                <br />
-                <br />
-                <span className="hidden lg:block">
-                  To get started, scan the QR code or download on
-                  <a
-                    href="https://play.google.com/store/apps/details?id=org.toshi"
-                    className="text-ocs-blue mx-1"
-                  >
-                    Android
-                  </a>
-                  or
-                  <a
-                    href="https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
-                    className="text-ocs-blue ml-1"
-                  >
-                    iOS
-                  </a>
-                  .
-                </span>
-              </p>
+              <ol className="text-xs">
+                <li className="mb-4">
+                  <span className="hidden lg:block">
+                    1. Scan the QR code with your mobile device
+                  </span>
+                  <span className="lg:hidden">1. Tap “Subscribe in app”</span>
+                </li>
+                <li className="mb-4">
+                  2. Message <b className="font-[500]">“gm”</b> to{' '}
+                  <b className="font-[500]">onchainsummer.cb.id</b> using
+                  Coinbase Wallet’s messaging feature
+                </li>
+                <li className="mb-6">
+                  3. Get daily updates on Onchain Summer Mints
+                </li>
+              </ol>
               <div className="block lg:hidden">
-                <Button href="https://go.cb-w.com/messaging?address=0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3">
+                <Button href="https://go.cb-w.com/onchain-summer-subscribe">
                   SUBSCRIBE IN APP
                 </Button>
               </div>
@@ -78,6 +67,10 @@ export const CBSubscribeDialog: FC<
               <QRCode />
             </div>
           </div>
+          <p className="text-[#858585] font-mono text-[14px] text-center mt-4">
+            Wallet messaging is powered by XMTP. You need Coinbase Wallet to
+            access these messages. More wallets and apps coming soon.
+          </p>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
