@@ -40,32 +40,28 @@ export const MintDialog: FC = () => {
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
-  const [page, setPage] = useState<ModalPage>()
-  const { fundsStatus } = useFundsStatus(totalPrice, open, page)
+
+  const { fundsStatus, getFundsStatus } = useFundsStatus(totalPrice)
+  const [page, setPage] = useState<ModalPage>(() => {
+    switch (fundsStatus) {
+      case 'sufficient':
+        return ModalPage.NATIVE_MINT
+      case 'bridge':
+        return ModalPage.BRIDGE
+      case 'insufficient':
+      default:
+        return ModalPage.NATIVE_MINT
+    }
+  })
 
   useEffect(() => {
-    if (
-      page &&
-      [
-        ModalPage.NATIVE_MINT_PENDING_CONFIRMATION,
-        ModalPage.NATIVE_MINTING_PENDING_TX,
-        ModalPage.MINT_SUCCESS,
-      ].includes(page)
-    ) {
+    if (!open || ![ModalPage.NATIVE_MINT].includes(page)) {
       return
     }
-    setPage(() => {
-      switch (fundsStatus) {
-        case 'sufficient':
-          return ModalPage.NATIVE_MINT
-        case 'bridge':
-          return ModalPage.BRIDGE
-        case 'insufficient':
-        default:
-          return ModalPage.NATIVE_MINT
-      }
-    })
-  }, [fundsStatus, page])
+
+    getFundsStatus()
+  }, [page, open, getFundsStatus])
+
   useEffect(() => {
     const needsBridge = fundsStatus === 'bridge'
     if (needsBridge && page === ModalPage.NATIVE_MINT) {

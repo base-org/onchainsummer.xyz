@@ -106,6 +106,7 @@ const coinbaseDisplay = localFont({
 })
 
 const SHOW_TEASER = process.env.TEASER === 'true'
+const PASSWORD_PROTECT = process.env.PASSWORD_PROTECT
 const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
 const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
 
@@ -160,7 +161,7 @@ export default function RootLayout({
   const cookieStore = cookies()
   const password = cookieStore.get('ocspw')
 
-  if (!password) {
+  if (!password && !!PASSWORD_PROTECT) {
     return (
       <html lang="en" className="flex flex-col h-full">
         <body>
