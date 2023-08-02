@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server'
 export async function GET() {
   const modifiedSchedule: Record<string, any> = {}
   Object.keys(schedule).map((date) => {
-    modifiedSchedule[date] = {
+    modifiedSchedule[moment.utc(`${date} 13:00`).toISOString()] = {
       ...schedule[date],
       drops: schedule[date].drops.map((drop) => ({
         ...drop,
