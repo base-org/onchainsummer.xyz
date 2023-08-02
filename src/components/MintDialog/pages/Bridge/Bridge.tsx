@@ -20,14 +20,14 @@ interface BridgeProps {
 
 export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPage }) => {
   const [amount, setAmount] = useState(
-    Math.min(
+    (Math.floor(Math.min(
       0.25,
       Math.max(
         Number(formatEther(l1Balance)),
         0.2 * Number(formatEther(l1Balance)),
         Number(formatEther(parseEther(minAmount)))
       )
-    ).toFixed(2)
+    ) * 100) / 100).toString()
   )
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
     parseEther(amount || '0')

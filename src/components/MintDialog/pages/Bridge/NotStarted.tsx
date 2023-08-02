@@ -38,7 +38,7 @@ export const NotStarted: FC<NotStartedProps> = ({
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span>
-            You need ETH on Base to mint! We recommend bridging 0.25 ETH, but
+            You need ETH on Base to mint! We recommend bridging {amount} ETH, but
             you&apos;ll need at least {minAmount} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
