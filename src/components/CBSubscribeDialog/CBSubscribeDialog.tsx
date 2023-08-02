@@ -21,7 +21,7 @@ export const CBSubscribeDialog: FC<
         <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[746px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:px-16 lg:py-20 overflow-auto lg:h-auto lg:overflow-hidden'
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[874px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:px-16 lg:py-20 overflow-auto lg:h-auto lg:overflow-hidden'
           )}
         >
           <Dialog.Close asChild>
@@ -38,10 +38,10 @@ export const CBSubscribeDialog: FC<
               <div className="block lg:hidden py-8">
                 <CoinbaseWallet width={40} height={40} />
               </div>
-              <h2 className="text-2xl mb-4 font-normal">
+              <h2 className="text-[32px] leading-[120%] mb-4 lg:mb-10 font-normal font-display">
                 Say “gm” and get Onchain Summer updates straight to your wallet
               </h2>
-              <ol className="text-xs">
+              <ol className="text-base font-display text-[#444]">
                 <li className="mb-4">
                   <span className="hidden lg:block">
                     1. Scan the QR code with your mobile device
