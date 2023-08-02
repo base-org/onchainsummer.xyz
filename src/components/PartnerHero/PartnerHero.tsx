@@ -14,11 +14,13 @@ interface PartnerHeroProps {
   partner: Partner
   headline: Drop
   staticHeadline: boolean
+  teaser?: boolean
 }
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
   headline,
+  teaser,
 }) => {
   const isBeforeStartDate = isBefore(
     new Date().getTime(),
@@ -58,7 +60,10 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <h2 className="hidden md:inline-block font-sans text-[#444]">
           {description}
         </h2>
-        <AddressPill address={headline.creator as Address} />
+        <AddressPill
+          address={headline.creator as Address}
+          className={clsx(teaser && '!bg-ocs-blue !text-white')}
+        />
         <div className="flex flex-col w-full gap-4 mt-auto">
           <h2 className="font-sans text-[#444] md:hidden">{description}</h2>
           <Separator className={clsx(separatorBackgroundColor)} />
