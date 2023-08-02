@@ -1,9 +1,9 @@
 'use client'
 
 import clsx from 'clsx'
-import { useNetworkMismatch } from '@thirdweb-dev/react'
 import { ReactNode } from 'react'
 import { SubNav } from '../SubNav'
+import { useIsMisMatched } from '@/utils/useIsMismatched'
 
 interface PageContainerProps {
   children: ReactNode
@@ -14,7 +14,9 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   children,
   subNavBgColor,
 }) => {
-  const isMismatched = useNetworkMismatch()
+  const isMismatched = useIsMisMatched();
+
+
   const heroMarginTop = isMismatched ? 'mt-28 md:mt-6' : '-mt-[100px] md:-mt-16'
 
   return (

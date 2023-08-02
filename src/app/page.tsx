@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import format from 'date-fns/format'
 import compareAsc from 'date-fns/compareAsc'
 import Image from 'next/image'
@@ -11,13 +12,17 @@ import { ReactMarkdown } from '@/components/ReactMarkdown'
 import { PageContainer } from '@/components/PageContainer'
 import { getDrops } from '@/utils/getDrops'
 import { Trending } from '@/components/Trending'
+import { TwitterModule } from '@/components/TwitterModule'
+import { Heart } from '@/components/icons/Heart'
+import { RightArrow } from '@/components/icons/RightArrow'
+import { getTweets } from '@/utils/getTweets'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
 const Home = async ({ searchParams }: Props) => {
-  const { partner, tabs, article } = await getPageData()
+  const { partner, tabs, article, tweets } = await getPageData()
   const { drops, name, icon } = partner
 
   const dropAddressParam = searchParams.drop
@@ -82,6 +87,34 @@ const Home = async ({ searchParams }: Props) => {
             </div>
           </div>
         </section>
+        {tweets && Array.isArray(tweets.data) && (
+          <section className="bg-[#EFEFEF] rounded-3xl p-4">
+            <div className="flex justify-between mb-4">
+              <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
+                <div className="flex gap-4 items-center">
+                  <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
+                    <Heart />
+                  </div>
+                  <div className="">
+                    <h2 className="text-[32px] text-display">Community</h2>
+                  </div>
+                </div>
+              </div>
+              <Link
+                href="/community"
+                className="hidden [@media(min-width:724px)]:inline-block"
+              >
+                <div className="flex h-full items-start sm:items-center gap-6 uppercase text-mono pr-6">
+                  <span>View Community</span>
+                  <div>
+                    <RightArrow fill="black" />
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <TwitterModule tweets={tweets} />
+          </section>
+        )}
         <section className="w-full">
           <Trending />
         </section>
@@ -153,7 +186,9 @@ async function getPageData() {
     content: { body: string; title: string }
   }
 
-  return { partner: featuredPartner, tabs, article }
+  const tweets = await getTweets()
+
+  return { partner: featuredPartner, tabs, article, tweets }
 }
 
 export default Home

@@ -1,7 +1,6 @@
 'use client'
 
 import { FC } from 'react'
-import { useAddress } from '@thirdweb-dev/react'
 import { ConnectDialog } from '../ConnectDialog'
 import { MintDialog } from '../MintDialog'
 import { MintDialogContextType } from '../MintDialog/Context/Context'
@@ -9,17 +8,18 @@ import { useValidate } from './useValidate'
 import { Button } from '../Button'
 import { Loading } from '../icons/Loading'
 import clsx from 'clsx'
+import { useAccount } from 'wagmi'
 
 interface MintButtonProps extends MintDialogContextType {}
 
 export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
-  const walletAddress = useAddress()
+  const {address: account} = useAccount()
   const { valid, message, isValidating, maxClaimablePerWallet } = useValidate(
     mintProps.address,
     mintProps.mintDotFunStatus
   )
 
-  if (!walletAddress) {
+  if (!account) {
     return <ConnectDialog />
   }
 

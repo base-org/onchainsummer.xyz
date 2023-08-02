@@ -18,7 +18,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
           className="object-cover rounded-lg md:rounded-[20px]"
         />
       </div>
-      <div className="flex flex-col w-full gap-4 h-full overflow-scroll">
+      <div className="flex flex-col w-full gap-4 h-full overflow-scroll hide-scrollbar">
         {children}
       </div>
     </div>

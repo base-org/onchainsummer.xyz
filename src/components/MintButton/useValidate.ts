@@ -1,14 +1,7 @@
 import { MintStatus } from '@/utils/mintDotFunTypes'
-import {
-  useContract,
-  useActiveClaimCondition,
-  useUnclaimedNFTSupply,
-  useContractType,
-  useActiveClaimConditionForWallet,
-  useAddress,
-} from '@thirdweb-dev/react'
-
-import { constants } from 'ethers'
+import { useTw721GetClaimConditionById, useTw721GetActiveClaimConditionId, useTw721GetSupplyClaimedByWallet } from '../../../generated/tw721'
+import { Address, useAccount } from 'wagmi'
+import { l2 } from '@/config/chain'
 
 type Validation = {
   valid: boolean
@@ -21,17 +14,11 @@ export const useValidate = (
   address: string,
   mintDotFunStatus?: MintStatus
 ): Validation => {
-  const walletAddress = useAddress()
-  const { contract } = useContract(address)
-  const { data: contractType, isLoading: isLoadingContractType } =
-    useContractType(address)
-  const { data: claimConditions, isLoading } = useActiveClaimCondition(contract)
-  const { data: unclaimedSupply, isLoading: isLoadingUnclaimedSupply } =
-    useUnclaimedNFTSupply(contract)
-  const {
-    data: activeClaimConditionForWallet,
-    isLoading: isLoadingActiveClaimConditionForWallet,
-  } = useActiveClaimConditionForWallet(contract, walletAddress)
+  
+  const {address: account} = useAccount();
+  const {data: activeId, isLoading: isLoadingActiveId} = useTw721GetActiveClaimConditionId({address: address as Address, chainId: l2.id});
+  const {data: condition, isLoading: isLoadingCondition} = useTw721GetClaimConditionById({address: address as Address, chainId: l2.id, args: [activeId || BigInt(0)]});
+  const {data: userMints, isLoading: isLoadingMints} = useTw721GetSupplyClaimedByWallet({address: address as Address, chainId: l2.id, args: [activeId || BigInt(0), account || '0x0']});
 
   if (mintDotFunStatus) {
     return {
@@ -40,30 +27,27 @@ export const useValidate = (
       isValidating: false,
     }
   }
-
-  const isLimitedSupply = contractType === 'nft-drop'
+  
+  const maxSupply = condition?.maxClaimableSupply || 2n ** 256n - 1n;
+  const isLimitedSupply = condition?.maxClaimableSupply && maxSupply < 2n ** 256n;
   const soldOut =
-    isLimitedSupply && (unclaimedSupply?.lte(constants.Zero) || true)
-  const startTime = claimConditions?.startTime
-  const now = Date.now()
-  const maxClaimablePerWallet = claimConditions?.maxClaimablePerWallet
+    isLimitedSupply && (condition?.supplyClaimed == maxSupply);
+  const startTime = condition?.startTimestamp
+  const now = Date.now() / 1000
+  const maxClaimablePerWallet: bigint = condition?.quantityLimitPerWallet || BigInt(0)
 
-  if (!Number.isNaN(Number(maxClaimablePerWallet))) {
-    const currentMintSupply = Number(
-      activeClaimConditionForWallet?.currentMintSupply
-    )
-
-    if (currentMintSupply === Number(maxClaimablePerWallet)) {
+  if (maxClaimablePerWallet > 0) {
+    if (userMints && userMints == maxClaimablePerWallet) {
       return {
         valid: false,
         message: 'Already minted',
         isValidating: false,
-        maxClaimablePerWallet,
+        maxClaimablePerWallet: maxClaimablePerWallet.toString()
       }
-    }
+  }
   }
 
-  const hasStarted = startTime ? new Date(startTime).getTime() < now : false
+  const hasStarted = startTime ? startTime < now : false
 
   const message = soldOut
     ? 'All NFTs have been claimed'
@@ -74,7 +58,7 @@ export const useValidate = (
   return {
     valid: !soldOut && hasStarted,
     message: message,
-    isValidating: isLoading || isLoadingUnclaimedSupply,
-    maxClaimablePerWallet,
+    isValidating: isLoadingActiveId || isLoadingCondition || isLoadingMints,
+    maxClaimablePerWallet: maxClaimablePerWallet.toString(),
   }
 }

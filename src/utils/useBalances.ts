@@ -1,11 +1,12 @@
 import { constants } from 'ethers'
 
-import { useQuery } from 'react-query'
-import { useAddress } from '@thirdweb-dev/react'
-import { getJsonRpcProviders } from './getJsonRpcProviders'
+import { useAccount, useBalance } from 'wagmi'
+import { l1, l2 } from '@/config/chain'
+import { useQuery } from 'react-query';
+import { getJsonRpcProviders } from './getJsonRpcProviders';
 
 const useBalances = () => {
-  const address = useAddress()
+  const {address} = useAccount();
   const { data, isLoading } = useQuery({
     queryKey: ['balances', address],
     queryFn: async ({ queryKey }) => {
