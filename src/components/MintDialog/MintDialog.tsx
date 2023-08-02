@@ -43,6 +43,16 @@ export const MintDialog: FC = () => {
   const { fundsStatus } = useFundsStatus(totalPrice, open, page)
 
   useEffect(() => {
+    if (
+      page &&
+      [
+        ModalPage.NATIVE_MINT_PENDING_CONFIRMATION,
+        ModalPage.NATIVE_MINTING_PENDING_TX,
+        ModalPage.MINT_SUCCESS,
+      ].includes(page)
+    ) {
+      return
+    }
     setPage(() => {
       switch (fundsStatus) {
         case 'sufficient':
