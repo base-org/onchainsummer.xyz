@@ -4,7 +4,11 @@ const atari: Partner = {
   slug: 'bridge-to-base',
   name: 'Coinbase',
   url: '',
-  description: `Base is for everyone, everywhere. Bridge to Base to join us as the journey begins. This NFT commemorates you being early to Base — home to an expanding ecosystem of applications, fast & cheap transactions, all on top of Ethereum. Onchain Summer is here.`,
+  description: `Base is for everyone, everywhere. Bridge to Base to join us as the journey begins. 
+
+This NFT commemorates you being early to Base — home to an expanding ecosystem of applications, fast & cheap transactions, all on top of Ethereum. 
+
+Onchain Summer is here.`,
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/coinbase/icon.png',
   aarweaveDigest: '',

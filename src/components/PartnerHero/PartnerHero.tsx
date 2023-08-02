@@ -1,3 +1,5 @@
+import remarkGfm from 'remark-gfm'
+import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
@@ -48,12 +50,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         />
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll order-2 md:order-1 md:gap-8 hide-scrollbar">
-        <div className="flex gap-2 md:mt-6">
+        {/* <div className="flex gap-2 md:mt-6">
           <div className="relative h-6 w-6">
             <Image src={icon} alt={`${name} Icon`} fill />
           </div>
           <span className="font-medium">{name}</span>
-        </div>
+        </div> */}
         <h1 className="text-[32px] leading-none font-display md:text-[46px]">
           {headline.name}
         </h1>
@@ -61,7 +63,16 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           address={headline.creator as Address}
           className={clsx(teaser && '!bg-ocs-blue !text-white')}
         />
-        <h2 className="font-sans text-[#444]">{description}</h2>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            p: ({ node, ...props }) => (
+              <p {...props} className="font-sans text-[#444]" />
+            ),
+          }}
+        >
+          {description}
+        </ReactMarkdown>
         <div className="flex flex-col w-full gap-4 mt-auto">
           <Separator className={clsx(separatorBackgroundColor)} />
           <Countdown startDate={headline.startDate} date={headline.endDate} />
