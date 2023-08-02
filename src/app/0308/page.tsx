@@ -1,11 +1,11 @@
 'use client'
 
-import { Teaser as TeaserComp } from '@/components/Teaser'
+import { Teaser as Teaser0308 } from '@/components/Teaser'
 
 export default function Teaser() {
   return (
     <div className="bg-teaser-gradient h-fit flex-grow">
-      <TeaserComp />
+      <Teaser0308 />
     </div>
   )
 }

@@ -54,6 +54,8 @@ module.exports = {
           'linear-gradient(to bottom, #FCD22D 0%, #FCD22D 11%, #735DFF 11%, #735DFF 26%, #54DCE7 26%, #54DCE7 45%, #FF7DCB 45%, #FF7DCB 68%, #0052FF 68%, #0052FF 100%)',
         'teaser-gradient':
           'linear-gradient(to bottom, white 0%, white 65.77%, #FF7DCB 65.77%, #FF7DCB 67.88%, #0052FF 67.88%, #0052FF 69.76%, #54DCE7 69.76%,  #54DCE7 72.53%, #FCD22D 72.53%, #FCD22D 80.08%, #735DFF 80.08%, #735DFF 84.41%, #0052FF 84.41%, #0052FF 100%)',
+        'teaser-gradient-ios':
+          'linear-gradient(to bottom, white 0%, white 50%, #FF7DCB 50%, #FF7DCB 53.11%, #0052FF 53.11%, #0052FF 55.88%, #54DCE7 55.88%,  #54DCE7 59.99%, #FCD22D 59.99%, #FCD22D 71.10%, #735DFF 71.10%, #735DFF 77.54%, #0052FF 77.54%, #0052FF 100%)',
       },
       keyframes: {
         overlayShow: {
