@@ -35,11 +35,11 @@ export const Teaser: FC<TeaserProps> = ({
           !showPartnerHero && 'h-1/2'
         )}
       >
-        <div className="h-[54px] w-[54px] rounded-full bg-[#FCD22D] mt-6"></div>
+        <div className="h-[54px] w-[54px] rounded-full bg-[#FCD22D]"></div>
         <h1 className="mt-10 mb-6 text-7xl sm:text-[80px] font-display">
           08.09.23
         </h1>
-        <div className="flex justify-center gap-2 md:mb-[58.5px] mb-8 flex-wrap">
+        <div className="flex justify-center gap-2 md:mb-[56px] mb-8 flex-wrap">
           <EmailSubscriptionDialog
             mirrorProjectAddress={mirrorProjectAddress}
             mirrorSubscribeUrl={mirrorSubscribeUrl}
@@ -51,7 +51,7 @@ export const Teaser: FC<TeaserProps> = ({
           </CBSubscribeDialog>
         </div>
         {showPartnerHero && (
-          <div className="mb-20">
+          <div className="mb-[34px]">
             <PartnerHero
               partner={partner}
               headline={featuredDrop}
