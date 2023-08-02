@@ -57,9 +57,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <h1 className="text-[32px] leading-none font-display md:text-[46px]">
           {headline.name}
         </h1>
+        <h2 className="hidden md:inline-block font-sans text-[#444]">
+          {description}
+        </h2>
         <AddressPill address={headline.creator as Address} />
         <div className="flex flex-col w-full gap-4 mt-auto">
-          <p className="md:hidden">{description}</p>
+          <h2 className="font-sans text-[#444] md:hidden">{description}</h2>
           <Separator className={clsx(separatorBackgroundColor)} />
           <Countdown startDate={headline.startDate} date={headline.endDate} />
           {headline.externalLink ? (
