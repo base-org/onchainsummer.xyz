@@ -186,24 +186,24 @@ export default function RootLayout({
         >
           <QueryClientProvider>
             <QueryParamProvider>
-                <Providers>
+              <Providers>
                 {SHOW_TEASER ||
-              // @ts-ignore remove this when we have a better way to check for
-              children?.props?.childProp?.segment === 'teaser' ? (
-                <div className="bg-teaser-gradient h-fit flex-grow">
-                  <Teaser
-                    mirrorSubscribeUrl={MIRROR_SUBSCRIBE_URL}
-                    mirrorProjectAddress={MIRROR_PROJECT_ADDRESS}
-                  />
-                </div>
-              ) : (
-                <>
-                  <Navbar />
-                  {children}
-                  <Footer />
-                </>
-              )}
-                </Providers>
+                // @ts-ignore remove this when we have a better way to check for
+                children?.props?.childProp?.segment === 'teaser' ? (
+                  <div className="h-fit flex-grow">
+                    <Teaser
+                      mirrorSubscribeUrl={MIRROR_SUBSCRIBE_URL}
+                      mirrorProjectAddress={MIRROR_PROJECT_ADDRESS}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                  </>
+                )}
+              </Providers>
             </QueryParamProvider>
           </QueryClientProvider>
         </body>
