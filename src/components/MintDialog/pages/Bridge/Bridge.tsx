@@ -18,17 +18,24 @@ interface BridgeProps {
   setPage: React.Dispatch<ModalPage>
 }
 
+const roundDownToDecimals = (value: number) => {
+  console.log('v', value)
+  const scalar = value < 0.01 ? 10000 : 100
+  return Math.floor(scalar * value) / scalar
+}
+
 export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPage }) => {
+  console.log('min', minAmount)
   const [amount, setAmount] = useState(
-    (Math.floor(Math.min(
+    roundDownToDecimals(Math.min(
       0.25,
       Math.max(
-        Number(formatEther(l1Balance)),
         0.2 * Number(formatEther(l1Balance)),
         Number(formatEther(parseEther(minAmount)))
       )
-    ) * 100) / 100).toString()
+    )).toString()
   )
+
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
     parseEther(amount || '0')
   )

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { formatEther, parseEther } from 'ethers/lib/utils'
@@ -8,6 +8,7 @@ import useBalances from '@/utils/useBalances'
 import dialogClasses from '@/components/dialog.module.css'
 import { l1 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
+import { min } from 'date-fns'
 
 interface NotStartedProps {
   amount: string
@@ -29,6 +30,10 @@ export const NotStarted: FC<NotStartedProps> = ({
 
   const { l1Balance } = useBalances()
 
+  const recommendationIsMin = useMemo(() => {
+    return amount == minAmount
+  }, [amount, min])
+
   return (
     <div className="flex flex-col md:my-auto">
       <Dialog.Title className={dialogClasses.title}>
@@ -38,8 +43,8 @@ export const NotStarted: FC<NotStartedProps> = ({
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span>
-            You need ETH on Base to mint! We recommend bridging {amount} ETH, but
-            you&apos;ll need at least {minAmount} ETH.{' '}
+             You need ETH on Base to mint! {!recommendationIsMin ?` We recommend bridging ${amount} ETH, but ` : ''} 
+            {recommendationIsMin ? "Y" : "y"}ou&apos;ll need at least {minAmount} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"
