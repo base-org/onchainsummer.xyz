@@ -14,7 +14,7 @@ const lensURL: string = "https://lenster.xyz/";
 type ShareComponentProps = {}
 export const Share:  FC<ShareComponentProps> = () => {
     const { dropName } =  useMintDialogContext();
-    const shareText = `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.It’s Onchain Summer.`;
+    const shareText = `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0aIt’s Onchain Summer.%0aonchainsummer.xyz`;
 
     const tweetUrl = `${twitterURL}?url=${website.url}&text=${shareText}`;
     const warpCastShareUrl = `${warpCastURL}/~/compose?text=${shareText}&embeds[]=${website.url}`;
