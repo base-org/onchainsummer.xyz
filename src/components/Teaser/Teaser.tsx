@@ -31,21 +31,21 @@ export const Teaser: FC<TeaserProps> = ({
     >
       <div
         className={clsx(
-          'flex flex-col justify-center items-center z-0 mx-4 sm:max-w-[1286px] lg:mx-auto',
+          'flex flex-col justify-center items-center z-0 mx-4 sm:max-w-[1000px] lg:mx-auto',
           !showPartnerHero && 'h-1/2'
         )}
       >
         <div className="h-[54px] w-[54px] rounded-full bg-[#FCD22D]"></div>
-        <h1 className="mt-10 mb-6 text-7xl sm:text-[80px] font-display">
+        <h1 className="mt-6 mb-6 text-4xl sm:text-[60px] font-display">
           08.09.23
         </h1>
-        <div className="flex justify-center gap-2 md:mb-[56px] mb-8 flex-wrap">
+        <div className="flex justify-center gap-2 md:mb-[24px] mb-8 flex-wrap">
           <EmailSubscriptionDialog
             mirrorProjectAddress={mirrorProjectAddress}
             mirrorSubscribeUrl={mirrorSubscribeUrl}
           />
           <CBSubscribeDialog>
-            <Button className="flex-1 !py-[11px]" variant="LIGHT">
+            <Button className="flex-1 !py-[8px]" variant="LIGHT">
               SUBSCRIBE WITH WALLET
             </Button>
           </CBSubscribeDialog>
