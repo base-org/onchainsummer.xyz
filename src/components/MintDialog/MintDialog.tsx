@@ -87,8 +87,6 @@ export const MintDialog: FC = () => {
 
   const buttonTitle = useMemo(() => {
     switch (page) {
-      case ModalPage.MINT_ERROR:
-        return 'Tx Failed'
       case ModalPage.MINT_SUCCESS:
         return 'Success'
       case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
@@ -98,6 +96,7 @@ export const MintDialog: FC = () => {
         return 'Minting...'
       case ModalPage.BRIDGE:
       case ModalPage.NATIVE_MINT:
+      case ModalPage.MINT_ERROR:
         return (
           <>
             {trendingPageNativeMint ? (
