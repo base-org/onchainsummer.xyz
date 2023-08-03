@@ -38,7 +38,7 @@ async function fetchData(connectedWallet: string) {
 }
 
 export const Trending: FC<TrendingComponentProps> = () => {
-  const {address: connectedWallet} = useAccount()
+  const { address: connectedWallet } = useAccount()
   const { data, error, isLoading } = useQuery<QueryResult>({
     queryKey: [connectedWallet],
     queryFn: ({ queryKey }) => {
@@ -177,8 +177,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
               )
             )}
         <Button
-          size="SMALL"
-          className="flex justify-between [@media(min-width:724px)]:!hidden grow lg:grow-0 uppercase text-white !bg-black h-[60px]"
+          className="flex justify-between [@media(min-width:724px)]:!hidden grow lg:grow-0 uppercase text-white !bg-black"
           variant="DARK"
           href="/trending"
         >

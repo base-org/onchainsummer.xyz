@@ -43,11 +43,11 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
 }) => {
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
-  const {address: walletAddress} = useAccount()
+  const { address: walletAddress } = useAccount()
   const [email, setEmail] = useState('')
 
   return (
-    <div className="flex flex-col w-full h-full items-center overflow-scroll">
+    <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
       {prepared ? (
         <div className="w-full max-w-[294px] flex flex-col gap-1 mb-2.5 font-inter mt-0.5 ml-0.5 mr-0.5 px-0.5">
@@ -125,30 +125,33 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
           }
         }}
       />
-
-      <Button
-        variant="LIGHT"
-        className={clsx(
-          'w-full max-w-[294px] flex flex-col gap-1 mb-4 !font-inter !py-2 !capitalize',
-          { '-mt-5': prepared }
-        )}
-        onClick={() => {
-          setPage(ModalPage.NATIVE_MINT)
-        }}
-      >
-        Go Back
-      </Button>
-      <p className="w-full max-w-[294px] text-xs text-center">
-        By paying, you accept{' '}
-        <a
-          className="underline"
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://www.crossmint.com/legal/terms-of-service"
-        >
-          Crossmint&apos;s Terms
-        </a>
-      </p>
+      {prepared && (
+        <>
+          <Button
+            variant="LIGHT"
+            className={clsx(
+              'w-full max-w-[294px] flex flex-col gap-1 mb-4 !font-inter !py-2 !capitalize z-50',
+              { '-mt-5': prepared }
+            )}
+            onClick={() => {
+              setPage(ModalPage.NATIVE_MINT)
+            }}
+          >
+            Go Back
+          </Button>
+          <p className="w-full max-w-[294px] text-xs text-center">
+            By paying, you accept{' '}
+            <a
+              className="underline"
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.crossmint.com/legal/terms-of-service"
+            >
+              Crossmint&apos;s Terms
+            </a>
+          </p>
+        </>
+      )}
     </div>
   )
 }
