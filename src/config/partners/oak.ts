@@ -8,7 +8,7 @@ const oak: Partner = {
   description:
     'Oak is a community owned platform for creators to monetize their digital work.',
   brandColor: '#95098b',
-  icon: '/partners/oak/icon.png',
+  icon: '/partners/oak/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@oak_network',
   drops: [

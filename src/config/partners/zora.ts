@@ -8,7 +8,7 @@ const zora: Partner = {
   description:
     'Zora is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/zora/logo.webp',
+  icon: '/partners/zora/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@lo',
   drops: [

@@ -11,7 +11,7 @@ This NFT commemorates you being early — you’re one of the first to teleport 
 It’s Onchain Summer and we’re excited to celebrate with you.
 `,
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/base/icon.png',
+  icon: '/partners/base/icon.svg',
   aarweaveDigest: '',
   twitter: '@BuildonBase',
   drops: [
