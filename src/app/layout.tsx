@@ -136,7 +136,7 @@ export const metadata = {
   themeColor: website.themeColor,
   openGraph: {
     title: website.title,
-    description: website.title,
+    description: website.description,
     url: 'https://onchainsummer.xyz',
     siteName: website.siteName,
     images: [website.logo],
