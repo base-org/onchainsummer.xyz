@@ -55,7 +55,7 @@ export const NativeMint: FC<NativeMintProps> = ({
 
   return (
     <>
-      {!isPending ? <PartnerInfo /> : null}
+      {/* Temporarily disabled for teaser: {!isPending ? <PartnerInfo /> : null} */}
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title
         className={clsx(dialogClasses.title, 'lg:mt-2', {
