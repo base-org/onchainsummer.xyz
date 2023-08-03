@@ -4,7 +4,7 @@ const atari: Partner = {
   slug: 'bridge-to-base',
   name: 'Base',
   url: '',
-  description: `Base Mainnet opens for everyone on August 9 with Onchain Summer, a multi-week festival of onchain art, music, gaming, & more.
+  description: `Base mainnet opens for everyone on August 9 with Onchain Summer, a multi-week festival of onchain art, music, gaming, & more.
 
 Bridge today to get ready and mint an NFT that commemorates you being early, one of the first to teleport to the new internet.
 `,
