@@ -36,7 +36,10 @@ export const Success: FC<SuccessProps> = ({
           Your mint is confirmed — you’re officially the new owner of {dropName}
           .
         </span>
-        <AddressPill address={creatorAddress as Address} />
+        <AddressPill
+          address={creatorAddress as Address}
+          className={'!bg-ocs-blue !text-white'}
+        />
       </Dialog.Description>
 
       <Dialog.Close asChild>

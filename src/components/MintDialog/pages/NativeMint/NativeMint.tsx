@@ -40,7 +40,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   insufficientFunds,
   crossMintClientId,
 }) => {
-  const {switchNetwork} = useSwitchNetwork()
+  const { switchNetwork } = useSwitchNetwork()
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
@@ -75,7 +75,10 @@ export const NativeMint: FC<NativeMintProps> = ({
         className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
       >
         <Dialog.Description className="flex flex-col w-full gap-4">
-          <AddressPill address={creatorAddress as Address} />
+          <AddressPill
+            address={creatorAddress as Address}
+            className={'!bg-ocs-blue !text-white'}
+          />
           <Quantity quantity={quantity} setQuantity={setQuantity} />
           <span className="text-button-text-text flex justify-between mb-4">
             <span>
@@ -86,9 +89,7 @@ export const NativeMint: FC<NativeMintProps> = ({
         </Dialog.Description>
 
         {wrongChain && switchNetwork ? (
-          <Button onClick={() => switchNetwork(l2.id)}>
-            Switch to Base
-          </Button>
+          <Button onClick={() => switchNetwork(l2.id)}>Switch to Base</Button>
         ) : insufficientFunds ? (
           <Button onClick={() => setPage(ModalPage.INSUFFICIENT_FUNDS)}>
             Mint ({totalPrice} ETH)
