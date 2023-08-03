@@ -1,3 +1,4 @@
+import { formatEther } from 'ethers/lib/utils'
 import { FC, useMemo, useState } from 'react'
 import { BridgeState, useBridge } from '../../elements/useBridge'
 import { Pending } from '../../elements/Pending'
@@ -8,16 +9,28 @@ import { NotStarted } from './NotStarted'
 import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
+import { BridgeError } from './BridgeError'
+import { BigNumber } from 'ethers'
 
 interface BridgeProps {
+  l1Balance: BigNumber
   minAmount: string
   setPage: React.Dispatch<ModalPage>
 }
 
-export const Bridge: FC<BridgeProps> = ({ minAmount = '0.251', setPage }) => {
-  const [amount, setAmount] = useState(minAmount)
+export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPage }) => {
+  const [amount, setAmount] = useState(
+    (Math.floor(Math.min(
+      0.25,
+      Math.max(
+        Number(formatEther(l1Balance)),
+        0.2 * Number(formatEther(l1Balance)),
+        Number(formatEther(parseEther(minAmount)))
+      )
+    ) * 100) / 100).toString()
+  )
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
-    parseEther(amount)
+    parseEther(amount || '0')
   )
 
   const awaitingConfirmation = bridgeState === BridgeState.AWAITING_CONFIRMATION
@@ -53,6 +66,14 @@ export const Bridge: FC<BridgeProps> = ({ minAmount = '0.251', setPage }) => {
         )
       case BridgeState.BRIDGED:
         return <Success l2TxHash={l2TxHash} setPage={setPage} amount={amount} />
+      case BridgeState.ERROR:
+        return (
+          <BridgeError
+            setPage={setPage}
+            l1TxHash={l1TxHash}
+            l2TxHash={l2TxHash}
+          />
+        )
       default:
         return null
     }

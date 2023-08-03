@@ -2,14 +2,17 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
-import { ThirdWebProviderClient } from '../components/client'
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
-import { QueryClientProvider } from '../components/client'
 import { cookies } from 'next/headers'
 import { Password } from '@/components/Password/Password'
 import { website } from '@/config/website'
+import { Providers } from './providers'
+import ThirdWebProviderClient from '@/components/client/QueryClientProvider'
+import QueryClientProvider from '@/components/client/QueryClientProvider'
+import { Teaser } from '@/components/Teaser/Teaser'
+import { Navbar } from '@/components/Navbar'
+import { TeaserNav } from '@/components/Teaser/TeaserNav'
+import { Footer } from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -102,6 +105,11 @@ const coinbaseDisplay = localFont({
   ],
 })
 
+const SHOW_TEASER = process.env.TEASER === 'true'
+const PASSWORD_PROTECT = process.env.PASSWORD_PROTECT
+const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
+const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
+
 export const metadata = {
   title: {
     template: `%s | ${website.siteName}`,
@@ -153,7 +161,7 @@ export default function RootLayout({
   const cookieStore = cookies()
   const password = cookieStore.get('ocspw')
 
-  if (!password) {
+  if (!password && !!PASSWORD_PROTECT) {
     return (
       <html lang="en" className="flex flex-col h-full">
         <body>
@@ -164,7 +172,15 @@ export default function RootLayout({
     )
   }
 
+  const isTeaser =
+    SHOW_TEASER ||
+    // @ts-ignore
+    children?.props?.childProp?.segment === 'teaser' ||
+    // @ts-ignore
+    children?.props?.childProp?.segment === '0308'
+
   return (
+    // we should be able to remove thirdweb here, but I am leaving for now
     <ThirdWebProviderClient>
       <html lang="en" className="flex flex-col h-full">
         <body
@@ -179,11 +195,23 @@ export default function RootLayout({
         >
           <QueryClientProvider>
             <QueryParamProvider>
-              <>
-                <Navbar />
-                {children}
-                <Footer />
-              </>
+              <Providers>
+                {isTeaser ? (
+                  <div className="h-fit flex-grow">
+                    <TeaserNav />
+                    <Teaser
+                      mirrorSubscribeUrl={MIRROR_SUBSCRIBE_URL}
+                      mirrorProjectAddress={MIRROR_PROJECT_ADDRESS}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                  </>
+                )}
+              </Providers>
             </QueryParamProvider>
           </QueryClientProvider>
         </body>

@@ -1,14 +1,13 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 
-import { formatEther } from 'ethers/lib/utils'
+import { formatEther, parseEther } from 'ethers/lib/utils'
 import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
 import useBalances from '@/utils/useBalances'
-import { useChainId, useSwitchChain } from '@thirdweb-dev/react'
-
 import dialogClasses from '@/components/dialog.module.css'
 import { l1 } from '@/config/chain'
+import { useNetwork, useSwitchNetwork } from 'wagmi'
 
 interface NotStartedProps {
   amount: string
@@ -23,12 +22,13 @@ export const NotStarted: FC<NotStartedProps> = ({
   minAmount,
   bridge,
 }) => {
-  const switchChain = useSwitchChain()
-  const chainId = useChainId()
+  const {switchNetwork} = useSwitchNetwork()
+  const {chain} = useNetwork()
 
-  const wrongChain = chainId !== l1.chainId
+  const wrongChain = chain && chain.id !== l1.id
 
   const { l1Balance } = useBalances()
+
   return (
     <div className="flex flex-col md:my-auto">
       <Dialog.Title className={dialogClasses.title}>
@@ -38,8 +38,8 @@ export const NotStarted: FC<NotStartedProps> = ({
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span>
-            You need ETH on Base to mint! We recommend bridging 0.25 ETH, but
-            you&apos;ll need at least 0.007 ETH.{' '}
+            You need ETH on Base to mint! We recommend bridging {amount} ETH, but
+            you&apos;ll need at least {minAmount} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"
@@ -80,10 +80,12 @@ export const NotStarted: FC<NotStartedProps> = ({
             <span>{formatEther(l1Balance)} ETH</span>
           </div>
         </div>
-        {wrongChain ? (
-          <Button onClick={() => switchChain(l1.chainId)}>Switch to L1</Button>
+        {wrongChain && switchNetwork ? (
+          <Button onClick={() => switchNetwork(l1.id)}>Switch to L1</Button>
         ) : (
-          <Button onClick={bridge}>Bridge now</Button>
+          <Button disabled={!amount} onClick={bridge}>
+            Bridge now
+          </Button>
         )}
       </div>
     </div>

@@ -1,6 +1,5 @@
 'use client'
 
-import { useAddress } from '@thirdweb-dev/react'
 import clsx from 'clsx'
 import { useQuery } from 'react-query'
 import { FC } from 'react'
@@ -18,6 +17,7 @@ import { RightArrow } from '@/components/icons/RightArrow'
 
 import { Collection } from '@/utils/mintDotFunTypes'
 import { shortenAddress } from '@/utils/address'
+import { useAccount } from 'wagmi'
 
 export interface TrendingComponentProps {}
 
@@ -38,7 +38,7 @@ async function fetchData(connectedWallet: string) {
 }
 
 export const Trending: FC<TrendingComponentProps> = () => {
-  const connectedWallet = useAddress()
+  const {address: connectedWallet} = useAccount()
   const { data, error, isLoading } = useQuery<QueryResult>({
     queryKey: [connectedWallet],
     queryFn: ({ queryKey }) => {

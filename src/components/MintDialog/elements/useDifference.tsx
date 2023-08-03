@@ -1,6 +1,6 @@
-import { useBalance } from '@thirdweb-dev/react'
 import { constants } from 'ethers'
 import { formatEther, parseEther } from 'ethers/lib/utils'
+import { useBalance } from 'wagmi'
 
 export const useDifference = (totalPrice: string) => {
   const balance = useBalance()

@@ -1,14 +1,7 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Button } from '../Button'
 import clsx from 'clsx'
-import {
-  useAddress,
-  useChain,
-  useDisconnect,
-  useNetworkMismatch,
-  useSwitchChain,
-} from '@thirdweb-dev/react'
 import { shortenAddress } from '@/utils/address'
 import { ChainSwitch } from '../icons/ChainSwitch'
 import useBalances from '@/utils/useBalances'
@@ -17,21 +10,25 @@ import { Eth } from '../icons/Eth'
 import { Separator } from '../Separator'
 import { Base } from '../icons/Base'
 import { ArrowRight } from '../icons/ArrowRight'
-import { BaseGoerli } from '@thirdweb-dev/chains'
+import { baseGoerli } from 'wagmi/chains'
 import { useEns } from '@/utils/useEns'
 import { Loading } from '../icons/Loading'
 import dialogClasses from '@/components/dialog.module.css'
+import { useAccount, useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi'
+import { useIsMisMatched } from '@/utils/useIsMismatched'
+
+
 
 interface WalletDialogProps {}
 
 export const WalletDialog: FC<WalletDialogProps> = ({}) => {
-  const address = useAddress()
+  const {address} = useAccount()
   const { name, avatar, isLoading: isLoadingEns } = useEns()
-  const isMismatched = useNetworkMismatch()
-  const switchChain = useSwitchChain()
-  const chain = useChain()
-  const disconnect = useDisconnect()
+  const {switchNetwork} = useSwitchNetwork()
+  const {chain} = useNetwork()
+  const {disconnect} = useDisconnect()
   const { l1Balance, l2Balance, isLoading: isLoadingBalance } = useBalances()
+  const isMismatched = useIsMisMatched();
 
   if (!address || !chain) {
     return null
@@ -95,21 +92,22 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
 
             <div className="flex flex-col gap-4">
               <span className="flex gap-2 items-center font-medium font-mono text-sm uppercase">
-                {chain.icon ? (
+                {/* TODO find a way to get iconURL from RainbowKit, WAGMI doesn't have */}
+                {/* {chain ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={`https://ipfs.io/ipfs/${chain.icon.url.slice(7)}`}
                     className="h-4 w-4 rounded-full"
                     alt=""
                   />
-                ) : null}
-                {chain.title || chain.name}
+                ) : null} */}
+                {chain.name}
               </span>
-              {isMismatched ? (
+              {isMismatched && switchNetwork? (
                 <Button
                   className="flex items-center gap-2 !justify-between w-full"
                   size="SMALL"
-                  onClick={() => switchChain(BaseGoerli.chainId)}
+                  onClick={() => switchNetwork(baseGoerli.id)}
                 >
                   Switch to Base
                   <ChainSwitch color="white" />
@@ -129,7 +127,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
               <div className="flex justify-between items-center">
                 <Base />{' '}
                 {isLoadingBalance ? '...' : formatEther(l2Balance).slice(0, 10)}{' '}
-                Base ETH
+                ETH
               </div>
             </div>
 
@@ -137,7 +135,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
               className="flex items-center gap-2 !justify-between w-full"
               variant="LIGHT"
               size="SMALL"
-              onClick={disconnect}
+              onClick={() => disconnect()}
             >
               Disconnect Wallet{' '}
               <ArrowRight height={16} width={16} color={'#151515'} />

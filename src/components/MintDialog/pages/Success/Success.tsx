@@ -8,6 +8,7 @@ import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
 import dialogClasses from '@/components/dialog.module.css'
+import { Address } from 'viem'
 interface SuccessProps {
   resetModal: () => void
   txHash: string
@@ -33,7 +34,7 @@ export const Success: FC<SuccessProps> = ({
           Your mint is confirmed — you’re officially the new owner of {dropName}
           .
         </span>
-        <AddressPill address={creatorAddress} />
+        <AddressPill address={creatorAddress as Address} />
       </Dialog.Description>
 
       <Dialog.Close asChild>

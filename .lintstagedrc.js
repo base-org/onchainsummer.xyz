@@ -1,9 +1,16 @@
 const path = require('path')
 
-const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
+const exclusions = [
+  'generated/tw721.ts'
+]
+
+const buildEslintCommand = (filenames) => {
+  const filteredFilenames = filenames
     .map((f) => path.relative(process.cwd(), f))
-    .join(' --file ')}`
+    .filter((f) => !exclusions.includes(f))
+
+  return `next lint --fix --file ${filteredFilenames.join(' --file ')}`
+}
 
 module.exports = {
   '**/*.(ts|tsx)': [

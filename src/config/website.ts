@@ -16,6 +16,6 @@ export const website = {
     creator: '@onchainsummer',
   },
   keywords: ['NFT', 'OnchainSummer', 'Coinbase'],
-  themeColor: '#FF7DCB',
+  themeColor: '#ffffff',
   manifest: '/manifest.json',
 }
