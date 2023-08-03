@@ -37,16 +37,16 @@ export const EmailSubscriptionDialog: React.FC<
             </button>
           </Dialog.Close>
           <Dialog.Title className="text-[32px] font-display m-0">
-            {formSubmitted ? 'You’re in the know!' : 'Don\'t miss a mint!'}
+            {formSubmitted ? 'You’re in the know!' : "Don't miss a mint!"}
           </Dialog.Title>
           <Dialog.Description className="font-sans mt-[10px] mb-8 leading-normal text-[#444]">
             {formSubmitted ? (
               'Check your email to confirm subscription to Mirror.'
             ) : (
               <>
-                Subscribe via{' '}
-                <span className="font-medium">email</span> to get daily updates. Mint the posts
-                on Mirror as unique NFTs that celebrate the creatives behind Onchain Summer.
+                Subscribe via <span className="font-medium">email</span> to get
+                daily updates. Mint the posts on Mirror as unique NFTs that
+                celebrate the creatives behind Onchain Summer.
               </>
             )}
           </Dialog.Description>
