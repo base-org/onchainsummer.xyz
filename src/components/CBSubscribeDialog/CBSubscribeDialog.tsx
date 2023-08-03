@@ -50,7 +50,7 @@ export const CBSubscribeDialog: FC<
                 </li>
                 <li className="mb-4">
                   2. Message <b className="font-[500]">“gm”</b> to{' '}
-                  <b className="font-[500]">onchainsummer.cb.id</b> using
+                  <b className="font-[500]">onchainsummer.eth</b> using
                   Coinbase Wallet’s messaging feature
                 </li>
                 <li className="mb-6">

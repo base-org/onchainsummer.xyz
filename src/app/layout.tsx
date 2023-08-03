@@ -177,7 +177,7 @@ export default function RootLayout({
     // @ts-ignore
     children?.props?.childProp?.segment === 'teaser' ||
     // @ts-ignore
-    children?.props?.childProp?.segment === '0308'
+    children?.props?.childProp?.segment === '0803'
 
   return (
     // we should be able to remove thirdweb here, but I am leaving for now

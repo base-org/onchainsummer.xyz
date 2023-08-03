@@ -19,7 +19,7 @@ export const Teaser: FC<TeaserProps> = ({
 }) => {
   const partner = coinbaseConfig
   const featuredDrop = partner.drops[0]
-  const showPartnerHero = window.location.pathname !== '/0308'
+  const showPartnerHero = window.location.pathname !== '/0803'
 
   return (
     <div
