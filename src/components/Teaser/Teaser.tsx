@@ -61,6 +61,7 @@ export const Teaser: FC<TeaserProps> = ({
               headline={featuredDrop}
               staticHeadline={false}
               teaser={true}
+              customHeader={"Bridge and mint today"}
             />
           </div>
         )}

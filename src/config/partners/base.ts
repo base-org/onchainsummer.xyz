@@ -16,7 +16,7 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
     {
       image: '/partners/base/drop/giphy.gif',
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
-      name: 'Bridge and mint today',
+      name: 'Bridge to Base',
       address: '0xEa2a41c02fA86A4901826615F9796e603C6a4491',
       crossMintClientId: '',
       type: 'erc-721',

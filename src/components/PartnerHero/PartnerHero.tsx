@@ -17,12 +17,14 @@ interface PartnerHeroProps {
   headline: Drop
   staticHeadline: boolean
   teaser?: boolean
+  customHeader?: String
 }
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
   headline,
   teaser,
+  customHeader
 }) => {
   const isBeforeStartDate = isBefore(
     new Date().getTime(),
@@ -57,7 +59,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <span className="font-medium">{name}</span>
         </div> */}
         <h1 className="text-[32px] leading-none font-display md:text-[34px]">
-          {headline.name}
+          {customHeader ? customHeader : headline.name}
         </h1>
         <div className="flex items-center mb-2">
           <span className="mr-2 text-slate-500">by</span>
