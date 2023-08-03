@@ -1,6 +1,6 @@
 import { Partner } from './types'
 
-const atari: Partner = {
+const base: Partner = {
   slug: 'bridge-to-base',
   name: 'Base',
   url: '',
@@ -29,4 +29,4 @@ It’s Onchain Summer and we’re excited to celebrate with you.
   ],
 }
 
-export default atari
+export default base

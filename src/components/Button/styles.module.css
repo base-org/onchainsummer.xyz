@@ -3,11 +3,11 @@
 }
 
 .button-small {
-  @apply px-4 py-2.5;
+  @apply px-4 py-3 md:py-2.5;
 }
 
 .button-large {
-  @apply px-8 py-4;
+  @apply px-8 py-3 md:py-4;
 }
 
 .button-dark {
