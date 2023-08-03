@@ -2,7 +2,7 @@
 
 import { FC } from 'react'
 import clsx from 'clsx'
-import coinbaseConfig from '../../config/partners/coinbase'
+import baseConfig from '../../config/partners/base'
 import { PartnerHero } from '../PartnerHero'
 import { EmailSubscriptionDialog } from '../EmailSubscriptionDialog'
 import { Button } from '@/components/Button'
@@ -17,7 +17,7 @@ export const Teaser: FC<TeaserProps> = ({
   mirrorProjectAddress,
   mirrorSubscribeUrl,
 }) => {
-  const partner = coinbaseConfig
+  const partner = baseConfig
   const featuredDrop = partner.drops[0]
   const showPartnerHero = window.location.pathname !== '/0803'
 
