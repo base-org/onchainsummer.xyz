@@ -44,7 +44,7 @@ export const MintError: FC<MintErrorProps> = ({
         return (
           <span>
             Unfortunately, your transaction didn’t go through. Check your
-            transaction for more details or <b>contact the Base team</b>.
+            transaction for more details or <a href='https://base.org/discord' ><b>contact the Base team</b></a>.
           </span>
         )
     }
