@@ -32,7 +32,7 @@ export const Teaser: FC<TeaserProps> = ({
     >
       <div
         className={clsx(
-          'flex flex-col justify-center items-center z-0 mx-4 sm:max-w-[900px] lg:mx-auto',
+          'flex flex-col justify-center items-center z-0 mx-4 sm:max-w-[900px] lg:mx-auto mt-8 sm:mt-0',
           !showPartnerHero && 'h-1/2'
         )}
       >
