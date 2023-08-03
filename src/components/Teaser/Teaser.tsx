@@ -62,7 +62,7 @@ export const Teaser: FC<TeaserProps> = ({
           </div>
         )}
       </div>
-      <div className="w-screen bg-[#0052FF] h-16 md:h-48 absolute">
+      <div className="w-full bg-[#0052FF] h-16 md:h-48 absolute">
         <PartnerCarousel />
       </div>
     </div>
