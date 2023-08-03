@@ -2,7 +2,7 @@ import { Partner } from './types'
 
 const atari: Partner = {
   slug: 'bridge-to-base',
-  name: 'Coinbase',
+  name: 'Base',
   url: '',
   description: `Base is for everyone, everywhere. Bridge to Base to join us as the journey begins.
 
@@ -11,12 +11,12 @@ This NFT commemorates you being early — you’re one of the first to teleport 
 It’s Onchain Summer and we’re excited to celebrate with you.
 `,
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/coinbase/icon.png',
+  icon: '/partners/base/icon.png',
   aarweaveDigest: '',
-  twitter: '@coinbase',
+  twitter: '@BuildonBase',
   drops: [
     {
-      image: '/partners/coinbase/drop/giphy.gif',
+      image: '/partners/base/drop/giphy.gif',
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
       name: 'Bridge to Base',
       address: '0xEa2a41c02fA86A4901826615F9796e603C6a4491',
