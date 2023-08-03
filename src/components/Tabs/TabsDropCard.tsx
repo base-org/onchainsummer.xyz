@@ -48,7 +48,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
           {link ? (
             <Link
               className="text-[32px] leading-8 after:absolute after:inset-0"
-              href={`/partners/${slug}`}
+              href={`/${slug}`}
             >
               {name}
             </Link>

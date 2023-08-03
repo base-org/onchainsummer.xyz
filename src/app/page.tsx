@@ -79,7 +79,7 @@ const Home = async ({ searchParams }: Props) => {
                 />
                 <Button
                   className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 !w-[136px] !py-2"
-                  href={`/partners/${partner.slug}`}
+                  href={`/${partner.slug}`}
                 >
                   Read More
                 </Button>
