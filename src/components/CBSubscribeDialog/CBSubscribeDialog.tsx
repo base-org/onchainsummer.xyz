@@ -54,7 +54,7 @@ export const CBSubscribeDialog: FC<
                   Coinbase Wallet’s messaging feature
                 </li>
                 <li className="mb-6">
-                  3. Get daily updates on Onchain Summer Mints
+                  3. Get daily updates on Onchain Summer mints
                 </li>
               </ol>
               <div className="block lg:hidden">
@@ -68,8 +68,20 @@ export const CBSubscribeDialog: FC<
             </div>
           </div>
           <p className="text-[#858585] font-mono text-[14px] text-center mt-4">
-            Wallet messaging is powered by XMTP. You need Coinbase Wallet to
-            access these messages. More wallets and apps coming soon.
+            Wallet messaging is powered by XMTP. You can can use Coinbase Wallet
+            to access these messages, or another client like{' '}
+            <a href="https://xmtp.chat/" target="_blank" className="underline">
+              the XMTP web client
+            </a>{' '}
+            or{' '}
+            <a
+              href="https://getconverse.app/"
+              target="_blank"
+              className="underline"
+            >
+              Converse
+            </a>
+            . More wallets and apps coming soon.
           </p>
         </Dialog.Content>
       </Dialog.Portal>
