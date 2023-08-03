@@ -6,7 +6,7 @@ export const website = {
   url: 'https://onchainsummer.xyz',
   siteName: 'Onchain Summer',
   logo: {
-    url: '/logo.png',
+    url: 'https://onchainsummer.xyz/logo.png',
     width: 3840,
     height: 2160,
     alt: 'Onchain Summer',
