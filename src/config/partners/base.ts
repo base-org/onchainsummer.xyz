@@ -4,11 +4,9 @@ const atari: Partner = {
   slug: 'bridge-to-base',
   name: 'Base',
   url: '',
-  description: `Base is for everyone, everywhere. Bridge to Base to join us as the journey begins.
+  description: `Base Mainnet opens for everyone on August 9 with Onchain Summer, a multi-week festival of onchain art, music, gaming, & more.
 
-This NFT commemorates you being early — you’re one of the first to teleport into the next generation of the internet as we work to bring billions of people onchain.
-
-It’s Onchain Summer and we’re excited to celebrate with you.
+Bridge today to get ready and mint an NFT that commemorates you being early, one of the first to teleport to the new internet.
 `,
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/base/icon.png',
@@ -18,7 +16,7 @@ It’s Onchain Summer and we’re excited to celebrate with you.
     {
       image: '/partners/base/drop/giphy.gif',
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
-      name: 'Bridge to Base',
+      name: 'Bridge and mint today',
       address: '0xEa2a41c02fA86A4901826615F9796e603C6a4491',
       crossMintClientId: '',
       type: 'erc-721',

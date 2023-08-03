@@ -56,7 +56,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           </div>
           <span className="font-medium">{name}</span>
         </div> */}
-        <h1 className="text-[32px] leading-none font-display md:text-[46px]">
+        <h1 className="text-[32px] leading-none font-display md:text-[34px]">
           {headline.name}
         </h1>
         <div className="flex items-center mb-2">
