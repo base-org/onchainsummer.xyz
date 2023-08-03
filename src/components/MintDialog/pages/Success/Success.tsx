@@ -9,6 +9,8 @@ import { PartnerInfo } from '../../elements/PartnerInfo'
 import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
 import dialogClasses from '@/components/dialog.module.css'
 import { Address } from 'viem'
+import { Share } from '@/components/Share';
+
 interface SuccessProps {
   resetModal: () => void
   txHash: string
@@ -46,6 +48,11 @@ export const Success: FC<SuccessProps> = ({
           }}
         />
       </Dialog.Close>
+
+      <Dialog.DialogContent>
+          <h3 className="font-sans text-[16px] text-[#151515]">Share on </h3>
+          <Share/>
+      </Dialog.DialogContent>
     </>
   )
 }
