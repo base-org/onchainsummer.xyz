@@ -7,6 +7,7 @@ import { PartnerHero } from '../PartnerHero'
 import { EmailSubscriptionDialog } from '../EmailSubscriptionDialog'
 import { Button } from '@/components/Button'
 import { CBSubscribeDialog } from '@/components/CBSubscribeDialog'
+import { PartnerCarousel } from '../PartnerCarousel/PartnerCarousel'
 
 interface TeaserProps {
   mirrorSubscribeUrl?: string | undefined
@@ -60,6 +61,9 @@ export const Teaser: FC<TeaserProps> = ({
             />
           </div>
         )}
+      </div>
+      <div className="w-full bg-[#0052FF] h-16 md:h-48 absolute">
+        <PartnerCarousel />
       </div>
     </div>
   )
