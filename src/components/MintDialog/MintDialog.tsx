@@ -105,7 +105,7 @@ export const MintDialog: FC = () => {
               <>
                 {price === '0' ? (
                   <>
-                    Mint For Free <ArrowRight />
+                    Bridge and Mint For Free <ArrowRight />
                   </>
                 ) : (
                   <>
