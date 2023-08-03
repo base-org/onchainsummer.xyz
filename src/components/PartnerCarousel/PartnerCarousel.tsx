@@ -5,7 +5,9 @@ import Carousel from 'nuka-carousel'
 const PARTNERS = [
   'anotherblock',
   'atari',
+  'iskra',
   'blackbird',
+  'rainbow-wallet',
   'coke',
   'fini',
   'fwb',
@@ -15,16 +17,14 @@ const PARTNERS = [
   'pixelmon',
   'showtime',
   'mirror-wellness',
-  'indelible',
+  'open-sea',
+  'fwb-bonfire',
   'manifold',
   'highlight',
   'onboard',
+  'indelible',
   'optimism',
-  'rainbow-wallet',
-  'iskra',
   'oak',
-  'open-sea',
-  'fwb-bonfire',
 ]
 
 const PARTNER_IMAGE_PATHS = PARTNERS.map(
@@ -39,7 +39,7 @@ export const PartnerCarousel: FC = () => {
         autoplay
         cellAlign="center"
         pauseOnHover={false}
-        slidesToShow={4}
+        slidesToShow={8}
         slidesToScroll={1}
         easing={(n) => n}
         wrapAround
@@ -49,7 +49,7 @@ export const PartnerCarousel: FC = () => {
         {PARTNER_IMAGE_PATHS.map((partnerImagePath) => (
           <div
             key={partnerImagePath}
-            className="w-12 h-12 md:w-36 md:h-36 flex-shrink-0 relative"
+            className="w-12 h-12 md:w-24 md:h-24 flex-shrink-0 relative"
           >
             <Image
               key={partnerImagePath}
