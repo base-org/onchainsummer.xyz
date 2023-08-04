@@ -1,10 +1,11 @@
+'use client'
+
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
 import clsx from 'clsx'
-import { isBefore, isAfter } from 'date-fns'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { Button } from '../Button'
@@ -12,6 +13,7 @@ import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
 import { RightArrow } from '@/components/icons/RightArrow'
+import { getDateRangeValidation } from '@/utils/getDateRangeValidation'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -25,16 +27,15 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
   headline,
   teaser,
-  customHeader
+  customHeader,
 }) => {
-  const isBeforeStartDate = isBefore(
-    new Date().getTime(),
-    new Date(headline.startDate).getTime()
-  )
-  const isAfterEndDate = isAfter(
-    new Date().getTime(),
-    new Date(headline.endDate).getTime()
-  )
+  const urlParams = new URLSearchParams(window.location.search)
+  const spoofDate = urlParams.get('spoofDate')
+  const { isAfterEndDate, isBeforeStartDate } = getDateRangeValidation({
+    startDate: headline.startDate,
+    endDate: headline.endDate,
+    spoofDate,
+  })
 
   const separatorBackgroundColor = isBeforeStartDate
     ? '!bg-black'

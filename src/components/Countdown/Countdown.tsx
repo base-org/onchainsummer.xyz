@@ -6,6 +6,8 @@ import { isBefore, isAfter } from 'date-fns'
 import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
 import { format } from 'date-fns'
+import { getDateRangeValidation } from '@/utils/getDateRangeValidation'
+import { getNow } from '@/utils/getNow'
 
 interface CustomCountdownProps extends CountdownProps {
   startDate: number
@@ -22,8 +24,13 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
-  const isBeforeStartDate = isBefore(new Date().getTime(), props.startDate)
-  const isAfterEndDate = isAfter(new Date().getTime(), props.date)
+  const urlParams = new URLSearchParams(window.location.search)
+  const spoofDate = urlParams.get('spoofDate')
+  const { isAfterEndDate, isBeforeStartDate } = getDateRangeValidation({
+    startDate: props.startDate,
+    endDate: props.date,
+    spoofDate,
+  })
 
   const textColor = isBeforeStartDate
     ? 'text-black'
@@ -46,6 +53,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
         {mounted ? (
           <ReactCountdown
             {...props}
+            now={() => getNow(spoofDate)}
             date={props.date}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (completed) {
