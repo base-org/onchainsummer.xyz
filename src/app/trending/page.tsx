@@ -43,8 +43,7 @@ export default function Trending() {
     queryKey: [connectedWallet, chainId],
     queryFn: ({ queryKey }) => {
       const [connectedWallet, chainId] = queryKey
-      console.log(connectedWallet, 'connectedWallet')
-      console.log(chainId, 'chainId')
+
       return fetchData(connectedWallet as string, chainId as number)
     },
   })

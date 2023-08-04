@@ -25,9 +25,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const connectedWallet = searchParams.get('connectedWallet')
   const chainId = searchParams.get('chain')
-  console.log(searchParams, 'searchParams')
   const url = `${API_URL}/collections?connectedWallet=${connectedWallet}&chain=${chainId}`
-  console.log(url, 'url')
+
   try {
     let media: Media[] = []
 
