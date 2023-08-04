@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import clsx from 'clsx'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
@@ -29,8 +29,10 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   teaser,
   customHeader,
 }) => {
-  const urlParams = new URLSearchParams(window.location.search)
-  const spoofDate = urlParams.get('spoofDate')
+  const spoofDate = useMemo(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    return urlParams.get('spoofDate')
+  }, [])
   const { isAfterEndDate, isBeforeStartDate } = getDateRangeValidation({
     startDate: headline.startDate,
     endDate: headline.endDate,
