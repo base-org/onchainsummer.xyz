@@ -33,7 +33,7 @@ const PARTNER_IMAGE_PATHS = PARTNERS.map(
 
 export const PartnerCarousel: FC = () => {
   return (
-    <div className="w-screen h-full items-center justify-center">
+    <div className="h-full items-center justify-center">
       <Carousel
         withoutControls
         autoplay

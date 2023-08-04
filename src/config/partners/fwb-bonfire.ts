@@ -8,7 +8,7 @@ const fwbBonfire: Partner = {
   description:
     'FWBxBonfire is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/fwb-bonfire/icon.png',
+  icon: '/partners/fwb-bonfire/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@bonfire',
   drops: [

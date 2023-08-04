@@ -32,13 +32,8 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
         className="flex flex-col lg:flex-row lg:pr-6 bg-white rounded-2xl relative overflow-hidden"
         key={address}
       >
-        <div
-          className="p-4 w-full lg:w-[349px] flex-[1_0_auto] justify-center"
-          style={{ backgroundColor: brandColor }}
-        >
-          <div className="relative aspect-square lg:h-[240px] mx-auto">
-            <Image src={image} alt={name} fill className="object-contain" />
-          </div>
+        <div className="relative aspect-square lg:h-[256px] mx-auto p-4 w-full lg:w-[349px] flex-[1_0_auto] justify-center max-h-[256px]">
+          <Image src={image} alt={name} fill className="object-cover" />
         </div>
 
         <div className="lg:flex lg:flex-col lg:justify-start p-4 lg:mt-0 w-full">
@@ -48,7 +43,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
           {link ? (
             <Link
               className="text-[32px] leading-8 after:absolute after:inset-0"
-              href={`/partners/${slug}`}
+              href={`/${slug}`}
             >
               {name}
             </Link>

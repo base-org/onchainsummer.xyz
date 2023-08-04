@@ -8,7 +8,7 @@ const pixelmon: Partner = {
   description:
     'Pixelmon is a community owned platform for creators to monetize their digital work.',
   brandColor: '#F2E6E0',
-  icon: '/partners/pixelmon/icon.jpg',
+  icon: '/partners/pixelmon/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@Pixelmon',
   drops: [

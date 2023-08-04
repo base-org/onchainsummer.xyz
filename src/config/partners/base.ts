@@ -1,6 +1,6 @@
 import { Partner } from './types'
 
-const atari: Partner = {
+const base: Partner = {
   slug: 'bridge-to-base',
   name: 'Base',
   url: '',
@@ -9,7 +9,7 @@ const atari: Partner = {
 Bridge today to get ready and mint an NFT that commemorates you being early, one of the first to teleport to the new internet.
 `,
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/base/icon.png',
+  icon: '/partners/base/icon.svg',
   aarweaveDigest: '',
   twitter: '@BuildonBase',
   drops: [
@@ -27,4 +27,4 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
   ],
 }
 
-export default atari
+export default base
