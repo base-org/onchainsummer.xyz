@@ -4,14 +4,12 @@ const base: Partner = {
   slug: 'bridge-to-base',
   name: 'Base',
   url: '',
-  description: `Base is for everyone, everywhere. Bridge to Base to join us as the journey begins.
+  description: `Base mainnet opens for everyone on August 9 with Onchain Summer, a multi-week festival of onchain art, music, gaming, & more.
 
-This NFT commemorates you being early — you’re one of the first to teleport into the next generation of the internet as we work to bring billions of people onchain.
-
-It’s Onchain Summer and we’re excited to celebrate with you.
+Bridge today to get ready and mint an NFT that commemorates you being early, one of the first to teleport to the new internet.
 `,
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/base/icon.png',
+  icon: '/partners/base/icon.svg',
   aarweaveDigest: '',
   twitter: '@BuildonBase',
   drops: [

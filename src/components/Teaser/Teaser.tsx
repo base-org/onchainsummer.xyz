@@ -32,14 +32,17 @@ export const Teaser: FC<TeaserProps> = ({
     >
       <div
         className={clsx(
-          'flex flex-col justify-center items-center z-0 mx-4 sm:max-w-[1000px] lg:mx-auto',
+          'flex flex-col justify-center items-center z-0 mx-4 sm:max-w-[900px] lg:mx-auto mt-8 sm:mt-0',
           !showPartnerHero && 'h-1/2'
         )}
       >
         <div className="h-[54px] w-[54px] rounded-full bg-[#FCD22D]"></div>
-        <h1 className="mt-6 mb-6 text-4xl sm:text-[60px] font-display">
-          08.09.23
+        <h1 className="mt-6 mb-2 text-4xl sm:text-[60px] font-display text-center">
+          Onchain Summer 08.09.23
         </h1>
+        <h3 className="mt-2 mb-6 text-xl font-display text-center">
+          Bridge and mint today to experience the best of onchain this summer.
+        </h3>
         <div className="flex justify-center gap-2 md:mb-[24px] mb-8 flex-wrap">
           <EmailSubscriptionDialog
             mirrorProjectAddress={mirrorProjectAddress}
@@ -58,6 +61,7 @@ export const Teaser: FC<TeaserProps> = ({
               headline={featuredDrop}
               staticHeadline={false}
               teaser={true}
+              customHeader={"Bridge and mint today"}
             />
           </div>
         )}
