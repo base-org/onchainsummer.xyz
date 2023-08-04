@@ -3,6 +3,7 @@ import { FC } from 'react'
 import Carousel from 'nuka-carousel'
 
 const PARTNERS = [
+  'thirdweb',
   'anotherblock',
   'atari',
   'iskra',
