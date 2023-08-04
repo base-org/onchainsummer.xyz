@@ -105,7 +105,7 @@ export const MintDialog: FC = () => {
               <>
                 {price === '0' ? (
                   <>
-                    Mint For Free <ArrowRight />
+                    Bridge and Mint For Free <ArrowRight />
                   </>
                 ) : (
                   <>
@@ -187,7 +187,7 @@ export const MintDialog: FC = () => {
         return (
           <Bridge
             l1Balance={l1Balance}
-            minAmount={Number(formatEtherByEthers(l2PriceEstimate)).toFixed(3)}
+            minAmount={Number(formatEtherByEthers(l2PriceEstimate)).toFixed(4)}
             setPage={setPage}
           />
         )

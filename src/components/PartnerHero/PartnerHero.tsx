@@ -11,18 +11,21 @@ import { Button } from '../Button'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
+import { RightArrow } from '@/components/icons/RightArrow'
 
 interface PartnerHeroProps {
   partner: Partner
   headline: Drop
   staticHeadline: boolean
   teaser?: boolean
+  customHeader?: String
 }
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
   partner: { name, icon, description },
   headline,
   teaser,
+  customHeader
 }) => {
   const isBeforeStartDate = isBefore(
     new Date().getTime(),
@@ -56,14 +59,14 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           </div>
           <span className="font-medium">{name}</span>
         </div> */}
-        <h1 className="text-[32px] leading-none font-display md:text-[46px]">
-          {headline.name}
+        <h1 className="text-[32px] leading-none font-display md:text-[34px]">
+          {customHeader ? customHeader : headline.name}
         </h1>
         <div className="flex items-center mb-2">
           <span className="mr-2 text-slate-500">by</span>
           <AddressPill
-          address={headline.creator as Address}
-          className={clsx(teaser && '!bg-ocs-blue !text-white')}
+            address={headline.creator as Address}
+            className={clsx(teaser && '!bg-ocs-blue !text-white')}
           />
         </div>
         <ReactMarkdown
@@ -79,21 +82,34 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <div className="flex flex-col w-full gap-4 mt-auto">
           <Separator className={clsx(separatorBackgroundColor)} />
           <Countdown startDate={headline.startDate} date={headline.endDate} />
-          {headline.externalLink ? (
-            <Button href={headline.externalLink}>
-              Mint {headline.price} ETH
+          {isAfterEndDate ? (
+            <Button
+              href="https://nft.coinbase.com/"
+              className="!flex !justify-between"
+              external
+              size="LARGE"
+            >
+              Collect <RightArrow fill="white" />
             </Button>
           ) : (
-            <MintButton
-              address={headline.address}
-              crossMintClientId={headline.crossMintClientId}
-              price={headline.price}
-              partnerIcon={icon}
-              partnerName={name}
-              dropImage={headline.image}
-              dropName={headline.name}
-              creatorAddress={headline.creator}
-            />
+            <>
+              {headline.externalLink ? (
+                <Button href={headline.externalLink}>
+                  Mint {headline.price} ETH
+                </Button>
+              ) : (
+                <MintButton
+                  address={headline.address}
+                  crossMintClientId={headline.crossMintClientId}
+                  price={headline.price}
+                  partnerIcon={icon}
+                  partnerName={name}
+                  dropImage={headline.image}
+                  dropName={headline.name}
+                  creatorAddress={headline.creator}
+                />
+              )}
+            </>
           )}
         </div>
       </div>

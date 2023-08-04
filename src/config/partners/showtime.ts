@@ -8,7 +8,7 @@ const showtime: Partner = {
   description:
     'Showtime is a community owned platform for creators to monetize their digital work.',
   brandColor: 'rgb(231, 171, 67)',
-  icon: '/partners/showtime/icon.jpg',
+  icon: '/partners/showtime/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@Showtime_xyz',
   drops: [

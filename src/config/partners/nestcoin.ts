@@ -8,7 +8,7 @@ const nestcoin: Partner = {
   description:
     'Nestcoin is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/nestcoin/icon.jpg',
+  icon: '/partners/nestcoin/icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@nestcoin',
   drops: [
