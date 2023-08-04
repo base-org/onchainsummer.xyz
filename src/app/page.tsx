@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import format from 'date-fns/format'
 import compareAsc from 'date-fns/compareAsc'
+
 import Image from 'next/image'
 import { SDK } from '@/utils/graphqlSdk'
 import { Button } from '@/components/Button'
@@ -16,13 +17,18 @@ import { TwitterModule } from '@/components/TwitterModule'
 import { Heart } from '@/components/icons/Heart'
 import { RightArrow } from '@/components/icons/RightArrow'
 import { getTweets } from '@/utils/getTweets'
+import { getNow } from '@/utils/getNow'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
 const Home = async ({ searchParams }: Props) => {
-  const { partner, tabs, article, tweets } = await getPageData()
+  const spoofDateParam = searchParams.spoofDate
+  const spoofDate = Array.isArray(spoofDateParam)
+    ? spoofDateParam[0]
+    : spoofDateParam
+  const { partner, tabs, article, tweets } = await getPageData(spoofDate)
   const { drops, name, icon } = partner
 
   const dropAddressParam = searchParams.drop
@@ -131,8 +137,8 @@ const INITIAL_TABS: TabsComponentProps = {
   pastDrops: [],
 }
 
-async function getPageData() {
-  const now = new Date().getTime() - 4 * 60 * 60 * 1000
+async function getPageData(spoofDate?: string) {
+  const now = getNow(spoofDate)
   const today = format(now, 'yyyy-MM-dd')
 
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
