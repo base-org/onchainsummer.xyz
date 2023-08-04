@@ -3,6 +3,7 @@ import { FC } from 'react'
 import Carousel from 'nuka-carousel'
 
 const PARTNERS = [
+  'thirdweb',
   'anotherblock',
   'atari',
   'iskra',
@@ -25,44 +26,81 @@ const PARTNERS = [
   'indelible',
   'optimism',
   'oak',
+  'lazer',
+  'thirdweb',
 ]
 
 const PARTNER_IMAGE_PATHS = PARTNERS.map(
-  (partner) => `/partners/${partner}/carousel-icon.svg`
+  (partner) => `/partners/${partner}/carousel-icon.png`
 )
 
 export const PartnerCarousel: FC = () => {
   return (
     <div className="h-full items-center justify-center">
-      <Carousel
-        withoutControls
-        autoplay
-        cellAlign="center"
-        pauseOnHover={false}
-        slidesToShow={8}
-        slidesToScroll={1}
-        easing={(n) => n}
-        wrapAround
-        autoplayInterval={3000}
-        speed={3000}
-      >
-        {PARTNER_IMAGE_PATHS.map((partnerImagePath) => (
-          <div
-            key={partnerImagePath}
-            className="w-12 h-12 md:w-24 md:h-24 flex-shrink-0 relative"
-          >
-            <Image
+      <div className="sm:hidden">
+        <Carousel
+          withoutControls
+          autoplay
+          cellAlign="center"
+          pauseOnHover={false}
+          slidesToShow={4}
+          slidesToScroll={1}
+          easing={(n) => n}
+          wrapAround
+          autoplayInterval={3000}
+          speed={3000}
+        >
+          {PARTNER_IMAGE_PATHS.map((partnerImagePath) => (
+            <>
+              <div
+                key={partnerImagePath}
+                className="w-24 h-16 flex-shrink-0 relative"
+              >
+                <Image
+                  key={partnerImagePath}
+                  fill
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                  src={partnerImagePath}
+                  alt={partnerImagePath}
+                />
+              </div>
+            </>
+          ))}
+        </Carousel>
+      </div>
+      <div className="hidden sm:block">
+        <Carousel
+          withoutControls
+          autoplay
+          cellAlign="center"
+          pauseOnHover={false}
+          slidesToShow={8}
+          slidesToScroll={1}
+          easing={(n) => n}
+          wrapAround
+          autoplayInterval={3000}
+          speed={3000}
+        >
+          {PARTNER_IMAGE_PATHS.map((partnerImagePath) => (
+            <div
               key={partnerImagePath}
-              fill
-              style={{
-                objectFit: 'contain',
-              }}
-              src={partnerImagePath}
-              alt={partnerImagePath}
-            />
-          </div>
-        ))}
-      </Carousel>
+              className="w-40 h-36 flex-shrink-0 relative"
+            >
+              <Image
+                key={partnerImagePath}
+                fill
+                style={{
+                  objectFit: 'contain',
+                }}
+                src={partnerImagePath}
+                alt={partnerImagePath}
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
     </div>
   )
 }
