@@ -14,6 +14,7 @@ interface NotStartedProps {
   amount: string
   setAmount: React.Dispatch<string>
   minAmount: string
+  recommendedAmount: string
   bridge: () => Promise<void>
 }
 
@@ -21,6 +22,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   amount,
   setAmount,
   minAmount,
+  recommendedAmount,
   bridge,
 }) => {
   const {switchNetwork} = useSwitchNetwork()
@@ -31,7 +33,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   const { l1Balance } = useBalances()
 
   const recommendationIsMin = useMemo(() => {
-    return amount == minAmount
+    return recommendedAmount == minAmount
   }, [amount, min])
 
   return (
@@ -43,7 +45,7 @@ export const NotStarted: FC<NotStartedProps> = ({
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span>
-             You need ETH on Base to mint! {!recommendationIsMin ?` We recommend bridging ${amount} ETH, but ` : ''} 
+             You need ETH on Base to mint! {!recommendationIsMin ?` We recommend bridging ${recommendedAmount} ETH, but ` : ''} 
             {recommendationIsMin ? "Y" : "y"}ou&apos;ll need at least {minAmount} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
