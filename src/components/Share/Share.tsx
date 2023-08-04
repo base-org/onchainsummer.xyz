@@ -8,13 +8,13 @@ import { WarpCast } from '@/components/icons/Warpcast';
 import {Lens} from "@/components/icons/Lens";
 
 const twitterURL: string = "https://twitter.com/intent/tweet";
-const warpCastURL: string = "https://warpcast.com/";
-const lensURL: string = "https://lenster.xyz/";
+const warpCastURL: string = "https://warpcast.com";
+const lensURL: string = "https://lenster.xyz";
 
 type ShareComponentProps = {}
 export const Share:  FC<ShareComponentProps> = () => {
     const { dropName } =  useMintDialogContext();
-    const shareText = `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0aIt’s Onchain Summer.%0aonchainsummer.xyz`;
+    const shareText = `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`;
 
     const tweetUrl = `${twitterURL}?url=${website.url}&text=${shareText}`;
     const warpCastShareUrl = `${warpCastURL}/~/compose?text=${shareText}&embeds[]=${website.url}`;
