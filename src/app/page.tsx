@@ -51,10 +51,10 @@ const Home = async ({ searchParams }: Props) => {
           <section className="w-full shadow-large rounded-3xl">
             <div className="bg-gray-200/80 p-[20px] lg:p-4 rounded-3xl">
               <div className="mb-4 flex gap-2">
-                <div className="relative z-20 h-20 w-20">
+                <div className="relative z-20 h-[80px] w-[80px] md:h-20 md:w-20">
                   <Image src={icon} alt={`${partner} Icon`} fill />
                 </div>
-                <div className="">
+                <div className="flex-1">
                   <h2 className="text-[32px]">{name}</h2>
                   <p className="text-[16px] uppercase text-[#858585]">
                     Collection
