@@ -13,7 +13,7 @@ import { Teaser } from '@/components/Teaser/Teaser'
 import { Navbar } from '@/components/Navbar'
 import { TeaserNav } from '@/components/Teaser/TeaserNav'
 import { Footer } from '@/components/Footer'
-import Script from 'next/Script'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
