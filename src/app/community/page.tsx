@@ -1,10 +1,11 @@
 import { PageContainer } from '@/components/PageContainer'
+import Image from 'next/image'
 import { Heart } from '@/components/icons/Heart'
 import { communityData } from '../../config/community'
-import Image from 'next/image'
 import { format } from 'date-fns'
 import { TwitterModule } from '@/components/TwitterModule'
 import { getTweets } from '@/utils/getTweets'
+import Grant from '../../../public/grant.png'
 
 const Community = async () => {
   const { tweets } = await getPageData()
@@ -18,18 +19,46 @@ const Community = async () => {
           <h1 className="text-[46px] md:leading-[50px] my-6 font-display">
             Community
           </h1>
+          <p className="text-[20px] md:text-[24px] text-[#151515] font-display">
+            Base is for everyone and with that, we want to invite all builders
+            to Base as part of Onchain Summer!
+          </p>
+          <p className="text-[20px] md:text-[24px] text-[#151515] mt-6 font-display">
+            We are excited to be partnering with Prop House to run several
+            rounds of retro prizes for those building on Base. Holders of a
+            variety of Base NFTs will be able to vote in these rounds.
+          </p>
         </div>
       </section>
       {tweets && Array.isArray(tweets.data) && (
-        <section className="mx-6 mt-16">
+        <section className="mx-6 mt-12">
           <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
             <TwitterModule tweets={tweets} />
           </div>
         </section>
       )}
+      <section className="mx-6 mt-14">
+        <div className="flex gap-4 items-end">
+          <div className="w-16 h-16">
+            <Image
+              src={Grant}
+              alt={''}
+              fill
+              className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
+            />
+          </div>
+          <div>
+            <h3 className="text-[32px] font-display text-[#151515]">
+              Base Grants
+            </h3>
+            <span className="font-mono text-[#444]">
+              {communityData?.length} rounds
+            </span>
+          </div>
+        </div>
+      </section>
       <section className="mx-6 mt-8">
-        <h2 className="text-[32px] text-[#444]">Grants</h2>
-        <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32">
+        <div className="p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32">
           {communityData.map(
             ({
               title,
