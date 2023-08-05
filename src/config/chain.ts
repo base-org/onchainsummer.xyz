@@ -1,9 +1,4 @@
-import {
-    base,
-    baseGoerli,
-    goerli,
-    mainnet
-  } from 'wagmi/chains';
+import { base, baseGoerli, goerli, mainnet } from 'wagmi/chains'
 
 export const isProd = process.env.NEXT_PUBLIC_CHAIN_ENV === 'mainnet'
 
