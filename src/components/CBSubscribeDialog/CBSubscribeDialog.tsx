@@ -59,7 +59,7 @@ export const CBSubscribeDialog: FC<
               </ol>
               <div className="block lg:hidden">
                 <Button
-                  href="https://go.cb-w.com/onchain-summer-subscribe"
+                  href="https://go.cb-w.com/messaging?address=0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3"
                   external
                 >
                   SUBSCRIBE IN APP
