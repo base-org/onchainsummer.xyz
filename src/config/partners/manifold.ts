@@ -8,7 +8,8 @@ const manifold: Partner = {
   description:
     'Manifold is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/manifold/icon.svg',
+  icon: '/partners/manifold/icon.png',
+  banner: '/partners/manifold/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@manifold_labs',
   drops: [

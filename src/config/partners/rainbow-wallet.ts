@@ -8,7 +8,8 @@ const rainbowWallet: Partner = {
   description:
     'Rainbow is a community owned platform for creators to monetize their digital work.',
   brandColor: '#e9f2ff',
-  icon: '/partners/rainbow-wallet/icon.svg',
+  icon: '/partners/rainbow-wallet/icon.png',
+  banner: '/partners/rainbow-wallet/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@rainbowdotme',
   drops: [

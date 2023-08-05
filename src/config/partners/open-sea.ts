@@ -8,7 +8,8 @@ const openSeaConfig: Partner = {
   description:
     'Our cutting-edge platform not only empowers but also inspires artists, creators, and collectors, enabling them to actively engage and thrive in the groundbreaking digital revolution of non-fungible tokens (NFTs).',
   brandColor: '#2081E2',
-  icon: '/partners/open-sea/icon.svg',
+  icon: '/partners/open-sea/icon.png',
+  banner: '/partners/open-sea/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@opensea',
   drops: [

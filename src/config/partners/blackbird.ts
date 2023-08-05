@@ -8,7 +8,8 @@ const blackbird: Partner = {
   description:
     'Blackbird is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/blackbird/icon.svg',
+  icon: '/partners/blackbird/icon.png',
+  banner: '/partners/blackbird/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@blackbird_xyz',
   drops: [
