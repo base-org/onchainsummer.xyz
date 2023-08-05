@@ -7,7 +7,7 @@ type DropDetails = {
 
 export const unlimited: DropDetails = isProd
   ? {
-      crossMintClientId: '',
+      crossMintClientId: 'd3adf3b6-2e94-406a-8196-678281a938ea',
       address: '0x97fCc2cbeC045dD1Bbd3C12f39DF244FDe3fc859',
     }
   : {
