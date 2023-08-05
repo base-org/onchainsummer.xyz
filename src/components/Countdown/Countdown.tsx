@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 import ReactCountdown, { CountdownProps } from 'react-countdown'
 import { isBefore, isAfter } from 'date-fns'
 import { Clock } from '../icons/Clock'
