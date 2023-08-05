@@ -18,32 +18,24 @@ import { RightArrow } from '@/components/icons/RightArrow'
 import { Collection } from '@/utils/mintDotFunTypes'
 import { shortenAddress } from '@/utils/address'
 import { useAccount } from 'wagmi'
-
+import { l2 } from '@/config/chain'
+import { getTrendingData } from '@/utils/getTrendingData'
 export interface TrendingComponentProps {}
 
 interface QueryResult {
   collections: Collection[]
 }
 
-async function fetchData(connectedWallet: string) {
-  const res = await fetch(`/api/trending?connectedWallet=${connectedWallet}`)
-
-  if (!res.ok) {
-    throw new Error(`HTTP error! status: ${res.status}`)
-  }
-
-  const data = await res.json()
-
-  return data
-}
-
 export const Trending: FC<TrendingComponentProps> = () => {
   const { address: connectedWallet } = useAccount()
+  const chainId = l2.id
+
   const { data, error, isLoading } = useQuery<QueryResult>({
-    queryKey: [connectedWallet],
+    queryKey: [connectedWallet, chainId],
     queryFn: ({ queryKey }) => {
-      const [connectedWallet] = queryKey
-      return fetchData(connectedWallet as string)
+      const [connectedWallet, chainId] = queryKey
+
+      return getTrendingData(connectedWallet as string, chainId as number)
     },
   })
 

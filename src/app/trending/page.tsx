@@ -13,23 +13,10 @@ import { PageContainer } from '@/components/PageContainer'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
 import { l2 } from '@/config/chain'
+import { getTrendingData } from '@/utils/getTrendingData'
 
 interface QueryResult {
   collections: Collection[]
-}
-
-async function fetchData(connectedWallet: string, chainId: number) {
-  const res = await fetch(
-    `/api/trending?connectedWallet=${connectedWallet}&chain=${chainId}`
-  )
-
-  if (!res.ok) {
-    throw new Error(`HTTP error! status: ${res.status}`)
-  }
-
-  const data = await res.json()
-
-  return data
 }
 
 const VISIBLE_NFTS = {
@@ -44,7 +31,7 @@ export default function Trending() {
     queryFn: ({ queryKey }) => {
       const [connectedWallet, chainId] = queryKey
 
-      return fetchData(connectedWallet as string, chainId as number)
+      return getTrendingData(connectedWallet as string, chainId as number)
     },
   })
 
