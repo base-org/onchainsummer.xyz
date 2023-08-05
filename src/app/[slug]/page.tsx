@@ -11,6 +11,7 @@ import { PageContainer } from '@/components/PageContainer'
 import { Metadata, ResolvingMetadata } from 'next'
 import { website } from '@/config/website'
 import { getDrops } from '@/utils/getDrops'
+import { getNow } from '@/utils/getNow'
 
 type Props = {
   params: { slug: string }
@@ -18,8 +19,13 @@ type Props = {
 }
 
 const Page = async ({ params, searchParams }: Props) => {
+  const spoofDateParam = searchParams.spoofDate
+
+  const spoofDate = Array.isArray(spoofDateParam)
+    ? spoofDateParam[0]
+    : spoofDateParam
   const slug = params.slug
-  const { partner, article } = await getPartner(slug)
+  const { partner, article } = await getPartner(slug, spoofDate)
 
   const dropAddressParam = searchParams.drop
 
@@ -86,13 +92,18 @@ export async function generateMetadata(
   // read route params
   const slug = params.slug
   const dropAddressParam = searchParams.drop
+  const spoofDateParam = searchParams.spoofDate
+
+  const spoofDate = Array.isArray(spoofDateParam)
+    ? spoofDateParam[0]
+    : spoofDateParam
 
   const dropAddress = Array.isArray(dropAddressParam)
     ? dropAddressParam[0]
     : dropAddressParam
 
   // fetch data
-  const { partner } = await getPartner(slug)
+  const { partner } = await getPartner(slug, spoofDate)
 
   const { featuredDrop } = getDrops(partner.drops, dropAddress)
 
@@ -126,9 +137,10 @@ export async function generateMetadata(
   }
 }
 
-async function getPartner(slug: string, dropAddress?: string | string[]) {
-  const now = new Date().getTime()
-  const today = format(now - 4 * 60 * 60 * 1000, 'yyyy-MM-dd')
+async function getPartner(slug: string, spoofDate?: string) {
+  const now = getNow(spoofDate)
+
+  const today = format(now, 'yyyy-MM-dd')
 
   const date = Object.keys(schedule).find(
     (date) => schedule[date].slug === slug
