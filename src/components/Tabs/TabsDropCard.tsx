@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import { format } from 'date-fns'
 import { Countdown } from '../Countdown'
 import Link from 'next/link'
+import { useMemo } from 'react'
 
 interface TabsDropCardProps {
   address: string
@@ -26,6 +29,18 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
   brandColor,
   link = false,
 }) => {
+  const url = useMemo(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const spoofDate = urlParams.get('spoofDate')
+    const url = new URL(`/${slug}`, document.baseURI)
+
+    if (!spoofDate) return url
+
+    url.searchParams.set('spoofDate', spoofDate)
+
+    return url
+  }, [slug])
+
   return (
     <>
       <div
@@ -43,7 +58,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
           {link ? (
             <Link
               className="text-[32px] leading-8 after:absolute after:inset-0"
-              href={`/${slug}`}
+              href={url}
             >
               {name}
             </Link>

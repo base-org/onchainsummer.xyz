@@ -8,7 +8,8 @@ const fini: Partner = {
   description:
     'fini is a community owned platform for creators to monetize their digital work.',
   brandColor: 'rgb(255, 121, 121)',
-  icon: '/partners/fini/icon.svg',
+  icon: '/partners/fini/icon.png',
+  banner: '/partners/fini/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@finiliar',
   drops: [
