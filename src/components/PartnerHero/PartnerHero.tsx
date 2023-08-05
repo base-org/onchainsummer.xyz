@@ -56,12 +56,14 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         />
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll order-2 md:order-1 md:gap-4 hide-scrollbar">
-        {/* <div className="flex gap-2 md:mt-6">
-          <div className="relative h-6 w-6">
-            <Image src={icon} alt={`${name} Icon`} fill />
+        {name !== 'Base' && (
+          <div className="flex gap-2 md:mt-6">
+            <div className="relative h-6 w-6">
+              <Image src={icon} alt={`${name} Icon`} fill />
+            </div>
+            <span className="font-medium">{name}</span>
           </div>
-          <span className="font-medium">{name}</span>
-        </div> */}
+        )}
         <h1 className="text-[32px] leading-none font-display md:text-[34px]">
           {customHeader ? customHeader : headline.name}
         </h1>
