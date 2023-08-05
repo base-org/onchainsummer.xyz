@@ -4,8 +4,8 @@ import { randomIntFromInterval } from './randomIntFromInterval'
 export function getDrops(drops: Drop[], dropAddress?: string) {
   const dropsLength = drops.length
 
-  const randomDropIndex = randomIntFromInterval(0, dropsLength - 1)
-  const randomDrop = drops[randomDropIndex]
+  // const randomDropIndex = randomIntFromInterval(0, dropsLength - 1)
+  const randomDrop = drops[0]
 
   const featuredDrop = dropAddress
     ? drops.find((drop) => drop.address === dropAddress) || randomDrop
