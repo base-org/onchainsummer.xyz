@@ -116,7 +116,7 @@ export const metadata = {
     default: website.siteName, // a default is required when creating a template
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
