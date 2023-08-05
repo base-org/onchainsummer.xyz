@@ -8,7 +8,8 @@ const iskra: Partner = {
   description:
     'Iskra is a community owned platform for creators to monetize their digital work.',
   brandColor: '#007aff',
-  icon: '/partners/iskra/icon.svg',
+  icon: '/partners/iskra/icon.png',
+  banner: '/partners/iskra/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@iskra_world',
   drops: [

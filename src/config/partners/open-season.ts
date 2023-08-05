@@ -8,7 +8,8 @@ const openSeason: Partner = {
   description:
     'It’s the season of giving, and we’re giving you the chance to win a one-of-a-kind NFT from the OpenSea team. We’ve created 10 unique NFTs, and we’re giving them away to 10 lucky winners. All you have to do is enter your email address below for a chance to win.',
   brandColor: '#31FEA6',
-  icon: '/partners/open-sea/icon.svg',
+  icon: '/partners/open-sea/icon.png',
+  banner: '/partners/open-sea/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@opensea',
   drops: [

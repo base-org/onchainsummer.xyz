@@ -8,7 +8,8 @@ const mirrorWellness: Partner = {
   description:
     'Mirror Wellness is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/mirror-wellness/icon.svg',
+  icon: '/partners/mirror-wellness/icon.png',
+  banner: '/partners/mirror-wellness/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@lululemonstudio',
   drops: [

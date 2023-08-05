@@ -9,7 +9,8 @@ const base: Partner = {
 Bridge today to get ready and mint an NFT that commemorates you being early, one of the first to teleport to the new internet.
 `,
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/base/icon.svg',
+  icon: '/partners/base/icon.png',
+  banner: '/partners/base/banner-icon.svg',
   aarweaveDigest: '',
   twitter: '@BuildonBase',
   drops: [

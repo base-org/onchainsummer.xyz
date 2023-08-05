@@ -8,7 +8,8 @@ const indelible: Partner = {
   description:
     'Indelible Labs is a community owned platform for creators to monetize their digital work.',
   brandColor: 'rgb(0, 224, 191)',
-  icon: '/partners/indelible/icon.svg',
+  icon: '/partners/indelible/icon.png',
+  banner: '/partners/indelible/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@indelible_labs',
   drops: [

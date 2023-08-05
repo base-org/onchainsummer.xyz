@@ -8,7 +8,8 @@ const atari: Partner = {
   description:
     'Atari is a community owned platform for creators to monetize their digital work.',
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/atari/icon.svg',
+  icon: '/partners/atari/icon.png',
+  banner: '/partners/atari/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@atari',
   drops: [

@@ -22,6 +22,7 @@ export interface Partner {
   description: string
   brandColor: string
   icon: string
+  banner: string
   drops: Drop[]
   aarweaveDigest: string
   twitter: string
