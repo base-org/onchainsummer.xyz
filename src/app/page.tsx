@@ -43,7 +43,7 @@ const Home = async ({ searchParams }: Props) => {
         />
         <section className="w-full shadow-large rounded-3xl">
           <div className="bg-gray-200/80 p-4 rounded-3xl">
-            <div className="mb-4 flex gap-2 items-end">
+            <div className="mb-4 flex gap-2 items-start">
               <div className="relative z-20 h-20 w-20">
                 <Image src={icon} alt={`${partner} Icon`} fill />
               </div>
