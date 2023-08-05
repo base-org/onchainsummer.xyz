@@ -24,10 +24,6 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
-  const allowDateSpoofing = useMemo(
-    () => process.env.NEXT_PUBLIC_SPOOF_DATE !== undefined,
-    []
-  )
   const urlParams = new URLSearchParams(window.location.search)
   const spoofDate = urlParams.get('spoofDate')
   const { isAfterEndDate, isBeforeStartDate } = getDateRangeValidation({
