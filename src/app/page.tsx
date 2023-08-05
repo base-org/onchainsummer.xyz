@@ -47,52 +47,58 @@ const Home = async ({ searchParams }: Props) => {
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
         />
-        <section className="w-full shadow-large rounded-3xl">
-          <div className="bg-gray-200/80 p-4 rounded-3xl">
-            <div className="mb-4 flex gap-2 items-end">
-              <div className="relative z-20 h-[80px] w-[80px] md:h-20 md:w-20">
-                <Image src={icon} alt={`${partner} Icon`} fill />
+        {article && (
+          <section className="w-full shadow-large rounded-3xl">
+            <div className="bg-gray-200/80 p-[20px] lg:p-4 rounded-3xl">
+              <div className="mb-4 flex gap-2">
+                <div className="relative z-20 h-20 w-20">
+                  <Image src={icon} alt={`${partner} Icon`} fill />
+                </div>
+                <div className="">
+                  <h2 className="text-[32px]">{name}</h2>
+                  <p className="text-[16px] uppercase text-[#858585]">
+                    Collection
+                  </p>
+                </div>
               </div>
-              <div className="flex-1">
-                <h2 className="text-[32px]">{name}</h2>
-                <p className="text-[16px] uppercase text-[#858585]">
-                  Collection
-                </p>
+              <div className="-mr-4">
+                <div className="overflow-scroll hide-scrollbar">
+                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                    <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
+                      {remainingDrops.map((drop) => (
+                        <li key={drop.name} className="flex flex-col">
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="-mr-4">
-              <div className="overflow-scroll hide-scrollbar">
-                <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
-                  <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
-                    {remainingDrops.map((drop) => (
-                      <li key={drop.name} className="flex flex-col">
-                        <DropCard {...drop} partner={name} partnerIcon={icon} />
-                      </li>
-                    ))}
-                  </ul>
+              <div className="flex flex-col lg:flex-row gap-4 md:gap-11 rounded-xl md:pr-4 lg:my-4 lg:mx-2  break-words">
+                <div className="w-full lg:w-1/2">
+                  <h2 className="text-[32px] font-display">
+                    {article.content.title}
+                  </h2>
+                </div>
+                <div className="w-full lg:w-1/2">
+                  <ReactMarkdown
+                    content={`${article.content.body.slice(0, 500)} ...`}
+                  />
+                  <Button
+                    className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 !w-[136px] !py-2"
+                    href={`/${partner.slug}`}
+                  >
+                    Read More
+                  </Button>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row gap-6 rounded-xl md:px-6 pt-4 mt-4 md:py-7 break-words">
-              <div className="basis-1/2">
-                <h2 className="text-[32px] font-display">
-                  {article.content.title}
-                </h2>
-              </div>
-              <div className="basis-1/2">
-                <ReactMarkdown
-                  content={`${article.content.body.slice(0, 500)} ...`}
-                />
-                <Button
-                  className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 !w-[136px] !py-2"
-                  href={`/${partner.slug}`}
-                >
-                  Read More
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
         {tweets && Array.isArray(tweets.data) && (
           <section className="bg-[#EFEFEF] rounded-3xl p-4">
             <div className="flex justify-between mb-4">
@@ -184,12 +190,15 @@ async function getPageData(spoofDate?: string) {
     digest: featuredPartner.aarweaveDigest,
   })
 
-  const articleId = digest.transactions.edges[0].node.id
+  const articleId = digest?.transactions?.edges[0]?.node?.id
 
-  const res = await fetch(`https://arweave.net/${articleId}`)
+  let article = null
 
-  const article = (await res.json()) as {
-    content: { body: string; title: string }
+  if (articleId) {
+    const res = await fetch(`https://arweave.net/${articleId}`)
+    article = (await res?.json()) as {
+      content: { body: string; title: string }
+    }
   }
 
   const tweets = await getTweets()

@@ -51,12 +51,14 @@ const Page = async ({ params, searchParams }: Props) => {
         />
         <section className="w-full font-text p-1">
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-3xl">
-            <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
-              <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
-                {article.content.title}
-              </h2>
-              <ReactMarkdown content={article.content.body} />
-            </div>
+            {article && (
+              <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
+                <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
+                  {article?.content.title}
+                </h2>
+                <ReactMarkdown content={article.content.body} />
+              </div>
+            )}
             <div className="mb-4 mx-4">
               <div className="-mr-4">
                 <div className="overflow-scroll hide-scrollbar">
@@ -164,12 +166,15 @@ async function getPartner(slug: string, spoofDate?: string) {
     digest: partner.aarweaveDigest,
   })
 
-  const articleId = digest.transactions.edges[0].node.id
+  const articleId = digest?.transactions?.edges[0]?.node?.id
 
-  const res = await fetch(`https://arweave.net/${articleId}`)
+  let article = null
 
-  const article = (await res.json()) as {
-    content: { body: string; title: string }
+  if (articleId) {
+    const res = await fetch(`https://arweave.net/${articleId}`)
+    article = (await res?.json()) as {
+      content: { body: string; title: string }
+    }
   }
 
   return { partner, article }
