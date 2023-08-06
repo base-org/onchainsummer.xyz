@@ -2,6 +2,7 @@
 import clsx from 'clsx'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState } from 'react'
+import dialogClasses from '@/components/dialog.module.css'
 import { Button } from '../Button'
 import { Close } from '../icons/Close'
 
@@ -23,10 +24,10 @@ export const EmailSubscriptionDialog: React.FC<
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className=" bg-[#151515]/80 data-[state=open]:animate-overlayShow fixed inset-0" />
+        <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           onCloseAutoFocus={() => setFormSubmitted(false)}
-          className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[502px] translate-x-[-50%] translate-y-[-50%] rounded-3xl bg-white p-[64px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none"
+          className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[502px] translate-x-[-50%] translate-y-[-50%] rounded-3xl bg-white p-[64px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none z-40"
         >
           <Dialog.Close asChild>
             <button
