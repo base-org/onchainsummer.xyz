@@ -1,4 +1,5 @@
 import { Partner } from './types'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const base: Partner = {
   slug: 'bridge-to-base',
@@ -21,8 +22,8 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
       address: '0xEa2a41c02fA86A4901826615F9796e603C6a4491',
       crossMintClientId: '',
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 2, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 31, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
     },
   ],

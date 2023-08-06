@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const iskra: Partner = {
   slug: 'iskra',
@@ -19,8 +20,8 @@ const iskra: Partner = {
       name: 'Iskra Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 27, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 28, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 28, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

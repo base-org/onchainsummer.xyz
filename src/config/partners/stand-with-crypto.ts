@@ -1,5 +1,6 @@
 import { Partner } from './types'
-import { unlimited, limited } from '../test-contracts'
+import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const standWithCrypto: Partner = {
   slug: 'stand-with-crypto',
@@ -19,8 +20,8 @@ const standWithCrypto: Partner = {
       name: 'Stand With Crypto Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 14, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 15, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 15, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],
