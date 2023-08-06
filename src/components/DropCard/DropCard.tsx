@@ -45,6 +45,7 @@ export const DropCard: FC<DropCardProps> = ({
           <a
             href={externalLink}
             className="text-[32px] after:absolute after:inset-0 flex-auto"
+            target="_blank"
           >
             {name}
           </a>
@@ -52,7 +53,10 @@ export const DropCard: FC<DropCardProps> = ({
           <span className="text-[32px]">{name}</span>
         )}
         <div className="mt-4 mb-8">
-          <AddressPill address={creator as Address} className="bg-ocs-turquoise" />
+          <AddressPill
+            address={creator as Address}
+            className="bg-ocs-turquoise"
+          />
         </div>
         {externalLink ? (
           <Button tabIndex={-1} className="!flex !justify-center">
