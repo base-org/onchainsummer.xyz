@@ -1,6 +1,7 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const fwb: Partner = {
   slug: 'fwb',
@@ -15,7 +16,7 @@ const fwb: Partner = {
   twitter: '@FWBtweets',
   drops: [
     {
-      image: '/partners/fwb/drops/fwb.jpg',
+      image: '/partners/fwb/drops/fwbBlack.jpg',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Friends With Benefits',
       ...unlimited,
@@ -23,6 +24,8 @@ const fwb: Partner = {
       startDate: Date.UTC(2023, 7, 10, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
+      address: '0x2f6f5ef163ed71e32d92666a69190c79a784130f',
+      mintType: MintType.Zora
     },
   ],
 }
