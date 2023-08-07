@@ -21,6 +21,7 @@ import { useFundsStatus } from './elements/useFundsStatus'
 import dialogClasses from '@/components/dialog.module.css'
 import { usePriceEstimate } from './elements/usePriceEstimate'
 import useBalances from '@/utils/useBalances'
+import { Checkmark } from '../icons/Checkmark'
 export type TxDetails = {
   hash: string
 }
@@ -88,7 +89,11 @@ export const MintDialog: FC = () => {
   const buttonTitle = useMemo(() => {
     switch (page) {
       case ModalPage.MINT_SUCCESS:
-        return 'Success'
+        return (
+          <>
+            NFT Minted <Checkmark />
+          </>
+        )
       case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
         return 'Confirming...'
       case ModalPage.CROSS_MINT_PENDING:
@@ -206,6 +211,8 @@ export const MintDialog: FC = () => {
     crossMintClientId,
     crossMintOrderIdentifier,
     fundsStatus,
+    l1Balance,
+    l2PriceEstimate,
     mintError,
     page,
     quantity,
