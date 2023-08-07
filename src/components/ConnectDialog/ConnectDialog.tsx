@@ -50,10 +50,6 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
           (!authenticationStatus ||
             authenticationStatus === 'authenticated');
 
-        if (!connected) {
-          openConnectModal();
-        }
-
         return (
           <div
             {...(!ready && {
