@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ModalPage } from '../../types'
+import { MintType, ModalPage } from '../../types'
 import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { isProd } from '@/config/chain'
 import {
@@ -18,6 +18,7 @@ interface CrossMintProps {
   quantity: number
   totalPrice: string
   orderIdentifier: string
+  mintType: MintType
   setOrderIdentifier: React.Dispatch<string>
   setTxDetails: React.Dispatch<TxDetails | null>
 }
@@ -29,6 +30,7 @@ export const CrossMint: FC<CrossMintProps> = ({
   quantity,
   totalPrice,
   orderIdentifier,
+  mintType,
   setOrderIdentifier,
   setTxDetails,
 }) => {
@@ -77,6 +79,7 @@ export const CrossMint: FC<CrossMintProps> = ({
           quantity={quantity}
           totalPrice={totalPrice}
           clientId={crossMintClientId}
+          mintType={mintType}
         />
       </div>
     </>
