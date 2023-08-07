@@ -5,19 +5,14 @@ import { getNow } from './getNow'
 interface GetDateRangeValidation {
   startDate: number
   endDate: number
-  spoofDate?: string | null
 }
 
 export const getDateRangeValidation = ({
   startDate,
   endDate,
-  spoofDate,
 }: GetDateRangeValidation) => {
-  const isBeforeStartDate = isBefore(
-    getNow(spoofDate),
-    new Date(startDate).getTime()
-  )
-  const isAfterEndDate = isAfter(getNow(spoofDate), new Date(endDate).getTime())
+  const isBeforeStartDate = isBefore(getNow(), new Date(startDate).getTime())
+  const isAfterEndDate = isAfter(getNow(), new Date(endDate).getTime())
 
   return { isAfterEndDate, isBeforeStartDate }
 }
