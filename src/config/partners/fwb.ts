@@ -19,14 +19,13 @@ const fwb: Partner = {
       image: '/partners/fwb/drops/fwbBlack.jpg',
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       name: 'Friends With Benefits',
-      ...unlimited,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 10, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
       address: '0x2f6f5ef163ed71e32d92666a69190c79a784130f',
       mintType: MintType.Zora,
-      crossMintClientId: '44b4116a-4135-438e-99b5-d040cc1ea1c5'
+      crossMintClientId: 'fd5323c8-1df3-452d-8978-a3b41d006bc7'
     },
   ],
 }
