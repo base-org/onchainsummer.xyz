@@ -100,7 +100,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 dropName={headline.name}
                 creatorAddress={headline.creator}
                 endDate={headline.endDate}
-                mintType={headline.mintType || headline.externalLink ? MintType.External : MintType.ThirdWeb}
+                mintType={headline.mintType || (headline.externalLink ? MintType.External : MintType.ThirdWeb)}
               />
             )}
           </>
