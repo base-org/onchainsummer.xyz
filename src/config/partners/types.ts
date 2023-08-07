@@ -1,3 +1,5 @@
+import { MintType } from "@/components/MintDialog/types"
+
 export const DAY = 1000 * 60 * 60 * 24
 
 export type DropType = 'erc-721' | 'zora-erc-1155' | 'external'
@@ -13,6 +15,8 @@ export interface Drop {
   type: DropType
   externalLink?: string
   creator: string
+  // TODO, consider requiring mint type
+  mintType?: MintType
 }
 
 export interface Partner {

@@ -13,6 +13,7 @@ import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
 import { getDateRangeValidation } from '@/utils/getDateRangeValidation'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
+import { MintType } from '@/components/MintDialog/types'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -99,6 +100,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 dropName={headline.name}
                 creatorAddress={headline.creator}
                 endDate={headline.endDate}
+                mintType={headline.mintType || headline.externalLink ? MintType.External : MintType.ThirdWeb}
               />
             )}
           </>

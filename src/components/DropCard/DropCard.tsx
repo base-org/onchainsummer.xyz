@@ -7,6 +7,7 @@ import { AddressPill } from '../AddressPill'
 import { Address } from 'wagmi'
 import { useValidateExternalLink } from '../ExternalDrop/useValidateExternalLink'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
+import { MintType } from '@/components/MintDialog/types'
 
 type DropCardProps = {
   address: Address
@@ -20,6 +21,7 @@ type DropCardProps = {
   endDate: number
   price: string
   creator: string
+  mintType?: MintType
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -34,6 +36,7 @@ export const DropCard: FC<DropCardProps> = ({
   creator,
   startDate,
   endDate,
+  mintType
 }) => {
   const {
     isExternalLink,
@@ -95,6 +98,7 @@ export const DropCard: FC<DropCardProps> = ({
             dropName={name}
             creatorAddress={creator}
             endDate={endDate}
+            mintType={mintType || externalLink ? MintType.External : MintType.ThirdWeb}
           />
         )}
       </div>
