@@ -1,8 +1,8 @@
 'use client'
 
-import { FC, useEffect, useMemo, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import ReactCountdown, { CountdownProps } from 'react-countdown'
-import { isBefore, isAfter } from 'date-fns'
+
 import { Clock } from '../icons/Clock'
 import clsx from 'clsx'
 import { format } from 'date-fns'
@@ -24,12 +24,9 @@ export const Countdown: FC<CustomCountdownProps> = ({
     setMounted(true)
   }, [])
 
-  const urlParams = new URLSearchParams(window.location.search)
-  const spoofDate = urlParams.get('spoofDate')
   const { isAfterEndDate, isBeforeStartDate } = getDateRangeValidation({
     startDate: props.startDate,
     endDate: props.date,
-    spoofDate,
   })
 
   const textColor = isBeforeStartDate
@@ -53,7 +50,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
         {mounted ? (
           <ReactCountdown
             {...props}
-            now={() => getNow(spoofDate)}
+            now={getNow}
             date={props.date}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (completed) {
