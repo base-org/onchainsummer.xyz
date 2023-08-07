@@ -14,11 +14,16 @@ const lensURL: string = "https://lenster.xyz";
 type ShareComponentProps = {}
 export const Share:  FC<ShareComponentProps> = () => {
     const { dropName } =  useMintDialogContext();
-    const shareText = `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`;
+    const { location:{ href } } = window;
+    const shareText = {
+        twitter: `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`,
+        lens: `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`,
+        warpCast: `I just minted ${dropName}, celebrating the start of @base bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`
+    }
 
-    const tweetUrl = `${twitterURL}?url=${website.url}&text=${shareText}`;
-    const warpCastShareUrl = `${warpCastURL}/~/compose?text=${shareText}&embeds[]=${website.url}`;
-    const lensShareUrl = `${lensURL}?text=${shareText}&url=${website.url}`;
+    const tweetUrl = `${twitterURL}?url=${href}&text=${shareText['twitter']}`;
+    const warpCastShareUrl = `${warpCastURL}/~/compose?text=${shareText['warpCast']}&embeds[]=${href}`;
+    const lensShareUrl = `${lensURL}?text=${shareText['lens']}&url=${href}`;
 
     return (
         <div className="flex flex-row items-center m-[10px] gap-4">
