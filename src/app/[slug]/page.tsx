@@ -44,31 +44,31 @@ const Page = async ({ params, searchParams }: Props) => {
           staticHeadline={!!dropAddress}
         />
         <section className="w-full font-text p-1">
+          <div className="mb-4 mx-4">
+            <div className="-mr-4">
+              <div className="overflow-scroll hide-scrollbar">
+                <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                  <ul className="flex flex-row gap-8 last:pr-4">
+                    {remainingDrops.map((drop) => (
+                        <li key={drop.name} className="flex flex-col">
+                          <DropCard
+                              {...drop}
+                              partner={name}
+                              partnerIcon={icon}
+                          />
+                        </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="flex flex-col gap-6 md:gap-10 bg-gray-200/80 w-full rounded-3xl">
             <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
               <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
                 {article.content.title}
               </h2>
               <ReactMarkdown content={article.content.body} />
-            </div>
-            <div className="mb-4 mx-4">
-              <div className="-mr-4">
-                <div className="overflow-scroll hide-scrollbar">
-                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
-                    <ul className="flex flex-row gap-8 last:pr-4">
-                      {remainingDrops.map((drop) => (
-                        <li key={drop.name} className="flex flex-col">
-                          <DropCard
-                            {...drop}
-                            partner={name}
-                            partnerIcon={icon}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -138,9 +138,10 @@ async function getPartner(slug: string, dropAddress?: string | string[]) {
 
   const comparison = compareAsc(new Date(today), new Date(date))
 
-  if (comparison < 0) {
-    redirect('/#drops')
-  }
+  // if (comparison < 0) {
+  //   redirect('/#drops')
+  // }
+  console.log(date)
 
   const partner = schedule[date]
 
