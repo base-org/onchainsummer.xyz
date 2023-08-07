@@ -6,7 +6,6 @@ import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC, useMemo } from 'react'
 import clsx from 'clsx'
-import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
@@ -38,12 +37,6 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
     spoofDate,
   })
 
-  const separatorBackgroundColor = isBeforeStartDate
-    ? '!bg-black'
-    : isAfterEndDate
-    ? '!bg-[#858585]'
-    : '!bg-ocs-gray'
-
   return (
     <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
       <div className="relative w-full aspect-[16/16] mb-1 lg:mb-0 order-1 md:order-2">
@@ -70,7 +63,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <span className="mr-2 text-slate-500">by</span>
           <AddressPill
             address={headline.creator as Address}
-            className={clsx(teaser && '!bg-ocs-gray !text-white')}
+            className={clsx(teaser && '!bg-ocs-blue !text-white')}
           />
         </div>
         <ReactMarkdown
@@ -84,7 +77,6 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           {description}
         </ReactMarkdown>
         <div className="flex flex-col w-full gap-4 mt-auto">
-          <Separator className={clsx(separatorBackgroundColor)} />
           <Countdown startDate={headline.startDate} date={headline.endDate} />
           <>
             {headline.externalLink ? (
