@@ -138,10 +138,9 @@ async function getPartner(slug: string, dropAddress?: string | string[]) {
 
   const comparison = compareAsc(new Date(today), new Date(date))
 
-  // if (comparison < 0) {
-  //   redirect('/#drops')
-  // }
-  console.log(date)
+  if (comparison < 0) {
+    redirect('/#drops')
+  }
 
   const partner = schedule[date]
 
