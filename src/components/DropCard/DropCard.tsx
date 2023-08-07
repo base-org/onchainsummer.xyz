@@ -82,6 +82,7 @@ export const DropCard: FC<DropCardProps> = ({
             startDate={startDate}
             partner={partner}
             contractAddress={address}
+            className="!flex !justify-center mt-auto"
           />
         ) : (
           <MintButton

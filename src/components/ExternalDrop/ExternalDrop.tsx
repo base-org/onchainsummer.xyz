@@ -9,9 +9,13 @@ export interface ExternalDropProps {
   endDate: number
   partner: string
   contractAddress: string
+  className?: string
 }
 
-export const ExternalDrop: FC<ExternalDropProps> = (props) => {
+export const ExternalDrop: FC<ExternalDropProps> = ({
+  className = '',
+  ...props
+}) => {
   const { isExternalLink, status, externalLinkHref, message } =
     useValidateExternalLink(props)
 
@@ -24,6 +28,7 @@ export const ExternalDrop: FC<ExternalDropProps> = (props) => {
       <Button
         href={`https://nft.coinbase.com/collection/base/${props.contractAddress}`}
         external
+        className={className}
       >
         Collect <RightArrow fill="white" />
       </Button>
@@ -31,11 +36,15 @@ export const ExternalDrop: FC<ExternalDropProps> = (props) => {
   }
 
   if (status === 'invalid') {
-    return <Button disabled>{message}</Button>
+    return (
+      <Button disabled className={className}>
+        {message}
+      </Button>
+    )
   }
 
   return (
-    <Button href={externalLinkHref} external>
+    <Button href={externalLinkHref} external className={className}>
       {message}
     </Button>
   )
