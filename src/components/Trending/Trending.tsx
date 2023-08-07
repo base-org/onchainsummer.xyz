@@ -160,6 +160,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                         className="grow lg:grow-0 uppercase border border-1 border-black !bg-white w-2/3 sm:max-w-fit"
                         variant="LIGHT"
                         href={externalURL}
+                        external
                       >
                         View More
                       </Button>
