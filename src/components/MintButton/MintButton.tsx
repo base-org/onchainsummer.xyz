@@ -19,6 +19,7 @@ export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
   const now = getNow()
   const { valid, message, isValidating, maxClaimablePerWallet } = useValidate(
     mintProps.address,
+    mintProps.mintType,
     mintProps.mintDotFunStatus
   )
 
