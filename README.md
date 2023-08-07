@@ -15,7 +15,21 @@ We're bringing the world onchain and we need your help.
 
 ### Getting Started
 
-First, run the development server:
+1. Run the development server:
+
+```bash
+npm install
+# or
+yarn
+```
+
+2. Generate necessary data by running
+
+```bash
+yarn generate
+```
+
+3. Start the dev server by running this command
 
 ```bash
 npm run dev
