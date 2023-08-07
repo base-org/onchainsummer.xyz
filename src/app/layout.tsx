@@ -13,6 +13,7 @@ import { Teaser } from '@/components/Teaser/Teaser'
 import { Navbar } from '@/components/Navbar'
 import { TeaserNav } from '@/components/Teaser/TeaserNav'
 import { Footer } from '@/components/Footer'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -116,7 +117,7 @@ export const metadata = {
     default: website.siteName, // a default is required when creating a template
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
@@ -193,6 +194,8 @@ export default function RootLayout({
             inter.variable
           )}
         >
+          <Script src="https://static-assets.coinbase.com/js/cca/v0.0.1.js" />
+          <Script src="/init_cca.js" />
           <QueryClientProvider>
             <QueryParamProvider>
               <Providers>
