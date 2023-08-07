@@ -27,7 +27,7 @@ export type TxDetails = {
 }
 
 export const MintDialog: FC = () => {
-  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
+  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles, mintType } =
     useMintDialogContext()
   const [open, setOpen] = useState(false)
   const { l1Balance } = useBalances()
@@ -184,6 +184,7 @@ export const MintDialog: FC = () => {
             setMintError={setMintError}
             insufficientFunds={fundsStatus === 'insufficient'}
             crossMintClientId={crossMintClientId}
+            mintType={mintType}
           />
         )
       case ModalPage.BRIDGE:
