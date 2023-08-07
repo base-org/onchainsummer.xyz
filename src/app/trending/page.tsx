@@ -14,6 +14,7 @@ import clsx from 'clsx'
 import { useAccount } from 'wagmi'
 import { l2 } from '@/config/chain'
 import { getTrendingData } from '@/utils/getTrendingData'
+import { MintType } from '@/components/MintDialog/types'
 
 interface QueryResult {
   collections: Collection[]
@@ -120,6 +121,7 @@ export default function Trending() {
                             mintDotFunStatus={mintStatus}
                             trendingPageNativeMint={true}
                             mintButtonStyles="w-1/2 sm:!max-w-fit !py-[8px]"
+                            mintType={MintType.MintDotFun}
                           />
 
                           <Button
