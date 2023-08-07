@@ -1,5 +1,5 @@
-import { DAY, Partner } from './types'
-import { utcToZonedTime } from 'date-fns-tz'
+import { Partner } from './types'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const openSeason: Partner = {
   slug: 'open-season',
@@ -20,8 +20,8 @@ const openSeason: Partner = {
       crossMintClientId: '3ad9bb08-090f-41b9-b451-85fd1357e0e9',
       address: '0xF9a2CC9C41944B4116f1f62850e06fd6a790266C',
       type: 'erc-721',
-      startDate: Date.UTC(2023, 6, 20, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 6, 22, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 6, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 6, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
     {
@@ -29,8 +29,8 @@ const openSeason: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Bass Face',
-      startDate: Date.UTC(2023, 6, 20, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 6, 22, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 6, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 6, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',
@@ -41,8 +41,8 @@ const openSeason: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Collateral Damage',
-      startDate: Date.UTC(2023, 6, 20, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 6, 22, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 6, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 6, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',
@@ -53,8 +53,8 @@ const openSeason: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Qunitessence',
-      startDate: Date.UTC(2023, 6, 20, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 6, 22, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 6, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 6, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',
@@ -65,8 +65,8 @@ const openSeason: Partner = {
       creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
       externalLink: 'https://opensea.io/collection/lootproject',
       name: 'Bad Trip',
-      startDate: Date.UTC(2023, 6, 20, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 6, 22, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 6, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 6, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       crossMintClientId: '',
       address: '0x',
       type: 'external',

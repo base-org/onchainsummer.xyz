@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited2 } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const mirrorWellness: Partner = {
   slug: 'mirror-wellness',
@@ -19,8 +20,8 @@ const mirrorWellness: Partner = {
       name: 'Mirror Wellness Drop',
       ...limited2,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 19, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 20, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],
