@@ -98,7 +98,7 @@ export const DropCard: FC<DropCardProps> = ({
             dropName={name}
             creatorAddress={creator}
             endDate={endDate}
-            mintType={mintType || externalLink ? MintType.External : MintType.ThirdWeb}
+            mintType={mintType || (externalLink ? MintType.External : MintType.ThirdWeb)}
           />
         )}
       </div>

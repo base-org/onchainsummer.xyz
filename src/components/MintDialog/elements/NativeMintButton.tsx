@@ -1,9 +1,9 @@
 import { FC, useEffect, useMemo, useState } from 'react'
 import { Button } from '../../Button'
-import { ModalPage } from '../types'
+import { MintType, ModalPage } from '../types'
 import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
-import { useTw721Claim, writeTw721 } from '../../../../generated/contracts'
+import { useTw721Claim, writeTw721, writeZora721 } from '../../../../generated/contracts'
 import { l2 } from '@/config/chain'
 import { Address, useAccount, useWaitForTransaction } from 'wagmi'
 import { BaseError, TransactionExecutionError, parseEther } from 'viem'
@@ -15,6 +15,7 @@ interface NativeMintButtonProps {
   totalPrice: string
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
+  mintType: MintType
 }
 
 export const NativeMintButton: FC<NativeMintButtonProps> = ({
@@ -24,6 +25,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   totalPrice,
   setTxDetails,
   setMintError,
+  mintType
 }) => {
   const { address } = useMintDialogContext()
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
@@ -40,6 +42,18 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
     return page === ModalPage.NATIVE_MINTING_PENDING_TX ||
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   }, [page])
+
+  const mint = useMemo(() => {
+    switch (mintType) {
+      case MintType.Zora:
+        return () => writeZora721({address: address, functionName: 'purchaseWithComment', args: [BigInt(quantity), 'Onchain Summer!'], value: price})
+      case MintType.ThirdWeb:
+        return () => writeTw721({address: address as Address, functionName: 'claim', chainId: l2.id, args: [account || '0x0', BigInt(quantity), '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', price / BigInt(quantity), { proof: [], quantityLimitPerWallet: 2n ** 256n - 1n, pricePerToken: price / BigInt(quantity), currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' }, '0x0'], value: price})
+      default: 
+        console.log(`invalid mint type ${mintType} for native mint`)
+        setPage(ModalPage.MINT_ERROR)
+    }
+  }, [mintType, quantity, price, l2])
 
   useEffect(() => {
     if (!txReceipt) return;
@@ -68,10 +82,13 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
       className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
       disabled={isPending || isLoading}
       onClick={async () => {
-        // if (!write) return
         try {
+          if (!mint) {
+            return
+          }
+
           setIsLoading(true)
-          const data = await writeTw721({address: address as Address, functionName: 'claim', chainId: l2.id, args: [account || '0x0', BigInt(quantity), '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', price / BigInt(quantity), { proof: [], quantityLimitPerWallet: 2n ** 256n - 1n, pricePerToken: price / BigInt(quantity), currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' }, '0x0'], value: price})
+          const data = await mint()
           setHash(data.hash)
           setTxDetails({hash: data.hash})
           setIsLoading(false)
