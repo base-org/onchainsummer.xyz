@@ -8,12 +8,11 @@ import { FC, useMemo } from 'react'
 import clsx from 'clsx'
 import { Separator } from '../Separator'
 import { MintButton } from '../MintButton/MintButton'
-import { Button } from '../Button'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
-import { RightArrow } from '@/components/icons/RightArrow'
 import { getDateRangeValidation } from '@/utils/getDateRangeValidation'
+import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -87,35 +86,27 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <div className="flex flex-col w-full gap-4 mt-auto">
           <Separator className={clsx(separatorBackgroundColor)} />
           <Countdown startDate={headline.startDate} date={headline.endDate} />
-          {isAfterEndDate ? (
-            <Button
-              href="https://nft.coinbase.com/"
-              className="!flex !justify-between"
-              external
-              size="LARGE"
-            >
-              Collect <RightArrow fill="white" />
-            </Button>
-          ) : (
-            <>
-              {headline.externalLink ? (
-                <Button href={headline.externalLink}>
-                  Mint {headline.price} ETH
-                </Button>
-              ) : (
-                <MintButton
-                  address={headline.address}
-                  crossMintClientId={headline.crossMintClientId}
-                  price={headline.price}
-                  partnerIcon={icon}
-                  partnerName={name}
-                  dropImage={headline.image}
-                  dropName={headline.name}
-                  creatorAddress={headline.creator}
-                />
-              )}
-            </>
-          )}
+          <>
+            {headline.externalLink ? (
+              <ExternalDrop
+                {...headline}
+                partner={name}
+                contractAddress={headline.address}
+              />
+            ) : (
+              <MintButton
+                address={headline.address}
+                crossMintClientId={headline.crossMintClientId}
+                price={headline.price}
+                partnerIcon={icon}
+                partnerName={name}
+                dropImage={headline.image}
+                dropName={headline.name}
+                creatorAddress={headline.creator}
+                endDate={headline.endDate}
+              />
+            )}
+          </>
         </div>
       </div>
     </section>

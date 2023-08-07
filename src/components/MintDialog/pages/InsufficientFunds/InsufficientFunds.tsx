@@ -39,7 +39,11 @@ const WalletAddressCopy: FunctionComponent = () => {
       >
         {address}
         {isCopied ? (
-          <Checkmark className="absolute top-1/2 right-5 transform -translate-y-1/2" />
+          <Checkmark
+            height={16}
+            width={16}
+            className="absolute top-1/2 right-5 transform -translate-y-1/2"
+          />
         ) : (
           <Copy className="absolute top-1/2 right-5 transform -translate-y-1/2" />
         )}

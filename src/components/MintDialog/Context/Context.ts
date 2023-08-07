@@ -10,6 +10,7 @@ export interface MintDialogContextType {
   partnerName: string
   dropImage: string
   dropName: string
+  endDate?: number
   creatorAddress: string
   mintDotFunStatus?: MintStatus
   trendingPageNativeMint?: boolean
