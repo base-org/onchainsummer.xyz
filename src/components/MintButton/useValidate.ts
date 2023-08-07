@@ -12,6 +12,11 @@ export type Validation = {
   maxClaimablePerWallet?: string
 }
 
+type ValidationLocal = {
+  status: MintStatus,
+  maxPerAddress?: bigint
+}
+
 enum MintStatus {
   Mintable,
   NotStarted,
@@ -25,23 +30,23 @@ enum MintStatus {
 export const useValidate = (address: Address, mintType: MintType, mintDotFunStatus?: MintDotFunStatus): Validation => {
   const {address: account} = useAccount();
   const [isLoading, setIsLoading] = useState(true);
-  const [status, setStatus] = useState(MintStatus.Mintable)
+  const [validation, setValidation] = useState<ValidationLocal>({status: MintStatus.Mintable})
 
   const fetchStatus = useCallback(async () => {
     if (!account || address == '0x0') return
     switch (mintType) {
       case MintType.MintDotFun:
-        setStatus(validateMintDotFun(mintDotFunStatus));
+        setValidation(validateMintDotFun(mintDotFunStatus));
         break;
       case MintType.ThirdWeb:
-        setStatus(await validateThirdWeb(address, account));
+        setValidation(await validateThirdWeb(address, account));
         break;
       case MintType.Zora:
-        setStatus(await validateZora(address, account));
+        setValidation(await validateZora(address, account));
         break;
       case MintType.External:
         // TODO, need to filter on dates from file
-        setStatus(MintStatus.Mintable)
+        setValidation({status: MintStatus.Mintable})
         break;
       default: 
       console.log(`error: could not match type ${mintType}`)
@@ -51,7 +56,7 @@ export const useValidate = (address: Address, mintType: MintType, mintDotFunStat
   }, [address, account, mintType, mintDotFunStatus]);
 
   const message = useMemo(() => {
-    switch (status) {
+    switch (validation.status) {
       case MintStatus.Ended: 
         return 'Mint Ended';
       case MintStatus.NotStarted:
@@ -59,66 +64,66 @@ export const useValidate = (address: Address, mintType: MintType, mintDotFunStat
       case MintStatus.MintedOut: 
         return 'All NFTs have been claimed'
       case MintStatus.UserMintedMax:
-        return 'Already Minted'
+        return validation.maxPerAddress ? `NFT Minted (${validation.maxPerAddress} per address)` : 'NFT Minted'
     }
-  }, [status])
+  }, [validation])
 
   useEffect(() => {
     fetchStatus();
   }, [address, account, mintType, mintDotFunStatus])
 
-  return {valid: status == MintStatus.Mintable, isValidating: isLoading, message: message || ''}
+  return {valid: validation.status == MintStatus.Mintable, isValidating: isLoading, message: message || '', maxClaimablePerWallet: validation.maxPerAddress?.toString()}
 }
 
-function validateMintDotFun(mintDotFunStatus: MintDotFunStatus | undefined): MintStatus {
-  return mintDotFunStatus?.isMintable ? MintStatus.Mintable : MintStatus.NotMintable
+function validateMintDotFun(mintDotFunStatus: MintDotFunStatus | undefined): ValidationLocal {
+  return {status: mintDotFunStatus?.isMintable ? MintStatus.Mintable : MintStatus.NotMintable}
 }
 
-async function validateZora(address: Address, account: Address) : Promise<MintStatus> {
+async function validateZora(address: Address, account: Address) : Promise<ValidationLocal> {
   const saleDetails = await readZora721({address: address, functionName: 'saleDetails'})
   const now = Date.now() / 1000
 
   if (now < saleDetails.publicSaleStart) {
-    return MintStatus.NotStarted
+    return {status: MintStatus.NotStarted}
   }
 
   if (now > saleDetails.publicSaleEnd) {
-    return MintStatus.Ended
+    return {status: MintStatus.Ended}
   }
 
   const accountMinted = await readZora721({address: address, functionName: 'mintedPerAddress', args: [account]})
   if (accountMinted.publicMints > saleDetails.maxSalePurchasePerAddress) {
-    return MintStatus.UserMintedMax
+    return {status: MintStatus.UserMintedMax, maxPerAddress: saleDetails.maxSalePurchasePerAddress}
   }
   
   const config = await readZora721({address: address, functionName: 'config'})
   const totalMinted = await readZora721({address: address, functionName: 'totalSupply'})
 
   if (totalMinted >= config[1]) {
-    return MintStatus.MintedOut
+    return {status: MintStatus.MintedOut}
   }
 
-  return MintStatus.Mintable
+  return {status: MintStatus.Mintable}
 }
 
-async function validateThirdWeb(address: Address, account: Address) : Promise<MintStatus> {
+async function validateThirdWeb(address: Address, account: Address) : Promise<ValidationLocal> {
   const activeId = await readTw721({address: address, functionName: 'getActiveClaimConditionId'})
   const condition = await readTw721({address: address, functionName: 'getClaimConditionById', args: [activeId]})
   const now = Date.now() / 1000
 
   if (now < condition.startTimestamp) {
-    return MintStatus.NotStarted
+    return {status: MintStatus.NotStarted}
   }
 
   if (condition.supplyClaimed >= condition.maxClaimableSupply) {
-    return MintStatus.MintedOut
+    return {status: MintStatus.MintedOut}
   }
 
   const userMints = await readTw721({address: address, functionName: 'getSupplyClaimedByWallet', args: [activeId, account]})
 
   if (userMints >= condition.quantityLimitPerWallet) {
-    return MintStatus.UserMintedMax
+    return {status: MintStatus.UserMintedMax, maxPerAddress: condition.quantityLimitPerWallet}
   }
 
-  return MintStatus.Mintable
+  return {status: MintStatus.Mintable}
 }
