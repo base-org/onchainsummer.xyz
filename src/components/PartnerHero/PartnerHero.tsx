@@ -60,7 +60,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           {customHeader ? customHeader : headline.name}
         </h1>
         <div className="flex items-center mb-2">
-          <span className="mr-2 text-slate-500">by</span>
+          <span className="mr-2 text-slate-500">By</span>
           <AddressPill
             address={headline.creator as Address}
             className={clsx(teaser && '!bg-ocs-blue !text-white')}
