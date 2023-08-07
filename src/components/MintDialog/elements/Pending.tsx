@@ -30,7 +30,7 @@ export const Pending: FC<PendingProps> = ({
       </h2>
       <p>
         {isPendingTx
-          ? 'Your transaction is published, but we are waiting for it to be included in the block.'
+          ? 'Your transaction is published, but we are waiting for it to be included in a block.'
           : 'Please confirm the transaction on your wallet.'}
       </p>
       <ViewOnExplorer txHash={txHash} />

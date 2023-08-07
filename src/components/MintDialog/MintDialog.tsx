@@ -167,6 +167,7 @@ export const MintDialog: FC = () => {
             totalPrice={totalPrice}
             orderIdentifier={crossMintOrderIdentifier}
             setOrderIdentifier={setCrossMintOrderIdentifier}
+            mintType={mintType}
           />
         ) : null
       case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
