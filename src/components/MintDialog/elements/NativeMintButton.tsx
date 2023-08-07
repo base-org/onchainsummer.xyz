@@ -3,7 +3,7 @@ import { Button } from '../../Button'
 import { ModalPage } from '../types'
 import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
-import { useTw721Claim } from '../../../../generated/contracts'
+import { useTw721Claim, writeTw721 } from '../../../../generated/contracts'
 import { l2 } from '@/config/chain'
 import { Address, useAccount, useWaitForTransaction } from 'wagmi'
 import { BaseError, TransactionExecutionError, parseEther } from 'viem'
@@ -30,8 +30,12 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   const {address: account} = useAccount();
   const {data: txReceipt} = useWaitForTransaction({chainId: l2.id, hash: hash})
   const price = parseEther(totalPrice);
-  
-  const {isLoading, write, data, isSuccess, isError, error} = useTw721Claim({address: address as Address, chainId: l2.id, args: [account || '0x0', BigInt(quantity), '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', price / BigInt(quantity), { proof: [], quantityLimitPerWallet: 2n ** 256n - 1n, pricePerToken: price / BigInt(quantity), currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' }, '0x0'], value: price})
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<Error | null>(Error);
+
   const isPending = useMemo(() => {
     return page === ModalPage.NATIVE_MINTING_PENDING_TX ||
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
@@ -42,13 +46,6 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
     // TODO consider case where tx succeeded but mint failed 
     setPage(ModalPage.MINT_SUCCESS)
   }, [txReceipt, setPage])
-
-  useEffect(() => {
-    if (!data) return;
-    // could clean up and pas txDetails to this button
-    setHash(data.hash)
-    setTxDetails({ hash: data?.hash})
-  }, [data, setHash, setTxDetails])
 
   useEffect(() => {
     if (isLoading) {
@@ -71,19 +68,22 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
       className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
       disabled={isPending || isLoading}
       onClick={async () => {
-        if (!write) return
+        // if (!write) return
         try {
-          write();
+          setIsLoading(true)
+          const data = await writeTw721({address: address as Address, functionName: 'claim', chainId: l2.id, args: [account || '0x0', BigInt(quantity), '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', price / BigInt(quantity), { proof: [], quantityLimitPerWallet: 2n ** 256n - 1n, pricePerToken: price / BigInt(quantity), currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' }, '0x0'], value: price})
+          setHash(data.hash)
+          setTxDetails({hash: data.hash})
+          setIsLoading(false)
+          setIsSuccess(true)
+          
         } catch (e) {
-          // @ts-expect-error
-          if (e.reason === 'user rejected transaction') {
-            setPage(ModalPage.NATIVE_MINT)
-            return
-          }
+          setIsLoading(false)
           // TODO: Inform error
+          setError(e as TransactionExecutionError)
+          setIsError(true)
           setMintError(e)
           console.log(e)
-          setPage(ModalPage.MINT_ERROR)
         }
       }}
     >
