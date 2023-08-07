@@ -10,7 +10,7 @@ export interface MintDialogContextType {
   partnerName: string
   dropImage: string
   dropName: string
-  endDate: number
+  endDate?: number
   creatorAddress: string
   mintDotFunStatus?: MintStatus
   trendingPageNativeMint?: boolean
@@ -26,5 +26,4 @@ export const MintDialogContext = createContext<MintDialogContextType>({
   dropImage: '',
   dropName: '',
   creatorAddress: '',
-  endDate: 0,
 })

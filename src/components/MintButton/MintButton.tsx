@@ -22,7 +22,7 @@ export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
     mintProps.mintDotFunStatus
   )
 
-  if (now >= mintProps.endDate) {
+  if (mintProps.endDate && now >= mintProps.endDate) {
     return (
       <Button
         href={`https://nft.coinbase.com/collection/base/${mintProps.address}`}
