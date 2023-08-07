@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const fwb: Partner = {
   slug: 'fwb',
@@ -8,7 +9,8 @@ const fwb: Partner = {
   description:
     'Friends With Benefits is a community of builders, creatives, and investors who believe in the power of social tokens and the communities they create. We are a decentralized autonomous organization (DAO) that supports the growth of the social token ecosystem through community grants, educational initiatives, and community events.',
   brandColor: '#000000',
-  icon: '/partners/fwb/icon.svg',
+  icon: '/partners/fwb/icon.png',
+  banner: '/partners/fwb/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@FWBtweets',
   drops: [
@@ -18,8 +20,8 @@ const fwb: Partner = {
       name: 'Friends With Benefits',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 10, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 11, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 10, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

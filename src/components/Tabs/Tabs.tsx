@@ -27,7 +27,7 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
         </TabsComponent.List>
         <TabsComponent.Content value="tab1">
           {upcomingDrops.map(
-            ({ name, drops, icon, description, slug, brandColor }) => (
+            ({ name, drops, banner, description, slug, brandColor }) => (
               <div key={name} className="my-8 first:mt-6 last:mb-0">
                 <TabsDropCard
                   slug={slug}
@@ -35,7 +35,7 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
                   name={name}
                   startDate={drops[0].startDate}
                   endDate={drops[0].endDate}
-                  image={icon}
+                  image={banner}
                   description={description}
                   brandColor={brandColor}
                 />

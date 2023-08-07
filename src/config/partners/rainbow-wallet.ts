@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const rainbowWallet: Partner = {
   slug: 'rainbow-wallet',
@@ -8,7 +9,8 @@ const rainbowWallet: Partner = {
   description:
     'Rainbow is a community owned platform for creators to monetize their digital work.',
   brandColor: '#e9f2ff',
-  icon: '/partners/rainbow-wallet/icon.svg',
+  icon: '/partners/rainbow-wallet/icon.png',
+  banner: '/partners/rainbow-wallet/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@rainbowdotme',
   drops: [
@@ -18,8 +20,8 @@ const rainbowWallet: Partner = {
       name: 'Rainbow Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 26, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 27, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const blackbird: Partner = {
   slug: 'blackbird',
@@ -8,7 +9,8 @@ const blackbird: Partner = {
   description:
     'Blackbird is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/blackbird/icon.svg',
+  icon: '/partners/blackbird/icon.png',
+  banner: '/partners/blackbird/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@blackbird_xyz',
   drops: [
@@ -18,8 +20,8 @@ const blackbird: Partner = {
       name: 'Blackbird Drop',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 22, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 23, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 23, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

@@ -12,21 +12,11 @@ import { Collection } from '@/utils/mintDotFunTypes'
 import { PageContainer } from '@/components/PageContainer'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
+import { l2 } from '@/config/chain'
+import { getTrendingData } from '@/utils/getTrendingData'
 
 interface QueryResult {
   collections: Collection[]
-}
-
-async function fetchData(connectedWallet: string) {
-  const res = await fetch(`/api/trending?connectedWallet=${connectedWallet}`)
-
-  if (!res.ok) {
-    throw new Error(`HTTP error! status: ${res.status}`)
-  }
-
-  const data = await res.json()
-
-  return data
 }
 
 const VISIBLE_NFTS = {
@@ -34,13 +24,14 @@ const VISIBLE_NFTS = {
 }
 
 export default function Trending() {
-  const {address: connectedWallet} = useAccount()
-
+  const { address: connectedWallet } = useAccount()
+  const chainId = l2.id
   const { data, error, isLoading } = useQuery<QueryResult>({
-    queryKey: [connectedWallet],
+    queryKey: [connectedWallet, chainId],
     queryFn: ({ queryKey }) => {
-      const [connectedWallet] = queryKey
-      return fetchData(connectedWallet as string)
+      const [connectedWallet, chainId] = queryKey
+
+      return getTrendingData(connectedWallet as string, chainId as number)
     },
   })
 

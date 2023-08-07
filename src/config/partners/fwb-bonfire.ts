@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const fwbBonfire: Partner = {
   slug: 'fwb-bonfire',
@@ -8,7 +9,8 @@ const fwbBonfire: Partner = {
   description:
     'FWBxBonfire is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/fwb-bonfire/icon.svg',
+  icon: '/partners/fwb-bonfire/icon.png',
+  banner: '/partners/fwb-bonfire/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@bonfire',
   drops: [
@@ -18,8 +20,8 @@ const fwbBonfire: Partner = {
       name: 'fwb x bonfire Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 28, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 29, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 28, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

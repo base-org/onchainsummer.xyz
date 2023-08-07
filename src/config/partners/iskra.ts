@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const iskra: Partner = {
   slug: 'iskra',
@@ -8,7 +9,8 @@ const iskra: Partner = {
   description:
     'Iskra is a community owned platform for creators to monetize their digital work.',
   brandColor: '#007aff',
-  icon: '/partners/iskra/icon.svg',
+  icon: '/partners/iskra/icon.png',
+  banner: '/partners/iskra/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@iskra_world',
   drops: [
@@ -18,8 +20,8 @@ const iskra: Partner = {
       name: 'Iskra Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 27, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 28, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 28, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

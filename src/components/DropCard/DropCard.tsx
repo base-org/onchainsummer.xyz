@@ -5,6 +5,8 @@ import { Button } from '../Button'
 import { MintButton } from '../MintButton'
 import { AddressPill } from '../AddressPill'
 import { Address } from 'wagmi'
+import { useValidateExternalLink } from '../ExternalDrop/useValidateExternalLink'
+import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 
 type DropCardProps = {
   address: Address
@@ -14,6 +16,7 @@ type DropCardProps = {
   image: string
   externalLink?: string
   name: string
+  startDate: number
   endDate: number
   price: string
   creator: string
@@ -29,7 +32,21 @@ export const DropCard: FC<DropCardProps> = ({
   externalLink,
   price,
   creator,
+  startDate,
+  endDate,
 }) => {
+  const {
+    isExternalLink,
+    status: externalLinkStatus,
+    externalLinkHref,
+  } = useValidateExternalLink({
+    endDate,
+    externalLink,
+    startDate,
+    partner,
+    contractAddress: address,
+  })
+
   return (
     <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
       <div className="relative w-full aspect-[4/3]">
@@ -41,10 +58,11 @@ export const DropCard: FC<DropCardProps> = ({
         />
       </div>
       <div className="p-4 flex flex-col flex-auto">
-        {externalLink ? (
+        {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
-            href={externalLink}
+            href={externalLinkHref}
             className="text-[32px] after:absolute after:inset-0 flex-auto"
+            target="_blank"
           >
             {name}
           </a>
@@ -52,12 +70,20 @@ export const DropCard: FC<DropCardProps> = ({
           <span className="text-[32px]">{name}</span>
         )}
         <div className="mt-4 mb-8">
-          <AddressPill address={creator as Address} className="bg-ocs-turquoise" />
+          <AddressPill
+            address={creator as Address}
+            className="bg-ocs-turquoise"
+          />
         </div>
-        {externalLink ? (
-          <Button tabIndex={-1} className="!flex !justify-center mt-auto">
-            Mint on {partner}
-          </Button>
+        {isExternalLink ? (
+          <ExternalDrop
+            endDate={endDate}
+            externalLink={externalLink}
+            startDate={startDate}
+            partner={partner}
+            contractAddress={address}
+            className="!flex !justify-center mt-auto"
+          />
         ) : (
           <MintButton
             price={price}
@@ -68,6 +94,7 @@ export const DropCard: FC<DropCardProps> = ({
             dropImage={image}
             dropName={name}
             creatorAddress={creator}
+            endDate={endDate}
           />
         )}
       </div>

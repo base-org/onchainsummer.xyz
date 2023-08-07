@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const zora: Partner = {
   slug: 'zora',
@@ -8,7 +9,8 @@ const zora: Partner = {
   description:
     'Zora is a community owned platform for creators to monetize their digital work.',
   brandColor: '#000000',
-  icon: '/partners/zora/icon.svg',
+  icon: '/partners/zora/icon.png',
+  banner: '/partners/zora/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@lo',
   drops: [
@@ -18,8 +20,8 @@ const zora: Partner = {
       name: 'Zora Drop',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 16, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 17, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

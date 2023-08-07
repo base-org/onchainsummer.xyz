@@ -1,6 +1,8 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
 
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+
 const anotherblock: Partner = {
   slug: 'anotherblock',
   name: 'Anotherblock',
@@ -8,7 +10,8 @@ const anotherblock: Partner = {
   description:
     'Anotherblock is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',
   brandColor: '#000000',
-  icon: '/partners/anotherblock/icon.svg',
+  icon: '/partners/anotherblock/icon.png',
+  banner: '/partners/anotherblock/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@anotherblock_io',
   drops: [
@@ -18,8 +21,8 @@ const anotherblock: Partner = {
       name: 'Anotherblock Drop',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 13, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 14, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

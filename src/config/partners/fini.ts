@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const fini: Partner = {
   slug: 'fini',
@@ -8,7 +9,8 @@ const fini: Partner = {
   description:
     'fini is a community owned platform for creators to monetize their digital work.',
   brandColor: 'rgb(255, 121, 121)',
-  icon: '/partners/fini/icon.svg',
+  icon: '/partners/fini/icon.png',
+  banner: '/partners/fini/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@finiliar',
   drops: [
@@ -18,8 +20,8 @@ const fini: Partner = {
       name: 'fini Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 31, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 8, 1, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 8, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

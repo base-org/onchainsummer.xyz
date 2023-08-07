@@ -9,15 +9,29 @@ import { Button } from '../Button'
 import { Loading } from '../icons/Loading'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
+import { getNow } from '@/utils/getNow'
+import { RightArrow } from '../icons/RightArrow'
 
 interface MintButtonProps extends MintDialogContextType {}
 
 export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
-  const {address: account} = useAccount()
+  const { address: account } = useAccount()
+  const now = getNow()
   const { valid, message, isValidating, maxClaimablePerWallet } = useValidate(
     mintProps.address,
     mintProps.mintDotFunStatus
   )
+
+  if (mintProps.endDate && now >= mintProps.endDate) {
+    return (
+      <Button
+        href={`https://nft.coinbase.com/collection/base/${mintProps.address}`}
+        external
+      >
+        Collect <RightArrow fill="white" />
+      </Button>
+    )
+  }
 
   if (!account) {
     return <ConnectDialog />

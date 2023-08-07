@@ -1,5 +1,6 @@
 import { Partner } from './types'
-import { unlimited, limited } from '../test-contracts'
+import { limited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const highlight: Partner = {
   slug: 'highlight',
@@ -8,7 +9,8 @@ const highlight: Partner = {
   description:
     'Highlight is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',
   brandColor: '#000000',
-  icon: '/partners/highlight/icon.svg',
+  icon: '/partners/highlight/icon.png',
+  banner: '/partners/highlight/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@Highlight_xyz',
   drops: [
@@ -18,8 +20,8 @@ const highlight: Partner = {
       name: 'Highlight Drop',
       ...limited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 15, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 16, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 15, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

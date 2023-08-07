@@ -24,8 +24,8 @@ interface Media {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const connectedWallet = searchParams.get('connectedWallet')
-
-  const url = `${API_URL}/collections?connectedWallet=${connectedWallet}&chain=${l2.id}`
+  const chainId = searchParams.get('chain')
+  const url = `${API_URL}/collections?connectedWallet=${connectedWallet}&chain=${chainId}`
 
   try {
     let media: Media[] = []

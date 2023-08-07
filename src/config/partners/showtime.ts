@@ -1,5 +1,6 @@
 import { Partner } from './types'
-import { unlimited, limited } from '../test-contracts'
+import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const showtime: Partner = {
   slug: 'showtime',
@@ -8,7 +9,8 @@ const showtime: Partner = {
   description:
     'Showtime is a community owned platform for creators to monetize their digital work.',
   brandColor: 'rgb(231, 171, 67)',
-  icon: '/partners/showtime/icon.svg',
+  icon: '/partners/showtime/icon.png',
+  banner: '/partners/showtime/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@Showtime_xyz',
   drops: [
@@ -18,8 +20,8 @@ const showtime: Partner = {
       name: 'showtime Drop',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 6, 26, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 6, 27, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 6, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 6, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { limited2 } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const pixelmon: Partner = {
   slug: 'pixelmon',
@@ -8,7 +9,8 @@ const pixelmon: Partner = {
   description:
     'Pixelmon is a community owned platform for creators to monetize their digital work.',
   brandColor: '#F2E6E0',
-  icon: '/partners/pixelmon/icon.svg',
+  icon: '/partners/pixelmon/icon.png',
+  banner: '/partners/pixelmon/banner-icon.svg',
   aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
   twitter: '@Pixelmon',
   drops: [
@@ -18,8 +20,8 @@ const pixelmon: Partner = {
       name: 'Pixelmon Drop',
       ...limited2,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 17, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 18, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],
