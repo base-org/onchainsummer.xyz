@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const fwb: Partner = {
   slug: 'fwb',
@@ -19,8 +20,8 @@ const fwb: Partner = {
       name: 'Friends With Benefits',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 10, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 11, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 10, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

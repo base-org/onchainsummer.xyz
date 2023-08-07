@@ -1,5 +1,6 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const optimism: Partner = {
   slug: 'optimism',
@@ -19,8 +20,8 @@ const optimism: Partner = {
       name: 'Optimism Drop',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 24, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 25, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],

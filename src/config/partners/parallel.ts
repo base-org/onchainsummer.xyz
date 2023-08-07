@@ -1,5 +1,6 @@
 import { Partner } from './types'
-import { unlimited, limited } from '../test-contracts'
+import { unlimited } from '../test-contracts'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const parallel: Partner = {
   slug: 'parallel',
@@ -19,8 +20,8 @@ const parallel: Partner = {
       name: 'Parallel Finance',
       ...unlimited,
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 11, 13, 0, 0, 0),
-      endDate: Date.UTC(2023, 7, 12, 13, 0, 0, 0),
+      startDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 12, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
     },
   ],
