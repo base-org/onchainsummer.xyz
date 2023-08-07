@@ -6,16 +6,12 @@ const { config } = require('dotenv')
 
 config()
 
-const filePath = './src/config/tweets.ts'
+const filePath = './generated/tweets.ts'
 const prefix = 'export const tweets = '
 
 const generateHighlightedTweets = async () => {
   const bearer_token = process.env.TWITTER_BEARER_TOKEN
-  const tweetIds = [
-    '1679531085171167232',
-    '1673748309696200704',
-    '1676800332616310785',
-  ]
+  const tweetIds = process.env.TWEET_IDS ? process.env.TWEET_IDS.split(',') : []
 
   try {
     await new Promise((resolve, reject) =>

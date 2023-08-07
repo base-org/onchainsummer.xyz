@@ -14,7 +14,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "generate:tweets": "npx node scripts/generateHighlightedTweets.js",
-    "generate": "yarn graphql-codegen --config codegen.ts"
+    "generate": "yarn graphql-codegen --config codegen.ts && yarn generate:tweets"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.5",
