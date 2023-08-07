@@ -1,0 +1,29 @@
+name: sdk-release
+on:
+  push:
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    env:
+      COMMIT_AUTHOR: ${{ github.event.head_commit.author.username }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.3.1
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.PAT }}
+
+      - name: script
+        run: |
+          echo "COMMIT Author: $COMMIT_AUTHOR"
+
+      - name: empty commit
+        if: env.COMMIT_AUTHOR == 'wilsoncusack' || env.COMMIT_AUTHOR == 'lukasrosario' || env.COMMIT_AUTHOR == 'mdehoog' || env.COMMIT_AUTHOR == 'jessepollak' || env.COMMIT_AUTHOR == 'arpitsrivastava-cb' || env.COMMIT_AUTHOR == 'arpit2438735'
+        run: |
+          git config user.name "Azim Ahmed"
+          git config user.email "ximxim@users.noreply.github.com"
+          git commit --allow-empty -m "empty commit"
+          git push origin "${GITHUB_REF}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
