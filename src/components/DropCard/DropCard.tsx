@@ -55,7 +55,7 @@ export const DropCard: FC<DropCardProps> = ({
           <AddressPill address={creator as Address} className="bg-ocs-turquoise" />
         </div>
         {externalLink ? (
-          <Button tabIndex={-1} className="!flex !justify-center">
+          <Button tabIndex={-1} className="!flex !justify-center mt-auto">
             Mint on {partner}
           </Button>
         ) : (
