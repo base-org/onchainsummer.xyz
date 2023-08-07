@@ -42,7 +42,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
     ? '!bg-black'
     : isAfterEndDate
     ? '!bg-[#858585]'
-    : '!bg-ocs-blue'
+    : '!bg-ocs-gray'
 
   return (
     <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
@@ -70,7 +70,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           <span className="mr-2 text-slate-500">by</span>
           <AddressPill
             address={headline.creator as Address}
-            className={clsx(teaser && '!bg-ocs-blue !text-white')}
+            className={clsx(teaser && '!bg-ocs-gray !text-white')}
           />
         </div>
         <ReactMarkdown

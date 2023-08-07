@@ -38,7 +38,7 @@ export const Success: FC<SuccessProps> = ({
         </span>
         <AddressPill
           address={creatorAddress as Address}
-          className={'!bg-ocs-blue !text-white'}
+          className={'!bg-ocs-gray !text-white'}
         />
       </Dialog.Description>
 

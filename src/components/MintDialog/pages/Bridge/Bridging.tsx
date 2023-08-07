@@ -68,7 +68,7 @@ export const Bridging: FC<BridgingProps> = ({
           <div className="h-full w-1 bg-light-palette-line rounded-full ">
             <div
               className={clsx(
-                'bg-ocs-blue w-1 rounded-full h-full transition-[max-height] duration-500 ease-in-out]',
+                'bg-ocs-gray text-white w-1 rounded-full h-full transition-[max-height] duration-500 ease-in-out]',
                 {
                   'max-h-[25%]': isStep1,
                 },
