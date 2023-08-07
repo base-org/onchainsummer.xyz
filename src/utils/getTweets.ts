@@ -3,7 +3,7 @@ import { ITweetResponse } from '@/models/Tweet'
 import { tweets } from '../../generated/tweets'
 
 export const getTweets = async () => {
-  return tweets as ITweetResponse
+  return tweets as unknown as ITweetResponse
   // TODO: Uncomment this when we have a Twitter API key
   // try {
   //   const bearer_token = process.env.TWITTER_BEARER_TOKEN as string
