@@ -20,7 +20,7 @@ interface CustomWindowProvider extends WindowProvider {
 }
 
 export const ConnectDialog: FC<ConnectDialogProps> = ({
-  title = <div className="flex gap-2.5 items-center px-3">Connect Wallet</div>,
+  title = <div className="flex gap-2.5 items-center px-3">Mint</div>,
   inNavbar = false,
 }) => {
   const {connect, connectors} = useConnect();
@@ -49,6 +49,10 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
           chain &&
           (!authenticationStatus ||
             authenticationStatus === 'authenticated');
+
+        if (!connected) {
+          openConnectModal();
+        }
 
         return (
           <div

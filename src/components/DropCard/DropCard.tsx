@@ -31,7 +31,7 @@ export const DropCard: FC<DropCardProps> = ({
   creator,
 }) => {
   return (
-    <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto">
+    <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
       <div className="relative w-full aspect-[4/3]">
         <Image
           src={image}
@@ -59,7 +59,7 @@ export const DropCard: FC<DropCardProps> = ({
           />
         </div>
         {externalLink ? (
-          <Button tabIndex={-1} className="!flex !justify-center">
+          <Button tabIndex={-1} className="!flex !justify-center mt-auto">
             Mint on {partner}
           </Button>
         ) : (
