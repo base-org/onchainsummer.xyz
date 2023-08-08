@@ -20,6 +20,8 @@ import { shortenAddress } from '@/utils/address'
 import { useAccount } from 'wagmi'
 import { l2 } from '@/config/chain'
 import { getTrendingData } from '@/utils/getTrendingData'
+import { MintType } from '@/components/MintDialog/types'
+
 export interface TrendingComponentProps {}
 
 interface QueryResult {
@@ -153,6 +155,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                         mintDotFunStatus={mintStatus}
                         trendingPageNativeMint={true}
                         mintButtonStyles="w-1/3 sm:!max-w-fit"
+                        mintType={MintType.MintDotFun}
                       />
 
                       <Button

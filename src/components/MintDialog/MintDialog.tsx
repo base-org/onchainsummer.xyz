@@ -27,8 +27,14 @@ export type TxDetails = {
 }
 
 export const MintDialog: FC = () => {
-  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
-    useMintDialogContext()
+  const {
+    price,
+    crossMintClientId,
+    trendingPageNativeMint,
+    mintButtonStyles,
+    mintType,
+  } = useMintDialogContext()
+
   const [open, setOpen] = useState(false)
   const { l1Balance } = useBalances()
 
@@ -167,6 +173,7 @@ export const MintDialog: FC = () => {
             totalPrice={totalPrice}
             orderIdentifier={crossMintOrderIdentifier}
             setOrderIdentifier={setCrossMintOrderIdentifier}
+            mintType={mintType}
           />
         ) : null
       case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
@@ -184,6 +191,7 @@ export const MintDialog: FC = () => {
             setMintError={setMintError}
             insufficientFunds={fundsStatus === 'insufficient'}
             crossMintClientId={crossMintClientId}
+            mintType={mintType}
           />
         )
       case ModalPage.BRIDGE:
@@ -214,6 +222,7 @@ export const MintDialog: FC = () => {
     l1Balance,
     l2PriceEstimate,
     mintError,
+    mintType,
     page,
     quantity,
     totalPrice,

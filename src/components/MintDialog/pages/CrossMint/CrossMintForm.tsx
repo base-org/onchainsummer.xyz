@@ -4,7 +4,7 @@ import {
   CheckoutEventMap,
 } from '@crossmint/client-sdk-react-ui'
 import { isProd } from '@/config/chain'
-import { ModalPage } from '../../types'
+import { MintType, ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
@@ -28,6 +28,7 @@ interface CrossMintFormProps {
   setOrderIdentifier: React.Dispatch<string>
   quantity: number
   totalPrice: string
+  mintType: MintType
 }
 
 const environment = isProd ? 'production' : 'staging'
@@ -40,6 +41,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   setOrderIdentifier,
   quantity,
   totalPrice,
+  mintType
 }) => {
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
@@ -75,7 +77,11 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         }}
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
-        mintConfig={{
+        mintConfig={mintType == MintType.Zora ?  {
+          quantity: quantity,
+          totalPrice: totalPrice,
+          comment: "Onchain Summer!"
+        } : {
           quantity,
           totalPrice,
         }}
@@ -122,6 +128,8 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               // TODO: Inform error
               setPage(ModalPage.MINT_ERROR)
               break
+            default: 
+              console.log(`Unmatched crossmint ${event}`)
           }
         }}
       />
