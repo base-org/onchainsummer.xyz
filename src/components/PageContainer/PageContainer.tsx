@@ -14,15 +14,16 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   children,
   subNavBgColor,
 }) => {
-  const isMismatched = useIsMisMatched();
+  const isMismatched = useIsMisMatched()
 
-
-  const heroMarginTop = isMismatched ? 'md:mt-6' : '-mt-[100px]'
+  const heroMarginTop = isMismatched ? 'md:mt-6' : '!-mt-[90px]'
 
   return (
     <>
       <SubNav subNavBgColor={subNavBgColor} />
-      <main className={clsx('w-full max-w-[1248px] mx-auto mt-16', heroMarginTop)}>
+      <main
+        className={clsx('w-full max-w-[1248px] mx-auto mt-16', heroMarginTop)}
+      >
         {children}
       </main>
     </>
