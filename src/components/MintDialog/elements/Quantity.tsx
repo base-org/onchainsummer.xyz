@@ -12,7 +12,10 @@ export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
   const { maxClaimablePerWallet } = useMintDialogContext()
 
   // zora has 2^32 max, thirdweb 2^256, in any case 2^32 is a lot and effectively no limit.
-  if (maxClaimablePerWallet && maxClaimablePerWallet > (2n ** 32n - 1n).toString()) {
+  if (
+    maxClaimablePerWallet &&
+    maxClaimablePerWallet > (2n ** 32n - 1n).toString()
+  ) {
     return null
   }
 
