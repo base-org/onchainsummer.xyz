@@ -1,7 +1,6 @@
 import { Partner } from './types'
-import { unlimited } from '../test-contracts'
+import { zora } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
-import { MintType } from '@/components/MintDialog/types'
 
 const fwb: Partner = {
   slug: 'fwb',
@@ -23,9 +22,7 @@ const fwb: Partner = {
       startDate: Date.UTC(2023, 7, 10, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0001',
-      address: '0x2f6f5ef163ed71e32d92666a69190c79a784130f',
-      mintType: MintType.Zora,
-      crossMintClientId: 'fd5323c8-1df3-452d-8978-a3b41d006bc7'
+      ...zora,
     },
   ],
 }
