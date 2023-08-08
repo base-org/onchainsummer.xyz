@@ -19,7 +19,7 @@ import { publicProvider } from 'wagmi/providers/public'
 import { l1, l2 } from '@/config/chain'
 
 const { chains, publicClient } = configureChains(
-  l1.id == mainnet.id ? [l1, l2] : [l1, l2, mainnet], // so that ens always works
+  l1.id == mainnet.id ? [l2, l1] : [l2, l1, mainnet], // so that ens always works
   [publicProvider()]
 )
 const projectId = 'db9706ca7a662fa38d5d574767f05f15'
