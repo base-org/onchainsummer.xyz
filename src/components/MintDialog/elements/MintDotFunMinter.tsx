@@ -6,6 +6,8 @@ import { isProd } from '@/config/chain'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
 import { ModalPage } from '../types'
 import { TxDetails } from '../MintDialog'
+import { events } from '@/utils/analytics'
+import { useLogEvent } from '@/utils/useLogEvent'
 
 interface MintDotFunMinterProps {
   setPage: React.Dispatch<ModalPage>
@@ -19,6 +21,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
   totalPrice,
 }) => {
   const { mintDotFunStatus } = useMintDialogContext()
+  const logEvent = useLogEvent()
 
   if (!mintDotFunStatus) {
     // TODO: This should never happen. Maybe a toast?
@@ -57,6 +60,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
         })
 
         if (transaction.status === 'success') {
+          logEvent?.(events.mintDotFunSuccess)
           setPage(ModalPage.MINT_SUCCESS)
         } else {
           setPage(ModalPage.MINT_ERROR)

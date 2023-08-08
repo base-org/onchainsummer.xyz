@@ -7,6 +7,8 @@ import { writeTw721, writeZora721 } from '../../../../generated/contracts'
 import { l2 } from '@/config/chain'
 import { Address, useAccount, useWaitForTransaction } from 'wagmi'
 import { TransactionExecutionError, parseEther } from 'viem'
+import { useLogEvent } from '@/utils/useLogEvent'
+import { events } from '@/utils/analytics'
 
 interface NativeMintButtonProps {
   page: ModalPage
@@ -40,6 +42,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   const [isError, setIsError] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState<Error | null>(Error)
+  const logEvent = useLogEvent()
 
   const isPending = useMemo(() => {
     return (
@@ -88,8 +91,9 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   useEffect(() => {
     if (!txReceipt) return
     // TODO consider case where tx succeeded but mint failed
+    logEvent?.(events.nativeMintSuccess)
     setPage(ModalPage.MINT_SUCCESS)
-  }, [txReceipt, setPage])
+  }, [txReceipt, setPage, logEvent])
 
   useEffect(() => {
     if (isLoading) {
