@@ -22,6 +22,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
       <div>
         <div className="flex justify-between">
           <div className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="h-11 w-11 rounded-full"
               alt="author profile image"
@@ -67,6 +68,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               <source src={media.variants[0].url} type="video/mp4" />
             </video>
           ) : (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
               src={media.preview_image_url || media.url}

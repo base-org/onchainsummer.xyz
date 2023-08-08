@@ -27,8 +27,14 @@ export type TxDetails = {
 }
 
 export const MintDialog: FC = () => {
-  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles, mintType } =
-    useMintDialogContext()
+  const {
+    price,
+    crossMintClientId,
+    trendingPageNativeMint,
+    mintButtonStyles,
+    mintType,
+  } = useMintDialogContext()
+
   const [open, setOpen] = useState(false)
   const { l1Balance } = useBalances()
 
@@ -216,6 +222,7 @@ export const MintDialog: FC = () => {
     l1Balance,
     l2PriceEstimate,
     mintError,
+    mintType,
     page,
     quantity,
     totalPrice,
