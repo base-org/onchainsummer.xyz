@@ -1,6 +1,7 @@
 import { MintStatus } from '@/utils/mintDotFunTypes'
 import { createContext } from 'react'
 import { Address } from 'wagmi'
+import { MintType } from '../types'
 
 export interface MintDialogContextType {
   address: Address
@@ -12,6 +13,7 @@ export interface MintDialogContextType {
   dropName: string
   endDate?: number
   creatorAddress: string
+  mintType: MintType
   mintDotFunStatus?: MintStatus
   trendingPageNativeMint?: boolean
   mintButtonStyles?: string
@@ -26,4 +28,5 @@ export const MintDialogContext = createContext<MintDialogContextType>({
   dropImage: '',
   dropName: '',
   creatorAddress: '',
+  mintType: MintType.ThirdWeb
 })

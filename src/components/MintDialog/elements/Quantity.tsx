@@ -11,7 +11,11 @@ const buttonClassName = 'py-1.5 px-4 rounded-[100px] border border-[#EFEFEF]'
 export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
   const { maxClaimablePerWallet } = useMintDialogContext()
 
-  if (maxClaimablePerWallet !== (2n ** 256n - 1n).toString()) {
+  // zora has 2^32 max, thirdweb 2^256, in any case 2^32 is a lot and effectively no limit.
+  if (
+    maxClaimablePerWallet &&
+    maxClaimablePerWallet > (2n ** 32n - 1n).toString()
+  ) {
     return null
   }
 

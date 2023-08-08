@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { ModalPage } from '../../types'
+import { MintType, ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -26,6 +26,7 @@ interface NativeMintProps {
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
   insufficientFunds: boolean
   crossMintClientId: string | undefined
+  mintType: MintType
 }
 
 export const NativeMint: FC<NativeMintProps> = ({
@@ -39,6 +40,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   setMintError,
   insufficientFunds,
   crossMintClientId,
+  mintType
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const network = useNetwork()
@@ -108,6 +110,7 @@ export const NativeMint: FC<NativeMintProps> = ({
             totalPrice={totalPrice}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
+            mintType={mintType}
           />
         )}
 
