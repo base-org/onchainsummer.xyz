@@ -23,18 +23,24 @@ const roundDownToDecimals = (value: number) => {
   return Math.floor(scalar * value) / scalar
 }
 
-export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPage }) => {
+export const Bridge: FC<BridgeProps> = ({
+  l1Balance,
+  minAmount = '0.001',
+  setPage,
+}) => {
   const recommendedAmount = useMemo(() => {
-    return roundDownToDecimals(Math.min(
-      0.25,
-      Math.max(
-        0.2 * Number(formatEther(l1Balance)),
-        Number(formatEther(parseEther(minAmount)))
+    return roundDownToDecimals(
+      Math.min(
+        0.25,
+        Math.max(
+          0.2 * Number(formatEther(l1Balance)),
+          Number(formatEther(parseEther(minAmount)))
+        )
       )
-    )).toString()
+    ).toString()
   }, [l1Balance, minAmount])
 
-  const [amount, setAmount] = useState(recommendedAmount);
+  const [amount, setAmount] = useState(recommendedAmount)
 
   const { bridge, l1TxHash, l2TxHash, bridgeState } = useBridge(
     parseEther(amount || '0')
@@ -93,6 +99,7 @@ export const Bridge: FC<BridgeProps> = ({ l1Balance, minAmount = '0.001', setPag
     l1TxHash,
     l2TxHash,
     minAmount,
+    recommendedAmount,
     setPage,
   ])
 
