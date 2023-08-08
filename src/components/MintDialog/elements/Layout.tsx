@@ -11,11 +11,11 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="relative grid gap-4 lg:grid-cols-2 lg:gap-16 h-full">
       <div className="relative z-20 w-full aspect-video lg:aspect-square mb-1 lg:mb-0">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={dropImage}
           alt={dropName}
-          fill
-          className="object-cover rounded-lg md:rounded-[20px]"
+          className="object-cover rounded-lg md:rounded-[20px] absolute inset-0 h-full w-full"
         />
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll hide-scrollbar">
