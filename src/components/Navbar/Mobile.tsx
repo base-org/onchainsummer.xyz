@@ -26,7 +26,12 @@ export const Mobile: FC<MobileProps> = ({}) => {
         hamburgerMenuOpen ? 'fixed bg-white' : 'relative'
       )}
     >
-      <NavigationMenu.List className="flex justify-between px-6 py-8 w-full items-center border-b border-black/10">
+      <NavigationMenu.List
+        className={clsx(
+          'flex justify-between p-6 w-full items-center border-b border-black/10',
+          hamburgerMenuOpen && 'pb-9'
+        )}
+      >
         <NavigationMenu.Link asChild>
           <Link href="/">
             <OCSLogo />
