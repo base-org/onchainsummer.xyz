@@ -40,21 +40,21 @@ export default function Trending() {
 
   return (
     <PageContainer>
-      <div className="mx-6 mt-32">
+      <div className="mx-6 ">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
-            <div className="w-full sm:w-[55%]">
-              <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FCD22D]">
-                <UpArrow />
+            <div className="w-full sm:w-[55%] flex flex-col gap-4 md:gap-6">
+              <div className="flex items-center gap-2 md:flex-col md:items-start md:gap-6">
+                <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FCD22D]">
+                  <UpArrow />
+                </div>
+                <h1 className="desktop-h2 md:desktop-h1">Trending</h1>
               </div>
-              <h1 className="text-[46px] md:text-[40px] md:leading-[50px] my-6">
-                Trending
-              </h1>
-              <p className="text-xl md:text-2xl my-2 font-light">
+              <p className="desktop-h4 md:desktop-h3">
                 Discover and mint trending NFTs from across Base
               </p>
-              <div className="flex items-center">
-                <p className="text-xl text-[#010101] opacity-50 mr-3 font-mono uppercase my-2">
+              <div className="flex items-center gap-2.5">
+                <p className="desktop-mono !text-[#858585] uppercase">
                   Powered by{' '}
                 </p>
                 <MintDotFun />
