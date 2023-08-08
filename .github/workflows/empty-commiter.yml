@@ -20,7 +20,7 @@ jobs:
           echo "COMMIT Author: $COMMIT_AUTHOR"
 
       - name: empty commit
-        if: env.COMMIT_AUTHOR == 'wilsoncusack' || env.COMMIT_AUTHOR == 'lukasrosario' || env.COMMIT_AUTHOR == 'mdehoog' || env.COMMIT_AUTHOR == 'jessepollak' || env.COMMIT_AUTHOR == 'arpitsrivastava-cb' || env.COMMIT_AUTHOR == 'arpit2438735'
+        if: env.COMMIT_AUTHOR == 'wilsoncusack' || env.COMMIT_AUTHOR == 'lukasrosario' || env.COMMIT_AUTHOR == 'mdehoog' || env.COMMIT_AUTHOR == 'jessepollak' || env.COMMIT_AUTHOR == 'arpitsrivastava-cb' || env.COMMIT_AUTHOR == 'arpit2438735' || env.COMMIT_AUTHOR == 'anirud-samala'
         run: |
           git config user.name "Azim Ahmed"
           git config user.email "ximxim@users.noreply.github.com"
