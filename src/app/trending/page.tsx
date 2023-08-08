@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { useQuery } from 'react-query'
 import { formatEther } from 'viem'
