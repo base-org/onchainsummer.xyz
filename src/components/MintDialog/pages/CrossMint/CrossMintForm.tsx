@@ -45,15 +45,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
   const { address: walletAddress } = useAccount()
   const [email, setEmail] = useState('')
-  console.log(mintType == MintType.Zora)
-  console.log( {
-    recipient: walletAddress,
-    quantity: quantity,          
-    comment: "",
-    mintReferal: creatorAddress,
-    totalPrice: totalPrice,
-  })
-
+  
   return (
     <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
