@@ -15,6 +15,7 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   subNavBgColor,
 }) => {
   const isMismatched = useIsMisMatched()
+  const homePage = window.location.pathname === '/'
 
   const heroMarginTop = isMismatched ? 'md:mt-6' : '!-mt-[90px]'
 
@@ -22,7 +23,10 @@ export const PageContainer: React.FC<PageContainerProps> = ({
     <>
       <SubNav subNavBgColor={subNavBgColor} />
       <main
-        className={clsx('w-full max-w-[1248px] mx-auto mt-16', heroMarginTop)}
+        className={clsx(
+          'w-full max-w-[1248px] mx-auto mt-16',
+          homePage && heroMarginTop
+        )}
       >
         {children}
       </main>
