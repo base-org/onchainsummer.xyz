@@ -16,7 +16,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
           <NavigationMenu.Link asChild>
             <Link
               href="/"
-              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-3"
+              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-[14px]"
             >
               Home
             </Link>
@@ -26,7 +26,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
           <NavigationMenu.Link asChild>
             <Link
               href="/trending"
-              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-3"
+              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-[14px]"
             >
               Trending
             </Link>
@@ -36,7 +36,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
           <NavigationMenu.Link asChild>
             <Link
               href="/community"
-              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-3"
+              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-[14px]"
             >
               Community
             </Link>
