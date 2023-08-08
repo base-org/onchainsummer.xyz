@@ -239,7 +239,7 @@ export const MintDialog: FC = () => {
         <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-initial h-full lg:h-auto lg:overflow-hidden',
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-initial h-auto lg:h-auto lg:overflow-hidden',
             { '!h-full': isDisplayingCrossMintForm }
           )}
         >
