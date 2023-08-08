@@ -57,17 +57,17 @@ export const DropCard: FC<DropCardProps> = ({
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
-      <div className="p-4 flex flex-col flex-auto">
+      <div className="pt-2 p-4 flex flex-col flex-auto">
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
-            className="text-[32px] after:absolute after:inset-0 flex-auto"
+            className="text-[24px] after:absolute after:inset-0 flex-auto"
             target="_blank"
           >
             {name}
           </a>
         ) : (
-          <span className="text-[32px]">{name}</span>
+          <span className="text-[24px]">{name}</span>
         )}
         <div className="mt-4 mb-8">
           <AddressPill
