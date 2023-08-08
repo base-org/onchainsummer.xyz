@@ -20,6 +20,7 @@ import oak from './oak'
 import openSea from './open-sea'
 import fwbBonfire from './fwb-bonfire'
 import fini from './fini'
+import base from './base'
 
 export const partners = [
   fwb,
@@ -69,4 +70,5 @@ export {
   openSea,
   fwbBonfire,
   fini,
+  base,
 }
