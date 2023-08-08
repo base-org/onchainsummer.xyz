@@ -4,7 +4,8 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import { OCSLogo } from '../icons/OCSLogo'
+import { YellowDot } from '../icons/YellowDot'
+import { OCS } from '../icons/OCS'
 import { Close } from '../icons/Close'
 import Link from 'next/link'
 import { Hamburger } from '../icons/Hamburger'
@@ -29,13 +30,19 @@ export const Mobile: FC<MobileProps> = ({}) => {
     >
       <NavigationMenu.List
         className={clsx(
-          'flex justify-between p-6 w-full items-center',
+          'flex justify-between px-6 py-3 w-full items-center',
           hamburgerMenuOpen && 'pb-[40px]'
         )}
       >
         <NavigationMenu.Link asChild>
           <Link href="/">
-            <OCSLogo />
+            <YellowDot />
+          </Link>
+        </NavigationMenu.Link>
+
+        <NavigationMenu.Link asChild>
+          <Link href="/">
+            <OCS />
           </Link>
         </NavigationMenu.Link>
 
