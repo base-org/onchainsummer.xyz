@@ -11,7 +11,7 @@ const Community = async () => {
   const { tweets } = await getPageData()
   return (
     <PageContainer>
-      <section className="mx-6 mt-36 md:mt-28">
+      <section className="mx-6">
         <div>
           <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
             <Heart />
