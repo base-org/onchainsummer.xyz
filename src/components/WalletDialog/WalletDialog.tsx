@@ -18,18 +18,16 @@ import { useAccount, useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi'
 import { useIsMisMatched } from '@/utils/useIsMismatched'
 import { l2 } from '@/config/chain'
 
-
-
 interface WalletDialogProps {}
 
 export const WalletDialog: FC<WalletDialogProps> = ({}) => {
-  const {address} = useAccount()
+  const { address } = useAccount()
   const { name, avatar, isLoading: isLoadingEns } = useEns()
-  const {switchNetwork} = useSwitchNetwork()
-  const {chain} = useNetwork()
-  const {disconnect} = useDisconnect()
+  const { switchNetwork } = useSwitchNetwork()
+  const { chain } = useNetwork()
+  const { disconnect } = useDisconnect()
   const { l1Balance, l2Balance, isLoading: isLoadingBalance } = useBalances()
-  const isMismatched = useIsMisMatched();
+  const isMismatched = useIsMisMatched()
 
   if (!address || !chain) {
     return null
@@ -40,7 +38,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button className={'rounded-lg !py-1.5 !px-4 !lowercase !gap-2'}>
+        <Button className={'rounded-lg !py-[13px] !px-4 !lowercase !gap-2'}>
           {avatar ? (
             <div
               className="h-5 w-5 bg-black rounded-full bg-cover relative"
@@ -104,7 +102,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
                 ) : null} */}
                 {chain.name}
               </span>
-              {isMismatched && switchNetwork? (
+              {isMismatched && switchNetwork ? (
                 <Button
                   className="flex items-center gap-2 !justify-between w-full"
                   size="SMALL"
