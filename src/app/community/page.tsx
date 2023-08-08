@@ -6,6 +6,7 @@ import { format } from 'date-fns'
 import { TwitterModule } from '@/components/TwitterModule'
 import { getTweets } from '@/utils/getTweets'
 import Grant from '../../../public/grant.png'
+import X from '../../../public/x.png'
 
 const Community = async () => {
   const { tweets } = await getPageData()
@@ -28,6 +29,19 @@ const Community = async () => {
             rounds of retro prizes for those building on Base. Holders of a
             variety of Base NFTs will be able to vote in these rounds.
           </p>
+        </div>
+      </section>
+      <section className="mx-6 mt-[84px] mb-6">
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16">
+            <Image
+              src={X}
+              alt={''}
+              fill
+              className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
+            />
+          </div>
+          <h3 className="text-[32px] font-display text-[#151515]">Featured</h3>
         </div>
       </section>
       {tweets && Array.isArray(tweets.data) && (
