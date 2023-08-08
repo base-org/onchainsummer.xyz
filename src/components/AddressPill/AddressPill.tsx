@@ -16,12 +16,15 @@ export const AddressPill: FC<AddressPillProps> = ({
 }) => {
   const { avatar, name } = useEns(address)
   return (
-    <span
+    <a
       className={clsx(
         'max-w-full overflow-hidden rounded-[58px] bg-ocs-gray text-white p-1 pr-2 w-max flex gap-2 items-center text-sm leading-none font-mono',
         { 'pl-2': !avatar },
         className
       )}
+      href={`https://profile.coinbase.com/${name || address}`}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {avatar ? (
         <div
@@ -31,6 +34,6 @@ export const AddressPill: FC<AddressPillProps> = ({
       ) : null}
 
       <span className="leading-[140%]">{name || shortenAddress(address)}</span>
-    </span>
+    </a>
   )
 }
