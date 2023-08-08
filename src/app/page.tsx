@@ -90,7 +90,7 @@ const Home = async ({ searchParams }: Props) => {
                     content={`${article.content.body.slice(0, 500)} ...`}
                   />
                   <Button
-                    className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 !w-[136px] !py-2"
+                    className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 max-w-fit !py-2"
                     href={`/${partner.slug}`}
                   >
                     Read full story
