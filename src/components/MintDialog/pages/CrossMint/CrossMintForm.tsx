@@ -8,6 +8,7 @@ import { MintType, ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
+import { useMintDialogContext } from '../../Context/useMintDialogContext'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -21,32 +22,37 @@ function isPaymentProcessedPayload(
 }
 
 interface CrossMintFormProps {
-  clientId: string
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
   orderIdentifier: string
   setOrderIdentifier: React.Dispatch<string>
   quantity: number
   totalPrice: string
-  mintType: MintType
 }
 
 const environment = isProd ? 'production' : 'staging'
 
 export const CrossMintForm: FC<CrossMintFormProps> = ({
-  clientId,
   page,
   setPage,
   orderIdentifier,
   setOrderIdentifier,
   quantity,
   totalPrice,
-  mintType
 }) => {
+  const {mintType, crossMintClientId: clientId, creatorAddress} = useMintDialogContext();
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
   const { address: walletAddress } = useAccount()
   const [email, setEmail] = useState('')
+  console.log(mintType == MintType.Zora)
+  console.log( {
+    recipient: walletAddress,
+    quantity: quantity,          
+    comment: "",
+    mintReferal: creatorAddress,
+    totalPrice: totalPrice,
+  })
 
   return (
     <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
@@ -69,7 +75,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         </div>
       ) : null}
       <CrossmintPaymentElement
-        clientId={clientId}
+        clientId={clientId || ''}
         environment={environment}
         recipient={{
           email: email,
@@ -78,9 +84,11 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
         mintConfig={mintType == MintType.Zora ?  {
-          quantity: quantity,
+          recipient: walletAddress,
+          quantity: quantity,          
+          comment: "",
+          mintReferral: creatorAddress,
           totalPrice: totalPrice,
-          comment: "Onchain Summer!"
         } : {
           quantity,
           totalPrice,

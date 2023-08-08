@@ -6,7 +6,7 @@ import { useMintDialogContext } from '../Context/useMintDialogContext'
 import { writeTw721, writeZora721 } from '../../../../generated/contracts'
 import { l2 } from '@/config/chain'
 import { Address, useAccount, useWaitForTransaction } from 'wagmi'
-import { TransactionExecutionError, parseEther } from 'viem'
+import { TransactionExecutionError, getAddress, keccak256, parseEther, toHex } from 'viem'
 
 interface NativeMintButtonProps {
   page: ModalPage
@@ -15,7 +15,6 @@ interface NativeMintButtonProps {
   totalPrice: string
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
-  mintType: MintType
 }
 
 export const NativeMintButton: FC<NativeMintButtonProps> = ({
@@ -25,8 +24,8 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   totalPrice,
   setTxDetails,
   setMintError,
-  mintType,
 }) => {
+  const { mintType, creatorAddress } = useMintDialogContext();
   const { address } = useMintDialogContext()
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined)
   const { address: account } = useAccount()
@@ -51,13 +50,17 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   const mint = useMemo(() => {
     switch (mintType) {
       case MintType.Zora:
-        return () =>
-          writeZora721({
+        return () => {
+          if (!account) {
+            setPage(ModalPage.MINT_ERROR)
+          }
+          return writeZora721({
             address: address,
-            functionName: 'purchaseWithComment',
-            args: [BigInt(quantity), 'Onchain Summer!'],
-            value: price,
+            functionName: 'mintWithRewards',
+            args: [account!, BigInt(quantity), '', getAddress(creatorAddress)],
+            value: price
           })
+        }
       case MintType.ThirdWeb:
         return () =>
           writeTw721({
