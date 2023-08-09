@@ -19,8 +19,8 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
   twitter: '@BuildonBase',
   drops: [
     {
-      image: '/partners/base/drop/giphy.gif',
-      creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
+      image: '/partners/base/drop/asset.gif',
+      creator: 'ecfacd7b-9664-41cf-8109-ed2354ad7ee6',
       name: 'Bridge to Base',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -28,9 +28,9 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
       price: '0',
       ...(isProd
         ? {
-            address: '0xEa2a41c02fA86A4901826615F9796e603C6a4491',
-            crossMintClientId: '',
-            mintType: MintType.ThirdWeb,
+            address: '0x173749fB7a78015e92Ee623cf450Abfa670C8259',
+            crossMintClientId: 'fdb56336-4b32-48d1-bf14-afcdecab4880',
+            mintType: MintType.Zora,
           }
         : unlimited),
     },
