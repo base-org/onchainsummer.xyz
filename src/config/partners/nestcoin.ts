@@ -3,8 +3,8 @@ import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const nestcoin: Partner = {
-  slug: 'nestcoin',
-  name: 'Nestcoin',
+  slug: 'onboard',
+  name: 'Onboard',
   url: 'https://nestcoin.com/',
   description:
     'Nestcoin is a community owned platform for creators to monetize their digital work.',

@@ -3,8 +3,8 @@ import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const rainbowWallet: Partner = {
-  slug: 'rainbow-wallet',
-  name: 'Rainbow Wallet',
+  slug: 'rainbow',
+  name: 'Rainbow',
   url: 'https://rainbow.me/',
   description:
     'Rainbow is a community owned platform for creators to monetize their digital work.',
