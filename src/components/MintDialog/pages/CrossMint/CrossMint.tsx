@@ -10,6 +10,8 @@ import { CrossMintForm } from './CrossMintForm'
 import clsx from 'clsx'
 import { Pending } from '../../elements/Pending'
 import { TxDetails } from '../../MintDialog'
+import { useLogEvent } from '@/utils/useLogEvent'
+import { events } from '@/utils/analytics'
 
 interface CrossMintProps {
   page: ModalPage
@@ -37,6 +39,7 @@ export const CrossMint: FC<CrossMintProps> = ({
   const { listenToMintingEvents } = useCrossmintEvents({
     environment: isProd ? 'production' : 'staging',
   }) // Specifying the environment is optional. It defaults to "production"
+  const logEvent = useLogEvent()
 
   listenToMintingEvents({ orderIdentifier }, (event) => {
     switch (event.type) {
@@ -50,6 +53,7 @@ export const CrossMint: FC<CrossMintProps> = ({
           setTxDetails({
             hash: txId,
           })
+          logEvent?.(events.crossMintSuccess)
           setPage(ModalPage.MINT_SUCCESS)
         }
         break

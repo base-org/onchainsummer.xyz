@@ -2,7 +2,7 @@ import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import { OCSLogo } from '../icons/OCSLogo'
 import Link from 'next/link'
-import { NavListItems } from './NavListItems'
+import { NavListItems } from './DesktopNavListItems'
 
 type DesktopProps = {}
 

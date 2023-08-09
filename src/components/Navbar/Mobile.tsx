@@ -4,11 +4,13 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import { OCSLogo } from '../icons/OCSLogo'
-
+import { YellowDot } from '../icons/YellowDot'
+import { OCS } from '../icons/OCS'
+import { Close } from '../icons/Close'
 import Link from 'next/link'
 import { Hamburger } from '../icons/Hamburger'
-import { NavListItems } from './NavListItems'
+import { NavListItems } from './MobileNavListItems'
+import { Separator } from '../Separator'
 
 type MobileProps = {}
 
@@ -26,10 +28,21 @@ export const Mobile: FC<MobileProps> = ({}) => {
         hamburgerMenuOpen ? 'fixed bg-white' : 'relative'
       )}
     >
-      <NavigationMenu.List className="flex justify-between px-6 py-8 w-full items-center border-b border-black/10">
+      <NavigationMenu.List
+        className={clsx(
+          'flex justify-between px-6 py-3 w-full items-center',
+          hamburgerMenuOpen && 'pb-[40px]'
+        )}
+      >
         <NavigationMenu.Link asChild>
           <Link href="/">
-            <OCSLogo />
+            <YellowDot />
+          </Link>
+        </NavigationMenu.Link>
+
+        <NavigationMenu.Link asChild>
+          <Link href="/">
+            <OCS />
           </Link>
         </NavigationMenu.Link>
 
@@ -44,14 +57,21 @@ export const Mobile: FC<MobileProps> = ({}) => {
             <span className="sr-only group-data-[state=open]:hidden">
               Open Menu
             </span>
-            <div className="group-data-[state=closed]:hidden">x</div>
+            <div className="group-data-[state=closed]:hidden">
+              <Close />
+            </div>
             <span className="sr-only group-data-[state=closed]:hidden">
               Close Menu
             </span>
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="bg-white fixed top-[90px] inset-0 max-w-[100vw] px-6 py-8 z-20 overscroll-contain">
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List className="flex flex-col items-center gap-4">
+
+          <NavigationMenu.Content className="bg-white fixed top-[90px] inset-0 max-w-[100vw] z-20 overscroll-contain">
+            <Separator className="relative bottom-2" />
+            <NavigationMenu.Sub
+              orientation="vertical"
+              className="h-full [&>div]:h-full"
+            >
+              <NavigationMenu.List className="flex flex-col items-center gap-4 h-full">
                 <NavListItems />
               </NavigationMenu.List>
             </NavigationMenu.Sub>

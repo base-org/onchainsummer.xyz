@@ -53,7 +53,7 @@ export const Bridging: FC<BridgingProps> = ({
   const isStep4 = bridgeState === BridgeState.L2_TX_PROCESSED
 
   return (
-    <div className="flex flex-col w-full h-full items-center overflow-scroll">
+    <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
       <Dialog.Title className={dialogClasses.title}>Bridging...</Dialog.Title>
 
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>

@@ -22,10 +22,7 @@ export const PageContainer: React.FC<PageContainerProps> = ({
     <>
       <SubNav subNavBgColor={subNavBgColor} />
       <main
-        className={clsx(
-          'w-full max-w-[1248px] mx-auto mt-6 md:mt-12',
-          heroMarginTop
-        )}
+        className={clsx('w-full max-w-[1248px] mx-auto mt-16', heroMarginTop)}
       >
         {children}
       </main>
