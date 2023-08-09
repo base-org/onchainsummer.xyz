@@ -7,7 +7,7 @@ const manifold: Partner = {
   name: 'Manifold',
   url: 'https://studio.manifold.xyz/',
   description:
-    'Manifold is a community owned platform for creators to monetize their digital work.',
+    'Manifold empowers digital creators with tools and applications enabling true creative sovereignty and the ability to create innovative NFT experiences.',
   brandColor: '#000000',
   icon: '/partners/manifold/icon.png',
   banner: '/partners/manifold/banner-icon.svg',
