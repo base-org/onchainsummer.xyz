@@ -15,12 +15,10 @@ import { events } from '@/utils/analytics'
 
 interface CrossMintProps {
   page: ModalPage
-  crossMintClientId: string
   setPage: React.Dispatch<ModalPage>
   quantity: number
   totalPrice: string
   orderIdentifier: string
-  mintType: MintType
   setOrderIdentifier: React.Dispatch<string>
   setTxDetails: React.Dispatch<TxDetails | null>
 }
@@ -28,11 +26,9 @@ interface CrossMintProps {
 export const CrossMint: FC<CrossMintProps> = ({
   setPage,
   page,
-  crossMintClientId,
   quantity,
   totalPrice,
   orderIdentifier,
-  mintType,
   setOrderIdentifier,
   setTxDetails,
 }) => {
@@ -82,8 +78,6 @@ export const CrossMint: FC<CrossMintProps> = ({
           setPage={setPage}
           quantity={quantity}
           totalPrice={totalPrice}
-          clientId={crossMintClientId}
-          mintType={mintType}
         />
       </div>
     </>

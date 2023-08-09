@@ -1,6 +1,6 @@
 import { MintType } from '@/components/MintDialog/types'
 import { isProd } from '../chain'
-import { unlimited } from '../test-contracts'
+import { unlimited, zora } from '../test-contracts'
 import { Partner } from './types'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
@@ -32,7 +32,7 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
             crossMintClientId: 'fdb56336-4b32-48d1-bf14-afcdecab4880',
             mintType: MintType.Zora,
           }
-        : unlimited),
+        : zora),
     },
   ],
 }
