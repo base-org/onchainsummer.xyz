@@ -7,7 +7,7 @@ const blackbird: Partner = {
   name: 'Blackbird',
   url: 'https://www.blackbird.xyz/',
   description:
-    'Blackbird is a community owned platform for creators to monetize their digital work.',
+    "Blackbird is a loyalty and membership platform built for the world's most exciting restaurants.",
   brandColor: '#000000',
   icon: '/partners/blackbird/icon.png',
   banner: '/partners/blackbird/banner-icon.svg',
