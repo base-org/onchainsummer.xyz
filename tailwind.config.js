@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#444',
+            fontSize: '1rem',
+            fontFamily: 'var(--font-coinbase-sans)',
+            fontWeight: '400',
+            lineHeight: '140%',
+          },
+        },
+      },
       colors: {
         'timer-active': '#26D356',
         'button-dark-bg': '#151515',
@@ -97,5 +108,6 @@ module.exports = {
       }
       addUtilities(newUtilities)
     },
+    require('@tailwindcss/typography'),
   ],
 }

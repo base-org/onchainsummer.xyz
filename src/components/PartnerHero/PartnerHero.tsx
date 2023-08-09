@@ -49,29 +49,22 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
             <div className="relative h-6 w-6">
               <Image src={icon} alt={`${name} Icon`} fill />
             </div>
-            <span className="font-medium">{name}</span>
+            <span className="desktop-headline">{name}</span>
           </div>
         )}
-        <h1 className="text-[32px] leading-none font-display md:text-[34px]">
+        <h1 className="desktop-h2 md:desktop-h1">
           {customHeader ? customHeader : headline.name}
         </h1>
         <div className="flex items-center mb-2">
-          <span className="mr-2 text-slate-500">By</span>
+          <span className="mr-2 text-slate-500 desktop-body">By</span>
           <AddressPill
             address={headline.creator as Address}
             className={clsx(teaser && '!bg-ocs-blue !text-white')}
           />
         </div>
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            p: ({ node, ...props }) => (
-              <p {...props} className="font-sans text-[#444]" />
-            ),
-          }}
-        >
-          {description}
-        </ReactMarkdown>
+        <div className="prose">
+          <ReactMarkdown>{description}</ReactMarkdown>
+        </div>
         <div className="flex flex-col w-full gap-4 mt-auto">
           <Countdown startDate={headline.startDate} date={headline.endDate} />
           <>
@@ -92,7 +85,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 dropName={headline.name}
                 creatorAddress={headline.creator}
                 endDate={headline.endDate}
-                mintType={headline.mintType || (headline.externalLink ? MintType.External : MintType.ThirdWeb)}
+                mintType={
+                  headline.mintType ||
+                  (headline.externalLink
+                    ? MintType.External
+                    : MintType.ThirdWeb)
+                }
               />
             )}
           </>

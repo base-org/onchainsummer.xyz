@@ -7,7 +7,7 @@
 }
 
 .button-large {
-  @apply px-8 py-3 md:py-4;
+  @apply px-8 py-4;
 }
 
 .button-dark {
