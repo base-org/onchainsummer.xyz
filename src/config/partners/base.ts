@@ -8,10 +8,16 @@ const base: Partner = {
   slug: 'base',
   name: 'Base Day One',
   url: '',
-  description: `Base mainnet opens for everyone on August 9 with Onchain Summer, a multi-week festival of onchain art, music, gaming, & more.
+  description: `Base Day One commemorates the first day of Base.
 
-Bridge today to get ready and mint an NFT that commemorates you being early, one of the first to teleport to the new internet.
-`,
+  It will evolve as more people come onchain and collectively create our story.
+  
+  Get onchain at onchainsummer.xyz and mint to join us.
+  
+  Any proceeds will support the next generation of builders on Base.
+  
+  *In no event does the Base Day One NFT include any rewards or contents subject to regulated financial activities, including that entitle owners to financial rewards or that may represent securities or derivatives under applicable law.*
+  `,
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/base/icon.png',
   banner: '/partners/base/banner-icon.svg',
@@ -20,8 +26,8 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
   drops: [
     {
       image: '/partners/base/drop/asset.gif',
-      creator: 'ecfacd7b-9664-41cf-8109-ed2354ad7ee6',
-      name: 'Bridge to Base',
+      creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
+      name: 'Base Day One',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
