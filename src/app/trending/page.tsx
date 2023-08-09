@@ -56,7 +56,7 @@ export default function Trending() {
                 <p className="text-xl text-[#010101] opacity-50 mr-3 font-mono uppercase my-2">
                   Powered by{' '}
                 </p>
-                <MintDotFun />
+                <a href='https://mint.fun' target="_blank"><MintDotFun /></a>
                 <span className="sr-only">mint.fun</span>
               </div>
             </div>

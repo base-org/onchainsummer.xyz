@@ -7,7 +7,7 @@ const optimism: Partner = {
   name: 'Optimism',
   url: 'https://www.optimism.io/',
   description:
-    'optimism is a community owned platform for creators to monetize their digital work.',
+    'OP Mainnet is a Layer 2 Optimistic Rollup network designed to utilize the strong security guarantees of Ethereum while reducing its cost and latency',
   brandColor: 'rgb(234,52,49)',
   icon: '/partners/optimism/icon.png',
   banner: '/partners/optimism/banner-icon.svg',

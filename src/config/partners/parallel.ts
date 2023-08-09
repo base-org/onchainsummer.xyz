@@ -6,8 +6,7 @@ const parallel: Partner = {
   slug: 'parallel',
   name: 'Parallel',
   url: 'https://parallel.fi/',
-  description:
-    'Parallel is a decentralized finance (DeFi) platform that combines traditional and crypto finance to create a new and exciting hybrid ecosystem. Parallel is a decentralized finance (DeFi) platform that combines traditional and crypto finance to create a new and exciting hybrid ecosystem. Parallel is a decentralized finance (DeFi) platform that combines traditional and crypto finance to create a new and exciting hybrid ecosystem. Parallel is a decentralized finance (DeFi) platform that combines traditional and crypto finance to create a new and exciting hybrid ecosystem. Parallel is a decentralized finance (DeFi) platform that combines traditional and crypto finance to create a new and exciting hybrid ecosystem. Parallel is a decentralized finance (DeFi) platform that combines traditional and crypto finance to create a new and exciting hybrid ecosystem.',
+  description: 'Choose your faction, join the battle for Earth! Learn more about the sci-fi world of Parallel soon.',
   brandColor: '#0c3ee3',
   icon: '/partners/parallel/icon.png',
   banner: '/partners/parallel/banner-icon.svg',

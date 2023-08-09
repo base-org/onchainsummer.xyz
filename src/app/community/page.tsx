@@ -86,7 +86,7 @@ const Community = async () => {
         </div>
       </section>
       <section className="mx-6 mt-8">
-        <div className="p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32">
+        <div className="p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32 flex gap-2 flex-col">
           {communityData.map(
             ({
               title,
@@ -99,15 +99,17 @@ const Community = async () => {
               grantsAvailable,
               list,
             }) => (
-              <a href={link} target="_blank" className='inline-block' key={title}>
-                <div
-                  className="flex flex-col mb-4 last:mb-0 md:flex-row md:pr-6 bg-white rounded-2xl"
-                >
+              <a
+                href={link}
+                target="_blank"
+                className="inline-block"
+                key={title}
+              >
+                <div className="flex flex-col mb-4 last:mb-0 md:flex-row md:pr-6 bg-white rounded-2xl">
                   <div className="md:w-[30%]">
                     <Image
                       src={image}
                       alt={''}
-
                       fill
                       className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
                     />
@@ -124,7 +126,10 @@ const Community = async () => {
                       </h4>
                       <ul className="list-disc ml-6">
                         {list.map((item) => (
-                          <li key={item} className="text-sm font-sans text-black">
+                          <li
+                            key={item}
+                            className="text-sm font-sans text-black"
+                          >
                             {item}
                           </li>
                         ))}
@@ -132,7 +137,7 @@ const Community = async () => {
                     </div>
                     <div className="mt-6 md:mt-0 text-sm">
                       <p className="font-mono text-ocs-blue">
-                        Total:
+                        Total:{' '}
                         {(grantValue * grantsAvailable)
                           .toString()
                           .substring(0, 2)}
@@ -140,7 +145,7 @@ const Community = async () => {
                       </p>
                       <p className="font-mono text-ocs-blue">
                         {' '}
-                        {grantsAvailable} x $
+                        {grantsAvailable} x{' '}
                         {grantValue.toString().substring(0, 2)}
                         ETH
                       </p>
