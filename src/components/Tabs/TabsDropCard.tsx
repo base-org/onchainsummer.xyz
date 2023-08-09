@@ -52,21 +52,21 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
         </div>
 
         <div className="lg:flex lg:flex-col lg:justify-start p-4 lg:mt-0 w-full">
-          <h3 className="text-sm font-mono uppercase text-[#858585] mb-3">
+          <h3 className="desktop-label-2 uppercase text-[#858585] mb-3">
             {format(new Date(startDate), 'MMMM d')}
           </h3>
           {link ? (
             <Link
-              className="text-[32px] leading-8 after:absolute after:inset-0"
+              className="desktop-h2 after:absolute after:inset-0"
               href={url}
             >
               {name}
             </Link>
           ) : (
-            <h2 className="text-[32px] leading-8">{name}</h2>
+            <h2 className="desktop-h2">{name}</h2>
           )}
 
-          <p className="text-neutral-600 leading-7 mt-4">
+          <p className="text-neutral-600 desktop-body mt-4">
             {description.slice(0, 110)}
             {description.length > 110 && '...'}
           </p>

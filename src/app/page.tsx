@@ -40,8 +40,8 @@ const Home = async ({ searchParams }: Props) => {
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
 
   return (
-    <PageContainer>
-      <div className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
+    <PageContainer subNavOverlap>
+      <div className="flex h-full flex-col items-center justify-between relative pb-36 gap-10 md:gap-[54px]">
         <PartnerHero
           partner={partner}
           headline={featuredDrop}
@@ -59,9 +59,9 @@ const Home = async ({ searchParams }: Props) => {
                     width={64}
                   />
                 </div>
-                <div className="flex-1">
-                  <h2 className="text-[32px]">{name}</h2>
-                  <p className="text-[16px] uppercase text-[#858585]">
+                <div className="flex-1 flex flex-col justify-end">
+                  <h2 className="desktop-h2">{name}</h2>
+                  <p className="desktop-mono uppercase text-[#858585]">
                     Collection
                   </p>
                 </div>
@@ -88,14 +88,16 @@ const Home = async ({ searchParams }: Props) => {
               <div className="flex items-start gap-12">
                 <div className="flex flex-col rounded-xl md:pr-4lg:mx-2  break-words w-full md:w-1/2">
                   <div className="w-full">
-                    <h2 className="text-[32px] font-display">
+                    <h2 className="desktop-h2 font-display">
                       {article.content.title}
                     </h2>
                   </div>
                   <div className="w-full">
-                    <ReactMarkdown
-                      content={`${article.content.body.slice(0, 500)} ...`}
-                    />
+                    <div className="prose">
+                      <ReactMarkdown
+                        content={`${article.content.body.slice(0, 500)} ...`}
+                      />
+                    </div>
                     <Button
                       className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 max-w-fit !py-2"
                       href={`/${partner.slug}`}

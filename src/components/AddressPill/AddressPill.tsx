@@ -33,7 +33,9 @@ export const AddressPill: FC<AddressPillProps> = ({
         />
       ) : null}
 
-      <span className="leading-[140%]">{name || shortenAddress(address)}</span>
+      <span className="desktop-label-2 text-white">
+        {name || shortenAddress(address)}
+      </span>
     </a>
   )
 }

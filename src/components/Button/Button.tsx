@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'DARK' | 'LIGHT' | 'TEXT' | 'ROUND'
-  size?: 'SMALL' | 'LARGE'
+  size?: 'X-SMALL' | 'SMALL' | 'LARGE'
   className?: string
   children: React.ReactNode
   href?: string
@@ -36,6 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const isLight = variant === 'LIGHT'
     const isText = variant === 'TEXT'
     const isRound = variant === 'ROUND'
+    const isXSmall = size === 'X-SMALL'
     const isSmall = size === 'SMALL'
     const isLarge = size === 'LARGE'
 
@@ -47,6 +48,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       },
       { [classes['button-text']]: isText },
       { [classes['button-round']]: isRound },
+      { [classes['button-x-small']]: isXSmall },
       { [classes['button-small']]: isSmall },
       { [classes['button-large']]: isLarge },
       className

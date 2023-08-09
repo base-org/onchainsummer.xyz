@@ -24,13 +24,17 @@ export const BridgeError: FC<BridgeErrorProps> = ({
     <>
       <PartnerInfo />
 
-      <Dialog.Title className={clsx(dialogClasses.title, 'lg:mt-4')}>
+      <Dialog.Title className={clsx('desktop-h2', 'lg:mt-4')}>
         Bridge Error
       </Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
-        <span>
+        <span className="desktop-body">
           Unfortunately, your transaction didn’t go through. Check your
-          transaction for more details or <a href='https://base.org/discord' ><b>contact the Base team</b></a>.
+          transaction for more details or{' '}
+          <a href="https://base.org/discord">
+            <b className="desktop-headline">contact the Base team</b>
+          </a>
+          .
         </span>
       </Dialog.Description>
       {l1TxHash ? (
