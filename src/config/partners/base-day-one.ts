@@ -6,7 +6,7 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const base: Partner = {
   slug: 'base',
-  name: 'Base Day One',
+  name: 'Base',
   url: '',
   description: `Base Day One commemorates the first day of Base.
 
@@ -26,7 +26,7 @@ const base: Partner = {
     {
       image: '/partners/base-day-one/drop/asset.gif',
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
-      name: 'Base',
+      name: 'Base Day One',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 9, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
