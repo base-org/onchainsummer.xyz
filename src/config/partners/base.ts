@@ -1,6 +1,6 @@
 import { MintType } from '@/components/MintDialog/types'
 import { isProd } from '../chain'
-import { unlimited, zora } from '../test-contracts'
+import { zora } from '../test-contracts'
 import { Partner } from './types'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
@@ -10,14 +10,11 @@ const base: Partner = {
   url: '',
   description: `Base Day One commemorates the first day of Base.
 
-  It will evolve as more people come onchain and collectively create our story.
+  Watch it evolve as more people come onchain and collectively create our story.
   
-  Get onchain at onchainsummer.xyz and mint to join us.
+  All proceeds will support the next generation of builders on Base; this does not confer any other rights.
   
-  Any proceeds will support the next generation of builders on Base.
-  
-  *In no event does the Base Day One NFT include any rewards or contents subject to regulated financial activities, including that entitle owners to financial rewards or that may represent securities or derivatives under applicable law.*
-  `,
+  GET ONCHAIN at onchainsummer.xyz and mint to join us.`,
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/base/icon.png',
   banner: '/partners/base/banner-icon.svg',
@@ -35,7 +32,7 @@ const base: Partner = {
       ...(isProd
         ? {
             address: '0x173749fB7a78015e92Ee623cf450Abfa670C8259',
-            crossMintClientId: 'fdb56336-4b32-48d1-bf14-afcdecab4880',
+            crossMintClientId: 'ecfacd7b-9664-41cf-8109-ed2354ad7ee6',
             mintType: MintType.Zora,
           }
         : zora),
