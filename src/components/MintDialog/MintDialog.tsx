@@ -117,7 +117,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
                   <>
                     Mint (
                     {Number(price).toLocaleString('en-US', {
-                      maximumFractionDigits: 3,
+                      maximumFractionDigits: 4,
                     })}{' '}
                     ETH)
                     <ArrowRight />
