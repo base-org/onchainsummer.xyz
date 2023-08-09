@@ -18,21 +18,18 @@ export const PageContainer: React.FC<PageContainerProps> = ({
 }) => {
   const isMismatched = useIsMisMatched()
 
-  const mt = isMismatched ? 'mt-32 sm:mt-20 md:mt-12' : 'mt-6 md:mt-12'
-
-  const subnavOverlap =
-    subNavOverlap && !isMismatched
-      ? '-mt-[calc(135px-36px)] md:-mt-[calc(135px-49px)]'
-      : ''
+  const mt = isMismatched
+    ? 'mt-32 sm:mt-20 md:mt-12'
+    : subNavOverlap
+    ? '-mt-[calc(135px-36px)] md:-mt-[calc(135px-49px)]'
+    : 'mt-6 md:mt-12'
 
   return (
     <>
       <SubNav subNavBgColor={subNavBgColor} />
-      <main
-        className={clsx('w-full max-w-[1248px] mx-auto', mt, subnavOverlap)}
-      >
-        {children}
-      </main>
+      <div className={clsx('px-6 md:px-20', mt)}>
+        <main className="w-full max-w-7xl mx-auto">{children}</main>
+      </div>
     </>
   )
 }

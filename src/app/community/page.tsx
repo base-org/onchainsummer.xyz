@@ -12,7 +12,7 @@ const Community = async () => {
   const { tweets } = await getPageData()
   return (
     <PageContainer>
-      <section className="mx-6">
+      <section className="">
         <div>
           <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
             <Heart />
@@ -85,15 +85,17 @@ const Community = async () => {
               grantsAvailable,
               list,
             }) => (
-              <a href={link} target="_blank" className='inline-block' key={title}>
-                <div
-                  className="flex flex-col mb-4 last:mb-0 md:flex-row md:pr-6 bg-white rounded-2xl"
-                >
+              <a
+                href={link}
+                target="_blank"
+                className="inline-block"
+                key={title}
+              >
+                <div className="flex flex-col mb-4 last:mb-0 md:flex-row md:pr-6 bg-white rounded-2xl">
                   <div className="md:w-[30%]">
                     <Image
                       src={image}
                       alt={''}
-
                       fill
                       className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
                     />
@@ -110,7 +112,10 @@ const Community = async () => {
                       </h4>
                       <ul className="list-disc ml-6">
                         {list.map((item) => (
-                          <li key={item} className="text-sm font-sans text-black">
+                          <li
+                            key={item}
+                            className="text-sm font-sans text-black"
+                          >
                             {item}
                           </li>
                         ))}

@@ -39,7 +39,7 @@ export default function Trending() {
 
   return (
     <PageContainer>
-      <div className="mx-6">
+      <div className="">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
             <div className="w-full sm:w-[55%] flex flex-col gap-4 md:gap-6">

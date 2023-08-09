@@ -41,7 +41,7 @@ const Home = async ({ searchParams }: Props) => {
 
   return (
     <PageContainer subNavOverlap>
-      <div className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
+      <div className="flex h-full flex-col items-center justify-between relative pb-36 gap-10 md:gap-[54px]">
         <PartnerHero
           partner={partner}
           headline={featuredDrop}
