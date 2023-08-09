@@ -18,7 +18,7 @@ const base: Partner = {
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/base/icon.png',
   banner: '/partners/base/banner-icon.svg',
-  aarweaveDigest: 'N-azs7y2g9xoEuZorhF96foLnZchpWqKYVmlrNvsUQw',
+  aarweaveDigest: isProd ? 'N-azs7y2g9xoEuZorhF96foLnZchpWqKYVmlrNvsUQw' : 'h028XVTdP7QtZZfWAHuJ9OYmMNs0Fyi4e4fJZH_5ik4',
   twitter: '@BuildonBase',
   drops: [
     {
