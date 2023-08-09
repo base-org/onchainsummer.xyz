@@ -8,7 +8,7 @@ const anotherblock: Partner = {
   name: 'anotherblock',
   url: 'https://anotherblock.io/',
   description:
-    'Anotherblock brings musical artists and collectors together in a novel way - music ownership on a whole new level.',
+    'Music rights marketplace anotherblock empowers the emotional and financial connection between artists and fans. Collect. Own. Belong. Music ownership reinvented.',
   brandColor: '#000000',
   icon: '/partners/anotherblock/icon.png',
   banner: '/partners/anotherblock/banner-icon.svg',
