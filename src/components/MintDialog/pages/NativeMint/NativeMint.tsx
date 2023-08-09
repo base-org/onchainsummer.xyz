@@ -56,7 +56,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       {!isPending ? <PartnerInfo /> : null}
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title
-        className={clsx(dialogClasses.title, 'lg:mt-2', {
+        className={clsx('desktop-h2', 'lg:mt-2', {
           hidden: isPending,
         })}
       >
@@ -72,7 +72,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       <div
         className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
       >
-        <Dialog.Description className="flex flex-col w-full gap-4">
+        <Dialog.Description className="flex flex-col w-full gap-4 desktop-body">
           <AddressPill
             address={creatorAddress as Address}
             className={'!bg-ocs-gray !text-white'}

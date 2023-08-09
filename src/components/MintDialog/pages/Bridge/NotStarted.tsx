@@ -25,8 +25,8 @@ export const NotStarted: FC<NotStartedProps> = ({
   recommendedAmount,
   bridge,
 }) => {
-  const {switchNetwork} = useSwitchNetwork()
-  const {chain} = useNetwork()
+  const { switchNetwork } = useSwitchNetwork()
+  const { chain } = useNetwork()
 
   const wrongChain = chain && chain.id !== l1.id
 
@@ -38,27 +38,29 @@ export const NotStarted: FC<NotStartedProps> = ({
 
   return (
     <div className="flex flex-col md:my-auto">
-      <Dialog.Title className={dialogClasses.title}>
-        Bridge ETH to Base
-      </Dialog.Title>
+      <Dialog.Title className={'desktop-h2'}>Bridge ETH to Base</Dialog.Title>
 
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
-          <span>
-             You need ETH on Base to mint! {!recommendationIsMin ?` We recommend bridging ${recommendedAmount} ETH, but ` : ''} 
-            {recommendationIsMin ? "Y" : "y"}ou&apos;ll need at least {minAmount} ETH.{' '}
+          <span className="desktop-body">
+            You need ETH on Base to mint!{' '}
+            {!recommendationIsMin
+              ? ` We recommend bridging ${recommendedAmount} ETH, but `
+              : ''}
+            {recommendationIsMin ? 'Y' : 'y'}ou&apos;ll need at least{' '}
+            {minAmount} ETH.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium inline-block"
+              className="desktop-headline inline-block"
             >
               Learn more
             </a>
           </span>
         </Dialog.Description>
         <div className="flex flex-col gap-2">
-          <span className="font-medium">Bridge from Ethereum to Base</span>
+          <span className="desktop-headline">Bridge from Ethereum to Base</span>
           <label htmlFor="bridge-amount" className="relative w-full">
             <span className="sr-only">Bridge Amount</span>
             <input
@@ -66,7 +68,7 @@ export const NotStarted: FC<NotStartedProps> = ({
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               type="number"
-              className="border rounded-[100px] px-5 py-3 w-full pr-14"
+              className="border rounded-[100px] px-5 py-3 w-full pr-14 desktop-body"
               min={minAmount}
               step="0.1"
               max={formatEther(l1Balance)}
@@ -82,7 +84,7 @@ export const NotStarted: FC<NotStartedProps> = ({
             <EthBase className="absolute top-1/2 right-4 transform -translate-y-1/2" />
           </label>
 
-          <div className="flex justify-between text-button-text-text leading-none">
+          <div className="flex justify-between text-button-text-text desktop-body">
             <span>Your balance</span>
             <span>{formatEther(l1Balance)} ETH</span>
           </div>

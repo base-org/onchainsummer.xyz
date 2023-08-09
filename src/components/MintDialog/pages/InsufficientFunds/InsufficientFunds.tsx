@@ -63,13 +63,13 @@ export const InsufficientFunds: FC<InsufficientFundsProps> = ({
   if (!crossMintClientId) {
     return (
       <div className="flex flex-col md:my-auto gap-6">
-        <Dialog.Title className={dialogClasses.title}>
+        <Dialog.Title className={'desktop-h2'}>
           You need some ETH to mint
         </Dialog.Title>
 
         <div className={'flex flex-col w-full gap-6 md:gap-8'}>
           <Dialog.Description className="flex flex-col w-full gap-4">
-            <span>
+            <span className="desktop-body">
               To mint “Bridge to Base”, you need ETH on Base network. Send ETH
               to your address now, or tap “How to buy ETH” if you need help.
             </span>
@@ -93,13 +93,13 @@ export const InsufficientFunds: FC<InsufficientFundsProps> = ({
 
   return (
     <div className="flex flex-col md:my-auto gap-6">
-      <Dialog.Title className={dialogClasses.title}>
+      <Dialog.Title className={'desktop-h2'}>
         Mint with credit card
       </Dialog.Title>
 
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
-          <span>
+          <span className="desktop-body">
             Mint the NFT with a credit card or send at least {minimalBalance}{' '}
             ETH to your Base address.
           </span>

@@ -28,11 +28,9 @@ export const Success: FC<SuccessProps> = ({
     <>
       <PartnerInfo />
       {/* TODO: Add Coinbase Display font */}
-      <Dialog.Title className={dialogClasses.title}>
-        It&apos;s Yours!
-      </Dialog.Title>
+      <Dialog.Title className={'desktop-h2'}>It&apos;s Yours!</Dialog.Title>
       <Dialog.Description className="flex flex-col w-full gap-4">
-        <span>
+        <span className="desktop-body">
           Your mint is confirmed — you’re officially the new owner of {dropName}
           .
         </span>
