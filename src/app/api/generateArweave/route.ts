@@ -40,11 +40,13 @@ export async function GET(request: Request) {
       })
     )
   } catch (ex) {}
-  await new Promise((resolve, reject) =>
-    writeFile(filePath, content, 'utf8', (err) =>
-      !!err ? reject(err) : resolve({})
+  try {
+    await new Promise((resolve, reject) =>
+      writeFile(filePath, content, 'utf8', (err) =>
+        !!err ? reject(err) : resolve({})
+      )
     )
-  )
+  } catch (ex) {}
 
   return NextResponse.json(data, { status: 200 })
 }

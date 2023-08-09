@@ -13,7 +13,8 @@ const base: Partner = {
   Watch it evolve as more people come onchain and collectively create our story.
 
   All proceeds will support the next generation of builders on Base; this does not confer any other rights.
-  `,
+  
+  Mint to join us.`,
   brandColor: '#0052FF',
   icon: '/partners/base-day-one/icon.png',
   banner: '/partners/base-day-one/banner-icon.svg',
