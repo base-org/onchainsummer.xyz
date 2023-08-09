@@ -27,12 +27,8 @@ export type TxDetails = {
 }
 
 export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
-  const {
-    price,
-    crossMintClientId,
-    trendingPageNativeMint,
-    mintButtonStyles,
-  } = useMintDialogContext()
+  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
+    useMintDialogContext()
 
   const [open, setOpen] = useState(false)
   const { l1Balance } = useBalances()
@@ -119,7 +115,12 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
                   </>
                 ) : (
                   <>
-                    Mint ({price} ETH) <ArrowRight />
+                    Mint (
+                    {Number(price).toLocaleString('en-US', {
+                      maximumFractionDigits: 3,
+                    })}{' '}
+                    ETH)
+                    <ArrowRight />
                   </>
                 )}
               </>
@@ -231,11 +232,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <Button
-          size={size}
-          tabIndex={-1}
-          className={clsx('!flex !justify-between', mintButtonStyles)}
-        >
+        <Button size={size} tabIndex={-1} className={clsx(mintButtonStyles)}>
           {buttonTitle}
         </Button>
       </Dialog.Trigger>
