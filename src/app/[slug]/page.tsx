@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import { notFound, redirect } from 'next/navigation'
 import compareAsc from 'date-fns/compareAsc'
 import format from 'date-fns/format'
@@ -6,12 +7,12 @@ import { PartnerHero } from '@/components/PartnerHero'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
 import React from 'react'
 import { DropCard } from '@/components/DropCard'
-import { SDK } from '@/utils/graphqlSdk'
 import { PageContainer } from '@/components/PageContainer'
 import { Metadata, ResolvingMetadata } from 'next'
 import { website } from '@/config/website'
 import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
+import { getArweaves } from '@/utils/getArweaves'
 
 type Props = {
   params: { slug: string }
@@ -159,21 +160,8 @@ async function getPartner(slug: string, spoofDate?: string) {
     return notFound()
   }
 
-  let article = null
-  try {
-    const digest = await SDK.GetMirrorTransactions({
-      digest: partner.aarweaveDigest,
-    })
-
-    const articleId = digest?.transactions?.edges[0]?.node?.id
-
-    if (articleId) {
-      const res = await fetch(`https://arweave.net/${articleId}`)
-      article = (await res?.json()) as {
-        content: { body: string; title: string }
-      }
-    }
-  } catch {}
+  const arweaves = await getArweaves()
+  const article = get(arweaves, partner.aarweaveDigest)
 
   return { partner, article }
 }
