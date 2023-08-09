@@ -3,8 +3,8 @@ import { limited2 } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const mirrorWellness: Partner = {
-  slug: 'mirror-wellness',
-  name: 'Mirror Wellness',
+  slug: 'mirrorswellnessclub',
+  name: 'Mirrors Wellness Club',
   url: 'https://www.mirror.co/',
   description:
     'Mirror Wellness is a community owned platform for creators to monetize their digital work.',

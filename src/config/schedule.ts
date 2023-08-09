@@ -1,5 +1,5 @@
 import {
-  base,
+  baseDayOne,
   fwb,
   parallel,
   coke,
@@ -27,7 +27,7 @@ import {
 import { Partner } from './partners/types'
 
 export const schedule: Record<string, Partner> = {
-  '2023-08-09': base,
+  '2023-08-09': baseDayOne,
   '2023-08-10': fwb,
   '2023-08-11': parallel,
   '2023-08-12': anotherblock,
