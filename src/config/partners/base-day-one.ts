@@ -14,7 +14,7 @@ const base: Partner = {
   
   All proceeds will support the next generation of builders on Base; this does not confer any other rights.
   
-  GET ONCHAIN at onchainsummer.xyz and mint to join us.`,
+  Mint to join us.`,
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/base-day-one/icon.png',
   banner: '/partners/base-day-one/banner-icon.svg',
