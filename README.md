@@ -1,4 +1,4 @@
-<img width="1514" alt="onchainsummer" src="https://github.com/base-org/onchainsummer.xyz/assets/1097953/73e20901-40fd-4e14-823b-f6dd6285886b">
+<img width="1514" alt="onchainsummer" src="https://github.com/base-org/onchainsummer.xyz/assets/1097953/4daa0361-c3af-4e12-ad95-bf7e5f819535">
 
 ## Overview
 
