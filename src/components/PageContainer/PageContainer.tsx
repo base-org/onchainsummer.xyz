@@ -18,6 +18,8 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   const [isHomePage, setIsHomePage] = useState(false)
 
   useEffect(() => {
+    if (typeof window === undefined) return
+
     setIsHomePage(window.location.pathname === '/')
   }, [])
 
