@@ -1,12 +1,14 @@
 import { FC, useEffect, useMemo, useState } from 'react'
 import { Button } from '../../Button'
-import { ModalPage } from '../types'
+import { MintType, ModalPage } from '../types'
 import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
-import { useTw721Claim } from '../../../../generated/tw721'
+import { writeTw721, writeZora721 } from '../../../../generated/contracts'
 import { l2 } from '@/config/chain'
 import { Address, useAccount, useWaitForTransaction } from 'wagmi'
-import { BaseError, TransactionExecutionError, parseEther } from 'viem'
+import { TransactionExecutionError, getAddress, parseEther } from 'viem'
+import { useLogEvent } from '@/utils/useLogEvent'
+import { events } from '@/utils/analytics'
 
 interface NativeMintButtonProps {
   page: ModalPage
@@ -25,30 +27,76 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   setTxDetails,
   setMintError,
 }) => {
+  const { mintType, creatorAddress } = useMintDialogContext();
   const { address } = useMintDialogContext()
-  const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
-  const {address: account} = useAccount();
-  const {data: txReceipt} = useWaitForTransaction({chainId: l2.id, hash: hash})
-  const price = parseEther(totalPrice);
-  
-  const {isLoading, write, data, isSuccess, isError, error} = useTw721Claim({address: address as Address, chainId: l2.id, args: [account || '0x0', BigInt(quantity), '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', price / BigInt(quantity), { proof: [], quantityLimitPerWallet: 2n ** 256n - 1n, pricePerToken: price / BigInt(quantity), currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' }, '0x0'], value: price})
+  const [hash, setHash] = useState<`0x${string}` | undefined>(undefined)
+  const { address: account } = useAccount()
+  const { data: txReceipt } = useWaitForTransaction({
+    chainId: l2.id,
+    hash: hash,
+  })
+  const price = parseEther(totalPrice)
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState<Error | null>(Error)
+  const logEvent = useLogEvent()
+
   const isPending = useMemo(() => {
-    return page === ModalPage.NATIVE_MINTING_PENDING_TX ||
-    page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
+    return (
+      page === ModalPage.NATIVE_MINTING_PENDING_TX ||
+      page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
+    )
   }, [page])
 
-  useEffect(() => {
-    if (!txReceipt) return;
-    // TODO consider case where tx succeeded but mint failed 
-    setPage(ModalPage.MINT_SUCCESS)
-  }, [txReceipt, setPage])
+  const mint = useMemo(() => {
+    switch (mintType) {
+      case MintType.Zora:
+        return () => {
+          if (!account) {
+            setPage(ModalPage.MINT_ERROR)
+          }
+          return writeZora721({
+            address: address,
+            functionName: 'mintWithRewards',
+            args: [account!, BigInt(quantity), '', getAddress(creatorAddress)],
+            value: price
+          })
+        }
+      case MintType.ThirdWeb:
+        return () =>
+          writeTw721({
+            address: address as Address,
+            functionName: 'claim',
+            chainId: l2.id,
+            args: [
+              account || '0x0',
+              BigInt(quantity),
+              '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+              price / BigInt(quantity),
+              {
+                proof: [],
+                quantityLimitPerWallet: 2n ** 256n - 1n,
+                pricePerToken: price / BigInt(quantity),
+                currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+              },
+              '0x0',
+            ],
+            value: price,
+          })
+      default:
+        console.log(`invalid mint type ${mintType} for native mint`)
+        setPage(ModalPage.MINT_ERROR)
+    }
+  }, [mintType, setPage, address, quantity, price, account])
 
   useEffect(() => {
-    if (!data) return;
-    // could clean up and pas txDetails to this button
-    setHash(data.hash)
-    setTxDetails({ hash: data?.hash})
-  }, [data, setHash, setTxDetails])
+    if (!txReceipt) return
+    // TODO consider case where tx succeeded but mint failed
+    logEvent?.(events.nativeMintSuccess)
+    setPage(ModalPage.MINT_SUCCESS)
+  }, [txReceipt, setPage, logEvent])
 
   useEffect(() => {
     if (isLoading) {
@@ -58,32 +106,41 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
       setPage(ModalPage.NATIVE_MINTING_PENDING_TX)
       return
     } else if (isError) {
-      if ((error as TransactionExecutionError).cause.name == 'UserRejectedRequestError') {
+      if (
+        (error as TransactionExecutionError).cause.name ==
+        'UserRejectedRequestError'
+      ) {
         setPage(ModalPage.NATIVE_MINT)
         return
       }
       setPage(ModalPage.MINT_ERROR)
       return
     }
-  }, [isLoading, isSuccess, isError, setPage])
+  }, [isLoading, isSuccess, isError, setPage, error])
+
   return (
     <Button
       className="!flex text-black text-lg font-medium w-full justify-between rounded-lg"
       disabled={isPending || isLoading}
       onClick={async () => {
-        if (!write) return
         try {
-          write();
-        } catch (e) {
-          // @ts-expect-error
-          if (e.reason === 'user rejected transaction') {
-            setPage(ModalPage.NATIVE_MINT)
+          if (!mint) {
             return
           }
+
+          setIsLoading(true)
+          const data = await mint()
+          setHash(data.hash)
+          setTxDetails({ hash: data.hash })
+          setIsLoading(false)
+          setIsSuccess(true)
+        } catch (e) {
+          setIsLoading(false)
           // TODO: Inform error
+          setError(e as TransactionExecutionError)
+          setIsError(true)
           setMintError(e)
           console.log(e)
-          setPage(ModalPage.MINT_ERROR)
         }
       }}
     >

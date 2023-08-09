@@ -4,10 +4,10 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const fini: Partner = {
   slug: 'fini',
-  name: 'fini',
+  name: 'Fini',
   url: 'https://fini.world/',
   description:
-    'fini is a community owned platform for creators to monetize their digital work.',
+    'Fini are digital friends that keep you up to date with the things you care about.',
   brandColor: 'rgb(255, 121, 121)',
   icon: '/partners/fini/icon.png',
   banner: '/partners/fini/banner-icon.svg',

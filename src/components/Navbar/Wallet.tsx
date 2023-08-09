@@ -6,10 +6,10 @@ import { useAccount } from 'wagmi'
 type WalletProps = {}
 
 export const Wallet: FC<WalletProps> = ({}) => {
-  const {address} = useAccount()
+  const { address } = useAccount()
 
   if (!address) {
-    return <ConnectDialog inNavbar title="Connect wallet" />
+    return <ConnectDialog inNavbar title="Connect" />
   }
 
   return <WalletDialog />

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { ModalPage } from '../../types'
+import { MintType, ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -25,7 +25,6 @@ interface NativeMintProps {
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
   insufficientFunds: boolean
-  crossMintClientId: string | undefined
 }
 
 export const NativeMint: FC<NativeMintProps> = ({
@@ -38,13 +37,12 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
   insufficientFunds,
-  crossMintClientId,
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
-  const { creatorAddress, dropName, address, mintDotFunStatus } =
+  const { creatorAddress, dropName, crossMintClientId, mintDotFunStatus } =
     useMintDialogContext()
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
@@ -58,7 +56,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       {!isPending ? <PartnerInfo /> : null}
       {/* TODO: Add Coinbase Display font */}
       <Dialog.Title
-        className={clsx(dialogClasses.title, 'lg:mt-2', {
+        className={clsx('desktop-h2', 'lg:mt-2', {
           hidden: isPending,
         })}
       >
@@ -74,7 +72,7 @@ export const NativeMint: FC<NativeMintProps> = ({
       <div
         className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
       >
-        <Dialog.Description className="flex flex-col w-full gap-4">
+        <Dialog.Description className="flex flex-col w-full gap-4 desktop-body">
           <AddressPill
             address={creatorAddress as Address}
             className={'!bg-ocs-gray !text-white'}

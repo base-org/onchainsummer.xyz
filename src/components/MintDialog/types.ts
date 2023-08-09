@@ -12,3 +12,10 @@ export enum ModalPage {
   CROSS_MINT_PAYMENT_FAILED,
   MINT_ERROR,
 }
+
+export enum MintType {
+  ThirdWeb = 'thirdweb',
+  Zora = 'zora',
+  MintDotFun = 'mint.fun',
+  External = 'external'
+}

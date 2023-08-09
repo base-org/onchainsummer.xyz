@@ -36,20 +36,20 @@ export const Teaser: FC<TeaserProps> = ({
           !showPartnerHero && 'h-1/2'
         )}
       >
-        <div className="h-[54px] w-[54px] rounded-full bg-[#FCD22D]"></div>
-        <h1 className="mt-6 mb-2 text-4xl sm:text-[60px] font-display text-center">
+        <div className="mb-8 h-[54px] w-[54px] rounded-full bg-[#FCD22D]"></div>
+        <h1 className="text-4xl sm:text-[64px] font-display text-center uppercase font-bold">
           Onchain Summer 08.09.23
         </h1>
-        <h3 className="mt-2 mb-6 text-xl font-display text-center">
+        <h3 className="mt-7 mb-8 text-2xl font-display text-center text-[#444]">
           Bridge and mint today to experience the best of onchain this summer.
         </h3>
-        <div className="flex justify-center gap-2 md:mb-[24px] mb-8 flex-wrap">
+        <div className="flex justify-center gap-2 md:mb-14 mb-8 flex-wrap">
           <EmailSubscriptionDialog
             mirrorProjectAddress={mirrorProjectAddress}
             mirrorSubscribeUrl={mirrorSubscribeUrl}
           />
           <CBSubscribeDialog>
-            <Button className="flex-1 !py-[8px]" variant="LIGHT">
+            <Button className="flex-1 !py-[8px] !text-center" variant="LIGHT">
               SUBSCRIBE WITH WALLET
             </Button>
           </CBSubscribeDialog>
@@ -61,7 +61,7 @@ export const Teaser: FC<TeaserProps> = ({
               headline={featuredDrop}
               staticHeadline={false}
               teaser={true}
-              customHeader={"Bridge and mint today"}
+              customHeader={'Bridge and mint today'}
             />
           </div>
         )}

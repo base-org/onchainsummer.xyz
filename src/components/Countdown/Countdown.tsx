@@ -46,7 +46,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
       <div className="mr-4 ">
         <Clock />
       </div>
-      <div className="flex flex-col text-[14px] font-mono uppercase">
+      <div className="flex flex-col desktop-label-1 uppercase">
         {mounted ? (
           <ReactCountdown
             {...props}
@@ -59,7 +59,9 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Ended</p>
                     </div>
-                    <span>{format(props.date, 'do MMMM yyyy')}</span>
+                    <span className="desktop-label-2">
+                      {format(props.date, 'do MMMM yyyy')}
+                    </span>
                   </>
                 )
               } else if (isBeforeStartDate) {
@@ -68,7 +70,9 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Launches</p>
                     </div>
-                    <span>{format(props.startDate, 'do MMMM yyyy')}</span>
+                    <span className="desktop-label-2">
+                      {format(props.startDate, 'do MMMM yyyy')}
+                    </span>
                   </>
                 )
               } else {
@@ -77,7 +81,7 @@ export const Countdown: FC<CustomCountdownProps> = ({
                     <div>
                       <p>Ends</p>
                     </div>
-                    <span>
+                    <span className="desktop-label-2">
                       {days ? `${days}D` : ''} {hours}H:{minutes}M:{seconds}S
                     </span>
                   </>

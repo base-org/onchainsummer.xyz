@@ -2,7 +2,7 @@ import { formatEther as formatEtherByEthers } from 'ethers/lib/utils'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { FC, useEffect, useMemo, useState } from 'react'
-import { Button } from '../Button'
+import { Button, ButtonProps } from '../Button'
 import { Close } from '../icons/Close'
 
 import { ModalPage } from './types'
@@ -26,9 +26,14 @@ export type TxDetails = {
   hash: string
 }
 
-export const MintDialog: FC = () => {
-  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
-    useMintDialogContext()
+export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
+  const {
+    price,
+    crossMintClientId,
+    trendingPageNativeMint,
+    mintButtonStyles,
+  } = useMintDialogContext()
+
   const [open, setOpen] = useState(false)
   const { l1Balance } = useBalances()
 
@@ -162,7 +167,6 @@ export const MintDialog: FC = () => {
             setTxDetails={setTxDetails}
             setPage={setPage}
             page={page}
-            crossMintClientId={crossMintClientId}
             quantity={quantity}
             totalPrice={totalPrice}
             orderIdentifier={crossMintOrderIdentifier}
@@ -183,7 +187,6 @@ export const MintDialog: FC = () => {
             setTxDetails={setTxDetails}
             setMintError={setMintError}
             insufficientFunds={fundsStatus === 'insufficient'}
-            crossMintClientId={crossMintClientId}
           />
         )
       case ModalPage.BRIDGE:
@@ -229,6 +232,7 @@ export const MintDialog: FC = () => {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <Button
+          size={size}
           tabIndex={-1}
           className={clsx('!flex !justify-between', mintButtonStyles)}
         >
