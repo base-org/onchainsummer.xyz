@@ -13,14 +13,6 @@ const generateHighlightedTweets = async () => {
   const bearer_token = process.env.TWITTER_BEARER_TOKEN
   const tweetIds = process.env.TWEET_IDS ? process.env.TWEET_IDS.split(',') : []
 
-  try {
-    await new Promise((resolve, reject) =>
-      unlink(filePath, (err) => {
-        !!err ? reject(err) : resolve({})
-      })
-    )
-  } catch (ex) {}
-
   if (!bearer_token) throw new Error('TWITTER_BEARER_TOKEN is not defined')
 
   const params = new URLSearchParams()
@@ -58,6 +50,15 @@ const generateHighlightedTweets = async () => {
   )
   const data = await response.json()
   const content = `${prefix} ${JSON.stringify(data)}`
+  if (!data || !Array.isArray(data.data)) return
+
+  try {
+    await new Promise((resolve, reject) =>
+      unlink(filePath, (err) => {
+        !!err ? reject(err) : resolve({})
+      })
+    )
+  } catch (ex) {}
   await new Promise((resolve, reject) =>
     writeFile(filePath, content, 'utf8', (err) =>
       !!err ? reject(err) : resolve({})
