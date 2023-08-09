@@ -14,6 +14,7 @@ import { useAccount } from 'wagmi'
 import { l2 } from '@/config/chain'
 import { getTrendingData } from '@/utils/getTrendingData'
 import { MintType } from '@/components/MintDialog/types'
+import { shortenAddress } from '@/utils/address'
 
 interface QueryResult {
   collections: Collection[]
@@ -75,6 +76,7 @@ export default function Trending() {
                       mintStatus,
                       externalURL,
                       imageURL,
+                      contract,
                     },
                     idx
                   ) => (
@@ -84,18 +86,22 @@ export default function Trending() {
                     >
                       <div className="flex flex-wrap justify-between">
                         <div className="flex flex-row flex-wrap order-1 w-full lg:w-1/2">
-                          <div className="flex flex-wrap md:flex-nowrap basis-full md:mb-3 overflow-hidden">
+                          <div className="flex flex-wrap md:flex-nowrap basis-full md:mb-1 overflow-hidden">
                             <div className="flex items-center w-full md:w-auto">
-                              <p className="text-neutral-400 mr-3 md:mr-[29px] text-mono md:text-lg">
+                              <p className="text-neutral-400 mr-3 md:mr-[29px] desktop-mono">
                                 #{idx + 1}
                               </p>
                             </div>
-                            <h3 className="text-black text-[20px] md:text-2xl whitespace-normal overflow-hidden break-all">
+                            <h3 className="text-black desktop-h3 whitespace-normal overflow-hidden break-all">
                               {name}
                             </h3>
                           </div>
-                          <div className="basis-full whitespace-normal overflow-hidden break-all">
-                            <p className="text-[#858585] font-mono text-sm md:text-base lg:ml-[54px]">
+
+                          <div className="basis-full whitespace-normal overflow-hidden break-all lg:ml-[50px]">
+                            <h4 className="desktop-label-1 text-[#858585]">
+                              {shortenAddress(contract)}
+                            </h4>
+                            <p className="text-[#858585] desktop-label-2 ">
                               {mintsLastHour} mints last hour •{' '}
                               {formatEther(BigInt(mintStatus.price))} ETH
                             </p>
@@ -103,11 +109,12 @@ export default function Trending() {
                         </div>
                         <div
                           className={clsx(
-                            'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-1/2 lg:w-1/3 lg:max-h-[50px] [&>div]:w-full sm:[&>div]:w-fit',
+                            'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-1/2 lg:w-1/3 lg:max-h-[50px] [&>div]:w-full sm:[&>div]:w-fit h-max',
                             !connectedWallet && 'flex-wrap sm:flex-nowrap'
                           )}
                         >
                           <MintButton
+                            size="X-SMALL"
                             price={formatEther(BigInt(mintStatus.tx.value))}
                             address={mintStatus.tx.to}
                             partnerIcon={''}

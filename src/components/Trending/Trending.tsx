@@ -143,11 +143,12 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     </div>
                     <div
                       className={clsx(
-                        'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-[40%] lg:w-1/3 lg:max-h-[50px] mt-4 md:mt-0 [&>div]:w-full sm:[&>div]:w-fit',
+                        'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-[40%] lg:w-1/3 lg:max-h-[50px] mt-4 md:mt-0 [&>div]:w-full sm:[&>div]:w-fit h-max',
                         !connectedWallet && 'flex-wrap sm:flex-nowrap'
                       )}
                     >
                       <MintButton
+                        size="X-SMALL"
                         price={formatEther(BigInt(mintStatus.tx.value))}
                         address={mintStatus.tx.to}
                         partnerIcon={''}
@@ -165,14 +166,14 @@ export const Trending: FC<TrendingComponentProps> = () => {
                 </div>
               )
             )}
-        <Button
+        {/* <Button
           className="flex justify-between [@media(min-width:724px)]:!hidden grow lg:grow-0 uppercase text-white !bg-black"
           variant="DARK"
           href="/trending"
         >
           View All
           <RightArrow fill="white" />
-        </Button>
+        </Button> */}
       </div>
     </section>
   )

@@ -2,6 +2,10 @@
   @apply font-normal inline-flex justify-between text-base items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase whitespace-nowrap aria-disabled:opacity-50;
 }
 
+.button-x-small {
+  @apply px-4 py-1.5;
+}
+
 .button-small {
   @apply px-4 py-2.5;
 }

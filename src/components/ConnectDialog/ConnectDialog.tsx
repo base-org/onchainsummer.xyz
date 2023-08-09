@@ -2,11 +2,12 @@ import { FC, useEffect } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { WindowProvider, useConnect } from 'wagmi'
 import clsx from 'clsx'
-import { Button } from '../Button'
+import { Button, ButtonProps } from '../Button'
 
 type ConnectDialogProps = {
   title?: React.ReactNode
   inNavbar?: boolean
+  size?: ButtonProps['size']
 }
 
 declare global {
@@ -22,6 +23,7 @@ interface CustomWindowProvider extends WindowProvider {
 export const ConnectDialog: FC<ConnectDialogProps> = ({
   title = <div className="flex gap-2.5 items-center px-3">Mint</div>,
   inNavbar = false,
+  size,
 }) => {
   const { connect, connectors } = useConnect()
 
@@ -72,6 +74,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
                     className={clsx({
                       'rounded-lg !py-1.5 !px-4': inNavbar,
                     })}
+                    size={size}
                   >
                     {title}
                   </Button>
