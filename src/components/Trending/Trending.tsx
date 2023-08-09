@@ -60,7 +60,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
               <p className="desktop-mono !text-[#858585] uppercase mr-3">
                 Powered by{' '}
               </p>
-              <MintDotFun />
+              <a href='https://mint.fun' target="_blank"><MintDotFun /></a>
               <span className="sr-only">mint.fun</span>
             </div>
           </div>

@@ -12,7 +12,7 @@ const Community = async () => {
   const { tweets } = await getPageData()
   return (
     <PageContainer>
-      <section>
+      <section className="sm:mt-0 mt-4">
         <div>
           <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
             <Heart />
@@ -68,7 +68,7 @@ const Community = async () => {
         </div>
       </section>
       <section className="mt-8">
-        <div className="p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32 flex flex-col gap-4">
+        <div className="p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6 mb-44 md:mb-32 flex gap-2 flex-col">
           {communityData.map(
             ({
               title,
@@ -114,7 +114,7 @@ const Community = async () => {
                         ))}
                       </ul>
                     </div>
-                    <div className="mt-6 desktop-label-1 text-ocs-blue">
+                    <div className="mt-6 md:mt-0 desktop-label-1 text-ocs-blue">
                       <p>
                         Total:
                         {(grantValue * grantsAvailable)
@@ -124,7 +124,7 @@ const Community = async () => {
                       </p>
                       <p>
                         {' '}
-                        {grantsAvailable} x $
+                        {grantsAvailable} x{' '}
                         {grantValue.toString().substring(0, 2)}
                         ETH
                       </p>
