@@ -7,7 +7,7 @@ const mirrorWellness: Partner = {
   name: 'Mirrors Wellness Club',
   url: 'https://www.mirror.co/',
   description:
-    'Mirror Wellness is a community owned platform for creators to monetize their digital work.',
+    'Mirrors Wellness Club aims to build a community centered around wellness in web3 and IRL spaces.',
   brandColor: '#000000',
   icon: '/partners/mirror-wellness/icon.png',
   banner: '/partners/mirror-wellness/banner-icon.svg',
