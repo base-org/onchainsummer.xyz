@@ -60,7 +60,9 @@ export const Trending: FC<TrendingComponentProps> = () => {
               <p className="desktop-mono !text-[#858585] uppercase mr-3">
                 Powered by{' '}
               </p>
-              <a href='https://mint.fun' target="_blank"><MintDotFun /></a>
+              <a href="https://mint.fun" target="_blank">
+                <MintDotFun />
+              </a>
               <span className="sr-only">mint.fun</span>
             </div>
           </div>
@@ -166,14 +168,6 @@ export const Trending: FC<TrendingComponentProps> = () => {
                 </div>
               )
             )}
-        {/* <Button
-          className="flex justify-between [@media(min-width:724px)]:!hidden grow lg:grow-0 uppercase text-white !bg-black"
-          variant="DARK"
-          href="/trending"
-        >
-          View All
-          <RightArrow fill="white" />
-        </Button> */}
       </div>
     </section>
   )

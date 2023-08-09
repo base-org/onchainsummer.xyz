@@ -78,13 +78,9 @@ export const WalletContent: FC<WalletContentProps> = ({}) => {
           {chain.name}
         </span>
         {isMismatched && switchNetwork ? (
-          <Button
-            className="flex items-center gap-2 !justify-between w-full"
-            size="SMALL"
-            onClick={() => switchNetwork(baseGoerli.id)}
-          >
+          <Button size="SMALL" onClick={() => switchNetwork(baseGoerli.id)}>
             Switch to Base
-            <ChainSwitch color="white" />
+            <ChainSwitch color="white" className="ml-auto" />
           </Button>
         ) : null}
       </div>
@@ -103,14 +99,14 @@ export const WalletContent: FC<WalletContentProps> = ({}) => {
         </div>
       </div>
 
-      <Button
-        className="!justify-between"
-        variant="LIGHT"
-        size="SMALL"
-        onClick={() => disconnect()}
-      >
+      <Button variant="LIGHT" size="SMALL" onClick={() => disconnect()}>
         Disconnect Wallet{' '}
-        <ArrowRight height={16} width={16} color={'#151515'} />
+        <ArrowRight
+          height={16}
+          width={16}
+          color={'#151515'}
+          className="ml-auto"
+        />
       </Button>
     </div>
   )

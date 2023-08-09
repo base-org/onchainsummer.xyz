@@ -34,7 +34,9 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
         href={`https://nft.coinbase.com/collection/base/${mintProps.address}`}
         external
       >
-        Collect <RightArrow fill="white" />
+        <>
+          Collect <RightArrow fill="white" className="ml-auto" />
+        </>
       </Button>
     )
   }

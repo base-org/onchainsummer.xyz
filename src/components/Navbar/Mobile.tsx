@@ -56,8 +56,11 @@ export const Mobile: FC<MobileProps> = ({}) => {
                   <YellowDot />
                   <OCS />
                   <Dialog.Close asChild>
-                    <button aria-label="Close">
-                      <Close height={24} width={24} />
+                    <button
+                      aria-label="Close"
+                      className="h-6 w-6 flex items-center justify-center"
+                    >
+                      <Close height={16} width={16} />
                       <span className="sr-only">Close</span>
                     </button>
                   </Dialog.Close>

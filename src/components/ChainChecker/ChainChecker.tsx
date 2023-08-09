@@ -29,10 +29,10 @@ export const ChainChecker: React.FC = () => {
               variant="LIGHT"
               disabled={!switchNetwork}
               onClick={() => switchNetwork!(l2.id)}
-              className="!py-3 !px-6 !bg-transparent"
+              className="!py-3 !px-6 !bg-transparent !justify-between"
             >
               Switch to Base
-              <ChainSwitch />
+              <ChainSwitch className="ml-auto" />
             </Button>
           </div>
         </div>

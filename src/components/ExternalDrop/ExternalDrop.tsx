@@ -30,7 +30,7 @@ export const ExternalDrop: FC<ExternalDropProps> = ({
         external
         className={className}
       >
-        Collect <RightArrow fill="white" />
+        Collect <RightArrow fill="white" className="ml-auto" />
       </Button>
     )
   }
