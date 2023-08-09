@@ -11,7 +11,7 @@ const base: Partner = {
   description: `Base Day One commemorates the first day of Base.
 
   Watch it evolve as more people come onchain and collectively create our story.
-  
+
   All proceeds will support the next generation of builders on Base; this does not confer any other rights.
   
   Mint to join us.`,
