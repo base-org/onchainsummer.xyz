@@ -29,8 +29,8 @@ export const communityData: CommunityData[] = [
     link: 'https://prop.house/base/onchain-summer',
     grantValue: 2,
     grantsAvailable: 10,
-    startDate: new Date('2021-08-07').getTime(),
-    endDate: new Date('2021-08-20').getTime(),
+    startDate: new Date('2021-08-09').getTime(),
+    endDate: new Date('2021-08-18').getTime(),
     image: OnChainSummer,
   },
   {
@@ -40,8 +40,8 @@ export const communityData: CommunityData[] = [
     link: 'https://prop.house/base/build-on-base',
     grantValue: 5,
     grantsAvailable: 5,
-    startDate: new Date('2021-08-07').getTime(),
-    endDate: new Date('2021-08-20').getTime(),
+    startDate: new Date('2021-08-12').getTime(),
+    endDate: new Date('2021-08-23').getTime(),
     image: BuildOnBase,
   },
   {
@@ -55,8 +55,8 @@ export const communityData: CommunityData[] = [
     link: 'https://prop.house/base/stand-with-crypto',
     grantValue: 5,
     grantsAvailable: 5,
-    startDate: new Date('2021-08-07').getTime(),
-    endDate: new Date('2021-08-20').getTime(),
+    startDate: new Date('2021-08-16').getTime(),
+    endDate: new Date('2021-09-13').getTime(),
     image: StandWithCrypto,
   },
   {
@@ -66,8 +66,8 @@ export const communityData: CommunityData[] = [
     link: 'https://prop.house/base/based-accounts',
     grantValue: 5,
     grantsAvailable: 5,
-    startDate: new Date('2021-08-07').getTime(),
-    endDate: new Date('2021-08-20').getTime(),
+    startDate: new Date('2021-08-14').getTime(),
+    endDate: new Date('2021-08-24').getTime(),
     image: BasedAccounts,
   },
 ]
