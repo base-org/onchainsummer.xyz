@@ -6,7 +6,7 @@ body {
   @apply text-neutral-900 bg-white font-sans;
 }
 
-@responsive {
+@layer components {
   .desktop-h1 {
     @apply text-black font-display text-[2.875rem] not-italic font-normal leading-[120%];
   }
@@ -39,6 +39,6 @@ body {
   }
 
   .desktop-label-2 {
-    @apply text-black font-mono text-[0.875rem] not-italic font-medium leading-[120%];
+    @apply text-black font-mono text-[0.875rem] not-italic font-normal leading-[120%];
   }
 }

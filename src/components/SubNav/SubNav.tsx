@@ -2,7 +2,6 @@
 
 import { FC } from 'react'
 import { ChainChecker } from '../ChainChecker'
-import clsx from 'clsx'
 
 interface SubNavProps {
   subNavBgColor?: string
@@ -18,7 +17,7 @@ export const SubNav: FC<SubNavProps> = ({ subNavBgColor }) => {
   return (
     <div
       style={background}
-      className="flex justify-center items-center min-h-[135px] z-0"
+      className="flex justify-center md:items-center h-[135px] z-0 relative"
     >
       <ChainChecker />
     </div>

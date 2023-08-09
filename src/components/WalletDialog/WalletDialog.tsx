@@ -37,7 +37,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button className={'rounded-lg !py-[13px] !px-4 !lowercase !gap-2'}>
+        <Button className={'rounded-lg !py-1.5 !px-4 !lowercase !gap-2'}>
           {avatar ? (
             <div
               className="h-5 w-5 bg-black rounded-full bg-cover relative"
@@ -77,14 +77,16 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
                 ) : null}
               </div>
               <div className="flex flex-col ">
-                <span className="font-medium">
+                <span className="desktop-headline">
                   {isLoadingEns ? '...' : name}
                 </span>
-                <span className="font-mono text-sm">{shortenedAddress}</span>
+                <span className="desktop-label-2 text-[#444]">
+                  {shortenedAddress}
+                </span>
               </div>
             </div>
 
-            <div className="text-button-dark-hover-bg font-medium">
+            <div className="text-button-dark-hover-bg desktop-headline">
               Current Network
             </div>
 
@@ -113,9 +115,11 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
               ) : null}
             </div>
 
-            <div className="text-button-dark-hover-bg font-medium">Balance</div>
+            <div className="text-button-dark-hover-bg desktop-headline">
+              Balance
+            </div>
 
-            <div className="flex flex-col gap-4 font-mono text-sm">
+            <div className="flex flex-col gap-4 desktop-label-2">
               <div className="flex justify-between items-center">
                 <Eth />{' '}
                 {isLoadingBalance ? '...' : formatEther(l1Balance).slice(0, 10)}{' '}
@@ -130,7 +134,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
             </div>
 
             <Button
-              className="flex items-center gap-2 !justify-between w-full"
+              className="!justify-between"
               variant="LIGHT"
               size="SMALL"
               onClick={() => disconnect()}

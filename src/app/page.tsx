@@ -40,7 +40,7 @@ const Home = async ({ searchParams }: Props) => {
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
 
   return (
-    <PageContainer>
+    <PageContainer subNavOverlap>
       <div className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero
           partner={partner}

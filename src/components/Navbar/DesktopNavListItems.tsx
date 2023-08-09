@@ -8,12 +8,12 @@ type NavListItemsProps = {}
 export const NavListItems: FC<NavListItemsProps> = ({}) => {
   return (
     <div className="flex items-center justify-between gap-6">
-      <NavigationMenu.List className="flex items-center gap-6 ">
+      <NavigationMenu.List className="flex items-center gap-2.5">
         <NavigationMenu.Item className="my-2">
           <NavigationMenu.Link asChild>
             <Link
               href="/"
-              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-[14px]"
+              className="desktop-body uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-4 py-1.5"
             >
               Home
             </Link>
@@ -23,7 +23,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
           <NavigationMenu.Link asChild>
             <Link
               href="/trending"
-              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-[14px]"
+              className="desktop-body uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-4 py-1.5"
             >
               Trending
             </Link>
@@ -33,7 +33,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
           <NavigationMenu.Link asChild>
             <Link
               href="/community"
-              className="font-sans uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-6 py-[14px]"
+              className="desktop-body uppercase bg-gray-200/80 hover:bg-gray-200/60 rounded-full px-4 py-1.5"
             >
               Community
             </Link>
@@ -41,7 +41,7 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
         </NavigationMenu.Item>
       </NavigationMenu.List>
       <NavigationMenu.List className="flex items-center gap-4 w-max">
-        <p className="uppercase font-mono text-zinc-400 whitespace-nowrap block min-[1184px]:block min-[1024px]:hidden">
+        <p className="uppercase desktop-mono text-[#858585] whitespace-nowrap block min-[1184px]:block min-[1024px]:hidden">
           Get onchain this summer
         </p>
         <NavigationMenu.Item asChild>

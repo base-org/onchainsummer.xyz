@@ -42,7 +42,7 @@ const Page = async ({ params, searchParams }: Props) => {
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
 
   return (
-    <PageContainer subNavBgColor={partner.brandColor}>
+    <PageContainer subNavBgColor={partner.brandColor} subNavOverlap>
       <main className="flex h-full flex-col items-center justify-between relative px-6 pb-36 xl:px-0 gap-10 md:gap-[54px]">
         <PartnerHero
           partner={partner}

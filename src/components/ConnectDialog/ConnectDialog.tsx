@@ -70,7 +70,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
                     onClick={openConnectModal}
                     type="button"
                     className={clsx({
-                      'rounded-lg !py-[12px] !px-3': inNavbar,
+                      'rounded-lg !py-1.5 !px-4': inNavbar,
                     })}
                   >
                     {title}
