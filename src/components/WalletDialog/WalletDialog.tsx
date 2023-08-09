@@ -16,7 +16,6 @@ import { Loading } from '../icons/Loading'
 import dialogClasses from '@/components/dialog.module.css'
 import { useAccount, useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi'
 import { useIsMisMatched } from '@/utils/useIsMismatched'
-import { l2 } from '@/config/chain'
 
 interface WalletDialogProps {}
 
@@ -106,7 +105,7 @@ export const WalletDialog: FC<WalletDialogProps> = ({}) => {
                 <Button
                   className="flex items-center gap-2 !justify-between w-full"
                   size="SMALL"
-                  onClick={() => switchNetwork(l2.id)}
+                  onClick={() => switchNetwork(baseGoerli.id)}
                 >
                   Switch to Base
                   <ChainSwitch color="white" />
