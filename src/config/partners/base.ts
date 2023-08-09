@@ -5,8 +5,8 @@ import { Partner } from './types'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const base: Partner = {
-  slug: 'bridge-to-base',
-  name: 'Base',
+  slug: 'base',
+  name: 'Base Day One',
   url: '',
   description: `Base mainnet opens for everyone on August 9 with Onchain Summer, a multi-week festival of onchain art, music, gaming, & more.
 

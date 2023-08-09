@@ -3,7 +3,7 @@ import { limited2 } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const pixelmon: Partner = {
-  slug: 'pixelmon',
+  slug: 'kevin',
   name: 'Pixelmon',
   url: 'https://www.pixelmon.ai/',
   description:
