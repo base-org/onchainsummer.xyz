@@ -44,13 +44,13 @@ export const limited2: DropDetails = isProd
     }
 
 export const zora: DropDetails = isProd
-  ? {
-      crossMintClientId: '',
-      address: '0xBD254879329417D58c70308260DDd9eEcfeFB84d',
-      mintType: MintType.Zora,
-    }
-  : {
-      address: '0x2f6f5ef163ed71e32d92666a69190c79a784130f',
-      mintType: MintType.Zora,
-      crossMintClientId: 'fd5323c8-1df3-452d-8978-a3b41d006bc7',
-    }
+    ? {
+        address: '0x3fb678b3b2698db713faa36de1144c6019d82f2b',
+        crossMintClientId: '4242753d-1d8a-477e-acbd-de49a400d225',
+        mintType: MintType.Zora,
+      }
+    : {
+        address: '0xc410e3291fed14d98b41f29060a56ae2db993894',
+        crossMintClientId: '1119fbf5-fa74-4839-8090-bfc3e276f3be',
+        mintType: MintType.Zora,
+      }

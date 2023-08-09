@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { Button } from '@/components/Button'
 import { CollectionPlaceholder } from '@/components/CollectionPlaceholder'
 import { useQuery } from 'react-query'
 import { formatEther } from 'viem'
@@ -40,7 +39,7 @@ export default function Trending() {
 
   return (
     <PageContainer>
-      <div className="mx-6 mt-32">
+      <div className="mx-6">
         <section className="max-w-screen-xl mx-auto">
           <div className="flex items-start md:justify-between flex-col md:flex-row md:items-center w-full">
             <div className="w-full sm:w-[55%]">
@@ -104,7 +103,7 @@ export default function Trending() {
                         </div>
                         <div
                           className={clsx(
-                            'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-1/2 lg:w-1/3 lg:max-h-[50px]',
+                            'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-1/2 lg:w-1/3 lg:max-h-[50px] [&>div]:w-full sm:[&>div]:w-fit',
                             !connectedWallet && 'flex-wrap sm:flex-nowrap'
                           )}
                         >
@@ -120,36 +119,28 @@ export default function Trending() {
                             creatorAddress={mintStatus.tx.to}
                             mintDotFunStatus={mintStatus}
                             trendingPageNativeMint={true}
-                            mintButtonStyles="w-1/2 sm:!max-w-fit !py-[8px]"
+                            mintButtonStyles="w-full sm:!max-w-fit"
                             mintType={MintType.MintDotFun}
                           />
-
-                          <Button
-                            size="SMALL"
-                            className="grow lg:grow-0 uppercase border border-1 border-black !bg-white w-1/2 sm:max-w-fit"
-                            variant="LIGHT"
-                            href={externalURL}
-                            external
-                          >
-                            View More
-                          </Button>
                         </div>
                         <div className="grid grid-cols-4 [@media(min-width:600px)]:grid-cols-10 gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">
-                          {images.media.map(({ imageURI, title }, idx) => (
+                          {images.media.map(({ imageURI }, idx) => (
                             <div
                               key={imageURI}
                               className={`${
                                 idx > VISIBLE_NFTS.mobile ? 'hidden' : 'block'
                               } [@media(min-width:600px)]:block `}
                             >
-                              <Image
-                                src={imageURI}
-                                alt=""
-                                width={64}
-                                height={64}
-                                priority
-                                className="rounded-lg"
-                              />
+                              <a href={externalURL} target="_blank">
+                                <Image
+                                  src={imageURI}
+                                  alt=""
+                                  width={64}
+                                  height={64}
+                                  priority
+                                  className="rounded-lg"
+                                />
+                              </a>
                             </div>
                           ))}
                           {images.media.length > 4 && (

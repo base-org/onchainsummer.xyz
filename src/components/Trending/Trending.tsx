@@ -106,23 +106,26 @@ export const Trending: FC<TrendingComponentProps> = () => {
                   className="w-full mb-6 sm:mb-0 last:mb-0 bg-white rounded-2xl sm:p-6"
                 >
                   <div className="flex flex-wrap justify-between">
-                    <div className="flex flex-row flex-wrap order-1 w-full lg:w-1/2">
+                    <div className="flex flex-row flex-wrap order-1 w-full lg:w-[60%]">
                       <div className="flex flex-wrap lg:flex-nowrap basis-full md:mb-3 overflow-hidden">
-                        <div className="flex items-start w-full md:w-auto">
+                        <div className="flex items-start w-full md:w-auto relative top-[3px]">
                           <p className="text-neutral-400 mr-3 md:mr-[29px] text-mono md:text-lg mb-4 md:mb-0">
                             #{idx + 1}
                           </p>
                         </div>
-                        <div className="flex gap-6">
-                          <Image
-                            src={images.media[0].imageURI}
-                            alt=""
-                            width={64}
-                            height={64}
-                            priority
-                            className="rounded-lg"
-                          />
-                          <div>
+                        <div className="flex items-center gap-6">
+                          <a href={externalURL} target="_blank">
+                            <Image
+                              src={images.media[0].imageURI}
+                              alt=""
+                              width={64}
+                              height={64}
+                              priority
+                              className="rounded-lg !h-fit"
+                            />
+                          </a>
+
+                          <div className="relative top-[3px]">
                             <h3 className="text-black text-[20px] md:text-2xl whitespace-normal overflow-hidden break-all">
                               {name}
                             </h3>
@@ -140,7 +143,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     </div>
                     <div
                       className={clsx(
-                        'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-1/2 lg:w-1/3 lg:max-h-[50px] mt-4 md:mt-0',
+                        'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-[40%] lg:w-1/3 lg:max-h-[50px] mt-4 md:mt-0 [&>div]:w-full sm:[&>div]:w-fit',
                         !connectedWallet && 'flex-wrap sm:flex-nowrap'
                       )}
                     >
@@ -157,16 +160,6 @@ export const Trending: FC<TrendingComponentProps> = () => {
                         mintButtonStyles="w-1/3 sm:!max-w-fit"
                         mintType={MintType.MintDotFun}
                       />
-
-                      <Button
-                        size="SMALL"
-                        className="grow lg:grow-0 uppercase border border-1 border-black !bg-white w-2/3 sm:max-w-fit"
-                        variant="LIGHT"
-                        href={externalURL}
-                        external
-                      >
-                        View More
-                      </Button>
                     </div>
                   </div>
                 </div>
