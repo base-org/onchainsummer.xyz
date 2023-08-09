@@ -1,82 +1,33 @@
 export const tweets = {
   data: [
     {
-      reply_settings: 'everyone',
-      attachments: { media_keys: ['3_1679531068440068096'] },
-      public_metrics: {
-        retweet_count: 36,
-        reply_count: 8,
-        like_count: 175,
-        quote_count: 6,
-        bookmark_count: 11,
-        impression_count: 28973,
-      },
-      edit_controls: {
-        edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-07-13T17:39:49.000Z',
-      },
-      id: '1679531085171167232',
-      text: "Base Mainnet is live for builders on thirdweb!\n\nWe're excited to be supporting Coinbase's mission to bring the next million developers onchain to power the next billion Web3 users.\n\nHere's everything @BuildOnBase devs can access today: 🧵 https://t.co/KcjSwdaU89",
-      created_at: '2023-07-13T16:39:49.000Z',
       entities: {
-        mentions: [
-          {
-            start: 200,
-            end: 212,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
-          },
-        ],
-        annotations: [
-          {
-            start: 0,
-            end: 11,
-            probability: 0.7409,
-            type: 'Other',
-            normalized_text: 'Base Mainnet',
-          },
-          {
-            start: 79,
-            end: 86,
-            probability: 0.6324,
-            type: 'Organization',
-            normalized_text: 'Coinbase',
-          },
-          {
-            start: 169,
-            end: 172,
-            probability: 0.572,
-            type: 'Other',
-            normalized_text: 'Web3',
-          },
-        ],
         urls: [
           {
-            start: 238,
-            end: 261,
-            url: 'https://t.co/KcjSwdaU89',
+            start: 7,
+            end: 30,
+            url: 'https://t.co/Zv9S37OmIZ',
             expanded_url:
-              'https://twitter.com/thirdweb/status/1679531085171167232/photo/1',
-            display_url: 'pic.twitter.com/KcjSwdaU89',
-            media_key: '3_1679531068440068096',
+              'https://twitter.com/jessepollak/status/1688274711900516352',
+            display_url: 'twitter.com/jessepollak/st…',
           },
         ],
       },
-      lang: 'en',
-      edit_history_tweet_ids: ['1679531085171167232'],
-      author_id: '1382854043433783296',
       possibly_sensitive: false,
+      edit_history_tweet_ids: ['1688592900417081345'],
+      text: 'minted https://t.co/Zv9S37OmIZ',
+      created_at: '2023-08-07T16:48:14.000Z',
+      public_metrics: {
+        retweet_count: 119,
+        reply_count: 155,
+        like_count: 768,
+        quote_count: 62,
+        bookmark_count: 150,
+        impression_count: 412975,
+      },
+      author_id: '14379660',
+      reply_settings: 'everyone',
       context_annotations: [
-        {
-          domain: {
-            id: '30',
-            name: 'Entities [Entity Service]',
-            description:
-              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
-          },
-          entity: { id: '781974596794716162', name: 'Financial services' },
-        },
         {
           domain: {
             id: '46',
@@ -107,14 +58,6 @@ export const tweets = {
         },
         {
           domain: {
-            id: '47',
-            name: 'Brand',
-            description: 'Brands and Companies',
-          },
-          entity: { id: '1370436971940642819', name: 'Coinbase' },
-        },
-        {
-          domain: {
             id: '66',
             name: 'Interests and Hobbies Category',
             description:
@@ -132,66 +75,11 @@ export const tweets = {
             name: 'Unified Twitter Taxonomy',
             description: 'A taxonomy of user interests. ',
           },
-          entity: { id: '781974596148793345', name: 'Business & finance' },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: { id: '781974596794716162', name: 'Financial services' },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: {
-            id: '848920371311001600',
-            name: 'Technology',
-            description: 'Technology and computing',
-          },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
           entity: {
             id: '913142676819648512',
             name: 'Cryptocurrencies',
             description: 'Cryptocurrency',
           },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: { id: '1370436971940642819', name: 'Coinbase' },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: {
-            id: '1390680741206368263',
-            name: 'Cryptocurrency exchanges',
-          },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: { id: '1486271512655003652', name: 'Web3' },
         },
         {
           domain: {
@@ -213,213 +101,419 @@ export const tweets = {
             description: 'Cryptocurrency',
           },
         },
+        {
+          domain: {
+            id: '45',
+            name: 'Brand Vertical',
+            description: 'Top level entities that describe a Brands industry',
+          },
+          entity: { id: '781974597226799105', name: 'B2B' },
+        },
+        {
+          domain: {
+            id: '30',
+            name: 'Entities [Entity Service]',
+            description:
+              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+          },
+          entity: { id: '781974597172203520', name: 'Services - B2B' },
+        },
+        {
+          domain: {
+            id: '47',
+            name: 'Brand',
+            description: 'Brands and Companies',
+          },
+          entity: { id: '10042877598', name: 'Slack' },
+        },
+        {
+          domain: {
+            id: '30',
+            name: 'Entities [Entity Service]',
+            description:
+              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+          },
+          entity: {
+            id: '848920371311001600',
+            name: 'Technology',
+            description: 'Technology and computing',
+          },
+        },
+        {
+          domain: {
+            id: '66',
+            name: 'Interests and Hobbies Category',
+            description:
+              'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
+          },
+          entity: {
+            id: '848959158082617344',
+            name: 'Enterprise software',
+            description: 'Enterprise software',
+          },
+        },
       ],
-      conversation_id: '1679531085171167232',
-    },
-    {
-      reply_settings: 'everyone',
-      public_metrics: {
-        retweet_count: 138,
-        reply_count: 51,
-        like_count: 486,
-        quote_count: 10,
-        bookmark_count: 9,
-        impression_count: 77998,
-      },
+      id: '1688592900417081345',
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: true,
-        editable_until: '2023-06-27T18:41:08.000Z',
+        editable_until: '2023-08-07T17:48:14.000Z',
       },
-      id: '1673748309696200704',
-      text: 'crypto winter\n\nBuilder Spring\n\nONCHAIN SUMMER',
-      created_at: '2023-06-27T17:41:08.000Z',
+      conversation_id: '1688592900417081345',
       lang: 'en',
-      edit_history_tweet_ids: ['1673748309696200704'],
-      author_id: '18876842',
-      possibly_sensitive: false,
-      conversation_id: '1673748309696200704',
+      referenced_tweets: [{ type: 'quoted', id: '1688274711900516352' }],
     },
     {
-      reply_settings: 'everyone',
-      attachments: { media_keys: ['3_1676797128633651200'] },
-      public_metrics: {
-        retweet_count: 8,
-        reply_count: 6,
-        like_count: 28,
-        quote_count: 3,
-        bookmark_count: 1,
-        impression_count: 3462,
-      },
-      edit_controls: {
-        edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-07-06T04:48:47.000Z',
-      },
-      id: '1676800332616310785',
-      text: 'L2 Optimism and Base testnets are now available for beta testing on Nouns Builder!\n\nTest it out and share feedback before we deploy to mainnets.\n\nhttps://t.co/suMVfaQDW4\n\n⌐◨-◨ ❘ ❙ ❚ https://t.co/Ot9nhy1LYL',
-      created_at: '2023-07-06T03:48:47.000Z',
-      lang: 'en',
       entities: {
-        annotations: [
-          {
-            start: 68,
-            end: 80,
-            probability: 0.6762,
-            type: 'Other',
-            normalized_text: 'Nouns Builder',
-          },
-        ],
         urls: [
           {
-            start: 146,
-            end: 169,
-            url: 'https://t.co/suMVfaQDW4',
-            expanded_url: 'http://testnet.nouns.build',
-            display_url: 'testnet.nouns.build',
-            images: [
-              {
-                url: 'https://pbs.twimg.com/news_img/1679542820124897280/LPFj9okT?format=jpg&name=orig',
-                width: 1200,
-                height: 630,
-              },
-              {
-                url: 'https://pbs.twimg.com/news_img/1679542820124897280/LPFj9okT?format=jpg&name=150x150',
-                width: 150,
-                height: 150,
-              },
-            ],
-            status: 200,
-            title: 'Nouns your ideas',
-            description:
-              'Unlock the possibilities of collective creation. Start with a vision. Start a DAO. All onchain.',
-            unwound_url: 'https://testnet.nouns.build/',
+            start: 279,
+            end: 302,
+            url: 'https://t.co/WpSRIF86T5',
+            expanded_url:
+              'https://twitter.com/i/web/status/1688634181319057408',
+            display_url: 'twitter.com/i/web/status/1…',
+          },
+        ],
+        mentions: [
+          {
+            start: 20,
+            end: 35,
+            username: 'nounsprophouse',
+            id: '1462087413774397453',
+          },
+        ],
+        annotations: [
+          {
+            start: 175,
+            end: 181,
+            probability: 0.6211,
+            type: 'Other',
+            normalized_text: 'Onchain',
           },
           {
-            start: 182,
-            end: 205,
-            url: 'https://t.co/Ot9nhy1LYL',
-            expanded_url:
-              'https://twitter.com/nounsbuilder/status/1676800332616310785/photo/1',
-            display_url: 'pic.twitter.com/Ot9nhy1LYL',
-            media_key: '3_1676797128633651200',
+            start: 263,
+            end: 269,
+            probability: 0.4659,
+            type: 'Other',
+            normalized_text: 'Onchain',
           },
         ],
       },
-      edit_history_tweet_ids: ['1676800332616310785'],
-      author_id: '1533989227855331328',
       possibly_sensitive: false,
-      conversation_id: '1676800332616310785',
+      edit_history_tweet_ids: ['1688634181319057408'],
+      text: 'In partnership with @nounsprophouse, we’re distributing 100+ ETH in grants for those building and creating on Base this summer\n\nThere are four rounds of Prop House grants:\n\n① Onchain Summer (August 9 - 21): Make art, a website, or whatever you’re inspired to for Onchain Summer… https://t.co/WpSRIF86T5',
+      created_at: '2023-08-07T19:32:16.000Z',
+      public_metrics: {
+        retweet_count: 482,
+        reply_count: 248,
+        like_count: 1926,
+        quote_count: 68,
+        bookmark_count: 309,
+        impression_count: 330695,
+      },
+      author_id: '1628067904083181570',
+      reply_settings: 'everyone',
+      context_annotations: [
+        {
+          domain: {
+            id: '46',
+            name: 'Business Taxonomy',
+            description:
+              'Categories within Brand Verticals that narrow down the scope of Brands',
+          },
+          entity: {
+            id: '1557696505548394496',
+            name: 'Beauty, Cosmetic & Personal Care Business',
+            description:
+              'Brands, companies, advertisers and every non-person handle with the profit intent related to makeup, perfumes and skin care',
+          },
+        },
+        {
+          domain: {
+            id: '46',
+            name: 'Business Taxonomy',
+            description:
+              'Categories within Brand Verticals that narrow down the scope of Brands',
+          },
+          entity: {
+            id: '1557696848252391426',
+            name: 'Financial Services Business',
+            description:
+              'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+          },
+        },
+        {
+          domain: {
+            id: '30',
+            name: 'Entities [Entity Service]',
+            description:
+              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+          },
+          entity: {
+            id: '1007361429752594432',
+            name: 'Ethereum cryptocurrency',
+            description: 'Ethereum Cryptocurrency',
+          },
+        },
+        {
+          domain: {
+            id: '65',
+            name: 'Interests and Hobbies Vertical',
+            description:
+              'Top level interests and hobbies groupings, like Food or Travel',
+          },
+          entity: { id: '1256236649253449729', name: 'Fashion & beauty' },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: {
+            id: '850395585941086209',
+            name: 'Beauty',
+            description: 'Beauty',
+          },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: {
+            id: '1007361429752594432',
+            name: 'Ethereum cryptocurrency',
+            description: 'Ethereum Cryptocurrency',
+          },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: { id: '1401883640598986757', name: 'Face makeup' },
+        },
+        {
+          domain: {
+            id: '173',
+            name: 'Product Taxonomy',
+            description:
+              'A product taxonomy for labeling categories of products. ',
+          },
+          entity: { id: '1401883640598986757', name: 'Face makeup' },
+        },
+      ],
+      id: '1688634181319057408',
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: true,
+        editable_until: '2023-08-07T20:32:16.000Z',
+      },
+      conversation_id: '1688634181319057408',
+      lang: 'en',
+    },
+    {
+      entities: {
+        urls: [
+          {
+            start: 245,
+            end: 268,
+            url: 'https://t.co/ItLtqyvxdG',
+            expanded_url:
+              'https://twitter.com/BuildOnBase/status/1688634181319057408',
+            display_url: 'twitter.com/BuildOnBase/st…',
+          },
+        ],
+        mentions: [
+          {
+            start: 134,
+            end: 145,
+            username: 'stackup_fi',
+            id: '884775097982042112',
+          },
+          {
+            start: 181,
+            end: 193,
+            username: 'BuildOnBase',
+            id: '1628067904083181570',
+          },
+        ],
+      },
+      possibly_sensitive: false,
+      edit_history_tweet_ids: ['1688645647254302728'],
+      text: "Base is offering 25 ETH for projects using account abstraction.\n\nIf you plan to compete in this, send me a DM and I'll help you out!\n\n@stackup_fi has deployed its infrastructure on @buildonbase and we're ready to support teams building on Base🫡 https://t.co/ItLtqyvxdG",
+      created_at: '2023-08-07T20:17:50.000Z',
+      public_metrics: {
+        retweet_count: 6,
+        reply_count: 7,
+        like_count: 78,
+        quote_count: 2,
+        bookmark_count: 21,
+        impression_count: 21783,
+      },
+      author_id: '1423151818293473283',
+      reply_settings: 'everyone',
+      context_annotations: [
+        {
+          domain: {
+            id: '46',
+            name: 'Business Taxonomy',
+            description:
+              'Categories within Brand Verticals that narrow down the scope of Brands',
+          },
+          entity: {
+            id: '1557696505548394496',
+            name: 'Beauty, Cosmetic & Personal Care Business',
+            description:
+              'Brands, companies, advertisers and every non-person handle with the profit intent related to makeup, perfumes and skin care',
+          },
+        },
+        {
+          domain: {
+            id: '46',
+            name: 'Business Taxonomy',
+            description:
+              'Categories within Brand Verticals that narrow down the scope of Brands',
+          },
+          entity: {
+            id: '1557696848252391426',
+            name: 'Financial Services Business',
+            description:
+              'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+          },
+        },
+        {
+          domain: {
+            id: '30',
+            name: 'Entities [Entity Service]',
+            description:
+              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+          },
+          entity: {
+            id: '1007361429752594432',
+            name: 'Ethereum cryptocurrency',
+            description: 'Ethereum Cryptocurrency',
+          },
+        },
+        {
+          domain: {
+            id: '65',
+            name: 'Interests and Hobbies Vertical',
+            description:
+              'Top level interests and hobbies groupings, like Food or Travel',
+          },
+          entity: { id: '1256236649253449729', name: 'Fashion & beauty' },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: {
+            id: '850395585941086209',
+            name: 'Beauty',
+            description: 'Beauty',
+          },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: {
+            id: '1007361429752594432',
+            name: 'Ethereum cryptocurrency',
+            description: 'Ethereum Cryptocurrency',
+          },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: { id: '1401883640598986757', name: 'Face makeup' },
+        },
+        {
+          domain: {
+            id: '173',
+            name: 'Product Taxonomy',
+            description:
+              'A product taxonomy for labeling categories of products. ',
+          },
+          entity: { id: '1401883640598986757', name: 'Face makeup' },
+        },
+      ],
+      id: '1688645647254302728',
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: true,
+        editable_until: '2023-08-07T21:17:50.000Z',
+      },
+      conversation_id: '1688645647254302728',
+      lang: 'en',
+      referenced_tweets: [{ type: 'quoted', id: '1688634181319057408' }],
     },
   ],
   includes: {
-    media: [
-      {
-        media_key: '3_1679531068440068096',
-        url: 'https://pbs.twimg.com/media/F07km7OaQAAa0O8.jpg',
-        width: 5001,
-        type: 'photo',
-        height: 5001,
-      },
-      {
-        media_key: '3_1676797128633651200',
-        url: 'https://pbs.twimg.com/media/F0UuGryakAA47mI.jpg',
-        width: 1382,
-        type: 'photo',
-        height: 718,
-      },
-    ],
     users: [
       {
-        url: 'https://t.co/MvT3IZ13Lv',
-        created_at: '2021-04-16T00:31:53.000Z',
+        username: 'brian_armstrong',
+        name: 'Brian Armstrong 🛡️',
+        location: 'Earth',
+        protected: false,
+        description:
+          'Co-founder & CEO at @Coinbase. Creating more economic freedom in the world. ENS: barmstrong.eth',
+        public_metrics: {
+          followers_count: 1252369,
+          following_count: 675,
+          tweet_count: 1885,
+          listed_count: 12442,
+        },
         entities: {
           url: {
             urls: [
               {
                 start: 0,
                 end: 23,
-                url: 'https://t.co/MvT3IZ13Lv',
-                expanded_url: 'http://thirdweb.com',
-                display_url: 'thirdweb.com',
+                url: 'https://t.co/YxEWIGGGmN',
+                expanded_url: 'https://www.coinbase.com/',
+                display_url: 'coinbase.com',
               },
             ],
           },
           description: {
-            urls: [
-              {
-                start: 37,
-                end: 60,
-                url: 'https://t.co/ESH9RfSbTM',
-                expanded_url: 'http://discord.gg/thirdweb',
-                display_url: 'discord.gg/thirdweb',
-              },
-              {
-                start: 61,
-                end: 84,
-                url: 'https://t.co/LzJrk3nFlo',
-                expanded_url: 'http://youtube.com/c/thirdweb_',
-                display_url: 'youtube.com/c/thirdweb_',
-              },
-            ],
+            mentions: [{ start: 20, end: 29, username: 'Coinbase' }],
           },
         },
-        location: 'San Francisco',
-        description:
-          'The fastest way to build web3 apps.\n\nhttps://t.co/ESH9RfSbTM\nhttps://t.co/LzJrk3nFlo',
-        public_metrics: {
-          followers_count: 72040,
-          following_count: 28,
-          tweet_count: 2732,
-          listed_count: 660,
-        },
-        username: 'thirdweb',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1580649916686286848/vdNCao2e_normal.jpg',
+        id: '14379660',
+        url: 'https://t.co/YxEWIGGGmN',
         verified: true,
-        id: '1382854043433783296',
-        verified_type: 'business',
-        name: 'thirdweb',
-        pinned_tweet_id: '1659228077426348033',
-        protected: false,
+        verified_type: 'blue',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1516832438818770944/n77EwnKU_normal.png',
+        created_at: '2008-04-14T01:10:52.000Z',
       },
       {
-        url: 'https://t.co/6pgVoBT5fJ',
-        created_at: '2023-02-21T16:26:04.000Z',
-        entities: {
-          url: {
-            urls: [
-              {
-                start: 0,
-                end: 23,
-                url: 'https://t.co/6pgVoBT5fJ',
-                expanded_url: 'http://base.org',
-                display_url: 'base.org',
-              },
-            ],
-          },
-        },
-        description:
-          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
-        public_metrics: {
-          followers_count: 290467,
-          following_count: 1,
-          tweet_count: 369,
-          listed_count: 889,
-        },
-        username: 'BuildOnBase',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
-        verified: true,
-        id: '1628067904083181570',
-        verified_type: 'business',
-        name: 'Base 🛡️',
-        pinned_tweet_id: '1628757381457883136',
+        pinned_tweet_id: '1626991181300133889',
+        username: 'jessepollak',
+        name: 'Jesse Pollak (jesse.xyz) 🛡️',
+        location: 'east bay & the internet',
         protected: false,
-      },
-      {
-        url: 'https://t.co/b0wXk39N1H',
-        created_at: '2009-01-11T19:36:50.000Z',
+        description:
+          '@buildonbase contributor #001\n@oakcurrency with @0xcity3',
+        public_metrics: {
+          followers_count: 26844,
+          following_count: 1679,
+          tweet_count: 7718,
+          listed_count: 566,
+        },
         entities: {
           url: {
             urls: [
@@ -440,144 +534,397 @@ export const tweets = {
             ],
           },
         },
-        location: 'east bay & the internet',
-        description:
-          '@buildonbase contributor #001\n@oakcurrency with @0xcity3',
-        public_metrics: {
-          followers_count: 25554,
-          following_count: 1666,
-          tweet_count: 7328,
-          listed_count: 552,
-        },
-        username: 'jessepollak',
+        id: '18876842',
+        url: 'https://t.co/b0wXk39N1H',
+        verified: true,
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1484575656759472128/4vLR6_4F_normal.png',
-        verified: true,
-        id: '18876842',
-        verified_type: 'blue',
-        name: 'Jesse Pollak (jesse.xyz) 🛡️',
-        pinned_tweet_id: '1626991181300133889',
-        protected: false,
+        created_at: '2009-01-11T19:36:50.000Z',
       },
       {
-        url: 'https://t.co/q1Q6iEEA9F',
-        created_at: '2022-06-07T01:48:54.000Z',
+        pinned_tweet_id: '1687088084704509952',
+        username: 'BuildOnBase',
+        name: 'Base 🛡️',
+        protected: false,
+        description:
+          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
+        public_metrics: {
+          followers_count: 378320,
+          following_count: 1,
+          tweet_count: 421,
+          listed_count: 1051,
+        },
         entities: {
           url: {
             urls: [
               {
                 start: 0,
                 end: 23,
-                url: 'https://t.co/q1Q6iEEA9F',
-                expanded_url: 'http://nouns.build',
-                display_url: 'nouns.build',
+                url: 'https://t.co/6pgVoBT5fJ',
+                expanded_url: 'http://base.org',
+                display_url: 'base.org',
+              },
+            ],
+          },
+        },
+        id: '1628067904083181570',
+        url: 'https://t.co/6pgVoBT5fJ',
+        verified: true,
+        verified_type: 'business',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
+        created_at: '2023-02-21T16:26:04.000Z',
+      },
+      {
+        pinned_tweet_id: '1688928392153018368',
+        username: 'nounsprophouse',
+        name: 'Prop House',
+        location: '⌐◨-◨ ',
+        protected: false,
+        description: 'Reward builders through fun & easy funding rounds',
+        public_metrics: {
+          followers_count: 6871,
+          following_count: 1,
+          tweet_count: 3786,
+          listed_count: 90,
+        },
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/DY7kIh4eIZ',
+                expanded_url: 'https://prop.house',
+                display_url: 'prop.house',
+              },
+            ],
+          },
+        },
+        id: '1462087413774397453',
+        url: 'https://t.co/DY7kIh4eIZ',
+        verified: false,
+        verified_type: 'none',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1669369300925153280/zXfAKfuG_normal.png',
+        created_at: '2021-11-20T15:56:32.000Z',
+      },
+      {
+        pinned_tweet_id: '1631087378642206720',
+        username: 'johnrising_',
+        name: 'John Rising',
+        location: 'Los Angeles, CA',
+        protected: false,
+        description:
+          'Co-founder @stackup_fi\nGenerative art collector & dabbler @GrailersDAO\n\nPast: https://t.co/J9miPTgwAR (SpaceX, MIT, Relativity, Virgin Galactic)',
+        public_metrics: {
+          followers_count: 4017,
+          following_count: 937,
+          tweet_count: 2023,
+          listed_count: 70,
+        },
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/HS9wLij1qa',
+                expanded_url: 'http://www.stackup.sh/',
+                display_url: 'stackup.sh',
               },
             ],
           },
           description: {
             urls: [
               {
-                start: 81,
-                end: 104,
-                url: 'https://t.co/AMFm9Coc7C',
-                expanded_url: 'https://github.com/ourzora/nouns-builder',
-                display_url: 'github.com/ourzora/nouns-…',
+                start: 78,
+                end: 101,
+                url: 'https://t.co/J9miPTgwAR',
+                expanded_url: 'http://linkedin.com/in/johnrising',
+                display_url: 'linkedin.com/in/johnrising',
               },
             ],
             mentions: [
-              { start: 48, end: 57, username: 'nounsdao' },
-              { start: 60, end: 68, username: 'ourzora' },
+              { start: 11, end: 22, username: 'stackup_fi' },
+              { start: 58, end: 70, username: 'GrailersDAO' },
             ],
           },
         },
-        location: 'Nouns Protocol',
-        description:
-          'Create your Nouns DAO. Public Infrastructure by @nounsdao & @ourzora Contribute: https://t.co/AMFm9Coc7C ⌐◨-◨ ❘ ❙ ❚',
-        public_metrics: {
-          followers_count: 3524,
-          following_count: 39,
-          tweet_count: 564,
-          listed_count: 65,
-        },
-        username: 'nounsbuilder',
+        id: '1423151818293473283',
+        url: 'https://t.co/HS9wLij1qa',
+        verified: true,
+        verified_type: 'blue',
         profile_image_url:
-          'https://pbs.twimg.com/profile_images/1587230850483191808/nOt4mjKu_normal.jpg',
-        verified: false,
-        id: '1533989227855331328',
-        verified_type: 'none',
-        name: 'Nouns Builder',
-        pinned_tweet_id: '1587460414488576000',
+          'https://pbs.twimg.com/profile_images/1427478662878695433/Tsmm9-cl_normal.jpg',
+        created_at: '2021-08-05T05:20:19.000Z',
+      },
+      {
+        username: 'stackup_fi',
+        name: 'Stackup',
+        location: '🌐 Online',
         protected: false,
+        description:
+          'YC S22\n\nUnlock the next 8 billion crypto users with our account abstraction SDKs\n\nJoin our Discord 🤝 https://t.co/wkskprGlqf',
+        public_metrics: {
+          followers_count: 2262,
+          following_count: 30,
+          tweet_count: 133,
+          listed_count: 61,
+        },
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/VxSL7aAeBp',
+                expanded_url: 'https://stackup.sh',
+                display_url: 'stackup.sh',
+              },
+            ],
+          },
+          description: {
+            urls: [
+              {
+                start: 101,
+                end: 124,
+                url: 'https://t.co/wkskprGlqf',
+                expanded_url: 'http://discord.gg/VTjJGvMNyW',
+                display_url: 'discord.gg/VTjJGvMNyW',
+              },
+            ],
+          },
+        },
+        id: '884775097982042112',
+        url: 'https://t.co/VxSL7aAeBp',
+        verified: false,
+        verified_type: 'none',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1658242802441142272/MD_WjuYW_normal.jpg',
+        created_at: '2017-07-11T14:03:16.000Z',
       },
     ],
     tweets: [
       {
-        reply_settings: 'everyone',
-        attachments: { media_keys: ['3_1679531068440068096'] },
-        public_metrics: {
-          retweet_count: 36,
-          reply_count: 8,
-          like_count: 175,
-          quote_count: 6,
-          bookmark_count: 11,
-          impression_count: 28973,
-        },
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-07-13T17:39:49.000Z',
-        },
-        id: '1679531085171167232',
-        text: "Base Mainnet is live for builders on thirdweb!\n\nWe're excited to be supporting Coinbase's mission to bring the next million developers onchain to power the next billion Web3 users.\n\nHere's everything @BuildOnBase devs can access today: 🧵 https://t.co/KcjSwdaU89",
-        created_at: '2023-07-13T16:39:49.000Z',
         entities: {
-          mentions: [
-            {
-              start: 200,
-              end: 212,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
-            },
-          ],
-          annotations: [
-            {
-              start: 0,
-              end: 11,
-              probability: 0.7409,
-              type: 'Other',
-              normalized_text: 'Base Mainnet',
-            },
-            {
-              start: 79,
-              end: 86,
-              probability: 0.6324,
-              type: 'Organization',
-              normalized_text: 'Coinbase',
-            },
-            {
-              start: 169,
-              end: 172,
-              probability: 0.572,
-              type: 'Other',
-              normalized_text: 'Web3',
-            },
-          ],
           urls: [
             {
-              start: 238,
-              end: 261,
-              url: 'https://t.co/KcjSwdaU89',
+              start: 7,
+              end: 30,
+              url: 'https://t.co/Zv9S37OmIZ',
               expanded_url:
-                'https://twitter.com/thirdweb/status/1679531085171167232/photo/1',
-              display_url: 'pic.twitter.com/KcjSwdaU89',
-              media_key: '3_1679531068440068096',
+                'https://twitter.com/jessepollak/status/1688274711900516352',
+              display_url: 'twitter.com/jessepollak/st…',
             },
           ],
         },
-        lang: 'en',
-        edit_history_tweet_ids: ['1679531085171167232'],
-        author_id: '1382854043433783296',
         possibly_sensitive: false,
+        edit_history_tweet_ids: ['1688592900417081345'],
+        text: 'minted https://t.co/Zv9S37OmIZ',
+        created_at: '2023-08-07T16:48:14.000Z',
+        public_metrics: {
+          retweet_count: 119,
+          reply_count: 155,
+          like_count: 768,
+          quote_count: 62,
+          bookmark_count: 150,
+          impression_count: 412975,
+        },
+        author_id: '14379660',
+        reply_settings: 'everyone',
+        context_annotations: [
+          {
+            domain: {
+              id: '46',
+              name: 'Business Taxonomy',
+              description:
+                'Categories within Brand Verticals that narrow down the scope of Brands',
+            },
+            entity: {
+              id: '1557696848252391426',
+              name: 'Financial Services Business',
+              description:
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+            },
+          },
+          {
+            domain: {
+              id: '46',
+              name: 'Business Taxonomy',
+              description:
+                'Categories within Brand Verticals that narrow down the scope of Brands',
+            },
+            entity: {
+              id: '1557697333571112960',
+              name: 'Technology Business',
+              description:
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares',
+            },
+          },
+          {
+            domain: {
+              id: '66',
+              name: 'Interests and Hobbies Category',
+              description:
+                'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
+            },
+            entity: {
+              id: '913142676819648512',
+              name: 'Cryptocurrencies',
+              description: 'Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '913142676819648512',
+              name: 'Cryptocurrencies',
+              description: 'Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '1491481998862348291',
+              name: 'Digital asset industry',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '1492162686204854274',
+              name: 'Digital assets & cryptocurrency',
+              description: 'Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '45',
+              name: 'Brand Vertical',
+              description: 'Top level entities that describe a Brands industry',
+            },
+            entity: { id: '781974597226799105', name: 'B2B' },
+          },
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: { id: '781974597172203520', name: 'Services - B2B' },
+          },
+          {
+            domain: {
+              id: '47',
+              name: 'Brand',
+              description: 'Brands and Companies',
+            },
+            entity: { id: '10042877598', name: 'Slack' },
+          },
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: {
+              id: '848920371311001600',
+              name: 'Technology',
+              description: 'Technology and computing',
+            },
+          },
+          {
+            domain: {
+              id: '66',
+              name: 'Interests and Hobbies Category',
+              description:
+                'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
+            },
+            entity: {
+              id: '848959158082617344',
+              name: 'Enterprise software',
+              description: 'Enterprise software',
+            },
+          },
+        ],
+        id: '1688592900417081345',
+        edit_controls: {
+          edits_remaining: 5,
+          is_edit_eligible: true,
+          editable_until: '2023-08-07T17:48:14.000Z',
+        },
+        conversation_id: '1688592900417081345',
+        lang: 'en',
+        referenced_tweets: [{ type: 'quoted', id: '1688274711900516352' }],
+      },
+      {
+        entities: {
+          urls: [
+            {
+              start: 83,
+              end: 106,
+              url: 'https://t.co/5wy5QxzO6T',
+              expanded_url:
+                'https://zora.co/collect/base:0xc85f505b43fcbffbf7808a55bc4e8cecac18d85b',
+              display_url: 'zora.co/collect/base:0…',
+              status: 200,
+              title: 'Based',
+              description: 'A token for the early adopters.',
+              unwound_url:
+                'https://zora.co/collect/base:0xc85f505b43fcbffbf7808a55bc4e8cecac18d85b',
+            },
+            {
+              start: 107,
+              end: 130,
+              url: 'https://t.co/Mk7czqr3C9',
+              expanded_url:
+                'https://twitter.com/jessepollak/status/1688274711900516352/photo/1',
+              display_url: 'pic.twitter.com/Mk7czqr3C9',
+              media_key: '3_1688274616165539840',
+            },
+          ],
+          mentions: [
+            { start: 37, end: 46, username: 'coinbase', id: '574032254' },
+            {
+              start: 74,
+              end: 81,
+              username: '0xlght',
+              id: '1312594248232034305',
+            },
+          ],
+          hashtags: [{ start: 15, end: 21, tag: 'mints' }],
+        },
+        possibly_sensitive: false,
+        edit_history_tweet_ids: ['1688274711900516352'],
+        text: 'now curating a #mints channel in the @coinbase slack\n\nMINT #001: Based by @0xLGHT\n\nhttps://t.co/5wy5QxzO6T https://t.co/Mk7czqr3C9',
+        created_at: '2023-08-06T19:43:52.000Z',
+        public_metrics: {
+          retweet_count: 94,
+          reply_count: 44,
+          like_count: 418,
+          quote_count: 18,
+          bookmark_count: 297,
+          impression_count: 281516,
+        },
+        author_id: '18876842',
+        reply_settings: 'everyone',
+        attachments: { media_keys: ['3_1688274616165539840'] },
         context_annotations: [
           {
             domain: {
@@ -660,18 +1007,6 @@ export const tweets = {
               description: 'A taxonomy of user interests. ',
             },
             entity: {
-              id: '848920371311001600',
-              name: 'Technology',
-              description: 'Technology and computing',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
               id: '913142676819648512',
               name: 'Cryptocurrencies',
               description: 'Cryptocurrency',
@@ -702,14 +1037,6 @@ export const tweets = {
               name: 'Unified Twitter Taxonomy',
               description: 'A taxonomy of user interests. ',
             },
-            entity: { id: '1486271512655003652', name: 'Web3' },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
             entity: {
               id: '1491481998862348291',
               name: 'Digital asset industry',
@@ -727,103 +1054,363 @@ export const tweets = {
               description: 'Cryptocurrency',
             },
           },
+          {
+            domain: {
+              id: '45',
+              name: 'Brand Vertical',
+              description: 'Top level entities that describe a Brands industry',
+            },
+            entity: { id: '781974597226799105', name: 'B2B' },
+          },
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: { id: '781974597172203520', name: 'Services - B2B' },
+          },
+          {
+            domain: {
+              id: '47',
+              name: 'Brand',
+              description: 'Brands and Companies',
+            },
+            entity: { id: '10042877598', name: 'Slack' },
+          },
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: {
+              id: '848920371311001600',
+              name: 'Technology',
+              description: 'Technology and computing',
+            },
+          },
+          {
+            domain: {
+              id: '66',
+              name: 'Interests and Hobbies Category',
+              description:
+                'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
+            },
+            entity: {
+              id: '848959158082617344',
+              name: 'Enterprise software',
+              description: 'Enterprise software',
+            },
+          },
         ],
-        conversation_id: '1679531085171167232',
-      },
-      {
-        reply_settings: 'everyone',
-        public_metrics: {
-          retweet_count: 138,
-          reply_count: 51,
-          like_count: 486,
-          quote_count: 10,
-          bookmark_count: 9,
-          impression_count: 77998,
-        },
+        id: '1688274711900516352',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: true,
-          editable_until: '2023-06-27T18:41:08.000Z',
+          editable_until: '2023-08-06T20:43:52.000Z',
         },
-        id: '1673748309696200704',
-        text: 'crypto winter\n\nBuilder Spring\n\nONCHAIN SUMMER',
-        created_at: '2023-06-27T17:41:08.000Z',
+        conversation_id: '1688274711900516352',
         lang: 'en',
-        edit_history_tweet_ids: ['1673748309696200704'],
-        author_id: '18876842',
-        possibly_sensitive: false,
-        conversation_id: '1673748309696200704',
       },
       {
-        reply_settings: 'everyone',
-        attachments: { media_keys: ['3_1676797128633651200'] },
-        public_metrics: {
-          retweet_count: 8,
-          reply_count: 6,
-          like_count: 28,
-          quote_count: 3,
-          bookmark_count: 1,
-          impression_count: 3462,
-        },
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-07-06T04:48:47.000Z',
-        },
-        id: '1676800332616310785',
-        text: 'L2 Optimism and Base testnets are now available for beta testing on Nouns Builder!\n\nTest it out and share feedback before we deploy to mainnets.\n\nhttps://t.co/suMVfaQDW4\n\n⌐◨-◨ ❘ ❙ ❚ https://t.co/Ot9nhy1LYL',
-        created_at: '2023-07-06T03:48:47.000Z',
-        lang: 'en',
         entities: {
-          annotations: [
-            {
-              start: 68,
-              end: 80,
-              probability: 0.6762,
-              type: 'Other',
-              normalized_text: 'Nouns Builder',
-            },
-          ],
           urls: [
             {
-              start: 146,
-              end: 169,
-              url: 'https://t.co/suMVfaQDW4',
-              expanded_url: 'http://testnet.nouns.build',
-              display_url: 'testnet.nouns.build',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1679542820124897280/LPFj9okT?format=jpg&name=orig',
-                  width: 1200,
-                  height: 630,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1679542820124897280/LPFj9okT?format=jpg&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'Nouns your ideas',
-              description:
-                'Unlock the possibilities of collective creation. Start with a vision. Start a DAO. All onchain.',
-              unwound_url: 'https://testnet.nouns.build/',
+              start: 279,
+              end: 302,
+              url: 'https://t.co/WpSRIF86T5',
+              expanded_url:
+                'https://twitter.com/i/web/status/1688634181319057408',
+              display_url: 'twitter.com/i/web/status/1…',
+            },
+          ],
+          mentions: [
+            {
+              start: 20,
+              end: 35,
+              username: 'nounsprophouse',
+              id: '1462087413774397453',
+            },
+          ],
+          annotations: [
+            {
+              start: 175,
+              end: 181,
+              probability: 0.6211,
+              type: 'Other',
+              normalized_text: 'Onchain',
             },
             {
-              start: 182,
-              end: 205,
-              url: 'https://t.co/Ot9nhy1LYL',
-              expanded_url:
-                'https://twitter.com/nounsbuilder/status/1676800332616310785/photo/1',
-              display_url: 'pic.twitter.com/Ot9nhy1LYL',
-              media_key: '3_1676797128633651200',
+              start: 263,
+              end: 269,
+              probability: 0.4659,
+              type: 'Other',
+              normalized_text: 'Onchain',
             },
           ],
         },
-        edit_history_tweet_ids: ['1676800332616310785'],
-        author_id: '1533989227855331328',
         possibly_sensitive: false,
-        conversation_id: '1676800332616310785',
+        edit_history_tweet_ids: ['1688634181319057408'],
+        text: 'In partnership with @nounsprophouse, we’re distributing 100+ ETH in grants for those building and creating on Base this summer\n\nThere are four rounds of Prop House grants:\n\n① Onchain Summer (August 9 - 21): Make art, a website, or whatever you’re inspired to for Onchain Summer… https://t.co/WpSRIF86T5',
+        created_at: '2023-08-07T19:32:16.000Z',
+        public_metrics: {
+          retweet_count: 482,
+          reply_count: 248,
+          like_count: 1926,
+          quote_count: 68,
+          bookmark_count: 309,
+          impression_count: 330695,
+        },
+        author_id: '1628067904083181570',
+        reply_settings: 'everyone',
+        context_annotations: [
+          {
+            domain: {
+              id: '46',
+              name: 'Business Taxonomy',
+              description:
+                'Categories within Brand Verticals that narrow down the scope of Brands',
+            },
+            entity: {
+              id: '1557696505548394496',
+              name: 'Beauty, Cosmetic & Personal Care Business',
+              description:
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to makeup, perfumes and skin care',
+            },
+          },
+          {
+            domain: {
+              id: '46',
+              name: 'Business Taxonomy',
+              description:
+                'Categories within Brand Verticals that narrow down the scope of Brands',
+            },
+            entity: {
+              id: '1557696848252391426',
+              name: 'Financial Services Business',
+              description:
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+            },
+          },
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: {
+              id: '1007361429752594432',
+              name: 'Ethereum cryptocurrency',
+              description: 'Ethereum Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '65',
+              name: 'Interests and Hobbies Vertical',
+              description:
+                'Top level interests and hobbies groupings, like Food or Travel',
+            },
+            entity: { id: '1256236649253449729', name: 'Fashion & beauty' },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '850395585941086209',
+              name: 'Beauty',
+              description: 'Beauty',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '1007361429752594432',
+              name: 'Ethereum cryptocurrency',
+              description: 'Ethereum Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: { id: '1401883640598986757', name: 'Face makeup' },
+          },
+          {
+            domain: {
+              id: '173',
+              name: 'Product Taxonomy',
+              description:
+                'A product taxonomy for labeling categories of products. ',
+            },
+            entity: { id: '1401883640598986757', name: 'Face makeup' },
+          },
+        ],
+        id: '1688634181319057408',
+        edit_controls: {
+          edits_remaining: 5,
+          is_edit_eligible: true,
+          editable_until: '2023-08-07T20:32:16.000Z',
+        },
+        conversation_id: '1688634181319057408',
+        lang: 'en',
+      },
+      {
+        entities: {
+          urls: [
+            {
+              start: 245,
+              end: 268,
+              url: 'https://t.co/ItLtqyvxdG',
+              expanded_url:
+                'https://twitter.com/BuildOnBase/status/1688634181319057408',
+              display_url: 'twitter.com/BuildOnBase/st…',
+            },
+          ],
+          mentions: [
+            {
+              start: 134,
+              end: 145,
+              username: 'stackup_fi',
+              id: '884775097982042112',
+            },
+            {
+              start: 181,
+              end: 193,
+              username: 'BuildOnBase',
+              id: '1628067904083181570',
+            },
+          ],
+        },
+        possibly_sensitive: false,
+        edit_history_tweet_ids: ['1688645647254302728'],
+        text: "Base is offering 25 ETH for projects using account abstraction.\n\nIf you plan to compete in this, send me a DM and I'll help you out!\n\n@stackup_fi has deployed its infrastructure on @buildonbase and we're ready to support teams building on Base🫡 https://t.co/ItLtqyvxdG",
+        created_at: '2023-08-07T20:17:50.000Z',
+        public_metrics: {
+          retweet_count: 6,
+          reply_count: 7,
+          like_count: 78,
+          quote_count: 2,
+          bookmark_count: 21,
+          impression_count: 21783,
+        },
+        author_id: '1423151818293473283',
+        reply_settings: 'everyone',
+        context_annotations: [
+          {
+            domain: {
+              id: '46',
+              name: 'Business Taxonomy',
+              description:
+                'Categories within Brand Verticals that narrow down the scope of Brands',
+            },
+            entity: {
+              id: '1557696505548394496',
+              name: 'Beauty, Cosmetic & Personal Care Business',
+              description:
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to makeup, perfumes and skin care',
+            },
+          },
+          {
+            domain: {
+              id: '46',
+              name: 'Business Taxonomy',
+              description:
+                'Categories within Brand Verticals that narrow down the scope of Brands',
+            },
+            entity: {
+              id: '1557696848252391426',
+              name: 'Financial Services Business',
+              description:
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+            },
+          },
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: {
+              id: '1007361429752594432',
+              name: 'Ethereum cryptocurrency',
+              description: 'Ethereum Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '65',
+              name: 'Interests and Hobbies Vertical',
+              description:
+                'Top level interests and hobbies groupings, like Food or Travel',
+            },
+            entity: { id: '1256236649253449729', name: 'Fashion & beauty' },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '850395585941086209',
+              name: 'Beauty',
+              description: 'Beauty',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '1007361429752594432',
+              name: 'Ethereum cryptocurrency',
+              description: 'Ethereum Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: { id: '1401883640598986757', name: 'Face makeup' },
+          },
+          {
+            domain: {
+              id: '173',
+              name: 'Product Taxonomy',
+              description:
+                'A product taxonomy for labeling categories of products. ',
+            },
+            entity: { id: '1401883640598986757', name: 'Face makeup' },
+          },
+        ],
+        id: '1688645647254302728',
+        edit_controls: {
+          edits_remaining: 5,
+          is_edit_eligible: true,
+          editable_until: '2023-08-07T21:17:50.000Z',
+        },
+        conversation_id: '1688645647254302728',
+        lang: 'en',
+        referenced_tweets: [{ type: 'quoted', id: '1688634181319057408' }],
       },
     ],
   },
