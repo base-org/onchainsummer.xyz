@@ -159,20 +159,21 @@ async function getPartner(slug: string, spoofDate?: string) {
     return notFound()
   }
 
-  const digest = await SDK.GetMirrorTransactions({
-    digest: partner.aarweaveDigest,
-  })
-
-  const articleId = digest?.transactions?.edges[0]?.node?.id
-
   let article = null
+  try {
+    const digest = await SDK.GetMirrorTransactions({
+      digest: partner.aarweaveDigest,
+    })
 
-  if (articleId) {
-    const res = await fetch(`https://arweave.net/${articleId}`)
-    article = (await res?.json()) as {
-      content: { body: string; title: string }
+    const articleId = digest?.transactions?.edges[0]?.node?.id
+
+    if (articleId) {
+      const res = await fetch(`https://arweave.net/${articleId}`)
+      article = (await res?.json()) as {
+        content: { body: string; title: string }
+      }
     }
-  }
+  } catch {}
 
   return { partner, article }
 }
