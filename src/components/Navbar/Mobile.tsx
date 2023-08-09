@@ -77,35 +77,6 @@ export const Mobile: FC<MobileProps> = ({}) => {
               </Dialog.Content>
             </Dialog.Portal>
           </Dialog.Root>
-          {/* <NavigationMenu.Trigger
-            className="group z-40 relative"
-            onClick={toggleHamburgerMenu}
-          >
-            <div className="group-data-[state=open]:hidden">
-              <Hamburger />
-            </div>
-            <span className="sr-only group-data-[state=open]:hidden">
-              Open Menu
-            </span>
-            <div className="group-data-[state=closed]:hidden">
-              <Close />
-            </div>
-            <span className="sr-only group-data-[state=closed]:hidden">
-              Close Menu
-            </span>
-          </NavigationMenu.Trigger>
-
-          <NavigationMenu.Content className="bg-white fixed top-[90px] inset-0 max-w-[100vw] z-20 overscroll-contain">
-            <Separator className="relative bottom-2" />
-            <NavigationMenu.Sub
-              orientation="vertical"
-              className="h-full [&>div]:h-full"
-            >
-              <NavigationMenu.List className="flex flex-col items-center gap-4 h-full">
-                <NavListItems />
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content> */}
         </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>
