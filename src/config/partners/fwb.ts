@@ -7,7 +7,7 @@ const fwb: Partner = {
   name: 'FWB',
   url: 'https://www.fwb.help/',
   description:
-    'Friends With Benefits (FWB) is a community of builders, creatives, and investors who believe in the power of social tokens and the communities they create.',
+    'Mint an adorable, dynamic Fini character whose moods and actions are tied to your activity on Base.',
   brandColor: '#000000',
   icon: '/partners/fwb/icon.png',
   banner: '/partners/fwb/banner-icon.svg',

@@ -7,7 +7,7 @@ const manifold: Partner = {
   name: 'Manifold',
   url: 'https://studio.manifold.xyz/',
   description:
-    'Manifold empowers digital creators with tools and applications enabling true creative sovereignty and the ability to create innovative NFT experiences.',
+    'Manifold is bringing their favorite artists to Onchain Summer as part of their mission to empower digital creators with the tools that enable true creative sovereignty.',
   brandColor: '#000000',
   icon: '/partners/manifold/icon.png',
   banner: '/partners/manifold/banner-icon.svg',

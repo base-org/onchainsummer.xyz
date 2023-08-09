@@ -7,7 +7,7 @@ const pixelmon: Partner = {
   name: 'Pixelmon',
   url: 'https://www.pixelmon.ai/',
   description:
-    'Pixelmon is a multiplayer open world adventure and monster combat arena',
+    'Join and experience the Pixelmon multiplayer open world adventure....and meet Kevin.',
   brandColor: '#F2E6E0',
   icon: '/partners/pixelmon/icon.png',
   banner: '/partners/pixelmon/banner-icon.svg',

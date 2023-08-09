@@ -7,7 +7,7 @@ const cokeConfig: Partner = {
   name: 'Coca-Cola®',
   url: 'https://www.coca-cola.com/',
   description:
-    'Coca-Cola is the most popular and biggest-selling soft drink in history',
+    "Collect art from Coca‑Cola®’s Masterpiece collection to see what happens when the universe comes together in 'Real Magic' ways.",
   brandColor: '#F40009',
   icon: '/partners/coke/icon.png',
   banner: '/partners/coke/banner-icon.svg',

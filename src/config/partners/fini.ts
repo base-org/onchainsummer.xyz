@@ -7,7 +7,7 @@ const fini: Partner = {
   name: 'Fini',
   url: 'https://fini.world/',
   description:
-    'Fini are digital friends that keep you up to date with the things you care about',
+    'Mint an adorable, dynamic Fini character whose moods and actions are tied to your activity on Base.',
   brandColor: 'rgb(255, 121, 121)',
   icon: '/partners/fini/icon.png',
   banner: '/partners/fini/banner-icon.svg',
