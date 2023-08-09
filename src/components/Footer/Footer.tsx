@@ -35,7 +35,7 @@ export const Footer = () => {
                         target="_blank"
                         href="https://help.coinbase.com/en/coinbase/other-topics/other/base"
                       >
-                        Docs
+                        Help Center
                       </a>
                     </li>
                   </ul>
