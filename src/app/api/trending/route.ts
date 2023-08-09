@@ -4,7 +4,7 @@ import { Collection } from '@/utils/mintDotFunTypes'
 import { l2 } from '@/config/chain'
 
 const API_URL = process.env.NEXT_PUBLIC_MINT_DOT_FUN_API_URL
-const API_KEY = process.env.NEXT_PUBLIC_MINT_DOT_FUN_API_KEY
+const API_KEY = process.env.MINT_DOT_FUN_API_KEY
 
 interface MediaObject {
   ethPrice: string
