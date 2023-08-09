@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#444',
+            fontSize: '1rem',
+            fontFamily: 'var(--font-coinbase-sans)',
+            fontWeight: '400',
+            lineHeight: '140%',
+          },
+        },
+      },
       colors: {
         'timer-active': '#26D356',
         'button-dark-bg': '#151515',
@@ -72,6 +83,15 @@ module.exports = {
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
+      fontSize: {
+        base: [
+          '1rem',
+          {
+            lineHeight: '140%',
+            fontWeight: '400',
+          },
+        ],
+      },
     },
   },
   plugins: [
@@ -88,5 +108,6 @@ module.exports = {
       }
       addUtilities(newUtilities)
     },
+    require('@tailwindcss/typography'),
   ],
 }

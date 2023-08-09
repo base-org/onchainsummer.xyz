@@ -53,7 +53,7 @@ export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
         }}
         min={1}
         step={1}
-        className="flex items-center justify-center bg-[#EFEFEF] border border-[#EFEFEF] rounded-[100px] text-center font-mono w-full px-4 py-1.5 appearance-none"
+        className="flex items-center justify-center bg-[#EFEFEF] border border-[#EFEFEF] rounded-[100px] text-center desktop-mono w-full px-4 py-1.5 appearance-none"
       />
       <button
         className={buttonClassName}

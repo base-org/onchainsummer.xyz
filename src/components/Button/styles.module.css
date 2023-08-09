@@ -1,25 +1,29 @@
 .button {
-  @apply font-normal inline-flex justify-center items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase whitespace-nowrap aria-disabled:opacity-50;
+  @apply font-normal inline-flex justify-between text-base items-center gap-4 w-full text-center font-mono rounded-[100px] uppercase whitespace-nowrap aria-disabled:opacity-50;
+}
+
+.button-x-small {
+  @apply px-4 py-1.5;
 }
 
 .button-small {
-  @apply px-4 py-3 md:py-2.5;
+  @apply px-4 py-2.5;
 }
 
 .button-large {
-  @apply px-8 py-3 md:py-4;
+  @apply px-8 py-4;
 }
 
 .button-dark {
-  @apply text-button-dark-text bg-button-dark-bg hover:bg-button-dark-hover-bg;
+  @apply text-button-dark-text bg-button-dark-bg hover:bg-button-dark-hover-bg aria-disabled:hover:bg-button-dark-bg;
 }
 
 .button-light {
-  @apply text-button-light-text bg-button-light-bg hover:bg-button-light-hover-bg border border-black;
+  @apply text-button-light-text bg-button-light-bg hover:bg-button-light-hover-bg border border-black aria-disabled:hover:bg-button-light-bg;
 }
 
 .button-text {
-  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text border-b border-transparent hover:border-button-text-text capitalize;
+  @apply !py-2 !px-0 rounded-none w-max text-sm leading-[120%] text-button-text-text border-b border-transparent hover:border-button-text-text capitalize aria-disabled:hover:border-transparent;
 }
 
 .button-round {

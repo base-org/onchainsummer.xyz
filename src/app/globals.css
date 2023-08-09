@@ -5,3 +5,41 @@
 body {
   @apply text-neutral-900 bg-white font-sans;
 }
+
+@layer components {
+  .desktop-h1 {
+    @apply font-display text-[2.875rem] not-italic font-normal leading-[120%];
+  }
+
+  .desktop-h2 {
+    @apply font-display text-[2rem] not-italic font-normal leading-[120%];
+  }
+
+  .desktop-h3 {
+    @apply font-display text-[1.5rem] not-italic font-normal leading-[120%];
+  }
+
+  .desktop-h4 {
+    @apply font-display text-[1.25rem] not-italic font-normal leading-[120%];
+  }
+
+  .desktop-headline {
+    @apply font-sans text-[1rem] not-italic font-medium leading-[140%];
+  }
+
+  .desktop-body {
+    @apply font-sans text-[1rem] not-italic font-normal leading-[140%];
+  }
+
+  .desktop-mono {
+    @apply font-mono text-[1rem] not-italic font-normal leading-[140%];
+  }
+
+  .desktop-label-1 {
+    @apply font-mono text-[0.875rem] not-italic font-medium leading-[120%];
+  }
+
+  .desktop-label-2 {
+    @apply font-mono text-[0.875rem] not-italic font-normal leading-[120%];
+  }
+}

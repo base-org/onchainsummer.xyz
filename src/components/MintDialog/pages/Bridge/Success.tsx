@@ -15,7 +15,7 @@ export const Success: FC<SuccessProps> = ({ amount, l2TxHash, setPage }) => {
   return (
     <div className="flex flex-col md:my-auto gap-6 md:gap-8">
       <EthBase height={68} width={68} />
-      <Dialog.Title className={dialogClasses.title}>
+      <Dialog.Title className={'desktop-h2'}>
         Awesome! You’ve bridged {amount} ETH onto Base.
       </Dialog.Title>
 

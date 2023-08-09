@@ -36,7 +36,7 @@ export const DropCard: FC<DropCardProps> = ({
   creator,
   startDate,
   endDate,
-  mintType
+  mintType,
 }) => {
   const {
     isExternalLink,
@@ -64,13 +64,13 @@ export const DropCard: FC<DropCardProps> = ({
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
-            className="text-[24px] after:absolute after:inset-0 flex-auto"
+            className="desktop-h3 after:absolute after:inset-0 flex-auto"
             target="_blank"
           >
             {name}
           </a>
         ) : (
-          <span className="text-[24px]">{name}</span>
+          <span className="desktop-h3">{name}</span>
         )}
         <div className="mt-4 mb-8">
           <AddressPill
@@ -98,7 +98,9 @@ export const DropCard: FC<DropCardProps> = ({
             dropName={name}
             creatorAddress={creator}
             endDate={endDate}
-            mintType={mintType || (externalLink ? MintType.External : MintType.ThirdWeb)}
+            mintType={
+              mintType || (externalLink ? MintType.External : MintType.ThirdWeb)
+            }
           />
         )}
       </div>

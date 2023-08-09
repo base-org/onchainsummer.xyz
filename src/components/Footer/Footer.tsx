@@ -13,7 +13,7 @@ export const Footer = () => {
         <div className="px-6 pb-6">
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="md:basis-2/5">
-              <p className="mt-6 mb-2 md:mb-8 text-[#151515] text-sm">
+              <p className="mt-6 mb-2 md:mb-8 text-[#151515] desktop-label-2">
                 Get onchain this summer to join a multi-week celebration of art,
                 culture, gaming, community, and more. New mints happening daily
                 August 9th - 31st. Base is open for everyone; come bask in the
@@ -21,9 +21,9 @@ export const Footer = () => {
               </p>
             </div>
             <div className="flex flex-wrap justify-between md:justify-end md:gap-[120px] mb-10 md:mb-0 md:basis-3/5 mt-6 text-sm md:pb-24">
-              <div className="flex justify-end my-4 md:my-0">
+              <div className="flex justify-end my-4 md:my-0 desktop-label-2">
                 <div>
-                  <h3 className="mb-5 font-medium">Community</h3>
+                  <h3 className="mb-5 desktop-label-1">Community</h3>
                   <ul className="flex flex-col gap-4">
                     <li className="text-[#858585]">
                       <a target="_blank" href="https://prop.house/base">
@@ -43,7 +43,7 @@ export const Footer = () => {
               </div>
               <div className="flex md:justify-center my-4 md:my-0">
                 <div>
-                  <h3 className="mb-5 font-medium">Social</h3>
+                  <h3 className="mb-5 desktop-label-1">Social</h3>
                   <ul className="flex flex-col gap-4">
                     <li className="text-[#858585]">
                       <a target="_blank" href="https://base.mirror.xyz/">

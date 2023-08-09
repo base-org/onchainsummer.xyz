@@ -44,7 +44,11 @@ export const MintError: FC<MintErrorProps> = ({
         return (
           <span>
             Unfortunately, your transaction didn’t go through. Check your
-            transaction for more details or <a href='https://base.org/discord' ><b>contact the Base team</b></a>.
+            transaction for more details or{' '}
+            <a href="https://base.org/discord">
+              <b>contact the Base team</b>
+            </a>
+            .
           </span>
         )
     }
@@ -81,10 +85,10 @@ export const MintError: FC<MintErrorProps> = ({
     <>
       <PartnerInfo />
 
-      <Dialog.Title className={clsx(dialogClasses.title, 'lg:mt-4')}>
+      <Dialog.Title className={clsx('desktop-h2', 'lg:mt-4')}>
         {title}
       </Dialog.Title>
-      <Dialog.Description className="flex flex-col w-full gap-4">
+      <Dialog.Description className="flex flex-col w-full gap-4 desktop-body">
         {content}
       </Dialog.Description>
       {actions}
