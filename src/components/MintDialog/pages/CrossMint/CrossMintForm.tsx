@@ -4,10 +4,11 @@ import {
   CheckoutEventMap,
 } from '@crossmint/client-sdk-react-ui'
 import { isProd } from '@/config/chain'
-import { ModalPage } from '../../types'
+import { MintType, ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
+import { useMintDialogContext } from '../../Context/useMintDialogContext'
 
 function isPaymentProcessedPayload(
   payload: unknown
@@ -21,7 +22,6 @@ function isPaymentProcessedPayload(
 }
 
 interface CrossMintFormProps {
-  clientId: string
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
   orderIdentifier: string
@@ -33,7 +33,6 @@ interface CrossMintFormProps {
 const environment = isProd ? 'production' : 'staging'
 
 export const CrossMintForm: FC<CrossMintFormProps> = ({
-  clientId,
   page,
   setPage,
   orderIdentifier,
@@ -41,11 +40,12 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   quantity,
   totalPrice,
 }) => {
+  const {mintType, crossMintClientId: clientId, creatorAddress} = useMintDialogContext();
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
   const { address: walletAddress } = useAccount()
   const [email, setEmail] = useState('')
-
+  
   return (
     <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
@@ -67,7 +67,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         </div>
       ) : null}
       <CrossmintPaymentElement
-        clientId={clientId}
+        clientId={clientId || ''}
         environment={environment}
         recipient={{
           email: email,
@@ -75,7 +75,13 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         }}
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
-        mintConfig={{
+        mintConfig={mintType == MintType.Zora ?  {
+          recipient: walletAddress,
+          quantity: quantity,          
+          comment: "",
+          mintReferral: creatorAddress,
+          totalPrice: totalPrice,
+        } : {
           quantity,
           totalPrice,
         }}
@@ -122,6 +128,8 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               // TODO: Inform error
               setPage(ModalPage.MINT_ERROR)
               break
+            default: 
+              console.log(`Unmatched crossmint ${event}`)
           }
         }}
       />

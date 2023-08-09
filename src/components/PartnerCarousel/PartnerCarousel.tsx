@@ -17,6 +17,7 @@ const PARTNERS = [
   'pixelmon',
   'showtime',
   'mirror-wellness',
+  'mint-fun',
   'open-sea',
   'fwb-bonfire',
   'manifold',
@@ -25,6 +26,7 @@ const PARTNERS = [
   'indelible',
   'optimism',
   'oak',
+  'prop-house',
   'lazer',
   'thirdweb',
 ]
@@ -42,7 +44,7 @@ export const PartnerCarousel: FC = () => {
           autoplay
           cellAlign="center"
           pauseOnHover={false}
-          slidesToShow={4}
+          slidesToShow={3}
           slidesToScroll={1}
           easing={(n) => n}
           wrapAround
@@ -53,7 +55,7 @@ export const PartnerCarousel: FC = () => {
             <>
               <div
                 key={partnerImagePath}
-                className="w-24 h-16 flex-shrink-0 relative"
+                className="w-32 h-16 flex-shrink-0 relative"
               >
                 <Image
                   key={partnerImagePath}

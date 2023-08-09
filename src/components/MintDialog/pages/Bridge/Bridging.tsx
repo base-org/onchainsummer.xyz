@@ -26,14 +26,19 @@ const Step = ({
   l1?: boolean
 }) => {
   return (
-    <div className="h-1/4 flex flex-col gap-2 leading-none">
+    <div
+      className={clsx('h-1/4 flex flex-col gap-2 leading-none', {
+        'desktop-label-1': isStep,
+        'desktop-label-2': !isStep,
+      })}
+    >
       <div className={clsx({ 'text-ocs-blue': isStep })}>{label}</div>
       {txHash && isStep ? (
         <a
           href={scanUrl(l1, txHash)}
           target="_blank"
           rel="noreferrer"
-          className="text-sm font-medium flex gap-2 items-center ml-8"
+          className="flex gap-2 items-center ml-8"
         >
           View on explorer <ArrowRight color={'#000'} height={16} width={16} />
         </a>
@@ -53,12 +58,12 @@ export const Bridging: FC<BridgingProps> = ({
   const isStep4 = bridgeState === BridgeState.L2_TX_PROCESSED
 
   return (
-    <div className="flex flex-col w-full h-full items-center overflow-scroll">
-      <Dialog.Title className={dialogClasses.title}>Bridging...</Dialog.Title>
+    <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
+      <Dialog.Title className={'desktop-h2'}>Bridging...</Dialog.Title>
 
       <div className={'flex flex-col w-full gap-6 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
-          <span>
+          <span className="desktop-body">
             This usually takes a couple minutes on the blockchain, please
             don&apos;t refresh the page.
           </span>

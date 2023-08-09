@@ -8,7 +8,7 @@ export async function GET() {
   const modifiedSchedule: Record<string, any> = {}
   Object.keys(schedule).map((date) => {
     modifiedSchedule[
-      moment.utc(`${date} ${CAMPAIGN_HOUR}:${CAMPAIGN_MINUTE}}`).toISOString()
+      moment.utc(`${date} ${CAMPAIGN_HOUR}:${CAMPAIGN_MINUTE}`).toISOString()
     ] = {
       ...schedule[date],
       drops: schedule[date].drops.map((drop) => ({
