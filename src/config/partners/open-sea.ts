@@ -7,7 +7,7 @@ const openSeaConfig: Partner = {
   name: 'OpenSea',
   url: 'https://opensea.io/',
   description:
-    "OpenSea is the world's first and largest web3 marketplace for NFTs and crypto collectibles.",
+    "OpenSea is the world's first and largest web3 marketplace for NFTs and crypto collectibles",
   brandColor: '#2081E2',
   icon: '/partners/open-sea/icon.png',
   banner: '/partners/open-sea/banner-icon.svg',

@@ -7,7 +7,7 @@ const standWithCrypto: Partner = {
   name: 'Stand with Crypto',
   url: 'https://www.coinbase.com/public-policy/advocacy/standwithcrypto',
   description:
-    'Stand with Crypto unites global crypto advocates, forming a passionate community committed to driving sensible crypto innovation and crypto policy. Policymakers across the globe are making decisions about the future of crypto. Their choices will determine how, when, and where YOU can build, buy, sell, and use crypto, and it’s critical that they get it right. ',
+    'Show your support for crypto innovation and advocacy by participating in a virtual Day of Action, with each action unlocking future rewards',
   brandColor: 'rgb(1, 76, 236)',
   icon: '/partners/stand-with-crypto/icon.png',
   banner: '/partners/stand-with-crypto/banner-icon.svg',
