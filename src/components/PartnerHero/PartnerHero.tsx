@@ -1,6 +1,5 @@
 'use client'
 
-import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
