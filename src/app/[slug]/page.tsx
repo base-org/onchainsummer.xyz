@@ -136,8 +136,8 @@ export async function generateMetadata(
 
 async function getPartner(slug: string, spoofDate?: string) {
   const now = getNow(spoofDate)
-
-  const today = format(now, 'yyyy-MM-dd')
+  const nowDate = new Date(now - 13 * 60 * 60 * 1000)
+  const today = format(nowDate, 'yyyy-MM-dd')
 
   const date = Object.keys(schedule).find(
     (date) => schedule[date].slug === slug

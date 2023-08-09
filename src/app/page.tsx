@@ -167,7 +167,8 @@ const INITIAL_TABS: TabsComponentProps = {
 
 async function getPageData(spoofDate?: string) {
   const now = getNow(spoofDate)
-  const today = format(now, 'yyyy-MM-dd')
+  const date = new Date(now - 13 * 60 * 60 * 1000)
+  const today = format(date, 'yyyy-MM-dd')
 
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
