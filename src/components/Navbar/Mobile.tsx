@@ -49,7 +49,7 @@ export const Mobile: FC<MobileProps> = ({}) => {
               <Dialog.Overlay className={dialogClasses.overlay} />
               <Dialog.Content
                 className={clsx(
-                  'fixed left-0 top-0 right-0 bg-white focus:outline-none z-40 h-max max-h-screen overflow-auto'
+                  'fixed left-0 top-0 w-screen bg-white focus:outline-none z-40 h-max max-h-screen overflow-y-auto'
                 )}
               >
                 <div className="flex justify-between px-6 py-3 w-full items-center">

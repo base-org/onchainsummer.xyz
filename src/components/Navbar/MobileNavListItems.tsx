@@ -7,9 +7,9 @@ type NavListItemsProps = {}
 
 export const NavListItems: FC<NavListItemsProps> = ({}) => {
   return (
-    <div className="flex flex-col items-start justify-between h-max w-full [&>div]:w-full px-6 py-10">
+    <div className="flex flex-col items-start justify-between h-max px-6 py-10">
       <NavigationMenu.List className="flex flex-col gap-6">
-        <p className="uppercase desktop-mono text-zinc-400 whitespace-nowrap block min-[1184px]:block min-[1024px]:hidden">
+        <p className="uppercase desktop-mono text-zinc-400 whitespace-nowrap block">
           Get onchain this summer
         </p>
         <NavigationMenu.Item>
