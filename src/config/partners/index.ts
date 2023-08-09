@@ -24,6 +24,7 @@ import base from './base'
 import baseDayOne from './base-day-one'
 
 export const partners = [
+  baseDayOne,
   fwb,
   parallel,
   coke,

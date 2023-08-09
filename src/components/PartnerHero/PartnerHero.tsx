@@ -29,8 +29,8 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   customHeader,
 }) => {
   return (
-    <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
-      <div className="relative w-full aspect-square max-h-[800px] mb-1 lg:mb-0 order-1 md:order-2">
+    <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] lg:grid-cols-[456px,1fr] gap-5 md:gap-10">
+      <div className="relative w-full aspect-square mb-1 lg:mb-0 order-1 md:order-2 xl:aspect-[7/5]">
         <Image
           src={headline.image}
           alt={headline.name}
@@ -38,7 +38,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           className="object-cover rounded-xl"
         />
       </div>
-      <div className="inline-flex flex-col w-full gap-4 h-max order-2 md:order-1 md:gap-4 overflow-x-scroll overflow-y-visible">
+      <div className="inline-flex flex-col w-full gap-4 h-max order-2 md:h-full md:order-1 md:gap-4 overflow-x-scroll overflow-y-visible">
         {name !== 'Base' && (
           <div className="flex gap-2 md:mt-6">
             <div className="relative h-6 w-6">
