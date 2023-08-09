@@ -14,6 +14,8 @@ import { Navbar } from '@/components/Navbar'
 import { TeaserNav } from '@/components/Teaser/TeaserNav'
 import { Footer } from '@/components/Footer'
 import Script from 'next/script'
+import { getNow } from '@/utils/getNow'
+import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -106,7 +108,10 @@ const coinbaseDisplay = localFont({
   ],
 })
 
-const SHOW_TEASER = process.env.TEASER === 'true'
+const SHOW_TEASER =
+  process.env.TEASER === 'true' &&
+  getNow() < Date.UTC(2023, 7, 9, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0)
+
 const PASSWORD_PROTECT = process.env.PASSWORD_PROTECT
 const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
 const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
