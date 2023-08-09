@@ -19,6 +19,7 @@ import { RightArrow } from '@/components/icons/RightArrow'
 import { getTweets } from '@/utils/getTweets'
 import { getNow } from '@/utils/getNow'
 import { getArweaves } from '@/utils/getArweaves'
+import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -168,15 +169,12 @@ const INITIAL_TABS: TabsComponentProps = {
 
 async function getPageData(spoofDate?: string) {
   const now = getNow(spoofDate)
-  const today = format(now, 'yyyy-MM-dd')
+  const today = getDropDate(spoofDate)
 
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
   const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
-    const comparison = compareAsc(
-      now,
-      new Date(date).getTime() + 4 * 60 * 60 * 1000
-    )
+    const comparison = compareAsc(now, new Date(date).getTime())
     const partner = schedule[date]
 
     if (comparison === 0 || typeof partner === 'undefined') {
