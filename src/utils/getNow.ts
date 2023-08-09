@@ -13,17 +13,27 @@ const getSpoofDateFromParams = () => {
 
 export const getNow = (spoofDate?: string | null) => {
   const value = spoofDate || getSpoofDateFromParams() || defaultSpoofDate
-  const nowEST = new Date().getTime() - 4 * 60 * 60 * 1000
+  const nowUTC = new Date().getTime()
 
   if (!ALLOW_SPOOFING) {
-    return nowEST
+    return nowUTC
   }
 
   const spoofedDate = value ? new Date(value) : undefined
 
   const isValidDate = isValid(spoofedDate)
 
-  const now = isValidDate && spoofedDate ? spoofedDate.getTime() : nowEST
+  if (isValidDate && spoofedDate) {
+    return Date.UTC(
+      spoofedDate.getFullYear(),
+      spoofedDate.getMonth(),
+      spoofedDate.getDate(),
+      spoofedDate.getHours(),
+      spoofedDate.getMinutes(),
+      spoofedDate.getSeconds(),
+      spoofedDate.getMilliseconds()
+    )
+  }
 
-  return now
+  return nowUTC
 }

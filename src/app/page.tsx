@@ -172,10 +172,7 @@ async function getPageData(spoofDate?: string) {
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
   const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
-    const comparison = compareAsc(
-      now,
-      new Date(date).getTime() + 4 * 60 * 60 * 1000
-    )
+    const comparison = compareAsc(now, new Date(date).getTime())
     const partner = schedule[date]
 
     if (comparison === 0 || typeof partner === 'undefined') {

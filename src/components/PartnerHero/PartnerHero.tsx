@@ -28,14 +28,9 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   teaser,
   customHeader,
 }) => {
-  const { isAfterEndDate, isBeforeStartDate } = getDateRangeValidation({
-    startDate: headline.startDate,
-    endDate: headline.endDate,
-  })
-
   return (
     <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] gap-5 md:gap-10">
-      <div className="relative w-full aspect-[16/16] mb-1 lg:mb-0 order-1 md:order-2">
+      <div className="relative w-full aspect-square max-h-[800px] mb-1 lg:mb-0 order-1 md:order-2">
         <Image
           src={headline.image}
           alt={headline.name}
