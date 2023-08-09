@@ -7,7 +7,7 @@ const highlight: Partner = {
   name: 'Highlight',
   url: 'https://highlight.xyz/',
   description:
-    'Highlight is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',
+    "Collect art from creatives using Highlight's generative art tools which break down technical barriers that hinder artistic expressions.",
   brandColor: '#000000',
   icon: '/partners/highlight/icon.png',
   banner: '/partners/highlight/banner-icon.svg',
