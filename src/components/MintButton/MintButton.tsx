@@ -59,11 +59,7 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
 
   if (!valid) {
     return (
-      <Button
-        disabled
-        size={size}
-        className={clsx('text-[14px] md:text-base rounded-lg mt-auto')}
-      >
+      <Button disabled size={size}>
         {message}
       </Button>
     )
