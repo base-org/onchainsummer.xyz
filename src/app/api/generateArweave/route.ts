@@ -17,7 +17,6 @@ export async function GET(request: Request) {
       const digest = await SDK.GetMirrorTransactions({
         digest: partner.aarweaveDigest,
       })
-      console.log(partner.aarweaveDigest)
 
       const articleId = digest?.transactions?.edges[0]?.node?.id
 
