@@ -62,7 +62,7 @@ const Home = async ({ searchParams }: Props) => {
                 </div>
               </div>
 
-              <div className="-mr-4 mb-4">
+              <div className="-mr-4 mb-4 md:mb-14">
                 <div className="overflow-scroll hide-scrollbar">
                   <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
                     <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
@@ -79,22 +79,35 @@ const Home = async ({ searchParams }: Props) => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col lg:flex-row gap-4 md:gap-11 rounded-xl md:pr-4 lg:my-4 lg:mx-2  break-words">
-                <div className="w-full lg:w-1/2">
-                  <h2 className="text-[32px] font-display">
-                    {article.content.title}
-                  </h2>
+              <div className="flex items-start gap-12">
+                <div className="flex flex-col rounded-xl md:pr-4lg:mx-2  break-words w-full md:w-1/2">
+                  <div className="w-full">
+                    <h2 className="text-[32px] font-display">
+                      {article.content.title}
+                    </h2>
+                  </div>
+                  <div className="w-full">
+                    <ReactMarkdown
+                      content={`${article.content.body.slice(0, 500)} ...`}
+                    />
+                    <Button
+                      className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 max-w-fit !py-2"
+                      href={`/${partner.slug}`}
+                    >
+                      Read full story
+                    </Button>
+                  </div>
                 </div>
-                <div className="w-full lg:w-1/2">
-                  <ReactMarkdown
-                    content={`${article.content.body.slice(0, 500)} ...`}
+                <div className="hidden md:block md:w-1/2">
+                  <Image
+                    src={partner.banner}
+                    alt={`${partner} Icon`}
+                    fill
+                    style={{
+                      objectFit: 'contain',
+                    }}
+                    className="!static rounded-2xl"
                   />
-                  <Button
-                    className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 max-w-fit !py-2"
-                    href={`/${partner.slug}`}
-                  >
-                    Read full story
-                  </Button>
                 </div>
               </div>
             </div>
