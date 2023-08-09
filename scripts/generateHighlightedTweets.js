@@ -58,6 +58,8 @@ const generateHighlightedTweets = async () => {
   )
   const data = await response.json()
   const content = `${prefix} ${JSON.stringify(data)}`
+  if (!data || !Array.isArray(data.data))
+    throw new Error('No data returned from Twitter API')
   await new Promise((resolve, reject) =>
     writeFile(filePath, content, 'utf8', (err) =>
       !!err ? reject(err) : resolve({})
