@@ -4,7 +4,7 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const oak: Partner = {
   slug: 'oak',
-  name: 'oak',
+  name: 'Oak',
   url: 'https://oak.tech/',
   description:
     'Oak is a community owned platform for creators to monetize their digital work.',

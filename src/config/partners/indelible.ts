@@ -4,7 +4,7 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const indelible: Partner = {
   slug: 'indelible',
-  name: 'Indelible Labs',
+  name: 'Indelible',
   url: 'https://indelible.xyz/',
   description:
     'Indelible Labs is a community owned platform for creators to monetize their digital work.',

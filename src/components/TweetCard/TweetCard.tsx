@@ -1,7 +1,7 @@
 import moment from 'moment'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useMemo } from 'react'
 
 import { TwitterVerified } from '@/components/icons/TwitterVerified'
 import { ITweet, ITweetMedia, ITweetAuthor } from '@/models/Tweet'
@@ -17,8 +17,16 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
   tweet,
   media,
 }) => {
+  const linkToTwitter = useMemo(() => {
+    return `https://twitter.com/${author.username}/status/${tweet.id}`
+  }, [author.username, tweet.id])
+
   return (
-    <div className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px]">
+    <a
+      href={linkToTwitter}
+      className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px]"
+      target="_blank"
+    >
       <div>
         <div className="flex justify-between">
           <div className="flex items-center">
@@ -49,9 +57,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             }}
           >
             {tweet.text.length > 100
-              ? `${tweet.text.substring(0, 100)} [...](https://twitter.com/${
-                  author.username
-                }/status/${tweet.id})`
+              ? tweet.text.substring(0, tweet.text.indexOf(' ', 100)) + '...'
               : tweet.text}
           </ReactMarkdown>
         </div>
@@ -80,6 +86,6 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
       <p className="text-[#8E8E8E] text-sm mt-2">
         {moment(tweet.created_at).format('h:mm A · MMM D, YYYY')}
       </p>
-    </div>
+    </a>
   )
 }

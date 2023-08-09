@@ -3,8 +3,8 @@ import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const fwbBonfire: Partner = {
-  slug: 'fwb-bonfire',
-  name: 'FWB x Bonfire',
+  slug: 'bonfire',
+  name: 'Bonfire',
   url: 'https://www.bonfiretoken.co/',
   description:
     'FWBxBonfire is a community owned platform for creators to monetize their digital work.',

@@ -25,8 +25,6 @@ interface NativeMintProps {
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
   insufficientFunds: boolean
-  crossMintClientId: string | undefined
-  mintType: MintType
 }
 
 export const NativeMint: FC<NativeMintProps> = ({
@@ -39,14 +37,12 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
   insufficientFunds,
-  crossMintClientId,
-  mintType
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
-  const { creatorAddress, dropName, address, mintDotFunStatus } =
+  const { creatorAddress, dropName, crossMintClientId, mintDotFunStatus } =
     useMintDialogContext()
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
@@ -110,7 +106,6 @@ export const NativeMint: FC<NativeMintProps> = ({
             totalPrice={totalPrice}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
-            mintType={mintType}
           />
         )}
 

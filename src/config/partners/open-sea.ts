@@ -3,7 +3,7 @@ import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const openSeaConfig: Partner = {
-  slug: 'open-sea',
+  slug: 'opensea',
   name: 'OpenSea',
   url: 'https://opensea.io/',
   description:

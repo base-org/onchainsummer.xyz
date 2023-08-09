@@ -1,6 +1,6 @@
 import { MintType } from '@/components/MintDialog/types'
 import { isProd } from '../chain'
-import { unlimited } from '../test-contracts'
+import { zora } from '../test-contracts'
 import { Partner } from './types'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
@@ -32,7 +32,7 @@ Bridge today to get ready and mint an NFT that commemorates you being early, one
             crossMintClientId: '',
             mintType: MintType.ThirdWeb,
           }
-        : unlimited),
+        : zora),
     },
   ],
 }
