@@ -8,7 +8,7 @@ const anotherblock: Partner = {
   name: 'anotherblock',
   url: 'https://anotherblock.io/',
   description:
-    'Anotherblock is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',
+    'Anotherblock brings musical artists and collectors together in a novel way - music ownership on a whole new level.',
   brandColor: '#000000',
   icon: '/partners/anotherblock/icon.png',
   banner: '/partners/anotherblock/banner-icon.svg',

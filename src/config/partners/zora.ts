@@ -7,7 +7,7 @@ const zora: Partner = {
   name: 'Zora',
   url: 'https://zora.co/',
   description:
-    'Zora is an onchain art marketplace where you can buy, sell and explore NFTs.',
+    "Take part in Zora's hyperstructure culture as they bring their favorite artists to Onchain Summer.",
   brandColor: '#000000',
   icon: '/partners/zora/icon.png',
   banner: '/partners/zora/banner-icon.svg',

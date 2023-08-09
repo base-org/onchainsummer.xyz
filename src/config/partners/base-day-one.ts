@@ -6,7 +6,7 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const base: Partner = {
   slug: 'base',
-  name: 'Base Day One',
+  name: 'Base',
   url: '',
   description: `Base Day One commemorates the first day of Base.
 
@@ -14,8 +14,8 @@ const base: Partner = {
   
   All proceeds will support the next generation of builders on Base; this does not confer any other rights.
   
-  GET ONCHAIN at onchainsummer.xyz and mint to join us.`,
-  brandColor: 'rgb(209,66,65)',
+  Mint to join us.`,
+  brandColor: '#0052FF',
   icon: '/partners/base-day-one/icon.png',
   banner: '/partners/base-day-one/banner-icon.svg',
   aarweaveDigest: isProd
@@ -33,7 +33,7 @@ const base: Partner = {
       price: '0',
       ...(isProd
         ? {
-            address: '0x173749fB7a78015e92Ee623cf450Abfa670C8259',
+            address: '0x7d5861cfe1c74aaa0999b7e2651bf2ebd2a62d89',
             crossMintClientId: 'ecfacd7b-9664-41cf-8109-ed2354ad7ee6',
             mintType: MintType.Zora,
           }
