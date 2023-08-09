@@ -7,7 +7,7 @@ const oak: Partner = {
   name: 'Oak',
   url: 'https://oak.tech/',
   description:
-    'Oak is a community currency for the people of Oakland.',
+    'Support OAK, the first onchain local community currency in the United States.',
   brandColor: '#95098b',
   icon: '/partners/oak/icon.png',
   banner: '/partners/oak/banner-icon.svg',

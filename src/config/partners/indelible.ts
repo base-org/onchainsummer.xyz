@@ -7,7 +7,7 @@ const indelible: Partner = {
   name: 'Indelible',
   url: 'https://indelible.xyz/',
   description:
-    'Inedible Labs allows any creators to take their ideas onchain with the first no-code tool for onchain NFT collections.',
+    "Collect art curated by Indelible Labs and learn how they're empowering artists who want to take their ideas onchain.",
   brandColor: 'rgb(0, 224, 191)',
   icon: '/partners/indelible/icon.png',
   banner: '/partners/indelible/banner-icon.svg',

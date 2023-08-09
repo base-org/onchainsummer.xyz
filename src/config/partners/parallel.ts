@@ -6,7 +6,8 @@ const parallel: Partner = {
   slug: 'parallel',
   name: 'Parallel',
   url: 'https://parallel.fi/',
-  description: 'Choose your faction, join the battle for Earth! Learn more about the sci-fi world of Parallel soon.',
+  description:
+    'Choose your faction, join the battle for Earth! Learn more about the sci-fi world of Parallel.',
   brandColor: '#0c3ee3',
   icon: '/partners/parallel/icon.png',
   banner: '/partners/parallel/banner-icon.svg',

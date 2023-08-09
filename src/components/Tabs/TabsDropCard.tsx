@@ -66,9 +66,8 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
             <h2 className="desktop-h2">{name}</h2>
           )}
 
-          <p className="text-neutral-600 desktop-body mt-4">
-            {description.slice(0, 110)}
-            {description.length > 110 && '...'}
+          <p className="text-neutral-600 desktop-body mt-4 line-clamp-4 md:line-clamp-3">
+            {description}
           </p>
 
           <Countdown
