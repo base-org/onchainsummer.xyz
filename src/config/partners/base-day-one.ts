@@ -26,7 +26,7 @@ const base: Partner = {
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
       name: 'Base Day One',
       type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      startDate: Date.UTC(2023, 7, 9, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
       ...(isProd
