@@ -5,26 +5,32 @@ import { ConnectDialog } from '../ConnectDialog'
 import { MintDialog } from '../MintDialog'
 import { MintDialogContextType } from '../MintDialog/Context/Context'
 import { useValidate } from './useValidate'
-import { Button } from '../Button'
+import { Button, ButtonProps } from '../Button'
 import { Loading } from '../icons/Loading'
 import clsx from 'clsx'
 import { useAccount } from 'wagmi'
 import { getNow } from '@/utils/getNow'
 import { RightArrow } from '../icons/RightArrow'
 
-interface MintButtonProps extends MintDialogContextType {}
+interface MintButtonProps extends MintDialogContextType {
+  size?: ButtonProps['size']
+}
 
-export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
+export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
   const { address: account } = useAccount()
   const now = getNow()
-  const { valid, message, isValidating, maxClaimablePerWallet } = useValidate(
-    mintProps.address,
-    mintProps.mintDotFunStatus
-  )
+  const { valid, message, isValidating, price, maxClaimablePerWallet } =
+    useValidate(
+      mintProps.address,
+      mintProps.mintType,
+      mintProps.price,
+      mintProps.mintDotFunStatus
+    )
 
   if (mintProps.endDate && now >= mintProps.endDate) {
     return (
       <Button
+        size={size}
         href={`https://nft.coinbase.com/collection/base/${mintProps.address}`}
         external
       >
@@ -34,12 +40,12 @@ export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
   }
 
   if (!account) {
-    return <ConnectDialog />
+    return <ConnectDialog size={size} />
   }
 
   if (isValidating) {
     return (
-      <Button disabled>
+      <Button disabled size={size}>
         <span className="sr-only">Loading</span>
         <Loading
           className="animate-spin"
@@ -53,13 +59,23 @@ export const MintButton: FC<MintButtonProps> = ({ ...mintProps }) => {
 
   if (!valid) {
     return (
-      <Button disabled className={clsx('text-[14px] md:text-base rounded-lg mt-auto')}>
+      <Button
+        disabled
+        size={size}
+        className={clsx('text-[14px] md:text-base rounded-lg mt-auto')}
+      >
         {message}
       </Button>
     )
   }
 
+  const props: MintDialogContextType = { ...mintProps, price: price.toString() }
+
   return (
-    <MintDialog {...mintProps} maxClaimablePerWallet={maxClaimablePerWallet} />
+    <MintDialog
+      {...props}
+      maxClaimablePerWallet={maxClaimablePerWallet}
+      size={size}
+    />
   )
 }

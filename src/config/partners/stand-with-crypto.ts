@@ -3,8 +3,8 @@ import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const standWithCrypto: Partner = {
-  slug: 'stand-with-crypto',
-  name: 'Stand With Crypto',
+  slug: 'standwithcrypto',
+  name: 'Stand with Crypto',
   url: 'https://www.coinbase.com/public-policy/advocacy/standwithcrypto',
   description:
     'Stand with Crypto unites global crypto advocates, forming a passionate community committed to driving sensible crypto innovation and crypto policy. Policymakers across the globe are making decisions about the future of crypto. Their choices will determine how, when, and where YOU can build, buy, sell, and use crypto, and it’s critical that they get it right. ',

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ModalPage } from '../../types'
+import { MintType, ModalPage } from '../../types'
 import { useCrossmintEvents } from '@crossmint/client-sdk-react-ui'
 import { isProd } from '@/config/chain'
 import {
@@ -10,10 +10,11 @@ import { CrossMintForm } from './CrossMintForm'
 import clsx from 'clsx'
 import { Pending } from '../../elements/Pending'
 import { TxDetails } from '../../MintDialog'
+import { useLogEvent } from '@/utils/useLogEvent'
+import { events } from '@/utils/analytics'
 
 interface CrossMintProps {
   page: ModalPage
-  crossMintClientId: string
   setPage: React.Dispatch<ModalPage>
   quantity: number
   totalPrice: string
@@ -25,7 +26,6 @@ interface CrossMintProps {
 export const CrossMint: FC<CrossMintProps> = ({
   setPage,
   page,
-  crossMintClientId,
   quantity,
   totalPrice,
   orderIdentifier,
@@ -35,6 +35,7 @@ export const CrossMint: FC<CrossMintProps> = ({
   const { listenToMintingEvents } = useCrossmintEvents({
     environment: isProd ? 'production' : 'staging',
   }) // Specifying the environment is optional. It defaults to "production"
+  const logEvent = useLogEvent()
 
   listenToMintingEvents({ orderIdentifier }, (event) => {
     switch (event.type) {
@@ -48,6 +49,7 @@ export const CrossMint: FC<CrossMintProps> = ({
           setTxDetails({
             hash: txId,
           })
+          logEvent?.(events.crossMintSuccess)
           setPage(ModalPage.MINT_SUCCESS)
         }
         break
@@ -76,7 +78,6 @@ export const CrossMint: FC<CrossMintProps> = ({
           setPage={setPage}
           quantity={quantity}
           totalPrice={totalPrice}
-          clientId={crossMintClientId}
         />
       </div>
     </>

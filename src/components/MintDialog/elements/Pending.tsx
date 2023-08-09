@@ -23,14 +23,14 @@ export const Pending: FC<PendingProps> = ({
         }
       )}
     >
-      <h2 className="text-[32px] font-display">
+      <h2 className="desktop-h2">
         {isPendingTx
           ? 'Transaction processing...'
           : 'Waiting for wallet confirmation...'}
       </h2>
-      <p>
+      <p className="desktop-body">
         {isPendingTx
-          ? 'Your transaction is published, but we are waiting for it to be included in the block.'
+          ? 'Your transaction is published, but we are waiting for it to be included in a block.'
           : 'Please confirm the transaction on your wallet.'}
       </p>
       <ViewOnExplorer txHash={txHash} />

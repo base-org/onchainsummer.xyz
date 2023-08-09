@@ -3,11 +3,11 @@ import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const rainbowWallet: Partner = {
-  slug: 'rainbow-wallet',
-  name: 'Rainbow Wallet',
+  slug: 'rainbow',
+  name: 'Rainbow',
   url: 'https://rainbow.me/',
   description:
-    'Rainbow is a community owned platform for creators to monetize their digital work.',
+    'Rainbow is a fun, simple, and secure Ethereum wallet that makes managin your assets a joy',
   brandColor: '#e9f2ff',
   icon: '/partners/rainbow-wallet/icon.png',
   banner: '/partners/rainbow-wallet/banner-icon.svg',

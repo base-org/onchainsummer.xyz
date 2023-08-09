@@ -5,7 +5,7 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const anotherblock: Partner = {
   slug: 'anotherblock',
-  name: 'Anotherblock',
+  name: 'anotherblock',
   url: 'https://anotherblock.io/',
   description:
     'Anotherblock is a community driven, decentralized finance (DeFi) platform that lets you trade, earn and borrow crypto assets.',

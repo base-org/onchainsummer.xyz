@@ -3,11 +3,11 @@ import { limited2 } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const pixelmon: Partner = {
-  slug: 'pixelmon',
+  slug: 'kevin',
   name: 'Pixelmon',
   url: 'https://www.pixelmon.ai/',
   description:
-    'Pixelmon is a community owned platform for creators to monetize their digital work.',
+    'Pixelmon is a multiplayer open world adventure and monster combat arena.',
   brandColor: '#F2E6E0',
   icon: '/partners/pixelmon/icon.png',
   banner: '/partners/pixelmon/banner-icon.svg',
