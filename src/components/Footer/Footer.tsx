@@ -31,13 +31,11 @@ export const Footer = () => {
                       </a>
                     </li>
                     <li className="text-[#858585]">
-                      <a target="_blank" href="https://help.coinbase.com/en">
+                      <a
+                        target="_blank"
+                        href="https://help.coinbase.com/en/coinbase/other-topics/other/base"
+                      >
                         Docs
-                      </a>
-                    </li>
-                    <li className="text-[#858585]">
-                      <a target="_blank" href="https://help.coinbase.com/en">
-                        Support
                       </a>
                     </li>
                   </ul>
