@@ -208,20 +208,21 @@ async function getPageData(spoofDate?: string) {
     }
   }, INITIAL_TABS)
 
-  const digest = await SDK.GetMirrorTransactions({
-    digest: featuredPartner.aarweaveDigest,
-  })
-
-  const articleId = digest?.transactions?.edges[0]?.node?.id
-
   let article = null
+  try {
+    const digest = await SDK.GetMirrorTransactions({
+      digest: featuredPartner.aarweaveDigest,
+    })
 
-  if (articleId) {
-    const res = await fetch(`https://arweave.net/${articleId}`)
-    article = (await res?.json()) as {
-      content: { body: string; title: string }
+    const articleId = digest?.transactions?.edges[0]?.node?.id
+
+    if (articleId) {
+      const res = await fetch(`https://arweave.net/${articleId}`)
+      article = (await res?.json()) as {
+        content: { body: string; title: string }
+      }
     }
-  }
+  } catch {}
 
   const tweets = await getTweets()
 
