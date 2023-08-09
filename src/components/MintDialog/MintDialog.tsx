@@ -240,16 +240,16 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-initial h-auto lg:h-auto lg:overflow-hidden',
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-fit w-[90vw] max-w-[450px] lg:max-w-[75vw] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-initial h-auto lg:h-auto lg:overflow-hidden',
             { '!h-full': isDisplayingCrossMintForm }
           )}
         >
           <Dialog.Close asChild>
             <button
-              className="p-4 lg:p-0 bg-white rounded-full lg:rounded-none z-30 lg:inline-flex absolute -top-4 -right-4 lg:top-10 lg:right-10 appearance-none items-center justify-center"
+              className="p-4 lg:p-0 bg-white rounded-full lg:rounded-none z-30 lg:inline-flex absolute top-[1.75rem] right-[1.75rem] lg:top-10 lg:right-10 appearance-none items-center justify-center"
               aria-label="Close"
             >
-              <Close height={24} width={24} />
+              <Close height={8} width={8} />
               <span className="sr-only">Close</span>
             </button>
           </Dialog.Close>
