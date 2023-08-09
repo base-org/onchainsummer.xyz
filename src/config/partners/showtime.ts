@@ -7,7 +7,7 @@ const showtime: Partner = {
   name: 'Showtime',
   url: 'https://showtime.xyz/',
   description:
-    'Showtime is a platform focused on allowing people to collect drops to unlock exclusive creator channels. Showtime makes digital collectibles useful, social & accessible to all.',
+    'Showtime is making digital collectibles useful, social, and accessible to all. Collect drops to unlock exclusive creator channels.',
   brandColor: 'rgb(231, 171, 67)',
   icon: '/partners/showtime/icon.png',
   banner: '/partners/showtime/banner-icon.svg',
