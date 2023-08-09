@@ -15,7 +15,7 @@ const base: Partner = {
   All proceeds will support the next generation of builders on Base; this does not confer any other rights.
   
   GET ONCHAIN at onchainsummer.xyz and mint to join us.`,
-  brandColor: 'rgb(209,66,65)',
+  brandColor: '#0052FF',
   icon: '/partners/base-day-one/icon.png',
   banner: '/partners/base-day-one/banner-icon.svg',
   aarweaveDigest: isProd
@@ -26,7 +26,7 @@ const base: Partner = {
     {
       image: '/partners/base-day-one/drop/asset.gif',
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
-      name: 'Base Day One',
+      name: 'Base',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 9, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
