@@ -16,13 +16,15 @@ const base: Partner = {
   
   GET ONCHAIN at onchainsummer.xyz and mint to join us.`,
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/base/icon.png',
-  banner: '/partners/base/banner-icon.svg',
-  aarweaveDigest: isProd ? 'N-azs7y2g9xoEuZorhF96foLnZchpWqKYVmlrNvsUQw' : 'h028XVTdP7QtZZfWAHuJ9OYmMNs0Fyi4e4fJZH_5ik4',
+  icon: '/partners/base-day-one/icon.png',
+  banner: '/partners/base-day-one/banner-icon.svg',
+  aarweaveDigest: isProd
+    ? 'N-azs7y2g9xoEuZorhF96foLnZchpWqKYVmlrNvsUQw'
+    : 'h028XVTdP7QtZZfWAHuJ9OYmMNs0Fyi4e4fJZH_5ik4',
   twitter: '@BuildonBase',
   drops: [
     {
-      image: '/partners/base/drop/asset.gif',
+      image: '/partners/base-day-one/drop/asset.gif',
       creator: '0x9652721d02b9db43f4311102820158aBb4ecc95B',
       name: 'Base Day One',
       type: 'erc-721',
