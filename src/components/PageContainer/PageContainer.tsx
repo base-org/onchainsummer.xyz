@@ -1,5 +1,5 @@
 'use client'
-
+import { useState, useEffect, use } from 'react'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 import { SubNav } from '../SubNav'
@@ -15,14 +15,24 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   subNavBgColor,
 }) => {
   const isMismatched = useIsMisMatched()
+  const [isHomePage, setIsHomePage] = useState(false)
 
-  const heroMarginTop = isMismatched ? 'md:mt-6' : '-mt-[100px]'
+  useEffect(() => {
+    if (typeof window === undefined) return
+
+    setIsHomePage(window.location.pathname === '/')
+  }, [])
+
+  const heroMarginTop = isMismatched ? 'md:mt-6' : '!-mt-[90px]'
 
   return (
     <>
       <SubNav subNavBgColor={subNavBgColor} />
       <main
-        className={clsx('w-full max-w-[1248px] mx-auto mt-16', heroMarginTop)}
+        className={clsx(
+          'w-full max-w-[1248px] mx-auto mt-16',
+          isHomePage && heroMarginTop
+        )}
       >
         {children}
       </main>
