@@ -123,7 +123,7 @@ const Community = async () => {
                     </div>
                     <div className="mt-6 md:mt-0 text-sm">
                       <p className="font-mono text-ocs-blue">
-                        Total:
+                        Total:{' '}
                         {(grantValue * grantsAvailable)
                           .toString()
                           .substring(0, 2)}
