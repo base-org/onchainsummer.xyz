@@ -13,6 +13,7 @@ import { website } from '@/config/website'
 import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
 import { getArweaves } from '@/utils/getArweaves'
+import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
   params: { slug: string }
@@ -137,8 +138,7 @@ export async function generateMetadata(
 
 async function getPartner(slug: string, spoofDate?: string) {
   const now = getNow(spoofDate)
-  const nowDate = new Date(now - 13 * 60 * 60 * 1000)
-  const today = format(nowDate, 'yyyy-MM-dd')
+  const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
     (date) => schedule[date].slug === slug
