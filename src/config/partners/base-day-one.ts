@@ -33,7 +33,7 @@ const base: Partner = {
       price: '0',
       ...(isProd
         ? {
-            address: '0x173749fB7a78015e92Ee623cf450Abfa670C8259',
+            address: '0x7d5861cfe1c74aaa0999b7e2651bf2ebd2a62d89',
             crossMintClientId: 'ecfacd7b-9664-41cf-8109-ed2354ad7ee6',
             mintType: MintType.Zora,
           }
