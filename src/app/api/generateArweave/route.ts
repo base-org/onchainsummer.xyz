@@ -9,6 +9,9 @@ const filePath = './generated/arweave.ts'
 const prefix = 'export const arweaves = '
 
 export async function GET(request: Request) {
+  if (request.headers.get('x-api-key') !== process.env.PASSWORD_PROTECT)
+    return NextResponse.json({}, { status: 401 })
+
   const data: Record<string, ArticleType> = {}
   for (const partner of partners) {
     let article: ArticleType
