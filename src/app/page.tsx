@@ -54,9 +54,9 @@ const Home = async ({ searchParams }: Props) => {
                 <div className="relative z-20 h-[80px] w-[80px] md:h-20 md:w-20">
                   <Image src={icon} alt={`${partner} Icon`} fill />
                 </div>
-                <div className="flex-1">
-                  <h2 className="text-[32px]">{name}</h2>
-                  <p className="text-[16px] uppercase text-[#858585]">
+                <div className="flex-1 flex flex-col justify-end">
+                  <h2 className="desktop-h2">{name}</h2>
+                  <p className="desktop-mono uppercase text-[#858585]">
                     Collection
                   </p>
                 </div>
@@ -79,16 +79,18 @@ const Home = async ({ searchParams }: Props) => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col lg:flex-row gap-4 md:gap-11 rounded-xl md:pr-4 lg:my-4 lg:mx-2  break-words">
+              <div className="flex flex-col lg:flex-row gap-4 md:gap-11 rounded-xl md:pr-4 lg:my-4 lg:mt-14 lg:mx-2  break-words">
                 <div className="w-full lg:w-1/2">
-                  <h2 className="text-[32px] font-display">
+                  <h2 className="desktop-h2 font-display">
                     {article.content.title}
                   </h2>
                 </div>
                 <div className="w-full lg:w-1/2">
-                  <ReactMarkdown
-                    content={`${article.content.body.slice(0, 500)} ...`}
-                  />
+                  <div className="prose">
+                    <ReactMarkdown
+                      content={`${article.content.body.slice(0, 500)} ...`}
+                    />
+                  </div>
                   <Button
                     className="uppercase border border-1 border-black !bg-transparent !text-black mt-6 max-w-fit !py-2"
                     href={`/${partner.slug}`}

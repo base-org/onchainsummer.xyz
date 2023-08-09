@@ -51,13 +51,13 @@ export const Trending: FC<TrendingComponentProps> = () => {
               <UpArrow height={32} width={32} />
             </div>
             <div className="">
-              <h2 className="text-[32px] text-display">Trending</h2>
+              <h2 className="desktop-h2">Trending</h2>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row md:gap-6">
             <div className="flex items-center">
-              <p className="text-[#010101] opacity-50 mr-3 font-mono uppercase my-2">
+              <p className="desktop-mono !text-[#858585] uppercase mr-3">
                 Powered by{' '}
               </p>
               <MintDotFun />
@@ -69,8 +69,8 @@ export const Trending: FC<TrendingComponentProps> = () => {
           href="/trending"
           className="hidden [@media(min-width:724px)]:inline-block"
         >
-          <div className="flex h-full items-start sm:items-center gap-6 uppercase text-mono pr-6">
-            <span>View All</span>
+          <div className="flex h-full items-start sm:items-center gap-6 uppercase desktop-mono pr-6">
+            <span>View Trending</span>
             <div>
               <RightArrow fill="black" />
             </div>
@@ -109,7 +109,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     <div className="flex flex-row flex-wrap order-1 w-full lg:w-[60%]">
                       <div className="flex flex-wrap lg:flex-nowrap basis-full md:mb-3 overflow-hidden">
                         <div className="flex items-start w-full md:w-auto relative top-[3px]">
-                          <p className="text-neutral-400 mr-3 md:mr-[29px] text-mono md:text-lg mb-4 md:mb-0">
+                          <p className="text-neutral-400 mr-3 md:mr-[29px] desktop-mono md:text-lg mb-4 md:mb-0">
                             #{idx + 1}
                           </p>
                         </div>
@@ -126,13 +126,13 @@ export const Trending: FC<TrendingComponentProps> = () => {
                           </a>
 
                           <div className="relative top-[3px]">
-                            <h3 className="text-black text-[20px] md:text-2xl whitespace-normal overflow-hidden break-all">
+                            <h3 className="desktop-h4 md:desktop-h3 whitespace-normal overflow-hidden break-all">
                               {name}
                             </h3>
-                            <h4 className="text-sm font-medium font-mono text-[#858585]">
+                            <h4 className="desktop-label-1 text-[#858585]">
                               {shortenAddress(contract)}
                             </h4>
-                            <p className="text-[#858585] font-mono text-sm md:text-base">
+                            <p className="text-[#858585] desktop-label-2">
                               {mintsLastHour} mints last hour •{' '}
                               {formatEther(BigInt(mintStatus.price))} ETH
                             </p>
