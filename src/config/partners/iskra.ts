@@ -7,7 +7,7 @@ const iskra: Partner = {
   name: 'Iskra',
   url: 'https://iskra.world/',
   description:
-    'Iskra is the premier destination for web3 gaming and innovation. Play and earn Web3 Games where everybody wins',
+    'Play and earn with onchain games where everybody wins with Iskra.',
   brandColor: '#007aff',
   icon: '/partners/iskra/icon.png',
   banner: '/partners/iskra/banner-icon.svg',

@@ -7,7 +7,7 @@ const atari: Partner = {
   name: 'Atari',
   url: 'https://atari.com/pages/atari-x',
   description:
-    "Longstanding video game company. Atari X consolidates Atari's blockchain interests into a unified operation that enhances user experience",
+    'Unlock community, gaming, and IRL utility with a new generation of Atari.',
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/atari/icon.png',
   banner: '/partners/atari/banner-icon.svg',

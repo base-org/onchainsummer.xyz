@@ -6,7 +6,7 @@ import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const base: Partner = {
   slug: 'base',
-  name: 'Base Day One',
+  name: 'Base',
   url: '',
   description: `Base Day One commemorates the first day of Base.
 
@@ -15,7 +15,7 @@ const base: Partner = {
   All proceeds will support the next generation of builders on Base; this does not confer any other rights.
   
   GET ONCHAIN at onchainsummer.xyz and mint to join us.`,
-  brandColor: 'rgb(209,66,65)',
+  brandColor: '#0052FF',
   icon: '/partners/base-day-one/icon.png',
   banner: '/partners/base-day-one/banner-icon.svg',
   aarweaveDigest: isProd

@@ -7,7 +7,7 @@ const fwbBonfire: Partner = {
   name: 'Bonfire',
   url: 'https://www.bonfiretoken.co/',
   description:
-    'Bonfire is more than a website - create unique digital spaces to share exclusive content, curate intimate experiences, and engage directly with your fans.',
+    "Get token-gated content from artists on Bonfire's platforms that lets creative visions flourish.",
   brandColor: '#000000',
   icon: '/partners/fwb-bonfire/icon.png',
   banner: '/partners/fwb-bonfire/banner-icon.svg',
