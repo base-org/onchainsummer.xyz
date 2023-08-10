@@ -90,15 +90,16 @@ export const useBridge = (amount: BigNumber) => {
         setBridgeState(BridgeState.ERROR)
       }
     }, // depositETH()
-    [amount]
+    [amount, logEvent]
   )
 
   const bridge = useCallback(
     async () => {
       if (!messenger) return
+      logEvent?.(events.bridgeStarted)
       await depositETH(messenger)
     }, // main
-    [depositETH, messenger]
+    [depositETH, messenger, logEvent]
   )
 
   return {
