@@ -73,10 +73,7 @@ export const DropCard: FC<DropCardProps> = ({
           <span className="desktop-h3">{name}</span>
         )}
         <div className="mt-4 mb-8">
-          <AddressPill
-            address={creator as Address}
-            className="bg-ocs-turquoise"
-          />
+          <AddressPill address={creator as Address} />
         </div>
         {isExternalLink ? (
           <ExternalDrop
