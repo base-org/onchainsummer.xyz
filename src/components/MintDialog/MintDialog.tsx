@@ -92,7 +92,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       case ModalPage.MINT_SUCCESS:
         return (
           <>
-            NFT Minted <Checkmark />
+            NFT Minted <Checkmark className="ml-auto" />
           </>
         )
       case ModalPage.NATIVE_MINT_PENDING_CONFIRMATION:
@@ -106,12 +106,12 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         return (
           <>
             {trendingPageNativeMint ? (
-              <span className="w-full">Mint</span>
+              <>Mint</>
             ) : (
               <>
                 {price === '0' ? (
                   <>
-                    Bridge and Mint For Free <ArrowRight />
+                    Bridge and Mint For Free <ArrowRight className="ml-auto" />
                   </>
                 ) : (
                   <>
@@ -120,7 +120,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
                       maximumFractionDigits: 4,
                     })}{' '}
                     ETH)
-                    <ArrowRight />
+                    <ArrowRight className="ml-auto" />
                   </>
                 )}
               </>

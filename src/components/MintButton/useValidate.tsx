@@ -80,10 +80,8 @@ export const useValidate = (
       case MintStatus.UserMintedMax:
         return (
           <>
-            {validation.maxPerAddress
-              ? `NFT Minted (${validation.maxPerAddress} per address)`
-              : 'NFT Minted'}{' '}
-            <Checkmark />
+            NFT Minted
+            <Checkmark className="ml-auto" />
           </>
         )
     }

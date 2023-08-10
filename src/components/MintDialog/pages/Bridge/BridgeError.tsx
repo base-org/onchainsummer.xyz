@@ -43,7 +43,7 @@ export const BridgeError: FC<BridgeErrorProps> = ({
           isl1
           title={
             <>
-              View l1 tx <RightArrow />
+              View l1 tx <RightArrow fill="white" className="ml-auto" />
             </>
           }
         />
@@ -53,7 +53,7 @@ export const BridgeError: FC<BridgeErrorProps> = ({
           txHash={l2TxHash}
           title={
             <>
-              View l2 tx <RightArrow />
+              View l2 tx <RightArrow fill="white" className="ml-auto" />
             </>
           }
         />
