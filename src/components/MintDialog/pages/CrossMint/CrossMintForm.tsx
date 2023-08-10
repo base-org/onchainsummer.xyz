@@ -40,33 +40,21 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   quantity,
   totalPrice,
 }) => {
-  const {mintType, crossMintClientId: clientId, creatorAddress} = useMintDialogContext();
+  const {
+    mintType,
+    crossMintClientId: clientId,
+    creatorAddress,
+  } = useMintDialogContext()
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
   const { address: walletAddress } = useAccount()
   const [email, setEmail] = useState('')
-  
+
   return (
     <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
-      {prepared ? (
-        <div className="w-full max-w-[294px] flex flex-col gap-1 mb-2.5 font-inter mt-0.5 ml-0.5 mr-0.5 px-0.5">
-          <label
-            htmlFor="crossmint-email"
-            className="text-sm font-medium leading-[1.15] text-black"
-          >
-            Email
-          </label>
-          <input
-            id="crossmint-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-[#e6e6e6] rounded-[100px] text-[16px] leading-[18.8px] outline-none shadow-crossMintEmail focus:border-[hsla(210,96%,45%,50%)] focus:shadow-crossMintEmailFocus transition-[background_0.15s_ease,border_0.15s_ease,box-shadow_0.15s_ease,color_0.15s_ease]"
-          />
-        </div>
-      ) : null}
       <CrossmintPaymentElement
+        emailInputOptions={{ show: true }}
         clientId={clientId || ''}
         environment={environment}
         recipient={{
@@ -75,23 +63,26 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
         }}
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
-        mintConfig={mintType == MintType.Zora ?  {
-          recipient: walletAddress,
-          quantity: quantity,          
-          comment: "",
-          mintReferral: creatorAddress,
-          totalPrice: totalPrice,
-        } : {
-          quantity,
-          totalPrice,
-        }}
+        mintConfig={
+          mintType == MintType.Zora
+            ? {
+                recipient: walletAddress,
+                quantity: quantity,
+                comment: '',
+                mintReferral: creatorAddress,
+                totalPrice: totalPrice,
+              }
+            : {
+                quantity,
+                totalPrice,
+              }
+        }
         uiConfig={{
           fontSizeBase: '1rem',
           spacingUnit: '0.25rem',
           borderRadius: '100px',
           fontWeightSecondary: '500',
         }}
-        // @ts-expect-error
         onEvent={function onEvent(event) {
           switch (event.type) {
             case 'payment:preparation.succeeded':
@@ -128,7 +119,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
               // TODO: Inform error
               setPage(ModalPage.MINT_ERROR)
               break
-            default: 
+            default:
               console.log(`Unmatched crossmint ${event}`)
           }
         }}
