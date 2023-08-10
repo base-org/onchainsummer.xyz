@@ -11,7 +11,7 @@ const parallel: Partner = {
   brandColor: '#0c3ee3',
   icon: '/partners/parallel/icon.png',
   banner: '/partners/parallel/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'lSB4sNKGgntaVI9RqsR_Ak54BD8NrEBjXN5sYJ_LyPM',
   twitter: '@ParallelTCG',
   drops: [
     {

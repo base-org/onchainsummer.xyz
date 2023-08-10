@@ -11,7 +11,7 @@ const highlight: Partner = {
   brandColor: '#000000',
   icon: '/partners/highlight/icon.png',
   banner: '/partners/highlight/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'jq_oAd33v0lSB8N9oHzHjyoNE08_gEe7Cfk-XOV81iE',
   twitter: '@Highlight_xyz',
   drops: [
     {

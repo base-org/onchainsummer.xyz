@@ -11,7 +11,7 @@ const optimism: Partner = {
   brandColor: 'rgb(234,52,49)',
   icon: '/partners/optimism/icon.png',
   banner: '/partners/optimism/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@optimismFND',
   drops: [
     {

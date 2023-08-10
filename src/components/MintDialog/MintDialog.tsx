@@ -246,10 +246,10 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         >
           <Dialog.Close asChild>
             <button
-              className="p-4 lg:p-0 bg-white rounded-full lg:rounded-none z-30 lg:inline-flex absolute -top-4 -right-4 lg:top-10 lg:right-10 appearance-none items-center justify-center"
+              className="p-[10px] lg:p-0 bg-white rounded-full lg:rounded-none z-30 lg:inline-flex absolute top-[1.75rem] right-[1.75rem] lg:top-10 lg:right-10 appearance-none items-center justify-center"
               aria-label="Close"
             >
-              <Close height={24} width={24} />
+              <Close height={20} width={20} />
               <span className="sr-only">Close</span>
             </button>
           </Dialog.Close>

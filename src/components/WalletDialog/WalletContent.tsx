@@ -14,6 +14,7 @@ import { useEns } from '@/utils/useEns'
 import { Loading } from '../icons/Loading'
 import { useAccount, useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi'
 import { useIsMisMatched } from '@/utils/useIsMismatched'
+import { l2 } from '@/config/chain'
 
 interface WalletContentProps {}
 

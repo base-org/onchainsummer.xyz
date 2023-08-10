@@ -9,8 +9,8 @@ type DropDetails = {
 
 export const unlimited: DropDetails = isProd
   ? {
-      crossMintClientId: 'd3adf3b6-2e94-406a-8196-678281a938ea',
-      address: '0x97fCc2cbeC045dD1Bbd3C12f39DF244FDe3fc859',
+      crossMintClientId: '',
+      address: '0x',
       mintType: MintType.ThirdWeb,
     }
   : {
@@ -22,7 +22,7 @@ export const unlimited: DropDetails = isProd
 export const limited: DropDetails = isProd
   ? {
       crossMintClientId: '',
-      address: '0xBD254879329417D58c70308260DDd9eEcfeFB84d',
+      address: '0x',
       mintType: MintType.ThirdWeb,
     }
   : {
@@ -34,7 +34,7 @@ export const limited: DropDetails = isProd
 export const limited2: DropDetails = isProd
   ? {
       crossMintClientId: '',
-      address: '0xBD254879329417D58c70308260DDd9eEcfeFB84d',
+      address: '0x',
       mintType: MintType.ThirdWeb,
     }
   : {
@@ -44,13 +44,13 @@ export const limited2: DropDetails = isProd
     }
 
 export const zora: DropDetails = isProd
-    ? {
-        address: '0x3fb678b3b2698db713faa36de1144c6019d82f2b',
-        crossMintClientId: '4242753d-1d8a-477e-acbd-de49a400d225',
-        mintType: MintType.Zora,
-      }
-    : {
-        address: '0xc410e3291fed14d98b41f29060a56ae2db993894',
-        crossMintClientId: '1119fbf5-fa74-4839-8090-bfc3e276f3be',
-        mintType: MintType.Zora,
-      }
+  ? {
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.Zora,
+    }
+  : {
+      address: '0xc410e3291fed14d98b41f29060a56ae2db993894',
+      crossMintClientId: '1119fbf5-fa74-4839-8090-bfc3e276f3be',
+      mintType: MintType.Zora,
+    }

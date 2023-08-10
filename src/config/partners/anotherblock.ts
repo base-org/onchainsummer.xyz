@@ -12,7 +12,7 @@ const anotherblock: Partner = {
   brandColor: '#000000',
   icon: '/partners/anotherblock/icon.png',
   banner: '/partners/anotherblock/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'dn1ttJSU9CTLhVhymlOLv9BpAhusmVVbdAG11I-CgRQ',
   twitter: '@anotherblock_io',
   drops: [
     {

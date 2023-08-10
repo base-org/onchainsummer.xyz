@@ -11,7 +11,7 @@ const openSeaConfig: Partner = {
   brandColor: '#2081E2',
   icon: '/partners/open-sea/icon.png',
   banner: '/partners/open-sea/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@opensea',
   drops: [
     {

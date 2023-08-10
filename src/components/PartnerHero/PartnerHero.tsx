@@ -1,6 +1,5 @@
 'use client'
 
-import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
@@ -10,7 +9,7 @@ import { MintButton } from '../MintButton/MintButton'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
-import { getDateRangeValidation } from '@/utils/getDateRangeValidation'
+import { NFTAsset } from '@/components/NFTAsset'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 import { MintType } from '@/components/MintDialog/types'
 
@@ -30,11 +29,10 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
 }) => {
   return (
     <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] lg:grid-cols-[456px,1fr] gap-5 md:gap-10">
-      <div className="relative w-full aspect-square mb-1 lg:mb-0 order-1 md:order-2 xl:aspect-[7/5]">
-        <Image
-          src={headline.image}
-          alt={headline.name}
-          fill
+      <div className="relative w-full aspect-square mb-1 lg:mb-0 order-1 md:order-2">
+        <NFTAsset
+          source={headline.image}
+          name={headline.name}
           className="object-cover rounded-xl"
         />
       </div>
@@ -52,13 +50,10 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         </h1>
         <div className="flex items-center mb-2">
           <span className="mr-2 text-slate-500 desktop-body">By</span>
-          <AddressPill
-            address={headline.creator as Address}
-            className={clsx(teaser && '!bg-ocs-blue !text-white')}
-          />
+          <AddressPill address={headline.creator as Address} />
         </div>
         <div className="prose">
-          <ReactMarkdown>{description}</ReactMarkdown>
+          <ReactMarkdown>{headline.description || description}</ReactMarkdown>
         </div>
         <div className="flex flex-col w-full gap-4 mt-auto">
           <Countdown startDate={headline.startDate} date={headline.endDate} />

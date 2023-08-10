@@ -11,7 +11,7 @@ const cokeConfig: Partner = {
   brandColor: '#F40009',
   icon: '/partners/coke/icon.png',
   banner: '/partners/coke/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'rXJRpWEegt2wUA9yBsb1tDQnSmgDaVaslHhVE9I-ojw',
   twitter: '@CocaCola',
   drops: [
     {
