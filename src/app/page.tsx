@@ -178,6 +178,7 @@ async function getPageData(spoofDate?: string) {
     scheduleDate.setUTCHours(16)
 
     const comparison = compareAsc(now, scheduleDate.getTime())
+
     const partner = schedule[date]
 
     if (comparison === 0 || typeof partner === 'undefined') {

@@ -5,10 +5,9 @@ import { formatEther, parseEther } from 'ethers/lib/utils'
 import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
 import useBalances from '@/utils/useBalances'
-import dialogClasses from '@/components/dialog.module.css'
 import { l1 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
-import { min } from 'date-fns'
+import { ModalPage } from '../../types'
 
 interface NotStartedProps {
   amount: string
@@ -16,6 +15,7 @@ interface NotStartedProps {
   minAmount: string
   recommendedAmount: string
   bridge: () => Promise<void>
+  setPage: React.Dispatch<ModalPage>
 }
 
 export const NotStarted: FC<NotStartedProps> = ({
@@ -24,6 +24,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   minAmount,
   recommendedAmount,
   bridge,
+  setPage,
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const { chain } = useNetwork()
@@ -33,8 +34,8 @@ export const NotStarted: FC<NotStartedProps> = ({
   const { l1Balance } = useBalances()
 
   const recommendationIsMin = useMemo(() => {
-    return recommendedAmount == minAmount
-  }, [amount, min])
+    return recommendedAmount === minAmount
+  }, [minAmount, recommendedAmount])
 
   return (
     <div className="flex flex-col md:my-auto">
@@ -48,7 +49,7 @@ export const NotStarted: FC<NotStartedProps> = ({
               ? ` We recommend bridging ${recommendedAmount} ETH, but `
               : ''}
             {recommendationIsMin ? 'Y' : 'y'}ou&apos;ll need at least{' '}
-            {minAmount} ETH.{' '}
+            {minAmount} ETH. You can also mint with a credit card.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"
@@ -89,13 +90,21 @@ export const NotStarted: FC<NotStartedProps> = ({
             <span>{formatEther(l1Balance)} ETH</span>
           </div>
         </div>
-        {wrongChain && switchNetwork ? (
-          <Button onClick={() => switchNetwork(l1.id)}>Switch to L1</Button>
-        ) : (
-          <Button disabled={!amount} onClick={bridge}>
-            Bridge now
+        <div className="flex flex-col gap-4">
+          {wrongChain && switchNetwork ? (
+            <Button onClick={() => switchNetwork(l1.id)}>Switch to L1</Button>
+          ) : (
+            <Button disabled={!amount} onClick={bridge}>
+              Bridge now
+            </Button>
+          )}
+          <Button
+            variant="LIGHT"
+            onClick={() => setPage(ModalPage.CROSS_MINT_FORM)}
+          >
+            Mint with credit card
           </Button>
-        )}
+        </div>
       </div>
     </div>
   )
