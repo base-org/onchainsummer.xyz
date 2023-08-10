@@ -1,9 +1,9 @@
+import { get } from 'lodash'
 import Link from 'next/link'
 import format from 'date-fns/format'
 import compareAsc from 'date-fns/compareAsc'
 
 import Image from 'next/image'
-import { SDK } from '@/utils/graphqlSdk'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
@@ -18,6 +18,8 @@ import { Heart } from '@/components/icons/Heart'
 import { RightArrow } from '@/components/icons/RightArrow'
 import { getTweets } from '@/utils/getTweets'
 import { getNow } from '@/utils/getNow'
+import { getArweaves } from '@/utils/getArweaves'
+import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -167,15 +169,15 @@ const INITIAL_TABS: TabsComponentProps = {
 
 async function getPageData(spoofDate?: string) {
   const now = getNow(spoofDate)
-  const today = format(now, 'yyyy-MM-dd')
+  const today = getDropDate(spoofDate)
 
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
   const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
-    const comparison = compareAsc(
-      now,
-      new Date(date).getTime() + 4 * 60 * 60 * 1000
-    )
+    const scheduleDate = new Date(date)
+    scheduleDate.setUTCHours(16)
+
+    const comparison = compareAsc(now, scheduleDate.getTime())
     const partner = schedule[date]
 
     if (comparison === 0 || typeof partner === 'undefined') {
@@ -208,20 +210,8 @@ async function getPageData(spoofDate?: string) {
     }
   }, INITIAL_TABS)
 
-  const digest = await SDK.GetMirrorTransactions({
-    digest: featuredPartner.aarweaveDigest,
-  })
-
-  const articleId = digest?.transactions?.edges[0]?.node?.id
-
-  let article = null
-
-  if (articleId) {
-    const res = await fetch(`https://arweave.net/${articleId}`)
-    article = (await res?.json()) as {
-      content: { body: string; title: string }
-    }
-  }
+  const arweaves = await getArweaves()
+  const article = get(arweaves, featuredPartner.aarweaveDigest)
 
   const tweets = await getTweets()
 
