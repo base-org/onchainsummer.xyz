@@ -4,6 +4,8 @@ import { goerli, baseGoerli, mainnet, base } from 'viem/chains'
 import * as OP from '@eth-optimism/sdk'
 import { isProd } from '@/config/chain'
 import { useAccount, useWalletClient } from 'wagmi'
+import { useLogEvent } from '@/utils/useLogEvent'
+import { events } from '@/utils/analytics'
 
 const l1Chain = isProd ? mainnet : goerli
 const l2Chain = isProd ? base : baseGoerli
@@ -23,11 +25,12 @@ export const useBridge = (amount: BigNumber) => {
   const [l1TxHash, setL1TxHash] = useState('')
   const [l2TxHash, setL2TxHash] = useState('')
   const [bridgeState, setBridgeState] = useState(BridgeState.NOT_STARTED)
-  const {address} = useAccount()
-  const {data: walletClient} = useWalletClient()
+  const { address } = useAccount()
+  const { data: walletClient } = useWalletClient()
+  const logEvent = useLogEvent()
 
   const messenger = useMemo(() => {
-    if (!walletClient) return;
+    if (!walletClient) return
     const { account, chain, transport } = walletClient
     const network = {
       chainId: chain.id,
@@ -76,6 +79,7 @@ export const useBridge = (amount: BigNumber) => {
           messageReceipt.transactionReceipt.transactionHash
         )
 
+        logEvent?.(events.bridgeSuccess)
         setBridgeState(BridgeState.BRIDGED)
       } catch (e) {
         // @ts-expect-error
@@ -91,7 +95,7 @@ export const useBridge = (amount: BigNumber) => {
 
   const bridge = useCallback(
     async () => {
-      if (!messenger) return;
+      if (!messenger) return
       await depositETH(messenger)
     }, // main
     [depositETH, messenger]

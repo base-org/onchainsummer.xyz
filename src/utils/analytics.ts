@@ -97,4 +97,12 @@ export const events: Record<string, CCAEvent> = {
     },
     importance: AnalyticsEventImportance.high,
   },
+  bridgeSuccess: {
+    eventName: 'bridge_success',
+    eventData: {
+      loggingId: '211fb8c6-cc70-40a9-8116-6afa6420bdd6',
+      componentType: ComponentType.page,
+      action: ActionType.change,
+    },
+  },
 }
