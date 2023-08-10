@@ -15,7 +15,7 @@ const parallel: Partner = {
   twitter: '@ParallelTCG',
   drops: [
     {
-      image: '/partners/parallel/drops/drop.svg',
+      image: '/partners/parallel/drops/parallelGeneric.png',
       creator: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       name: 'Parallel',
       ...unlimited,
