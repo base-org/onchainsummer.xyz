@@ -724,20 +724,20 @@
   dependencies:
     chalk "^4.1.0"
 
-"@crossmint/client-sdk-base@^0.2.8-alpha.5":
-  version "0.2.8-alpha.5"
-  resolved "https://registry.yarnpkg.com/@crossmint/client-sdk-base/-/client-sdk-base-0.2.8-alpha.5.tgz#9f880dfe3ce2db8637fac027cabb3ff3b73699d6"
-  integrity sha512-LRUolEkJiAl7SHcRODxKDlOeQD2x/GqOAtUGbQaPYUxSh/DPsKn6vkR9xrwwwpQsPn35aq/8AgjKbIq7N/kuQg==
+"@crossmint/client-sdk-base@^1.0.1-alpha.4":
+  version "1.0.1-alpha.4"
+  resolved "https://registry.yarnpkg.com/@crossmint/client-sdk-base/-/client-sdk-base-1.0.1-alpha.4.tgz#1686854c5d97cf9ab567d712d892aba5280ecb1d"
+  integrity sha512-xVZjJj2dcXvp/6bEvztywP0+pqxrnQ6GRS2AorqSHSavVpOE4hmG5kZBYDbsQsxSL0qG9xMVOYr1KaMU3ize3g==
   dependencies:
     exponential-backoff "^3.1.1"
     uuid "^8.3.2"
 
-"@crossmint/client-sdk-react-ui@^0.2.8-alpha.3":
-  version "0.2.8-alpha.3"
-  resolved "https://registry.yarnpkg.com/@crossmint/client-sdk-react-ui/-/client-sdk-react-ui-0.2.8-alpha.3.tgz#38dd9c990c1d2ba6b4ab5d76dd51671fa92f1d76"
-  integrity sha512-4utH3qVhnVbYQJ+IMcGDOgdtcvhJKhHpYkOTqQWlg4gsn7AABBdm9YJTV2LZaijjRu/BUG7hDozum7JcZf9bRA==
+"@crossmint/client-sdk-react-ui@^1.0.1-alpha.4":
+  version "1.0.1-alpha.4"
+  resolved "https://registry.yarnpkg.com/@crossmint/client-sdk-react-ui/-/client-sdk-react-ui-1.0.1-alpha.4.tgz#6b52c13c92c9854e97e0dad52592aa5d78d8a76b"
+  integrity sha512-I/UcHqUbINnxKP1FJWuMgY5JxyWfpexT6rPeu8B0zTXXDvLAbfQ9eh7r/TwT5DGAq1k1rlLt477/rqkp8Xr0+Q==
   dependencies:
-    "@crossmint/client-sdk-base" "^0.2.8-alpha.5"
+    "@crossmint/client-sdk-base" "^1.0.1-alpha.4"
     react-jss "10.9.2"
     uuid "^8.3.2"
 
