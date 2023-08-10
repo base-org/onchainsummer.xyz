@@ -90,19 +90,21 @@ export const NotStarted: FC<NotStartedProps> = ({
             <span>{formatEther(l1Balance)} ETH</span>
           </div>
         </div>
-        {wrongChain && switchNetwork ? (
-          <Button onClick={() => switchNetwork(l1.id)}>Switch to L1</Button>
-        ) : (
-          <Button disabled={!amount} onClick={bridge}>
-            Bridge now
+        <div className="flex flex-col gap-4">
+          {wrongChain && switchNetwork ? (
+            <Button onClick={() => switchNetwork(l1.id)}>Switch to L1</Button>
+          ) : (
+            <Button disabled={!amount} onClick={bridge}>
+              Bridge now
+            </Button>
+          )}
+          <Button
+            variant="LIGHT"
+            onClick={() => setPage(ModalPage.CROSS_MINT_FORM)}
+          >
+            Mint with credit card
           </Button>
-        )}
-        <Button
-          variant="LIGHT"
-          onClick={() => setPage(ModalPage.CROSS_MINT_FORM)}
-        >
-          Mint with credit card
-        </Button>
+        </div>
       </div>
     </div>
   )
