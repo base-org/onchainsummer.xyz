@@ -18,7 +18,13 @@ const parallel: Partner = {
       image: '/partners/parallel/drops/starter-pack.png',
       creator: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       name: 'Parallel Starter Packs',
-      description: 'Sci-fi collectable card game with NFTs',
+      description: `"Parallel Starter Decks are now available as one of the first Onchain Summer drops!
+
+Each Starter Deck includes Beta access, 40 cards to get started playing and earning Prime as well as 10 apparition packs.
+
+Each purchase also includes a Heroes of Parallel Cardback which can also be used in game.
+
+The drop is live now and will be available throughout Onchain Summer or until sold out. Each deck will be available for .05 ETH on Base."`,
       address: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       crossMintClientId: '',
       mintType: MintType.External,
@@ -32,8 +38,7 @@ const parallel: Partner = {
       image: '/partners/parallel/drops/card-backs.png',
       creator: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       name: 'Parallel Card Backs',
-      description:
-        'Parallel is a sci-fi collectible card game with five factions battling for home. Assemble a deck and take the fight to Earth.',
+      description: `Heroes of Parallel Open Edition Card Back is available now and during the entirety of Onchain Summer! Card Backs are like skins for your decks in Parallel. Use them to flex on your opponents. This is an open edition available at a price of .01 ETH on base. After the end of August, we will update the IPFS to reflect the total supply minted.`,
       address: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       mintType: MintType.External,
       externalLink: 'https://parallel.life/starter-decks',
