@@ -33,7 +33,7 @@ const anotherblock: Partner = {
     },
     {
       startDate: Date.UTC(2023, 7, 12, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0011',
       externalLink: 'https://anotherblock.io/drops/laidback-luke-originator',
       mintType: MintType.External,
@@ -49,7 +49,7 @@ const anotherblock: Partner = {
     },
     {
       startDate: Date.UTC(2023, 7, 12, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.00055',
       externalLink: 'https://anotherblock.io/drops/kleerup-paradise',
       mintType: MintType.External,
