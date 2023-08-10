@@ -11,7 +11,7 @@ const oak: Partner = {
   brandColor: '#95098b',
   icon: '/partners/oak/icon.png',
   banner: '/partners/oak/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@oak_network',
   drops: [
     {
