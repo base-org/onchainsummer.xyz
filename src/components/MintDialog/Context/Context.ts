@@ -7,6 +7,8 @@ export interface MintDialogContextType {
   address: Address
   crossMintClientId?: string
   price: string
+  platformFees?: string
+  salePrice?: string
   partnerIcon: string
   partnerName: string
   dropImage: string
@@ -23,10 +25,12 @@ export interface MintDialogContextType {
 export const MintDialogContext = createContext<MintDialogContextType>({
   address: '0x0',
   price: '',
+  platformFees: '',
+  salePrice: '',
   partnerIcon: '',
   partnerName: '',
   dropImage: '',
   dropName: '',
   creatorAddress: '',
-  mintType: MintType.ThirdWeb
+  mintType: MintType.ThirdWeb,
 })

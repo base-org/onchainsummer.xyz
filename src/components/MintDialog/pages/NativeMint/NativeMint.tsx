@@ -25,6 +25,9 @@ interface NativeMintProps {
   setTxDetails: React.Dispatch<React.SetStateAction<TxDetails | null>>
   setMintError: React.Dispatch<React.SetStateAction<any | null>>
   insufficientFunds: boolean
+  platformFees: string
+  finalSalePrice: string
+  mintType: string
 }
 
 export const NativeMint: FC<NativeMintProps> = ({
@@ -37,6 +40,9 @@ export const NativeMint: FC<NativeMintProps> = ({
   setTxDetails,
   setMintError,
   insufficientFunds,
+  platformFees,
+  finalSalePrice,
+  mintType,
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const network = useNetwork()
@@ -79,6 +85,16 @@ export const NativeMint: FC<NativeMintProps> = ({
             <span>
               {quantity} NFT{quantity > 1 ? 's' : ''}
             </span>
+            <span>{finalSalePrice} ETH</span>
+          </span>
+          <span className="text-button-text-text flex justify-between mb-4">
+            <span>
+              <span className="capitalize">{mintType} </span> platform fees
+            </span>
+            <span>{platformFees} ETH</span>
+          </span>
+          <span className="text-button-text-text flex justify-between mb-4">
+            <span>Total</span>
             <span>{totalPrice} ETH</span>
           </span>
         </Dialog.Description>

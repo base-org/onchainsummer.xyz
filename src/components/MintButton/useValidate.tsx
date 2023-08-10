@@ -13,12 +13,16 @@ export type Validation = {
   isValidating: boolean
   price: string
   maxClaimablePerWallet?: string
+  platformFees: string
+  salePrice: string
 }
 
 type ValidationLocal = {
   status: MintStatus
   price: bigint
   maxPerAddress?: bigint
+  platformFees?: bigint
+  salePrice?: bigint
 }
 
 enum MintStatus {
@@ -96,6 +100,8 @@ export const useValidate = (
     isValidating: isLoading,
     message: message || '',
     price: formatEther(validation.price),
+    platformFees: formatEther(validation.platformFees || 0n),
+    salePrice: formatEther(validation.salePrice || 0n),
     maxClaimablePerWallet: validation.maxPerAddress?.toString(),
   }
 }
@@ -108,6 +114,7 @@ function validateMintDotFun(
       ? MintStatus.Mintable
       : MintStatus.NotMintable,
     price: BigInt(mintDotFunStatus?.price || 0),
+    salePrice: BigInt(mintDotFunStatus?.price || 0),
   }
 }
 
@@ -127,6 +134,8 @@ async function validateZora(
     args: [1n],
   })
   const price = fee[1] + saleDetails.publicSalePrice
+  const platformFees = fee[1]
+  const salePrice = saleDetails.publicSalePrice
   const now = Date.now() / 1000
 
   if (now < saleDetails.publicSaleStart) {
@@ -134,6 +143,8 @@ async function validateZora(
       status: MintStatus.NotStarted,
       maxPerAddress: saleDetails.maxSalePurchasePerAddress,
       price: price,
+      platformFees: platformFees,
+      salePrice: salePrice,
     }
   }
 
@@ -142,6 +153,8 @@ async function validateZora(
       status: MintStatus.Ended,
       maxPerAddress: saleDetails.maxSalePurchasePerAddress,
       price: price,
+      platformFees: platformFees,
+      salePrice: salePrice,
     }
   }
 
@@ -156,6 +169,8 @@ async function validateZora(
       status: MintStatus.UserMintedMax,
       maxPerAddress: saleDetails.maxSalePurchasePerAddress,
       price: price,
+      platformFees: platformFees,
+      salePrice: salePrice,
     }
   }
 
@@ -175,6 +190,8 @@ async function validateZora(
       status: MintStatus.MintedOut,
       maxPerAddress: saleDetails.maxSalePurchasePerAddress,
       price: price,
+      platformFees: platformFees,
+      salePrice: salePrice,
     }
   }
 
@@ -182,6 +199,8 @@ async function validateZora(
     status: MintStatus.Mintable,
     maxPerAddress: saleDetails.maxSalePurchasePerAddress,
     price: price,
+    platformFees: platformFees,
+    salePrice: salePrice,
   }
 }
 
@@ -222,6 +241,7 @@ async function validateThirdWeb(
       status: MintStatus.UserMintedMax,
       maxPerAddress: condition.quantityLimitPerWallet,
       price: condition.pricePerToken,
+      salePrice: condition.pricePerToken,
     }
   }
 

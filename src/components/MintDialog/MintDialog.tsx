@@ -27,8 +27,15 @@ export type TxDetails = {
 }
 
 export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
-  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
-    useMintDialogContext()
+  const {
+    price,
+    crossMintClientId,
+    trendingPageNativeMint,
+    mintButtonStyles,
+    platformFees,
+    salePrice,
+    mintType,
+  } = useMintDialogContext()
 
   const [open, setOpen] = useState(false)
   const { l1Balance } = useBalances()
@@ -42,6 +49,9 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
+  const finalSalePrice = useMemo(() => {
+    return salePrice && formatEther(parseEther(salePrice) * BigInt(quantity))
+  }, [quantity, salePrice])
 
   const { fundsStatus, getFundsStatus } = useFundsStatus(totalPrice)
   const [page, setPage] = useState<ModalPage>(() => {
@@ -184,10 +194,13 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             quantity={quantity}
             setQuantity={setQuantity}
             totalPrice={totalPrice}
+            finalSalePrice={finalSalePrice || ''}
+            platformFees={platformFees || ''}
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
             insufficientFunds={fundsStatus === 'insufficient'}
+            mintType={mintType}
           />
         )
       case ModalPage.BRIDGE:

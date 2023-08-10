@@ -19,13 +19,20 @@ interface MintButtonProps extends MintDialogContextType {
 export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
   const { address: account } = useAccount()
   const now = getNow()
-  const { valid, message, isValidating, price, maxClaimablePerWallet } =
-    useValidate(
-      mintProps.address,
-      mintProps.mintType,
-      mintProps.price,
-      mintProps.mintDotFunStatus
-    )
+  const {
+    valid,
+    message,
+    isValidating,
+    price,
+    maxClaimablePerWallet,
+    platformFees,
+    salePrice,
+  } = useValidate(
+    mintProps.address,
+    mintProps.mintType,
+    mintProps.price,
+    mintProps.mintDotFunStatus
+  )
 
   if (mintProps.endDate && now >= mintProps.endDate) {
     return (
@@ -67,7 +74,12 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
     )
   }
 
-  const props: MintDialogContextType = { ...mintProps, price: price.toString() }
+  const props: MintDialogContextType = {
+    ...mintProps,
+    price: price.toString(),
+    platformFees: platformFees.toString(),
+    salePrice: salePrice.toString(),
+  }
 
   return (
     <MintDialog
