@@ -194,8 +194,6 @@ export default function RootLayout({
             inter.variable
           )}
         >
-          <Script src="https://static-assets.coinbase.com/js/cca/v0.0.1.js" />
-          <Script src="/init_cca.js" />
           <QueryClientProvider>
             <QueryParamProvider>
               <Providers>
