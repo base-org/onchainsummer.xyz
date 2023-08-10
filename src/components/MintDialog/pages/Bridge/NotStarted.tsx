@@ -49,7 +49,7 @@ export const NotStarted: FC<NotStartedProps> = ({
               ? ` We recommend bridging ${recommendedAmount} ETH, but `
               : ''}
             {recommendationIsMin ? 'Y' : 'y'}ou&apos;ll need at least{' '}
-            {minAmount} ETH.{' '}
+            {minAmount} ETH. You can also mint with a credit card.{' '}
             <a
               href="https://help.coinbase.com/en/wallet/bridging"
               target="_blank"
