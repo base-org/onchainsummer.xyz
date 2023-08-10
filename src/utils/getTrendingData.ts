@@ -3,7 +3,9 @@ export async function getTrendingData(
   chainId: number
 ) {
   const res = await fetch(
-    `/api/trending?connectedWallet=${connectedWallet}&chain=${chainId}`
+    `/api/trending?connectedWallet=${connectedWallet}&chain=${chainId}`,
+    // Revalidate every minute
+    { next: { revalidate: 1 * 60 } }
   )
 
   if (!res.ok) {
