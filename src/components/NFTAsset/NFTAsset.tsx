@@ -6,12 +6,13 @@ import Image from 'next/image'
 interface NFTAssetProps {
   name: string
   source: string
+  autoPlay?: boolean
   className?: string
 }
 
-export const NFTAsset: FC<NFTAssetProps> = ({ source, name, ...props }) => {
+export const NFTAsset: FC<NFTAssetProps> = ({ source, name, autoPlay, ...props }) => {
   return source.indexOf('.mov') > -1 ? (
-    <video loop playsInline controls {...props}>
+    <video loop playsInline muted autoPlay={!!autoPlay} {...props}>
       <source src={source} type="video/mp4" />
     </video>
   ) : (
