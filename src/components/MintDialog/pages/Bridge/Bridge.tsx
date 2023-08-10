@@ -19,7 +19,8 @@ interface BridgeProps {
 }
 
 const roundDownToDecimals = (value: number) => {
-  const scalar = value < 0.01 ? 10000 : 100
+  const scalar = 10000;
+  // const scalar = value < 0.01 ? 10000 : 100
   return Math.floor(scalar * value) / scalar
 }
 
