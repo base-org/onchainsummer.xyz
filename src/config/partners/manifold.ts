@@ -11,7 +11,7 @@ const manifold: Partner = {
   brandColor: '#000000',
   icon: '/partners/manifold/icon.png',
   banner: '/partners/manifold/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '49DSIXV0UonHaisSqARUELRcKhfsmTtr_tnjShKPwMM',
   twitter: '@manifold_labs',
   drops: [
     {

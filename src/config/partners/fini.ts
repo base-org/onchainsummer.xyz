@@ -11,7 +11,7 @@ const fini: Partner = {
   brandColor: 'rgb(255, 121, 121)',
   icon: '/partners/fini/icon.png',
   banner: '/partners/fini/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'BKqxrl0WP_Obyrq8G4aeQBVwRRJJmZTiwWny115n0hI',
   twitter: '@finiliar',
   drops: [
     {

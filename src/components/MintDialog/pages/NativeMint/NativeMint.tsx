@@ -73,10 +73,7 @@ export const NativeMint: FC<NativeMintProps> = ({
         className={clsx('flex flex-col w-full gap-4', { hidden: isPending })}
       >
         <Dialog.Description className="flex flex-col w-full gap-4 desktop-body">
-          <AddressPill
-            address={creatorAddress as Address}
-            className={'!bg-ocs-gray !text-white'}
-          />
+          <AddressPill address={creatorAddress as Address} />
           <Quantity quantity={quantity} setQuantity={setQuantity} />
           <span className="text-button-text-text flex justify-between mb-4">
             <span>

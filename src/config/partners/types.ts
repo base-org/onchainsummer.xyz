@@ -1,4 +1,4 @@
-import { MintType } from "@/components/MintDialog/types"
+import { MintType } from '@/components/MintDialog/types'
 
 export const DAY = 1000 * 60 * 60 * 24
 
@@ -17,6 +17,7 @@ export interface Drop {
   creator: string
   // TODO, consider requiring mint type
   mintType?: MintType
+  description?: string
 }
 
 export interface Partner {

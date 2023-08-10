@@ -11,7 +11,7 @@ const rainbowWallet: Partner = {
   brandColor: '#e9f2ff',
   icon: '/partners/rainbow-wallet/icon.png',
   banner: '/partners/rainbow-wallet/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@rainbowdotme',
   drops: [
     {

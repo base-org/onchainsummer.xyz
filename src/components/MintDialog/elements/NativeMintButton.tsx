@@ -27,7 +27,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   setTxDetails,
   setMintError,
 }) => {
-  const { mintType, creatorAddress } = useMintDialogContext();
+  const { mintType, creatorAddress } = useMintDialogContext()
   const { address } = useMintDialogContext()
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined)
   const { address: account } = useAccount()
@@ -61,7 +61,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
             address: address,
             functionName: 'mintWithRewards',
             args: [account!, BigInt(quantity), '', getAddress(creatorAddress)],
-            value: price
+            value: price,
           })
         }
       case MintType.ThirdWeb:
@@ -89,7 +89,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
         console.log(`invalid mint type ${mintType} for native mint`)
         setPage(ModalPage.MINT_ERROR)
     }
-  }, [mintType, setPage, address, quantity, price, account])
+  }, [mintType, setPage, account, address, quantity, creatorAddress, price])
 
   useEffect(() => {
     if (!txReceipt) return
