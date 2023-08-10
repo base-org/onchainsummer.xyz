@@ -1,6 +1,5 @@
 import { get } from 'lodash'
 import Link from 'next/link'
-import format from 'date-fns/format'
 import compareAsc from 'date-fns/compareAsc'
 
 import Image from 'next/image'
@@ -49,44 +48,44 @@ const Home = async ({ searchParams }: Props) => {
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
         />
-        {article && (
-          <section className="w-full shadow-large rounded-3xl">
-            <div className="bg-gray-200/80 p-[20px] lg:p-4 rounded-3xl">
-              <div className="mb-4 flex gap-2">
-                <div className="relative z-20 h-[64px] w-[64px]">
-                  <Image
-                    src={icon}
-                    alt={`${partner} Icon`}
-                    height={64}
-                    width={64}
-                  />
-                </div>
-                <div className="flex-1 flex flex-col justify-end">
-                  <h2 className="desktop-h2">{name}</h2>
-                  <p className="desktop-mono uppercase text-[#858585]">
-                    Collection
-                  </p>
-                </div>
+        <section className="w-full shadow-large rounded-3xl">
+          <div className="bg-gray-200/80 p-[20px] lg:p-4 rounded-3xl">
+            <div className="mb-4 flex gap-2">
+              <div className="relative z-20 h-[64px] w-[64px]">
+                <Image
+                  src={icon}
+                  alt={`${partner} Icon`}
+                  height={64}
+                  width={64}
+                />
               </div>
-              {remainingDrops?.length > 0 && (
-                <div className="-mr-4 mb-4 md:mb-14">
-                  <div className="overflow-scroll hide-scrollbar">
-                    <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
-                      <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
-                        {remainingDrops?.map((drop) => (
-                          <li key={drop.name} className="flex flex-col">
-                            <DropCard
-                              {...drop}
-                              partner={name}
-                              partnerIcon={icon}
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+              <div className="flex-1 flex flex-col justify-end">
+                <h2 className="desktop-h2">{name}</h2>
+                <p className="desktop-mono uppercase text-[#858585]">
+                  Collection
+                </p>
+              </div>
+            </div>
+            {remainingDrops?.length > 0 && (
+              <div className="-mr-4 mb-4 md:mb-14">
+                <div className="overflow-scroll hide-scrollbar">
+                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                    <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
+                      {remainingDrops?.map((drop) => (
+                        <li key={drop.name} className="flex flex-col">
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
+                          />
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              )}
+              </div>
+            )}
+            {article && (
               <div className="flex items-start gap-12">
                 <div className="flex flex-col rounded-xl md:pr-4lg:mx-2  break-words w-full md:w-1/2">
                   <div className="w-full">
@@ -120,9 +119,9 @@ const Home = async ({ searchParams }: Props) => {
                   />
                 </div>
               </div>
-            </div>
-          </section>
-        )}
+            )}
+          </div>
+        </section>
         {tweets && Array.isArray(tweets.data) && (
           <section className="bg-[#EFEFEF] rounded-3xl p-4">
             <div className="flex justify-between mb-4">
@@ -178,6 +177,7 @@ async function getPageData(spoofDate?: string) {
     scheduleDate.setUTCHours(16)
 
     const comparison = compareAsc(now, scheduleDate.getTime())
+
     const partner = schedule[date]
 
     if (comparison === 0 || typeof partner === 'undefined') {

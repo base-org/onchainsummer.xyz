@@ -11,7 +11,7 @@ const standWithCrypto: Partner = {
   brandColor: 'rgb(1, 76, 236)',
   icon: '/partners/stand-with-crypto/icon.png',
   banner: '/partners/stand-with-crypto/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@standwithCrypt',
   drops: [
     {

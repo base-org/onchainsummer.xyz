@@ -1,13 +1,12 @@
 import { FC } from 'react'
 import { Card } from '../Card'
-import Image from 'next/image'
-import { Button } from '../Button'
 import { MintButton } from '../MintButton'
 import { AddressPill } from '../AddressPill'
 import { Address } from 'wagmi'
 import { useValidateExternalLink } from '../ExternalDrop/useValidateExternalLink'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 import { MintType } from '@/components/MintDialog/types'
+import { NFTAsset } from '@/components/NFTAsset'
 
 type DropCardProps = {
   address: Address
@@ -53,10 +52,9 @@ export const DropCard: FC<DropCardProps> = ({
   return (
     <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
       <div className="relative w-full aspect-[4/3]">
-        <Image
-          src={image}
-          alt={`${name} from ${partner}`}
-          fill
+        <NFTAsset
+          source={image}
+          name={`${name} from ${partner}`}
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>

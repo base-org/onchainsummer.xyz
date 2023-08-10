@@ -11,7 +11,7 @@ const blackbird: Partner = {
   brandColor: '#000000',
   icon: '/partners/blackbird/icon.png',
   banner: '/partners/blackbird/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'D-InXuDVczYGgpI82Ivudt1i7LIw_N3BJ3xC719Flwo',
   twitter: '@blackbird_xyz',
   drops: [
     {

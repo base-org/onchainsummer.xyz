@@ -11,7 +11,7 @@ const mirrorWellness: Partner = {
   brandColor: '#000000',
   icon: '/partners/mirror-wellness/icon.png',
   banner: '/partners/mirror-wellness/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@lululemonstudio',
   drops: [
     {
