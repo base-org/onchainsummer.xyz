@@ -1,6 +1,6 @@
 import { Partner } from './types'
-import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const blackbird: Partner = {
   slug: 'blackbird',
@@ -15,14 +15,38 @@ const blackbird: Partner = {
   twitter: '@blackbird_xyz',
   drops: [
     {
-      image: '/partners/blackbird/drops/drop.png',
-      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
-      name: 'Blackbird Drop',
-      ...unlimited,
+      image:
+        '/partners/blackbird/drops/Blackbird-Summer-Pass-Summertime-Sweet.png',
+      creator: '0x27193862848d9009ab6d01941ceb9fc86b17ab27',
+      name: 'Blackbird Summer Pass: Summertime Sweet',
+      externalLink: 'blackbird.xyz/summerpass',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 15, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.014',
+      description:
+        "With Blackbird's Summertime Sweet pass, in addition to earning 1,000 $FLY bonus on your next check-in, holders will also receive a complimentary sweet surprise at select Blackbird restaurants (from 8/15-8/22) and access to a private Discord channel for pre-sale access to NFT drops, new products and more.",
+      // TODO: update address
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      image:
+        '/partners/blackbird/drops/Blackbird-Summer-Pass-Supercharge-Summer.png',
+      creator: '0x27193862848d9009ab6d01941ceb9fc86b17ab27',
+      name: 'Blackbird Summer Pass: Supercharge Summer',
+      externalLink: 'blackbird.xyz/summerpass',
+      type: 'erc-721',
+      startDate: Date.UTC(2023, 7, 15, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0011',
+      description:
+        "With Blackbird's Supercharge Summer pass, you will get a 1,000 $FLY bonus on your next restaurant check-in.",
+      // TODO: update address
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
     },
   ],
 }
