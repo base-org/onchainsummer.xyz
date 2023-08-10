@@ -29,7 +29,7 @@ export const ChainChecker: React.FC = () => {
               variant="LIGHT"
               disabled={!switchNetwork}
               onClick={() => switchNetwork!(l2.id)}
-              className="!py-3 !px-6 !bg-transparent !justify-between"
+              className="!py-3 !px-6 !bg-transparent"
             >
               Switch to Base
               <ChainSwitch className="ml-auto" />
