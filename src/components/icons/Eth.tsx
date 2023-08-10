@@ -15,7 +15,7 @@ export const Eth: FC<IconProps> = ({
       fill="none"
       className={className}
     >
-      <g fill="#858585" clip-path="url(#a)">
+      <g fill="#858585" clipPath="url(#a)">
         <path d="M8 .5 3 8.833l5 2.334 5-2.334L8 .5Z" />
         <path d="m3 10.5 5 6 5-6-5 2.333L3 10.5Z" />
       </g>
