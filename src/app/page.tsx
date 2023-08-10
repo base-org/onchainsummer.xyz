@@ -85,7 +85,7 @@ const Home = async ({ searchParams }: Props) => {
                 </div>
               </div>
             )}
-            {article && (
+            {!!article?.content && (
               <div className="flex items-start gap-12">
                 <div className="flex flex-col rounded-xl md:pr-4lg:mx-2  break-words w-full md:w-1/2">
                   <div className="w-full">

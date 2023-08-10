@@ -67,7 +67,7 @@ const Page = async ({ params, searchParams }: Props) => {
               </div>
             </div>
           </div>
-          {article && (
+          {!!article?.content && (
             <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
               <div className="prose mx-auto">
                 <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
