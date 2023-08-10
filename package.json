@@ -13,6 +13,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "generate:tweets": "npx node scripts/generateHighlightedTweets.js",
     "generate": "yarn graphql-codegen --config codegen.ts"
   },
   "dependencies": {
