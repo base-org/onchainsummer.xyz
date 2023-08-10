@@ -36,14 +36,16 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
 
-  const { l2PriceEstimate } = usePriceEstimate()
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
+  const { l2PriceEstimate } = usePriceEstimate(totalPrice)
+
   const { fundsStatus, getFundsStatus } = useFundsStatus(totalPrice)
+
   const [page, setPage] = useState<ModalPage>(() => {
     switch (fundsStatus) {
       case 'sufficient':
@@ -66,7 +68,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
 
   useEffect(() => {
     const needsBridge = fundsStatus === 'bridge'
-    if (needsBridge && page === ModalPage.NATIVE_MINT) {
+    if (needsBridge && page === ModalPage.NATIVE_MINT && quantity === 1) {
       setPage(ModalPage.BRIDGE)
     }
 
@@ -77,7 +79,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     ) {
       setPage(ModalPage.NATIVE_MINT)
     }
-  }, [fundsStatus, page])
+  }, [fundsStatus, page, quantity])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -187,7 +189,9 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
-            insufficientFunds={fundsStatus === 'insufficient'}
+            insufficientFunds={
+              fundsStatus === 'insufficient' || fundsStatus === 'bridge'
+            }
           />
         )
       case ModalPage.BRIDGE:
@@ -203,7 +207,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <InsufficientFunds
-            minimalBalance={''}
+            minimalBalance={formatEther(l2PriceEstimate.toBigInt())}
             setPage={setPage}
             totalPrice={totalPrice}
           />

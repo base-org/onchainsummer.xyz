@@ -7,10 +7,6 @@ type FundsStatus = 'insufficient' | 'sufficient' | 'bridge'
 
 export const useFundsStatus = (totalPrice: string) => {
   const { address } = useAccount()
-  const hasCheckedForBridge = useRef({
-    address,
-    hasChecked: false,
-  })
 
   const [fundsStatus, setFundsStatus] = useState<FundsStatus>('sufficient')
 
@@ -18,21 +14,6 @@ export const useFundsStatus = (totalPrice: string) => {
     if (!address) return
 
     const status = await checkBalances(address, totalPrice)
-
-    if (status === 'bridge') {
-      const hasChecked =
-        hasCheckedForBridge.current.address === address &&
-        hasCheckedForBridge.current.hasChecked
-
-      if (hasChecked) {
-        return
-      }
-
-      hasCheckedForBridge.current = {
-        address,
-        hasChecked: true,
-      }
-    }
 
     setFundsStatus(status)
   }, [address, totalPrice])

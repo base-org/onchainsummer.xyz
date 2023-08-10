@@ -8,7 +8,7 @@ export const usePollBalance = (
   setPage: React.Dispatch<ModalPage>,
   totalPrice: string
 ) => {
-  const {address} = useAccount()
+  const { address } = useAccount()
   const cb = useCallback(async () => {
     if (!address) return
 
@@ -16,8 +16,6 @@ export const usePollBalance = (
 
     if (status === 'sufficient') {
       setPage(ModalPage.NATIVE_MINT)
-    } else if (status === 'bridge') {
-      setPage(ModalPage.BRIDGE)
     }
   }, [address, setPage, totalPrice])
 

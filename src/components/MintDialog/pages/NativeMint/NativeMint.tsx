@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { MintType, ModalPage } from '../../types'
+import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -11,10 +11,10 @@ import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
-import dialogClasses from '@/components/dialog.module.css'
 import { l2 } from '@/config/chain'
 import { Quantity } from '../../elements/Quantity'
 import { Address, useNetwork, useSwitchNetwork } from 'wagmi'
+
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
