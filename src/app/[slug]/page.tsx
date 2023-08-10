@@ -12,7 +12,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import { website } from '@/config/website'
 import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
-import { getArweaves } from '@/utils/getArweaves'
+import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
@@ -160,8 +160,7 @@ async function getPartner(slug: string, spoofDate?: string) {
     return notFound()
   }
 
-  const arweaves = await getArweaves()
-  const article = get(arweaves, partner.aarweaveDigest)
+  const article = await getArweaveById(partner.aarweaveDigest)
 
   return { partner, article }
 }

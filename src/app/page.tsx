@@ -18,7 +18,7 @@ import { Heart } from '@/components/icons/Heart'
 import { RightArrow } from '@/components/icons/RightArrow'
 import { getTweets } from '@/utils/getTweets'
 import { getNow } from '@/utils/getNow'
-import { getArweaves } from '@/utils/getArweaves'
+import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
@@ -210,10 +210,10 @@ async function getPageData(spoofDate?: string) {
     }
   }, INITIAL_TABS)
 
-  const arweaves = await getArweaves()
-  const article = get(arweaves, featuredPartner.aarweaveDigest)
-
-  const tweets = await getTweets()
+  const [article, tweets] = await Promise.all([
+    getArweaveById(featuredPartner.aarweaveDigest),
+    getTweets(),
+  ])
 
   return { partner: featuredPartner, tabs, article, tweets }
 }

@@ -1,10 +1,8 @@
-import axios from 'axios'
 import { NextResponse } from 'next/server'
 import { Collection } from '@/utils/mintDotFunTypes'
-import { l2 } from '@/config/chain'
 
 const API_URL = process.env.NEXT_PUBLIC_MINT_DOT_FUN_API_URL
-const API_KEY = process.env.MINT_DOT_FUN_API_KEY
+const API_KEY = process.env.NEXT_PUBLIC_MINT_DOT_FUN_API_KEY
 
 interface MediaObject {
   ethPrice: string
@@ -30,48 +28,62 @@ export async function GET(request: Request) {
   try {
     let media: Media[] = []
 
-    const response = await axios.get(url, {
+    const response = await fetch(url, {
+      // Revalidate every minute
+      next: { revalidate: 1 * 60 },
       headers: {
         Authorization: `Bearer ${API_KEY}`,
       },
     })
 
-    if (response.data.collections && Array.isArray(response.data.collections)) {
-      for (let collection of response.data.collections) {
-        const mediaResponse = await axios.get(
+    if (!response.ok) throw new Error('Network response was not ok.')
+
+    const data = await response.json()
+
+    if (!data) throw new Error('No data returned.')
+
+    if (data.collections && Array.isArray(data.collections)) {
+      for (let collection of data.collections) {
+        const mediaResponse = await fetch(
           `${API_URL}/collections/${collection.contractAddress}/media`,
           {
+            // Revalidate every minute
+            next: { revalidate: 1 * 60 },
             headers: {
               Authorization: `Bearer ${API_KEY}`,
             },
           }
         )
 
+        if (!response.ok) throw new Error('Network response was not ok.')
+
+        const mediaData = await mediaResponse.json()
+
+        if (!mediaData) throw new Error('No mediaData returned.')
+
         media.push({
           contract: collection.contract,
-          media: [...mediaResponse?.data.media],
+          media: [...mediaData.media],
         })
       }
     }
 
-    const newData = response?.data?.collections.map(
-      (collection: Collection) => {
-        const mints = media.find(
-          (media) => media.contract === collection.contract
-        )
+    const newData = data?.collections.map((collection: Collection) => {
+      const mints = media.find(
+        (media) => media.contract === collection.contract
+      )
 
-        return {
-          name: collection.name,
-          contract: collection.contract,
-          mintsLastHour: collection.mintsLastHour,
-          mintStatus: collection.mintStatus,
-          externalURL: collection.externalURL,
-          imageURL: collection.imageURL,
-          deployer: collection.deployer,
-          images: mints,
-        }
+      return {
+        name: collection.name,
+        contract: collection.contract,
+        mintsLastHour: collection.mintsLastHour,
+        mintStatus: collection.mintStatus,
+        externalURL: collection.externalURL,
+        imageURL: collection.imageURL,
+        deployer: collection.deployer,
+        images: mints,
       }
-    )
+    })
 
     return NextResponse.json({ collections: newData })
   } catch (error) {
