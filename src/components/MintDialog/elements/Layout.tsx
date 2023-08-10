@@ -16,7 +16,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         <NFTAsset
           source={dropImage}
           name={dropName}
-          className="object-cover rounded-lg md:rounded-[20px] absolute inset-0 h-full w-full"
+          className="object-cover object-top rounded-lg md:rounded-[20px] absolute inset-0 h-full w-full"
         />
       </div>
       <div className="flex flex-col w-full gap-4 h-full overflow-scroll hide-scrollbar">
