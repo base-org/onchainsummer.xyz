@@ -11,7 +11,7 @@ interface NFTAssetProps {
 
 export const NFTAsset: FC<NFTAssetProps> = ({ source, name, ...props }) => {
   return source.indexOf('.mov') > -1 ? (
-    <video autoPlay loop muted playsInline {...props}>
+    <video autoPlay loop playsInline controls {...props}>
       <source src={source} type="video/mp4" />
     </video>
   ) : (
