@@ -65,6 +65,7 @@ export const Bridge: FC<BridgeProps> = ({
             bridge={bridge}
             recommendedAmount={recommendedAmount}
             minAmount={minAmount}
+            setPage={setPage}
           />
         )
       case BridgeState.L1_TX_PROCESSING:
