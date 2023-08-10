@@ -1,5 +1,5 @@
+import { MintType } from '@/components/MintDialog/types'
 import { Partner } from './types'
-import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 
 const standWithCrypto: Partner = {
@@ -15,14 +15,21 @@ const standWithCrypto: Partner = {
   twitter: '@standwithCrypt',
   drops: [
     {
-      image: '/partners/stand-with-crypto/drops/drop.png',
-      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
-      name: 'Stand With Crypto Drop',
-      ...limited,
+      // TODO: Update image
+      image: '',
+      // TODO: Update creator
+      creator: '',
+      name: ' Stand with Crypto Alliance',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 15, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.00435',
+      mintType: MintType.ThirdWeb,
+      // TODO: Update contract address
+      address: '0x0',
+      crossMintClientId: '',
+      description:
+        'The Stand with Crypto Alliance unifies the crypto community and our ongoing pursuit of economic freedom and innovation. To commemorate the launch of Stand with Crypto Alliance and Onchain Summer, our first mint is a Stand with Crypto x OCS collectible mint, with all proceeds going to the Stand with Crypto Alliance non-profit organization.',
     },
   ],
 }
