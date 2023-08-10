@@ -14,6 +14,7 @@ import { useEns } from '@/utils/useEns'
 import { Loading } from '../icons/Loading'
 import { useAccount, useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi'
 import { useIsMisMatched } from '@/utils/useIsMismatched'
+import { l2 } from '@/config/chain'
 
 interface WalletContentProps {}
 
@@ -81,7 +82,7 @@ export const WalletContent: FC<WalletContentProps> = ({}) => {
           <Button
             className="flex items-center gap-2 !justify-between w-full"
             size="SMALL"
-            onClick={() => switchNetwork(baseGoerli.id)}
+            onClick={() => switchNetwork(l2.id)}
           >
             Switch to Base
             <ChainSwitch color="white" />
