@@ -11,7 +11,7 @@ const nestcoin: Partner = {
   brandColor: '#000000',
   icon: '/partners/nestcoin/icon.png',
   banner: '/partners/nestcoin/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'isGtzFoGSsXNZl42Xt3SnNM9BoDOo_QrJ6F6mJNB2JA',
   twitter: '@nestcoin',
   drops: [
     {

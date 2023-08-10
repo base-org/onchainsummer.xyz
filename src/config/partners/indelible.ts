@@ -11,7 +11,7 @@ const indelible: Partner = {
   brandColor: 'rgb(0, 224, 191)',
   icon: '/partners/indelible/icon.png',
   banner: '/partners/indelible/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'XzNUxTbsDb-TbDEEloEHTfRfKPDpVSXAKfORPTfj9zc',
   twitter: '@indelible_labs',
   drops: [
     {

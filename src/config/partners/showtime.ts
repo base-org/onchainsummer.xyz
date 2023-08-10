@@ -11,7 +11,7 @@ const showtime: Partner = {
   brandColor: 'rgb(231, 171, 67)',
   icon: '/partners/showtime/icon.png',
   banner: '/partners/showtime/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: 'RAk9JeVU0TH1i4NlPsYwlLpy0GT6K_6EbDGSK0UezXY',
   twitter: '@Showtime_xyz',
   drops: [
     {

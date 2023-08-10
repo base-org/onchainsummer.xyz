@@ -11,7 +11,7 @@ const pixelmon: Partner = {
   brandColor: '#F2E6E0',
   icon: '/partners/pixelmon/icon.png',
   banner: '/partners/pixelmon/banner-icon.svg',
-  aarweaveDigest: 'GjssNdA6XK7VYynkvwDem3KYwPACSU9nDWpR5rei3hw',
+  aarweaveDigest: '',
   twitter: '@Pixelmon',
   drops: [
     {
