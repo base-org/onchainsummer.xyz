@@ -15,9 +15,9 @@ const rainbowWallet: Partner = {
   twitter: '@rainbowdotme',
   drops: [
     {
-      image: '/partners/rainbow-wallet/drops/drop.png',
-      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
-      name: 'Rainbow Drop',
+      image: '',
+      creator: '',
+      name: '',
       ...limited,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),

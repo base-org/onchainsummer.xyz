@@ -15,9 +15,9 @@ const showtime: Partner = {
   twitter: '@Showtime_xyz',
   drops: [
     {
-      image: '/partners/showtime/drops/drop.webp',
-      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
-      name: 'showtime Drop',
+      image: '',
+      creator: '',
+      name: '',
       ...unlimited,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
