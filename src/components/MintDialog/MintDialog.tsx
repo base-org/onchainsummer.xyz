@@ -17,13 +17,19 @@ import { useMintDialogContext } from './Context/useMintDialogContext'
 import { Layout } from './elements/Layout'
 import clsx from 'clsx'
 import { formatEther, parseEther } from 'viem'
-import { useFundsStatus } from './elements/useFundsStatus'
 import dialogClasses from '@/components/dialog.module.css'
-import { usePriceEstimate } from './elements/usePriceEstimate'
 import useBalances from '@/utils/useBalances'
 import { Checkmark } from '../icons/Checkmark'
+import { l2GasToMint, useMintThresholds } from '@/utils/useMintThresholds'
 export type TxDetails = {
   hash: string
+}
+
+enum FundsStatus {
+  Sufficient,
+  Bridge, 
+  InsufficientFromQuantity,
+  Insufficient
 }
 
 export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
@@ -31,53 +37,61 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     useMintDialogContext()
 
   const [open, setOpen] = useState(false)
-  const { l1Balance } = useBalances()
+  const {l2Balance, l1Balance} = useBalances();
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
 
-  const { l2PriceEstimate } = usePriceEstimate()
   const [crossMintOrderIdentifier, setCrossMintOrderIdentifier] = useState('')
   const [quantity, setQuantity] = useState(1)
   const totalPrice = useMemo(() => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
-  const { fundsStatus, getFundsStatus } = useFundsStatus(totalPrice)
-  const [page, setPage] = useState<ModalPage>(() => {
-    switch (fundsStatus) {
-      case 'sufficient':
-        return ModalPage.NATIVE_MINT
-      case 'bridge':
-        return ModalPage.BRIDGE
-      case 'insufficient':
-      default:
-        return ModalPage.NATIVE_MINT
-    }
-  })
+  const [page, setPage] = useState<ModalPage>()
+  const {minL1BalanceWei, minL2BalanceWei} = useMintThresholds();
 
+  const fundsStatus = useMemo(() => {
+    const totalPriceWei = parseEther(totalPrice);
+    if (l2Balance >= totalPriceWei + l2GasToMint) {
+      return FundsStatus.Sufficient
+    }
+
+    if (l2Balance >= minL2BalanceWei && l2Balance < totalPriceWei + l2GasToMint) {
+      // we do not want to send them to bridge just because they increased quantity
+      // so we track this uniquely 
+      return FundsStatus.InsufficientFromQuantity
+    }
+
+    if (l2Balance < minL2BalanceWei && l1Balance < minL1BalanceWei) {
+      return FundsStatus.Insufficient
+    }
+    
+    return FundsStatus.Bridge
+
+  }, [l1Balance, l2Balance, minL1BalanceWei, minL2BalanceWei, totalPrice])
+  
   useEffect(() => {
-    if (!open || ![ModalPage.NATIVE_MINT].includes(page)) {
+    if (page && ![ModalPage.NATIVE_MINT, ModalPage.INSUFFICIENT_FUNDS, ModalPage.BRIDGE].includes(page)){
+      // do not update the page while other things are in progress 
       return
     }
 
-    getFundsStatus()
-  }, [page, open, getFundsStatus])
-
-  useEffect(() => {
-    const needsBridge = fundsStatus === 'bridge'
-    if (needsBridge && page === ModalPage.NATIVE_MINT) {
-      setPage(ModalPage.BRIDGE)
+    switch (fundsStatus){
+      case FundsStatus.Sufficient:
+        setPage(ModalPage.NATIVE_MINT)
+        return;
+      case FundsStatus.InsufficientFromQuantity:
+      case FundsStatus.Insufficient:
+        // native mint component redirects to 
+        // insufficient funds screen after mint is pressed
+        setPage(ModalPage.NATIVE_MINT)
+        return;
+      case FundsStatus.Bridge:
+        setPage(ModalPage.BRIDGE)
+        return;
     }
-
-    const sufficientFunds = fundsStatus === 'sufficient'
-    if (
-      (sufficientFunds && page === ModalPage.BRIDGE) ||
-      (sufficientFunds && page === ModalPage.INSUFFICIENT_FUNDS)
-    ) {
-      setPage(ModalPage.NATIVE_MINT)
-    }
-  }, [fundsStatus, page])
+  }, [fundsStatus])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -103,6 +117,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       case ModalPage.BRIDGE:
       case ModalPage.NATIVE_MINT:
       case ModalPage.MINT_ERROR:
+      case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <>
             {trendingPageNativeMint ? (
@@ -131,8 +146,6 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         return 'Bridging funds...'
       case ModalPage.BRIDGE_SUCCESS:
         return 'Bridge Success'
-      case ModalPage.INSUFFICIENT_FUNDS:
-        return 'Insufficient Funds'
       case ModalPage.CROSS_MINT_FORM:
         return 'Complete Payment'
       case ModalPage.CROSS_MINT_PAYMENT_FAILED:
@@ -187,7 +200,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
-            insufficientFunds={fundsStatus === 'insufficient'}
+            insufficientFunds={[FundsStatus.Insufficient, FundsStatus.InsufficientFromQuantity].includes(fundsStatus)}
           />
         )
       case ModalPage.BRIDGE:
@@ -196,14 +209,14 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         return (
           <Bridge
             l1Balance={l1Balance}
-            minAmount={Number(formatEtherByEthers(l2PriceEstimate)).toFixed(4)}
+            minAmount={Number(formatEtherByEthers(minL2BalanceWei)).toFixed(4)}
             setPage={setPage}
           />
         )
       case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <InsufficientFunds
-            minimalBalance={''}
+            minimalBalance={Number(formatEther((parseEther(totalPrice) - l2Balance + l2GasToMint))).toFixed(5).toString()}
             setPage={setPage}
             totalPrice={totalPrice}
           />
@@ -216,7 +229,6 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     crossMintOrderIdentifier,
     fundsStatus,
     l1Balance,
-    l2PriceEstimate,
     mintError,
     page,
     quantity,

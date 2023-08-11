@@ -10,10 +10,9 @@ import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
 import { BridgeError } from './BridgeError'
-import { BigNumber } from 'ethers'
 
 interface BridgeProps {
-  l1Balance: BigNumber
+  l1Balance: bigint
   minAmount: string
   setPage: React.Dispatch<ModalPage>
 }
