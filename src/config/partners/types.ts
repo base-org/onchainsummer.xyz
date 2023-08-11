@@ -18,6 +18,9 @@ export interface Drop {
   // TODO, consider requiring mint type
   mintType?: MintType
   description?: string
+
+  // TODO: Temp fix
+  openSeaLink?: string
 }
 
 export interface Partner {

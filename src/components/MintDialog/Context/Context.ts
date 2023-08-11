@@ -18,6 +18,7 @@ export interface MintDialogContextType {
   trendingPageNativeMint?: boolean
   mintButtonStyles?: string
   maxClaimablePerWallet?: string
+  openSeaLink?: string
 }
 
 export const MintDialogContext = createContext<MintDialogContextType>({
@@ -28,5 +29,5 @@ export const MintDialogContext = createContext<MintDialogContextType>({
   dropImage: '',
   dropName: '',
   creatorAddress: '',
-  mintType: MintType.ThirdWeb
+  mintType: MintType.ThirdWeb,
 })

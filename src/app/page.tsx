@@ -77,6 +77,7 @@ const Home = async ({ searchParams }: Props) => {
                             {...drop}
                             partner={name}
                             partnerIcon={icon}
+                            openSeaLink={drop.openSeaLink}
                           />
                         </li>
                       ))}
