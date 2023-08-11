@@ -16,7 +16,7 @@ const parallel: Partner = {
   drops: [
     {
       image: '/partners/parallel/drops/starter-pack.png',
-      creator: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
+      creator: '0x02f086dBC384d69b3041BC738F0a8af5e49dA181',
       name: 'Parallel Starter Packs',
       description: `Parallel Starter Decks are now available as one of the first Onchain Summer drops!
 
