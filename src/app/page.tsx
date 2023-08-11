@@ -1,7 +1,6 @@
 import { get } from 'lodash'
 import Link from 'next/link'
 import compareAsc from 'date-fns/compareAsc'
-
 import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
@@ -66,7 +65,7 @@ const Home = async ({ searchParams }: Props) => {
                 </p>
               </div>
             </div>
-            {remainingDrops?.length > 0 && (
+            {drops?.length > 3 && (
               <div className="-mr-4 mb-4 md:mb-14">
                 <div className="overflow-scroll hide-scrollbar">
                   <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
@@ -85,6 +84,43 @@ const Home = async ({ searchParams }: Props) => {
                 </div>
               </div>
             )}
+            {drops?.length < 4 && (
+              <div className="mb-4 md:mb-14">
+                <div className="overflow-scroll hide-scrollbar">
+                  <div className="flex overflow-x-scroll md:overflow-x-auto hide-scrollbar w-full">
+                    <ul className="flex flex-row gap-2 max-h-fit w-full">
+                      {drops?.map((drop) => (
+                        <li
+                          key={drop.name}
+                          className="flex flex-col flex-1 stretched-drop-card [&>div]:w-full [&>div]:rounded-2xl"
+                        >
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+            {/* <div className="mb-4 md:mb-14">
+              {drops?.length < 4 && (
+                <ul className="flex flex-row gap-4 md:gap-8 last:pr-4 max-h-fit">
+                  {drops?.map((drop) => (
+                    <li
+                      key={drop.name}
+                      className="flex flex-col flex-1 stretched-drop-card [&>div]:w-full [&>div]:rounded-2xl"
+                    >
+                      <DropCard {...drop} partner={name} partnerIcon={icon} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div> */}
+
             {article && (
               <div className="flex items-start gap-12">
                 <div className="flex flex-col rounded-xl md:pr-4lg:mx-2  break-words w-full md:w-1/2">
