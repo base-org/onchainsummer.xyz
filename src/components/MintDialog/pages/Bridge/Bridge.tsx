@@ -10,7 +10,6 @@ import { Bridging } from './Bridging'
 import { Success } from './Success'
 import { ModalPage } from '../../types'
 import { BridgeError } from './BridgeError'
-import { BigNumber } from 'ethers'
 
 interface BridgeProps {
   l1Balance: bigint

@@ -16,8 +16,6 @@ export const usePollBalance = (
 
     if (status === 'sufficient') {
       setPage(ModalPage.NATIVE_MINT)
-    } else if (status === 'bridge') {
-      setPage(ModalPage.BRIDGE)
     }
   }, [address, setPage, totalPrice])
 
