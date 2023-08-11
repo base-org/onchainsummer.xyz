@@ -72,7 +72,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
   }, [l1Balance, l2Balance, minL1BalanceWei, minL2BalanceWei, totalPrice])
   
   useEffect(() => {
-    if (page && ![ModalPage.NATIVE_MINT, ModalPage.INSUFFICIENT_FUNDS].includes(page)){
+    if (page && ![ModalPage.NATIVE_MINT, ModalPage.INSUFFICIENT_FUNDS, ModalPage.BRIDGE].includes(page)){
       // do not update the page while other things are in progress 
       return
     }
