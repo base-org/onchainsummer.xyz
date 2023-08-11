@@ -11,7 +11,7 @@ export const TwitterModule: FunctionComponent<ICommunityTabProps> = ({
   tweets,
 }) => {
   return (
-    <div className="flex gap-4 w-full flex-wrap">
+    <div className="flex gap-2 w-full flex-wrap">
       {tweets.data.map((tweet) => {
         const author = tweets.includes?.users?.find?.(
           (user) => user.id === tweet.author_id

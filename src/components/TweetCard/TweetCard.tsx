@@ -24,7 +24,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
   return (
     <a
       href={linkToTwitter}
-      className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px] mr-[16px] last:mr-0"
+      className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px] mr-[8px] last:mr-0"
       target="_blank"
     >
       <div>
