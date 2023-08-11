@@ -42,7 +42,7 @@ export const DropCard: FC<DropCardProps> = ({
   mintType,
   openSeaLink,
   interactWithNFTLink,
-  dataSuffix
+  dataSuffix,
 }) => {
   const {
     isExternalLink,
