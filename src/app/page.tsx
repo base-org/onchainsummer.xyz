@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import Link from 'next/link'
 import compareAsc from 'date-fns/compareAsc'
 
