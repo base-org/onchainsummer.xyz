@@ -183,7 +183,7 @@ export default function RootLayout({
   return (
     // we should be able to remove thirdweb here, but I am leaving for now
     <ThirdWebProviderClient>
-      <html lang="en" className="flex flex-col h-full">
+      <html lang="en" className="flex flex-col h-full overflow-x-hidden">
         <body
           className={clsx(
             'flex flex-col h-full',
