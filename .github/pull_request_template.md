@@ -2,10 +2,6 @@
 
 <!--- Describe your changes in detail -->
 
-## Ticket(s)
-
-- [69](https://github.com/LazerTechnologies/onchain-summer/issues/69)
-
 ## Deploy Notes
 
 Notes regarding deployment of the contained body of work. These should note any

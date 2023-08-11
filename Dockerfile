@@ -2,6 +2,8 @@ FROM 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16
 
 RUN apt-get update && apt-get install -y zip python3 make gcc g++
 
+RUN yarn global add pm2
+
 ENV NODE_ENV="production"
 ENV NEXT_PUBLIC_AARWEAVE_API_URL="https://arweave.net/graphql"
 ENV NEXT_PUBLIC_CHAIN_ENV="mainnet"
@@ -19,4 +21,4 @@ RUN yarn --immutable --production=false
 RUN yarn build
 
 EXPOSE 3000
-CMD ["yarn", "start"]
+CMD ["pm2", "start", "yarn", "--no-daemon", "--", "start"]

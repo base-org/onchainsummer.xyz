@@ -1,6 +1,6 @@
 const initCCA = () => {
   if (window.ClientAnalytics) {
-    const { init, PlatformName, logPageView } = window.ClientAnalytics
+    const { init, PlatformName, logPageView, identify } = window.ClientAnalytics
     init({
       isProd: true,
       amplitudeApiKey: 'dad8b0d591535ebbdced770c09367478',
