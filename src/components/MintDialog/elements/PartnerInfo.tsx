@@ -3,7 +3,7 @@ import { useMintDialogContext } from '../Context/useMintDialogContext'
 import Image from 'next/image'
 
 export const PartnerInfo: FC = () => {
-  const { partnerIcon, partnerName, mintDotFunStatus } = useMintDialogContext()
+  const { info: {partnerIcon, partnerName, mintDotFunStatus} } = useMintDialogContext()
 
   if (!!mintDotFunStatus) {
     return null

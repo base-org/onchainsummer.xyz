@@ -41,9 +41,10 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   totalPrice,
 }) => {
   const {
-    mintType,
+    info:
+    {mintType,
     crossMintClientId: clientId,
-    creatorAddress,
+    creatorAddress}
   } = useMintDialogContext()
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING

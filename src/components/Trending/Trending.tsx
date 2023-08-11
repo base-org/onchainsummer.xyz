@@ -20,7 +20,7 @@ import { shortenAddress } from '@/utils/address'
 import { useAccount } from 'wagmi'
 import { l2 } from '@/config/chain'
 import { getTrendingData } from '@/utils/getTrendingData'
-import { MintType } from '@/components/MintDialog/types'
+import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 
 export interface TrendingComponentProps {}
 
@@ -162,6 +162,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                         trendingPageNativeMint={true}
                         mintButtonStyles="w-1/3 sm:!max-w-fit"
                         mintType={MintType.MintDotFun}
+                        dataSuffix={siteDataSuffix}
                       />
                     </div>
                   </div>

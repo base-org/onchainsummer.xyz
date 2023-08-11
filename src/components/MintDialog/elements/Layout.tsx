@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
-  const { dropImage, dropName } = useMintDialogContext()
+  const { info: {dropImage, dropName} } = useMintDialogContext()
   return (
     <div className="relative grid gap-4 lg:grid-cols-2 lg:gap-16 h-full">
       <div className="relative z-20 w-full aspect-video lg:aspect-square mb-1 lg:mb-0">

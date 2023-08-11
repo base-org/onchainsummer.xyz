@@ -42,7 +42,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
-  const { creatorAddress, dropName, crossMintClientId, mintDotFunStatus } =
+  const { info: {creatorAddress, dropName, crossMintClientId, mintDotFunStatus} } =
     useMintDialogContext()
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
