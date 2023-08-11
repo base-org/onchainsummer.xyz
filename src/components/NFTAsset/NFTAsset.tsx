@@ -11,7 +11,8 @@ interface NFTAssetProps {
 }
 
 export const NFTAsset: FC<NFTAssetProps> = ({ source, name, autoPlay, ...props }) => {
-  return source.indexOf('.mov') > -1 ? (
+  const extension = source.split('.').pop();
+  return extension && ['mov', 'mp4'].includes(extension) ? (
     <video loop playsInline muted autoPlay={!!autoPlay} {...props}>
       <source src={source} type="video/mp4" />
     </video>
