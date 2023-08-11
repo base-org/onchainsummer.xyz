@@ -13,7 +13,7 @@ import { BridgeError } from './BridgeError'
 import { BigNumber } from 'ethers'
 
 interface BridgeProps {
-  l1Balance: BigNumber
+  l1Balance: bigint
   minAmount: string
   setPage: React.Dispatch<ModalPage>
 }

@@ -22,8 +22,16 @@ import dialogClasses from '@/components/dialog.module.css'
 import { usePriceEstimate } from './elements/usePriceEstimate'
 import useBalances from '@/utils/useBalances'
 import { Checkmark } from '../icons/Checkmark'
+import { l2GasToMint, useMintThresholds } from '@/utils/useMintThresholds'
 export type TxDetails = {
   hash: string
+}
+
+enum FundsStatus {
+  Sufficient,
+  Bridge, 
+  InsufficientFromQuantity,
+  Insufficient
 }
 
 export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
@@ -31,7 +39,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     useMintDialogContext()
 
   const [open, setOpen] = useState(false)
-  const { l1Balance } = useBalances()
+  const {l2Balance, l1Balance} = useBalances();
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
@@ -43,41 +51,43 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     return formatEther(parseEther(price) * BigInt(quantity))
   }, [quantity, price])
 
-  const { fundsStatus, getFundsStatus } = useFundsStatus(totalPrice)
-  const [page, setPage] = useState<ModalPage>(() => {
-    switch (fundsStatus) {
-      case 'sufficient':
-        return ModalPage.NATIVE_MINT
-      case 'bridge':
-        return ModalPage.BRIDGE
-      case 'insufficient':
-      default:
-        return ModalPage.NATIVE_MINT
-    }
-  })
+  const [page, setPage] = useState<ModalPage>()
+  const {minL1BalanceWei, minL2BalanceWei} = useMintThresholds();
 
+  const fundsStatus = useMemo(() => {
+    const totalPriceWei = parseEther(totalPrice);
+    if (l2Balance >= totalPriceWei + l2GasToMint) {
+      return FundsStatus.Sufficient
+    }
+
+    if (l2Balance >= minL2BalanceWei && l2Balance < totalPriceWei + l2GasToMint) {
+      return FundsStatus.InsufficientFromQuantity
+    }
+
+    if (l2Balance < minL2BalanceWei && l1Balance < minL1BalanceWei) {
+      return FundsStatus.Insufficient
+    }
+    
+    return FundsStatus.Bridge
+
+  }, [l1Balance, l2Balance, minL1BalanceWei, minL2BalanceWei, totalPrice])
+  
   useEffect(() => {
-    if (!open || ![ModalPage.NATIVE_MINT].includes(page)) {
-      return
-    }
-
-    getFundsStatus()
-  }, [page, open, getFundsStatus])
-
-  useEffect(() => {
-    const needsBridge = fundsStatus === 'bridge'
-    if (needsBridge && page === ModalPage.NATIVE_MINT) {
-      setPage(ModalPage.BRIDGE)
-    }
-
-    const sufficientFunds = fundsStatus === 'sufficient'
-    if (
-      (sufficientFunds && page === ModalPage.BRIDGE) ||
-      (sufficientFunds && page === ModalPage.INSUFFICIENT_FUNDS)
-    ) {
+    switch (fundsStatus){
+      case FundsStatus.Sufficient:
       setPage(ModalPage.NATIVE_MINT)
+      return;
+      case FundsStatus.InsufficientFromQuantity:
+        setPage(ModalPage.NATIVE_MINT)
+        return;
+      case FundsStatus.Bridge:
+      setPage(ModalPage.BRIDGE)
+      return;
+      case FundsStatus.Insufficient:
+        setPage(ModalPage.INSUFFICIENT_FUNDS)
+        return;
     }
-  }, [fundsStatus, page])
+  }, [fundsStatus])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -187,7 +197,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
-            insufficientFunds={fundsStatus === 'insufficient'}
+            insufficientFunds={[FundsStatus.Insufficient, FundsStatus.InsufficientFromQuantity].includes(fundsStatus)}
           />
         )
       case ModalPage.BRIDGE:
@@ -203,7 +213,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <InsufficientFunds
-            minimalBalance={''}
+            minimalBalance={Number(formatEther((parseEther(totalPrice) - l2Balance + l2GasToMint))).toFixed(5).toString()}
             setPage={setPage}
             totalPrice={totalPrice}
           />
