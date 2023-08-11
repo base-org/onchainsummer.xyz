@@ -106,20 +106,6 @@ const Home = async ({ searchParams }: Props) => {
                 </div>
               </div>
             )}
-            {/* <div className="mb-4 md:mb-14">
-              {drops?.length < 4 && (
-                <ul className="flex flex-row gap-4 md:gap-8 last:pr-4 max-h-fit">
-                  {drops?.map((drop) => (
-                    <li
-                      key={drop.name}
-                      className="flex flex-col flex-1 stretched-drop-card [&>div]:w-full [&>div]:rounded-2xl"
-                    >
-                      <DropCard {...drop} partner={name} partnerIcon={icon} />
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div> */}
 
             {article && (
               <div className="flex items-start gap-12">
