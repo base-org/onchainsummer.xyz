@@ -104,6 +104,7 @@ export const events: Record<string, CCAEvent> = {
       componentType: ComponentType.page,
       action: ActionType.change,
     },
+    importance: AnalyticsEventImportance.high,
   },
   bridgeSuccess: {
     eventName: 'bridge_success',
@@ -112,5 +113,15 @@ export const events: Record<string, CCAEvent> = {
       componentType: ComponentType.page,
       action: ActionType.change,
     },
+    importance: AnalyticsEventImportance.high,
+  },
+  clientError: {
+    eventName: 'client_error',
+    eventData: {
+      loggingId: 'c329a419-0bff-4347-8065-621c614e3b34',
+      componentType: ComponentType.page,
+      action: ActionType.unknown,
+    },
+    importance: AnalyticsEventImportance.high,
   },
 }
