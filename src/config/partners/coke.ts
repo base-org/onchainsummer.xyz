@@ -9,7 +9,7 @@ const cokeConfig: Partner = {
   description:
     'Coca-Cola® is bringing artworks from the global Masterpiece campaign onchain with works from emerging artists Aket, WonderBuhle, Fatma Ramadan, Vikram Kushwah, Stefania Tejada, as well as timeless artists like Munch, Vermeer, and Van Gogh.',
   brandColor: '#F40009',
-  icon: '/partners/coke/icon.jpg',
+  icon: '/partners/coke/icon.png',
   banner: '/partners/coke/banner-icon.svg',
   aarweaveDigest: 'rXJRpWEegt2wUA9yBsb1tDQnSmgDaVaslHhVE9I-ojw',
   twitter: '@CocaCola',
@@ -19,7 +19,7 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.014',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x1DdB721BF79d3Ad33fBac72E5dEcf2A436CB42a3',
       crossMintClientId: '',
       name: 'Vermeer',
       description:
@@ -33,12 +33,12 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0011',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x916555Cd5F02E159b84d5247F8660531A4525d2d',
       crossMintClientId: '',
       name: 'Aket',
       description:
         'The Masterpiece collection uniquely brings together iconic artworks along with new works from emerging talents, all intertwined with the iconic Coca-Cola bottle. Classic masterpieces like "The Scream" by Edvard Munch and "Girl with a Pearl Earring" by Johannes Vermeer find a harmonious coexistence alongside contemporary works by talented artists like Aket and Vikram Kushwah. Each of these artworks were featured works in Coca-Cola’s Masterpiece Global campaign, and now take on a new dimension as they become digital collectibles, accessible to art enthusiasts participating in Onchain Summer.',
-      creator: '0x43F665138A6005475ec38e52bE74679846E576A9 ',
+      creator: '0x43F665138A6005475ec38e52bE74679846E576A9',
       image: '/partners/coke/drop/aket.jpg',
       type: 'erc-721',
     },
@@ -47,7 +47,7 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0011',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x32cF27F2753e90948195b64EC55C486EE640cF61',
       crossMintClientId: '',
       name: 'Wonder Buhle',
       description:
@@ -61,7 +61,7 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0011',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0xe4c3AA3978B61431C070109629a687bc42D66d8f',
       crossMintClientId: '',
       name: 'Fatma Ramadan',
       description:
@@ -75,7 +75,7 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0011',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x766D25d7005e6B690C0ab4FA1e81a2eB9B416c50',
       crossMintClientId: '',
       name: 'Vikram Kushwah',
       description:
@@ -89,12 +89,12 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0011',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x19766E9DA39ecb68b85b9B4aF3B0cE4f9a4F2ECf',
       crossMintClientId: '',
       name: 'Stefania Tejada',
       description:
         'The Masterpiece collection uniquely brings together iconic artworks along with new works from emerging talents, all intertwined with the iconic Coca-Cola bottle. Classic masterpieces like "The Scream" by Edvard Munch and "Girl with a Pearl Earring" by Johannes Vermeer find a harmonious coexistence alongside contemporary works by talented artists like Aket and Vikram Kushwah. Each of these artworks were featured works in Coca-Cola’s Masterpiece Global campaign, and now take on a new dimension as they become digital collectibles, accessible to art enthusiasts participating in Onchain Summer.',
-      creator: '0xe28a6f362244815875B97413CA6259525485dF84 ',
+      creator: '0xe28a6f362244815875B97413CA6259525485dF84',
       image: '/partners/coke/drop/stefania.jpg',
       type: 'erc-721',
     },
@@ -103,7 +103,7 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.014',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x9A466C55F0cFC8Ea3cEE03DE0EB94Bf35A934522',
       crossMintClientId: '',
       name: 'Munch',
       description:
@@ -117,7 +117,7 @@ const cokeConfig: Partner = {
       endDate: Date.UTC(2023, 7, 16, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.014',
       mintType: MintType.ThirdWeb,
-      address: '0x',
+      address: '0x65b2E459f779FF4af4e4A16bc8065A0063cF8221',
       crossMintClientId: '',
       name: 'Van Gogh',
       description:
