@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
-import clsx from 'clsx'
 import { MintButton } from '../MintButton/MintButton'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
@@ -64,6 +63,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 {...headline}
                 partner={name}
                 contractAddress={headline.address}
+                openSeaLink={headline.openSeaLink}
               />
             ) : (
               <MintButton
@@ -82,6 +82,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                     ? MintType.External
                     : MintType.ThirdWeb)
                 }
+                openSeaLink={headline.openSeaLink}
               />
             )}
           </>

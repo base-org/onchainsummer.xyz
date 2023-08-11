@@ -59,7 +59,12 @@ const Page = async ({ params, searchParams }: Props) => {
                   <ul className="flex flex-row gap-8 last:pr-4">
                     {remainingDrops.map((drop) => (
                       <li key={drop.name} className="flex flex-col">
-                        <DropCard {...drop} partner={name} partnerIcon={icon} />
+                        <DropCard
+                          {...drop}
+                          partner={name}
+                          partnerIcon={icon}
+                          openSeaLink={drop.openSeaLink}
+                        />
                       </li>
                     ))}
                   </ul>
