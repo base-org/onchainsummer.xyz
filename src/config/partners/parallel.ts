@@ -18,13 +18,13 @@ const parallel: Partner = {
       image: '/partners/parallel/drops/starter-pack.png',
       creator: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       name: 'Parallel Starter Packs',
-      description: `"Parallel Starter Decks are now available as one of the first Onchain Summer drops!
+      description: `Parallel Starter Decks are now available as one of the first Onchain Summer drops!
 
 Each Starter Deck includes Beta access, 40 cards to get started playing and earning Prime as well as 10 apparition packs.
 
 Each purchase also includes a Heroes of Parallel Cardback which can also be used in game.
 
-The drop is live now and will be available throughout Onchain Summer or until sold out. Each deck will be available for .05 ETH on Base."`,
+The drop is live now and will be available throughout Onchain Summer or until sold out. Each deck will be available for .05 ETH on Base.`,
       address: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
       crossMintClientId: '',
       mintType: MintType.External,
