@@ -64,13 +64,13 @@ export const DropCard: FC<DropCardProps> = ({
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
-            className="desktop-h3 after:absolute after:inset-0 flex-auto"
+            className="desktop-h3 after:absolute after:inset-0 flex-auto line-clamp-2"
             target="_blank"
           >
             {name}
           </a>
         ) : (
-          <span className="desktop-h3">{name}</span>
+          <span className="desktop-h3 line-clamp-2">{name}</span>
         )}
         <div>
           <div className="mt-4 mb-8">
