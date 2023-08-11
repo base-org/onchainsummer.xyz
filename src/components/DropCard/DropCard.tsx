@@ -60,7 +60,7 @@ export const DropCard: FC<DropCardProps> = ({
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
-      <div className="pt-2 p-4 flex flex-col flex-auto">
+      <div className="pt-2 p-4 flex flex-col flex-auto justify-between">
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
@@ -72,36 +72,39 @@ export const DropCard: FC<DropCardProps> = ({
         ) : (
           <span className="desktop-h3">{name}</span>
         )}
-        <div className="mt-4 mb-8">
-          <AddressPill address={creator as Address} />
+        <div>
+          <div className="mt-4 mb-8">
+            <AddressPill address={creator as Address} />
+          </div>
+          {isExternalLink ? (
+            <ExternalDrop
+              endDate={endDate}
+              externalLink={externalLink}
+              startDate={startDate}
+              partner={partner}
+              contractAddress={address}
+              openSeaLink={openSeaLink}
+              className="!flex !justify-center mt-auto"
+            />
+          ) : (
+            <MintButton
+              price={price}
+              address={address}
+              crossMintClientId={crossMintClientId}
+              partnerIcon={partnerIcon}
+              partnerName={partner}
+              dropImage={image}
+              dropName={name}
+              creatorAddress={creator}
+              endDate={endDate}
+              mintType={
+                mintType ||
+                (externalLink ? MintType.External : MintType.ThirdWeb)
+              }
+              openSeaLink={openSeaLink}
+            />
+          )}
         </div>
-        {isExternalLink ? (
-          <ExternalDrop
-            endDate={endDate}
-            externalLink={externalLink}
-            startDate={startDate}
-            partner={partner}
-            contractAddress={address}
-            openSeaLink={openSeaLink}
-            className="!flex !justify-center mt-auto"
-          />
-        ) : (
-          <MintButton
-            price={price}
-            address={address}
-            crossMintClientId={crossMintClientId}
-            partnerIcon={partnerIcon}
-            partnerName={partner}
-            dropImage={image}
-            dropName={name}
-            creatorAddress={creator}
-            endDate={endDate}
-            mintType={
-              mintType || (externalLink ? MintType.External : MintType.ThirdWeb)
-            }
-            openSeaLink={openSeaLink}
-          />
-        )}
       </div>
     </Card>
   )
