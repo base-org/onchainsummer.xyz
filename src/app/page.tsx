@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import Link from 'next/link'
 import compareAsc from 'date-fns/compareAsc'
 import Image from 'next/image'
@@ -16,7 +15,7 @@ import { Heart } from '@/components/icons/Heart'
 import { RightArrow } from '@/components/icons/RightArrow'
 import { getTweets } from '@/utils/getTweets'
 import { getNow } from '@/utils/getNow'
-import { getArweaves } from '@/utils/getArweaves'
+import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
@@ -78,6 +77,7 @@ const Home = async ({ searchParams }: Props) => {
                             {...drop}
                             partner={name}
                             partnerIcon={icon}
+                            openSeaLink={drop.openSeaLink}
                           />
                         </li>
                       ))}
@@ -108,8 +108,7 @@ const Home = async ({ searchParams }: Props) => {
                 </div>
               </div>
             )}
-
-            {article && (
+            {!!article?.content && (
               <div className="flex items-start gap-12">
                 <div className="flex flex-col rounded-xl md:pr-4lg:mx-2  break-words w-full md:w-1/2">
                   <div className="w-full">
@@ -234,10 +233,10 @@ async function getPageData(spoofDate?: string) {
     }
   }, INITIAL_TABS)
 
-  const arweaves = await getArweaves()
-  const article = get(arweaves, featuredPartner.aarweaveDigest)
-
-  const tweets = await getTweets()
+  const [article, tweets] = await Promise.all([
+    getArweaveById(featuredPartner.aarweaveDigest),
+    getTweets(),
+  ])
 
   return { partner: featuredPartner, tabs, article, tweets }
 }

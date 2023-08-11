@@ -15,7 +15,7 @@ export const Base: FC<IconProps> = ({
       fill="none"
       className={className}
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path fill="#0052FF" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Z" />
         <path
           fill="#fff"

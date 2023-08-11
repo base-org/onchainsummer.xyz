@@ -21,6 +21,7 @@ type DropCardProps = {
   price: string
   creator: string
   mintType?: MintType
+  openSeaLink?: string
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -36,6 +37,7 @@ export const DropCard: FC<DropCardProps> = ({
   startDate,
   endDate,
   mintType,
+  openSeaLink,
 }) => {
   const {
     isExternalLink,
@@ -80,6 +82,7 @@ export const DropCard: FC<DropCardProps> = ({
             startDate={startDate}
             partner={partner}
             contractAddress={address}
+            openSeaLink={openSeaLink}
             className="!flex !justify-center mt-auto"
           />
         ) : (
@@ -96,6 +99,7 @@ export const DropCard: FC<DropCardProps> = ({
             mintType={
               mintType || (externalLink ? MintType.External : MintType.ThirdWeb)
             }
+            openSeaLink={openSeaLink}
           />
         )}
       </div>

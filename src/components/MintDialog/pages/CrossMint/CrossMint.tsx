@@ -37,33 +37,35 @@ export const CrossMint: FC<CrossMintProps> = ({
   }) // Specifying the environment is optional. It defaults to "production"
   const logEvent = useLogEvent()
 
-  listenToMintingEvents({ orderIdentifier }, (event) => {
-    switch (event.type) {
-      case 'order:process.started':
-        break
-      case 'order:process.finished':
-        break
-      case 'transaction:fulfillment.succeeded':
-        if (isTransactionFulfillmentPayload(event.payload)) {
-          const { contractAddress, tokenIds, txId } = event.payload
-          setTxDetails({
-            hash: txId,
-          })
-          logEvent?.(events.crossMintSuccess)
-          setPage(ModalPage.MINT_SUCCESS)
-        }
-        break
-      case 'transaction:fulfillment.failed':
-        if (isTransactionFulfillmentFailedPayload(event.payload)) {
-          const { orderIdentifier } = event.payload
-          // TODO: Get txhash from crossmint
-        }
-        setPage(ModalPage.MINT_ERROR)
-        break
-      default:
-        break
-    }
-  })
+  if (orderIdentifier) {
+    listenToMintingEvents({ orderIdentifier }, (event) => {
+      switch (event.type) {
+        case 'order:process.started':
+          break
+        case 'order:process.finished':
+          break
+        case 'transaction:fulfillment.succeeded':
+          if (isTransactionFulfillmentPayload(event.payload)) {
+            const { contractAddress, tokenIds, txId } = event.payload
+            setTxDetails({
+              hash: txId,
+            })
+            logEvent?.(events.crossMintSuccess)
+            setPage(ModalPage.MINT_SUCCESS)
+          }
+          break
+        case 'transaction:fulfillment.failed':
+          if (isTransactionFulfillmentFailedPayload(event.payload)) {
+            const { orderIdentifier } = event.payload
+            // TODO: Get txhash from crossmint
+          }
+          setPage(ModalPage.MINT_ERROR)
+          break
+        default:
+          break
+      }
+    })
+  }
 
   const isPending = page === ModalPage.CROSS_MINT_PENDING
 

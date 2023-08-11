@@ -15,9 +15,9 @@ const fwbBonfire: Partner = {
   twitter: '@bonfire',
   drops: [
     {
-      image: '/partners/fwb-bonfire/drops/drop.jpg',
-      creator: '0xd365Ae104DA3E86EA36f268050D6e5212a42e360',
-      name: 'fwb x bonfire Drop',
+      image: '',
+      creator: '',
+      name: '',
       ...limited,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),

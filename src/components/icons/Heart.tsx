@@ -1,7 +1,11 @@
 import { FC } from 'react'
 import { IconProps } from './type'
 
-export const Heart: FC<IconProps> = ({ height = 32, width = 32 }) => {
+export const Heart: FC<IconProps> = ({
+  height = 32,
+  width = 32,
+  className = '',
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,8 +13,9 @@ export const Heart: FC<IconProps> = ({ height = 32, width = 32 }) => {
       height={height}
       viewBox="0 0 32 32"
       fill="none"
+      className={className}
     >
-      <g clip-path="url(#clip0_2932_85)">
+      <g clipPath="url(#clip0_2932_85)">
         <path
           d="M8.88908 3.55768C9.36598 3.55768 9.77611 3.39553 10.129 3.05217C10.4819 2.71833 10.6631 2.28912 10.6631 1.77407C10.6631 1.29717 10.4819 0.887035 10.129 0.534129C9.77611 0.181222 9.35644 0 8.88908 0C8.37402 0 7.95435 0.181222 7.61098 0.534129C7.27715 0.887035 7.10547 1.30671 7.10547 1.77407C7.10547 2.28912 7.27715 2.7088 7.61098 3.05217C7.94481 3.386 8.37402 3.55768 8.88908 3.55768Z"
           fill="#151515"

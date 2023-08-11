@@ -7,10 +7,10 @@ import { MintDialogContextType } from '../MintDialog/Context/Context'
 import { useValidate } from './useValidate'
 import { Button, ButtonProps } from '../Button'
 import { Loading } from '../icons/Loading'
-import clsx from 'clsx'
+
 import { useAccount } from 'wagmi'
 import { getNow } from '@/utils/getNow'
-import { RightArrow } from '../icons/RightArrow'
+import { CollectButton } from '../CollectButton/CollectButton'
 
 interface MintButtonProps extends MintDialogContextType {
   size?: ButtonProps['size']
@@ -29,13 +29,11 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
 
   if (mintProps.endDate && now >= mintProps.endDate) {
     return (
-      <Button
+      <CollectButton
         size={size}
-        href={`https://nft.coinbase.com/collection/base/${mintProps.address}`}
-        external
-      >
-        Collect <RightArrow fill="white" />
-      </Button>
+        address={mintProps.address}
+        openSeaLink={mintProps.openSeaLink}
+      />
     )
   }
 

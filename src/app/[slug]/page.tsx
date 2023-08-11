@@ -12,7 +12,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import { website } from '@/config/website'
 import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
-import { getArweaves } from '@/utils/getArweaves'
+import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 
 type Props = {
@@ -59,7 +59,12 @@ const Page = async ({ params, searchParams }: Props) => {
                   <ul className="flex flex-row gap-8 last:pr-4">
                     {remainingDrops.map((drop) => (
                       <li key={drop.name} className="flex flex-col">
-                        <DropCard {...drop} partner={name} partnerIcon={icon} />
+                        <DropCard
+                          {...drop}
+                          partner={name}
+                          partnerIcon={icon}
+                          openSeaLink={drop.openSeaLink}
+                        />
                       </li>
                     ))}
                   </ul>
@@ -67,7 +72,7 @@ const Page = async ({ params, searchParams }: Props) => {
               </div>
             </div>
           </div>
-          {article && (
+          {!!article?.content && (
             <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
               <div className="prose mx-auto">
                 <h2 className="text-[32px] leading-8 md:text-[46px] md:leading-[180%] font-display">
@@ -160,8 +165,7 @@ async function getPartner(slug: string, spoofDate?: string) {
     return notFound()
   }
 
-  const arweaves = await getArweaves()
-  const article = get(arweaves, partner.aarweaveDigest)
+  const article = await getArweaveById(partner.aarweaveDigest)
 
   return { partner, article }
 }

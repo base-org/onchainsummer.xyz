@@ -32,7 +32,7 @@ export const ViewOnExplorer = React.forwardRef<
         title
       ) : (
         <>
-          View on Explorer <RightArrow />
+          View on Explorer <RightArrow fill="white" className="ml-auto" />
         </>
       )}
     </Button>

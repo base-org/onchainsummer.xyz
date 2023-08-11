@@ -1,7 +1,7 @@
 // deprecated: using built in fetch funcionality on page load
 // @ts-check
 const _ = require('lodash')
-const { writeFile, readFile, unlink } = require('fs')
+const { writeFile, unlink } = require('fs')
 const { config } = require('dotenv')
 
 config()

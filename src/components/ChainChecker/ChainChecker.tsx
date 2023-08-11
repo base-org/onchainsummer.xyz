@@ -32,7 +32,7 @@ export const ChainChecker: React.FC = () => {
               className="!py-3 !px-6 !bg-transparent"
             >
               Switch to Base
-              <ChainSwitch />
+              <ChainSwitch className="ml-auto" />
             </Button>
           </div>
         </div>

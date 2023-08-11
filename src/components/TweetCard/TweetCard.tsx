@@ -66,7 +66,6 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             <video
               className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
               controls
-              autoPlay
               muted
               loop
               poster={media.preview_image_url}
