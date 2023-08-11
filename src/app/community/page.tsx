@@ -9,9 +9,19 @@ import { getTweets } from '@/utils/getTweets'
 import Grant from '../../../public/grant.png'
 import X from '../../../public/x.png'
 import { RightArrow } from '@/components/icons/RightArrow';
+import { ITweetResponse } from '@/models/Tweet';
+
+function splitData<T>(input: ITweetResponse, count: number): ITweetResponse[] {
+  return Array.from({ length: Math.ceil(input.data.length / count) }).map((_, index) => ({
+    data: input.data.slice(index * count, (index + 1) * count),
+    includes: { ...input.includes }
+  }));
+}
 
 const Community = async () => {
   const { tweets } = await getPageData()
+  const splitTweets = splitData(tweets, 3)
+
   return (
     <PageContainer>
       <section className="sm:mt-0 mt-4">
@@ -44,13 +54,14 @@ const Community = async () => {
           <h3 className="text-[32px] font-display text-[#151515]">Featured</h3>
         </div>
       </section>
-      {tweets && Array.isArray(tweets.data) && (
-        <section className="mt-12">
-          <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
+      <section className="mt-12">
+      { splitTweets.map((tweets) => (
+          <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6" key={tweets.data.toString()}>
             <TwitterModule tweets={tweets} />
           </div>
-        </section>
-      )}
+        ))
+      }
+      </section>
       <section className="mt-14">
         <div className="flex gap-4 items-end">
           <div className="w-16 h-16">
