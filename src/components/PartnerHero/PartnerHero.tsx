@@ -36,7 +36,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
           className="object-cover rounded-xl"
         />
       </div>
-      <div className="inline-flex flex-col w-full gap-4 h-max order-2 md:h-full md:order-1 md:gap-4 overflow-x-scroll overflow-y-visible">
+      <div className="inline-flex flex-col w-full gap-4 h-max order-2 md:h-auto md:order-1 md:gap-4">
         {name !== 'Base' && (
           <div className="flex gap-2 md:mt-6">
             <div className="relative h-6 w-6">
