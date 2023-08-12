@@ -11,10 +11,24 @@ interface NFTAssetProps {
   className?: string
 }
 
-export const NFTAsset: FC<NFTAssetProps> = ({ source, name, autoPlay, muted, ...props }) => {
-  const extension = source.split('.').pop();
+export const NFTAsset: FC<NFTAssetProps> = ({
+  source,
+  name,
+  autoPlay,
+  muted,
+  ...props
+}) => {
+  const extension = source.split('.').pop()
   return extension && ['mov', 'mp4'].includes(extension) ? (
-    <video loop playsInline controls muted={!!muted} autoPlay={!!autoPlay} {...props}>
+    <video
+      loop
+      playsInline
+      controls
+      muted={!!muted}
+      autoPlay={!!autoPlay}
+      {...props}
+      className="z-10 relative"
+    >
       <source src={source} type="video/mp4" />
     </video>
   ) : (
