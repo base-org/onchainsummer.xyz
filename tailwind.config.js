@@ -105,21 +105,6 @@ module.exports = {
           scrollbarWidth: 'none',
           '-ms-overflow-style': 'none',
         },
-        '.stretched-drop-card': {
-          '& > div > div:first-child': {
-            'border-top-left-radius': '1rem',
-            'border-top-right-radius': ' 1rem',
-            'aspect-ratio': '8/4',
-
-            '& > video': {
-              position: 'absolute',
-              left: '0',
-              right: ' 0',
-              top: '50%',
-              transform: 'translateY(-50%)',
-            },
-          },
-        },
       }
       addUtilities(newUtilities)
     },
