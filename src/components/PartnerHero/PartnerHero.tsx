@@ -31,6 +31,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
       <div className="relative w-full aspect-square mb-1 lg:mb-0 order-1 md:order-2">
         <NFTAsset
           autoPlay
+          muted
           source={headline.image}
           name={headline.name}
           className="object-cover rounded-xl"
