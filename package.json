@@ -35,6 +35,7 @@
     "graphql-request": "^6.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
     "next": "13.4.13",
     "next-query-params": "^4.2.2",
     "nuka-carousel": "^6.0.3",
