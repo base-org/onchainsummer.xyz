@@ -14,13 +14,13 @@ const getSpoofDateFromParams = () => {
 
 export const getNow = (spoofDate?: string | null) => {
   const value = spoofDate || getSpoofDateFromParams() || defaultSpoofDate
-  const nowUTC = moment.tz(moment(), 'America/New_York').toDate().getTime()
+  const nowUTC = moment().tz('America/New_York').toDate().getTime()
 
   if (!ALLOW_SPOOFING) {
     return nowUTC
   }
 
-  const spoofedDate = moment.tz(value, 'America/New_York')
+  const spoofedDate = moment(value).tz('America/New_York')
 
   const isValidDate = isValid(spoofedDate.toDate())
 
