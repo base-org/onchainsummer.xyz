@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import compareAsc from 'date-fns/compareAsc'
-
 import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
@@ -39,6 +38,8 @@ const Home = async ({ searchParams }: Props) => {
 
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
 
+  const stretchCarouselDrops = drops?.length === 4 ? remainingDrops : drops
+
   return (
     <PageContainer subNavOverlap>
       <div className="flex h-full flex-col items-center justify-between relative pb-36 gap-10 md:gap-[54px]">
@@ -65,7 +66,7 @@ const Home = async ({ searchParams }: Props) => {
                 </p>
               </div>
             </div>
-            {remainingDrops?.length > 0 && (
+            {drops?.length > 4 && (
               <div className="-mr-4 mb-4 md:mb-14">
                 <div className="overflow-scroll hide-scrollbar">
                   <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
@@ -77,6 +78,28 @@ const Home = async ({ searchParams }: Props) => {
                             partner={name}
                             partnerIcon={icon}
                             openSeaLink={drop.openSeaLink}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+            {drops?.length <= 4 && (
+              <div className="mb-4 md:mb-14">
+                <div className="overflow-scroll hide-scrollbar">
+                  <div className="flex overflow-x-scroll md:overflow-x-auto hide-scrollbar w-full">
+                    <ul className="flex flex-row gap-2 max-h-fit w-full">
+                      {stretchCarouselDrops?.map((drop) => (
+                        <li
+                          key={drop.name}
+                          className="flex flex-col flex-1 stretched-drop-card [&>div]:w-full [&>div]:rounded-2xl"
+                        >
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
                           />
                         </li>
                       ))}
