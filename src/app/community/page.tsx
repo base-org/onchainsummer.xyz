@@ -55,12 +55,12 @@ const Community = async () => {
         </div>
       </section>
       <section className="mt-12">
-      { splitTweets.map((tweets) => (
-          <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6" key={tweets.data.toString()}>
-            <TwitterModule tweets={tweets} />
-          </div>
-        ))
-      }
+        <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
+          { splitTweets.map((tweets) => (
+              <TwitterModule tweets={tweets} key={tweets.data.toString()}/>
+            ))
+          }
+        </div>
       </section>
       <section className="mt-14">
         <div className="flex gap-4 items-end">
