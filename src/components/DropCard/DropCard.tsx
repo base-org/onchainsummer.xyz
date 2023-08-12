@@ -62,49 +62,51 @@ export const DropCard: FC<DropCardProps> = ({
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
-      <div className="pt-2 p-4 flex flex-col flex-auto">
+      <div className="pt-2 p-4 flex flex-col flex-auto justify-between">
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
-            className="desktop-h3 after:absolute after:inset-0 flex-auto"
+            className="desktop-h3 after:absolute after:inset-0 flex-auto line-clamp-2"
             target="_blank"
           >
             {name}
           </a>
         ) : (
-          <span className="desktop-h3">{name}</span>
+          <span className="desktop-h3 line-clamp-2">{name}</span>
         )}
-        <div className="mt-4 mb-8">
-          <AddressPill address={creator as Address} />
+        <div>
+          <div className="mt-4 mb-8">
+            <AddressPill address={creator as Address} />
+          </div>
+          {isExternalLink ? (
+            <ExternalDrop
+              endDate={endDate}
+              externalLink={externalLink}
+              startDate={startDate}
+              partner={partner}
+              contractAddress={address}
+              openSeaLink={openSeaLink}
+              className="!flex !justify-center mt-auto"
+            />
+          ) : (
+            <MintButton
+              price={price}
+              address={address}
+              crossMintClientId={crossMintClientId}
+              partnerIcon={partnerIcon}
+              partnerName={partner}
+              dropImage={image}
+              dropName={name}
+              creatorAddress={creator}
+              endDate={endDate}
+              mintType={
+                mintType ||
+                (externalLink ? MintType.External : MintType.ThirdWeb)
+              }
+              openSeaLink={openSeaLink}
+            />
+          )}
         </div>
-        {isExternalLink ? (
-          <ExternalDrop
-            endDate={endDate}
-            externalLink={externalLink}
-            startDate={startDate}
-            partner={partner}
-            contractAddress={address}
-            openSeaLink={openSeaLink}
-            className="!flex !justify-center mt-auto"
-          />
-        ) : (
-          <MintButton
-            price={price}
-            address={address}
-            crossMintClientId={crossMintClientId}
-            partnerIcon={partnerIcon}
-            partnerName={partner}
-            dropImage={image}
-            dropName={name}
-            creatorAddress={creator}
-            endDate={endDate}
-            mintType={
-              mintType || (externalLink ? MintType.External : MintType.ThirdWeb)
-            }
-            openSeaLink={openSeaLink}
-            interactWithNFTLink={interactWithNFTLink}
-          />
-        )}
       </div>
     </Card>
   )
