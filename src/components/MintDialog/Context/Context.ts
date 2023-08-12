@@ -19,7 +19,7 @@ export interface MintDialogContextType {
   mintButtonStyles?: string
   maxClaimablePerWallet?: string
   openSeaLink?: string
-  interactWithNFTLink?: string
+  cbNftButtonText?: string
 }
 
 export const MintDialogContext = createContext<MintDialogContextType>({

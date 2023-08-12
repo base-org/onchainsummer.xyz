@@ -21,7 +21,7 @@ interface PartnerHeroProps {
 }
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
-  partner: { name, icon, description },
+  partner: { name, icon, description, cbNftButtonText },
   headline,
   teaser,
   customHeader,
@@ -84,7 +84,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                     : MintType.ThirdWeb)
                 }
                 openSeaLink={headline.openSeaLink}
-                interactWithNFTLink={headline.interactWithNFTLink}
+                cbNftButtonText={cbNftButtonText}
               />
             )}
           </>

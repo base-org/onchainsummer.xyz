@@ -17,13 +17,16 @@ interface SuccessProps {
   closeModal: () => void
 }
 
+const CB_NFT_URL = 'https://nft.coinbase.com'
+
 export const Success: FC<SuccessProps> = ({
   resetModal,
   txHash,
   closeModal,
 }) => {
-  const { dropName, creatorAddress, interactWithNFTLink } =
+  const { dropName, creatorAddress, address, cbNftButtonText } =
     useMintDialogContext()
+  const secondaryButtonText = cbNftButtonText || 'See your NFT'
   return (
     <>
       <PartnerInfo />
@@ -45,14 +48,12 @@ export const Success: FC<SuccessProps> = ({
               resetModal()
               closeModal()
             }}
-            showIcon={!interactWithNFTLink}
+            showIcon={false}
           />
         </Dialog.Close>
-        {interactWithNFTLink ? (
-          <Button variant="LIGHT" external href={interactWithNFTLink}>
-            Unlock the magic of your nft
-          </Button>
-        ) : null}
+        <Button variant="LIGHT" external href={`${CB_NFT_URL}/${address}`}>
+          {secondaryButtonText}
+        </Button>
       </div>
 
       <div>

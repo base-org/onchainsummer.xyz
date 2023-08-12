@@ -18,7 +18,6 @@ export interface Drop {
   // TODO, consider requiring mint type
   mintType?: MintType
   description?: string
-
   // TODO: Temp fix
   openSeaLink?: string
   interactWithNFTLink?: string
@@ -35,4 +34,5 @@ export interface Partner {
   drops: Drop[]
   aarweaveDigest: string
   twitter: string
+  cbNftButtonText?: string
 }
