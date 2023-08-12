@@ -24,15 +24,15 @@ const anotherblock: Partner = {
       address: '0x',
       crossMintClientId: '',
       name: 'A Trilogy of Harmonies',
-      description: `In a harmonious crescendo of creativity and rhythm, the music rights marketplace anotherblock present three remarkable music drops.
+      description: `in a harmonious crescendo of creativity and rhythm, the music rights marketplace anotherblock present three remarkable music drops.
   
-  Experience the evolution of sound with the never-before-heard unreleased song ORIGINATOR by LAIDBACK LUKE: an exclusive treasure crafted for the fans and the base community. this track is a testament to the power of music to connect and inspire.
+  experience the evolution of sound with the never-before-heard unreleased song ORIGINATOR by LAIDBACK LUKE: an exclusive treasure crafted for the fans and the base community. this track is a testament to the power of music to connect and inspire.
   
-  A decade of ICH R U by legendary electronic artist BOYS NOIZE. timeless and evocative, ICH R U commemorates a decade of dance floor enchantment. let the beats wash over you as we honor the legacy of a track that has moved hearts and feet alike.
+  a decade of ICH R U by legendary electronic artist BOYS NOIZE. timeless and evocative, ICH R U commemorates a decade of dance floor enchantment. let the beats wash over you as we honor the legacy of a track that has moved hearts and feet alike.
   
-  Unveiling IMAGINE PARADISE: step into KLEERUP’S world of nordic electronic and pop fusion. IMAGINE PARADISE marks a new chapter in his musical odyssey. holders will unlock an exclusive teaser, a portal to acquiring an ownership share of his upcoming single. some fortunate souls might even find themselves shaping the melody through an official remix opportunity.
+  unveiling IMAGINE PARADISE: step into KLEERUP’S world of nordic electronic and pop fusion. IMAGINE PARADISE marks a new chapter in his musical odyssey. holders will unlock an exclusive teaser, a portal to acquiring an ownership share of his upcoming single. some fortunate souls might even find themselves shaping the melody through an official remix opportunity.
   
-  Be prepared to immerse yourself in these mesmerizing melodies. stay tuned for an unforgettable auditory experience.`,
+  be prepared to immerse yourself in these mesmerizing melodies. stay tuned for an unforgettable auditory experience.`,
       creator: '0xD8A7d1E1e7e7B35280001180a95e5013E54d1310',
       // TODO: Update image
       image: '/partners/anotherblock/drops/headlineImage.png',
