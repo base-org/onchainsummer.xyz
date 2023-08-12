@@ -14,7 +14,7 @@ const getSpoofDateFromParams = () => {
 
 export const getNow = (spoofDate?: string | null) => {
   const value = spoofDate || getSpoofDateFromParams() || defaultSpoofDate
-  const nowUTC = new Date().getTime()
+  const nowUTC = moment.tz(moment(), 'America/New_York').toDate().getTime()
 
   if (!ALLOW_SPOOFING) {
     return nowUTC
