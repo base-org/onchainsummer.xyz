@@ -104,6 +104,7 @@ export const DropCard: FC<DropCardProps> = ({
                 (externalLink ? MintType.External : MintType.ThirdWeb)
               }
               openSeaLink={openSeaLink}
+              interactWithNFTLink={interactWithNFTLink}
             />
           )}
         </div>
