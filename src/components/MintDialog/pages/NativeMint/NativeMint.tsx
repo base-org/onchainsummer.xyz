@@ -136,7 +136,7 @@ export const NativeMint: FC<NativeMintProps> = ({
           </Button>
         ) : null}
         {dropDataSuffix && (
-          <div className="flex">
+          <div className="flex mt-5">
             <input
               onChange={handleDataSuffixChange}
               id="dataSuffix"
