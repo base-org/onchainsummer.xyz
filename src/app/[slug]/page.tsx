@@ -26,7 +26,7 @@ const Page = async ({ params, searchParams }: Props) => {
   const spoofDate = Array.isArray(spoofDateParam)
     ? spoofDateParam[0]
     : spoofDateParam
-  const slug = params.slug
+  const slug = params.slug.toLowerCase()
   const { partner, article } = await getPartner(slug, spoofDate)
 
   const dropAddressParam = searchParams.drop
@@ -147,7 +147,7 @@ async function getPartner(slug: string, spoofDate?: string) {
   const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
-    (date) => schedule[date].slug === slug
+    (date) => schedule[date].slug.toLowerCase() === slug
   )
 
   if (!date) {
