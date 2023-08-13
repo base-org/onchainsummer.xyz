@@ -14,6 +14,7 @@ import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
+import { siteDataSuffix } from '@/components/MintDialog/types'
 
 type Props = {
   params: { slug: string }
@@ -64,7 +65,9 @@ const Page = async ({ params, searchParams }: Props) => {
                           partner={name}
                           partnerIcon={icon}
                           openSeaLink={drop.openSeaLink}
+                          dataSuffix={siteDataSuffix}
                           interactWithNFTLink={drop.interactWithNFTLink}
+                          dropDataSuffix={drop.dataSuffix}
                         />
                       </li>
                     ))}

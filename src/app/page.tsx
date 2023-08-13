@@ -18,6 +18,7 @@ import { getTweets } from '@/utils/getTweets'
 import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
+import { siteDataSuffix } from '@/components/MintDialog/types'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -78,6 +79,8 @@ const Home = async ({ searchParams }: Props) => {
                             partnerIcon={icon}
                             openSeaLink={drop.openSeaLink}
                             interactWithNFTLink={drop.interactWithNFTLink}
+                            dataSuffix={siteDataSuffix}
+                            dropDataSuffix={drop.dataSuffix}
                           />
                         </li>
                       ))}
