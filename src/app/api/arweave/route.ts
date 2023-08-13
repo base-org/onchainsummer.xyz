@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
 
     let article: ArticleType
     const digest = await SDK.GetMirrorTransactions({ digest: digestId })
-    console.log('digest', digest)
 
     const articleId = digest?.transactions?.edges[0]?.node?.id
 
