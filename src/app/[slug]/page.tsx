@@ -147,7 +147,7 @@ async function getPartner(slug: string, spoofDate?: string) {
   const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
-    (date) => schedule[date].slug === slug
+    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase()
   )
 
   if (!date) {
