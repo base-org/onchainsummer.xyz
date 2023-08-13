@@ -49,7 +49,7 @@ const cokeConfig: Partner = {
       mintType: MintType.ThirdWeb,
       address: '0x32cF27F2753e90948195b64EC55C486EE640cF61',
       crossMintClientId: 'd50ceda8-7fd1-4587-812a-6611b210c484',
-      name: `Wonder Buhle, "You Can't Curse Me`,
+      name: `Wonder Buhle, "You Can't Curse Me"`,
       description:
         'The Masterpiece collection uniquely brings together iconic artworks along with new works from emerging talents, all intertwined with the iconic Coca-Cola bottle. Classic masterpieces like "The Scream" by Edvard Munch and "Girl with a Pearl Earring" by Johannes Vermeer find a harmonious coexistence alongside contemporary works by talented artists like Aket and Vikram Kushwah. Each of these artworks were featured works in Coca-Cola’s Masterpiece Global campaign, and now take on a new dimension as they become digital collectibles, accessible to art enthusiasts participating in Onchain Summer.',
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
