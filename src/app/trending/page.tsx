@@ -131,7 +131,6 @@ export default function Trending() {
                             mintButtonStyles="w-full sm:!max-w-fit"
                             mintType={MintType.MintDotFun}
                             dataSuffix={siteDataSuffix}
-                            dataSuffixLabel={''}
                           />
                         </div>
                         <div className="grid grid-cols-4 [@media(min-width:600px)]:grid-cols-10 gap-4 items-center order-2 lg:order-3 mt-5 mb-4 md:mt-8 lg:mb-0  lg:ml-12">

@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, createContext } from 'react'
 import { Address } from 'wagmi'
 import { MintType } from '../types'
 import { Hex } from 'viem'
+import { DropDataSuffix } from '@/config/partners/types'
 
 export interface MintDialogInfo {
   address: Address
@@ -22,7 +23,7 @@ export interface MintDialogInfo {
   openSeaLink?: string
   interactWithNFTLink?: string
   dataSuffix: Hex
-  dataSuffixLabel?: string
+  dropDataSuffix?: DropDataSuffix
 }
 
 type MintDialogContextType = {

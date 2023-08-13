@@ -99,7 +99,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
         console.log(`invalid mint type ${mintType} for native mint`)
         setPage(ModalPage.MINT_ERROR)
     }
-  }, [mintType, setPage, account, address, quantity, creatorAddress, price, publicClient, walletClient])
+  }, [mintType, setPage, account, address, quantity, creatorAddress, price, publicClient, walletClient, dataSuffix])
 
   useEffect(() => {
     if (!txReceipt) return

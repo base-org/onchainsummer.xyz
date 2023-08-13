@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { ChangeEvent, FC, useCallback } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { MintType, ModalPage } from '../../types'
+import { MintType, ModalPage, siteDataSuffix } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -49,16 +49,26 @@ export const NativeMint: FC<NativeMintProps> = ({
       dropName,
       crossMintClientId,
       mintDotFunStatus,
-      dataSuffixLabel,
+      dropDataSuffix,
     },
+    setInfo,
   } = useMintDialogContext()
-  console.log(dataSuffixLabel)
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const isPendingTx = page === ModalPage.NATIVE_MINTING_PENDING_TX
   const isPending = isPendingConfirmation || isPendingTx
 
   const isMintDotFun = typeof mintDotFunStatus === 'object'
+
+  const handleDataSuffixChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      setInfo((prevState) => ({
+        ...prevState,
+        dataSuffix: e.target.checked ? dropDataSuffix!.value : siteDataSuffix,
+      }))
+    },
+    [dropDataSuffix, setInfo]
+  )
 
   return (
     <>
@@ -125,10 +135,10 @@ export const NativeMint: FC<NativeMintProps> = ({
             Buy with credit card
           </Button>
         ) : null}
-        {dataSuffixLabel && (
+        {dropDataSuffix && (
           <div className="flex">
             <input
-              checked
+              onChange={handleDataSuffixChange}
               id="dataSuffix"
               type="checkbox"
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:bg-ocs-blue focus:ring-2"
@@ -144,7 +154,7 @@ export const NativeMint: FC<NativeMintProps> = ({
                   ),
                 }}
               >
-                {dataSuffixLabel}
+                {dropDataSuffix.label}
               </ReactMarkdown>
             </label>
           </div>
