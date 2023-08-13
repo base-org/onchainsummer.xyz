@@ -67,8 +67,8 @@ const Home = async ({ searchParams }: Props) => {
             </div>
             {remainingDrops?.length > 0 && (
               <div className="-mr-4 mb-4 md:mb-14">
-                <div className="overflow-scroll hide-scrollbar">
-                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                <div className="overflow-auto">
+                  <div className="flex overflow-y-hidden md:overflow-x-auto w-max">
                     <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
                       {remainingDrops?.map((drop) => (
                         <li key={drop.name} className="flex flex-col">
