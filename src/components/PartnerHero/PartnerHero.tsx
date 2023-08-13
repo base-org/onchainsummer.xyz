@@ -84,6 +84,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                     : MintType.ThirdWeb)
                 }
                 openSeaLink={headline.openSeaLink}
+                interactWithNFTLink={headline.interactWithNFTLink}
               />
             )}
           </>

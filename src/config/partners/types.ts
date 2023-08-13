@@ -21,6 +21,7 @@ export interface Drop {
 
   // TODO: Temp fix
   openSeaLink?: string
+  interactWithNFTLink?: string
 }
 
 export interface Partner {

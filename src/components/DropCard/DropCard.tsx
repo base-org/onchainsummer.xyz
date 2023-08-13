@@ -22,6 +22,7 @@ type DropCardProps = {
   creator: string
   mintType?: MintType
   openSeaLink?: string
+  interactWithNFTLink?: string
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -38,6 +39,7 @@ export const DropCard: FC<DropCardProps> = ({
   endDate,
   mintType,
   openSeaLink,
+  interactWithNFTLink,
 }) => {
   const {
     isExternalLink,

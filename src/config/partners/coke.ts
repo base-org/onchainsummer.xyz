@@ -27,6 +27,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/vermeer.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x1DdB721BF79d3Ad33fBac72E5dEcf2A436CB42a3',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -41,6 +43,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/aket.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x916555Cd5F02E159b84d5247F8660531A4525d2d',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -55,6 +59,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/wonder.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x32cF27F2753e90948195b64EC55C486EE640cF61',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -69,6 +75,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/fatam.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0xe4c3AA3978B61431C070109629a687bc42D66d8f',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -83,6 +91,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/vikram.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x766D25d7005e6B690C0ab4FA1e81a2eB9B416c50',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -97,6 +107,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/stefania.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x19766E9DA39ecb68b85b9B4aF3B0cE4f9a4F2ECf',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -111,6 +123,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/munch.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x9A466C55F0cFC8Ea3cEE03DE0EB94Bf35A934522',
     },
     {
       startDate: Date.UTC(2023, 7, 13, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -125,6 +139,8 @@ const cokeConfig: Partner = {
       creator: '0xb12e7dEe5af51d61114c96E50c80afC80CC26595',
       image: '/partners/coke/drop/vangogh.jpg',
       type: 'erc-721',
+      interactWithNFTLink:
+        'https://nft.coinbase.com/collection/base/0x65b2E459f779FF4af4e4A16bc8065A0063cF8221',
     },
   ],
 }

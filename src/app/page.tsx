@@ -77,6 +77,7 @@ const Home = async ({ searchParams }: Props) => {
                             partner={name}
                             partnerIcon={icon}
                             openSeaLink={drop.openSeaLink}
+                            interactWithNFTLink={drop.interactWithNFTLink}
                           />
                         </li>
                       ))}
