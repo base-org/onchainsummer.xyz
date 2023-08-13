@@ -26,6 +26,11 @@ const standWithCrypto: Partner = {
       mintType: MintType.ThirdWeb,
       address: '0x874Ad7c13935F73c7bbE94efBD8e766De2A585Eb',
       crossMintClientId: '7acea657-ad34-46cb-8f10-368c455408b0',
+      dataSuffix: {
+        value: keccak256(toHex('US')).slice(0, 10) as Hex,
+        label: `I am a U.S. citizen or lawful permanent resident (i.e., a green card
+          holder). [Privacy Policy](https://www.coinbase.com/legal/privacy)`,
+      },
       description: `This collectible commemorates the launch of the Stand With Crypto Alliance on August 14, 2023.
 
 Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.S. All proceeds benefit the Alliance.`
