@@ -55,6 +55,9 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
       <CrossmintPaymentElement
         emailInputOptions={{ show: true }}
+        experimental={{
+          useCardWalletEmail: true,
+        }}
         clientId={clientId || ''}
         environment={environment}
         recipient={{
