@@ -3,6 +3,7 @@ import { getURL } from './getURL'
 import { arweaves } from '../../generated/arweave'
 
 export const getArweaveById = async (digestId: string) => {
+  if (!digestId) return null
   const response = await fetch(`${getURL()}/api/arweave`, {
     next: { revalidate: 1 * 60 },
     method: 'POST',
