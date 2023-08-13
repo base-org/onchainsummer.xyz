@@ -24,6 +24,7 @@ export interface Drop {
   openSeaLink?: string
   interactWithNFTLink?: string
   dataSuffix?: Hex
+  dataSuffixLabel?: string
 }
 
 export interface Partner {

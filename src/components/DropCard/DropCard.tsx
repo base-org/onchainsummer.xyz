@@ -25,6 +25,7 @@ type DropCardProps = {
   openSeaLink?: string
   interactWithNFTLink?: string
   dataSuffix?: Hex
+  dataSuccessLabel?: string
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -43,6 +44,7 @@ export const DropCard: FC<DropCardProps> = ({
   openSeaLink,
   interactWithNFTLink,
   dataSuffix,
+  dataSuccessLabel,
 }) => {
   const {
     isExternalLink,
@@ -109,6 +111,7 @@ export const DropCard: FC<DropCardProps> = ({
               openSeaLink={openSeaLink}
               interactWithNFTLink={interactWithNFTLink}
               dataSuffix={dataSuffix || siteDataSuffix}
+              dataSuffixLabel={dataSuccessLabel}
             />
           )}
         </div>

@@ -86,6 +86,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 openSeaLink={headline.openSeaLink}
                 interactWithNFTLink={headline.interactWithNFTLink}
                 dataSuffix={headline.dataSuffix || siteDataSuffix}
+                dataSuffixLabel={headline.dataSuffixLabel}
               />
             )}
           </>

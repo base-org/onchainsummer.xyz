@@ -22,14 +22,14 @@ export interface MintDialogInfo {
   openSeaLink?: string
   interactWithNFTLink?: string
   dataSuffix: Hex
+  dataSuffixLabel?: string
 }
 
 type MintDialogContextType = {
-  info: MintDialogInfo,
+  info: MintDialogInfo
   setInfo: Dispatch<SetStateAction<MintDialogInfo>>
 }
 
 export const MintDialogContext = createContext<
   MintDialogContextType | undefined
->(undefined);
-
+>(undefined)

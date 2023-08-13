@@ -15,6 +15,7 @@ import dialogClasses from '@/components/dialog.module.css'
 import { l2 } from '@/config/chain'
 import { Quantity } from '../../elements/Quantity'
 import { Address, useNetwork, useSwitchNetwork } from 'wagmi'
+import ReactMarkdown from 'react-markdown'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -42,8 +43,16 @@ export const NativeMint: FC<NativeMintProps> = ({
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
-  const { info: {creatorAddress, dropName, crossMintClientId, mintDotFunStatus} } =
-    useMintDialogContext()
+  const {
+    info: {
+      creatorAddress,
+      dropName,
+      crossMintClientId,
+      mintDotFunStatus,
+      dataSuffixLabel,
+    },
+  } = useMintDialogContext()
+  console.log(dataSuffixLabel)
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const isPendingTx = page === ModalPage.NATIVE_MINTING_PENDING_TX
@@ -116,6 +125,30 @@ export const NativeMint: FC<NativeMintProps> = ({
             Buy with credit card
           </Button>
         ) : null}
+        {dataSuffixLabel && (
+          <div className="flex">
+            <input
+              checked
+              id="dataSuffix"
+              type="checkbox"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:bg-ocs-blue focus:ring-2"
+            />
+            <label
+              htmlFor="dataSuffix"
+              className="ml-2 desktop-body text-[14px] text-gray-900"
+            >
+              <ReactMarkdown
+                components={{
+                  a: ({ node, ...props }) => (
+                    <a {...props} className="font-medium" target="_blank" />
+                  ),
+                }}
+              >
+                {dataSuffixLabel}
+              </ReactMarkdown>
+            </label>
+          </div>
+        )}
       </div>
     </>
   )

@@ -1,6 +1,7 @@
 import { MintType } from '@/components/MintDialog/types'
 import { Partner } from './types'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { keccak256, toHex, Hex } from 'viem'
 
 const standWithCrypto: Partner = {
   slug: 'standwithcrypto',
