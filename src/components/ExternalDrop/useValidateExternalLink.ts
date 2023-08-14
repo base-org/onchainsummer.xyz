@@ -13,6 +13,7 @@ export const useValidateExternalLink = ({
   startDate,
   endDate,
   partner,
+  contractAddress,
 }: ExternalDropProps): ValidateExternalLinkResult => {
   if (!externalLink) {
     return {
@@ -47,6 +48,8 @@ export const useValidateExternalLink = ({
     isExternalLink: true,
     status: 'valid',
     externalLinkHref: externalLink,
-    message: `Mint on ${partner}`,
+    message: contractAddress && contractAddress != '0x' // we treat 0x as undefined right now
+      ? `Mint on ${partner}`
+      : `View on ${partner}`,
   }
 }
