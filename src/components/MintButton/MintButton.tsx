@@ -3,16 +3,16 @@
 import { FC } from 'react'
 import { ConnectDialog } from '../ConnectDialog'
 import { MintDialog } from '../MintDialog'
-import { MintDialogContextType } from '../MintDialog/Context/Context'
+import { MintDialogInfo} from '../MintDialog/Context/Context'
 import { useValidate } from './useValidate'
 import { Button, ButtonProps } from '../Button'
 import { Loading } from '../icons/Loading'
-import clsx from 'clsx'
+
 import { useAccount } from 'wagmi'
 import { getNow } from '@/utils/getNow'
-import { RightArrow } from '../icons/RightArrow'
+import { CollectButton } from '../CollectButton/CollectButton'
 
-interface MintButtonProps extends MintDialogContextType {
+interface MintButtonProps extends MintDialogInfo {
   size?: ButtonProps['size']
 }
 
@@ -29,15 +29,11 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
 
   if (mintProps.endDate && now >= mintProps.endDate) {
     return (
-      <Button
+      <CollectButton
         size={size}
-        href={`https://nft.coinbase.com/collection/base/${mintProps.address}`}
-        external
-      >
-        <>
-          Collect <RightArrow fill="white" className="ml-auto" />
-        </>
-      </Button>
+        address={mintProps.address}
+        openSeaLink={mintProps.openSeaLink}
+      />
     )
   }
 
@@ -67,7 +63,7 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
     )
   }
 
-  const props: MintDialogContextType = { ...mintProps, price: price.toString() }
+  const props: MintDialogInfo = { ...mintProps, price: price.toString() }
 
   return (
     <MintDialog

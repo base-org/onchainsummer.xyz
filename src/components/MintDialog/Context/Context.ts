@@ -1,9 +1,11 @@
 import { MintStatus } from '@/utils/mintDotFunTypes'
-import { createContext } from 'react'
+import { Dispatch, SetStateAction, createContext } from 'react'
 import { Address } from 'wagmi'
 import { MintType } from '../types'
+import { Hex } from 'viem'
+import { DropDataSuffix } from '@/config/partners/types'
 
-export interface MintDialogContextType {
+export interface MintDialogInfo {
   address: Address
   crossMintClientId?: string
   price: string
@@ -18,15 +20,17 @@ export interface MintDialogContextType {
   trendingPageNativeMint?: boolean
   mintButtonStyles?: string
   maxClaimablePerWallet?: string
+  openSeaLink?: string
+  interactWithNFTLink?: string
+  dataSuffix: Hex
+  dropDataSuffix?: DropDataSuffix
 }
 
-export const MintDialogContext = createContext<MintDialogContextType>({
-  address: '0x0',
-  price: '',
-  partnerIcon: '',
-  partnerName: '',
-  dropImage: '',
-  dropName: '',
-  creatorAddress: '',
-  mintType: MintType.ThirdWeb
-})
+type MintDialogContextType = {
+  info: MintDialogInfo
+  setInfo: Dispatch<SetStateAction<MintDialogInfo>>
+}
+
+export const MintDialogContext = createContext<
+  MintDialogContextType | undefined
+>(undefined)

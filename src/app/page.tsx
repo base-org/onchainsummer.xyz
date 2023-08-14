@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import Link from 'next/link'
 import compareAsc from 'date-fns/compareAsc'
 
@@ -19,6 +18,7 @@ import { getTweets } from '@/utils/getTweets'
 import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
+import { siteDataSuffix } from '@/components/MintDialog/types'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -68,8 +68,8 @@ const Home = async ({ searchParams }: Props) => {
             </div>
             {remainingDrops?.length > 0 && (
               <div className="-mr-4 mb-4 md:mb-14">
-                <div className="overflow-scroll hide-scrollbar">
-                  <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                <div className="overflow-auto">
+                  <div className="flex overflow-y-hidden md:overflow-x-auto w-max">
                     <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
                       {remainingDrops?.map((drop) => (
                         <li key={drop.name} className="flex flex-col">
@@ -77,6 +77,11 @@ const Home = async ({ searchParams }: Props) => {
                             {...drop}
                             partner={name}
                             partnerIcon={icon}
+                            openSeaLink={drop.openSeaLink}
+                            interactWithNFTLink={drop.interactWithNFTLink}
+                            dataSuffix={siteDataSuffix}
+                            dropDataSuffix={drop.dataSuffix}
+                            buttonText={drop.buttonText}
                           />
                         </li>
                       ))}

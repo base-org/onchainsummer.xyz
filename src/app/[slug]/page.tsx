@@ -14,6 +14,7 @@ import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
+import { siteDataSuffix } from '@/components/MintDialog/types'
 
 type Props = {
   params: { slug: string }
@@ -59,7 +60,16 @@ const Page = async ({ params, searchParams }: Props) => {
                   <ul className="flex flex-row gap-8 last:pr-4">
                     {remainingDrops.map((drop) => (
                       <li key={drop.name} className="flex flex-col">
-                        <DropCard {...drop} partner={name} partnerIcon={icon} />
+                        <DropCard
+                          {...drop}
+                          partner={name}
+                          partnerIcon={icon}
+                          openSeaLink={drop.openSeaLink}
+                          dataSuffix={siteDataSuffix}
+                          interactWithNFTLink={drop.interactWithNFTLink}
+                          dropDataSuffix={drop.dataSuffix}
+                          buttonText={drop.buttonText}
+                        />
                       </li>
                     ))}
                   </ul>
@@ -141,7 +151,7 @@ async function getPartner(slug: string, spoofDate?: string) {
   const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
-    (date) => schedule[date].slug === slug
+    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase()
   )
 
   if (!date) {

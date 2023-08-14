@@ -4,14 +4,13 @@ import ReactMarkdown from 'react-markdown'
 import { Drop, Partner } from '@/config/partners/types'
 import Image from 'next/image'
 import { FC } from 'react'
-import clsx from 'clsx'
 import { MintButton } from '../MintButton/MintButton'
 import { AddressPill } from '../AddressPill'
 import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
 import { NFTAsset } from '@/components/NFTAsset'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
-import { MintType } from '@/components/MintDialog/types'
+import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -32,12 +31,13 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
       <div className="relative w-full aspect-square mb-1 lg:mb-0 order-1 md:order-2">
         <NFTAsset
           autoPlay
+          muted
           source={headline.image}
           name={headline.name}
           className="object-cover rounded-xl"
         />
       </div>
-      <div className="inline-flex flex-col w-full gap-4 h-max order-2 md:h-full md:order-1 md:gap-4 overflow-x-scroll overflow-y-visible">
+      <div className="inline-flex flex-col w-full gap-4 h-max order-2 md:h-auto md:order-1 md:gap-4">
         {name !== 'Base' && (
           <div className="flex gap-2 md:mt-6">
             <div className="relative h-6 w-6">
@@ -64,6 +64,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 {...headline}
                 partner={name}
                 contractAddress={headline.address}
+                openSeaLink={headline.openSeaLink}
               />
             ) : (
               <MintButton
@@ -82,6 +83,10 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                     ? MintType.External
                     : MintType.ThirdWeb)
                 }
+                openSeaLink={headline.openSeaLink}
+                interactWithNFTLink={headline.interactWithNFTLink}
+                dataSuffix={siteDataSuffix}
+                dropDataSuffix={headline.dataSuffix}
               />
             )}
           </>

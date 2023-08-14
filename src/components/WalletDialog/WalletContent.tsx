@@ -79,7 +79,7 @@ export const WalletContent: FC<WalletContentProps> = ({}) => {
           {chain.name}
         </span>
         {isMismatched && switchNetwork ? (
-          <Button size="SMALL" onClick={() => switchNetwork(baseGoerli.id)}>
+          <Button size="SMALL" onClick={() => switchNetwork(l2.id)}>
             Switch to Base
             <ChainSwitch color="white" className="ml-auto" />
           </Button>

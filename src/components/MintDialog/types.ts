@@ -1,3 +1,5 @@
+import { Hex, keccak256, toHex } from "viem";
+
 export enum ModalPage {
   NATIVE_MINT,
   NATIVE_MINT_PENDING_CONFIRMATION,
@@ -19,3 +21,6 @@ export enum MintType {
   MintDotFun = 'mint.fun',
   External = 'external'
 }
+
+// 0x + first 8 characters / 4 bytes to append to calldata 
+export const siteDataSuffix: Hex = keccak256(toHex('onchainsummer.xyz')).slice(0, 10) as Hex;

@@ -5,7 +5,7 @@ export const l2GasToMint = parseEther('0.0006')
 export const l1GasToBridge = parseEther('0.01')
 
 export function useMintThresholds() {
-    const {price} = useMintDialogContext();
+    const {info : {price}} = useMintDialogContext();
     const priceWei = parseEther(price);
 
     return {

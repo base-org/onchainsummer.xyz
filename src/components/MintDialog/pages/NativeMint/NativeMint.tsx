@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { MintType, ModalPage } from '../../types'
+import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -11,10 +11,11 @@ import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
-import dialogClasses from '@/components/dialog.module.css'
 import { l2 } from '@/config/chain'
 import { Quantity } from '../../elements/Quantity'
 import { Address, useNetwork, useSwitchNetwork } from 'wagmi'
+
+import { CitzienshipCheckbox } from '../../elements/CitzienshipCheckbox'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -42,8 +43,16 @@ export const NativeMint: FC<NativeMintProps> = ({
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
-  const { creatorAddress, dropName, crossMintClientId, mintDotFunStatus } =
-    useMintDialogContext()
+  const {
+    info: {
+      creatorAddress,
+      dropName,
+      crossMintClientId,
+      mintDotFunStatus,
+      dropDataSuffix,
+    },
+    setInfo,
+  } = useMintDialogContext()
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const isPendingTx = page === ModalPage.NATIVE_MINTING_PENDING_TX
@@ -54,7 +63,7 @@ export const NativeMint: FC<NativeMintProps> = ({
   return (
     <>
       {!isPending ? <PartnerInfo /> : null}
-      {/* TODO: Add Coinbase Display font */}
+
       <Dialog.Title
         className={clsx('desktop-h2', 'lg:mt-2', {
           hidden: isPending,
@@ -82,6 +91,8 @@ export const NativeMint: FC<NativeMintProps> = ({
             <span>{totalPrice} ETH</span>
           </span>
         </Dialog.Description>
+
+        <CitzienshipCheckbox />
 
         {wrongChain && switchNetwork ? (
           <Button onClick={() => switchNetwork(l2.id)}>Switch to Base</Button>

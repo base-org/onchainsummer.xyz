@@ -6,8 +6,7 @@ const nestcoin: Partner = {
   slug: 'onboard',
   name: 'Onboard',
   url: 'https://nestcoin.com/',
-  description:
-    'Support the democratization of access to economic opportunity with Onboard by minting art and music "from Africa, with love."',
+  description: `Onboard's mission is to create financial access in Africa. Teaming up with cultural trendsetters, they're highlighting the continent's rich heritage through captivating art and music. Show your support by minting "from Africa, with love”.`,
   brandColor: '#000000',
   icon: '/partners/nestcoin/icon.png',
   banner: '/partners/nestcoin/banner-icon.svg',

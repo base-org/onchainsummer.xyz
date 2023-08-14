@@ -7,9 +7,9 @@ import { AddressPill } from '@/components/AddressPill'
 import { useMintDialogContext } from '../../Context/useMintDialogContext'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
-import dialogClasses from '@/components/dialog.module.css'
 import { Address } from 'viem'
 import { Share } from '@/components/Share'
+import { Button } from '@/components/Button'
 
 interface SuccessProps {
   resetModal: () => void
@@ -22,7 +22,7 @@ export const Success: FC<SuccessProps> = ({
   txHash,
   closeModal,
 }) => {
-  const { dropImage, dropName, partnerIcon, partnerName, creatorAddress } =
+  const { info: {dropName, creatorAddress, interactWithNFTLink} } =
     useMintDialogContext()
   return (
     <>
@@ -37,15 +37,23 @@ export const Success: FC<SuccessProps> = ({
         <AddressPill address={creatorAddress as Address} />
       </Dialog.Description>
 
-      <Dialog.Close asChild>
-        <ViewOnExplorer
-          txHash={txHash}
-          onClick={() => {
-            resetModal()
-            closeModal()
-          }}
-        />
-      </Dialog.Close>
+      <div className="flex flex-col gap-4">
+        <Dialog.Close asChild>
+          <ViewOnExplorer
+            txHash={txHash}
+            onClick={() => {
+              resetModal()
+              closeModal()
+            }}
+            showIcon={!interactWithNFTLink}
+          />
+        </Dialog.Close>
+        {interactWithNFTLink ? (
+          <Button variant="LIGHT" external href={interactWithNFTLink}>
+            Unlock the magic of your nft
+          </Button>
+        ) : null}
+      </div>
 
       <div>
         <h3 className="font-sans text-[16px] text-[#151515]">Share on </h3>

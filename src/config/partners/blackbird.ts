@@ -7,7 +7,7 @@ const blackbird: Partner = {
   name: 'Blackbird',
   url: 'https://www.blackbird.xyz/',
   description:
-    'Join the Blackbird community to get access to sweet treats at your favorite restaurants with onchain rewards.',
+    'Join Blackbird to unlock two exclusive Summer Passes (designed by renowned multi-disciplinary artist Lucien Smith) that will power-up your Blackbird account, enabling you to unlock cool insider perks at participating restaurants.',
   brandColor: '#000000',
   icon: '/partners/blackbird/icon.png',
   banner: '/partners/blackbird/banner-icon.svg',

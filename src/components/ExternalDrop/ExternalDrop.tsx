@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { useValidateExternalLink } from './useValidateExternalLink'
 import { Button } from '../Button'
-import { RightArrow } from '../icons/RightArrow'
+
+import { CollectButton } from '../CollectButton/CollectButton'
 
 export interface ExternalDropProps {
   externalLink?: string
@@ -10,6 +11,8 @@ export interface ExternalDropProps {
   partner: string
   contractAddress: string
   className?: string
+  openSeaLink?: string
+  buttonText?: string
 }
 
 export const ExternalDrop: FC<ExternalDropProps> = ({
@@ -25,13 +28,10 @@ export const ExternalDrop: FC<ExternalDropProps> = ({
 
   if (status === 'ended') {
     return (
-      <Button
-        href={`https://nft.coinbase.com/collection/base/${props.contractAddress}`}
-        external
-        className={className}
-      >
-        Collect <RightArrow fill="white" className="ml-auto" />
-      </Button>
+      <CollectButton
+        address={props.contractAddress}
+        openSeaLink={props.openSeaLink}
+      />
     )
   }
 
@@ -45,7 +45,7 @@ export const ExternalDrop: FC<ExternalDropProps> = ({
 
   return (
     <Button href={externalLinkHref} external className={className}>
-      {message}
+      {props.buttonText || message}
     </Button>
   )
 }
