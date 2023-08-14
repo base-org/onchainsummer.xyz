@@ -107,6 +107,7 @@ const Home = async ({ searchParams }: Props) => {
                             {...drop}
                             partner={name}
                             partnerIcon={icon}
+                            openSeaLink={drop.openSeaLink}
                             interactWithNFTLink={drop.interactWithNFTLink}
                             dataSuffix={siteDataSuffix}
                             dropDataSuffix={drop.dataSuffix}
