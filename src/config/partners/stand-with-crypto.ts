@@ -50,7 +50,7 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       buttonText: 'join',
     },
     {
-      image: '/partners/stand-with-crypto/drops/standWithCrypto3.jpg',
+      image: '/partners/stand-with-crypto/drops/standWithCrypto6.jpg',
       creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Call your representative',
       type: 'erc-721',
@@ -65,7 +65,7 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       buttonText: 'Contact',
     },
     {
-      image: '/partners/stand-with-crypto/drops/standWithCrypto4.jpg',
+      image: '/partners/stand-with-crypto/drops/standWithCrypto7.jpg',
       creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Submit a video and win a prize',
       type: 'erc-721',
@@ -79,7 +79,7 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       buttonText: 'Apply',
     },
     {
-      image: '/partners/stand-with-crypto/drops/standWithCrypto5.jpg',
+      image: '/partners/stand-with-crypto/drops/standWithCrypto4.jpg',
       creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Share your support',
       type: 'erc-721',
