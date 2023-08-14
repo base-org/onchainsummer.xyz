@@ -7,7 +7,7 @@ const rainbowWallet: Partner = {
   name: 'Rainbow',
   url: 'https://rainbow.me/',
   description:
-    'Become a Rainbow World citizen with your very own Citizens created by AdWorld.',
+    'Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld. Style your Citizen in technicolor skins and unlock loot by holding your favorite projects. Follow the 🌈 for more surprises 😈',
   brandColor: '#e9f2ff',
   icon: '/partners/rainbow-wallet/icon.png',
   banner: '/partners/rainbow-wallet/banner-icon.svg',

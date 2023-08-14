@@ -7,7 +7,7 @@ const zora: Partner = {
   name: 'Zora',
   url: 'https://zora.co/',
   description:
-    "Take part in Zora's hyperstructure culture as they bring their favorite artists to Onchain Summer.",
+    "Zora is bringing the world's imagination onchain. Imagine, mint and enjoy.",
   brandColor: '#000000',
   icon: '/partners/zora/icon.png',
   banner: '/partners/zora/banner-icon.svg',

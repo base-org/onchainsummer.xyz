@@ -7,7 +7,7 @@ const highlight: Partner = {
   name: 'Highlight',
   url: 'https://highlight.xyz/',
   description:
-    'Highlight, in partnership with four brilliant artists and Fingerprints DAO, is bringing generative art to Base. Discover and collect art supported by Highlight’s generative art toolkit',
+    'Highlight, in partnership with four brilliant artists and Fingerprints DAO, is bringing generative art to Base. Discover and collect art supported by Highlight’s generative art toolkit.',
   brandColor: '#000000',
   icon: '/partners/highlight/icon.png',
   banner: '/partners/highlight/banner-icon.svg',
