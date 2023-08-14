@@ -6,7 +6,7 @@ const fwb: Partner = {
   slug: 'fwb',
   name: 'FWB',
   url: 'https://www.fwb.help/',
-  description: `A unique piece designed by deekaymotion in collaboration with Cozomo de Medici`,
+  description: `A unique piece designed by DeeKay Motion in collaboration with Cozomo de Medici`,
   brandColor: '#000000',
   icon: '/partners/fwb/icon.png',
   banner: '/partners/fwb/banner-icon.svg',
