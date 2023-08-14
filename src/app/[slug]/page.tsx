@@ -69,6 +69,7 @@ const Page = async ({ params, searchParams }: Props) => {
                           interactWithNFTLink={drop.interactWithNFTLink}
                           dropDataSuffix={drop.dataSuffix}
                           buttonText={drop.buttonText}
+                          description={drop.description}
                         />
                       </li>
                     ))}

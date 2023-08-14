@@ -18,6 +18,7 @@ type DropCardProps = {
   image: string
   externalLink?: string
   name: string
+  description?: string
   startDate: number
   endDate: number
   price: string
@@ -37,6 +38,7 @@ export const DropCard: FC<DropCardProps> = ({
   image,
   partner,
   name,
+  description,
   externalLink,
   price,
   creator,
@@ -82,10 +84,16 @@ export const DropCard: FC<DropCardProps> = ({
         ) : (
           <span className="desktop-h3 line-clamp-2">{name}</span>
         )}
+
         <div>
-          <div className="mt-4 mb-8">
+          <div className="my-4">
             <AddressPill address={creator as Address} />
           </div>
+          {description && (
+            <span className="text-sm font-sans line-clamp-3 mb-8 text-ocs-gray font-sans">
+              {description}
+            </span>
+          )}
           {isExternalLink ? (
             <ExternalDrop
               endDate={endDate}
