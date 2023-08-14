@@ -1,17 +1,10 @@
+import moment from 'moment-timezone'
 import { getNow } from './getNow'
-
-const padNumber = (num: number) => {
-  return num < 10 ? `0${num}` : num
-}
 
 export const getDropDate = (spoofDate?: string | null) => {
   const now = getNow(spoofDate)
-  const date = new Date(now)
-  const year = date.getUTCFullYear()
-  const month = padNumber(date.getUTCMonth() + 1)
-  const hours = date.getUTCHours()
-  const day = hours >= 16 ? date.getUTCDate() : date.getUTCDate() - 1
-
-  const today = `${year}-${month}-${padNumber(day)}`
-  return today
+  const date = moment.tz(now, 'America/New_York')
+  return date.get('hour') >= 12
+    ? date.format('YYYY-MM-DD')
+    : date.subtract(1, 'day').format('YYYY-MM-DD')
 }
