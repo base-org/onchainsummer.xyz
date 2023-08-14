@@ -5,8 +5,9 @@ import { AddressPill } from '../AddressPill'
 import { Address } from 'wagmi'
 import { useValidateExternalLink } from '../ExternalDrop/useValidateExternalLink'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
-import { MintType } from '@/components/MintDialog/types'
+import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { NFTAsset } from '@/components/NFTAsset'
+import { Hex } from 'viem'
 
 type DropCardProps = {
   address: Address
@@ -23,6 +24,7 @@ type DropCardProps = {
   mintType?: MintType
   openSeaLink?: string
   interactWithNFTLink?: string
+  dataSuffix?: Hex
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -40,6 +42,7 @@ export const DropCard: FC<DropCardProps> = ({
   mintType,
   openSeaLink,
   interactWithNFTLink,
+  dataSuffix
 }) => {
   const {
     isExternalLink,
@@ -105,6 +108,7 @@ export const DropCard: FC<DropCardProps> = ({
               }
               openSeaLink={openSeaLink}
               interactWithNFTLink={interactWithNFTLink}
+              dataSuffix={dataSuffix || siteDataSuffix}
             />
           )}
         </div>

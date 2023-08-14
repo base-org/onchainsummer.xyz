@@ -21,7 +21,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
   setTxDetails,
   totalPrice,
 }) => {
-  const { mintDotFunStatus } = useMintDialogContext()
+  const { info: {mintDotFunStatus} } = useMintDialogContext()
   const logEvent = useLogEvent()
 
   if (!mintDotFunStatus) {

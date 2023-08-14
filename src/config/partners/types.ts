@@ -1,4 +1,5 @@
 import { MintType } from '@/components/MintDialog/types'
+import { Hex } from 'viem'
 
 export const DAY = 1000 * 60 * 60 * 24
 
@@ -22,6 +23,7 @@ export interface Drop {
   // TODO: Temp fix
   openSeaLink?: string
   interactWithNFTLink?: string
+  dataSuffix?: Hex
 }
 
 export interface Partner {

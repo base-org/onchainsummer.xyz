@@ -33,7 +33,7 @@ enum FundsStatus {
 }
 
 export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
-  const { price, crossMintClientId, trendingPageNativeMint, mintButtonStyles } =
+  const { info: {price, crossMintClientId, trendingPageNativeMint, mintButtonStyles} } =
     useMintDialogContext()
 
   const [open, setOpen] = useState(false)

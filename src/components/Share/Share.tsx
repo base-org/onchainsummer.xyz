@@ -12,7 +12,7 @@ const lensURL: string = 'https://lenster.xyz'
 
 type ShareComponentProps = {}
 export const Share: FC<ShareComponentProps> = () => {
-  const { dropName } = useMintDialogContext()
+  const { info: {dropName} } = useMintDialogContext()
   const {
     location: { href },
   } = window

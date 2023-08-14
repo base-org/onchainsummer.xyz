@@ -10,7 +10,7 @@ import { Countdown } from '@/components/Countdown'
 import { Address } from 'viem'
 import { NFTAsset } from '@/components/NFTAsset'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
-import { MintType } from '@/components/MintDialog/types'
+import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -85,6 +85,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 }
                 openSeaLink={headline.openSeaLink}
                 interactWithNFTLink={headline.interactWithNFTLink}
+                dataSuffix={headline.dataSuffix || siteDataSuffix}
               />
             )}
           </>
