@@ -45,6 +45,8 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
     "react-query": "^3.39.3",
+    "react-youtube": "^10.1.0",
+    "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "sass": "^1.63.6",
     "tailwindcss-radix": "^2.8.0",
