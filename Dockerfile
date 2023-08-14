@@ -18,6 +18,7 @@ COPY . .
 # Install dependencies (including dev, which are needed for build)
 RUN yarn --immutable --production=false
 
+RUN yarn generate
 RUN yarn build
 
 EXPOSE 3000
