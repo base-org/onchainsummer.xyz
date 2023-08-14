@@ -27,17 +27,23 @@ export type TxDetails = {
 
 enum FundsStatus {
   Sufficient,
-  Bridge, 
+  Bridge,
   InsufficientFromQuantity,
-  Insufficient
+  Insufficient,
 }
 
 export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
-  const { info: {price, crossMintClientId, trendingPageNativeMint, mintButtonStyles} } =
-    useMintDialogContext()
+  const {
+    info: {
+      price,
+      crossMintClientId,
+      trendingPageNativeMint,
+      mintButtonStyles,
+    },
+  } = useMintDialogContext()
 
   const [open, setOpen] = useState(false)
-  const {l2Balance, l1Balance} = useBalances();
+  const { l2Balance, l1Balance } = useBalances()
 
   const [txDetails, setTxDetails] = useState<TxDetails | null>(null)
   const [mintError, setMintError] = useState<any | null>(null)
@@ -49,49 +55,58 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
   }, [quantity, price])
 
   const [page, setPage] = useState<ModalPage>()
-  const {minL1BalanceWei, minL2BalanceWei} = useMintThresholds();
+  const { minL1BalanceWei, minL2BalanceWei } = useMintThresholds()
 
   const fundsStatus = useMemo(() => {
-    const totalPriceWei = parseEther(totalPrice);
+    const totalPriceWei = parseEther(totalPrice)
     if (l2Balance >= totalPriceWei + l2GasToMint) {
       return FundsStatus.Sufficient
     }
 
-    if (l2Balance >= minL2BalanceWei && l2Balance < totalPriceWei + l2GasToMint) {
+    if (
+      l2Balance >= minL2BalanceWei &&
+      l2Balance < totalPriceWei + l2GasToMint
+    ) {
       // we do not want to send them to bridge just because they increased quantity
-      // so we track this uniquely 
+      // so we track this uniquely
       return FundsStatus.InsufficientFromQuantity
     }
 
     if (l2Balance < minL2BalanceWei && l1Balance < minL1BalanceWei) {
       return FundsStatus.Insufficient
     }
-    
-    return FundsStatus.Bridge
 
+    return FundsStatus.Bridge
   }, [l1Balance, l2Balance, minL1BalanceWei, minL2BalanceWei, totalPrice])
-  
+
   useEffect(() => {
-    if (page && ![ModalPage.NATIVE_MINT, ModalPage.INSUFFICIENT_FUNDS, ModalPage.BRIDGE].includes(page)){
-      // do not update the page while other things are in progress 
+    if (
+      page &&
+      ![
+        ModalPage.NATIVE_MINT,
+        ModalPage.INSUFFICIENT_FUNDS,
+        ModalPage.BRIDGE,
+      ].includes(page)
+    ) {
+      // do not update the page while other things are in progress
       return
     }
 
-    switch (fundsStatus){
+    switch (fundsStatus) {
       case FundsStatus.Sufficient:
         setPage(ModalPage.NATIVE_MINT)
-        return;
+        return
       case FundsStatus.InsufficientFromQuantity:
       case FundsStatus.Insufficient:
-        // native mint component redirects to 
+        // native mint component redirects to
         // insufficient funds screen after mint is pressed
         setPage(ModalPage.NATIVE_MINT)
-        return;
+        return
       case FundsStatus.Bridge:
         setPage(ModalPage.BRIDGE)
-        return;
+        return
     }
-  }, [fundsStatus])
+  }, [fundsStatus, page])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -200,7 +215,10 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             txDetails={txDetails}
             setTxDetails={setTxDetails}
             setMintError={setMintError}
-            insufficientFunds={[FundsStatus.Insufficient, FundsStatus.InsufficientFromQuantity].includes(fundsStatus)}
+            insufficientFunds={[
+              FundsStatus.Insufficient,
+              FundsStatus.InsufficientFromQuantity,
+            ].includes(fundsStatus)}
           />
         )
       case ModalPage.BRIDGE:
@@ -216,7 +234,11 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       case ModalPage.INSUFFICIENT_FUNDS:
         return (
           <InsufficientFunds
-            minimalBalance={Number(formatEther((parseEther(totalPrice) - l2Balance + l2GasToMint))).toFixed(5).toString()}
+            minimalBalance={Number(
+              formatEther(parseEther(totalPrice) - l2Balance + l2GasToMint)
+            )
+              .toFixed(5)
+              .toString()}
             setPage={setPage}
             totalPrice={totalPrice}
           />
@@ -229,6 +251,8 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     crossMintOrderIdentifier,
     fundsStatus,
     l1Balance,
+    l2Balance,
+    minL2BalanceWei,
     mintError,
     page,
     quantity,
@@ -236,10 +260,13 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     txDetails,
   ])
 
-  const isDisplayingCrossMintForm =
-    page === ModalPage.CROSS_MINT_FORM ||
-    page === ModalPage.CROSS_MINT_PENDING ||
-    page === ModalPage.CROSS_MINT_PAYMENT_FAILED
+  const desktopHeightAuto =
+    page === ModalPage.NATIVE_MINTING_PENDING_TX ||
+    page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION ||
+    page === ModalPage.MINT_SUCCESS ||
+    page === ModalPage.BRIDGE ||
+    page === ModalPage.BRIDGE_PENDING ||
+    page === ModalPage.BRIDGE_SUCCESS
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -252,13 +279,16 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         <Dialog.Overlay className={dialogClasses.overlay} />
         <Dialog.Content
           className={clsx(
-            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] lg:max-w-7xl translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 lg:p-16 overflow-initial h-auto lg:h-auto lg:overflow-hidden',
-            { '!h-full': isDisplayingCrossMintForm }
+            'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 h-auto overflow-scroll',
+            'lg:max-w-5xl  lg:h-full lg:max-h-[85vh] lg:overflow-hidden',
+            {
+              'lg:!h-auto': desktopHeightAuto,
+            }
           )}
         >
           <Dialog.Close asChild>
             <button
-              className="p-[10px] lg:p-0 bg-white rounded-full lg:rounded-none z-30 lg:inline-flex absolute top-[1.75rem] right-[1.75rem] lg:top-10 lg:right-10 appearance-none items-center justify-center"
+              className="p-[10px] lg:p-0 bg-white rounded-full  z-30  absolute top-[1.75rem] right-[1.75rem] lg:rounded-none appearance-none items-center justify-center"
               aria-label="Close"
             >
               <Close height={20} width={20} />
