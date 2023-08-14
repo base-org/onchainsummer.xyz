@@ -28,8 +28,7 @@ const standWithCrypto: Partner = {
       crossMintClientId: '7acea657-ad34-46cb-8f10-368c455408b0',
       dataSuffix: {
         value: keccak256(toHex('US')).slice(0, 10) as Hex,
-        label: `I am a U.S. citizen or lawful permanent resident (i.e., a green card
-          holder). Checking this box will append data to your onchain transaction. [Privacy Policy](https://www.coinbase.com/legal/privacy)`,
+        label: `I am a US citizen or lawful permanent resident (i.e. a green card holder). Checking this box will append data to your onchain transaction to comply with US regulation. Donations from non-US residents cannot be used for electioneering purposes. [Stand with Crypto Alliance Privacy Policy] (https://www.standwithcrypto.org/privacy) [Coinbase Privacy Policy](https://www.coinbase.com/legal/privacy)`,
       },
       description: `This collectible commemorates the launch of the Stand With Crypto Alliance on August 14, 2023.
 
