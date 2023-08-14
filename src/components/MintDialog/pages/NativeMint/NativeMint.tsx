@@ -1,7 +1,7 @@
-import { ChangeEvent, FC, useCallback } from 'react'
+import { FC } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { MintType, ModalPage, siteDataSuffix } from '../../types'
+import { ModalPage } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -11,11 +11,11 @@ import { AddressPill } from '@/components/AddressPill'
 import { PartnerInfo } from '../../elements/PartnerInfo'
 
 import { MintDotFunMinter } from '../../elements/MintDotFunMinter'
-import dialogClasses from '@/components/dialog.module.css'
 import { l2 } from '@/config/chain'
 import { Quantity } from '../../elements/Quantity'
 import { Address, useNetwork, useSwitchNetwork } from 'wagmi'
-import ReactMarkdown from 'react-markdown'
+
+import { CitzienshipCheckbox } from '../../elements/CitzienshipCheckbox'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -60,20 +60,10 @@ export const NativeMint: FC<NativeMintProps> = ({
 
   const isMintDotFun = typeof mintDotFunStatus === 'object'
 
-  const handleDataSuffixChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      setInfo((prevState) => ({
-        ...prevState,
-        dataSuffix: e.target.checked ? dropDataSuffix!.value : siteDataSuffix,
-      }))
-    },
-    [dropDataSuffix, setInfo]
-  )
-
   return (
     <>
       {!isPending ? <PartnerInfo /> : null}
-      {/* TODO: Add Coinbase Display font */}
+
       <Dialog.Title
         className={clsx('desktop-h2', 'lg:mt-2', {
           hidden: isPending,
@@ -102,30 +92,7 @@ export const NativeMint: FC<NativeMintProps> = ({
           </span>
         </Dialog.Description>
 
-        {dropDataSuffix && (
-          <div className="flex mt-5">
-            <input
-              onChange={handleDataSuffixChange}
-              id="dataSuffix"
-              type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:bg-ocs-blue focus:ring-2"
-            />
-            <label
-              htmlFor="dataSuffix"
-              className="ml-2 desktop-body text-[14px] text-gray-900"
-            >
-              <ReactMarkdown
-                components={{
-                  a: ({ node, ...props }) => (
-                    <a {...props} className="font-medium" target="_blank" />
-                  ),
-                }}
-              >
-                {dropDataSuffix.label}
-              </ReactMarkdown>
-            </label>
-          </div>
-        )}
+        <CitzienshipCheckbox />
 
         {wrongChain && switchNetwork ? (
           <Button onClick={() => switchNetwork(l2.id)}>Switch to Base</Button>
