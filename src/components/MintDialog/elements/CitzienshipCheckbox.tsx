@@ -29,7 +29,7 @@ export const CitzienshipCheckbox: FC<CitzienshipCheckboxProps> = ({}) => {
   }
 
   return (
-    <div className="flex gap-2.5 text-[0.875rem] leading-[20px] text-[#444]">
+    <div className="flex gap-2.5 text-[0.875rem] leading-[20px] text-[#444] my-[35px]">
       <Checkbox.Root
         checked={dataSuffix === dropDataSuffix.value}
         onCheckedChange={handleDataSuffixChange}
