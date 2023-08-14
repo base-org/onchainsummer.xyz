@@ -49,7 +49,7 @@ export const DropCard: FC<DropCardProps> = ({
   dataSuffix,
   dropDataSuffix,
   interactWithNFTLink,
-  buttonText
+  buttonText,
 }) => {
   const {
     isExternalLink,
@@ -90,7 +90,7 @@ export const DropCard: FC<DropCardProps> = ({
             <AddressPill address={creator as Address} />
           </div>
           {description && (
-            <span className="text-sm font-sans line-clamp-3 mb-8 text-ocs-gray font-sans">
+            <span className="text-sm line-clamp-3 mb-8 text-ocs-gray font-sans">
               {description}
             </span>
           )}
