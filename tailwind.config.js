@@ -34,6 +34,7 @@ module.exports = {
         'ocs-turquoise': '#54DCE7',
         'ocs-gray': '#444444',
         'light-palette-line': 'rgba(91, 97, 110, 0.20)',
+        'light-palette-line-heavy': 'rgba(91, 97, 110, 0.66)',
       },
       boxShadow: {
         card: '6px 6px 0px #010101',
@@ -109,5 +110,6 @@ module.exports = {
       addUtilities(newUtilities)
     },
     require('@tailwindcss/typography'),
+    require('tailwindcss-radix'),
   ],
 }
