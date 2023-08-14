@@ -17,7 +17,7 @@ const standWithCrypto: Partner = {
   drops: [
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto1.mp4',
-      creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
+      creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Stand with Crypto Supporter',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -33,39 +33,41 @@ const standWithCrypto: Partner = {
       },
       description: `This collectible commemorates the launch of the Stand With Crypto Alliance on August 14, 2023.
 
-Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.S. All proceeds benefit the Alliance.`
+Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.S. All proceeds benefit the Alliance.`,
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto2.jpg',
-      creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
+      creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Join Stand With Crypto',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      externalLink: 'https://www.standwithcrypto.org/?action=join-stand-with-crypto',
+      externalLink:
+        'https://www.standwithcrypto.org/?action=join-stand-with-crypto',
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
-      buttonText: 'join'
+      buttonText: 'join',
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto3.jpg',
-      creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
+      creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Call your representative',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      externalLink: 'https://www.standwithcrypto.org/?action=email-representative',
+      externalLink:
+        'https://www.standwithcrypto.org/?action=email-representative',
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
-      buttonText: 'Contact'
+      buttonText: 'Contact',
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto4.jpg',
-      creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
+      creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Submit a video and win a prize',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -75,21 +77,22 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
-      buttonText: 'Apply'
+      buttonText: 'Apply',
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto5.jpg',
-      creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
+      creator: '0xc2A6116e9a1f9aDD1Bb87EEF308f216Bb0304c38',
       name: 'Share your support',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      externalLink: 'https://twitter.com/intent/tweet?&text=I%20%23standwithcrypto.%20So%20can%20you.%20Join%20standwithcrypto.org',
+      externalLink:
+        'https://twitter.com/intent/tweet?&text=I%20%23standwithcrypto.%20So%20can%20you.%20Join%20standwithcrypto.org',
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
-      buttonText: 'post'
+      buttonText: 'post',
     },
   ],
 }
