@@ -27,7 +27,7 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   setTxDetails,
   setMintError,
 }) => {
-  const { info: {address, mintType, creatorAddress, dataSuffix} } = useMintDialogContext()
+  const { info: {address, mintType, creatorAddress, dataSuffix}, setInfo } = useMintDialogContext()
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined)
   const { address: account } = useAccount()
   const { data: txReceipt } = useWaitForTransaction({
@@ -93,13 +93,15 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
               value: price,
               dataSuffix: dataSuffix
             })
-            return walletClient.writeContract(request)
+            const response = await walletClient.writeContract(request)
+            setInfo(prevState => ({...prevState, dataSuffix: siteDataSuffix}))
+            return response
         }
       default:
         console.log(`invalid mint type ${mintType} for native mint`)
         setPage(ModalPage.MINT_ERROR)
     }
-  }, [mintType, setPage, account, address, quantity, creatorAddress, price, publicClient, walletClient, dataSuffix])
+  }, [mintType, setPage, account, address, quantity, creatorAddress, price, publicClient, walletClient, dataSuffix, setInfo])
 
   useEffect(() => {
     if (!txReceipt) return
