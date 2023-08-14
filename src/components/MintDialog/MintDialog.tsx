@@ -280,7 +280,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         <Dialog.Content
           className={clsx(
             'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 h-auto overflow-scroll',
-            'lg:max-w-5xl lg:p-16 lg:h-full lg:overflow-hidden',
+            'lg:max-w-5xl  lg:h-full lg:max-h-[85vh] lg:overflow-hidden',
             {
               'lg:!h-auto': desktopHeightAuto,
             }
@@ -288,7 +288,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         >
           <Dialog.Close asChild>
             <button
-              className="p-[10px] lg:p-0 bg-white rounded-full lg:rounded-none z-30 lg:inline-flex absolute top-[1.75rem] right-[1.75rem] lg:top-10 lg:right-10 appearance-none items-center justify-center"
+              className="p-[10px] lg:p-0 bg-white rounded-full  z-30  absolute top-[1.75rem] right-[1.75rem] lg:rounded-none appearance-none items-center justify-center"
               aria-label="Close"
             >
               <Close height={20} width={20} />
