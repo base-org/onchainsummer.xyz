@@ -57,7 +57,9 @@ export default function Trending() {
                 <p className="desktop-mono !text-[#858585] uppercase">
                   Powered by{' '}
                 </p>
-                <a href='https://mint.fun' target="_blank"><MintDotFun /></a>
+                <a href="https://mint.fun" target="_blank">
+                  <MintDotFun />
+                </a>
                 <span className="sr-only">mint.fun</span>
               </div>
             </div>

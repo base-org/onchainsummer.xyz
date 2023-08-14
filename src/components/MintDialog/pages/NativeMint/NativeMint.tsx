@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { ChangeEvent, FC, useCallback } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { NativeMintButton } from '../../elements/NativeMintButton'
-import { MintType, ModalPage } from '../../types'
+import { MintType, ModalPage, siteDataSuffix } from '../../types'
 import { Button } from '@/components/Button'
 import { Pending } from '../../elements/Pending'
 import clsx from 'clsx'
@@ -15,6 +15,7 @@ import dialogClasses from '@/components/dialog.module.css'
 import { l2 } from '@/config/chain'
 import { Quantity } from '../../elements/Quantity'
 import { Address, useNetwork, useSwitchNetwork } from 'wagmi'
+import ReactMarkdown from 'react-markdown'
 interface NativeMintProps {
   page: ModalPage
   setPage: React.Dispatch<ModalPage>
@@ -42,14 +43,32 @@ export const NativeMint: FC<NativeMintProps> = ({
   const network = useNetwork()
 
   const wrongChain = network.chain?.id !== l2.id
-  const { info: {creatorAddress, dropName, crossMintClientId, mintDotFunStatus} } =
-    useMintDialogContext()
+  const {
+    info: {
+      creatorAddress,
+      dropName,
+      crossMintClientId,
+      mintDotFunStatus,
+      dropDataSuffix,
+    },
+    setInfo,
+  } = useMintDialogContext()
   const isPendingConfirmation =
     page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION
   const isPendingTx = page === ModalPage.NATIVE_MINTING_PENDING_TX
   const isPending = isPendingConfirmation || isPendingTx
 
   const isMintDotFun = typeof mintDotFunStatus === 'object'
+
+  const handleDataSuffixChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      setInfo((prevState) => ({
+        ...prevState,
+        dataSuffix: e.target.checked ? dropDataSuffix!.value : siteDataSuffix,
+      }))
+    },
+    [dropDataSuffix, setInfo]
+  )
 
   return (
     <>
@@ -82,6 +101,31 @@ export const NativeMint: FC<NativeMintProps> = ({
             <span>{totalPrice} ETH</span>
           </span>
         </Dialog.Description>
+
+        {dropDataSuffix && (
+          <div className="flex mt-5">
+            <input
+              onChange={handleDataSuffixChange}
+              id="dataSuffix"
+              type="checkbox"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:bg-ocs-blue focus:ring-2"
+            />
+            <label
+              htmlFor="dataSuffix"
+              className="ml-2 desktop-body text-[14px] text-gray-900"
+            >
+              <ReactMarkdown
+                components={{
+                  a: ({ node, ...props }) => (
+                    <a {...props} className="font-medium" target="_blank" />
+                  ),
+                }}
+              >
+                {dropDataSuffix.label}
+              </ReactMarkdown>
+            </label>
+          </div>
+        )}
 
         {wrongChain && switchNetwork ? (
           <Button onClick={() => switchNetwork(l2.id)}>Switch to Base</Button>

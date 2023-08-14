@@ -5,6 +5,11 @@ export const DAY = 1000 * 60 * 60 * 24
 
 export type DropType = 'erc-721' | 'zora-erc-1155' | 'external'
 
+export interface DropDataSuffix {
+  value: Hex
+  label: string
+}
+
 export interface Drop {
   image: string
   name: string
@@ -23,7 +28,7 @@ export interface Drop {
   // TODO: Temp fix
   openSeaLink?: string
   interactWithNFTLink?: string
-  dataSuffix?: Hex
+  dataSuffix?: DropDataSuffix
 }
 
 export interface Partner {

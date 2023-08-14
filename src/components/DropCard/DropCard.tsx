@@ -8,6 +8,7 @@ import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { NFTAsset } from '@/components/NFTAsset'
 import { Hex } from 'viem'
+import { DropDataSuffix } from '@/config/partners/types'
 
 type DropCardProps = {
   address: Address
@@ -24,7 +25,8 @@ type DropCardProps = {
   mintType?: MintType
   openSeaLink?: string
   interactWithNFTLink?: string
-  dataSuffix?: Hex
+  dataSuffix: Hex
+  dropDataSuffix?: DropDataSuffix
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -41,8 +43,9 @@ export const DropCard: FC<DropCardProps> = ({
   endDate,
   mintType,
   openSeaLink,
+  dataSuffix,
+  dropDataSuffix,
   interactWithNFTLink,
-  dataSuffix
 }) => {
   const {
     isExternalLink,
@@ -108,7 +111,8 @@ export const DropCard: FC<DropCardProps> = ({
               }
               openSeaLink={openSeaLink}
               interactWithNFTLink={interactWithNFTLink}
-              dataSuffix={dataSuffix || siteDataSuffix}
+              dataSuffix={siteDataSuffix}
+              dropDataSuffix={dropDataSuffix}
             />
           )}
         </div>
