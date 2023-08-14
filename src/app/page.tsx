@@ -99,7 +99,7 @@ const Home = async ({ searchParams }: Props) => {
                     </h2>
                   </div>
                   <div className="w-full">
-                    <div className="prose">
+                    <div className="prose w-full">
                       <ReactMarkdown
                         content={`${article.content.body.slice(0, 500)} ...`}
                       />

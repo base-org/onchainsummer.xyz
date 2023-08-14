@@ -6,7 +6,6 @@ import remarkGfm from 'remark-gfm'
 import YouTube from 'react-youtube'
 
 import unreset from './unreset.module.scss'
-
 interface ReactMarkdownProps {
   content: string
 }
@@ -28,7 +27,14 @@ export const ReactMarkdown: FC<ReactMarkdownProps> = ({ content }) => {
             return <a {...props} target="_blank" rel="noopener noreferrer" />
           }
 
-          return <YouTube videoId={youtubeId} />
+          return (
+            <div className="relative w-full">
+              <YouTube
+                videoId={youtubeId}
+                className="w-full [&>iframe]:w-full"
+              />
+            </div>
+          )
         },
       }}
     >
