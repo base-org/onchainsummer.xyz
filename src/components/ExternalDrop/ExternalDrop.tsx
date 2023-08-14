@@ -12,6 +12,7 @@ export interface ExternalDropProps {
   contractAddress: string
   className?: string
   openSeaLink?: string
+  buttonText?: string
 }
 
 export const ExternalDrop: FC<ExternalDropProps> = ({
@@ -44,7 +45,7 @@ export const ExternalDrop: FC<ExternalDropProps> = ({
 
   return (
     <Button href={externalLinkHref} external className={className}>
-      {message}
+      {props.buttonText || message}
     </Button>
   )
 }
