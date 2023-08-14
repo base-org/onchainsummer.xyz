@@ -29,7 +29,7 @@ const standWithCrypto: Partner = {
       dataSuffix: {
         value: keccak256(toHex('US')).slice(0, 10) as Hex,
         label: `I am a U.S. citizen or lawful permanent resident (i.e., a green card
-          holder). [Privacy Policy](https://www.coinbase.com/legal/privacy)`,
+          holder). Checking this box will append data to your onchain transaction. [Privacy Policy](https://www.coinbase.com/legal/privacy)`,
       },
       description: `This collectible commemorates the launch of the Stand With Crypto Alliance on August 14, 2023.
 
