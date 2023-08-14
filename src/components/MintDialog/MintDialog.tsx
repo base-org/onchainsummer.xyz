@@ -260,10 +260,13 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     txDetails,
   ])
 
-  const isDisplayingCrossMintForm =
-    page === ModalPage.CROSS_MINT_FORM ||
-    page === ModalPage.CROSS_MINT_PENDING ||
-    page === ModalPage.CROSS_MINT_PAYMENT_FAILED
+  const desktopHeightAuto =
+    page === ModalPage.NATIVE_MINTING_PENDING_TX ||
+    page === ModalPage.NATIVE_MINT_PENDING_CONFIRMATION ||
+    page === ModalPage.MINT_SUCCESS ||
+    page === ModalPage.BRIDGE ||
+    page === ModalPage.BRIDGE_PENDING ||
+    page === ModalPage.BRIDGE_SUCCESS
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -277,7 +280,10 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         <Dialog.Content
           className={clsx(
             'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 h-auto overflow-scroll',
-            'lg:max-w-5xl lg:p-16 lg:h-full lg:overflow-hidden'
+            'lg:max-w-5xl lg:p-16 lg:h-full lg:overflow-hidden',
+            {
+              'lg:!h-auto': desktopHeightAuto,
+            }
           )}
         >
           <Dialog.Close asChild>
