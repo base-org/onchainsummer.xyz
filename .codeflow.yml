@@ -2,4 +2,5 @@
 secure:
   required_reviews: 1
   requires_mfa: true
+  requires_verified: true
   upstream_repository: base-org/onchainsummer.xyz
