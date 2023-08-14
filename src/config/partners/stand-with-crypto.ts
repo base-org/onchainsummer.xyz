@@ -47,11 +47,12 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
+      buttonText: 'join'
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto3.jpg',
       creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
-      name: 'Tell your representative to support pro-crypto policies',
+      name: 'Call your representative',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -60,11 +61,12 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
+      buttonText: 'Contact'
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto4.jpg',
       creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
-      name: 'Apply for a 5 ETH grant',
+      name: 'Submit a video and win a prize',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -73,11 +75,12 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
+      buttonText: 'Apply'
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto5.jpg',
       creator: '0x4B0e6c1f66cA950B22e9Eaa8f075F0944a705B03',
-      name: 'Tweet your support for #StandwithCrypto',
+      name: 'Share your support',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 14, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 12, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -86,6 +89,7 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       mintType: MintType.External,
       address: '0x',
       crossMintClientId: '',
+      buttonText: 'post'
     },
   ],
 }

@@ -81,6 +81,7 @@ const Home = async ({ searchParams }: Props) => {
                             interactWithNFTLink={drop.interactWithNFTLink}
                             dataSuffix={siteDataSuffix}
                             dropDataSuffix={drop.dataSuffix}
+                            buttonText={drop.buttonText}
                           />
                         </li>
                       ))}

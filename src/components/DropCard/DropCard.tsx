@@ -27,6 +27,7 @@ type DropCardProps = {
   interactWithNFTLink?: string
   dataSuffix: Hex
   dropDataSuffix?: DropDataSuffix
+  buttonText?: string
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -46,6 +47,7 @@ export const DropCard: FC<DropCardProps> = ({
   dataSuffix,
   dropDataSuffix,
   interactWithNFTLink,
+  buttonText
 }) => {
   const {
     isExternalLink,
@@ -93,6 +95,7 @@ export const DropCard: FC<DropCardProps> = ({
               contractAddress={address}
               openSeaLink={openSeaLink}
               className="!flex !justify-center mt-auto"
+              buttonText={buttonText}
             />
           ) : (
             <MintButton
