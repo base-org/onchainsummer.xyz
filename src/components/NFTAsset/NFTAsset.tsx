@@ -27,7 +27,7 @@ export const NFTAsset: FC<NFTAssetProps> = ({
       muted={!!muted}
       autoPlay={!!autoPlay}
       {...props}
-      className="z-10 relative"
+      className="z-10 relative rounded-t-2xl"
     >
       <source src={source} type="video/mp4" />
     </video>

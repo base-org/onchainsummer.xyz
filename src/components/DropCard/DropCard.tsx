@@ -47,7 +47,7 @@ export const DropCard: FC<DropCardProps> = ({
   dataSuffix,
   dropDataSuffix,
   interactWithNFTLink,
-  buttonText
+  buttonText,
 }) => {
   const {
     isExternalLink,
