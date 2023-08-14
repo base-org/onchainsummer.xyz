@@ -5,9 +5,6 @@ type ArticleType = { content: { body: string; title: string } } | undefined
 
 export async function POST(request: NextRequest) {
   try {
-    if (request.headers.get('x-api-key') !== process.env.OCS_API_KEY)
-      return NextResponse.json({}, { status: 401 })
-
     const { digestId } = await request.json()
 
     if (!digestId) return NextResponse.json({}, { status: 400 })
