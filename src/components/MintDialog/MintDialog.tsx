@@ -106,7 +106,8 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         setPage(ModalPage.BRIDGE)
         return
     }
-  }, [fundsStatus, page])
+    // Intentionally leaving out `page` from deps here
+  }, [fundsStatus])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
