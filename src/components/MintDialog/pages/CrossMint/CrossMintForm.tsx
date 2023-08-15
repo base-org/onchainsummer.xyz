@@ -41,10 +41,7 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
   totalPrice,
 }) => {
   const {
-    info:
-    {mintType,
-    crossMintClientId: clientId,
-    creatorAddress}
+    info: { mintType, crossMintClientId: clientId, creatorAddress },
   } = useMintDialogContext()
   const [prepared, setPrepared] = useState(false)
   const paymentProcessing = page === ModalPage.CROSS_MINT_PENDING
@@ -56,15 +53,13 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
       <h3 className="my-2 font-medium text-lg">Mint with Credit Card</h3>
       <CrossmintPaymentElement
         emailInputOptions={{ show: true }}
-        experimental={{
-          useCardWalletEmail: true,
-        }}
         clientId={clientId || ''}
         environment={environment}
         recipient={{
           email: email,
           wallet: walletAddress,
         }}
+        cardWalletPaymentMethods={['google-pay']}
         currency="USD" // TODO: Do we support EUR?
         locale="en-US" // TODO: Do we support es-ES?
         mintConfig={
