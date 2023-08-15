@@ -65,7 +65,7 @@ export const DropCard: FC<DropCardProps> = ({
 
   return (
     <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
-      <div className="relative w-full aspect-[4/3]">
+      <div className="relative w-full aspect-[4/3] bg-black flex items-center rounded-t-2xl md:rounded-t-3xl">
         <NFTAsset
           source={image}
           name={`${name} from ${partner}`}
