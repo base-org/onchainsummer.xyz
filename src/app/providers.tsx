@@ -17,6 +17,7 @@ import {
 import { configureChains, createConfig, mainnet, WagmiConfig } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { l1, l2 } from '@/config/chain'
+import { DesiredNetworkContextProvider } from '@/components/DesiredNetworkContext/DesiredNetworkContext'
 
 const { chains, publicClient } = configureChains(
   l1.id == mainnet.id ? [l2, l1] : [l2, l1, mainnet], // so that ens always works
@@ -65,7 +66,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
           disclaimer: Disclaimer,
         }}
       >
-        {mounted && <div className="flex flex-col h-full"> {children} </div>}
+        <DesiredNetworkContextProvider>
+          {mounted && <div className="flex flex-col h-full"> {children} </div>}
+        </DesiredNetworkContextProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   )

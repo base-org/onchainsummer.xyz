@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react'
+import { FC, useEffect, useMemo } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { formatEther } from 'ethers/lib/utils'
@@ -8,6 +8,7 @@ import useBalances from '@/utils/useBalances'
 import { l1 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 import { ModalPage } from '../../types'
+import { useDesiredNetworkContext } from '@/components/DesiredNetworkContext/useDesiredNetworkContext'
 
 interface NotStartedProps {
   amount: string
@@ -28,6 +29,7 @@ export const NotStarted: FC<NotStartedProps> = ({
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const { chain } = useNetwork()
+  const { setDesiredNetwork } = useDesiredNetworkContext()
 
   const wrongChain = chain && chain.id !== l1.id
 
@@ -92,7 +94,13 @@ export const NotStarted: FC<NotStartedProps> = ({
         </div>
         <div className="flex flex-col gap-4">
           {wrongChain && switchNetwork ? (
-            <Button onClick={() => switchNetwork(l1.id)}>Switch to L1</Button>
+            <Button
+              onClick={() => {
+                setDesiredNetwork(l1)
+              }}
+            >
+              Switch to L1
+            </Button>
           ) : (
             <Button disabled={!amount} onClick={bridge}>
               Bridge now

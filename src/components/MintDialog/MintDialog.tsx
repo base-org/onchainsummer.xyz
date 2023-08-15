@@ -21,6 +21,8 @@ import dialogClasses from '@/components/dialog.module.css'
 import useBalances from '@/utils/useBalances'
 import { Checkmark } from '../icons/Checkmark'
 import { l2GasToMint, useMintThresholds } from '@/utils/useMintThresholds'
+import { useDesiredNetworkContext } from '../DesiredNetworkContext/useDesiredNetworkContext'
+import { l2 } from '@/config/chain'
 export type TxDetails = {
   hash: string
 }
@@ -41,6 +43,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       mintButtonStyles,
     },
   } = useMintDialogContext()
+  const { setDesiredNetwork } = useDesiredNetworkContext()
 
   const [open, setOpen] = useState(false)
   const { l2Balance, l1Balance } = useBalances()
@@ -110,12 +113,31 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fundsStatus])
 
+  useEffect(() => {
+    if (
+      page &&
+      ![
+        ModalPage.BRIDGE_PENDING,
+        ModalPage.BRIDGE_SUCCESS,
+        ModalPage.BRIDGE,
+      ].includes(page)
+    ) {
+      setDesiredNetwork(l2)
+    }
+  }, [page, setDesiredNetwork])
+
   const resetModal = () => {
+    setDesiredNetwork(l2)
     setPage(ModalPage.NATIVE_MINT)
     setTxDetails(null)
     setMintError(null)
     setCrossMintOrderIdentifier('')
     setQuantity(1)
+  }
+
+  const closeModal = () => {
+    setOpen(false)
+    setDesiredNetwork(l2)
   }
 
   const buttonTitle = useMemo(() => {
@@ -187,7 +209,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
           <Success
             resetModal={resetModal}
             txHash={txDetails?.hash ?? ''}
-            closeModal={() => setOpen(false)}
+            closeModal={closeModal}
           />
         )
       case ModalPage.CROSS_MINT_FORM:
@@ -271,7 +293,16 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     page === ModalPage.BRIDGE_SUCCESS
 
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
+    <Dialog.Root
+      open={open}
+      onOpenChange={(open) => {
+        if (open) {
+          setOpen(open)
+        } else {
+          closeModal()
+        }
+      }}
+    >
       <Dialog.Trigger asChild>
         <Button size={size} tabIndex={-1} className={clsx(mintButtonStyles)}>
           {buttonTitle}
