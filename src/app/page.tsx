@@ -67,7 +67,7 @@ const Home = async ({ searchParams }: Props) => {
                 </p>
               </div>
             </div>
-            {drops?.length > 4 && (
+            {drops?.length > 4 ? (
               <div className="-mr-4 mb-4 md:mb-14">
                 <div className="overflow-auto">
                   <div className="overflow-y-hidden">
@@ -92,8 +92,7 @@ const Home = async ({ searchParams }: Props) => {
                   </div>
                 </div>
               </div>
-            )}
-            {drops?.length <= 4 && (
+            ) : (
               <div className="mb-4 md:mb-14">
                 <div className="overflow-scroll hide-scrollbar">
                   <div className="flex overflow-x-scroll md:overflow-x-auto hide-scrollbar w-full">
