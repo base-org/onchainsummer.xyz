@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 import { Card } from '../Card'
 import { MintButton } from '../MintButton'
