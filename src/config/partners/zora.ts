@@ -64,7 +64,7 @@ const zora: Partner = {
     {
       image: '/partners/zora/drops/FINAL_ART-MalihaAbidi.jpg',
       creator: '0x7be470E6DC93855338a4Cc85D47447811421C7c8',
-      name: 'a paragon',
+      name: 'A Paragon',
       externalLink:
         'https://zora.co/collect/base:0xb999ec5e57000540cbf821addbc69c37bf506f9f',
       type: 'external',
