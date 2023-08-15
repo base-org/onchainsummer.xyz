@@ -100,7 +100,7 @@ const Home = async ({ searchParams }: Props) => {
                       {stretchCarouselDrops?.map((drop) => (
                         <li
                           key={drop.name}
-                          className="flex flex-col flex-1 stretched-drop-card md:[&>div]:w-full [&>div]:rounded-2xl"
+                          className="flex flex-col flex-1 stretched-drop-card md:[&>div]:w-full "
                         >
                           <DropCard
                             {...drop}
