@@ -32,7 +32,7 @@ const zora: Partner = {
       crossMintClientId: '',
     },
     {
-      image: `https://assets.onchainsummer.xyz/FINAL_ART-Jah-Helmet%20City-Mecha_Gardens(TeaserTrailer).mp4`,
+      image: `/partners/zora/drops/Jah.png`,
       creator: '0x9ED5c1B24478f5069fEbd8359A3869F971C365c3',
       name: 'Helmet City: Mecha Gardens (teaser trailer)',
       externalLink:
@@ -47,7 +47,7 @@ const zora: Partner = {
       crossMintClientId: '',
     },
     {
-      image: `https://assets.onchainsummer.xyz/FINAL_ART-Heno-CAN'T_LOSE_MY_COOL.mp4`,
+      image: `/partners/zora/drops/Heno.png`,
       creator: '0xa838829224dA02187bf5983f280f8F3abE5FdA06',
       name: `Can't Lose My Cool`,
       externalLink:
