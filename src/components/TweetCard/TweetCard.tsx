@@ -27,7 +27,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
       className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px]"
       target="_blank"
     >
-      <div>
+      <div className="flex flex-col h-full">
         <div className="flex justify-between">
           <div className="flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -57,14 +57,20 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             }}
           >
             {tweet.text.length > 100
-              ? tweet.text.substring(0, tweet.text.indexOf(' ', media ? 100 : Math.min(tweet.text.length, 240))) + '...'
+              ? tweet.text.substring(
+                  0,
+                  tweet.text.indexOf(
+                    ' ',
+                    media ? 100 : Math.min(tweet.text.length, 240)
+                  )
+                ) + '...'
               : tweet.text}
           </ReactMarkdown>
         </div>
         {media ? (
           media?.variants?.[0]?.content_type === 'video/mp4' ? (
             <video
-              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
+              className="mt-auto rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
               controls
               muted
               loop
@@ -75,7 +81,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              className="mt-2 rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
+              className="mt-auto rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
               src={media.preview_image_url || media.url}
               alt="tweet media"
             />
