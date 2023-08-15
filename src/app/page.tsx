@@ -67,7 +67,7 @@ const Home = async ({ searchParams }: Props) => {
                 </p>
               </div>
             </div>
-            {drops?.length > 4 && (
+            {drops?.length > 4 ? (
               <div className="-mr-4 mb-4 md:mb-14">
                 <div className="overflow-auto">
                   <div className="overflow-y-hidden">
@@ -92,8 +92,7 @@ const Home = async ({ searchParams }: Props) => {
                   </div>
                 </div>
               </div>
-            )}
-            {drops?.length <= 4 && (
+            ) : (
               <div className="mb-4 md:mb-14">
                 <div className="overflow-scroll hide-scrollbar">
                   <div className="flex overflow-x-scroll md:overflow-x-auto hide-scrollbar w-full">
@@ -112,6 +111,7 @@ const Home = async ({ searchParams }: Props) => {
                             dataSuffix={siteDataSuffix}
                             dropDataSuffix={drop.dataSuffix}
                             buttonText={drop.buttonText}
+                            description={drop.description}
                           />
                         </li>
                       ))}
@@ -129,7 +129,7 @@ const Home = async ({ searchParams }: Props) => {
                     </h2>
                   </div>
                   <div className="w-full">
-                    <div className="prose">
+                    <div className="prose w-full">
                       <ReactMarkdown
                         content={`${article.content.body.slice(0, 500)} ...`}
                       />

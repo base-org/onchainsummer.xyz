@@ -1,3 +1,4 @@
+import moment from 'moment-timezone'
 import isValid from 'date-fns/isValid'
 const defaultSpoofDate = process.env.NEXT_PUBLIC_SPOOF_DATE
 const ALLOW_SPOOFING = defaultSpoofDate !== undefined
@@ -13,26 +14,18 @@ const getSpoofDateFromParams = () => {
 
 export const getNow = (spoofDate?: string | null) => {
   const value = spoofDate || getSpoofDateFromParams() || defaultSpoofDate
-  const nowUTC = new Date().getTime()
+  const nowUTC = moment().tz('America/New_York').toDate().getTime()
 
   if (!ALLOW_SPOOFING) {
     return nowUTC
   }
 
-  const spoofedDate = value ? new Date(value) : undefined
+  const spoofedDate = moment(value).tz('America/New_York')
 
-  const isValidDate = isValid(spoofedDate)
+  const isValidDate = isValid(spoofedDate.toDate())
 
   if (isValidDate && spoofedDate) {
-    return Date.UTC(
-      spoofedDate.getFullYear(),
-      spoofedDate.getMonth(),
-      spoofedDate.getDate(),
-      spoofedDate.getHours(),
-      spoofedDate.getMinutes(),
-      spoofedDate.getSeconds(),
-      spoofedDate.getMilliseconds()
-    )
+    return spoofedDate.toDate().getTime()
   }
 
   return nowUTC

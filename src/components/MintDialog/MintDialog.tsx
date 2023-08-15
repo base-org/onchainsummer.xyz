@@ -106,7 +106,8 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         setPage(ModalPage.BRIDGE)
         return
     }
-  }, [fundsStatus, page])
+    // Intentionally leaving out `page` from deps here
+  }, [fundsStatus])
 
   const resetModal = () => {
     setPage(ModalPage.NATIVE_MINT)
@@ -280,7 +281,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         <Dialog.Content
           className={clsx(
             'data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[24px] p-5 shadow-large bg-white focus:outline-none z-40 h-auto overflow-scroll',
-            'lg:max-w-5xl lg:p-16 lg:h-full lg:overflow-hidden',
+            'lg:max-w-5xl lg:p-16 lg:h-full lg:max-h-[600px] lg:overflow-hidden',
             {
               'lg:!h-auto': desktopHeightAuto,
             }

@@ -29,7 +29,7 @@ export const CitzienshipCheckbox: FC<CitzienshipCheckboxProps> = ({}) => {
   }
 
   return (
-    <div className="flex gap-2.5 text-[0.875rem] leading-[20px] text-[#444] my-[5px]">
+    <div className="flex gap-2.5 text-[0.875rem] leading-[20px] text-[#444] my-2">
       <Checkbox.Root
         checked={dataSuffix === dropDataSuffix.value}
         onCheckedChange={handleDataSuffixChange}
@@ -42,6 +42,7 @@ export const CitzienshipCheckbox: FC<CitzienshipCheckboxProps> = ({}) => {
       </Checkbox.Root>
       <label htmlFor="dataSuffix">
         <ReactMarkdown
+        className="text-[10px]"
           components={{
             a: ({ node, ...props }) => (
               <a {...props} className="font-medium" target="_blank" />
