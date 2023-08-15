@@ -82,6 +82,7 @@ const Home = async ({ searchParams }: Props) => {
                             dataSuffix={siteDataSuffix}
                             dropDataSuffix={drop.dataSuffix}
                             buttonText={drop.buttonText}
+                            description={drop.description}
                           />
                         </li>
                       ))}
