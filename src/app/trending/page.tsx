@@ -15,7 +15,7 @@ import { l2 } from '@/config/chain'
 import { getTrendingData } from '@/utils/getTrendingData'
 import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { shortenAddress } from '@/utils/address'
-
+import { externalCbnftUrl } from '@/utils/externalCbnftUrl'
 interface QueryResult {
   collections: Collection[]
 }
@@ -141,7 +141,14 @@ export default function Trending() {
                                 idx > VISIBLE_NFTS.mobile ? 'hidden' : 'block'
                               } [@media(min-width:600px)]:block `}
                             >
-                              <a href={externalURL} target="_blank">
+                              <a
+                                href={
+                                  externalCbnftUrl({ address: contract })
+                                    ? externalCbnftUrl({ address:contract })
+                                    : externalURL
+                                }
+                                target="_blank"
+                              >
                                 <Image
                                   src={imageURI}
                                   alt=""
