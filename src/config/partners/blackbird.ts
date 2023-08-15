@@ -25,7 +25,7 @@ const blackbird: Partner = {
       endDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.014',
       description:
-        "With Blackbird's Summertime Sweet pass, in addition to earning 1,000 $FLY bonus on your next check-in, holders will also receive a complimentary sweet surprise at select Blackbird restaurants (from 8/15-8/22) and access to a private Discord channel for pre-sale access to NFT drops, new products and more.",
+        "As part of Coinbase's Onchain Summer, Blackbird's Summertime Sweet Pass earns holders a 1,000 $FLY bonus on their next restaurant tap-in, plus a complimentary sweet surprise at select Blackbird partner restaurants (from 8.15-8.22) and access to a private Discord channel for pre-sale NFT drops, new products, and more.",
       // TODO: update address
       address: '0x0',
       mintType: MintType.External,
