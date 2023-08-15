@@ -1,10 +1,14 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import Link from 'next/link'
+import { Address } from 'wagmi'
 
 import { TwitterIcon } from '@/components/icons/Twitter'
 import { useMintDialogContext } from '@/components/MintDialog/Context/useMintDialogContext'
+import { website } from '@/config/website'
 import { WarpCast } from '@/components/icons/Warpcast'
 import { Lens } from '@/components/icons/Lens'
+import { useEns } from '@/utils/useEns'
+import { schedule } from "@/config/schedule";
 
 const twitterURL: string = 'https://twitter.com/intent/tweet'
 const warpCastURL: string = 'https://warpcast.com'
@@ -12,14 +16,17 @@ const lensURL: string = 'https://lenster.xyz'
 
 type ShareComponentProps = {}
 export const Share: FC<ShareComponentProps> = () => {
-  const { info: {dropName} } = useMintDialogContext()
-  const {
-    location: { href },
-  } = window
+  const { info: {dropName, partnerName, creatorAddress } } = useMintDialogContext()
+  const { name } = useEns(creatorAddress as Address)
+  const partnerSlug = useMemo(() => {
+    return Object.values(schedule).find((partner) => partner.name === partnerName)?.slug
+  }, [partnerName])
+
+  const href = `${website.url}/${partnerSlug ?? ''}`
   const shareText = {
-    twitter: `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`,
-    lens: `I just minted ${dropName}, celebrating the start of @BuildOnBase bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`,
-    warpCast: `I just minted ${dropName}, celebrating the start of @base bringing billions of people onchain.%0a%0aIt’s Onchain Summer.`,
+    twitter: `I just minted ${dropName} by ${name ?? creatorAddress}, celebrating Onchain Summer with ${partnerName} on @BuildOnBase.`,
+    lens: `I just minted ${dropName} by ${name ?? creatorAddress}, celebrating Onchain Summer with ${partnerName} on @base.`,
+    warpCast: `I just minted ${dropName} by ${name?? creatorAddress}, celebrating Onchain Summer with ${partnerName} on @base.`,
   }
 
   const tweetUrl = `${twitterURL}?url=${href}&text=${shareText['twitter']}`
