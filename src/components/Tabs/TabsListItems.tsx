@@ -31,7 +31,7 @@ export const TabsListItems: FC<TabsListItemsProps> = ({
         value="tab2"
       >
         <div className="flex items-center desktop-h3 md:desktop-h2">
-          past{' '}
+          active{' '}
           <div className="h-[24px] w-[24px] py-[1px] text-[12px] bg-neutral-950 text-white rounded-full flex items-center justify-center mx-2 relative bottom-3">
             <span className="text-center text-lg">{pastLength}</span>
           </div>
