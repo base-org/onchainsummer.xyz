@@ -24,9 +24,9 @@ export const Share: FC<ShareComponentProps> = () => {
 
   const href = `${website.url}/${partnerSlug ?? ''}`
   const shareText = {
-    twitter: `I just minted ${dropName} by ${name ?? creatorAddress}, celebrating Onchain Summer with ${partnerName} on @BuildOnBase.`,
-    lens: `I just minted ${dropName} by ${name ?? creatorAddress}, celebrating Onchain Summer with ${partnerName} on @base.`,
-    warpCast: `I just minted ${dropName} by ${name?? creatorAddress}, celebrating Onchain Summer with ${partnerName} on @base.`,
+    twitter: `I just minted ${dropName} by ${name || creatorAddress}, celebrating Onchain Summer with ${partnerName} on @BuildOnBase.`,
+    lens: `I just minted ${dropName} by ${name || creatorAddress}, celebrating Onchain Summer with ${partnerName} on @base.`,
+    warpCast: `I just minted ${dropName} by ${name || creatorAddress}, celebrating Onchain Summer with ${partnerName} on @base.`,
   }
 
   const tweetUrl = `${twitterURL}?url=${href}&text=${shareText['twitter']}`
