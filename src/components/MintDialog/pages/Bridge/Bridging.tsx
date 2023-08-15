@@ -5,6 +5,7 @@ import { BridgeState } from '../../elements/useBridge'
 import { ArrowRight } from '@/components/icons/ArrowRight'
 
 import { scanUrl } from '@/utils/scanUrl'
+import { LoadingSpinner } from '@/components/icons/LoadingSpinner'
 
 interface BridgingProps {
   bridgeState: BridgeState
@@ -24,23 +25,27 @@ const Step = ({
   l1?: boolean
 }) => {
   return (
-    <div
-      className={clsx('h-1/4 flex flex-col gap-2 leading-none', {
-        'desktop-label-1': isStep,
-        'desktop-label-2': !isStep,
-      })}
-    >
-      <div className={clsx({ 'text-ocs-blue': isStep })}>{label}</div>
-      {txHash && isStep ? (
-        <a
-          href={scanUrl(l1, txHash)}
-          target="_blank"
-          rel="noreferrer"
-          className="flex gap-2 items-center ml-8"
-        >
-          View on explorer <ArrowRight color={'#000'} height={16} width={16} />
-        </a>
-      ) : null}
+    <div className="flex h-1/4 gap-4">
+      <div
+        className={clsx('flex flex-col gap-2 leading-none', {
+          'desktop-label-1': isStep,
+          'desktop-label-2': !isStep,
+        })}
+      >
+        <div className={clsx({ 'text-ocs-blue': isStep })}>{label}</div>
+        {txHash && isStep ? (
+          <a
+            href={scanUrl(l1, txHash)}
+            target="_blank"
+            rel="noreferrer"
+            className="flex gap-2 items-center ml-8"
+          >
+            View on explorer{' '}
+            <ArrowRight color={'#000'} height={16} width={16} />
+          </a>
+        ) : null}
+      </div>
+      {isStep ? <LoadingSpinner /> : null}
     </div>
   )
 }

@@ -79,10 +79,26 @@ module.exports = {
           from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
           to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
         },
+        loading: {
+          '0%': { transform: 'rotate(0deg)' },
+          '8%': { transform: 'rotate(30deg)' },
+          '16%': { transform: 'rotate(60deg)' },
+          '25%': { transform: 'rotate(90deg)' },
+          '33%': { transform: 'rotate(120deg)' },
+          '41%': { transform: 'rotate(150deg)' },
+          '50%': { transform: 'rotate(180deg)' },
+          '58%': { transform: 'rotate(210deg)' },
+          '66%': { transform: 'rotate(240deg)' },
+          '75%': { transform: 'rotate(270deg)' },
+          '83%': { transform: 'rotate(300deg)' },
+          '91%': { transform: 'rotate(330deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        loading: 'loading 1s step-end infinite',
       },
       fontSize: {
         base: [
