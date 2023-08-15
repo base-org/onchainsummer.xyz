@@ -10,3 +10,5 @@ export function externalCbnftUrl({ address }: { address: string }) {
 
   return `https://nft.coinbase.com/mint/base/${address}?utm_source=onchainsummer.xyz`
 }
+
+//
