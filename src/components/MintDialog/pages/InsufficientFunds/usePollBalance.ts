@@ -8,7 +8,7 @@ export const usePollBalance = (
   setPage: React.Dispatch<ModalPage>,
   totalPrice: string
 ) => {
-  const {address} = useAccount()
+  const { address } = useAccount()
   const cb = useCallback(async () => {
     if (!address) return
 

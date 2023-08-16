@@ -11,10 +11,8 @@ const zora: Partner = {
   brandColor: '#000000',
   icon: '/partners/zora/icon.png',
   banner: '/partners/zora/banner-icon.svg',
-  // TODO: update digest
-  aarweaveDigest: '',
-  // TODO: update twitter?
-  twitter: '@lo',
+  aarweaveDigest: 'DJ0PP-QLvDLMagBXajSCliN8RqNFt2WAggTBSwzGjPA',
+  twitter: '@ourzora',
   drops: [
     {
       image: '/partners/zora/drops/FINAL_ART-BASE -SummerZorb.png',

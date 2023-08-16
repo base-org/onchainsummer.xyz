@@ -3,9 +3,19 @@ import { Button } from '../../Button'
 import { MintType, ModalPage, siteDataSuffix } from '../types'
 import { TxDetails } from '../MintDialog'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
-import { tw721ABI, writeTw721, writeZora721 } from '../../../../generated/contracts'
+import {
+  tw721ABI,
+  writeTw721,
+  writeZora721,
+} from '../../../../generated/contracts'
 import { l2 } from '@/config/chain'
-import { Address, useAccount, usePublicClient, useWaitForTransaction, useWalletClient } from 'wagmi'
+import {
+  Address,
+  useAccount,
+  usePublicClient,
+  useWaitForTransaction,
+  useWalletClient,
+} from 'wagmi'
 import { TransactionExecutionError, getAddress, parseEther } from 'viem'
 import { useLogEvent } from '@/utils/useLogEvent'
 import { events } from '@/utils/analytics'
@@ -27,7 +37,10 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   setTxDetails,
   setMintError,
 }) => {
-  const { info: {address, mintType, creatorAddress, dataSuffix}, setInfo } = useMintDialogContext()
+  const {
+    info: { address, mintType, creatorAddress, dataSuffix },
+    setInfo,
+  } = useMintDialogContext()
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined)
   const { address: account } = useAccount()
   const { data: txReceipt } = useWaitForTransaction({
@@ -36,8 +49,8 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   })
   const price = parseEther(totalPrice)
 
-  const {data: walletClient} = useWalletClient({chainId: l2.id});
-  const publicClient = usePublicClient({chainId: l2.id});
+  const { data: walletClient } = useWalletClient({ chainId: l2.id })
+  const publicClient = usePublicClient({ chainId: l2.id })
 
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
@@ -60,12 +73,14 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
             setPage(ModalPage.MINT_ERROR)
             return
           }
-          return (await writeZora721({
-            address: address,
-            functionName: 'mintWithRewards',
-            args: [account, BigInt(quantity), '', getAddress(creatorAddress)],
-            value: price,
-          })).hash
+          return (
+            await writeZora721({
+              address: address,
+              functionName: 'mintWithRewards',
+              args: [account, BigInt(quantity), '', getAddress(creatorAddress)],
+              value: price,
+            })
+          ).hash
         }
       case MintType.ThirdWeb:
         return async () => {
@@ -73,35 +88,47 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
             setPage(ModalPage.MINT_ERROR)
             return
           }
-          const {request} = await publicClient.simulateContract({
+          const { request } = await publicClient.simulateContract({
             abi: tw721ABI,
-              address: address as Address,
-              functionName: 'claim',
-              args: [
-                account,
-                BigInt(quantity),
-                '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                price / BigInt(quantity),
-                {
-                  proof: [],
-                  quantityLimitPerWallet: 2n ** 256n - 1n,
-                  pricePerToken: price / BigInt(quantity),
-                  currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                },
-                '0x0',
-              ],
-              value: price,
-              dataSuffix: dataSuffix
-            })
-            const response = await walletClient.writeContract(request)
-            setInfo(prevState => ({...prevState, dataSuffix: siteDataSuffix}))
-            return response
+            address: address as Address,
+            functionName: 'claim',
+            args: [
+              account,
+              BigInt(quantity),
+              '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+              price / BigInt(quantity),
+              {
+                proof: [],
+                quantityLimitPerWallet: 2n ** 256n - 1n,
+                pricePerToken: price / BigInt(quantity),
+                currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+              },
+              '0x0',
+            ],
+            value: price,
+            dataSuffix: dataSuffix,
+          })
+          const response = await walletClient.writeContract(request)
+          setInfo((prevState) => ({ ...prevState, dataSuffix: siteDataSuffix }))
+          return response
         }
       default:
         console.log(`invalid mint type ${mintType} for native mint`)
         setPage(ModalPage.MINT_ERROR)
     }
-  }, [mintType, setPage, account, address, quantity, creatorAddress, price, publicClient, walletClient, dataSuffix, setInfo])
+  }, [
+    mintType,
+    setPage,
+    account,
+    address,
+    quantity,
+    creatorAddress,
+    price,
+    publicClient,
+    walletClient,
+    dataSuffix,
+    setInfo,
+  ])
 
   useEffect(() => {
     if (!txReceipt) return

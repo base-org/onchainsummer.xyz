@@ -3,7 +3,7 @@
 import { FC } from 'react'
 import { ConnectDialog } from '../ConnectDialog'
 import { MintDialog } from '../MintDialog'
-import { MintDialogInfo} from '../MintDialog/Context/Context'
+import { MintDialogInfo } from '../MintDialog/Context/Context'
 import { useValidate } from './useValidate'
 import { Button, ButtonProps } from '../Button'
 import { Loading } from '../icons/Loading'

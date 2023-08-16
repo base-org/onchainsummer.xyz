@@ -22,8 +22,9 @@ export const Success: FC<SuccessProps> = ({
   txHash,
   closeModal,
 }) => {
-  const { info: {dropName, creatorAddress, interactWithNFTLink} } =
-    useMintDialogContext()
+  const {
+    info: { dropName, creatorAddress, interactWithNFTLink },
+  } = useMintDialogContext()
   return (
     <>
       <PartnerInfo />

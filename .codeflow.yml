@@ -4,3 +4,12 @@ secure:
   requires_mfa: true
   requires_verified: true
   upstream_repository: base-org/onchainsummer.xyz
+
+build:
+  engines:
+    - BaldurECR:
+        name: onchainsummer
+        path: ./Dockerfile
+    - BaldurECR:
+        name: cdnsync
+        path: ./Dockerfile.cdnsync

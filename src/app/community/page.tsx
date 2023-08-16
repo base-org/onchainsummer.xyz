@@ -1,6 +1,6 @@
 import { PageContainer } from '@/components/PageContainer'
 import Image from 'next/image'
-import Link from 'next/link';
+import Link from 'next/link'
 import { Heart } from '@/components/icons/Heart'
 import { communityData } from '../../config/community'
 import { format } from 'date-fns'
@@ -8,7 +8,7 @@ import { TwitterModule } from '@/components/TwitterModule'
 import { getTweets } from '@/utils/getTweets'
 import Grant from '../../../public/grant.png'
 import X from '../../../public/x.png'
-import { RightArrow } from '@/components/icons/RightArrow';
+import { RightArrow } from '@/components/icons/RightArrow'
 
 const Community = async () => {
   const { tweets } = await getPageData()
@@ -68,9 +68,9 @@ const Community = async () => {
             </span>
           </div>
           <Link
-              href="https://prop.house/base"
-              className="hidden [@media(min-width:724px)]:inline-block ml-auto self-center"
-              target="_blank"
+            href="https://prop.house/base"
+            className="hidden [@media(min-width:724px)]:inline-block ml-auto self-center"
+            target="_blank"
           >
             <div className="flex h-full items-start sm:items-center gap-6 uppercase text-mono pr-6">
               <span>View Prop House</span>

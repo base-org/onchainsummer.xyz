@@ -3,8 +3,6 @@ import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { QueryParamProvider } from '@/components/QueryParamProvider'
-import { cookies } from 'next/headers'
-import { Password } from '@/components/Password/Password'
 import { website } from '@/config/website'
 import { Providers } from './providers'
 import ThirdWebProviderClient from '@/components/client/QueryClientProvider'
@@ -107,7 +105,6 @@ const coinbaseDisplay = localFont({
 })
 
 const SHOW_TEASER = process.env.TEASER === 'true'
-const PASSWORD_PROTECT = process.env.PASSWORD_PROTECT
 const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
 const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
 
@@ -159,20 +156,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const cookieStore = cookies()
-  const password = cookieStore.get('ocspw')
-
-  if (!password && !!PASSWORD_PROTECT) {
-    return (
-      <html lang="en" className="flex flex-col h-full">
-        <body>
-          <h1>Password</h1>
-          <Password />
-        </body>
-      </html>
-    )
-  }
-
   const isTeaser =
     SHOW_TEASER ||
     // @ts-ignore
