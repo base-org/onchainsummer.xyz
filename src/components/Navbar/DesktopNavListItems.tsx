@@ -2,6 +2,8 @@ import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import Link from 'next/link'
 import { Wallet } from './Wallet'
+import { CBSubscribeDialog } from '@/components/CBSubscribeDialog'
+import { Button } from '@/components/Button'
 
 type NavListItemsProps = {}
 
@@ -44,6 +46,11 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
         <p className="uppercase desktop-mono text-[#858585] whitespace-nowrap block min-[1184px]:block min-[1024px]:hidden">
           Get onchain this summer
         </p>
+        <NavigationMenu.Item asChild>
+          <CBSubscribeDialog>
+            <Button className="!py-1.5 !px-4">Subscribe</Button>
+          </CBSubscribeDialog>
+        </NavigationMenu.Item>
         <NavigationMenu.Item asChild>
           <Wallet />
         </NavigationMenu.Item>

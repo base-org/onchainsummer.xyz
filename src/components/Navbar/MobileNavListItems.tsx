@@ -2,6 +2,8 @@ import { FC } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import Link from 'next/link'
 import * as Dialog from '@radix-ui/react-dialog'
+import { CBSubscribeDialog } from '@/components/CBSubscribeDialog'
+import { Button } from '@/components/Button'
 
 type NavListItemsProps = {}
 
@@ -46,6 +48,15 @@ export const NavListItems: FC<NavListItemsProps> = ({}) => {
                 Community
               </Link>
             </NavigationMenu.Link>
+          </Dialog.Close>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <Dialog.Close asChild>
+            <CBSubscribeDialog>
+              <Button className="!w-auto" size="X-SMALL">
+                Subscribe
+              </Button>
+            </CBSubscribeDialog>
           </Dialog.Close>
         </NavigationMenu.Item>
       </NavigationMenu.List>
