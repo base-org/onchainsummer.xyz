@@ -1,6 +1,6 @@
 import { Partner } from './types'
-import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const showtime: Partner = {
   slug: 'showtime',
@@ -15,14 +15,107 @@ const showtime: Partner = {
   twitter: '@Showtime_xyz',
   drops: [
     {
-      image: '',
-      creator: '',
-      name: '',
-      ...unlimited,
-      type: 'erc-721',
+      image: '/partners/showtime/drops/drop-1.png',
+      creator: '0x7F255F64e81E540144aC41f32fcc25fA33586FFD',
+      name: `BLOND:ISH's Treasure Chest`,
+      externalLink:
+        'https://showtime.xyz/@blondish/join-blondish-in-web69-for-a',
+      type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0038',
+      description: `"Join the Onchain Summer Party with Showtime Drops! We're teaming up with incredible web3-forward artists around including BLOND:ISH, trance legend BT, India's own KR$NA, and Eurovision's Rosa Linn from the smash-hit ""Snap."" And that's just the start.
+Exclusive Goodies Just for You: Want to hear some never-released music or snag a promo code for awesome merch? How about a private Zoom call with one of the stars? Collect those drops, and these exclusives and more can be yours. It's like a backstage pass right in your pocket.
+Wrap It Up with Incredible Raffles: Stick around to the end, and you could score big. We're talking all-expenses-paid trips to live shows, including an evening in Paris. And don't forget signed jackets, vinyls, and so much more. Who knows what you could walk away with? It's all part of the fun with Showtime Drops this Onchain Summer. Get in on it!"
+      `,
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      // TODO: update image once public s3 links are available
+      image: '/partners/showtime/drops/drop-1.png',
+      creator: 'btmusic.eth',
+      name: `Grana`,
+      externalLink: 'https://showtime.xyz/@bt/grana',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0055',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      image: '/partners/showtime/drops/drop-3.jpg',
+      creator: '0xcdCcBe455550a7AC859659Dcdbc333289b7371De',
+      name: `Fan Club Access Pass`,
+      externalLink: 'https://showtime.xyz/@rosalinn/fan-club-access-pass',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0055',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      // TODO: update image once public s3 links are available
+      image: '/partners/showtime/drops/drop-1.png',
+      creator: '0xDB83ea3B2A65300078532966Fd48322518632EE4',
+      name: `"Dad" Demo Access Pass`,
+      externalLink: 'https://showtime.xyz/@AnnikaRose/dad-demo-access-pass',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.00275',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      // TODO: update image once public s3 links are available
+      image: '/partners/showtime/drops/drop-1.png',
+      creator: '0x14ABD459dC0158d3c267fA2235aFeF6439117498',
+      name: `Northern Lights`,
+      externalLink: 'https://showtime.xyz/@saxsquatch/northern-lights',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.00275',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      // TODO: update image once public s3 links are available
+      image: '/partners/showtime/drops/drop-1.png',
+      creator: '0x194Cea1B10a5f29f1899208D83f32cBbe132b0A5',
+      name: `laughing at our own jokes`,
+      externalLink:
+        'https://showtime.xyz/@halfanorange/laughing-at-our-own-jokes',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.00274',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+    },
+    {
+      // TODO: update image once public s3 links are available
+      image: '/partners/showtime/drops/drop-1.png',
+      creator: '0x6AcDf8958f7852720733A375e6accFa8Ec7C42d0',
+      name: `Performance Access Pass`,
+      externalLink:
+        'https://showtime.xyz/@talia_lahoud/performance-access-pass',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.00274',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
     },
   ],
 }
