@@ -21,6 +21,35 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
     return `https://twitter.com/${author.username}/status/${tweet.id}`
   }, [author.username, tweet.id])
 
+  const message = useMemo(() => {
+    const text = tweet.text
+      .replace(
+        /(?:((?<=[\s\W])|^)[#](\w+|[^#]|$)|((?<=[\s\W])|^)[@]([a-zA-Z0-9_]+|$))/gm,
+        ''
+      )
+      .trim()
+    return text.length > 100
+      ? text.substring(
+          0,
+          tweet.text.indexOf(
+            ' ',
+            media ? 100 : Math.min(tweet.text.length, 240)
+          )
+        ) + '...'
+      : text
+  }, [tweet.text, media])
+
+  const url = useMemo(() => {
+    const firstUrl = tweet?.entities?.urls?.[0]
+    if (
+      !firstUrl?.expanded_url ||
+      !firstUrl?.images?.[0].url ||
+      !firstUrl?.title
+    )
+      return
+    return tweet?.entities?.urls?.[0]
+  }, [tweet])
+
   return (
     <a
       href={linkToTwitter}
@@ -56,15 +85,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               ),
             }}
           >
-            {tweet.text.length > 100
-              ? tweet.text.substring(
-                  0,
-                  tweet.text.indexOf(
-                    ' ',
-                    media ? 100 : Math.min(tweet.text.length, 240)
-                  )
-                ) + '...'
-              : tweet.text}
+            {message}
           </ReactMarkdown>
         </div>
         {media ? (
@@ -86,6 +107,18 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               alt="tweet media"
             />
           )
+        ) : url ? (
+          <div className="rounded-3xl border">
+            <img
+              src={url?.images?.[0]?.url || ''}
+              className="rounded-t-3xl object-cover aspect-[4/3]"
+              alt={url?.title || ''}
+            />
+            <div className="bg-gray-200 rounded-b-3xl p-3">
+              <h3 className="text-lg">{url?.title}</h3>
+              <p className="line-clamp-2 text-sm">{url?.description}</p>
+            </div>
+          </div>
         ) : null}
       </div>
       <p className="text-[#8E8E8E] text-sm mt-2">
