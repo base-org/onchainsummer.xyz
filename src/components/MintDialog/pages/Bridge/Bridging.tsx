@@ -29,9 +29,12 @@ const Step = ({
   return (
     <div
       className={clsx(
-        'flex gap-4',
+        'flex gap-4 text-[#444]',
         {
-          'h-[60px]': !finalStep,
+          'h-[62px]': !finalStep && (!isStep || (isStep && !txHash)),
+        },
+        {
+          'h-[86px]': !finalStep && isStep && txHash,
         },
         {
           'h-[14px]': finalStep,
@@ -73,7 +76,7 @@ export const Bridging: FC<BridgingProps> = ({
   const isStep4 = bridgeState === BridgeState.L2_TX_PROCESSED
 
   return (
-    <div className="flex flex-col gap-4 w-full h-full items-center justify-center overflow-scroll hide-scrollbar">
+    <div className="flex flex-col gap-4 w-full h-full justify-center overflow-scroll hide-scrollbar">
       <Dialog.Title className={'desktop-h2'}>Bridging...</Dialog.Title>
 
       <div className={'flex flex-col w-full gap-10 md:gap-8'}>
@@ -84,22 +87,32 @@ export const Bridging: FC<BridgingProps> = ({
           </span>
         </Dialog.Description>
 
-        <div className="flex w-full h-[194px] gap-3">
+        <div
+          className={clsx(
+            'flex w-full  gap-3',
+            {
+              'h-[224px]': isStep1 || isStep2,
+            },
+            {
+              'h-[200px]': isStep3 || isStep4,
+            }
+          )}
+        >
           <div className="h-full w-1 bg-light-palette-line rounded-full ">
             <div
               className={clsx(
                 'bg-ocs-blue text-white w-1 rounded-full h-full transition-[max-height] duration-500 ease-in-out]',
                 {
-                  'max-h-[60px]': isStep1,
+                  'max-h-[86px]': isStep1,
                 },
                 {
-                  'max-h-[120px]': isStep2,
+                  'max-h-[148px]': isStep2,
                 },
                 {
-                  'max-h-[180px]': isStep3,
+                  'max-h-[186px]': isStep3,
                 },
                 {
-                  'max-h-[194px]': isStep4,
+                  'max-h-[200px]': isStep4,
                 }
               )}
             ></div>
