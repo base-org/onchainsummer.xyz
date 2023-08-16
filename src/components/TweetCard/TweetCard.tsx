@@ -111,7 +111,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           <div className="rounded-3xl border">
             <img
               src={url?.images?.[0]?.url || ''}
-              className="rounded-t-3xl object-cover aspect-[4/3]"
+              className="rounded-t-3xl object-cover aspect-[4/2]"
               alt={url?.title || ''}
             />
             <div className="bg-gray-200 rounded-b-3xl p-3">
