@@ -43,7 +43,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
 
   const collections = data?.collections?.slice(0, 3) || []
   return (
-    <section className="p-4 bg-gray-white rounded-3xl shadow-large">
+  <section className="p-4 bg-gray-white rounded-3xl shadow-large">
       <div className="flex justify-between mb-4">
         <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
           <div className="flex gap-4 items-center">
@@ -57,7 +57,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
 
           <div className="flex flex-col md:flex-row md:gap-6">
             <div className="flex items-center">
-              <p className="desktop-mono !text-[#858585] uppercase mr-3">
+              <p className="desktop-mono !text-[#444] uppercase mr-3">
                 Powered by{' '}
               </p>
               <a href="https://mint.fun" target="_blank">

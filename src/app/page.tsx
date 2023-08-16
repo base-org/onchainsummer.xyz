@@ -61,9 +61,7 @@ const Home = async ({ searchParams }: Props) => {
               </div>
               <div className="flex-1 flex flex-col justify-end">
                 <h2 className="desktop-h2">{name}</h2>
-                <p className="desktop-mono uppercase text-[#858585]">
-                  Collection
-                </p>
+                <p className="desktop-mono uppercase text-[#444]">Collection</p>
               </div>
             </div>
             {remainingDrops?.length > 0 && (
@@ -137,7 +135,7 @@ const Home = async ({ searchParams }: Props) => {
                     <Heart />
                   </div>
                   <div className="">
-                    <h2 className="text-[32px] text-display">Community</h2>
+                    <h2 className="desktop-h2">Community</h2>
                   </div>
                 </div>
               </div>

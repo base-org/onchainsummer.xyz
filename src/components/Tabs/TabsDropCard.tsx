@@ -52,7 +52,7 @@ export const TabsDropCard: React.FC<TabsDropCardProps> = ({
         </div>
 
         <div className="lg:flex lg:flex-col lg:justify-start p-4 lg:mt-0 w-full">
-          <h3 className="desktop-label-2 uppercase text-[#858585] mb-3">
+          <h3 className="desktop-label-2 uppercase text-[#444] mb-3">
             {format(new Date(startDate), 'MMMM d')}
           </h3>
           {link ? (

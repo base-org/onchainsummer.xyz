@@ -25,12 +25,12 @@ export const Footer = () => {
                 <div>
                   <h3 className="mb-5 desktop-label-1">Community</h3>
                   <ul className="flex flex-col gap-4">
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a target="_blank" href="https://prop.house/base">
                         Prop House
                       </a>
                     </li>
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a
                         target="_blank"
                         href="https://help.coinbase.com/en/coinbase/other-topics/other/base"
@@ -38,7 +38,7 @@ export const Footer = () => {
                         Help Center
                       </a>
                     </li>
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a
                         target="_blank"
                         href="https://docs.base.org/privacy-policy/"
@@ -53,12 +53,12 @@ export const Footer = () => {
                 <div>
                   <h3 className="mb-5 desktop-label-1">Social</h3>
                   <ul className="flex flex-col gap-4">
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a target="_blank" href="https://base.mirror.xyz/">
                         Mirror
                       </a>
                     </li>
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a
                         target="_blank"
                         href="https://discord.com/invite/buildonbase"
@@ -66,17 +66,17 @@ export const Footer = () => {
                         Discord
                       </a>
                     </li>
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a target="_blank" href="https://twitter.com/coinbase">
                         Coinbase Twitter
                       </a>
                     </li>
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a target="_blank" href="https://twitter.com/buildonbase">
                         Base Twitter
                       </a>
                     </li>
-                    <li className="text-[#858585]">
+                    <li className="text-[#444]">
                       <a target="_blank" href="https://github.com/base-org">
                         GitHub
                       </a>

@@ -40,7 +40,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               <span className="text-black font-bold block">
                 {author.name} <TwitterVerified />
               </span>
-              <span className="text-[#8E8E8E] font-normal block">
+              <span className="text-[#444] font-normal block">
                 @{author.username}
               </span>
             </div>
@@ -57,7 +57,13 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             }}
           >
             {tweet.text.length > 100
-              ? tweet.text.substring(0, tweet.text.indexOf(' ', media ? 100 : Math.min(tweet.text.length, 240))) + '...'
+              ? tweet.text.substring(
+                  0,
+                  tweet.text.indexOf(
+                    ' ',
+                    media ? 100 : Math.min(tweet.text.length, 240)
+                  )
+                ) + '...'
               : tweet.text}
           </ReactMarkdown>
         </div>
@@ -82,7 +88,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           )
         ) : null}
       </div>
-      <p className="text-[#8E8E8E] text-sm mt-2">
+      <p className="text-[#444] text-sm mt-2">
         {moment(tweet.created_at).format('h:mm A · MMM D, YYYY')}
       </p>
     </a>
