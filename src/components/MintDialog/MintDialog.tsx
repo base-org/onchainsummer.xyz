@@ -107,6 +107,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         return
     }
     // Intentionally leaving out `page` from deps here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fundsStatus])
 
   const resetModal = () => {
