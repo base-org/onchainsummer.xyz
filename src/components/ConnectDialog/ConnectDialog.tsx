@@ -39,7 +39,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
         connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
       })
     }
-  }, [connect, connectors, address, prompted, setPrompted])
+  }, [])
 
   return (
     <ConnectButton.Custom>
