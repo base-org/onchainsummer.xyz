@@ -3,6 +3,7 @@
 import React, { FC, PropsWithChildren } from 'react'
 import { l1, l2 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
+import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
 
 interface IDesiredNetworkContext {
   desiredNetwork: typeof l1 | typeof l2
@@ -25,13 +26,19 @@ export const DesiredNetworkContextProvider: FC<PropsWithChildren> = ({
     typeof l1 | typeof l2
   >(l2)
 
+  const isCoinbaseBrowser = getIsCoinbaseBrowser()
   const desiredNetworkId = desiredNetwork.id
 
   React.useEffect(() => {
-    if (chain && switchNetwork && chain.id !== desiredNetworkId) {
+    if (
+      isCoinbaseBrowser &&
+      chain &&
+      switchNetwork &&
+      chain.id !== desiredNetworkId
+    ) {
       switchNetwork(desiredNetworkId)
     }
-  }, [chain, desiredNetworkId, switchNetwork])
+  }, [chain, desiredNetworkId, isCoinbaseBrowser, switchNetwork])
 
   return (
     <DesiredNetworkContext.Provider

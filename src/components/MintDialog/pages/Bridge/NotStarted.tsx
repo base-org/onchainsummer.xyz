@@ -9,6 +9,7 @@ import { l1 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 import { ModalPage } from '../../types'
 import { useDesiredNetworkContext } from '@/components/DesiredNetworkContext/useDesiredNetworkContext'
+import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
 
 interface NotStartedProps {
   amount: string
@@ -96,7 +97,12 @@ export const NotStarted: FC<NotStartedProps> = ({
           {wrongChain && switchNetwork ? (
             <Button
               onClick={() => {
-                setDesiredNetwork(l1)
+                const isCoinbaseBrowser = getIsCoinbaseBrowser()
+                if (isCoinbaseBrowser) {
+                  setDesiredNetwork(l1)
+                } else {
+                  switchNetwork(l1.id)
+                }
               }}
             >
               Switch to L1
