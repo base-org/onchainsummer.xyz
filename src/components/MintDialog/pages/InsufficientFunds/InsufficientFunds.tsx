@@ -57,7 +57,9 @@ export const InsufficientFunds: FC<InsufficientFundsProps> = ({
   setPage,
   totalPrice,
 }) => {
-  const { info: {crossMintClientId} } = useMintDialogContext()
+  const {
+    info: { crossMintClientId },
+  } = useMintDialogContext()
   usePollBalance(setPage, totalPrice)
 
   if (!crossMintClientId) {

@@ -6,8 +6,10 @@ import { useMintDialogContext } from '../Context/useMintDialogContext'
 import { useAccount } from 'wagmi'
 
 export const usePriceEstimate = () => {
-  const {address} = useAccount()
-  const { info: {price} } = useMintDialogContext()
+  const { address } = useAccount()
+  const {
+    info: { price },
+  } = useMintDialogContext()
 
   const [response, setResponse] = useState<
     Awaited<ReturnType<typeof getPriceEstimate>>

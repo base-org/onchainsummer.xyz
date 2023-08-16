@@ -144,7 +144,7 @@ export default function Trending() {
                               <a
                                 href={
                                   externalCbnftUrl({ address: contract })
-                                    ? externalCbnftUrl({ address:contract })
+                                    ? externalCbnftUrl({ address: contract })
                                     : externalURL
                                 }
                                 target="_blank"

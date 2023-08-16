@@ -57,7 +57,13 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             }}
           >
             {tweet.text.length > 100
-              ? tweet.text.substring(0, tweet.text.indexOf(' ', media ? 100 : Math.min(tweet.text.length, 240))) + '...'
+              ? tweet.text.substring(
+                  0,
+                  tweet.text.indexOf(
+                    ' ',
+                    media ? 100 : Math.min(tweet.text.length, 240)
+                  )
+                ) + '...'
               : tweet.text}
           </ReactMarkdown>
         </div>

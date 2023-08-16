@@ -2,14 +2,14 @@
 
 ## Overview
 
-It's onchain summer. 
+It's onchain summer.
 
 ## Contributing
 
 We're bringing the world onchain and we need your help.
 
-* Open a pull request
-* Report a bug
+- Open a pull request
+- Report a bug
 
 ## Development
 
