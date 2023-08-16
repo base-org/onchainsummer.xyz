@@ -25,17 +25,23 @@ export const Mobile: FC<MobileProps> = ({}) => {
       className={'z-40 flex w-screen lg:hidden [&>div]:w-full'}
     >
       <NavigationMenu.List className="flex justify-between px-6 py-3 w-full items-center">
-        <NavigationMenu.Link asChild>
-          <Link href="/">
-            <YellowDot />
-          </Link>
-        </NavigationMenu.Link>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link asChild>
+            <Link href="/">
+              <YellowDot />
+              <span className="sr-only">Home</span>
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
 
-        <NavigationMenu.Link asChild>
-          <Link href="/">
-            <OCS />
-          </Link>
-        </NavigationMenu.Link>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link asChild>
+            <Link href="/">
+              <OCS />
+              <span className="sr-only">Home</span>
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
 
         <NavigationMenu.Item className="flex items-center ">
           <Dialog.Root>
@@ -49,7 +55,7 @@ export const Mobile: FC<MobileProps> = ({}) => {
               <Dialog.Overlay className={dialogClasses.overlay} />
               <Dialog.Content
                 className={clsx(
-                  'fixed left-0 top-0 w-screen bg-white focus:outline-none z-40 h-max max-h-screen overflow-y-auto'
+                  'fixed left-0 top-0 w-screen bg-white focus:outline-none z-40 h-max max-h-screen overflow-y-auto',
                 )}
               >
                 <div className="flex justify-between px-6 py-3 w-full items-center">
