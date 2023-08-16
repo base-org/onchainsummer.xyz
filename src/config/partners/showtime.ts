@@ -35,7 +35,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       // TODO: update image once public s3 links are available
       image: '/partners/showtime/drops/drop-1.png',
-      creator: 'btmusic.eth',
+      creator: '0x6897c2ad5512e273efb57ec6deb96d49cd83ee97',
       name: `Grana`,
       externalLink: 'https://showtime.xyz/@bt/grana',
       type: 'external',
