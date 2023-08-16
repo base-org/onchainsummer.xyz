@@ -62,8 +62,8 @@ export const Trending: FC<TrendingComponentProps> = () => {
               </p>
               <a href="https://mint.fun" target="_blank">
                 <MintDotFun />
+                <span className="sr-only">mint.fun</span>
               </a>
-              <span className="sr-only">mint.fun</span>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                   externalURL,
                   imageURL,
                 },
-                idx
+                idx,
               ) => (
                 <div
                   key={externalURL}
@@ -125,6 +125,9 @@ export const Trending: FC<TrendingComponentProps> = () => {
                               priority
                               className="rounded-lg !h-fit"
                             />
+                            <span className="sr-only">
+                              {name} NFT Drop on Mint.fun
+                            </span>
                           </a>
 
                           <div className="relative top-[3px]">
@@ -146,7 +149,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     <div
                       className={clsx(
                         'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-[40%] lg:w-1/3 lg:max-h-[50px] mt-4 md:mt-0 [&>div]:w-full sm:[&>div]:w-fit h-max',
-                        !connectedWallet && 'flex-wrap sm:flex-nowrap'
+                        !connectedWallet && 'flex-wrap sm:flex-nowrap',
                       )}
                     >
                       <MintButton
@@ -167,7 +170,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     </div>
                   </div>
                 </div>
-              )
+              ),
             )}
       </div>
     </section>
