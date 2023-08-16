@@ -28,12 +28,12 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
   const { connect, connectors } = useConnect()
 
   useEffect(() => {
-    const ethereum = window.ethereum as CustomWindowProvider | undefined
-    if (ethereum?.isCoinbaseBrowser) {
-      connect({
-        connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
-      })
-    }
+    // const ethereum = window.ethereum as CustomWindowProvider | undefined
+    // if (ethereum?.isCoinbaseBrowser) {
+    //   connect({
+    //     connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
+    //   })
+    // }
   }, [connect, connectors])
 
   return (
