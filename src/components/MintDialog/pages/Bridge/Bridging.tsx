@@ -5,6 +5,7 @@ import { BridgeState } from '../../elements/useBridge'
 import { ArrowRight } from '@/components/icons/ArrowRight'
 
 import { scanUrl } from '@/utils/scanUrl'
+import { LoadingSpinner } from '@/components/icons/LoadingSpinner'
 
 interface BridgingProps {
   bridgeState: BridgeState
@@ -17,30 +18,49 @@ const Step = ({
   txHash,
   label,
   l1 = false,
+  finalStep = false,
 }: {
   isStep: boolean
   txHash: string
   label: string
   l1?: boolean
+  finalStep?: boolean
 }) => {
   return (
     <div
-      className={clsx('h-1/4 flex flex-col gap-2 leading-none', {
-        'desktop-label-1': isStep,
-        'desktop-label-2': !isStep,
-      })}
+      className={clsx(
+        'flex gap-4 text-[#444]',
+        {
+          'h-[62px]': !finalStep && (!isStep || (isStep && !txHash)),
+        },
+        {
+          'h-[86px]': !finalStep && isStep && txHash,
+        },
+        {
+          'h-[14px]': finalStep,
+        }
+      )}
     >
-      <div className={clsx({ 'text-ocs-blue': isStep })}>{label}</div>
-      {txHash && isStep ? (
-        <a
-          href={scanUrl(l1, txHash)}
-          target="_blank"
-          rel="noreferrer"
-          className="flex gap-2 items-center ml-8"
-        >
-          View on explorer <ArrowRight color={'#000'} height={16} width={16} />
-        </a>
-      ) : null}
+      <div
+        className={clsx('flex flex-col gap-2 leading-none', {
+          'desktop-label-1': isStep,
+          'desktop-label-2': !isStep,
+        })}
+      >
+        <div className={clsx({ 'text-ocs-blue': isStep })}>{label}</div>
+        {txHash && isStep && !finalStep ? (
+          <a
+            href={scanUrl(l1, txHash)}
+            target="_blank"
+            rel="noreferrer"
+            className="flex gap-2 items-center ml-8"
+          >
+            View on explorer{' '}
+            <ArrowRight color={'#000'} height={16} width={16} />
+          </a>
+        ) : null}
+      </div>
+      {isStep ? <LoadingSpinner /> : null}
     </div>
   )
 }
@@ -56,10 +76,10 @@ export const Bridging: FC<BridgingProps> = ({
   const isStep4 = bridgeState === BridgeState.L2_TX_PROCESSED
 
   return (
-    <div className="flex flex-col w-full h-full items-center overflow-scroll hide-scrollbar">
+    <div className="flex flex-col gap-4 w-full h-full justify-center overflow-scroll hide-scrollbar">
       <Dialog.Title className={'desktop-h2'}>Bridging...</Dialog.Title>
 
-      <div className={'flex flex-col w-full gap-6 md:gap-8'}>
+      <div className={'flex flex-col w-full gap-10 md:gap-8'}>
         <Dialog.Description className="flex flex-col w-full gap-4">
           <span className="desktop-body">
             This usually takes a couple minutes on the blockchain, please
@@ -67,22 +87,32 @@ export const Bridging: FC<BridgingProps> = ({
           </span>
         </Dialog.Description>
 
-        <div className="flex w-full h-[240px] gap-3">
+        <div
+          className={clsx(
+            'flex w-full  gap-3',
+            {
+              'h-[224px]': isStep1 || isStep2,
+            },
+            {
+              'h-[200px]': isStep3 || isStep4,
+            }
+          )}
+        >
           <div className="h-full w-1 bg-light-palette-line rounded-full ">
             <div
               className={clsx(
                 'bg-ocs-blue text-white w-1 rounded-full h-full transition-[max-height] duration-500 ease-in-out]',
                 {
-                  'max-h-[25%]': isStep1,
+                  'max-h-[86px]': isStep1,
                 },
                 {
-                  'max-h-[50%]': isStep2,
+                  'max-h-[148px]': isStep2,
                 },
                 {
-                  'max-h-[75%]': isStep3,
+                  'max-h-[186px]': isStep3,
                 },
                 {
-                  'max-h-[100%]': isStep4,
+                  'max-h-[200px]': isStep4,
                 }
               )}
             ></div>
@@ -109,6 +139,7 @@ export const Bridging: FC<BridgingProps> = ({
               label="4. Base tx processing"
               isStep={isStep4}
               txHash={l2TxHash}
+              finalStep
             />
           </div>
         </div>
