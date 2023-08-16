@@ -27,7 +27,10 @@ export interface Drop {
 
   // TODO: Temp fix
   openSeaLink?: string
-  interactWithNFTLink?: string
+  interactWithNFTLink?: {
+    url: string
+    label: string
+  }
   dataSuffix?: DropDataSuffix
   buttonText?: string
 }
