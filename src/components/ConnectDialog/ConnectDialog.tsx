@@ -39,7 +39,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
       const connector = connectors.find((c) => c.name === 'Coinbase Wallet')
       if (connector) {
         prompted.current = true
-        connect({ connector })
+        // connect({ connector })
       }
     }
   }, [])
