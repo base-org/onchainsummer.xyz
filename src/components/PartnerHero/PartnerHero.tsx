@@ -73,6 +73,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 price={headline.price}
                 partnerIcon={icon}
                 partnerName={name}
+                dropThumbnail={headline.thumbnail}
                 dropImage={headline.image}
                 dropName={headline.name}
                 creatorAddress={headline.creator}

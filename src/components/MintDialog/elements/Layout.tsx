@@ -9,12 +9,13 @@ interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   const {
-    info: { dropImage, dropName },
+    info: { dropImage, dropName, dropThumbnail },
   } = useMintDialogContext()
   return (
     <div className="relative grid gap-4 lg:grid-cols-2 lg:gap-16 h-full">
       <div className="relative z-20 w-full aspect-video lg:aspect-square mb-1 lg:mb-0">
         <NFTAsset
+          thumbnail={dropThumbnail}
           source={dropImage}
           name={dropName}
           className="object-cover object-top rounded-lg md:rounded-[20px] absolute inset-0 h-full w-full"

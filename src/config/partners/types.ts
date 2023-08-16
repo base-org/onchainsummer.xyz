@@ -12,6 +12,7 @@ export interface DropDataSuffix {
 
 export interface Drop {
   image: string
+  thumbnail?: string
   name: string
   startDate: number
   endDate: number

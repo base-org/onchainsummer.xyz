@@ -29,6 +29,7 @@ type DropCardProps = {
   dataSuffix: Hex
   dropDataSuffix?: DropDataSuffix
   buttonText?: string
+  thumbnail?: string
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -50,6 +51,7 @@ export const DropCard: FC<DropCardProps> = ({
   dropDataSuffix,
   interactWithNFTLink,
   buttonText,
+  thumbnail,
 }) => {
   const {
     isExternalLink,
@@ -67,6 +69,7 @@ export const DropCard: FC<DropCardProps> = ({
     <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
       <div className="relative w-full aspect-[4/3] bg-black flex items-center rounded-t-2xl md:rounded-t-3xl">
         <NFTAsset
+          thumbnail={thumbnail}
           source={image}
           name={`${name} from ${partner}`}
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
@@ -113,6 +116,7 @@ export const DropCard: FC<DropCardProps> = ({
               partnerIcon={partnerIcon}
               partnerName={partner}
               dropImage={image}
+              dropThumbnail={thumbnail}
               dropName={name}
               creatorAddress={creator}
               endDate={endDate}

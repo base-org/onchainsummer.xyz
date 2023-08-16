@@ -12,6 +12,7 @@ export interface MintDialogInfo {
   partnerIcon: string
   partnerName: string
   dropImage: string
+  dropThumbnail?: string
   dropName: string
   endDate?: number
   creatorAddress: string
