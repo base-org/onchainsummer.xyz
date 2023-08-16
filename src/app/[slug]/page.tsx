@@ -1,7 +1,5 @@
-import { get } from 'lodash'
 import { notFound, redirect } from 'next/navigation'
 import compareAsc from 'date-fns/compareAsc'
-import format from 'date-fns/format'
 import { schedule } from '@/config/schedule'
 import { PartnerHero } from '@/components/PartnerHero'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
@@ -16,6 +14,7 @@ import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 import { siteDataSuffix } from '@/components/MintDialog/types'
 import { DropCardList } from '@/components/DropCard/DropCardList'
+import { getCollections } from '@/utils/getCollections'
 
 type Props = {
   params: { slug: string }
@@ -44,6 +43,7 @@ const Page = async ({ params, searchParams }: Props) => {
   const { drops, name, icon } = partner
 
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
+  const collections = await getCollections(drops)
 
   return (
     <PageContainer subNavBgColor={partner.brandColor} subNavOverlap>
@@ -52,6 +52,7 @@ const Page = async ({ params, searchParams }: Props) => {
           partner={partner}
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
+          floorAsk={collections[featuredDrop.address.toLowerCase()]?.floorAsk}
         />
         <section className="w-full font-text p-4 bg-ocs-light-gray shadow-large rounded-3xl">
           <div className="-mr-4">
@@ -68,6 +69,7 @@ const Page = async ({ params, searchParams }: Props) => {
                   dropDataSuffix={drop.dataSuffix}
                   buttonText={drop.buttonText}
                   description={drop.description}
+                  floorAsk={collections[drop.address.toLowerCase()]?.floorAsk}
                 />
               ))}
             </DropCardList>
@@ -92,7 +94,7 @@ const Page = async ({ params, searchParams }: Props) => {
 
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
   const slug = params.slug
@@ -147,7 +149,7 @@ async function getPartner(slug: string, spoofDate?: string) {
   const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
-    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase(),
+    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase()
   )
 
   if (!date) {

@@ -18,6 +18,7 @@ import { configureChains, createConfig, mainnet, WagmiConfig } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { l1, l2 } from '@/config/chain'
 import { DesiredNetworkContextProvider } from '@/components/DesiredNetworkContext/DesiredNetworkContext'
+import { ReservoirKitProvider, lightTheme } from '@reservoir0x/reservoir-kit-ui'
 
 const { chains, publicClient } = configureChains(
   l1.id == mainnet.id ? [l2, l1] : [l2, l1, mainnet], // so that ens always works
@@ -60,16 +61,40 @@ export function Providers({ children }: { children: React.ReactNode }) {
   React.useEffect(() => setMounted(true), [])
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider
-        chains={chains}
-        appInfo={{
-          disclaimer: Disclaimer,
+      <ReservoirKitProvider
+        options={{
+          source: 'onchainsummer.xyz',
+          chains: [
+            {
+              baseApiUrl: process.env.NEXT_PUBLIC_RESERVOIR_API_URL
+                ? process.env.NEXT_PUBLIC_RESERVOIR_API_URL
+                : 'https://api-base.reservoir.tools',
+              id: l2.id,
+              active: true,
+            },
+          ],
         }}
+        theme={lightTheme({
+          font: 'var(--font-coinbase-display)',
+          buttonTextColor: '#fff',
+          primaryColor: '#000',
+          borderRadius: '16px',
+          buttonFont: 'var(--font-coinbase-mono)',
+        })}
       >
-        <DesiredNetworkContextProvider>
-          {mounted && <div className="flex flex-col h-full"> {children} </div>}
-        </DesiredNetworkContextProvider>
-      </RainbowKitProvider>
+        <RainbowKitProvider
+          chains={chains}
+          appInfo={{
+            disclaimer: Disclaimer,
+          }}
+        >
+          <DesiredNetworkContextProvider>
+            {mounted && (
+              <div className="flex flex-col h-full"> {children} </div>
+            )}
+          </DesiredNetworkContextProvider>
+        </RainbowKitProvider>
+      </ReservoirKitProvider>
     </WagmiConfig>
   )
 }

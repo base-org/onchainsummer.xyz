@@ -22,6 +22,7 @@ import { siteDataSuffix } from '@/components/MintDialog/types'
 import { Drop } from '@/config/partners/types'
 import { Gift } from '@/components/icons/Gift'
 import { DropCardList } from '@/components/DropCard/DropCardList'
+import { getCollections } from '@/utils/getCollections'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -32,8 +33,9 @@ const Home = async ({ searchParams }: Props) => {
   const spoofDate = Array.isArray(spoofDateParam)
     ? spoofDateParam[0]
     : spoofDateParam
-  const { partner, tabs, article, tweets, activeDrops } =
-    await getPageData(spoofDate)
+  const { partner, tabs, article, tweets, activeDrops } = await getPageData(
+    spoofDate
+  )
   const { drops, name, icon } = partner
 
   const dropAddressParam = searchParams.drop
@@ -43,6 +45,7 @@ const Home = async ({ searchParams }: Props) => {
     : dropAddressParam
 
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
+  const collections = await getCollections(drops)
 
   return (
     <PageContainer subNavOverlap>
@@ -51,6 +54,7 @@ const Home = async ({ searchParams }: Props) => {
           partner={partner}
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
+          floorAsk={collections[featuredDrop.address.toLowerCase()]?.floorAsk}
         />
         <section className="bg-ocs-light-gray w-full shadow-large rounded-3xl">
           <div className="p-[20px] lg:p-4 rounded-3xl">
@@ -83,6 +87,9 @@ const Home = async ({ searchParams }: Props) => {
                       dropDataSuffix={drop.dataSuffix}
                       buttonText={drop.buttonText}
                       description={drop.description}
+                      floorAsk={
+                        collections[drop.address.toLowerCase()]?.floorAsk
+                      }
                     />
                   ))}
                 </DropCardList>

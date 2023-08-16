@@ -11,12 +11,19 @@ import { Loading } from '../icons/Loading'
 import { useAccount } from 'wagmi'
 import { getNow } from '@/utils/getNow'
 import { CollectButton } from '../CollectButton/CollectButton'
+import { FloorAsk } from '@reservoir0x/reservoir-kit-ui'
+import { ExternalLinkButton } from '@/components/ExternalLinkButton/ExternalLinkButton'
 
 interface MintButtonProps extends MintDialogInfo {
   size?: ButtonProps['size']
+  floorAsk?: FloorAsk
 }
 
-export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
+export const MintButton: FC<MintButtonProps> = ({
+  size,
+  floorAsk,
+  ...mintProps
+}) => {
   const { address: account } = useAccount()
   const now = getNow()
   const {
@@ -36,11 +43,15 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
   const isMintedOut = mintStatus === MintStatus.MintedOut
 
   if ((mintProps.endDate && now >= mintProps.endDate) || isMintedOut) {
+    if (mintProps.address === '0x') {
+      return <ExternalLinkButton partner={mintProps.partnerName} />
+    }
+
     return (
       <CollectButton
         size={size}
         address={mintProps.address}
-        openSeaLink={mintProps.openSeaLink}
+        floorAsk={floorAsk}
       />
     )
   }
