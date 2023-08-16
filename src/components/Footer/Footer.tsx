@@ -38,6 +38,14 @@ export const Footer = () => {
                         Help Center
                       </a>
                     </li>
+                    <li className="text-[#858585]">
+                      <a
+                        target="_blank"
+                        href="https://docs.base.org/privacy-policy/"
+                      >
+                        Privacy Policy
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
