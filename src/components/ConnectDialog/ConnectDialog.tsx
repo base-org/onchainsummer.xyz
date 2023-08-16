@@ -10,39 +10,12 @@ type ConnectDialogProps = {
   size?: ButtonProps['size']
 }
 
-declare global {
-  interface Window {
-    ethereum?: WindowProvider
-  }
-}
-
-interface CustomWindowProvider extends WindowProvider {
-  isCoinbaseBrowser?: boolean
-}
-
 export const ConnectDialog: FC<ConnectDialogProps> = ({
   title = <div className="flex gap-2.5 items-center px-3">Mint</div>,
   inNavbar = false,
   size,
 }) => {
-  const { connect, connectors } = useConnect()
-  const { address } = useAccount()
-  const prompted = useRef(false)
-
-  useEffect(() => {
-    // We only want to attempt a connection if we haven't already done so.
-    if (prompted.current) return
-
-    const ethereum = window.ethereum as CustomWindowProvider | undefined
-    if (ethereum?.isCoinbaseBrowser) {
-      // Find the Coinbase Wallet connector
-      const connector = connectors.find((c) => c.name === 'Coinbase Wallet')
-      if (connector) {
-        prompted.current = true
-        // connect({ connector })
-      }
-    }
-  }, [])
+  // const { connect, connectors } = useConnect()
 
   return (
     <ConnectButton.Custom>
