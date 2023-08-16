@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { WindowProvider, useAccount, useConnect } from 'wagmi'
 import clsx from 'clsx'
@@ -27,17 +27,19 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
 }) => {
   const { connect, connectors } = useConnect()
   const { address } = useAccount()
+  const [prompted, setPrompted] = useState(false)
 
   useEffect(() => {
-    if (address) return
+    if (prompted) return
 
     const ethereum = window.ethereum as CustomWindowProvider | undefined
     if (ethereum?.isCoinbaseBrowser) {
+      setPrompted(true)
       connect({
         connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
       })
     }
-  }, [connect, connectors, address])
+  }, [connect, connectors, address, prompted, setPrompted])
 
   return (
     <ConnectButton.Custom>

@@ -38,6 +38,7 @@ export const useBridge = (amount: BigNumber) => {
       ensAddress: chain.contracts?.ensRegistry?.address,
     }
     const provider = new providers.Web3Provider(transport, network)
+    console.log('right here!')
     const signer = provider.getSigner(account.address)
     const l2Signer = new ethers.providers.JsonRpcProvider(
       l2Chain.rpcUrls.default.http[0]
