@@ -1,0 +1,10 @@
+FROM 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16
+
+WORKDIR /app
+
+RUN npm install aws-sdk
+RUN npm install googleapis
+
+COPY cdnsync.js cdnsync.js
+
+CMD ["node", "./cdnsync.js"]
