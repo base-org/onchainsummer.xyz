@@ -1,15 +1,21 @@
 import { FC } from 'react'
+import { IconProps } from './type'
+import clsx from 'clsx'
 
-export const LoadingSpinner: FC = ({}) => {
+export const LoadingSpinner: FC<IconProps> = ({
+  height = 16,
+  width = 16,
+  className = '',
+}) => {
   return (
     <svg
-      width="36"
-      height="36"
+      width={width}
+      height={height}
       viewBox="0 0 36 36"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="animate-loading"
+      className={clsx('animate-loading', className)}
     >
       <rect width="36" height="36" fill="url(#pattern0)" />
       <defs>
