@@ -1,11 +1,11 @@
 import { Partner } from './types'
-import { limited2 } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const mirrorWellness: Partner = {
   slug: 'mirrorswellnessclub',
   name: 'Mirrors Wellness Club',
-  url: 'https://www.mirror.co/',
+  url: 'http://mirrorswellnessclub.io',
   description:
     'Join a community centered around onchain and IRL wellness with the Mirror Wellness Club.',
   brandColor: '#000000',
@@ -15,14 +15,19 @@ const mirrorWellness: Partner = {
   twitter: '@lululemonstudio',
   drops: [
     {
+      // TODO: update the asset when s3 link is available
       image: '',
-      creator: '',
-      name: '',
-      ...limited2,
+      creator: '0x1EbA9Bb7c60353a2cA0a57C8B1A6DF3b206e2c34',
+      name: 'The Wellness Card',
+      description:
+        'The Wellness Card is a NFT membership to Mirrors Wellness Club',
+      mintType: MintType.ThirdWeb,
+      address: '0x0',
+      crossMintClientId: '',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2024, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.01',
     },
   ],
 }
