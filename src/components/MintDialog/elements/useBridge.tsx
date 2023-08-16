@@ -103,7 +103,6 @@ export const useBridge = (amount: BigNumber) => {
   )
 
   return {
-    
     bridge,
     l1TxHash,
     l2TxHash,

@@ -21,7 +21,9 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
   setTxDetails,
   totalPrice,
 }) => {
-  const { info: {mintDotFunStatus} } = useMintDialogContext()
+  const {
+    info: { mintDotFunStatus },
+  } = useMintDialogContext()
   const logEvent = useLogEvent()
 
   if (!mintDotFunStatus) {
@@ -43,7 +45,7 @@ export const MintDotFunMinter: FC<MintDotFunMinterProps> = ({
 
         setPage(ModalPage.NATIVE_MINT_PENDING_CONFIRMATION)
 
-        try{
+        try {
           const hash = await walletClient.sendTransaction({
             account,
             to: mintDotFunStatus.tx.to,

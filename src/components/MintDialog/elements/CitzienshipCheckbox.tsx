@@ -42,7 +42,7 @@ export const CitzienshipCheckbox: FC<CitzienshipCheckboxProps> = ({}) => {
       </Checkbox.Root>
       <label htmlFor="dataSuffix">
         <ReactMarkdown
-        className="text-[10px]"
+          className="text-[10px]"
           components={{
             a: ({ node, ...props }) => (
               <a {...props} className="font-medium" target="_blank" />

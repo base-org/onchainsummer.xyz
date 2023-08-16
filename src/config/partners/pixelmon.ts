@@ -15,7 +15,8 @@ const pixelmon: Partner = {
   twitter: '@Pixelmon',
   drops: [
     {
-      image: '/partners/pixelmon/drops/FINAL_ART-Kevin-Nanoblock-Illustration-NFT-Manfred Ho.jpg',
+      image:
+        '/partners/pixelmon/drops/FINAL_ART-Kevin-Nanoblock-Illustration-NFT-Manfred Ho.jpg',
       creator: '0xCe0d48718F195aa0Ee14121ED40AE52F0EA55159',
       name: 'Summer Kevin',
       externalLink: 'https://www.pixelmon.ai/kevin-nanoblock',
@@ -23,7 +24,7 @@ const pixelmon: Partner = {
       startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      description: "Fun Fact: Do you know that Kevin cannot swim?",
+      description: 'Fun Fact: Do you know that Kevin cannot swim?',
       address: '0x',
       mintType: MintType.External,
       crossMintClientId: '',

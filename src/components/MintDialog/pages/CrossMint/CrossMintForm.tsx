@@ -129,7 +129,9 @@ export const CrossMintForm: FC<CrossMintFormProps> = ({
             variant="LIGHT"
             className={clsx(
               'w-full max-w-[294px] flex flex-col gap-1 mb-4 !font-inter !py-2 !capitalize z-50',
-              { '-mt-5': prepared }
+              {
+                '-mt-5': prepared,
+              }
             )}
             onClick={() => {
               setPage(ModalPage.NATIVE_MINT)

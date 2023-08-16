@@ -12,7 +12,7 @@ export const Provider: FC<MintDialogProviderProps> = ({
   const [info, setInfo] = useState<MintDialogInfo>(context)
 
   return (
-    <MintDialogContext.Provider value={{info, setInfo}}>
+    <MintDialogContext.Provider value={{ info, setInfo }}>
       {children}
     </MintDialogContext.Provider>
   )
