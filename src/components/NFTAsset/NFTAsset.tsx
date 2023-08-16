@@ -35,7 +35,7 @@ export const NFTAsset: FC<NFTAssetProps> = ({
       playsinline
       controls
       muted={!!muted}
-      playing
+      playing={!!autoPlay}
       autoPlay={!!autoPlay}
       width="100%"
       height="100%"
