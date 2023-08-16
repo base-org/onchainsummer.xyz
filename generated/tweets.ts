@@ -1,48 +1,24 @@
 export const tweets = {
   data: [
     {
-      referenced_tweets: [{ type: 'replied_to', id: '1691195260817543171' }],
       public_metrics: {
         retweet_count: 4,
         reply_count: 0,
         like_count: 10,
         quote_count: 0,
         bookmark_count: 0,
-        impression_count: 268,
+        impression_count: 271,
       },
+      referenced_tweets: [{ type: 'replied_to', id: '1691195260817543171' }],
+      created_at: '2023-08-14T21:12:23.000Z',
+      reply_settings: 'everyone',
+      text: '@JoshLippi @hamzatinc @FWBtweets @ourZORA @nounsbuilder @hifilabs @ImanEurope @JameeCornelia @chloeangelides @Verite @illcamille @vthemartian @ForrestMortifee @iamnickdoteth @jessepollak @ilovebeingthere @BuildOnBase @maddistjohn @derekgtaylor @BennyAbels Protocol rewards go towards more collective creation, imagination onchain, and donabe irl. Mint #OnchainSummer today and be apart if history forever https://t.co/VCPvt5qwHo',
+      id: '1691196091851735040',
+      conversation_id: '1689167424200048640',
       lang: 'en',
-      in_reply_to_user_id: '14354410',
       geo: { place_id: 'fbd6d2f5a4e4a15e' },
+      possibly_sensitive: false,
       entities: {
-        hashtags: [{ start: 352, end: 366, tag: 'OnchainSummer' }],
-        urls: [
-          {
-            start: 405,
-            end: 428,
-            url: 'https://t.co/VCPvt5qwHo',
-            expanded_url:
-              'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
-            display_url: 'zora.co/collect/base:0…',
-            images: [
-              {
-                url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=orig',
-                width: 1024,
-                height: 1024,
-              },
-              {
-                url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=150x150',
-                width: 150,
-                height: 150,
-              },
-            ],
-            status: 200,
-            title: 'Onchain Summer',
-            description:
-              'It takes all of us. “Onchain Summer,” created in Idyllwild California on a Friday during FWB Fest 2023. An artifact to move to, a disco song in the woods inspired by the creaking of a ceiling fan in tempo around 127 bpms at Fridays at the Park at Fest. Builder DAO conversations happened earlier in the day, egg & cheese ideas, collective imagination, creative learnings in motion. Base was deployed via Starlink (what?!) pure espresso was flowing, Donabe grill was sizzling, it was all happening at FEST, a next level happy Friday ⌐Ⓗ-Ⓕ Musicians and Builders: Chloe Angelides, Josh Lippi, Ben Schwier, Tim Anderson, Derek G Taylor, Maddi St John, Iman Europe, Vérité, James Cornelia, Ill Camille, V.C.R, Forrest Mortifee, Soulquest, Builder DAO, Thursdays in the Garden, Ari Klevecz and more came together to explore the unknown, a song emerged out of thin air, like a whisper from the sea foam to the hills ::Onchain:: Happy Friday ⌐Ⓗ-Ⓕ Summer flows until the end of October usually in San Francisc',
-            unwound_url:
-              'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
-          },
-        ],
         mentions: [
           { start: 0, end: 10, username: 'JoshLippi', id: '635908484' },
           { start: 11, end: 21, username: 'hamzatinc', id: '1937134520' },
@@ -110,33 +86,101 @@ export const tweets = {
             id: '1264685157132328960',
           },
         ],
+        urls: [
+          {
+            start: 405,
+            end: 428,
+            url: 'https://t.co/VCPvt5qwHo',
+            expanded_url:
+              'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
+            display_url: 'zora.co/collect/base:0…',
+            images: [
+              {
+                url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=orig',
+                width: 1024,
+                height: 1024,
+              },
+              {
+                url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=150x150',
+                width: 150,
+                height: 150,
+              },
+            ],
+            status: 200,
+            title: 'Onchain Summer',
+            description:
+              'It takes all of us. “Onchain Summer,” created in Idyllwild California on a Friday during FWB Fest 2023. An artifact to move to, a disco song in the woods inspired by the creaking of a ceiling fan in tempo around 127 bpms at Fridays at the Park at Fest. Builder DAO conversations happened earlier in the day, egg & cheese ideas, collective imagination, creative learnings in motion. Base was deployed via Starlink (what?!) pure espresso was flowing, Donabe grill was sizzling, it was all happening at FEST, a next level happy Friday ⌐Ⓗ-Ⓕ Musicians and Builders: Chloe Angelides, Josh Lippi, Ben Schwier, Tim Anderson, Derek G Taylor, Maddi St John, Iman Europe, Vérité, James Cornelia, Ill Camille, V.C.R, Forrest Mortifee, Soulquest, Builder DAO, Thursdays in the Garden, Ari Klevecz and more came together to explore the unknown, a song emerged out of thin air, like a whisper from the sea foam to the hills ::Onchain:: Happy Friday ⌐Ⓗ-Ⓕ Summer flows until the end of October usually in San Francisc',
+            unwound_url:
+              'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
+          },
+        ],
+        hashtags: [{ start: 352, end: 366, tag: 'OnchainSummer' }],
       },
-      author_id: '14354410',
-      conversation_id: '1689167424200048640',
-      edit_history_tweet_ids: ['1691196091851735040'],
-      text: '@JoshLippi @hamzatinc @FWBtweets @ourZORA @nounsbuilder @hifilabs @ImanEurope @JameeCornelia @chloeangelides @Verite @illcamille @vthemartian @ForrestMortifee @iamnickdoteth @jessepollak @ilovebeingthere @BuildOnBase @maddistjohn @derekgtaylor @BennyAbels Protocol rewards go towards more collective creation, imagination onchain, and donabe irl. Mint #OnchainSummer today and be apart if history forever https://t.co/VCPvt5qwHo',
-      possibly_sensitive: false,
-      id: '1691196091851735040',
+      in_reply_to_user_id: '14354410',
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: false,
         editable_until: '2023-08-14T22:12:23.000Z',
       },
-      created_at: '2023-08-14T21:12:23.000Z',
-      reply_settings: 'everyone',
+      edit_history_tweet_ids: ['1691196091851735040'],
+      author_id: '14354410',
     },
     {
-      referenced_tweets: [{ type: 'replied_to', id: '1687086965467074560' }],
       public_metrics: {
-        retweet_count: 45,
-        reply_count: 7,
+        retweet_count: 19,
+        reply_count: 1,
         like_count: 140,
-        quote_count: 11,
-        bookmark_count: 28,
-        impression_count: 32058,
+        quote_count: 0,
+        bookmark_count: 7,
+        impression_count: 4885,
       },
+      created_at: '2023-08-15T21:43:17.000Z',
+      reply_settings: 'everyone',
+      text: 'Can’t have onchain summer without @0x113d and @mathcastles. ⛓ https://t.co/2uqetwKmQw',
+      id: '1691566254677791070',
+      conversation_id: '1691566254677791070',
       lang: 'en',
-      in_reply_to_user_id: '1534658078427078657',
+      possibly_sensitive: false,
+      entities: {
+        mentions: [
+          { start: 34, end: 41, username: '0x113d', id: '1371192167063027719' },
+          {
+            start: 46,
+            end: 58,
+            username: 'mathcastles',
+            id: '1442371739296546820',
+          },
+        ],
+        urls: [
+          {
+            start: 62,
+            end: 85,
+            url: 'https://t.co/2uqetwKmQw',
+            expanded_url:
+              'https://twitter.com/FLAMINGODAO/status/1691566254677791070/photo/1',
+            display_url: 'pic.twitter.com/2uqetwKmQw',
+            media_key: '16_1691566109462523904',
+          },
+        ],
+      },
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: true,
+        editable_until: '2023-08-15T22:43:17.000Z',
+      },
+      edit_history_tweet_ids: ['1691566254677791070'],
+      author_id: '1307002014921101313',
+      attachments: { media_keys: ['16_1691566109462523904'] },
+    },
+    {
+      public_metrics: {
+        retweet_count: 6,
+        reply_count: 2,
+        like_count: 26,
+        quote_count: 1,
+        bookmark_count: 1,
+        impression_count: 5582,
+      },
       context_annotations: [
         {
           domain: {
@@ -146,183 +190,70 @@ export const tweets = {
               'Categories within Brand Verticals that narrow down the scope of Brands',
           },
           entity: {
-            id: '1557696848252391426',
-            name: 'Financial Services Business',
+            id: '1557696940178935808',
+            name: 'Gaming Business',
             description:
-              'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
-          },
-        },
-        {
-          domain: {
-            id: '30',
-            name: 'Entities [Entity Service]',
-            description:
-              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
-          },
-          entity: {
-            id: '1007361429752594432',
-            name: 'Ethereum cryptocurrency',
-            description: 'Ethereum Cryptocurrency',
-          },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: {
-            id: '1007361429752594432',
-            name: 'Ethereum cryptocurrency',
-            description: 'Ethereum Cryptocurrency',
+              'Brands, companies, advertisers and every non-person handle with the profit intent related to offline and online games such as gaming consoles, tabletop games, video game publishers',
           },
         },
       ],
-      author_id: '1534658078427078657',
-      conversation_id: '1687086965467074560',
-      edit_history_tweet_ids: ['1687086968021405696'],
+      created_at: '2023-08-12T21:55:00.000Z',
+      reply_settings: 'everyone',
+      text: 'Who created #BASE(D).exe? https://t.co/f1uS21G2Nx',
+      id: '1690482038149947393',
       entities: {
+        annotations: [
+          {
+            start: 13,
+            end: 16,
+            probability: 0.5086,
+            type: 'Other',
+            normalized_text: 'BASE',
+          },
+        ],
         urls: [
           {
-            start: 152,
-            end: 175,
-            url: 'https://t.co/W9Lyh06nrE',
+            start: 26,
+            end: 49,
+            url: 'https://t.co/f1uS21G2Nx',
             expanded_url:
-              'https://mint.fun/base/0x00008453E27e8e88F305F13CF27c30D724fDd055',
-            display_url: 'mint.fun/base/0x0000845…',
-            images: [
-              {
-                url: 'https://pbs.twimg.com/news_img/1689626926472933376/ysYEaziY?format=jpg&name=orig',
-                width: 1200,
-                height: 630,
-              },
-              {
-                url: 'https://pbs.twimg.com/news_img/1689626926472933376/ysYEaziY?format=jpg&name=150x150',
-                width: 150,
-                height: 150,
-              },
-            ],
-            status: 200,
-            title: 'mint.fun x Base Bridge Pass | mint.fun',
-            description: 'Mint mint.fun x Base Bridge Pass on mint.fun',
-            unwound_url:
-              'https://mint.fun/base/0x00008453E27e8e88F305F13CF27c30D724fDd055',
-          },
-          {
-            start: 176,
-            end: 199,
-            url: 'https://t.co/qOZ6NDhOrb',
-            expanded_url:
-              'https://twitter.com/mintdotfun/status/1687086968021405696/video/1',
-            display_url: 'pic.twitter.com/qOZ6NDhOrb',
-            media_key: '7_1687085747038535681',
+              'https://twitter.com/DrBASEDArtHouse/status/1690482038149947393/video/1',
+            display_url: 'pic.twitter.com/f1uS21G2Nx',
+            media_key: '7_1690388014738944001',
           },
         ],
-        mentions: [
-          {
-            start: 49,
-            end: 61,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
-          },
-        ],
+        hashtags: [{ start: 12, end: 17, tag: 'BASE' }],
       },
-      text: "To celebrate, we're launching a bridge pass with @buildonbase.\n\nMint a bridge pass and automatically receive ETH on Base.\n\nCollect by August 31, 2023\n→ https://t.co/W9Lyh06nrE https://t.co/qOZ6NDhOrb",
+      conversation_id: '1690482038149947393',
+      lang: 'en',
       possibly_sensitive: false,
-      id: '1687086968021405696',
       edit_controls: {
         edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-08-03T14:04:12.000Z',
-      },
-      created_at: '2023-08-03T13:04:12.000Z',
-      reply_settings: 'everyone',
-      attachments: { media_keys: ['7_1687085747038535681'] },
-    },
-    {
-      public_metrics: {
-        retweet_count: 59,
-        reply_count: 75,
-        like_count: 558,
-        quote_count: 14,
-        bookmark_count: 107,
-        impression_count: 70579,
-      },
-      lang: 'en',
-      author_id: '18876842',
-      conversation_id: '1689003757181317120',
-      edit_history_tweet_ids: ['1689003612385550336', '1689003757181317120'],
-      entities: {
-        urls: [
-          {
-            start: 55,
-            end: 78,
-            url: 'https://t.co/F3XPBcuVei',
-            expanded_url:
-              'https://zora.co/collect/base:0xcf512c90887f195f64ae2d0ded42c98a5aa466fb',
-            display_url: 'zora.co/collect/base:0…',
-            images: [
-              {
-                url: 'https://pbs.twimg.com/news_img/1689003623898857472/nnZIUEHA?format=jpg&name=orig',
-                width: 1200,
-                height: 1287,
-              },
-              {
-                url: 'https://pbs.twimg.com/news_img/1689003623898857472/nnZIUEHA?format=jpg&name=150x150',
-                width: 150,
-                height: 150,
-              },
-            ],
-            status: 200,
-            title: 'A PERSONAL MANIFESTO',
-            description:
-              'I’ve spent a lot of time thinking about the first thing I would mint on Base. Imbuing a version of myself into the shared consciousness that is beginning to exist in this nascent blockspace feels like the best place to start. I originally wrote this personal manifesto when things started growing really quickly in 2017 at Coinbase and I was way out of my depth. I started working with a coach and she helped me clarify who I was, allowing me to show up better for myself and the people around me. Since the original writing, I’ve used it as a north star for my daily existence and continued refining it to reflect the current me. I’ve never shared it before — but there’s no day like today. All proceeds from this mint will go towards the next generation of builders on Base. I am excited to build a better world with with all of you. 🔵💛',
-            unwound_url:
-              'https://zora.co/collect/base:0xcf512c90887f195f64ae2d0ded42c98a5aa466fb',
-          },
-          {
-            start: 282,
-            end: 305,
-            url: 'https://t.co/7PXxk7p6Of',
-            expanded_url:
-              'https://twitter.com/i/web/status/1689003757181317120',
-            display_url: 'twitter.com/i/web/status/1…',
-          },
-          {
-            start: 306,
-            end: 329,
-            url: 'https://t.co/FtGRQyJ1hU',
-            expanded_url:
-              'https://twitter.com/jessepollak/status/1689003757181317120/photo/1',
-            display_url: 'pic.twitter.com/FtGRQyJ1hU',
-            media_key: '3_1689003107529682944',
-          },
-        ],
-      },
-      text: 'my first mint on base - A PERSONAL MANIFESTO\n\njoin me: https://t.co/F3XPBcuVei\n\n---\n\nI’ve spent a lot of time thinking about the first thing I would mint on Base. Imbuing a version of myself into the shared consciousness that is beginning to exist in this nascent blockspace feels… https://t.co/7PXxk7p6Of https://t.co/FtGRQyJ1hU',
-      possibly_sensitive: false,
-      id: '1689003757181317120',
-      edit_controls: {
-        edits_remaining: 4,
         is_edit_eligible: true,
-        editable_until: '2023-08-08T21:00:16.000Z',
+        editable_until: '2023-08-12T22:55:00.000Z',
       },
-      created_at: '2023-08-08T20:00:50.000Z',
-      reply_settings: 'everyone',
-      attachments: { media_keys: ['3_1689003107529682944'] },
+      edit_history_tweet_ids: ['1690482038149947393'],
+      author_id: '1690369427739381760',
+      attachments: { media_keys: ['7_1690388014738944001'] },
     },
   ],
   includes: {
     users: [
       {
-        location: 'thepark.eth',
-        verified_type: 'blue',
         created_at: '2008-04-10T19:36:55.000Z',
-        username: 'thepark',
-        protected: false,
-        url: 'https://t.co/7QKPKf25ND',
-        name: 'thepark.eth',
         pinned_tweet_id: '1684455803921764354',
+        public_metrics: {
+          followers_count: 5890,
+          following_count: 2186,
+          tweet_count: 16978,
+          listed_count: 154,
+        },
+        description: '⌐Ⓗ-Ⓕ happy friday 🌜⬛️🌛fridays at the park',
+        id: '14354410',
+        name: 'thepark.eth',
+        verified: true,
+        location: 'thepark.eth',
+        url: 'https://t.co/7QKPKf25ND',
         entities: {
           url: {
             urls: [
@@ -336,26 +267,27 @@ export const tweets = {
             ],
           },
         },
-        description: '⌐Ⓗ-Ⓕ happy friday 🌜⬛️🌛fridays at the park',
-        verified: true,
-        public_metrics: {
-          followers_count: 5891,
-          following_count: 2186,
-          tweet_count: 16978,
-          listed_count: 154,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1578990037269520384/vOHN9OXg_normal.jpg',
-        id: '14354410',
+        protected: false,
+        username: 'thepark',
       },
       {
-        location: 'California, USA',
-        verified_type: 'none',
         created_at: '2012-07-15T04:52:57.000Z',
-        username: 'JoshLippi',
-        protected: false,
-        url: 'https://t.co/fBFqMT1LA5',
+        public_metrics: {
+          followers_count: 1301,
+          following_count: 915,
+          tweet_count: 5187,
+          listed_count: 21,
+        },
+        description:
+          "adventures in music. Overtimin' with @thepark @LosDays @blktopproject @leebobthetruth @truthmusiclabel @songcamp_ @headless_chaos",
+        id: '635908484',
         name: 'Josh Lippi',
+        verified: false,
+        location: 'California, USA',
+        url: 'https://t.co/fBFqMT1LA5',
         entities: {
           url: {
             urls: [
@@ -380,46 +312,46 @@ export const tweets = {
             ],
           },
         },
-        description:
-          "adventures in music. Overtimin' with @thepark @LosDays @blktopproject @leebobthetruth @truthmusiclabel @songcamp_ @headless_chaos",
-        verified: false,
-        public_metrics: {
-          followers_count: 1301,
-          following_count: 915,
-          tweet_count: 5187,
-          listed_count: 21,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1292968278306955267/JWtjepbB_normal.jpg',
-        id: '635908484',
+        protected: false,
+        username: 'JoshLippi',
       },
       {
-        location: 'Massachussetts ',
-        verified_type: 'blue',
         created_at: '2013-10-05T09:53:01.000Z',
-        username: 'hamzatinc',
-        protected: false,
-        name: 'hamzat.raheem',
         pinned_tweet_id: '1638760781960323075',
-        description: '1995 - 2195',
-        verified: true,
         public_metrics: {
           followers_count: 711,
           following_count: 1164,
-          tweet_count: 19261,
+          tweet_count: 19262,
           listed_count: 12,
         },
+        description: '1995 - 2195',
+        id: '1937134520',
+        name: 'hamzat.raheem',
+        verified: true,
+        location: 'Massachussetts ',
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1621573881302552577/tC7pTgVq_normal.jpg',
-        id: '1937134520',
+        protected: false,
+        username: 'hamzatinc',
       },
       {
-        verified_type: 'none',
         created_at: '2020-12-25T06:30:57.000Z',
-        username: 'FWBtweets',
-        protected: false,
-        url: 'https://t.co/Jl41my5HYp',
+        public_metrics: {
+          followers_count: 66065,
+          following_count: 366,
+          tweet_count: 4604,
+          listed_count: 1134,
+        },
+        description:
+          'A new kind of social network – owned by the creatives and builders who believe in the promise of a better internet.',
+        id: '1342357104007503872',
         name: 'Friends With Benefits',
+        verified: false,
+        url: 'https://t.co/Jl41my5HYp',
         entities: {
           url: {
             urls: [
@@ -433,28 +365,27 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'A new kind of social network – owned by the creatives and builders who believe in the promise of a better internet.',
-        verified: false,
-        public_metrics: {
-          followers_count: 66064,
-          following_count: 366,
-          tweet_count: 4604,
-          listed_count: 1134,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1426752232133828609/GO240Kbh_normal.jpg',
-        id: '1342357104007503872',
+        protected: false,
+        username: 'FWBtweets',
       },
       {
-        location: 'Ethereum+',
-        verified_type: 'business',
         created_at: '2019-09-01T05:14:44.000Z',
-        username: 'ourZORA',
-        protected: false,
-        url: 'https://t.co/Vx66LlIe0G',
-        name: 'Zora',
         pinned_tweet_id: '1687146881791791104',
+        public_metrics: {
+          followers_count: 127990,
+          following_count: 1038,
+          tweet_count: 5251,
+          listed_count: 1471,
+        },
+        description: 'Imagine. Mint. Enjoy.',
+        id: '1168028988091985920',
+        name: 'Zora',
+        verified: true,
+        location: 'Ethereum+',
+        url: 'https://t.co/Vx66LlIe0G',
         entities: {
           url: {
             urls: [
@@ -468,27 +399,28 @@ export const tweets = {
             ],
           },
         },
-        description: 'Imagine. Mint. Enjoy.',
-        verified: true,
-        public_metrics: {
-          followers_count: 127933,
-          following_count: 1038,
-          tweet_count: 5247,
-          listed_count: 1471,
-        },
+        verified_type: 'business',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1687148532527251456/l9l05oJg_normal.jpg',
-        id: '1168028988091985920',
+        protected: false,
+        username: 'ourZORA',
       },
       {
-        location: 'Nouns Protocol',
-        verified_type: 'none',
         created_at: '2022-06-07T01:48:54.000Z',
-        username: 'nounsbuilder',
-        protected: false,
-        url: 'https://t.co/q1Q6iEEA9F',
-        name: 'Nouns Builder',
         pinned_tweet_id: '1587460414488576000',
+        public_metrics: {
+          followers_count: 3779,
+          following_count: 40,
+          tweet_count: 601,
+          listed_count: 67,
+        },
+        description:
+          'Create your Nouns DAO. Public Infrastructure by @nounsdao & @ourzora Contribute: https://t.co/AMFm9Coc7C  ⌐◨-◨ ❘❙❚',
+        id: '1533989227855331328',
+        name: 'Nouns Builder',
+        verified: false,
+        location: 'Nouns Protocol',
+        url: 'https://t.co/q1Q6iEEA9F',
         entities: {
           url: {
             urls: [
@@ -517,28 +449,28 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'Create your Nouns DAO. Public Infrastructure by @nounsdao & @ourzora Contribute: https://t.co/AMFm9Coc7C  ⌐◨-◨ ❘❙❚',
-        verified: false,
-        public_metrics: {
-          followers_count: 3779,
-          following_count: 40,
-          tweet_count: 601,
-          listed_count: 67,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1587230850483191808/nOt4mjKu_normal.jpg',
-        id: '1533989227855331328',
+        protected: false,
+        username: 'nounsbuilder',
       },
       {
-        location: 'San Francisco, CA',
-        verified_type: 'blue',
         created_at: '2020-12-10T19:58:39.000Z',
-        username: 'hifilabs',
-        protected: false,
-        url: 'https://t.co/aE1u8YVV1S',
-        name: 'hifilabs',
         pinned_tweet_id: '1671564028630663168',
+        public_metrics: {
+          followers_count: 3306,
+          following_count: 688,
+          tweet_count: 2745,
+          listed_count: 132,
+        },
+        description:
+          '⚡️An incubator for artists and their biggest ideas⚡️\n\nWant to chat? Reach out to us at shout@hifilabs.co 🗣\n\nJoin our Discord: https://t.co/8Rxc9Skl96',
+        id: '1337124535955410945',
+        name: 'hifilabs',
+        verified: true,
+        location: 'San Francisco, CA',
+        url: 'https://t.co/aE1u8YVV1S',
         entities: {
           url: {
             urls: [
@@ -563,27 +495,27 @@ export const tweets = {
             ],
           },
         },
-        description:
-          '⚡️An incubator for artists and their biggest ideas⚡️\n\nWant to chat? Reach out to us at shout@hifilabs.co 🗣\n\nJoin our Discord: https://t.co/8Rxc9Skl96',
-        verified: true,
-        public_metrics: {
-          followers_count: 3307,
-          following_count: 688,
-          tweet_count: 2745,
-          listed_count: 132,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1417635918228475905/JUhPCkf0_normal.jpg',
-        id: '1337124535955410945',
+        protected: false,
+        username: 'hifilabs',
       },
       {
-        location: 'Inglewood, CA',
-        verified_type: 'blue',
         created_at: '2009-07-16T02:45:47.000Z',
-        username: 'ImanEurope',
-        protected: false,
-        url: 'https://t.co/DSDaiTLOom',
+        public_metrics: {
+          followers_count: 44034,
+          following_count: 1773,
+          tweet_count: 30640,
+          listed_count: 447,
+        },
+        description:
+          'ᴛʜᴇ ᴄᴀᴛᴇʀᴘɪʟʟᴀʀ ʙᴇᴄᴏᴍᴇs ᴛʜᴇ ʙᴜᴛᴛᴇʀғʟʏ. 🐛✨🦋 creator. tech. | founder of @TheHomiesDAO. prev: soundxyz | contact: mgmt@imaneurope.com',
+        id: '57220139',
         name: 'iman, the icon.',
+        verified: true,
+        location: 'Inglewood, CA',
+        url: 'https://t.co/DSDaiTLOom',
         entities: {
           url: {
             urls: [
@@ -600,28 +532,27 @@ export const tweets = {
             mentions: [{ start: 71, end: 84, username: 'TheHomiesDAO' }],
           },
         },
-        description:
-          'ᴛʜᴇ ᴄᴀᴛᴇʀᴘɪʟʟᴀʀ ʙᴇᴄᴏᴍᴇs ᴛʜᴇ ʙᴜᴛᴛᴇʀғʟʏ. 🐛✨🦋 creator. tech. | founder of @TheHomiesDAO. prev: soundxyz | contact: mgmt@imaneurope.com',
-        verified: true,
-        public_metrics: {
-          followers_count: 44036,
-          following_count: 1773,
-          tweet_count: 30640,
-          listed_count: 447,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1673795257853681664/LzK47eZY_normal.jpg',
-        id: '57220139',
+        protected: false,
+        username: 'ImanEurope',
       },
       {
-        location: 'ATL ✈️ LAX',
-        verified_type: 'blue',
         created_at: '2011-08-05T17:27:21.000Z',
-        username: 'JameeCornelia',
-        protected: false,
-        url: 'https://t.co/u8UtJCkBEo',
-        name: 'jameecornelia',
         pinned_tweet_id: '1691244777885622272',
+        public_metrics: {
+          followers_count: 6567,
+          following_count: 3911,
+          tweet_count: 51026,
+          listed_count: 87,
+        },
+        description: 'she//they | ART SCHOOL DROPOUT',
+        id: '349167146',
+        name: 'jameecornelia',
+        verified: true,
+        location: 'ATL ✈️ LAX',
+        url: 'https://t.co/u8UtJCkBEo',
         entities: {
           url: {
             urls: [
@@ -635,46 +566,46 @@ export const tweets = {
             ],
           },
         },
-        description: 'she//they | ART SCHOOL DROPOUT',
-        verified: true,
-        public_metrics: {
-          followers_count: 6568,
-          following_count: 3911,
-          tweet_count: 51019,
-          listed_count: 87,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1688786465948672000/ir-3AF1B_normal.jpg',
-        id: '349167146',
+        protected: false,
+        username: 'JameeCornelia',
       },
       {
-        verified_type: 'none',
         created_at: '2011-01-02T21:17:46.000Z',
-        username: 'chloeangelides',
-        protected: false,
-        name: 'Chloe Angelides',
         pinned_tweet_id: '1375494626660868097',
-        description: '',
-        verified: false,
         public_metrics: {
           followers_count: 3060,
           following_count: 183,
           tweet_count: 33,
           listed_count: 25,
         },
+        description: '',
+        id: '233292445',
+        name: 'Chloe Angelides',
+        verified: false,
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1455423740221689857/7pTGw7Gs_normal.jpg',
-        id: '233292445',
+        protected: false,
+        username: 'chloeangelides',
       },
       {
-        location: 'not here',
-        verified_type: 'none',
         created_at: '2010-06-14T21:15:46.000Z',
-        username: 'Verite',
-        protected: false,
-        url: 'https://t.co/xmIbNskmrv',
-        name: 'VÉRITÉ',
         pinned_tweet_id: '1611046444143726593',
+        public_metrics: {
+          followers_count: 22548,
+          following_count: 1147,
+          tweet_count: 16732,
+          listed_count: 298,
+        },
+        description: 'NEW ALBUM. love you forever. out now. 🩸🩸🩸',
+        id: '155694788',
+        name: 'VÉRITÉ',
+        verified: false,
+        location: 'not here',
+        url: 'https://t.co/xmIbNskmrv',
         entities: {
           url: {
             urls: [
@@ -688,27 +619,28 @@ export const tweets = {
             ],
           },
         },
-        description: 'NEW ALBUM. love you forever. out now. 🩸🩸🩸',
-        verified: false,
-        public_metrics: {
-          followers_count: 22548,
-          following_count: 1147,
-          tweet_count: 16732,
-          listed_count: 298,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1564281107981471745/kjnE-xZj_normal.jpg',
-        id: '155694788',
+        protected: false,
+        username: 'Verite',
       },
       {
-        location: 'LA. IE.  🌍. ',
-        verified_type: 'none',
         created_at: '2009-04-02T08:40:43.000Z',
-        username: 'illcamille',
-        protected: false,
-        url: 'https://t.co/pBG0EOkZxk',
-        name: 'iLLCAMILLE',
         pinned_tweet_id: '1690052220606459904',
+        public_metrics: {
+          followers_count: 10088,
+          following_count: 5884,
+          tweet_count: 57552,
+          listed_count: 113,
+        },
+        description:
+          'Multi-disciplinary MC. 1/2 of HARRIETT on vinyl via @HHVrecords. Playing  jams on @dublab. Team TEC @tecleimert. Brothers & Sisters soon come.',
+        id: '28305337',
+        name: 'iLLCAMILLE',
+        verified: false,
+        location: 'LA. IE.  🌍. ',
+        url: 'https://t.co/pBG0EOkZxk',
         entities: {
           url: {
             urls: [
@@ -730,28 +662,28 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'Multi-disciplinary MC. 1/2 of HARRIETT on vinyl via @HHVrecords. Playing  jams on @dublab. Team TEC @tecleimert. Brothers & Sisters soon come.',
-        verified: false,
-        public_metrics: {
-          followers_count: 10089,
-          following_count: 5884,
-          tweet_count: 57552,
-          listed_count: 113,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1677164341337157632/u9sjcf4R_normal.jpg',
-        id: '28305337',
+        protected: false,
+        username: 'illcamille',
       },
       {
-        location: 'mars.',
-        verified_type: 'none',
         created_at: '2009-06-30T20:59:38.000Z',
-        username: 'vthemartian',
-        protected: false,
-        url: 'https://t.co/jBjx9Ed3l8',
-        name: 'vthemartian',
         pinned_tweet_id: '1520086130305110017',
+        public_metrics: {
+          followers_count: 2443,
+          following_count: 994,
+          tweet_count: 47992,
+          listed_count: 34,
+        },
+        description:
+          'violinist l composer | author | & so on… 👩🏾‍🎨 STREAM "THE CHRONICLES OF A CATERPILLAR" out now 🎶 🐛𓂀 mgmt - matt@peopleschampmgt.com',
+        id: '52519075',
+        name: 'vthemartian',
+        verified: false,
+        location: 'mars.',
+        url: 'https://t.co/jBjx9Ed3l8',
         entities: {
           url: {
             urls: [
@@ -765,28 +697,28 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'violinist l composer | author | & so on… 👩🏾‍🎨 STREAM "THE CHRONICLES OF A CATERPILLAR" out now 🎶 🐛𓂀 mgmt - matt@peopleschampmgt.com',
-        verified: false,
-        public_metrics: {
-          followers_count: 2443,
-          following_count: 994,
-          tweet_count: 47992,
-          listed_count: 34,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1661184957275054080/uW94s_Au_normal.jpg',
-        id: '52519075',
+        protected: false,
+        username: 'vthemartian',
       },
       {
-        location: 'Vancouver, British Columbia',
-        verified_type: 'none',
         created_at: '2010-09-01T02:28:30.000Z',
-        username: 'ForrestMortifee',
-        protected: false,
-        url: 'https://t.co/lI8uJmm7OS',
-        name: 'Ƒorrestᙢortifee.ꫀׁׅܻtׁׅh',
         pinned_tweet_id: '1601289219212996608',
+        public_metrics: {
+          followers_count: 1790,
+          following_count: 1602,
+          tweet_count: 6945,
+          listed_count: 36,
+        },
+        description:
+          'vocal artist , ancient futurist , weekly minter ~ he/him ༄  @FWBtweets @sofarsounds @songcamp_ @kernel0x ✰ collection optional ✰ enjoyment encouraged ✰',
+        id: '185479680',
+        name: 'Ƒorrestᙢortifee.ꫀׁׅܻtׁׅh',
+        verified: false,
+        location: 'Vancouver, British Columbia',
+        url: 'https://t.co/lI8uJmm7OS',
         entities: {
           url: {
             urls: [
@@ -808,28 +740,28 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'vocal artist , ancient futurist , weekly minter ~ he/him ༄  @FWBtweets @sofarsounds @songcamp_ @kernel0x ✰ collection optional ✰ enjoyment encouraged ✰',
-        verified: false,
-        public_metrics: {
-          followers_count: 1790,
-          following_count: 1602,
-          tweet_count: 6945,
-          listed_count: 36,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1658012141667123200/EzOq5nj7_normal.jpg',
-        id: '185479680',
+        protected: false,
+        username: 'ForrestMortifee',
       },
       {
-        location: 'Melbourne, Victoria',
-        verified_type: 'none',
         created_at: '2020-09-20T00:43:18.000Z',
-        username: 'iamnickdoteth',
-        protected: false,
-        url: 'https://t.co/JhkkDJaPBZ',
-        name: 'iamnick.eth',
         pinned_tweet_id: '1674779912413278208',
+        public_metrics: {
+          followers_count: 617,
+          following_count: 965,
+          tweet_count: 845,
+          listed_count: 19,
+        },
+        description:
+          'Building @withfam_ ✲ Prev. co-founder @wearetalisman ✲ @fwbtweets OG',
+        id: '1307480373450780672',
+        name: 'iamnick.eth',
+        verified: false,
+        location: 'Melbourne, Victoria',
+        url: 'https://t.co/JhkkDJaPBZ',
         entities: {
           url: {
             urls: [
@@ -850,28 +782,28 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'Building @withfam_ ✲ Prev. co-founder @wearetalisman ✲ @fwbtweets OG',
-        verified: false,
-        public_metrics: {
-          followers_count: 617,
-          following_count: 965,
-          tweet_count: 845,
-          listed_count: 19,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1676099205360914432/Zuv-va_O_normal.png',
-        id: '1307480373450780672',
+        protected: false,
+        username: 'iamnickdoteth',
       },
       {
-        location: 'east bay & the internet',
-        verified_type: 'blue',
         created_at: '2009-01-11T19:36:50.000Z',
-        username: 'jessepollak',
-        protected: false,
-        url: 'https://t.co/b0wXk39N1H',
-        name: 'Jesse Pollak (jesse.xyz) 🛡️',
         pinned_tweet_id: '1626991181300133889',
+        public_metrics: {
+          followers_count: 29638,
+          following_count: 1714,
+          tweet_count: 8515,
+          listed_count: 592,
+        },
+        description:
+          '@buildonbase contributor #001\n@oakcurrency with @0xcity3',
+        id: '18876842',
+        name: 'Jesse Pollak (jesse.xyz) 🛡️',
+        verified: true,
+        location: 'east bay & the internet',
+        url: 'https://t.co/b0wXk39N1H',
         entities: {
           url: {
             urls: [
@@ -892,27 +824,26 @@ export const tweets = {
             ],
           },
         },
-        description:
-          '@buildonbase contributor #001\n@oakcurrency with @0xcity3',
-        verified: true,
-        public_metrics: {
-          followers_count: 29628,
-          following_count: 1713,
-          tweet_count: 8499,
-          listed_count: 592,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1484575656759472128/4vLR6_4F_normal.png',
-        id: '18876842',
+        protected: false,
+        username: 'jessepollak',
       },
       {
-        location: 'The park',
-        verified_type: 'blue',
         created_at: '2022-02-17T22:21:04.000Z',
-        username: 'ilovebeingthere',
-        protected: false,
-        url: 'https://t.co/75VjJoCV9H',
+        public_metrics: {
+          followers_count: 216,
+          following_count: 174,
+          tweet_count: 756,
+          listed_count: 8,
+        },
+        description: 'nothing better than @thepark @fridaysatthepark',
+        id: '1494436710867816448',
         name: 'being there',
+        verified: true,
+        location: 'The park',
+        url: 'https://t.co/75VjJoCV9H',
         entities: {
           url: {
             urls: [
@@ -932,26 +863,27 @@ export const tweets = {
             ],
           },
         },
-        description: 'nothing better than @thepark @fridaysatthepark',
-        verified: true,
-        public_metrics: {
-          followers_count: 216,
-          following_count: 174,
-          tweet_count: 756,
-          listed_count: 8,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1575991434825572358/PPESfRQw_normal.jpg',
-        id: '1494436710867816448',
+        protected: false,
+        username: 'ilovebeingthere',
       },
       {
-        verified_type: 'business',
         created_at: '2023-02-21T16:26:04.000Z',
-        username: 'BuildOnBase',
-        protected: false,
-        url: 'https://t.co/6pgVoBTD5h',
+        pinned_tweet_id: '1691843655680839967',
+        public_metrics: {
+          followers_count: 418846,
+          following_count: 27,
+          tweet_count: 531,
+          listed_count: 1200,
+        },
+        description:
+          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
+        id: '1628067904083181570',
         name: 'Base 🛡️',
-        pinned_tweet_id: '1691480376240447488',
+        verified: true,
+        url: 'https://t.co/6pgVoBTD5h',
         entities: {
           url: {
             urls: [
@@ -965,27 +897,26 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
-        verified: true,
-        public_metrics: {
-          followers_count: 418541,
-          following_count: 27,
-          tweet_count: 524,
-          listed_count: 1200,
-        },
+        verified_type: 'business',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
-        id: '1628067904083181570',
+        protected: false,
+        username: 'BuildOnBase',
       },
       {
-        location: 'La',
-        verified_type: 'none',
         created_at: '2010-05-25T20:32:18.000Z',
-        username: 'maddistjohn',
-        protected: false,
-        url: 'https://t.co/8bwAsd5aKj',
+        public_metrics: {
+          followers_count: 5160,
+          following_count: 628,
+          tweet_count: 40061,
+          listed_count: 71,
+        },
+        description: 'Local hunter gatherer \nshe/her🌈',
+        id: '148091016',
         name: '🐥',
+        verified: false,
+        location: 'La',
+        url: 'https://t.co/8bwAsd5aKj',
         entities: {
           url: {
             urls: [
@@ -999,27 +930,28 @@ export const tweets = {
             ],
           },
         },
-        description: 'Local hunter gatherer \nshe/her🌈',
-        verified: false,
-        public_metrics: {
-          followers_count: 5160,
-          following_count: 628,
-          tweet_count: 40061,
-          listed_count: 71,
-        },
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1451795674148655107/pk4D6q16_normal.jpg',
-        id: '148091016',
+        protected: false,
+        username: 'maddistjohn',
       },
       {
-        location: 'California, USA',
-        verified_type: 'blue',
         created_at: '2009-04-19T12:31:37.000Z',
-        username: 'derekgtaylor',
-        protected: false,
-        url: 'https://t.co/RLxyQh1woD',
-        name: 'derekgtaylor',
         pinned_tweet_id: '1576068329600450561',
+        public_metrics: {
+          followers_count: 3311,
+          following_count: 2508,
+          tweet_count: 13035,
+          listed_count: 101,
+        },
+        description:
+          'drums, coffee, @fwbtweets #bitcoin @hernameisbanks ⌐Ⓗ-Ⓕ @thepark ☕ @Menottis',
+        id: '33189248',
+        name: 'derekgtaylor',
+        verified: true,
+        location: 'California, USA',
+        url: 'https://t.co/RLxyQh1woD',
         entities: {
           url: {
             urls: [
@@ -1042,119 +974,204 @@ export const tweets = {
             ],
           },
         },
-        description:
-          'drums, coffee, @fwbtweets #bitcoin @hernameisbanks ⌐Ⓗ-Ⓕ @thepark ☕ @Menottis',
-        verified: true,
-        public_metrics: {
-          followers_count: 3310,
-          following_count: 2508,
-          tweet_count: 13035,
-          listed_count: 101,
-        },
+        verified_type: 'blue',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1535120205000503296/-LLlk3lF_normal.jpg',
-        id: '33189248',
+        protected: false,
+        username: 'derekgtaylor',
       },
       {
-        verified_type: 'none',
         created_at: '2020-05-24T22:30:25.000Z',
-        username: 'BennyAbels',
-        protected: false,
-        name: 'benny_abels',
-        description: 'I make music happen',
-        verified: false,
         public_metrics: {
           followers_count: 32,
           following_count: 196,
           tweet_count: 4,
           listed_count: 3,
         },
+        description: 'I make music happen',
+        id: '1264685157132328960',
+        name: 'benny_abels',
+        verified: false,
+        verified_type: 'none',
         profile_image_url:
           'https://pbs.twimg.com/profile_images/1264685751817535488/gInahhC8_normal.jpg',
-        id: '1264685157132328960',
+        protected: false,
+        username: 'BennyAbels',
       },
       {
-        verified_type: 'blue',
-        created_at: '2022-06-08T22:07:51.000Z',
-        username: 'mintdotfun',
-        protected: false,
-        url: 'https://t.co/8twARJdB6S',
-        name: 'mint.fun',
-        pinned_tweet_id: '1684624487470534656',
+        created_at: '2020-09-18T17:02:29.000Z',
+        pinned_tweet_id: '1678438539695120384',
+        public_metrics: {
+          followers_count: 49522,
+          following_count: 269,
+          tweet_count: 3501,
+          listed_count: 1071,
+        },
+        description:
+          'A flamboyance of collectors, curators, and artists est. October 2020. \nCollecting artifacts from 2018 to present.\n\nHeader: @rainisto',
+        id: '1307002014921101313',
+        name: 'FLAMINGO 🦩',
+        verified: true,
+        url: 'https://t.co/JYF4s9r3cR',
         entities: {
           url: {
             urls: [
               {
                 start: 0,
                 end: 23,
-                url: 'https://t.co/8twARJdB6S',
-                expanded_url: 'http://mint.fun',
-                display_url: 'mint.fun',
+                url: 'https://t.co/JYF4s9r3cR',
+                expanded_url: 'http://flamingodao.xyz',
+                display_url: 'flamingodao.xyz',
               },
             ],
           },
           description: {
-            mentions: [{ start: 80, end: 91, username: 'uselanyard' }],
+            mentions: [{ start: 123, end: 132, username: 'rainisto' }],
           },
         },
-        description:
-          'The most rewarding way to mint the top new NFT projects cross chain.\n\nCreators: @uselanyard for your allowlist!',
-        verified: true,
-        public_metrics: {
-          followers_count: 42963,
-          following_count: 96,
-          tweet_count: 823,
-          listed_count: 199,
-        },
+        verified_type: 'blue',
         profile_image_url:
-          'https://pbs.twimg.com/profile_images/1646974535256924161/oEcWh-oM_normal.jpg',
-        id: '1534658078427078657',
+          'https://pbs.twimg.com/profile_images/1309614351096127488/TdNyjlBL_normal.jpg',
+        protected: false,
+        username: 'FLAMINGODAO',
+      },
+      {
+        created_at: '2021-03-14T20:12:05.000Z',
+        pinned_tweet_id: '1545935732187045888',
+        public_metrics: {
+          followers_count: 12545,
+          following_count: 2764,
+          tweet_count: 5672,
+          listed_count: 187,
+        },
+        description:
+          'Artist, co-creator of @Mathcastles \nhttps://t.co/i4eHxyoEZK (by @el__ranye)',
+        id: '1371192167063027719',
+        name: '113 ♖♖♖',
+        verified: false,
+        location: 'a world computer hypercastle',
+        url: 'https://t.co/UGtthiluUO',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/UGtthiluUO',
+                expanded_url: 'http://discord.gg/mathcastles',
+                display_url: 'discord.gg/mathcastles',
+              },
+            ],
+          },
+          description: {
+            urls: [
+              {
+                start: 36,
+                end: 59,
+                url: 'https://t.co/i4eHxyoEZK',
+                expanded_url: 'http://terraformexplorer.xyz',
+                display_url: 'terraformexplorer.xyz',
+              },
+            ],
+            mentions: [
+              { start: 22, end: 34, username: 'Mathcastles' },
+              { start: 64, end: 74, username: 'el__ranye' },
+            ],
+          },
+        },
+        verified_type: 'none',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1677957021969133570/59-4vQ9G_normal.jpg',
+        protected: false,
+        username: '0x113d',
+      },
+      {
+        created_at: '2021-09-27T06:13:53.000Z',
+        pinned_tweet_id: '1534976237243977728',
+        public_metrics: {
+          followers_count: 9128,
+          following_count: 6,
+          tweet_count: 1810,
+          listed_count: 118,
+        },
+        description:
+          'invisible & eternal artworks\nhttps://t.co/0LkNVo9kCg by @el__ranye',
+        id: '1442371739296546820',
+        name: 'Mathcastles',
+        verified: false,
+        location: 'a world computer hypercastle',
+        url: 'https://t.co/83ft0dAloU',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/83ft0dAloU',
+                expanded_url: 'http://discord.gg/mathcastles',
+                display_url: 'discord.gg/mathcastles',
+              },
+            ],
+          },
+          description: {
+            urls: [
+              {
+                start: 29,
+                end: 52,
+                url: 'https://t.co/0LkNVo9kCg',
+                expanded_url: 'http://terraformexplorer.xyz',
+                display_url: 'terraformexplorer.xyz',
+              },
+            ],
+            mentions: [{ start: 56, end: 66, username: 'el__ranye' }],
+          },
+        },
+        verified_type: 'none',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1547133332550467586/1nWBl82T_normal.jpg',
+        protected: false,
+        username: 'mathcastles',
+      },
+      {
+        created_at: '2023-08-12T14:27:44.000Z',
+        public_metrics: {
+          followers_count: 189,
+          following_count: 2,
+          tweet_count: 9,
+          listed_count: 7,
+        },
+        description: 'Few Days...',
+        id: '1690369427739381760',
+        name: 'Dr Based Art House',
+        verified: false,
+        location: 'BASE',
+        verified_type: 'none',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1690370172530405376/G8owG60f_normal.jpg',
+        protected: false,
+        username: 'DrBASEDArtHouse',
       },
     ],
     tweets: [
       {
-        referenced_tweets: [{ type: 'replied_to', id: '1691195260817543171' }],
         public_metrics: {
           retweet_count: 4,
           reply_count: 0,
           like_count: 10,
           quote_count: 0,
           bookmark_count: 0,
-          impression_count: 268,
+          impression_count: 271,
         },
+        referenced_tweets: [{ type: 'replied_to', id: '1691195260817543171' }],
+        created_at: '2023-08-14T21:12:23.000Z',
+        reply_settings: 'everyone',
+        text: '@JoshLippi @hamzatinc @FWBtweets @ourZORA @nounsbuilder @hifilabs @ImanEurope @JameeCornelia @chloeangelides @Verite @illcamille @vthemartian @ForrestMortifee @iamnickdoteth @jessepollak @ilovebeingthere @BuildOnBase @maddistjohn @derekgtaylor @BennyAbels Protocol rewards go towards more collective creation, imagination onchain, and donabe irl. Mint #OnchainSummer today and be apart if history forever https://t.co/VCPvt5qwHo',
+        id: '1691196091851735040',
+        conversation_id: '1689167424200048640',
         lang: 'en',
-        in_reply_to_user_id: '14354410',
         geo: { place_id: 'fbd6d2f5a4e4a15e' },
+        possibly_sensitive: false,
         entities: {
-          hashtags: [{ start: 352, end: 366, tag: 'OnchainSummer' }],
-          urls: [
-            {
-              start: 405,
-              end: 428,
-              url: 'https://t.co/VCPvt5qwHo',
-              expanded_url:
-                'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
-              display_url: 'zora.co/collect/base:0…',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=orig',
-                  width: 1024,
-                  height: 1024,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'Onchain Summer',
-              description:
-                'It takes all of us. “Onchain Summer,” created in Idyllwild California on a Friday during FWB Fest 2023. An artifact to move to, a disco song in the woods inspired by the creaking of a ceiling fan in tempo around 127 bpms at Fridays at the Park at Fest. Builder DAO conversations happened earlier in the day, egg & cheese ideas, collective imagination, creative learnings in motion. Base was deployed via Starlink (what?!) pure espresso was flowing, Donabe grill was sizzling, it was all happening at FEST, a next level happy Friday ⌐Ⓗ-Ⓕ Musicians and Builders: Chloe Angelides, Josh Lippi, Ben Schwier, Tim Anderson, Derek G Taylor, Maddi St John, Iman Europe, Vérité, James Cornelia, Ill Camille, V.C.R, Forrest Mortifee, Soulquest, Builder DAO, Thursdays in the Garden, Ari Klevecz and more came together to explore the unknown, a song emerged out of thin air, like a whisper from the sea foam to the hills ::Onchain:: Happy Friday ⌐Ⓗ-Ⓕ Summer flows until the end of October usually in San Francisc',
-              unwound_url:
-                'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
-            },
-          ],
           mentions: [
             { start: 0, end: 10, username: 'JoshLippi', id: '635908484' },
             { start: 11, end: 21, username: 'hamzatinc', id: '1937134520' },
@@ -1227,49 +1244,64 @@ export const tweets = {
               id: '1264685157132328960',
             },
           ],
+          urls: [
+            {
+              start: 405,
+              end: 428,
+              url: 'https://t.co/VCPvt5qwHo',
+              expanded_url:
+                'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
+              display_url: 'zora.co/collect/base:0…',
+              images: [
+                {
+                  url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=orig',
+                  width: 1024,
+                  height: 1024,
+                },
+                {
+                  url: 'https://pbs.twimg.com/news_img/1689898726482169856/In54Wmx5?format=png&name=150x150',
+                  width: 150,
+                  height: 150,
+                },
+              ],
+              status: 200,
+              title: 'Onchain Summer',
+              description:
+                'It takes all of us. “Onchain Summer,” created in Idyllwild California on a Friday during FWB Fest 2023. An artifact to move to, a disco song in the woods inspired by the creaking of a ceiling fan in tempo around 127 bpms at Fridays at the Park at Fest. Builder DAO conversations happened earlier in the day, egg & cheese ideas, collective imagination, creative learnings in motion. Base was deployed via Starlink (what?!) pure espresso was flowing, Donabe grill was sizzling, it was all happening at FEST, a next level happy Friday ⌐Ⓗ-Ⓕ Musicians and Builders: Chloe Angelides, Josh Lippi, Ben Schwier, Tim Anderson, Derek G Taylor, Maddi St John, Iman Europe, Vérité, James Cornelia, Ill Camille, V.C.R, Forrest Mortifee, Soulquest, Builder DAO, Thursdays in the Garden, Ari Klevecz and more came together to explore the unknown, a song emerged out of thin air, like a whisper from the sea foam to the hills ::Onchain:: Happy Friday ⌐Ⓗ-Ⓕ Summer flows until the end of October usually in San Francisc',
+              unwound_url:
+                'https://zora.co/collect/base:0x7c0407ac359d783f4383b03d4f68c34b56b38e34',
+            },
+          ],
+          hashtags: [{ start: 352, end: 366, tag: 'OnchainSummer' }],
         },
-        author_id: '14354410',
-        conversation_id: '1689167424200048640',
-        edit_history_tweet_ids: ['1691196091851735040'],
-        text: '@JoshLippi @hamzatinc @FWBtweets @ourZORA @nounsbuilder @hifilabs @ImanEurope @JameeCornelia @chloeangelides @Verite @illcamille @vthemartian @ForrestMortifee @iamnickdoteth @jessepollak @ilovebeingthere @BuildOnBase @maddistjohn @derekgtaylor @BennyAbels Protocol rewards go towards more collective creation, imagination onchain, and donabe irl. Mint #OnchainSummer today and be apart if history forever https://t.co/VCPvt5qwHo',
-        possibly_sensitive: false,
-        id: '1691196091851735040',
+        in_reply_to_user_id: '14354410',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
           editable_until: '2023-08-14T22:12:23.000Z',
         },
-        created_at: '2023-08-14T21:12:23.000Z',
-        reply_settings: 'everyone',
+        edit_history_tweet_ids: ['1691196091851735040'],
+        author_id: '14354410',
       },
       {
-        referenced_tweets: [{ type: 'replied_to', id: '1690369256096210944' }],
         public_metrics: {
           retweet_count: 1,
           reply_count: 1,
           like_count: 9,
           quote_count: 0,
           bookmark_count: 0,
-          impression_count: 245,
+          impression_count: 248,
         },
-        lang: 'en',
-        in_reply_to_user_id: '14354410',
-        geo: { place_id: 'a75bc1fb166cd594' },
-        author_id: '14354410',
+        referenced_tweets: [{ type: 'replied_to', id: '1690369256096210944' }],
+        created_at: '2023-08-14T21:09:05.000Z',
+        reply_settings: 'everyone',
+        text: '@JoshLippi @hamzatinc @FWBtweets @ourZORA @nounsbuilder @hifilabs @ImanEurope @JameeCornelia @chloeangelides @Verite @illcamille @vthemartian @ForrestMortifee @iamnickdoteth @jessepollak @ilovebeingthere Can you hear those whispers? https://t.co/jaf2N6tJOa',
+        id: '1691195260817543171',
         conversation_id: '1689167424200048640',
-        edit_history_tweet_ids: ['1691195260817543171'],
+        lang: 'en',
+        geo: { place_id: 'a75bc1fb166cd594' },
+        possibly_sensitive: false,
         entities: {
-          urls: [
-            {
-              start: 233,
-              end: 256,
-              url: 'https://t.co/jaf2N6tJOa',
-              expanded_url:
-                'https://twitter.com/thepark/status/1691195260817543171/video/1',
-              display_url: 'pic.twitter.com/jaf2N6tJOa',
-              media_key: '13_1691195201380061185',
-            },
-          ],
           mentions: [
             { start: 0, end: 10, username: 'JoshLippi', id: '635908484' },
             { start: 11, end: 21, username: 'hamzatinc', id: '1937134520' },
@@ -1328,143 +1360,89 @@ export const tweets = {
               id: '1494436710867816448',
             },
           ],
+          urls: [
+            {
+              start: 233,
+              end: 256,
+              url: 'https://t.co/jaf2N6tJOa',
+              expanded_url:
+                'https://twitter.com/thepark/status/1691195260817543171/video/1',
+              display_url: 'pic.twitter.com/jaf2N6tJOa',
+              media_key: '13_1691195201380061185',
+            },
+          ],
         },
-        text: '@JoshLippi @hamzatinc @FWBtweets @ourZORA @nounsbuilder @hifilabs @ImanEurope @JameeCornelia @chloeangelides @Verite @illcamille @vthemartian @ForrestMortifee @iamnickdoteth @jessepollak @ilovebeingthere Can you hear those whispers? https://t.co/jaf2N6tJOa',
-        possibly_sensitive: false,
-        id: '1691195260817543171',
+        in_reply_to_user_id: '14354410',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
           editable_until: '2023-08-14T22:09:05.000Z',
         },
-        created_at: '2023-08-14T21:09:05.000Z',
-        reply_settings: 'everyone',
+        edit_history_tweet_ids: ['1691195260817543171'],
+        author_id: '14354410',
         attachments: { media_keys: ['13_1691195201380061185'] },
       },
       {
-        referenced_tweets: [{ type: 'replied_to', id: '1687086965467074560' }],
         public_metrics: {
-          retweet_count: 45,
-          reply_count: 7,
+          retweet_count: 19,
+          reply_count: 1,
           like_count: 140,
-          quote_count: 11,
-          bookmark_count: 28,
-          impression_count: 32058,
+          quote_count: 0,
+          bookmark_count: 7,
+          impression_count: 4885,
         },
+        created_at: '2023-08-15T21:43:17.000Z',
+        reply_settings: 'everyone',
+        text: 'Can’t have onchain summer without @0x113d and @mathcastles. ⛓ https://t.co/2uqetwKmQw',
+        id: '1691566254677791070',
+        conversation_id: '1691566254677791070',
         lang: 'en',
-        in_reply_to_user_id: '1534658078427078657',
-        context_annotations: [
-          {
-            domain: {
-              id: '46',
-              name: 'Business Taxonomy',
-              description:
-                'Categories within Brand Verticals that narrow down the scope of Brands',
-            },
-            entity: {
-              id: '1557696848252391426',
-              name: 'Financial Services Business',
-              description:
-                'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
-            },
-          },
-          {
-            domain: {
-              id: '30',
-              name: 'Entities [Entity Service]',
-              description:
-                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
-            },
-            entity: {
-              id: '1007361429752594432',
-              name: 'Ethereum cryptocurrency',
-              description: 'Ethereum Cryptocurrency',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
-              id: '1007361429752594432',
-              name: 'Ethereum cryptocurrency',
-              description: 'Ethereum Cryptocurrency',
-            },
-          },
-        ],
-        author_id: '1534658078427078657',
-        conversation_id: '1687086965467074560',
-        edit_history_tweet_ids: ['1687086968021405696'],
+        possibly_sensitive: false,
         entities: {
-          urls: [
-            {
-              start: 152,
-              end: 175,
-              url: 'https://t.co/W9Lyh06nrE',
-              expanded_url:
-                'https://mint.fun/base/0x00008453E27e8e88F305F13CF27c30D724fDd055',
-              display_url: 'mint.fun/base/0x0000845…',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689626926472933376/ysYEaziY?format=jpg&name=orig',
-                  width: 1200,
-                  height: 630,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689626926472933376/ysYEaziY?format=jpg&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'mint.fun x Base Bridge Pass | mint.fun',
-              description: 'Mint mint.fun x Base Bridge Pass on mint.fun',
-              unwound_url:
-                'https://mint.fun/base/0x00008453E27e8e88F305F13CF27c30D724fDd055',
-            },
-            {
-              start: 176,
-              end: 199,
-              url: 'https://t.co/qOZ6NDhOrb',
-              expanded_url:
-                'https://twitter.com/mintdotfun/status/1687086968021405696/video/1',
-              display_url: 'pic.twitter.com/qOZ6NDhOrb',
-              media_key: '7_1687085747038535681',
-            },
-          ],
           mentions: [
             {
-              start: 49,
-              end: 61,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
+              start: 34,
+              end: 41,
+              username: '0x113d',
+              id: '1371192167063027719',
+            },
+            {
+              start: 46,
+              end: 58,
+              username: 'mathcastles',
+              id: '1442371739296546820',
+            },
+          ],
+          urls: [
+            {
+              start: 62,
+              end: 85,
+              url: 'https://t.co/2uqetwKmQw',
+              expanded_url:
+                'https://twitter.com/FLAMINGODAO/status/1691566254677791070/photo/1',
+              display_url: 'pic.twitter.com/2uqetwKmQw',
+              media_key: '16_1691566109462523904',
             },
           ],
         },
-        text: "To celebrate, we're launching a bridge pass with @buildonbase.\n\nMint a bridge pass and automatically receive ETH on Base.\n\nCollect by August 31, 2023\n→ https://t.co/W9Lyh06nrE https://t.co/qOZ6NDhOrb",
-        possibly_sensitive: false,
-        id: '1687086968021405696',
         edit_controls: {
           edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-03T14:04:12.000Z',
+          is_edit_eligible: true,
+          editable_until: '2023-08-15T22:43:17.000Z',
         },
-        created_at: '2023-08-03T13:04:12.000Z',
-        reply_settings: 'everyone',
-        attachments: { media_keys: ['7_1687085747038535681'] },
+        edit_history_tweet_ids: ['1691566254677791070'],
+        author_id: '1307002014921101313',
+        attachments: { media_keys: ['16_1691566109462523904'] },
       },
       {
         public_metrics: {
-          retweet_count: 168,
-          reply_count: 59,
-          like_count: 389,
-          quote_count: 9,
-          bookmark_count: 36,
-          impression_count: 45843,
+          retweet_count: 6,
+          reply_count: 2,
+          like_count: 26,
+          quote_count: 1,
+          bookmark_count: 1,
+          impression_count: 5582,
         },
-        lang: 'en',
         context_annotations: [
           {
             domain: {
@@ -1474,372 +1452,114 @@ export const tweets = {
                 'Categories within Brand Verticals that narrow down the scope of Brands',
             },
             entity: {
-              id: '1557696848252391426',
-              name: 'Financial Services Business',
+              id: '1557696940178935808',
+              name: 'Gaming Business',
               description:
-                'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
-            },
-          },
-          {
-            domain: {
-              id: '66',
-              name: 'Interests and Hobbies Category',
-              description:
-                'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
-            },
-            entity: {
-              id: '1369311988040355840',
-              name: 'NFTs',
-              description: 'Non-fungible tokens',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
-              id: '847894353708068864',
-              name: 'Investing',
-              description: 'Investing',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
-              id: '1369311988040355840',
-              name: 'NFTs',
-              description: 'Non-fungible tokens',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
-              id: '1491481998862348291',
-              name: 'Digital asset industry',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
-              id: '1492162686204854274',
-              name: 'Digital assets & cryptocurrency',
-              description: 'Cryptocurrency',
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to offline and online games such as gaming consoles, tabletop games, video game publishers',
             },
           },
         ],
-        author_id: '1534658078427078657',
-        conversation_id: '1687086965467074560',
-        edit_history_tweet_ids: ['1687086965467074560'],
+        created_at: '2023-08-12T21:55:00.000Z',
+        reply_settings: 'everyone',
+        text: 'Who created #BASE(D).exe? https://t.co/f1uS21G2Nx',
+        id: '1690482038149947393',
         entities: {
-          urls: [
-            {
-              start: 7,
-              end: 30,
-              url: 'https://t.co/yzd23hCTzg',
-              expanded_url: 'http://mint.fun',
-              display_url: 'mint.fun',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1690247898498555904/UbOk9JNH?format=png&name=orig',
-                  width: 1200,
-                  height: 627,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1690247898498555904/UbOk9JNH?format=png&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'mint.fun',
-              description:
-                'Discover and mint trending NFT projects in one simple interface.',
-              unwound_url: 'https://mint.fun/feed/trending',
-            },
-            {
-              start: 98,
-              end: 121,
-              url: 'https://t.co/yzd23hCTzg',
-              expanded_url: 'http://mint.fun',
-              display_url: 'mint.fun',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1690247898498555904/UbOk9JNH?format=png&name=orig',
-                  width: 1200,
-                  height: 627,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1690247898498555904/UbOk9JNH?format=png&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'mint.fun',
-              description:
-                'Discover and mint trending NFT projects in one simple interface.',
-              unwound_url: 'https://mint.fun/feed/trending',
-            },
-            {
-              start: 124,
-              end: 147,
-              url: 'https://t.co/193V1dM8G7',
-              expanded_url:
-                'https://twitter.com/i/web/status/1687086965467074560',
-              display_url: 'twitter.com/i/web/status/1…',
-            },
-            {
-              start: 148,
-              end: 171,
-              url: 'https://t.co/7uOc18AReb',
-              expanded_url:
-                'https://twitter.com/mintdotfun/status/1687086965467074560/video/1',
-              display_url: 'pic.twitter.com/7uOc18AReb',
-              media_key: '7_1687084753873461248',
-            },
-          ],
           annotations: [
             {
-              start: 90,
-              end: 93,
-              probability: 0.5436,
+              start: 13,
+              end: 16,
+              probability: 0.5086,
               type: 'Other',
-              normalized_text: 'NFTs',
+              normalized_text: 'BASE',
             },
           ],
-          mentions: [
+          urls: [
             {
-              start: 77,
-              end: 89,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
+              start: 26,
+              end: 49,
+              url: 'https://t.co/f1uS21G2Nx',
+              expanded_url:
+                'https://twitter.com/DrBASEDArtHouse/status/1690482038149947393/video/1',
+              display_url: 'pic.twitter.com/f1uS21G2Nx',
+              media_key: '7_1690388014738944001',
             },
           ],
+          hashtags: [{ start: 12, end: 17, tag: 'BASE' }],
         },
-        text: 'New on https://t.co/yzd23hCTzg → Base mainnet\n\nYou can now mint and discover @BuildOnBase NFTs on https://t.co/yzd23hCTzg ✨ https://t.co/193V1dM8G7 https://t.co/7uOc18AReb',
+        conversation_id: '1690482038149947393',
+        lang: 'en',
         possibly_sensitive: false,
-        id: '1687086965467074560',
         edit_controls: {
           edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-03T14:04:11.000Z',
-        },
-        created_at: '2023-08-03T13:04:11.000Z',
-        reply_settings: 'everyone',
-        attachments: { media_keys: ['7_1687084753873461248'] },
-      },
-      {
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 0,
-          like_count: 1,
-          quote_count: 0,
-          bookmark_count: 0,
-          impression_count: 209,
-        },
-        lang: 'en',
-        author_id: '18876842',
-        conversation_id: '1689003612385550336',
-        edit_history_tweet_ids: ['1689003612385550336', '1689003757181317120'],
-        entities: {
-          urls: [
-            {
-              start: 55,
-              end: 78,
-              url: 'https://t.co/F3XPBcuVei',
-              expanded_url:
-                'https://zora.co/collect/base:0xcf512c90887f195f64ae2d0ded42c98a5aa466fb',
-              display_url: 'zora.co/collect/base:0…',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689003623898857472/nnZIUEHA?format=jpg&name=orig',
-                  width: 1200,
-                  height: 1287,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689003623898857472/nnZIUEHA?format=jpg&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'A PERSONAL MANIFESTO',
-              description:
-                'I’ve spent a lot of time thinking about the first thing I would mint on Base. Imbuing a version of myself into the shared consciousness that is beginning to exist in this nascent blockspace feels like the best place to start. I originally wrote this personal manifesto when things started growing really quickly in 2017 at Coinbase and I was way out of my depth. I started working with a coach and she helped me clarify who I was, allowing me to show up better for myself and the people around me. Since the original writing, I’ve used it as a north star for my daily existence and continued refining it to reflect the current me. I’ve never shared it before — but there’s no day like today. All proceeds from this mint will go towards the next generation of builders on Base. I am excited to build a better world with with all of you. 🔵💛',
-              unwound_url:
-                'https://zora.co/collect/base:0xcf512c90887f195f64ae2d0ded42c98a5aa466fb',
-            },
-            {
-              start: 282,
-              end: 305,
-              url: 'https://t.co/VnktYXxqwa',
-              expanded_url:
-                'https://twitter.com/i/web/status/1689003612385550336',
-              display_url: 'twitter.com/i/web/status/1…',
-            },
-            {
-              start: 306,
-              end: 329,
-              url: 'https://t.co/50upAxEbTf',
-              expanded_url:
-                'https://twitter.com/jessepollak/status/1689003612385550336/photo/1',
-              display_url: 'pic.twitter.com/50upAxEbTf',
-              media_key: '3_1689003107529682944',
-            },
-          ],
-        },
-        text: 'my first mint on base - A PERSONAL MANIFESTO\n\njoin me: https://t.co/F3XPBcuVei\n\n---\n\nI’ve spent a lot of time thinking about the first thing I would mint on Base. Imbuing a version of myself into the shared consciousness that is beginning to exist in this nascent blockspace feels… https://t.co/VnktYXxqwa https://t.co/50upAxEbTf',
-        possibly_sensitive: false,
-        id: '1689003612385550336',
-        edit_controls: {
-          edits_remaining: 4,
           is_edit_eligible: true,
-          editable_until: '2023-08-08T21:00:16.000Z',
+          editable_until: '2023-08-12T22:55:00.000Z',
         },
-        created_at: '2023-08-08T20:00:16.000Z',
-        reply_settings: 'everyone',
-        attachments: { media_keys: ['3_1689003107529682944'] },
-      },
-      {
-        public_metrics: {
-          retweet_count: 59,
-          reply_count: 75,
-          like_count: 558,
-          quote_count: 14,
-          bookmark_count: 107,
-          impression_count: 70579,
-        },
-        lang: 'en',
-        author_id: '18876842',
-        conversation_id: '1689003757181317120',
-        edit_history_tweet_ids: ['1689003612385550336', '1689003757181317120'],
-        entities: {
-          urls: [
-            {
-              start: 55,
-              end: 78,
-              url: 'https://t.co/F3XPBcuVei',
-              expanded_url:
-                'https://zora.co/collect/base:0xcf512c90887f195f64ae2d0ded42c98a5aa466fb',
-              display_url: 'zora.co/collect/base:0…',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689003623898857472/nnZIUEHA?format=jpg&name=orig',
-                  width: 1200,
-                  height: 1287,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1689003623898857472/nnZIUEHA?format=jpg&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'A PERSONAL MANIFESTO',
-              description:
-                'I’ve spent a lot of time thinking about the first thing I would mint on Base. Imbuing a version of myself into the shared consciousness that is beginning to exist in this nascent blockspace feels like the best place to start. I originally wrote this personal manifesto when things started growing really quickly in 2017 at Coinbase and I was way out of my depth. I started working with a coach and she helped me clarify who I was, allowing me to show up better for myself and the people around me. Since the original writing, I’ve used it as a north star for my daily existence and continued refining it to reflect the current me. I’ve never shared it before — but there’s no day like today. All proceeds from this mint will go towards the next generation of builders on Base. I am excited to build a better world with with all of you. 🔵💛',
-              unwound_url:
-                'https://zora.co/collect/base:0xcf512c90887f195f64ae2d0ded42c98a5aa466fb',
-            },
-            {
-              start: 282,
-              end: 305,
-              url: 'https://t.co/7PXxk7p6Of',
-              expanded_url:
-                'https://twitter.com/i/web/status/1689003757181317120',
-              display_url: 'twitter.com/i/web/status/1…',
-            },
-            {
-              start: 306,
-              end: 329,
-              url: 'https://t.co/FtGRQyJ1hU',
-              expanded_url:
-                'https://twitter.com/jessepollak/status/1689003757181317120/photo/1',
-              display_url: 'pic.twitter.com/FtGRQyJ1hU',
-              media_key: '3_1689003107529682944',
-            },
-          ],
-        },
-        text: 'my first mint on base - A PERSONAL MANIFESTO\n\njoin me: https://t.co/F3XPBcuVei\n\n---\n\nI’ve spent a lot of time thinking about the first thing I would mint on Base. Imbuing a version of myself into the shared consciousness that is beginning to exist in this nascent blockspace feels… https://t.co/7PXxk7p6Of https://t.co/FtGRQyJ1hU',
-        possibly_sensitive: false,
-        id: '1689003757181317120',
-        edit_controls: {
-          edits_remaining: 4,
-          is_edit_eligible: true,
-          editable_until: '2023-08-08T21:00:16.000Z',
-        },
-        created_at: '2023-08-08T20:00:50.000Z',
-        reply_settings: 'everyone',
-        attachments: { media_keys: ['3_1689003107529682944'] },
+        edit_history_tweet_ids: ['1690482038149947393'],
+        author_id: '1690369427739381760',
+        attachments: { media_keys: ['7_1690388014738944001'] },
       },
     ],
     places: [
       {
-        full_name: 'California, USA',
         geo: {
           type: 'Feature',
           bbox: [-124.482003, 32.528832, -114.131212, 42.009519],
           properties: {},
         },
+        country_code: 'US',
+        full_name: 'California, USA',
+        place_type: 'admin',
         country: 'Etats-Unis',
         name: 'California',
-        place_type: 'admin',
-        country_code: 'US',
         id: 'fbd6d2f5a4e4a15e',
       },
     ],
     media: [
       {
-        media_key: '7_1687085747038535681',
-        preview_image_url:
-          'https://pbs.twimg.com/ext_tw_video_thumb/1687085747038535681/pu/img/LczESXrjoXQoEl75.jpg',
-        type: 'video',
-        height: 1080,
-        width: 1080,
-        duration_ms: 8000,
         variants: [
           {
-            bit_rate: 432000,
+            bit_rate: 0,
             content_type: 'video/mp4',
-            url: 'https://video.twimg.com/ext_tw_video/1687085747038535681/pu/vid/320x320/wf7gEQC5UD-Njzqi.mp4?tag=12',
+            url: 'https://video.twimg.com/tweet_video/F3mmagyacAAxaKi.mp4',
           },
+        ],
+        preview_image_url:
+          'https://pbs.twimg.com/tweet_video_thumb/F3mmagyacAAxaKi.jpg',
+        height: 1428,
+        width: 990,
+        type: 'animated_gif',
+        media_key: '16_1691566109462523904',
+      },
+      {
+        duration_ms: 120604,
+        variants: [
           {
-            bit_rate: 1280000,
+            bit_rate: 256000,
             content_type: 'video/mp4',
-            url: 'https://video.twimg.com/ext_tw_video/1687085747038535681/pu/vid/720x720/ZXSyWOGEyN1-9p5h.mp4?tag=12',
-          },
-          {
-            content_type: 'application/x-mpegURL',
-            url: 'https://video.twimg.com/ext_tw_video/1687085747038535681/pu/pl/g3nFBBdlKEEbf2xh.m3u8?tag=12&container=fmp4',
+            url: 'https://video.twimg.com/ext_tw_video/1690388014738944001/pu/vid/480x270/Ue1sREIEoEhm9ccc.mp4?tag=12',
           },
           {
             bit_rate: 832000,
             content_type: 'video/mp4',
-            url: 'https://video.twimg.com/ext_tw_video/1687085747038535681/pu/vid/540x540/peH83jyB0wamKdgd.mp4?tag=12',
+            url: 'https://video.twimg.com/ext_tw_video/1690388014738944001/pu/vid/640x360/fetkSE6kPbs-91yA.mp4?tag=12',
+          },
+          {
+            content_type: 'application/x-mpegURL',
+            url: 'https://video.twimg.com/ext_tw_video/1690388014738944001/pu/pl/z4oxr6d4DxyVVaG4.m3u8?tag=12&container=fmp4',
+          },
+          {
+            bit_rate: 2176000,
+            content_type: 'video/mp4',
+            url: 'https://video.twimg.com/ext_tw_video/1690388014738944001/pu/vid/1280x720/TPN6EXVFsUBaoJ3u.mp4?tag=12',
           },
         ],
-        public_metrics: { view_count: 5330 },
-      },
-      {
-        media_key: '3_1689003107529682944',
-        type: 'photo',
-        height: 4096,
-        url: 'https://pbs.twimg.com/media/F3CLYKjWcAA4wc1.jpg',
-        width: 3821,
+        preview_image_url:
+          'https://pbs.twimg.com/ext_tw_video_thumb/1690388014738944001/pu/img/jdNol4T3qLk7pPe5.jpg',
+        height: 720,
+        public_metrics: { view_count: 1116 },
+        width: 1280,
+        type: 'video',
+        media_key: '7_1690388014738944001',
       },
     ],
   },
