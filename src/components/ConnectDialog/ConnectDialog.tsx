@@ -1,8 +1,9 @@
 import { FC, useEffect } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { WindowProvider, useConnect } from 'wagmi'
 import clsx from 'clsx'
 import { Button, ButtonProps } from '../Button'
+import { useConnectCBWallet } from '@/utils/useConnectCBWallet'
+import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
 
 type ConnectDialogProps = {
   title?: React.ReactNode
@@ -10,31 +11,12 @@ type ConnectDialogProps = {
   size?: ButtonProps['size']
 }
 
-declare global {
-  interface Window {
-    ethereum?: WindowProvider
-  }
-}
-
-interface CustomWindowProvider extends WindowProvider {
-  isCoinbaseBrowser?: boolean
-}
-
 export const ConnectDialog: FC<ConnectDialogProps> = ({
   title = <div className="flex gap-2.5 items-center px-3">Mint</div>,
   inNavbar = false,
   size,
 }) => {
-  const { connect, connectors } = useConnect()
-
-  useEffect(() => {
-    const ethereum = window.ethereum as CustomWindowProvider | undefined
-    if (ethereum?.isCoinbaseBrowser) {
-      connect({
-        connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
-      })
-    }
-  }, [connect, connectors])
+  const connect = useConnectCBWallet()
 
   return (
     <ConnectButton.Custom>
@@ -69,7 +51,13 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
               if (!connected) {
                 return (
                   <Button
-                    onClick={openConnectModal}
+                    onClick={() => {
+                      if (getIsCoinbaseBrowser()) {
+                        connect()
+                      } else {
+                        openConnectModal()
+                      }
+                    }}
                     type="button"
                     className={clsx({
                       'rounded-lg !py-1.5 !px-4': inNavbar,
