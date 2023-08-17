@@ -64,7 +64,7 @@ export const DropCard: FC<DropCardProps> = ({
   })
 
   return (
-    <Card className="relative flex flex-col font-text w-[290px] md:w-[320px]  border border-[#EFEFEF] flex-auto">
+    <Card className="relative flex flex-col font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
       <div className="relative w-full aspect-[4/3] bg-black flex items-center rounded-t-2xl md:rounded-t-3xl">
         <NFTAsset
           source={image}
@@ -72,7 +72,7 @@ export const DropCard: FC<DropCardProps> = ({
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
-      <div className="p-4 flex flex-col gap-2.5 flex-auto">
+      <div className="p-4 flex flex-col flex-auto gap-2.5 justify-between">
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
@@ -85,12 +85,12 @@ export const DropCard: FC<DropCardProps> = ({
           <span className="desktop-h3 line-clamp-2">{name}</span>
         )}
 
-        <div className="flex flex-col gap-2.5 flex-auto">
+        <div>
           <div>
             <AddressPill address={creator as Address} />
           </div>
           {description && (
-            <span className="text-sm line-clamp-3 text-ocs-gray font-sans">
+            <span className="text-sm line-clamp-3 text-ocs-gray font-sans mt-2.5">
               {description}
             </span>
           )}
