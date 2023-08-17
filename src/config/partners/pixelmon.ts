@@ -35,11 +35,10 @@ const pixelmon: Partner = {
 4. Access to purchase limited edition Kevin Buildoor Block Set (Physical Collectable)
 
 Fun Fact: Did you know that Kevin cannot swim?`,
-      address: '0x',
-      mintType: MintType.External,
-      crossMintClientId: '',
+      address: '0x9d9c0C4e764117FccD2bc3548f0E95c806e6F996',
+      mintType: MintType.ThirdWeb,
+      crossMintClientId: '03579467-b595-42d9-b413-98ab69ac0d41',
     },
   ],
 }
-
 export default pixelmon
