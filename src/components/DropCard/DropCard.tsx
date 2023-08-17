@@ -8,7 +8,7 @@ import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { NFTAsset } from '@/components/NFTAsset'
 import { Hex } from 'viem'
-import { DropDataSuffix } from '@/config/partners/types'
+import { Drop, DropDataSuffix } from '@/config/partners/types'
 
 type DropCardProps = {
   address: Address
@@ -25,7 +25,7 @@ type DropCardProps = {
   creator: string
   mintType?: MintType
   openSeaLink?: string
-  interactWithNFTLink?: string
+  interactWithNFTLink?: Drop['interactWithNFTLink']
   dataSuffix: Hex
   dropDataSuffix?: DropDataSuffix
   buttonText?: string

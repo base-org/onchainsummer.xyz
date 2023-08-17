@@ -50,8 +50,8 @@ export const Success: FC<SuccessProps> = ({
           />
         </Dialog.Close>
         {interactWithNFTLink ? (
-          <Button variant="LIGHT" external href={interactWithNFTLink}>
-            Unlock the magic of your nft
+          <Button variant="LIGHT" external href={interactWithNFTLink.url}>
+            {interactWithNFTLink.label}
           </Button>
         ) : null}
       </div>
