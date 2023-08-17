@@ -15,8 +15,7 @@ const mirrorWellness: Partner = {
   twitter: '@lululemonstudio',
   drops: [
     {
-      // TODO: update the asset when s3 link is available
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/mirror-drop-1.mp4',
       creator: '0x1EbA9Bb7c60353a2cA0a57C8B1A6DF3b206e2c34',
       name: 'The Wellness Card',
       description:
