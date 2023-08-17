@@ -12,8 +12,8 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  // if (request.headers.get('x-api-key') !== process.env.OCS_API_KEY)
-  //   return NextResponse.json({}, { status: 401 })
+  if (request.headers.get('x-api-key') !== process.env.OCS_API_KEY)
+    return NextResponse.json({}, { status: 401 })
   try {
     const mainnetClient = createPublicClient({
       chain: mainnet,
