@@ -33,8 +33,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       crossMintClientId: '',
     },
     {
-      // TODO: update image once public s3 links are available
-      image: '/partners/showtime/drops/drop-1.png',
+      image: 'https://assets.onchainsummer.xyz/showtime-drop-2.mp4',
       creator: '0x6897c2ad5512e273efb57ec6deb96d49cd83ee97',
       name: `Grana`,
       externalLink: 'https://showtime.xyz/@bt/grana',
@@ -60,8 +59,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       crossMintClientId: '',
     },
     {
-      // TODO: update image once public s3 links are available
-      image: '/partners/showtime/drops/drop-1.png',
+      image: 'https://assets.onchainsummer.xyz/showtime-drop-4.mp4',
       creator: '0xDB83ea3B2A65300078532966Fd48322518632EE4',
       name: `"Dad" Demo Access Pass`,
       externalLink: 'https://showtime.xyz/@AnnikaRose/dad-demo-access-pass',
@@ -74,8 +72,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       crossMintClientId: '',
     },
     {
-      // TODO: update image once public s3 links are available
-      image: '/partners/showtime/drops/drop-1.png',
+      image: 'https://assets.onchainsummer.xyz/showtime-drop-5.mp4',
       creator: '0x14ABD459dC0158d3c267fA2235aFeF6439117498',
       name: `Northern Lights`,
       externalLink: 'https://showtime.xyz/@saxsquatch/northern-lights',
@@ -88,8 +85,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       crossMintClientId: '',
     },
     {
-      // TODO: update image once public s3 links are available
-      image: '/partners/showtime/drops/drop-1.png',
+      image: 'https://assets.onchainsummer.xyz/showtime-drop-6.mp4',
       creator: '0x194Cea1B10a5f29f1899208D83f32cBbe132b0A5',
       name: `laughing at our own jokes`,
       externalLink:
@@ -103,8 +99,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       crossMintClientId: '',
     },
     {
-      // TODO: update image once public s3 links are available
-      image: '/partners/showtime/drops/drop-1.png',
+      image: 'https://assets.onchainsummer.xyz/showtime-drop-7.mp4',
       creator: '0x6AcDf8958f7852720733A375e6accFa8Ec7C42d0',
       name: `Performance Access Pass`,
       externalLink:
