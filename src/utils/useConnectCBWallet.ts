@@ -6,7 +6,7 @@ export function useConnectCBWallet() {
 
   return useCallback(() => {
     connect({
-      connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
+      connector: connectors.find((c) => c.id == 'injected'),
     })
   }, [connect, connectors])
 }
