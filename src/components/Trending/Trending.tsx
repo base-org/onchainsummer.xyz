@@ -46,7 +46,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
   if (!collections.length) return null
 
   return (
-    <section className="p-4 bg-gray-white rounded-3xl shadow-large">
+    <section className="p-4 bg-gray-white rounded-3xl shadow-large w-full">
       <div className="flex justify-between mb-4">
         <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
           <div className="flex gap-4 items-center">
