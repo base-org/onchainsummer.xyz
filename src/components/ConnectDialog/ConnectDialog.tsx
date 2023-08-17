@@ -52,11 +52,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
                 return (
                   <Button
                     onClick={() => {
-                      if (getIsCoinbaseBrowser()) {
-                        connect()
-                      } else {
-                        openConnectModal()
-                      }
+                      openConnectModal()
                     }}
                     type="button"
                     className={clsx({
