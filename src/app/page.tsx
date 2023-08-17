@@ -154,9 +154,7 @@ const Home = async ({ searchParams }: Props) => {
             <TwitterModule tweets={tweets} />
           </section>
         )}
-        <section className="w-full">
-          <Trending />
-        </section>
+        <Trending />
         <section className="w-full" id="drops">
           <Tabs {...tabs} />
         </section>

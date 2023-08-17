@@ -42,8 +42,11 @@ export const Trending: FC<TrendingComponentProps> = () => {
   })
 
   const collections = data?.collections?.slice(0, 3) || []
+
+  if (!collections.length) return null
+
   return (
-  <section className="p-4 bg-gray-white rounded-3xl shadow-large">
+    <section className="p-4 bg-white rounded-3xl shadow-large w-full">
       <div className="flex justify-between mb-4">
         <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
           <div className="flex gap-4 items-center">
@@ -101,7 +104,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                   externalURL,
                   imageURL,
                 },
-                idx,
+                idx
               ) => (
                 <div
                   key={externalURL}
@@ -149,7 +152,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     <div
                       className={clsx(
                         'flex gap-4 [@media(max-width:374px)]:flex-wrap lg:justify-end order-3 lg:order-2 w-full sm:w-[40%] lg:w-1/3 lg:max-h-[50px] mt-4 md:mt-0 [&>div]:w-full sm:[&>div]:w-fit h-max',
-                        !connectedWallet && 'flex-wrap sm:flex-nowrap',
+                        !connectedWallet && 'flex-wrap sm:flex-nowrap'
                       )}
                     >
                       <MintButton
@@ -170,7 +173,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     </div>
                   </div>
                 </div>
-              ),
+              )
             )}
       </div>
     </section>
