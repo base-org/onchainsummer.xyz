@@ -59,7 +59,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       crossMintClientId: '',
     },
     {
-      image: '/partners/showtime/drops/drop-3.jpg',
+      image: 'https://assets.onchainsummer.xyz/RosaLinn.MP4',
       creator: '0xcdCcBe455550a7AC859659Dcdbc333289b7371De',
       name: `Fan Club Access Pass`,
       externalLink: 'https://showtime.xyz/@rosalinn/fan-club-access-pass',
