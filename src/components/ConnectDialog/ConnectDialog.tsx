@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { WindowProvider, useConnect } from 'wagmi'
 import clsx from 'clsx'
 import { Button, ButtonProps } from '../Button'
 
@@ -9,11 +10,32 @@ type ConnectDialogProps = {
   size?: ButtonProps['size']
 }
 
+declare global {
+  interface Window {
+    ethereum?: WindowProvider
+  }
+}
+
+interface CustomWindowProvider extends WindowProvider {
+  isCoinbaseBrowser?: boolean
+}
+
 export const ConnectDialog: FC<ConnectDialogProps> = ({
   title = <div className="flex gap-2.5 items-center px-3">Mint</div>,
   inNavbar = false,
   size,
 }) => {
+  const { connect, connectors } = useConnect()
+
+  useEffect(() => {
+    const ethereum = window.ethereum as CustomWindowProvider | undefined
+    if (ethereum?.isCoinbaseBrowser) {
+      connect({
+        connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
+      })
+    }
+  }, [connect, connectors])
+
   return (
     <ConnectButton.Custom>
       {({
