@@ -52,7 +52,7 @@ const Page = async ({ params, searchParams }: Props) => {
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
         />
-        <section className="w-full font-text p-1">
+        <section className="w-full font-text p-1 bg-ocs-light-gray shadow-large rounded-3xl">
           <div className="mb-4 mx-4">
             <div className="-mr-4">
               <div className="overflow-scroll hide-scrollbar">
