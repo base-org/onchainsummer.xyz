@@ -52,10 +52,7 @@ Fun Fact: Did you know that Kevin cannot swim?`,
       startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      description: `ONLY available for Summer Kevin, Pixelmon and Pixelmon Trainers NFT holders. 
-      
-      Introducing Kevin Buildoor Block, your ultimate companion. With 705 individual lego blocks available, you can chain them together to build your very own Kevin. Standing at 10 cm tall, Kevin is the perfect solution whether you're in need of a charming garden gnome or a free therapist.
-      `,
+      description: `ONLY available for Summer Kevin, Pixelmon and Pixelmon Trainers NFT holders.`,
       address: '0x',
       mintType: MintType.External,
       crossMintClientId: '',
