@@ -28,7 +28,7 @@ const pixelmon: Partner = {
       mintType: MintType.ThirdWeb,
       crossMintClientId: '03579467-b595-42d9-b413-98ab69ac0d41',
       interactWithNFTLink: {
-        url: 'https://pixelmonshop.myshopify.com/products/kevin-nanoblock',
+        url: 'https://pixelmonshop.myshopify.com/products/kevin-buildoor-block',
         label: 'Shop',
       },
     },
@@ -37,7 +37,7 @@ const pixelmon: Partner = {
       creator: '0xF0A72A215636930c369e220c9fF69861E721103A',
       name: 'Kevin Buildoor Block Set',
       externalLink:
-        'https://pixelmonshop.myshopify.com/products/kevin-nanoblock',
+        'https://pixelmonshop.myshopify.com/products/kevin-buildoor-block',
       type: 'external',
       startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
