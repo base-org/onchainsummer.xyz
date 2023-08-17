@@ -38,8 +38,8 @@ Fun Fact: Did you know that Kevin cannot swim?`,
       mintType: MintType.ThirdWeb,
       crossMintClientId: '03579467-b595-42d9-b413-98ab69ac0d41',
       interactWithNFTLink: {
-        url: 'https://pixelmonshop.myshopify.com/products/kevin-buildoor-block',
-        label: 'Shop',
+        url: 'https://www.pixelmon.ai/',
+        label: 'Explore',
       },
     },
     {
