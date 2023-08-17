@@ -3,31 +3,20 @@
 import { FC, useEffect } from 'react'
 import { Mobile } from './Mobile'
 import { Desktop } from './Desktop'
-import { WindowProvider, useConnect } from 'wagmi'
-
-declare global {
-  interface Window {
-    ethereum?: WindowProvider
-  }
-}
-
-interface CustomWindowProvider extends WindowProvider {
-  isCoinbaseBrowser?: boolean
-}
+import { useConnect } from 'wagmi'
+import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
+import { useConnectCBWallet } from '@/utils/useConnectCBWallet'
 
 type NavbarProps = {}
 
 export const Navbar: FC<NavbarProps> = ({}) => {
-  const { connect, connectors } = useConnect()
+  const connect = useConnectCBWallet()
 
   useEffect(() => {
-    const ethereum = window.ethereum as CustomWindowProvider | undefined
-    if (ethereum?.isCoinbaseBrowser) {
-      connect({
-        connector: connectors.find((c) => c.name == 'Coinbase Wallet'),
-      })
+    if (getIsCoinbaseBrowser()) {
+      connect()
     }
-  }, [connect, connectors])
+  }, [connect])
 
   return (
     <>
