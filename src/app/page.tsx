@@ -19,6 +19,8 @@ import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 import { siteDataSuffix } from '@/components/MintDialog/types'
+import { Drop } from '@/config/partners/types'
+import { Gift } from '@/components/icons/Gift'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -29,7 +31,8 @@ const Home = async ({ searchParams }: Props) => {
   const spoofDate = Array.isArray(spoofDateParam)
     ? spoofDateParam[0]
     : spoofDateParam
-  const { partner, tabs, article, tweets } = await getPageData(spoofDate)
+  const { partner, tabs, article, tweets, activeDrops } =
+    await getPageData(spoofDate)
   const { drops, name, icon } = partner
 
   const dropAddressParam = searchParams.drop
@@ -131,7 +134,7 @@ const Home = async ({ searchParams }: Props) => {
             <div className="flex justify-between mb-4">
               <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
                 <div className="flex gap-4 items-center">
-                  <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
+                  <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-ocs-pink">
                     <Heart />
                   </div>
                   <div className="">
@@ -154,6 +157,44 @@ const Home = async ({ searchParams }: Props) => {
             <TwitterModule tweets={tweets} />
           </section>
         )}
+        {activeDrops && Array.isArray(activeDrops) && activeDrops.length > 0 ? (
+          <section className="w-full shadow-large rounded-3xl">
+            <div className="bg-[#EFEFEF] p-[20px] lg:p-4 rounded-3xl">
+              <div className="mb-4 flex gap-2 items-center">
+                <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-ocs-turquoise">
+                  <Gift />
+                </div>
+                <div className="">
+                  <h2 className="text-[32px] text-display">Active Mints</h2>
+                </div>
+              </div>
+
+              <div className="-mr-4">
+                <div className="overflow-auto">
+                  <div className="flex overflow-y-hidden md:overflow-x-auto w-max">
+                    <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
+                      {activeDrops.map((drop) => (
+                        <li key={drop.name} className="flex flex-col">
+                          <DropCard
+                            {...drop}
+                            partner={name}
+                            partnerIcon={icon}
+                            openSeaLink={drop.openSeaLink}
+                            interactWithNFTLink={drop.interactWithNFTLink}
+                            dataSuffix={siteDataSuffix}
+                            dropDataSuffix={drop.dataSuffix}
+                            buttonText={drop.buttonText}
+                            description={drop.description}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
         <Trending />
         <section className="w-full" id="drops">
           <Tabs {...tabs} />
@@ -212,12 +253,24 @@ async function getPageData(spoofDate?: string) {
     }
   }, INITIAL_TABS)
 
+  const activeDrops = tabs.pastDrops.reduce((acc, drop) => {
+    const { drops } = drop
+
+    const active = drops.filter((drop) => {
+      const comparison = compareAsc(now, drop.endDate)
+
+      return comparison === -1 || comparison === 0
+    })
+
+    return [...acc, ...active]
+  }, [] as Drop[])
+
   const [article, tweets] = await Promise.all([
     getArweaveById(featuredPartner.aarweaveDigest),
     getTweets(),
   ])
 
-  return { partner: featuredPartner, tabs, article, tweets }
+  return { partner: featuredPartner, tabs, article, tweets, activeDrops }
 }
 
 export default Home
