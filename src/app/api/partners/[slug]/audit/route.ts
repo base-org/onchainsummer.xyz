@@ -12,8 +12,8 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  if (request.headers.get('x-api-key') !== process.env.OCS_API_KEY)
-    return NextResponse.json({}, { status: 401 })
+  // if (request.headers.get('x-api-key') !== process.env.OCS_API_KEY)
+  //   return NextResponse.json({}, { status: 401 })
   try {
     const mainnetClient = createPublicClient({
       chain: mainnet,
@@ -84,6 +84,7 @@ export async function GET(
     // Check for duplication
     const duplicateLogs = _(partner)
       .pickBy((val) => !_.isEmpty(val))
+      .pickBy((val, key) => !_.includes(['brandColor'], key))
       .keys()
       .map((key) => {
         return _(schedule)
