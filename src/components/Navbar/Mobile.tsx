@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import * as Dialog from '@radix-ui/react-dialog'
 import { YellowDot } from '../icons/YellowDot'
@@ -20,6 +20,7 @@ type MobileProps = {}
 
 export const Mobile: FC<MobileProps> = ({}) => {
   const { address } = useAccount()
+  const [open, setOpen] = useState(false)
   return (
     <NavigationMenu.Root
       className={'z-40 flex w-screen lg:hidden [&>div]:w-full'}
@@ -38,7 +39,7 @@ export const Mobile: FC<MobileProps> = ({}) => {
         </NavigationMenu.Link>
 
         <NavigationMenu.Item className="flex items-center ">
-          <Dialog.Root>
+          <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
               <button className="z-40" aria-label="open menu">
                 <Hamburger />
@@ -72,7 +73,11 @@ export const Mobile: FC<MobileProps> = ({}) => {
                 <Separator />
                 {!address ? (
                   <div className="p-6">
-                    <ConnectDialog inNavbar title="Connect" />
+                    <ConnectDialog
+                      inNavbar
+                      title="Connect"
+                      onConnectModalOpen={() => setOpen(false)}
+                    />
                   </div>
                 ) : (
                   <WalletContent />
