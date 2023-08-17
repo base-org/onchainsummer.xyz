@@ -64,7 +64,7 @@ export const DropCard: FC<DropCardProps> = ({
   })
 
   return (
-    <Card className="relative flex flex-col gap-4 font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
+    <Card className="relative flex flex-col font-text w-[290px] md:w-[320px]  border border-[#EFEFEF] flex-auto">
       <div className="relative w-full aspect-[4/3] bg-black flex items-center rounded-t-2xl md:rounded-t-3xl">
         <NFTAsset
           source={image}
@@ -72,11 +72,11 @@ export const DropCard: FC<DropCardProps> = ({
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
-      <div className="pt-2 p-4 flex flex-col flex-auto justify-between">
+      <div className="p-4 flex flex-col gap-2.5 flex-auto">
         {isExternalLink && externalLinkStatus === 'valid' ? (
           <a
             href={externalLinkHref}
-            className="desktop-h3 after:absolute after:inset-0 flex-auto line-clamp-2"
+            className="desktop-h3 after:absolute after:inset-0  line-clamp-2"
             target="_blank"
           >
             {name}
@@ -85,47 +85,49 @@ export const DropCard: FC<DropCardProps> = ({
           <span className="desktop-h3 line-clamp-2">{name}</span>
         )}
 
-        <div>
-          <div className="my-4">
+        <div className="flex flex-col gap-2.5 flex-auto">
+          <div>
             <AddressPill address={creator as Address} />
           </div>
           {description && (
-            <span className="text-sm line-clamp-3 mb-8 text-ocs-gray font-sans">
+            <span className="text-sm line-clamp-8 text-ocs-gray font-sans ">
               {description}
             </span>
           )}
-          {isExternalLink ? (
-            <ExternalDrop
-              endDate={endDate}
-              externalLink={externalLink}
-              startDate={startDate}
-              partner={partner}
-              contractAddress={address}
-              openSeaLink={openSeaLink}
-              className="!flex !justify-center mt-auto"
-              buttonText={buttonText}
-            />
-          ) : (
-            <MintButton
-              price={price}
-              address={address}
-              crossMintClientId={crossMintClientId}
-              partnerIcon={partnerIcon}
-              partnerName={partner}
-              dropImage={image}
-              dropName={name}
-              creatorAddress={creator}
-              endDate={endDate}
-              mintType={
-                mintType ||
-                (externalLink ? MintType.External : MintType.ThirdWeb)
-              }
-              openSeaLink={openSeaLink}
-              interactWithNFTLink={interactWithNFTLink}
-              dataSuffix={siteDataSuffix}
-              dropDataSuffix={dropDataSuffix}
-            />
-          )}
+          <div className="mt-auto">
+            {isExternalLink ? (
+              <ExternalDrop
+                endDate={endDate}
+                externalLink={externalLink}
+                startDate={startDate}
+                partner={partner}
+                contractAddress={address}
+                openSeaLink={openSeaLink}
+                className="!flex !justify-center mt-auto"
+                buttonText={buttonText}
+              />
+            ) : (
+              <MintButton
+                price={price}
+                address={address}
+                crossMintClientId={crossMintClientId}
+                partnerIcon={partnerIcon}
+                partnerName={partner}
+                dropImage={image}
+                dropName={name}
+                creatorAddress={creator}
+                endDate={endDate}
+                mintType={
+                  mintType ||
+                  (externalLink ? MintType.External : MintType.ThirdWeb)
+                }
+                openSeaLink={openSeaLink}
+                interactWithNFTLink={interactWithNFTLink}
+                dataSuffix={siteDataSuffix}
+                dropDataSuffix={dropDataSuffix}
+              />
+            )}
+          </div>
         </div>
       </div>
     </Card>
