@@ -94,7 +94,7 @@ export const DropCard: FC<DropCardProps> = ({
               {description}
             </span>
           )}
-          <div className="mt-auto">
+          <div className="mt-[38px]">
             {isExternalLink ? (
               <ExternalDrop
                 endDate={endDate}
