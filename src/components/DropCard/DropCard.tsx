@@ -90,7 +90,7 @@ export const DropCard: FC<DropCardProps> = ({
             <AddressPill address={creator as Address} />
           </div>
           {description && (
-            <span className="text-sm line-clamp-8 text-ocs-gray font-sans">
+            <span className="text-sm line-clamp-3 text-ocs-gray font-sans">
               {description}
             </span>
           )}
