@@ -107,7 +107,7 @@ export async function GET(
           )
           .keys()
           .map((key) => {
-            const flat = _(schedule)
+            const flat: string[] = _(schedule)
               .map((otherPartner) => {
                 return otherPartner.slug === slug
                   ? _(partner.drops)
@@ -118,7 +118,12 @@ export async function GET(
                       .map((v) => _.get(v, key))
                       .value()
                   : _(otherPartner.drops)
-                      .map((v) => _.get(v, key))
+                      .map((v) =>
+                        drop.mintType === MintType.External &&
+                        _.includes(['address'], key)
+                          ? undefined
+                          : _.get(v, key)
+                      )
                       .value()
               })
               .flatten()
