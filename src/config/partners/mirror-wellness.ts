@@ -5,7 +5,7 @@ import { MintType } from '@/components/MintDialog/types'
 const mirrorWellness: Partner = {
   slug: 'mirrorswellnessclub',
   name: 'Mirrors Wellness Club',
-  url: 'http://mirrorswellnessclub.io',
+  url: 'https://mirrorswellnessclub.io',
   description:
     'Join a community centered around onchain and IRL wellness with the Mirror Wellness Club.',
   brandColor: '#000000',
