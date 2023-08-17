@@ -1,9 +1,7 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import clsx from 'clsx'
 import { Button, ButtonProps } from '../Button'
-import { useConnectCBWallet } from '@/utils/useConnectCBWallet'
-import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
 
 type ConnectDialogProps = {
   title?: React.ReactNode
@@ -16,14 +14,11 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
   inNavbar = false,
   size,
 }) => {
-  const connect = useConnectCBWallet()
-
   return (
     <ConnectButton.Custom>
       {({
         account,
         chain,
-        openAccountModal,
         openChainModal,
         openConnectModal,
         authenticationStatus,
@@ -51,13 +46,7 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
               if (!connected) {
                 return (
                   <Button
-                    onClick={() => {
-                      if (getIsCoinbaseBrowser()) {
-                        connect()
-                      } else {
-                        openConnectModal()
-                      }
-                    }}
+                    onClick={openConnectModal}
                     type="button"
                     className={clsx({
                       'rounded-lg !py-1.5 !px-4': inNavbar,
