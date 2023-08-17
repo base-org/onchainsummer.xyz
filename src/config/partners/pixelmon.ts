@@ -25,15 +25,15 @@ const pixelmon: Partner = {
       price: '0.001',
       description: `The Summer Kevin NFT serves as a commemorative art piece to mark the launch of BASE Onchain Summer. Each Summer Kevin NFT entitles you to 
 
-      1. A one-time raffle draw for an Unhatched Pixelmon Egg (Worth 0.8ETH) 
-      
-      2. Access to Pixelmon in-person events (RSVP Required)
-      
-      3. Perks for the upcoming Pixelmon-BASE mini-game
-      
-      4. Access to purchase limited edition Kevin Buildoor Block Set (Physical Collectable)
-      
-      Fun Fact: Did you know that Kevin cannot swim?`,
+1. A one-time raffle draw for an Unhatched Pixelmon Egg (Worth 0.8ETH) 
+
+2. Access to Pixelmon in-person events (RSVP Required)
+
+3. Perks for the upcoming Pixelmon-BASE mini-game
+
+4. Access to purchase limited edition Kevin Buildoor Block Set (Physical Collectable)
+
+Fun Fact: Did you know that Kevin cannot swim?`,
       address: '0x9d9c0C4e764117FccD2bc3548f0E95c806e6F996',
       mintType: MintType.ThirdWeb,
       crossMintClientId: '03579467-b595-42d9-b413-98ab69ac0d41',
