@@ -24,7 +24,17 @@ const pixelmon: Partner = {
       startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      description: 'Fun Fact: Do you know that Kevin cannot swim?',
+      description: `The Summer Kevin NFT serves as a commemorative art piece to mark the launch of BASE Onchain Summer. Each Summer Kevin NFT entitles you to 
+
+1. A one-time raffle draw for an Unhatched Pixelmon Egg (Worth 0.8ETH) 
+
+2. Access to Pixelmon in-person events (RSVP Required)
+
+3. Perks for the upcoming Pixelmon-BASE mini-game
+
+4. Access to purchase limited edition Kevin Buildoor Block Set (Physical Collectable)
+
+Fun Fact: Did you know that Kevin cannot swim?`,
       address: '0x',
       mintType: MintType.External,
       crossMintClientId: '',
