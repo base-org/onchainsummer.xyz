@@ -7,12 +7,14 @@ type ConnectDialogProps = {
   title?: React.ReactNode
   inNavbar?: boolean
   size?: ButtonProps['size']
+  onConnectModalOpen?: () => void
 }
 
 export const ConnectDialog: FC<ConnectDialogProps> = ({
   title = <div className="flex gap-2.5 items-center px-3">Mint</div>,
   inNavbar = false,
   size,
+  onConnectModalOpen,
 }) => {
   return (
     <ConnectButton.Custom>
@@ -46,7 +48,10 @@ export const ConnectDialog: FC<ConnectDialogProps> = ({
               if (!connected) {
                 return (
                   <Button
-                    onClick={openConnectModal}
+                    onClick={() => {
+                      onConnectModalOpen?.()
+                      openConnectModal()
+                    }}
                     type="button"
                     className={clsx({
                       'rounded-lg !py-1.5 !px-4': inNavbar,
