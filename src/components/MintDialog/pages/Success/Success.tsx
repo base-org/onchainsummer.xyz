@@ -10,6 +10,8 @@ import { ViewOnExplorer } from '../../elements/ViewOnExplorer'
 import { Address } from 'viem'
 import { Share } from '@/components/Share'
 import { Button } from '@/components/Button'
+import { ThirdWebPill } from '@/components/icons/ThirdWebPill'
+import { MintType } from '../../types'
 
 interface SuccessProps {
   resetModal: () => void
@@ -23,7 +25,7 @@ export const Success: FC<SuccessProps> = ({
   closeModal,
 }) => {
   const {
-    info: { dropName, creatorAddress, interactWithNFTLink },
+    info: { dropName, creatorAddress, interactWithNFTLink, mintType },
   } = useMintDialogContext()
   return (
     <>
@@ -59,6 +61,11 @@ export const Success: FC<SuccessProps> = ({
       <div>
         <h3 className="font-sans text-[16px] text-[#151515]">Share on </h3>
         <Share />
+        {mintType === MintType.ThirdWeb && (
+          <p className="text-sm font-mono text-[#5B616E] mt-6 flex items-center">
+            Mint contract powered by <ThirdWebPill className="inline ml-2" />
+          </p>
+        )}
       </div>
     </>
   )
