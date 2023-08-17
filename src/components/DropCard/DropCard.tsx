@@ -90,11 +90,11 @@ export const DropCard: FC<DropCardProps> = ({
             <AddressPill address={creator as Address} />
           </div>
           {description && (
-            <span className="text-sm line-clamp-8 text-ocs-gray font-sans ">
+            <span className="text-sm line-clamp-8 text-ocs-gray font-sans">
               {description}
             </span>
           )}
-          <div className="mt-[38px]">
+          <div className="pt-[38px] mt-auto">
             {isExternalLink ? (
               <ExternalDrop
                 endDate={endDate}
