@@ -18,10 +18,18 @@ const mirrorWellness: Partner = {
       image: 'https://assets.onchainsummer.xyz/mirror-drop-1.mp4',
       creator: '0x1EbA9Bb7c60353a2cA0a57C8B1A6DF3b206e2c34',
       name: 'The Wellness Card',
-      description:
-        'The Wellness Card is a NFT membership to Mirrors Wellness Club',
+      description: `Mirrors Wellness Club (MWC) is a community that’s mission is to educate & build upon the three pillars of wellness: physical, mental & financial wellness. MWC is for all people who want to live a healthy lifestyle inside and outside of the metaverse. We curate experiences, both virtual & in real life, as well as educate at the intersection of wellness x web3. After 2 years of activations like wellness mixers, cycling classes, kickboxing, sunset yoga, community retreats, and more, we’re excited to finally launch our first MWC membership NFTs to expand on our mission of bringing wellness onchain!
+
+What does the holder of the Wellness Card receive:
+
+- (3) therapy sessions yearly
+- Unlock private investment opportunities
+- Premium Gifting
+- Access to curated virtual experiences such as education seminars, soundbaths, & community conversations with wellness professionals in our network
+
+Much more on the way!`,
       mintType: MintType.ThirdWeb,
-      address: '0x0',
+      address: '0x6a55463a66e585767c6Cce622d2018572a0aa7D1',
       crossMintClientId: '',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
