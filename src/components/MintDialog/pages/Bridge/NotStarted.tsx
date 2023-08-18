@@ -35,10 +35,10 @@ export const NotStarted: FC<NotStartedProps> = ({
   const wrongDesiredChain = desiredNetwork && desiredNetwork.id !== l1.id
 
   useEffect(() => {
-    if (wrongDesiredChain) {
+    if (wrongDesiredChain || wrongChain) {
       setDesiredNetwork(l1)
     }
-  }, [setDesiredNetwork, wrongDesiredChain])
+  }, [setDesiredNetwork, wrongDesiredChain, wrongChain])
 
   const { l1Balance } = useBalances()
 
