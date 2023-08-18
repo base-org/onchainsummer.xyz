@@ -323,6 +323,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             <button
               className="p-[10px] lg:p-0 bg-white rounded-full  z-30  absolute top-[1.75rem] right-[1.75rem] lg:rounded-none appearance-none items-center justify-center"
               aria-label="Close"
+              onClick={closeModal}
             >
               <Close height={20} width={20} />
               <span className="sr-only">Close</span>
