@@ -35,7 +35,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: '/partners/showtime/drops/drop-2.jpg',
       creator: '0x7F255F64e81E540144aC41f32fcc25fA33586FFD',
-      name: `BLOND:ISH: BLOND:ISH'S TREASURE CHEST`,
+      name: `BLONDISH's Treasure Chest`,
       externalLink: 'https://showtime.xyz/@blondish/blondishs-treasure-chest',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -87,7 +87,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-5.mp4',
       creator: '0x14ABD459dC0158d3c267fA2235aFeF6439117498',
-      name: `SaxSquatch: Northern Lights`,
+      name: `Saxsquatch: Northern Lights`,
       externalLink: 'https://showtime.xyz/@saxsquatch/northern-lights',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -100,7 +100,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-6.mp4',
       creator: '0x194Cea1B10a5f29f1899208D83f32cBbe132b0A5',
-      name: `Half An Orange: laughing at our own jokes`,
+      name: `Half an Orange: laughing at our own jokes`,
       externalLink:
         'https://showtime.xyz/@halfanorange/laughing-at-our-own-jokes',
       type: 'external',
