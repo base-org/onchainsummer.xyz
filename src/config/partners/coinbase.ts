@@ -28,6 +28,7 @@ const base: Partner = {
       mintType: MintType.External,
       crossMintClientId: '',
       externalLink: 'http://coinbase.com/crypto-rundown?index=1',
+      buttonText: 'Claim for free',
     },
     {
       image: '/partners/coinbase/drop/drop-2.gif',
@@ -43,7 +44,7 @@ const base: Partner = {
       mintType: MintType.External,
       crossMintClientId: '',
       buttonText: 'Mint',
-      externalLink: 'cbwallet://buyAndMint/explore',
+      externalLink: 'https://www.coinbase.com/wallet',
     },
     {
       image: '/partners/coinbase/drop/drop-3.gif',
@@ -66,7 +67,7 @@ const base: Partner = {
       creator: '0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3',
       name: 'Coinbase NFT',
       description:
-        'Explore the hottest mints and buy the lowest price NFTs aggregated across marketplaces',
+        'Explore trending mints and buy the lowest price NFTs aggregated across marketplaces',
       type: 'external',
       startDate: Date.UTC(2023, 7, 8, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
