@@ -28,7 +28,7 @@ const manifold: Partner = {
       price: '0.0089',
     },
     {
-      image: '',
+      image: '/partners/manifold/drops/drop-2.png',
       creator: '0x0C88aF8b65C68D1d3cb9eC719E9Ce2A76642E135',
       name: 'Hood Angel',
       address: '0x0145bA1612C794cF325Cc53a1CB34f14F2f96E7b',
