@@ -29,15 +29,16 @@ export const NotStarted: FC<NotStartedProps> = ({
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const { chain } = useNetwork()
-  const { setDesiredNetwork } = useDesiredNetworkContext()
+  const { setDesiredNetwork, desiredNetwork } = useDesiredNetworkContext()
 
   const wrongChain = chain && chain.id !== l1.id
+  const wrongDesiredChain = desiredNetwork && desiredNetwork.id !== l1.id
 
   useEffect(() => {
-    if (wrongChain) {
+    if (wrongDesiredChain) {
       setDesiredNetwork(l1)
     }
-  }, [setDesiredNetwork, wrongChain])
+  }, [setDesiredNetwork, wrongDesiredChain])
 
   const { l1Balance } = useBalances()
 
