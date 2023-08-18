@@ -9,7 +9,7 @@ const base: Partner = {
   description:
     'Get exclusive benefits by using Coinbase and Coinbase Wallet, including weekly free mints, no cost funding on Base, and 60 days free of Coinbase One for any Onchain Summer NFT minted.',
   brandColor: 'rgb(209,66,65)',
-  icon: '/partners/coinbase/icon.png',
+  icon: '/partners/coinbase/icon.svg',
   banner: '/partners/coinbase/banner-icon.jpg',
   aarweaveDigest: '',
   twitter: '@coinbase',
@@ -42,6 +42,7 @@ const base: Partner = {
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      buttonText: 'Mint',
       externalLink: 'cbwallet://buyAndMint/explore',
     },
     {
@@ -58,6 +59,23 @@ const base: Partner = {
       mintType: MintType.External,
       crossMintClientId: '',
       externalLink: 'http://cb1.onchainsummer.xyz/',
+      buttonText: 'Redeem',
+    },
+    {
+      image: '/partners/coinbase/drop/drop-4.gif',
+      creator: '0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3',
+      name: 'Coinbase NFT',
+      description:
+        'Explore the hottest mints and buy the lowest price NFTs aggregated across marketplaces',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 8, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0',
+      address: '0x0',
+      mintType: MintType.External,
+      crossMintClientId: '',
+      externalLink: 'https://nft.coinbase.com',
+      buttonText: 'Discover',
     },
   ],
 }
