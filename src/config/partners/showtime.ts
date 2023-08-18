@@ -74,7 +74,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-4.mp4',
       creator: '0xDB83ea3B2A65300078532966Fd48322518632EE4',
-      name: `Annika Rose: "Dad" Demo Access Pas`,
+      name: `Annika Rose: "Dad" Demo Access Pass`,
       externalLink: 'https://showtime.xyz/@AnnikaRose/dad-demo-access-pass',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -114,7 +114,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-7.mp4',
       creator: '0x6AcDf8958f7852720733A375e6accFa8Ec7C42d0',
-      name: `Talia Lahoud: Performance Access Pass`,
+      name: `Talia Lahoud: Performance Pass`,
       externalLink:
         'https://showtime.xyz/@talia_lahoud/performance-access-pass',
       type: 'external',
