@@ -14,7 +14,7 @@ export interface TabsComponentProps {
 
 export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
   return (
-    <section className="p-4 bg-gray-200/80 rounded-3xl shadow-large">
+    <section className="p-4 bg-ocs-light-gray rounded-3xl shadow-large">
       <TabsComponent.Root defaultValue="tab1">
         <TabsComponent.List
           className="flex [@media(max-width:374px)]:flex-wrap gap-2"

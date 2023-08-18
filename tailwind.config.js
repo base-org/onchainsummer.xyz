@@ -27,6 +27,8 @@ module.exports = {
         'button-light-text': '#151515',
         'button-light-hover-bg': '#BFBFBF',
         'button-text-text': '#858585',
+        'ocs-light-gray': '#EFEFEF',
+        'ocs-dark-gray': '#444444',
         'ocs-pink': '#FF7DCB',
         'ocs-black': '#151515',
         'ocs-red': '#FF2D2D',

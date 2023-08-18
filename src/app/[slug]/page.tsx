@@ -52,32 +52,31 @@ const Page = async ({ params, searchParams }: Props) => {
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
         />
-        <section className="w-full font-text p-1">
-          <div className="mb-4 mx-4">
-            <div className="-mr-4">
-              <div className="overflow-scroll hide-scrollbar">
-                <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
-                  <ul className="flex flex-row gap-8 last:pr-4">
-                    {remainingDrops.map((drop) => (
-                      <li key={drop.name} className="flex flex-col">
-                        <DropCard
-                          {...drop}
-                          partner={name}
-                          partnerIcon={icon}
-                          openSeaLink={drop.openSeaLink}
-                          dataSuffix={siteDataSuffix}
-                          interactWithNFTLink={drop.interactWithNFTLink}
-                          dropDataSuffix={drop.dataSuffix}
-                          buttonText={drop.buttonText}
-                          description={drop.description}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+        <section className="w-full font-text p-4 bg-ocs-light-gray shadow-large rounded-3xl">
+          <div className="-mr-4">
+            <div className="overflow-scroll hide-scrollbar">
+              <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
+                <ul className="flex flex-row gap-8 last:pr-4">
+                  {remainingDrops.map((drop) => (
+                    <li key={drop.name} className="flex flex-col">
+                      <DropCard
+                        {...drop}
+                        partner={name}
+                        partnerIcon={icon}
+                        openSeaLink={drop.openSeaLink}
+                        dataSuffix={siteDataSuffix}
+                        interactWithNFTLink={drop.interactWithNFTLink}
+                        dropDataSuffix={drop.dataSuffix}
+                        buttonText={drop.buttonText}
+                        description={drop.description}
+                      />
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
+
           {!!article?.content && (
             <div className="p-6 md:px-16 lg:px-32 md:py-[54px] rounded-2xl break-words m-4">
               <div className="prose mx-auto">

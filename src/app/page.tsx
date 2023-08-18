@@ -48,8 +48,8 @@ const Home = async ({ searchParams }: Props) => {
           headline={featuredDrop}
           staticHeadline={!!dropAddress}
         />
-        <section className="w-full shadow-large rounded-3xl">
-          <div className="bg-gray-200/80 p-[20px] lg:p-4 rounded-3xl">
+        <section className="bg-ocs-light-gray w-full shadow-large rounded-3xl">
+          <div className="p-[20px] lg:p-4 rounded-3xl">
             <div className="mb-4 flex gap-2">
               <div className="relative z-20 h-[64px] w-[64px]">
                 <Image
@@ -127,7 +127,7 @@ const Home = async ({ searchParams }: Props) => {
           </div>
         </section>
         {tweets && Array.isArray(tweets.data) && (
-          <section className="bg-[#EFEFEF] rounded-3xl p-4">
+          <section className="bg-ocs-light-gray rounded-3xl p-4 shadow-large">
             <div className="flex justify-between mb-4">
               <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
                 <div className="flex gap-4 items-center">
