@@ -41,16 +41,16 @@ const Community = async () => {
               className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
             />
           </div>
-          <h3 className="text-[32px] font-display text-[#151515]">Featured</h3>
+          <h2 className="text-[32px] font-display text-[#151515]">Featured</h2>
         </div>
-      </section>
-      {tweets && Array.isArray(tweets.data) && (
-        <section className="mt-12">
-          <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
-            <TwitterModule tweets={tweets} />
+        {tweets && Array.isArray(tweets.data) && (
+          <div className="mt-12">
+            <div className=" p-2 md:p-4 bg-gray-200/80 rounded-3xl shadow-large mt-6">
+              <TwitterModule tweets={tweets} />
+            </div>
           </div>
-        </section>
-      )}
+        )}
+      </section>
       <section className="mt-14">
         <div className="flex gap-4 items-end">
           <div className="w-16 h-16">
@@ -62,7 +62,7 @@ const Community = async () => {
             />
           </div>
           <div>
-            <h3 className="desktop-h2 text-[#151515]">Base Grants</h3>
+            <h2 className="desktop-h2 text-[#151515]">Base Grants</h2>
             <span className="font-mono text-[#444]">
               {communityData?.length} rounds
             </span>
@@ -112,11 +112,11 @@ const Community = async () => {
                   </div>
                   <div className="flex flex-col md:w-[70%] justify-between p-4 md:mt-0">
                     <div className="md:flex md:flex-col md:justify-start">
-                      <span className="desktop-label-2 uppercase text-[#858585] mb-3">
+                      <span className="desktop-label-2 uppercase text-[#444] mb-3">
                         {format(new Date(startDate), 'MMMM d')} -{' '}
                         {format(new Date(endDate), 'MMMM d')}
                       </span>
-                      <h2 className="desktop-h2">{title}</h2>
+                      <h3 className="desktop-h2">{title}</h3>
                       <h4 className="text-black font-sans desktop-body mb-4 md:my-4">
                         {subTitle}
                       </h4>

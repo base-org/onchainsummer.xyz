@@ -54,13 +54,13 @@ export default function Trending() {
                 Discover and mint trending NFTs from across Base
               </p>
               <div className="flex items-center gap-2.5">
-                <p className="desktop-mono !text-[#858585] uppercase">
+                <p className="desktop-mono !text-[#444] uppercase">
                   Powered by{' '}
                 </p>
                 <a href="https://mint.fun" target="_blank">
                   <MintDotFun />
+                  <span className="sr-only">mint.fun</span>
                 </a>
-                <span className="sr-only">mint.fun</span>
               </div>
             </div>
           </div>
@@ -90,20 +90,20 @@ export default function Trending() {
                         <div className="flex flex-row flex-wrap order-1 w-full lg:w-1/2">
                           <div className="flex flex-wrap md:flex-nowrap basis-full md:mb-1 overflow-hidden">
                             <div className="flex items-center w-full md:w-auto">
-                              <p className="text-neutral-400 mr-3 md:mr-[29px] desktop-mono">
+                              <p className="text-[#444] mr-3 md:mr-[29px] desktop-mono">
                                 #{idx + 1}
                               </p>
                             </div>
-                            <h3 className="text-black desktop-h3 whitespace-normal overflow-hidden break-all">
+                            <h2 className="text-black desktop-h3 whitespace-normal overflow-hidden break-all">
                               {name}
-                            </h3>
+                            </h2>
                           </div>
 
                           <div className="basis-full whitespace-normal overflow-hidden break-all lg:ml-[50px]">
-                            <h4 className="desktop-label-1 text-[#858585]">
+                            <h3 className="desktop-label-1 text-[#444]">
                               {shortenAddress(contract)}
-                            </h4>
-                            <p className="text-[#858585] desktop-label-2 ">
+                            </h3>
+                            <p className="text-[#444] desktop-label-2 ">
                               {mintsLastHour} mints last hour •{' '}
                               {formatEther(BigInt(mintStatus.price))} ETH
                             </p>
@@ -157,6 +157,9 @@ export default function Trending() {
                                   priority
                                   className="rounded-lg"
                                 />
+                                <span className="sr-only">
+                                  {name} NFT Drop on Mint.fun
+                                </span>
                               </a>
                             </div>
                           ))}

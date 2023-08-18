@@ -26,7 +26,7 @@ export const CBSubscribeDialog: FC<
         >
           <Dialog.Close asChild>
             <button
-              className="inline-flex absolute top-10 right-10 h-[24px] w-[24px] appearance-none items-center justify-center focus:shadow-[0_0_0_1px] focus:outline-none"
+              className="inline-flex absolute top-10 right-10 h-[24px] w-[24px] appearance-none items-center justify-center focus:ring ring-white focus:outline-none"
               aria-label="Close"
             >
               <Close />

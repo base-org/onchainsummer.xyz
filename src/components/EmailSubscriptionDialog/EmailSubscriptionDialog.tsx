@@ -31,7 +31,7 @@ export const EmailSubscriptionDialog: React.FC<
         >
           <Dialog.Close asChild>
             <button
-              className="text-black absolute top-10 right-10 inline-flex h-6 w-6 appearance-none items-center justify-center focus:shadow-[0_0_0_2px] focus:outline-none"
+              className="text-black absolute top-10 right-10 inline-flex h-6 w-6 appearance-none items-center justify-center focus:ring ring-white focus:outline-none"
               aria-label="Close"
             >
               <Close />

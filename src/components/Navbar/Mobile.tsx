@@ -26,17 +26,23 @@ export const Mobile: FC<MobileProps> = ({}) => {
       className={'z-40 flex w-screen lg:hidden [&>div]:w-full'}
     >
       <NavigationMenu.List className="flex justify-between px-6 py-3 w-full items-center">
-        <NavigationMenu.Link asChild>
-          <Link href="/">
-            <YellowDot />
-          </Link>
-        </NavigationMenu.Link>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link asChild>
+            <Link href="/">
+              <YellowDot />
+              <span className="sr-only">Home</span>
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
 
-        <NavigationMenu.Link asChild>
-          <Link href="/">
-            <OCS />
-          </Link>
-        </NavigationMenu.Link>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link asChild>
+            <Link href="/">
+              <OCS />
+              <span className="sr-only">Home</span>
+            </Link>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
 
         <NavigationMenu.Item className="flex items-center ">
           <Dialog.Root open={open} onOpenChange={setOpen}>
