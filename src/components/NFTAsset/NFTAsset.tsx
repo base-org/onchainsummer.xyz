@@ -18,7 +18,7 @@ export const NFTAsset: FC<NFTAssetProps> = ({
   muted,
   ...props
 }) => {
-  const extension = source.split('.').pop()
+  const extension = source.split('.').pop()?.toLowerCase()
   return extension && ['mov', 'mp4'].includes(extension) ? (
     <video
       loop
@@ -27,7 +27,7 @@ export const NFTAsset: FC<NFTAssetProps> = ({
       muted={!!muted}
       autoPlay={!!autoPlay}
       {...props}
-      className="z-10 relative"
+      className="z-10 relative aspect-[4/3]"
     >
       <source src={source} type="video/mp4" />
     </video>
