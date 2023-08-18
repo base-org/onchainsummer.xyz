@@ -23,11 +23,11 @@ const showtime: Partner = {
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0038',
-      description: `Join the Onchain Summer Party with Showtime Drops! We're teaming up with incredible web3-forward artists around including BLOND:ISH, trance legend BT, India's own KR$NA, and Eurovision's Rosa Linn from the smash-hit "Snap." And that's just the start.
-
-Exclusive Goodies Just for You: Want to hear some never-released music or snag a promo code for awesome merch? How about a private Zoom call with one of the stars? Collect those drops, and these exclusives and more can be yours. It's like a backstage pass right in your pocket.
-
-Wrap It Up with Incredible Raffles: Stick around to the end, and you could score big. We're talking all-expenses-paid trips to live shows, including an evening in Paris. And don't forget signed jackets, vinyls, and so much more. Who knows what you could walk away with? It's all part of the fun with Showtime Drops this Onchain Summer. Get in on it!`,
+      description: `Join the Onchain Summer Party with Showtime Drops! We’re teaming up with incredible web3-forward artists around including [BLOND:ISH](https://showtime.xyz/@blondish/blondishs-treasure-chest), trance legend [BT](https://showtime.xyz/@bt/grana), India’s own KR$NA, and Eurovision’s [Rosa Linn](https://showtime.xyz/@rosalinn/fan-club-access-pass) from the smash-hit “Snap.” And that’s just the start.
+            
+Exclusive Goodies Just for You: Want to hear some never-released music or snag a promo code for awesome merch? How about a private Zoom call with one of the stars? Collect those drops, and these exclusives and more can be yours. It’s like a backstage pass right in your pocket.
+      
+Wrap It Up with Incredible Raffles: Stick around to the end, and you could score big. We’re talking all-expenses-paid trips to live shows, including an evening in Paris. And don’t forget signed jackets, vinyls, and so much more. Who knows what you could walk away with? It’s all part of the fun with Showtime Drops this Onchain Summer. Get in on it!`,
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
@@ -35,7 +35,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: '/partners/showtime/drops/drop-2.jpg',
       creator: '0x7F255F64e81E540144aC41f32fcc25fA33586FFD',
-      name: `BLONDISH's Treasure Chest`,
+      name: `BLOND:ISH's Treasure Chest`,
       externalLink: 'https://showtime.xyz/@blondish/blondishs-treasure-chest',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
