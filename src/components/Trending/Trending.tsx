@@ -114,7 +114,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     <div className="flex flex-row flex-wrap order-1 w-full lg:w-[60%]">
                       <div className="flex flex-wrap lg:flex-nowrap basis-full md:mb-3 overflow-hidden">
                         <div className="flex items-start w-full md:w-auto relative top-[3px]">
-                          <p className="text-neutral-400 mr-3 md:mr-[29px] desktop-mono md:text-lg mb-4 md:mb-0">
+                          <p className="text-[#444] mr-3 md:mr-[29px] desktop-mono md:text-lg mb-4 md:mb-0">
                             #{idx + 1}
                           </p>
                         </div>
@@ -137,10 +137,10 @@ export const Trending: FC<TrendingComponentProps> = () => {
                             <h3 className="desktop-h4 md:desktop-h3 whitespace-normal overflow-hidden break-all">
                               {name}
                             </h3>
-                            <h4 className="desktop-label-1 text-[#858585]">
+                            <h4 className="desktop-label-1 text-[#444]">
                               {shortenAddress(contract)}
                             </h4>
-                            <p className="text-[#858585] desktop-label-2">
+                            <p className="text-[#444] desktop-label-2">
                               {mintsLastHour} mints last hour •{' '}
                               {formatEther(BigInt(mintStatus.price))} ETH
                             </p>
