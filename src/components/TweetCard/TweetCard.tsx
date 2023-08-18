@@ -25,7 +25,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
     const text = tweet.text
       .replace(
         /(?:((?<=[\s\W])|^)[#](\w+|[^#]|$)|((?<=[\s\W])|^)[@]([a-zA-Z0-9_]+|$))/gm,
-        ''
+        '',
       )
       .trim()
     return text.length > 100
@@ -33,8 +33,8 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           0,
           tweet.text.indexOf(
             ' ',
-            media ? 100 : Math.min(tweet.text.length, 240)
-          )
+            media ? 100 : Math.min(tweet.text.length, 240),
+          ),
         ) + '...'
       : text
   }, [tweet.text, media])
@@ -51,11 +51,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
   }, [tweet])
 
   return (
-    <a
-      href={linkToTwitter}
-      className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px]"
-      target="_blank"
-    >
+    <div className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px] relative">
       <div className="flex flex-col h-full">
         <div className="flex justify-between">
           <div className="flex items-center">
@@ -69,6 +65,13 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               <span className="text-black font-bold block">
                 {author.name} <TwitterVerified />
               </span>
+              <a
+                href={linkToTwitter}
+                target="_blank"
+                className="after:absolute after:inset-0"
+              >
+                <span className="sr-only">View tweet on Twitter</span>
+              </a>
               <span className="text-[#444] font-normal block">
                 @{author.username}
               </span>
@@ -124,6 +127,6 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
       <p className="text-[#444] text-sm mt-2">
         {moment(tweet.created_at).format('h:mm A · MMM D, YYYY')}
       </p>
-    </a>
+    </div>
   )
 }

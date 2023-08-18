@@ -21,6 +21,7 @@ import { getDropDate } from '@/utils/getDropDate'
 import { siteDataSuffix } from '@/components/MintDialog/types'
 import { Drop } from '@/config/partners/types'
 import { Gift } from '@/components/icons/Gift'
+import { DropCardList } from '@/components/DropCard/DropCardList'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -69,27 +70,22 @@ const Home = async ({ searchParams }: Props) => {
             </div>
             {remainingDrops?.length > 0 && (
               <div className="-mr-4 mb-4 md:mb-14">
-                <div className="overflow-auto">
-                  <div className="flex overflow-y-hidden md:overflow-x-auto w-max">
-                    <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
-                      {remainingDrops?.map((drop) => (
-                        <li key={drop.name} className="flex flex-col">
-                          <DropCard
-                            {...drop}
-                            partner={name}
-                            partnerIcon={icon}
-                            openSeaLink={drop.openSeaLink}
-                            interactWithNFTLink={drop.interactWithNFTLink}
-                            dataSuffix={siteDataSuffix}
-                            dropDataSuffix={drop.dataSuffix}
-                            buttonText={drop.buttonText}
-                            description={drop.description}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <DropCardList>
+                  {remainingDrops?.map((drop) => (
+                    <DropCard
+                      {...drop}
+                      key={drop.name}
+                      partner={name}
+                      partnerIcon={icon}
+                      openSeaLink={drop.openSeaLink}
+                      interactWithNFTLink={drop.interactWithNFTLink}
+                      dataSuffix={siteDataSuffix}
+                      dropDataSuffix={drop.dataSuffix}
+                      buttonText={drop.buttonText}
+                      description={drop.description}
+                    />
+                  ))}
+                </DropCardList>
               </div>
             )}
             {!!article?.content && (
@@ -170,27 +166,22 @@ const Home = async ({ searchParams }: Props) => {
               </div>
 
               <div className="-mr-4">
-                <div className="overflow-auto">
-                  <div className="flex overflow-y-hidden md:overflow-x-auto w-max">
-                    <ul className="flex flex-row gap-4 md:gap-8 last:pr-4">
-                      {activeDrops.map((drop) => (
-                        <li key={drop.name} className="flex flex-col">
-                          <DropCard
-                            {...drop}
-                            partner={drop.partner}
-                            partnerIcon={drop.partnerIcon}
-                            openSeaLink={drop.openSeaLink}
-                            interactWithNFTLink={drop.interactWithNFTLink}
-                            dataSuffix={siteDataSuffix}
-                            dropDataSuffix={drop.dataSuffix}
-                            buttonText={drop.buttonText}
-                            description={drop.description}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <DropCardList>
+                  {activeDrops.map((drop) => (
+                    <DropCard
+                      {...drop}
+                      key={drop.name}
+                      partner={drop.partner}
+                      partnerIcon={drop.partnerIcon}
+                      openSeaLink={drop.openSeaLink}
+                      interactWithNFTLink={drop.interactWithNFTLink}
+                      dataSuffix={siteDataSuffix}
+                      dropDataSuffix={drop.dataSuffix}
+                      buttonText={drop.buttonText}
+                      description={drop.description}
+                    />
+                  ))}
+                </DropCardList>
               </div>
             </div>
           </section>

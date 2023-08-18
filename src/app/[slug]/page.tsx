@@ -15,6 +15,7 @@ import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 import { siteDataSuffix } from '@/components/MintDialog/types'
+import { DropCardList } from '@/components/DropCard/DropCardList'
 
 type Props = {
   params: { slug: string }
@@ -54,27 +55,22 @@ const Page = async ({ params, searchParams }: Props) => {
         />
         <section className="w-full font-text p-4 bg-ocs-light-gray shadow-large rounded-3xl">
           <div className="-mr-4">
-            <div className="overflow-scroll hide-scrollbar">
-              <div className="flex overflow-x-scroll md:overflow-x-auto w-max hide-scrollbar">
-                <ul className="flex flex-row gap-8 last:pr-4">
-                  {remainingDrops.map((drop) => (
-                    <li key={drop.name} className="flex flex-col">
-                      <DropCard
-                        {...drop}
-                        partner={name}
-                        partnerIcon={icon}
-                        openSeaLink={drop.openSeaLink}
-                        dataSuffix={siteDataSuffix}
-                        interactWithNFTLink={drop.interactWithNFTLink}
-                        dropDataSuffix={drop.dataSuffix}
-                        buttonText={drop.buttonText}
-                        description={drop.description}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <DropCardList>
+              {remainingDrops.map((drop) => (
+                <DropCard
+                  {...drop}
+                  key={drop.name}
+                  partner={name}
+                  partnerIcon={icon}
+                  openSeaLink={drop.openSeaLink}
+                  dataSuffix={siteDataSuffix}
+                  interactWithNFTLink={drop.interactWithNFTLink}
+                  dropDataSuffix={drop.dataSuffix}
+                  buttonText={drop.buttonText}
+                  description={drop.description}
+                />
+              ))}
+            </DropCardList>
           </div>
 
           {!!article?.content && (
@@ -96,7 +92,7 @@ const Page = async ({ params, searchParams }: Props) => {
 
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   // read route params
   const slug = params.slug
@@ -151,7 +147,7 @@ async function getPartner(slug: string, spoofDate?: string) {
   const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
-    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase()
+    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase(),
   )
 
   if (!date) {
