@@ -177,8 +177,8 @@ const Home = async ({ searchParams }: Props) => {
                         <li key={drop.name} className="flex flex-col">
                           <DropCard
                             {...drop}
-                            partner={name}
-                            partnerIcon={icon}
+                            partner={drop.partner}
+                            partnerIcon={drop.partnerIcon}
                             openSeaLink={drop.openSeaLink}
                             interactWithNFTLink={drop.interactWithNFTLink}
                             dataSuffix={siteDataSuffix}
@@ -207,6 +207,11 @@ const Home = async ({ searchParams }: Props) => {
 const INITIAL_TABS: TabsComponentProps = {
   upcomingDrops: [],
   pastDrops: [],
+}
+
+interface DropWithPartnerData extends Drop {
+  partner: string
+  partnerIcon: string
 }
 
 async function getPageData(spoofDate?: string) {
@@ -254,8 +259,8 @@ async function getPageData(spoofDate?: string) {
   }, INITIAL_TABS)
 
   const activeDrops = tabs.pastDrops
-    .reduce((acc, drop) => {
-      const { drops } = drop
+    .reduce((acc, partner) => {
+      const { drops, name, icon } = partner
 
       const active = drops.filter((drop) => {
         const comparison = compareAsc(now, drop.endDate)
@@ -263,8 +268,14 @@ async function getPageData(spoofDate?: string) {
         return comparison === -1 || comparison === 0
       })
 
-      return [...acc, ...active]
-    }, [] as Drop[])
+      const next = active.map((drop) => ({
+        ...drop,
+        partner: name,
+        partnerIcon: icon,
+      }))
+
+      return [...acc, ...next]
+    }, [] as DropWithPartnerData[])
     .sort((a, b) => b.startDate - a.startDate)
 
   const [article, tweets] = await Promise.all([
