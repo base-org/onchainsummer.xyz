@@ -35,7 +35,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: '/partners/showtime/drops/drop-2.jpg',
       creator: '0x7F255F64e81E540144aC41f32fcc25fA33586FFD',
-      name: `BLOND:ISH's Treasure Chest`,
+      name: `BLOND:ISH: BLOND:ISH'S TREASURE CHEST`,
       externalLink: 'https://showtime.xyz/@blondish/blondishs-treasure-chest',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -48,7 +48,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-2.mp4',
       creator: '0x6897c2ad5512e273efb57ec6deb96d49cd83ee97',
-      name: `Grana`,
+      name: `BT: Grana`,
       externalLink: 'https://showtime.xyz/@bt/grana',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -61,7 +61,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/RosaLinn.MP4',
       creator: '0xcdCcBe455550a7AC859659Dcdbc333289b7371De',
-      name: `Fan Club Access Pass`,
+      name: `Rosa Linn: Fan Club Access Pass`,
       externalLink: 'https://showtime.xyz/@rosalinn/fan-club-access-pass',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -74,7 +74,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-4.mp4',
       creator: '0xDB83ea3B2A65300078532966Fd48322518632EE4',
-      name: `"Dad" Demo Access Pass`,
+      name: `Annika Rose: "Dad" Demo Access Pass`,
       externalLink: 'https://showtime.xyz/@AnnikaRose/dad-demo-access-pass',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -87,7 +87,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-5.mp4',
       creator: '0x14ABD459dC0158d3c267fA2235aFeF6439117498',
-      name: `Northern Lights`,
+      name: `SaxSquatch: Northern Lights`,
       externalLink: 'https://showtime.xyz/@saxsquatch/northern-lights',
       type: 'external',
       startDate: Date.UTC(2023, 7, 18, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -100,7 +100,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-6.mp4',
       creator: '0x194Cea1B10a5f29f1899208D83f32cBbe132b0A5',
-      name: `laughing at our own jokes`,
+      name: `Half An Orange: laughing at our own jokes`,
       externalLink:
         'https://showtime.xyz/@halfanorange/laughing-at-our-own-jokes',
       type: 'external',
@@ -114,7 +114,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-7.mp4',
       creator: '0x6AcDf8958f7852720733A375e6accFa8Ec7C42d0',
-      name: `Performance Access Pass`,
+      name: `Talia Lahoud: Performance Pass`,
       externalLink:
         'https://showtime.xyz/@talia_lahoud/performance-access-pass',
       type: 'external',
