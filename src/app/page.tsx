@@ -253,17 +253,19 @@ async function getPageData(spoofDate?: string) {
     }
   }, INITIAL_TABS)
 
-  const activeDrops = tabs.pastDrops.reduce((acc, drop) => {
-    const { drops } = drop
+  const activeDrops = tabs.pastDrops
+    .reduce((acc, drop) => {
+      const { drops } = drop
 
-    const active = drops.filter((drop) => {
-      const comparison = compareAsc(now, drop.endDate)
+      const active = drops.filter((drop) => {
+        const comparison = compareAsc(now, drop.endDate)
 
-      return comparison === -1 || comparison === 0
-    })
+        return comparison === -1 || comparison === 0
+      })
 
-    return [...acc, ...active]
-  }, [] as Drop[])
+      return [...acc, ...active]
+    }, [] as Drop[])
+    .sort((a, b) => b.startDate - a.startDate)
 
   const [article, tweets] = await Promise.all([
     getArweaveById(featuredPartner.aarweaveDigest),
