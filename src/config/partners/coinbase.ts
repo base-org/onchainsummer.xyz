@@ -59,7 +59,7 @@ const base: Partner = {
       mintType: MintType.External,
       crossMintClientId: '',
       externalLink: 'http://cb1.onchainsummer.xyz/',
-      buttonText: 'Redeem',
+      buttonText: 'Claim',
     },
     {
       image: '/partners/coinbase/drop/drop-4.gif',
