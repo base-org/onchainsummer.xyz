@@ -28,7 +28,7 @@ export const AddressPill: FC<AddressPillProps> = ({
     >
       {avatar ? (
         <div
-          className="h-5 w-5 bg-black rounded-full bg-cover relative"
+          className="h-4 w-4 bg-black rounded-full bg-cover relative"
           style={{ backgroundImage: `url(${avatar})` }}
         />
       ) : null}

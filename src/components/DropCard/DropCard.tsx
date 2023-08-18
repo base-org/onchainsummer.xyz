@@ -64,7 +64,7 @@ export const DropCard: FC<DropCardProps> = ({
     contractAddress: address,
   })
 
-  const className = 'desktop-h3 line-clamp-2 px-4 flex-auto'
+  const className = 'desktop-h3 line-clamp-2 px-4 flex-auto max-h-[60px]'
 
   return (
     <Card
@@ -93,11 +93,13 @@ export const DropCard: FC<DropCardProps> = ({
 
       <AddressPill address={creator as Address} className="h-max mx-4" />
 
-      <span className="desktop-body line-clamp-3 text-ocs-gray font-sans px-4 h-[66px]">
-        {description?.repeat(4)}
-      </span>
+      {description ? (
+        <span className="desktop-body line-clamp-3 text-ocs-gray font-sans px-4 h-[66px]">
+          {description}
+        </span>
+      ) : null}
 
-      <div className="mt-8 px-4 pb-4">
+      <div className="pt-8 px-4 pb-4 mt-auto">
         {isExternalLink ? (
           <ExternalDrop
             endDate={endDate}
