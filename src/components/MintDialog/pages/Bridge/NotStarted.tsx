@@ -5,7 +5,7 @@ import { formatEther } from 'ethers/lib/utils'
 import { Button } from '@/components/Button'
 import { EthBase } from '@/components/icons/EthBase'
 import useBalances from '@/utils/useBalances'
-import { l1 } from '@/config/chain'
+import { l1, l2 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 import { ModalPage } from '../../types'
 import { useDesiredNetworkContext } from '@/components/DesiredNetworkContext/useDesiredNetworkContext'
@@ -17,6 +17,7 @@ interface NotStartedProps {
   recommendedAmount: string
   bridge: () => Promise<void>
   setPage: React.Dispatch<ModalPage>
+  isOpen: boolean
 }
 
 export const NotStarted: FC<NotStartedProps> = ({
@@ -26,6 +27,7 @@ export const NotStarted: FC<NotStartedProps> = ({
   recommendedAmount,
   bridge,
   setPage,
+  isOpen,
 }) => {
   const { switchNetwork } = useSwitchNetwork()
   const { chain } = useNetwork()
@@ -35,10 +37,13 @@ export const NotStarted: FC<NotStartedProps> = ({
   const wrongDesiredChain = desiredNetwork && desiredNetwork.id !== l1.id
 
   useEffect(() => {
-    if (wrongDesiredChain || wrongChain) {
+    if (isOpen && (wrongDesiredChain || wrongChain)) {
       setDesiredNetwork(l1)
     }
-  }, [setDesiredNetwork, wrongDesiredChain, wrongChain])
+    if (!isOpen) {
+      setDesiredNetwork(l2)
+    }
+  }, [setDesiredNetwork, wrongDesiredChain, wrongChain, isOpen])
 
   const { l1Balance } = useBalances()
 
@@ -91,7 +96,7 @@ export const NotStarted: FC<NotStartedProps> = ({
                 }
               }}
             />
-            <EthBase className="absolute top-1/2 right-4 transform -translate-y-1/2" />
+            <EthBase className="absolute top-1/2 right-4 -translate-y-1/2" />
           </label>
 
           <div className="flex justify-between text-button-text-text desktop-body">

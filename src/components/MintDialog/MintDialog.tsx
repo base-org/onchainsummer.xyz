@@ -1,7 +1,7 @@
 import { formatEther as formatEtherByEthers } from 'ethers/lib/utils'
 import * as Dialog from '@radix-ui/react-dialog'
 
-import { FC, useEffect, useMemo, useState } from 'react'
+import { FC, useCallback, useEffect, useMemo, useState } from 'react'
 import { Button, ButtonProps } from '../Button'
 import { Close } from '../icons/Close'
 
@@ -126,19 +126,19 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     }
   }, [page, setDesiredNetwork])
 
-  const resetModal = () => {
+  const resetModal = useCallback(() => {
     setDesiredNetwork(l2)
     setPage(ModalPage.NATIVE_MINT)
     setTxDetails(null)
     setMintError(null)
     setCrossMintOrderIdentifier('')
     setQuantity(1)
-  }
+  }, [setDesiredNetwork])
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setOpen(false)
     setDesiredNetwork(l2)
-  }
+  }, [setDesiredNetwork])
 
   const buttonTitle = useMemo(() => {
     switch (page) {
@@ -253,6 +253,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             l1Balance={l1Balance}
             minAmount={Number(formatEtherByEthers(minL2BalanceWei)).toFixed(4)}
             setPage={setPage}
+            isOpen={open}
           />
         )
       case ModalPage.INSUFFICIENT_FUNDS:
@@ -271,6 +272,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         return ''
     }
   }, [
+    closeModal,
     crossMintClientId,
     crossMintOrderIdentifier,
     fundsStatus,
@@ -278,8 +280,10 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     l2Balance,
     minL2BalanceWei,
     mintError,
+    open,
     page,
     quantity,
+    resetModal,
     totalPrice,
     txDetails,
   ])

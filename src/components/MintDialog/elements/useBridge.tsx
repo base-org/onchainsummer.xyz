@@ -2,7 +2,7 @@ import { BigNumber, ethers, providers } from 'ethers'
 import { useCallback, useMemo, useState } from 'react'
 import { goerli, baseGoerli, mainnet, base } from 'viem/chains'
 import * as OP from '@eth-optimism/sdk'
-import { isProd, l2 } from '@/config/chain'
+import { isProd, l1, l2 } from '@/config/chain'
 import { useAccount, useWalletClient } from 'wagmi'
 import { useLogEvent } from '@/utils/useLogEvent'
 import { events } from '@/utils/analytics'
@@ -101,8 +101,9 @@ export const useBridge = (amount: BigNumber) => {
         if (!messenger) return
         logEvent?.(events.bridgeStarted)
         await depositETH(messenger)
-      } finally {
         setDesiredNetwork(l2)
+      } catch (e) {
+        setDesiredNetwork(l1)
       }
     }, // main
     [messenger, logEvent, depositETH, setDesiredNetwork]

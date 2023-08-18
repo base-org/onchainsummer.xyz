@@ -30,15 +30,10 @@ export const DesiredNetworkContextProvider: FC<PropsWithChildren> = ({
   const desiredNetworkId = desiredNetwork.id
 
   React.useEffect(() => {
-    if (
-      isCoinbaseBrowser &&
-      chain &&
-      switchNetwork &&
-      chain.id !== desiredNetworkId
-    ) {
+    if (isCoinbaseBrowser && switchNetwork) {
       switchNetwork(desiredNetworkId)
     }
-  }, [chain, desiredNetworkId, isCoinbaseBrowser, switchNetwork])
+  }, [desiredNetworkId, isCoinbaseBrowser, switchNetwork])
 
   return (
     <DesiredNetworkContext.Provider
