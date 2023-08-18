@@ -18,7 +18,7 @@ export const AddressPill: FC<AddressPillProps> = ({
   return (
     <a
       className={clsx(
-        'max-w-full overflow-hidden rounded-[58px] bg-ocs-blue text-white p-1 pr-2 w-max flex gap-2 items-center text-sm leading-none font-mono',
+        'max-w-full overflow-hidden rounded-[58px] bg-ocs-blue text-white p-1 pr-2 w-max flex gap-2 items-center desktop-label-2',
         { 'pl-2': !avatar },
         className
       )}

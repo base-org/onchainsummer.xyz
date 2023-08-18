@@ -9,6 +9,7 @@ import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { NFTAsset } from '@/components/NFTAsset'
 import { Hex } from 'viem'
 import { Drop, DropDataSuffix } from '@/config/partners/types'
+import clsx from 'clsx'
 
 type DropCardProps = {
   address: Address
@@ -63,10 +64,12 @@ export const DropCard: FC<DropCardProps> = ({
     contractAddress: address,
   })
 
+  const className = 'desktop-h3 line-clamp-2 px-4 flex-auto'
+
   return (
     <Card
       li
-      className="relative grid row-[1] auto-rows-[1fr] max-h-[580px] gap-4 font-text w-[290px] md:w-[320px] border border-[#EFEFEF]"
+      className="relative flex flex-col max-h-[580px] gap-4 font-text w-[290px] md:w-[320px]"
     >
       <div className="relative w-full aspect-[4/3] bg-black flex items-center rounded-t-2xl md:rounded-t-3xl">
         <NFTAsset
@@ -79,19 +82,19 @@ export const DropCard: FC<DropCardProps> = ({
       {isExternalLink && externalLinkStatus === 'valid' ? (
         <a
           href={externalLinkHref}
-          className="desktop-h3 after:absolute after:inset-0 line-clamp-2 px-4"
+          className={clsx('after:absolute after:inset-0', className)}
           target="_blank"
         >
           {name}
         </a>
       ) : (
-        <span className="desktop-h3 line-clamp-2 px-4">{name}</span>
+        <span className={className}>{name}</span>
       )}
 
       <AddressPill address={creator as Address} className="h-max mx-4" />
 
-      <span className="text-sm line-clamp-3 text-ocs-gray font-sans px-4 height-[66px]">
-        {description}
+      <span className="desktop-body line-clamp-3 text-ocs-gray font-sans px-4 h-[66px]">
+        {description?.repeat(4)}
       </span>
 
       <div className="mt-8 px-4 pb-4">
