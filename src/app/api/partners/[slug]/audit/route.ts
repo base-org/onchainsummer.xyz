@@ -100,6 +100,7 @@ export async function GET(
     const duplicateDropLogs = _(partner.drops)
       .map((drop, index) =>
         _(drop)
+          .pickBy((v) => !_.isEmpty(v))
           .pickBy((val, key) =>
             _.includes(
               ['creator', 'address', 'image', 'name', 'crossMintId'],
@@ -135,6 +136,26 @@ export async function GET(
           })
           .value()
       )
+      .flatten()
+      .value()
+
+    // External mintType checks
+    const externalMintConfigCheck = _(partner.drops)
+      .filter((drop) => drop.mintType === MintType.External)
+      .map((drop, index) => {
+        const messages = []
+        if (!drop.externalLink) {
+          messages.push(
+            `ERROR: drop[${index}] is missing externalLink for external mintType`
+          )
+        }
+        if (drop.type !== 'external') {
+          messages.push(
+            `ERROR: drop[${index}].type is not external for external mintType`
+          )
+        }
+        return messages
+      })
       .flatten()
       .value()
 
@@ -192,7 +213,9 @@ export async function GET(
           const name = await mainnetClient.getEnsName({
             address: creator as any,
           })
-          return `INFO: ENS fetched successfully ${creator} => ${name}`
+          return name
+            ? `INFO: ENS fetched successfully ${creator} => ${name}`
+            : `ERROR: ENS fetch failed ${creator}`
         } catch (ex) {
           console.log(ex)
           return `ERROR: ENS fetch failed ${creator}`
@@ -229,6 +252,24 @@ export async function GET(
       })
     )
 
+    // Descriptions should not be wrapped with quotes
+    const descriptionCheck = _(partner.drops)
+      .filter((v) => !_.isEmpty(v))
+      .map((drop, index) =>
+        drop.description?.trim().startsWith('"')
+          ? `ERROR: Description starts with quote for drop[${index}]`
+          : `INFO: Description does not start with quote for drop[${index}]`
+      )
+      .value()
+
+    if (partner.description) {
+      descriptionCheck.push(
+        partner.description?.trim().startsWith('"')
+          ? `ERROR: Partner description starts with quote`
+          : `INFO: Partner description does not start with quote`
+      )
+    }
+
     // Misc checks
     const miscLogs = [
       // https schema recommendation check
@@ -246,6 +287,8 @@ export async function GET(
       ...duplicateDropLogs,
       ...ensLogs,
       ...contractLogs,
+      ...externalMintConfigCheck,
+      ...descriptionCheck,
     ]) {
       if (log.startsWith('ERROR:')) {
         error.push(log.replace('ERROR: ', ''))
