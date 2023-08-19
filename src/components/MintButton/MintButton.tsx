@@ -71,7 +71,11 @@ export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
     )
   }
 
-  const props: MintDialogInfo = { ...mintProps, price: price.toString() }
+  const props: MintDialogInfo = {
+    ...mintProps,
+    price: price.toString(),
+    maxClaimablePerWallet: maxClaimablePerWallet,
+  }
 
   return (
     <MintDialog
