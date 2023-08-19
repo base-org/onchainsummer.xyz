@@ -30,7 +30,7 @@ What does the holder of the Wellness Card receive:
 Much more on the way!`,
       mintType: MintType.ThirdWeb,
       address: '0x6a55463a66e585767c6Cce622d2018572a0aa7D1',
-      crossMintClientId: '',
+      crossMintClientId: 'f023e02c-8d7e-4b42-997e-20d036d1ba17',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2024, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
