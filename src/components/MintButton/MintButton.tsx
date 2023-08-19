@@ -4,7 +4,7 @@ import { FC } from 'react'
 import { ConnectDialog } from '../ConnectDialog'
 import { MintDialog } from '../MintDialog'
 import { MintDialogInfo } from '../MintDialog/Context/Context'
-import { useValidate } from './useValidate'
+import { MintStatus, useValidate } from './useValidate'
 import { Button, ButtonProps } from '../Button'
 import { Loading } from '../icons/Loading'
 
@@ -19,15 +19,23 @@ interface MintButtonProps extends MintDialogInfo {
 export const MintButton: FC<MintButtonProps> = ({ size, ...mintProps }) => {
   const { address: account } = useAccount()
   const now = getNow()
-  const { valid, message, isValidating, price, maxClaimablePerWallet } =
-    useValidate(
-      mintProps.address,
-      mintProps.mintType,
-      mintProps.price,
-      mintProps.mintDotFunStatus
-    )
+  const {
+    valid,
+    message,
+    isValidating,
+    price,
+    maxClaimablePerWallet,
+    mintStatus,
+  } = useValidate(
+    mintProps.address,
+    mintProps.mintType,
+    mintProps.price,
+    mintProps.mintDotFunStatus
+  )
 
-  if (mintProps.endDate && now >= mintProps.endDate) {
+  const isMintedOut = mintStatus === MintStatus.MintedOut
+
+  if ((mintProps.endDate && now >= mintProps.endDate) || isMintedOut) {
     return (
       <CollectButton
         size={size}
