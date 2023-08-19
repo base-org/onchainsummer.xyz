@@ -12,6 +12,7 @@ export type Validation = {
   message: React.ReactNode
   isValidating: boolean
   price: string
+  mintStatus: MintStatus
   maxClaimablePerWallet?: string
 }
 
@@ -21,7 +22,7 @@ type ValidationLocal = {
   maxPerAddress?: bigint
 }
 
-enum MintStatus {
+export enum MintStatus {
   Mintable,
   NotStarted,
   Ended,
@@ -97,6 +98,7 @@ export const useValidate = (
     message: message || '',
     price: formatEther(validation.price),
     maxClaimablePerWallet: validation.maxPerAddress?.toString(),
+    mintStatus: validation.status,
   }
 }
 
