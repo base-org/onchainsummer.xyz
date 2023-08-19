@@ -22,6 +22,7 @@ import fwbBonfire from './fwb-bonfire'
 import fini from './fini'
 import base from './base'
 import baseDayOne from './base-day-one'
+import coinbase from './coinbase'
 
 export const partners = [
   baseDayOne,
@@ -47,6 +48,7 @@ export const partners = [
   openSea,
   fwbBonfire,
   fini,
+  coinbase,
 ]
 
 export {
@@ -74,4 +76,5 @@ export {
   fini,
   base,
   baseDayOne,
+  coinbase,
 }
