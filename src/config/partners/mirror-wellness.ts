@@ -12,7 +12,7 @@ const mirrorWellness: Partner = {
   icon: '/partners/mirror-wellness/icon.png',
   banner: '/partners/mirror-wellness/banner-icon.svg',
   aarweaveDigest: 'bmQjUTikZ5tLnw2P_uTdQGhHjMZKwlCgoxwBFWJHdBY',
-  twitter: '@lululemonstudio',
+  twitter: '@MirrorsWC',
   drops: [
     {
       image: '/partners/mirror-wellness/drops/drop.gif',
@@ -23,7 +23,7 @@ const mirrorWellness: Partner = {
 What does the holder of the Wellness Card receive:
 
 - (3) therapy sessions yearly
-- Unlock private investment opportunities
+- Unlock private opportunities
 - Premium Gifting
 - Access to curated virtual experiences such as education seminars, soundbaths, & community conversations with wellness professionals in our network
 
@@ -34,7 +34,7 @@ Much more on the way!`,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 19, CAMPAIGN_HOUR + 2, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.01',
+      price: '0.005',
     },
   ],
 }
