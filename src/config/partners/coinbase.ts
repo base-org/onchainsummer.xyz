@@ -51,7 +51,7 @@ const base: Partner = {
       creator: '0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3',
       name: 'Coinbase One',
       description:
-        'Redeem 60 days of free Coinbase One with any Onchain Summer NFT',
+        'Mint any Onchain Summer release and claim a 60-day free trial of Coinbase One. Terms apply.',
       type: 'external',
       startDate: Date.UTC(2023, 7, 8, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -67,7 +67,7 @@ const base: Partner = {
       creator: '0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3',
       name: 'Coinbase NFT',
       description:
-        'Explore trending mints and buy the lowest price NFTs aggregated across marketplaces',
+        'Discover trending mints and shop NFTs at low prices across marketplaces',
       type: 'external',
       startDate: Date.UTC(2023, 7, 8, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
