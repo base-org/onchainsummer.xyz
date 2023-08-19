@@ -32,7 +32,7 @@ const indelible: Partner = {
     {
       image: '/partners/indelible/drops/drop-2.gif',
       creator: '0x63989a803b61581683B54AB6188ffa0F4bAAdf28',
-      name: 'Pablo Stanley: Pabs and Rupert Scootin',
+      name: 'Pablo Stanley: Scoot',
       address: '0x0',
       description: `Hola, I'm Pabs, and I've turned a fun moment from my comics into a gif - just Pabs and Rupert, cruising on a scooter.`,
       crossMintClientId: '',
