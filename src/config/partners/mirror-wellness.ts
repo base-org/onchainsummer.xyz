@@ -15,7 +15,7 @@ const mirrorWellness: Partner = {
   twitter: '@lululemonstudio',
   drops: [
     {
-      image: 'https://assets.onchainsummer.xyz/mirror-drop-1.mp4',
+      image: '/partners/mirror-wellness/drops/drop.gif',
       creator: '0x1EbA9Bb7c60353a2cA0a57C8B1A6DF3b206e2c34',
       name: 'The Wellness Card',
       description: `Mirrors Wellness Club (MWC) is a community with a mission to educate & build upon the three pillars of wellness: physical, mental & financial wellness. MWC is for all people who want to live a healthy lifestyle inside and outside of the metaverse. We curate experiences, both virtual & in real life, as well as educate at the intersection of wellness x web3. After 2 years of activations like wellness mixers, cycling classes, kickboxing, sunset yoga, community retreats, and more, we’re excited to finally launch our first MWC membership NFTs to expand on our mission of bringing wellness onchain!
