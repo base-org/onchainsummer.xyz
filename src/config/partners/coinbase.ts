@@ -8,7 +8,7 @@ const base: Partner = {
   url: 'https://www.coinbase.com/',
   description:
     'Get exclusive benefits by using Coinbase and Coinbase Wallet, including weekly free mints, no cost funding on Base, and 60 days free of Coinbase One for any Onchain Summer NFT minted.',
-  brandColor: 'rgb(209,66,65)',
+  brandColor: '#0052FF',
   icon: '/partners/coinbase/icon.svg',
   banner: '/partners/coinbase/banner-icon.jpg',
   aarweaveDigest: '',
@@ -44,7 +44,7 @@ const base: Partner = {
       mintType: MintType.External,
       crossMintClientId: '',
       buttonText: 'Mint',
-      externalLink: 'https://www.coinbase.com/wallet',
+      externalLink: 'https://go.cb-w.com/buyAndMint',
     },
     {
       image: '/partners/coinbase/drop/drop-3.gif',
