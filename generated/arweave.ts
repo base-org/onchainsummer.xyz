@@ -16,7 +16,10 @@ export const arweaves = {
         'jarkM_-owdaXOCIWFu9Goto72E82__ctg-0U2EhI6zDRyWTKuWKa0lAvJTgs_faREUi7itAT2tnNRfTqtxHJAQ',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
     wnft: {
@@ -53,7 +56,10 @@ export const arweaves = {
         'FM6tH69zWyDj8BDlyn_HcXV2uD3Cbcs7SaCmVU4f2Y67DfwKorrajT2lZIvshgaNo_sG7_s2PrD0ZlDRvp5l9A',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
     wnft: {
@@ -91,7 +97,10 @@ export const arweaves = {
         'SaZVGRADdEhiDOGerjb1FIRe6swLdwTk98B7CWM0NT_aMXGQLkJ-X1ucC4cY6tIx6xB-E42qycT-NjHLZkP2RQ',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
     wnft: {
@@ -129,7 +138,10 @@ export const arweaves = {
         '9zrSNUr2jnWIkCy_0a-v3Dv9gDRkLDpzAt69v7yjVXwxeRM3u5flrv5wLI0DhkSqLdJGjiSCLpneooFw3uALHA',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
   },
@@ -151,56 +163,20 @@ export const arweaves = {
         'UOUI3mZqZ2YKodY4IM_0WDwuVnKxgql5VeVGfc7BL4QWTYjRDWt9_mxBaM8peGin5Eir1vLsPh5gUE03mcbaAA',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
   },
   k4bfWvIESu0m5XqXY80V6yPKy1ce9HY4y2g5mcULDA0: {
     content: {
-      body: '***Discover how the Stand With Crypto Alliance aims to shape legislation, educate, and mobilize the crypto community for a promising onchain future.***\n\nToday, the Stand with Crypto Alliance launches: the United State’s first-ever onchain, unified, independent political advocacy arm by and for crypto supporters. The Stand With Crypto Alliance is dedicated to uniting a broad network of advocates to make a better future internet with crypto as a core component.\n\nSpeaking to this, the Alliance issued a statement saying, “With lawmakers casting a shadow over the future of onchain technologies, we recognize the urgent need to rally the community.“ That’s why the Stand with Crypto Alliance is hosting a Day of Action during Onchain Summer to unite, amplify, and activate onchain innovation by encouraging supporters to join the movement and voice their support. They noted, “Coinbase has witnessed remarkable momentum in uniting users in the fight for financial freedom – but this movement is bigger than Coinbase."\n\nPrevious initiatives from Stand with Crypto have provided an entry point onto both the onchain ecosystem and rallying advocates to action. Not only was the initial NFT released in April minted over 160,000 times, but an onchain petition garnered over 188,000 signatures. “Meaningfully fighting legislative headwinds will take our collective power,” continued the statement issued by the Alliance. “By providing the tools supporters need to unite the pro-crypto community and effectively advocate, Stand with Crypto will help supporters speak with one resounding voice to impact public policy – and pave the road toward a brighter future for crypto.”\n\nThe alliance requests that those ready to join the movement show their support for crypto innovation and advocacy by participating in two ways: The first is by minting a special Stand with Crypto x Day of Action commemorative NFT. Priced at 0.00435 ETH (representing the 435 congressional districts in the U.S.) all proceeds will go directly to the Stand with Crypto Alliance. The second (limited to U.S. nationals) is to join the [Stand With Crypto Alliance](https://standwithcrypto.org/?action=join-stand-with-crypto).\n\nIn the grand tapestry of economic freedom, the Stand With Crypto Alliance is a shieldbearer for all those working to create a new onchain world. In the spirit of unity, innovation, and advocacy, we all Stand with Crypto – to create a free digital tomorrow.\n\nIf you support clear, sensible crypto legislation in the United States, [mint the commemorative NFT](http://onchainsummer.xyz/standwithcrypto) and [join the alliance](https://standwithcrypto.org/?action=join-stand-with-crypto) to help secure the future of crypto.',
-      timestamp: '1692029064',
+      body: '***Discover how the Stand With Crypto Alliance aims to shape legislation, educate, and mobilize the crypto community for a promising onchain future.***\n\n<https://onchainsummer.xyz/standwithcrypto>\n\nToday, the Stand with Crypto Alliance launches: the United State’s first-ever onchain, unified, independent political advocacy arm by and for crypto supporters. The Stand With Crypto Alliance is dedicated to uniting a broad network of advocates to make a better future internet with crypto as a core component.\n\nSpeaking to this, the Alliance issued a statement saying, “With lawmakers casting a shadow over the future of onchain technologies, we recognize the urgent need to rally the community.“ That’s why the Stand with Crypto Alliance is hosting a Day of Action during Onchain Summer to unite, amplify, and activate onchain innovation by encouraging supporters to join the movement and voice their support. They noted, “Coinbase has witnessed remarkable momentum in uniting users in the fight for financial freedom – but this movement is bigger than Coinbase."\n\nPrevious initiatives from Stand with Crypto have provided an entry point onto both the onchain ecosystem and rallying advocates to action. Not only was the initial NFT released in April minted over 160,000 times, but an onchain petition garnered over 188,000 signatures. “Meaningfully fighting legislative headwinds will take our collective power,” continued the statement issued by the Alliance. “By providing the tools supporters need to unite the pro-crypto community and effectively advocate, Stand with Crypto will help supporters speak with one resounding voice to impact public policy – and pave the road toward a brighter future for crypto.”\n\nThe alliance requests that those ready to join the movement show their support for crypto innovation and advocacy by participating in two ways: The first is by minting a special Stand with Crypto x Day of Action commemorative NFT. Priced at 0.00435 ETH (representing the 435 congressional districts in the U.S.) all proceeds will go directly to the Stand with Crypto Alliance. The second (limited to U.S. nationals) is to join the [Stand With Crypto Alliance](https://standwithcrypto.org/?action=join-stand-with-crypto).\n\nIn the grand tapestry of economic freedom, the Stand With Crypto Alliance is a shieldbearer for all those working to create a new onchain world. In the spirit of unity, innovation, and advocacy, we all Stand with Crypto – to create a free digital tomorrow.\n\nIf you support clear, sensible crypto legislation in the United States, [mint the commemorative NFT](http://onchainsummer.xyz/standwithcrypto) and [join the alliance](https://standwithcrypto.org/?action=join-stand-with-crypto) to help secure the future of crypto.',
+      timestamp: '1692206683',
       title: 'Join the Stand With Crypto Alliance in a Day of Action',
     },
-    digest: 'XDen9FHnyswcP_G9Nkm9Tx0j57GeOXQsdvXJx43EYjo',
-    authorship: {
-      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      signingKey:
-        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      signature:
-        '0xc3dfaf0914e577e872891b6253201c59df80b1098fa690259b9c33a6072ea0d841b4d295b56a7cd2201a57fccc16875702e9886a3f55c25c68f7ae10be988b671b',
-      signingKeySignature:
-        'q59frQ1wQkIcDhq6jO1GWKw16WKMWmViR0UQCYU_UNU3ORmIItBcd4CFBAudDKcTKWAizpM7YKTF7sz-0n9qgg',
-      signingKeyMessage:
-        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
-    },
-    version: '04-25-2022',
-    wnft: {
-      chainId: 10,
-      description:
-        'Discover how the Stand With Crypto Alliance aims to shape legislation, educate, and mobilize the crypto community for a promising onchain future.\n',
-      fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      imageURI: 'QmbZBbSRWesUGd78f27GdifyCQ31Ptz3w2TjCN9hkouQbr',
-      mediaAssetId: 648163,
-      name: 'Join the Stand With Crypto Alliance in a Day of Action',
-      nonce: 5500211,
-      owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      price: 0,
-      proxyAddress: '0x2783739Bb127483CA5f96eAD9fF380397e67898f',
-      renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
-      supply: 0,
-      symbol: 'JOINTHESTANDWITHCRYPTOALLIANCEINADAYOFACTION',
-      hasCustomWnftMedia: false,
-    },
-  },
-  'DJ0PP-QLvDLMagBXajSCliN8RqNFt2WAggTBSwzGjPA': {
-    content: {
-      body: '***Zora is emerging as a ‘sovereign domain’’ for creators, where the convergence of onchain innovation and artistic imagination reshapes the landscape of online interaction.***\n\nAfter an era of a digital world dominated by the colossal sway of a few tech giants, Dee Goens believes that artists are ready to push the boundaries of what it means to create online. With a resounding call to action against the stranglehold of a corporate, centralized internet, Zora is embarking on a transformative journey to redefine the contours of artistic expression and the very essence of the online experience — and Goens, Zora’s co-founder, wants to bring as many people with them as they can.\n\n"At Zora, we\'re focused on bringing as many artists onchain as possible," says Goens, “And Layer 2s are great for artists because they make bringing work onchain more accessible than ever by reducing gas fees." These gas fees (the transaction cost of creating or minting work onchain) have caused Zora to spin up an L2 of their own. Now, artists can choose between multiple chains for minting their work, including Ethereum, Zora’s own network, and now, Base.\n\nThis level of optionality is part of the very essence of Zora\'s mission: to provide a space where creators, unburdened by the confinements of conventional platforms, can unite in a diversity of forms. 3D art designers to code-based artists, videographers to poets. The digital canvas of Zora is vast, offering artists a space where their imagination is not merely showcased but celebrated in its entirety, and anyone can mint using whatever art forms they prefer - images, videos, sound files, HTML, and even PDFs.\n\n"For Onchain Summer,” says Goens, “We\'re supporting artists in a few ways. We’re rallying the Zora community on Base through a commemorative Based Zorb mint, supporting a variety of creator releases through Zora\'s creator-owned smart contracts, and unlocking new earning opportunities for creators through our new Protocol Rewards."\n\nZora\'s impact resonates beyond this activation. In a digital landscape often eclipsed by profit-driven motives, Zora offers a more utopian vision of authenticity, working to create a new internet for creators, by creators. As their [Manifesto](https://zora.energy/) says: "A place called Zora. Pure internet. Free and valuable. Resonance and connection. Open and shared. Independence and expansion. For all creation." These words echo as a call for change, inviting artists and enthusiasts alike to participate in a movement that charts a course towards an internet where artists take center stage.',
-      timestamp: '1692201653',
-      title:
-        'A Place Called Zora: Where Creators Come Together To Create Together',
-    },
-    digest: 'H6t3FMTQcGLiqIwCCmekWES_JVbje9VC8hqN5ctmM_0',
+    digest: '2Vu9OP0UfYyB-RCv-x6VL487Y4JtxDiXVCMTq_PVJT4',
     authorship: {
       contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
       signingKey:
@@ -208,32 +184,163 @@ export const arweaves = {
       signature:
         '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
       signingKeySignature:
-        'v88VwOkL8jv82xXbSgD1PTP5ANh7WiR7IXMyOeJeTdOd08sSmnLA32EqQ1RMjSUid5WPrddzYgIB6ab-eb6N7Q',
+        'zmZ7fI7vDRTmJzWTKCVAJC04_Y_xTdOeK-5ZzTbh7pkQ77C8ErKFDbcxYiGmi6gvWlsL5l4GhC6kSHdNstO1Ag',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
+    },
+    version: '04-25-2022',
+  },
+  'DJ0PP-QLvDLMagBXajSCliN8RqNFt2WAggTBSwzGjPA': {
+    content: {
+      body: '***Zora is emerging as a ‘sovereign domain’’ for creators, where the convergence of onchain innovation and artistic imagination reshapes the landscape of online interaction.***\n\n<https://onchainsummer.xyz/zora>\n\nAfter an era of a digital world dominated by the colossal sway of a few tech giants, Dee Goens believes that artists are ready to push the boundaries of what it means to create online. With a resounding call to action against the stranglehold of a corporate, centralized internet, Zora is embarking on a transformative journey to redefine the contours of artistic expression and the very essence of the online experience — and Goens, Zora’s co-founder, wants to bring as many people with them as they can.\n\n"At Zora, we\'re focused on bringing as many artists onchain as possible," says Goens, “And Layer 2s are great for artists because they make bringing work onchain more accessible than ever by reducing gas fees." These gas fees (the transaction cost of creating or minting work onchain) have caused Zora to spin up an L2 of their own. Now, artists can choose between multiple chains for minting their work, including Ethereum, Zora’s own network, and now, Base.\n\nThis level of optionality is part of the very essence of Zora\'s mission: to provide a space where creators, unburdened by the confinements of conventional platforms, can unite in a diversity of forms. 3D art designers to code-based artists, videographers to poets. The digital canvas of Zora is vast, offering artists a space where their imagination is not merely showcased but celebrated in its entirety, and anyone can mint using whatever art forms they prefer - images, videos, sound files, HTML, and even PDFs.\n\n"For Onchain Summer,” says Goens, “We\'re supporting artists in a few ways. We’re rallying the Zora community on Base through a commemorative Based Zorb mint, supporting a variety of creator releases through Zora\'s creator-owned smart contracts, and unlocking new earning opportunities for creators through our new Protocol Rewards."\n\nZora\'s impact resonates beyond this activation. In a digital landscape often eclipsed by profit-driven motives, Zora offers a more utopian vision of authenticity, working to create a new internet for creators, by creators. As their [Manifesto](https://zora.energy/) says: "A place called Zora. Pure internet. Free and valuable. Resonance and connection. Open and shared. Independence and expansion. For all creation." These words echo as a call for change, inviting artists and enthusiasts alike to participate in a movement that charts a course towards an internet where artists take center stage.',
+      timestamp: '1692206652',
+      title:
+        'A Place Called Zora: Where Creators Come Together To Create Together',
+    },
+    digest: 'xNoYZAkFRVoraG9zy-I4wOQOSRmJNg6ibsvuWiGPHcE',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'OtuwFLre_DkYkUDCy6AY8DlYfbz-UegVH7p4SWvuLgI2Id_ZwbtdOK9Ud0n3ZQ0ZruHbk0dRpzNFR9NHE_adVA',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
+    },
+    version: '04-25-2022',
+  },
+  'HgQGkyssikDTid90XB8kEKd_-Q5cLBEcStL-UnwjXOY': {
+    content: {
+      body: '***Discover how Pixelmon\'s onchain revival breathes new life into the monster-collecting genre, and how Kevin emerged as a symbol of determination and resilience.***\n\nPixelmon, an onchain monster collecting game, is poised for a comeback.\n\n“We’re building an onchain revival to the monster collecting genre,” says CEO Guliano Xiloyannis, who is aiming to capture the hearts of nostalgic gamers who once adored games of a similar genre but now find the established franchises lacking novelty.\n\nBut to talk about Pixelmon, we need to talk about Kevin.\n\nWhen the original Pixelmon collection was released during the peak of the NFT hype-cycle, the project soared to remarkable heights before any of their digital monsters were even revealed. Once the monsters were put on display, the results were (to put it gently) underwhelming. The voxel-based collection of characters felt rushed and not up to the level of quality that collectors expected. Amongst the various monster designs was one that caught the attention of the internet: a blocky-looking, cockeyed zombie, posed on a beach in front of palm trees and given the dubious name of ‘Kevin’.\n\n![The original Kevin art](https://images.mirror-media.xyz/publication-images/LRj9R2wltCShG4DOboiaD.jpg?height=675&width=676)\n\nKevin became the face of not only the unfortunate art of Pixelmon, but everything perceived to be wrong about the NFT space as a whole. Kevin was memed into the limelight, a perfect punchline to describe when expectations and reality look profoundly different.\n\nWhile all signs pointed to this being the end of Pixelmon’s story, it was just the beginning. The project’s path to resurgence took a pivotal turn when it was acquired by Liquid X, an external company with a much clearer mission than its predecessor. Reflecting on the initial challenges faced by the project, Xiloyannis candidly admits, "This is a comeback project. It\'s a project that, in the NFT space, didn\'t live up to the expectations in the first weeks of its life."\n\nThe Pixelmon world is a post-apocalyptic realm where animals have mutated into colorful and fascinating tribes of sometimes not-so-friendly monsters, each of which is represented by an onchain asset. As Xiloyannis explains, "Their onchain counterparts represent IP rights to our monsters within this IP franchise." Under the new leadership’s guidance, Pixelmon underwent a complete and total transformation, being rebuilt “from the bottom up” and updating all artwork, fleshing out the world’s lore, and embracing a transmedia approach that goes beyond gaming into animation, comic books, and more.\n\nEmphasizing the importance of learning from past mistakes, Xiloyannis states, "If we don\'t get it right the first time, we are going to keep building. We\'re still here, we’re determined, and we\'re going to come out on top." The sentiment fits in perfectly with their Onchain Summer release, immortalizing Kevin by turning him into a physical collectible, redeemed onchain.\n\nXiloyannis emphasizes that the toy represents something larger than just a humorous mishap, "We made this for anyone who believes that the whole crypto ecosystem can make a comeback and have an overall positive impact on the world while owning its past. And in that sense, I believe that Kevin is for everybody."',
+      timestamp: '1692288004',
+      title:
+        "From Mistake to Mascot: Kevin's Comeback Journey and Pixelmon's Onchain Resurgence",
+    },
+    digest: 'AZzf_Gzm4QTRjPzhg59YjjTgWyyPVO-xkIRIVWjQFV8',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'aMvbiNXX0s-tCB7KWpaqMyJgWKu5dgnCNKo3HzoSZ3XkFtdimv9fhkZ01noBEQWGpCB8VNOE1Nnw_0W1F7BUMw',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
     wnft: {
       chainId: 8453,
       description:
-        'Zora is emerging as a ‘sovereign domain’’ for creators, where the convergence of onchain innovation and artistic imagination reshapes the landscape of online interaction.\n',
+        "Discover how Pixelmon's onchain revival breathes new life into the monster-collecting genre, and how Kevin emerged as a symbol of determination and resilience.\n",
       fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      imageURI: 'QmQ2TpvpxcP73vLM46hEUXBQfbbqd4yD6VB5XxuK8FcEvF',
-      mediaAssetId: 649925,
-      name: 'A Place Called Zora: Where Creators Come Together To Create Together',
-      nonce: 3931319,
+      imageURI: 'QmVaeyizTcJ2GTc3erE7pZhhHviFgzkRxbyuqP1ZdsB8Lf',
+      mediaAssetId: 650841,
+      name: "From Mistake to Mascot: Kevin's Comeback Journey and Pixelmon's Onchain Resurgence",
+      nonce: 5908091,
       owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
       price: 0,
-      proxyAddress: '0x630455Bb3BC91b7D791BFFc9c20a8B71783Cbc30',
+      proxyAddress: '0x4D213508b63aC15864A8A06EFBad00fb1333D64f',
       renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
       supply: 0,
-      symbol: 'APLACECALLEDZORAWHERECREATORSCOMETOGETHERTOCREATETOGETHER',
+      symbol:
+        'FROMMISTAKETOMASCOTKEVINSCOMEBACKJOURNEYANDPIXELMONSONCHAINRESURGENCE',
       hasCustomWnftMedia: false,
     },
   },
+  RAk9JeVU0TH1i4NlPsYwlLpy0GT6K_6EbDGSK0UezXY: {
+    content: {
+      body: '***The rapid evolution of the internet has revolutionized the music industry, offering musicians unparalleled global exposure — but what’s still lacking is the ability for them to genuinely connect with their audience. Enter Showtime, a pioneering onchain platform that empowers musicians to bridge this gap and establish meaningful connections with their fans.***\n\n<https://onchainsummer.xyz/showtime>\n\n"Why does Justin Bieber have a harder time connecting with his audience than Mr. Beast?"\n\nThat question, posed by Showtime’s founder Alex Masmej, is worth considering. Despite being a household name worldwide, musicians face unique challenges in building direct artist-to-fan connections. "Meanwhile for YouTubers,” Masmej says, “it\'s somehow easier to convince your audience to pay for your products." This disparity highlights the need for change. Musicians need a new approach, one that enables them to connect with their audience in a direct and meaningful way without being impacted by the strict limitations of streaming services.\n\nMasmej thinks Showtime\'s approach provides an apt solution. Rather than merely serving as collectibles, he says that "NFTs should be useful because they unlock something new." Today’s Onchain Summer drop highlights Showtime’s powerful in-app messaging tool, which Masmej believes to be a multi-purposed utility that each artist will treat differently, utilizing it to share new releases, send concert updates, or even release exclusive content.\n\nFeaturing a bevy of remarkable musicians like BLOND:ISH, Rosa Linn, BT, and many more, each with a unique following around the globe, Showtime’s onchain offerings provide collectors not just with a unique piece of onchain memorabilia, but a direct connection to the artists.\n\nBT, a Grammy-nominated pioneer in the trance music space, is releasing an onchain collectible which unlocks an invitation to a call with the artist. Juno-nominee BLOND:ISH’s release gives her audience an interview into her journey onchain, as well as an $ISH tokens which act as “the heart of blondish.world” Rosa Linn’s release acts as a fan membership card (with a physical counterpart) that provides access to a Discord and fan club, and Talia Lahoud’s comes with a private performance of her new music and exclusive chat.\n\nOn top of these perks for all collectors, lucky winners of some of today’s mints will receive special experiences like a trip to Paris to see BT perform live, or BLOND:ISH’s “golden ticket” that enters participants into a raffle to win $6,969 (nice), flights, and two all-access passes to her ABRACADABRA event.\n\nAn onchain future represents a pivotal moment for the music industry that goes far beyond digital collectibles: it’s about connections. The power of onchain technology lies in the ability to empower musicians, enabling them to connect with their audiences on a deeper level. Through Showtime\'s innovative platform, artists can transcend the constraints of traditional channels and forge genuine experiences that redefine the artist-fan relationship.',
+      timestamp: '1692459089',
+      title: 'How Showtime is Unlocking a New Era for Musicians, Onchain',
+    },
+    digest: 'QLgu6kOjrw1k0mVydT-eUFHWHGEsZsl28921rwAnycM',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'HrFKgViPvWlzCY1vPK_c0S6Vt5hQHVFW2XlPU0fjrsG_nekXaY1M59HHFyweZ2VAgItMtv2feDua91YXFTyBHg',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
+    },
+    version: '04-25-2022',
+  },
+  bmQjUTikZ5tLnw2P_uTdQGhHjMZKwlCgoxwBFWJHdBY: {
+    content: {
+      body: '***Learn how Mirrors Wellness Club is working to intertwine real-world experiences with an onchain platform to forge bonds, facilitate learning, and elevate holistic living.***\n\n<https://onchainsummer.xyz/mirrorswellnessclub>\n\nBringing the world onchain doesn’t mean forgetting about the physical world around us. That’s why we need organizations like Mirrors Wellness Club, a wellness-focused establishment that transcends conventional paradigms by utilizing onchain tools to nurture not only physical wellness, but so much more. As Ty Baisden, the founder of Mirrors Wellness Club, says, "We’re using onchain tools to educate people through multiple wellness pillars: financial wellness, physical wellness, and mental wellness."\n\nHeno, the Community Manager of Mirrors Wellness Club, affirms this mission. "We want to be able to create spaces for folks to be able to touch grass and connect holistically offline while also providing an avenue for education." In an era where it’s becoming harder and harder to log off, it’s important to find opportunities to get outside.\n\nCentral to the ethos of Mirrors Wellness Club is the notion of inclusivity and community. Venessa Gonzalez, the club’s Event and Relations Manager, emphasizes this core value: "We try to create spaces that welcome everybody. We’ve noticed that people often end up creating group chats after our events and activations, and establishing whole relationships. So it really does become a community of like-minded people finding a place with each other." Beyond the gatherings, Mirrors Wellness Club cultivates a nurturing ecosystem where individuals from diverse backgrounds converge, fostering an environment that thrives on mutual support. This is onchain technology facilitating offchain bonds, a harmonious convergence of the virtual and the physical.\n\nTo continue bringing people into this important space, Mirrors Wellness Club is launching a limited-run membership card for Onchain Summer. In the words of Venessa Gonzalez, "You\'re gonna have a good time, you\'re gonna meet amazing people, you\'re gonna feel good when you leave, and you\'re going to want to keep coming back."\n\nAs Heno aptly observes, the journey towards an onchain future necessitates more bridges between the digital and physical worlds we co-exist in. "To onboard the next wave of people into an onchain future, we need real world applications. We need more education around why this space is important and purposeful." Mirrors Wellness Club serves as an exemplary model, illustrating how onchain technology can be seamlessly woven into real-world experiences.',
+      timestamp: '1692462193',
+      title:
+        "Well-Being Onchain: Mirrors Wellness Club's Expedition to a Better Self",
+    },
+    digest: 'qnkClb9J9DRfDexVfby5R-d4LHpmYwx4jlAW5wEU1Ec',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        '9i4UGYDrLMBWhM7Xocx0NiIEVoiumdv6OvnWpoYsJAXKX46Uhk-Xg3hp9pNTiDBp5lnwDT4kdOMNPgZZchXqtw',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
+    },
+    version: '04-25-2022',
+  },
+  'D-InXuDVczYGgpI82Ivudt1i7LIw_N3BJ3xC719Flwo': {
+    content: {
+      body: "***Blackbird is reshaping the hospitality landscape, fostering authentic loyalty and engagement between restaurants and their best customers. Discover how their exclusive Onchain Summer passes unlock real-world excitement and sweet rewards for diners.***\n\n<https://onchainsummer.xyz/blackbird>\n\nThe restaurant industry has always been dynamic and ever-evolving. With countless restaurants vying for attention, owners face the challenge of not only attracting new customers but also fostering loyalty among their existing patrons. In this fast-paced environment, technology can be a powerful ally — the trouble is, restaurants and their customers aren’t particularly well connected today, even as point-of-sale machines have grown more advanced.\n\nBlackbird wants to change all that, and is using onchain technology to give restaurant owners around the country the ability to unlock new levels of value for customers. Ben Leventhal, Blackbird’s founder and CEO, envisions a future where taking restaurants onchain enables new levels of connection between these restaurants and their most loyal patrons.\n\n“We've built a small bit of hardware with our NFC chips that really allows for a very easy and direct digital connection between restaurants and customers,” says Leventhal, “and that digital handshake is something that restaurants haven't previously had at their disposal.” By using Blackbird’s technology, business owners can learn a lot about customers, such as when they last came in, what they like to eat, and even where they last sat. The goal is to make the customers feel at home in the establishments they frequent.\n\nOf course, Blackbird has to provide something to keep those customers coming back, and that’s where $FLY tokens come in. A token that guests earn with every ‘tap-in’, $FLY will soon be redeemable for items and rewards, making getting dinner at your favorite restaurant more enticing than ever. Tap in enough times to become a regular and unlock ‘friends and family’ style perks like off-the-menu dishes sent from the kitchen to your table and the ability to text a concierge for a more spontaneous RSVP system than a traditional reservation-based system would allow. Blackbird works with each restaurant partner to create these bespoke rewards programs and loyalty tiers. As Leventhal says, “We've seen that when businesses show their customers what tapping in with Blackbird can get you, they see increased activity at their restaurant.”\n\nIf all this talk has made you hungry, you’ll be happy to know that Blackbird is introducing two exclusive summer passes for Onchain Summer, designed in partnership with the artist Lucian Smith. The first, the Supercharge Summer pass, gives holders a bonus in $FLY tokens for their next tap-in. The second, the Summertime Sweet Pass, gives holders not only $FLY tokens, but a little something more. “To me,” says Ben, “Summer time is about ice cream, sweets, desserts. So with the Summertime Sweet Pass, you earn complimentary sweets at a handful of Blackbird restaurants.” The complimentary ‘sweet surprise’ can be redeemed at eight Blackbird restaurants between August 15th and the 22nd.\n\nThough Blackbird is focused on providing a great summer for participants in Onchain Summer, their impact goes way beyond the passes available today. By incentivizing customers to tap-in and engage with the restaurant onchain, Blackbird hopes those users will become longtime repeat customers at these restaurants. In a competitive landscape where major players like Starbucks continually invest in loyalty programs, Blackbird recognizes the need for independent restaurants to create loyal customers even more diligently. By offering easy and direct digital connections between restaurants and their customers, Blackbird enables these establishments to leverage the power of onchain technology to strengthen customer relationships.\n\nBlackbird is excited for Base to join them in their ambitious goal of removing roadblocks that hinder the adoption of going onchain, bringing the technology to people on a massive scale. As Ben puts it, \"The best news of all is that you don't need to know anything about 'crypto' to unlock the magic of Blackbird. So I would say: Grab yourself a pass and go have some ice cream.\"",
+      timestamp: '1692206710',
+      title: 'Bringing Dining Onchain with Blackbird',
+    },
+    digest: 'oK2lpcrDLFjS9-QAgxU_0RqNBoAoj_UD8UhUUKhrmlI',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        't5yd-pAPZVap7_ymbUetyH6N4G4-C17vQWlWvo9XGafd7B6n_Dgm3NhhmVlU9ba-FDnxwpAw-qoHknGYCkjPNg',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
+    },
+    version: '04-25-2022',
+  },
   '': {
-    content: { body: 'im good', timestamp: '1657046626', title: 'petis' },
+    content: {
+      body: 'im good',
+      timestamp: '1657046626',
+      title: 'petis',
+    },
     digest: 'nIJWGywAVkuFY_Q3HzKRsP8UmkTlvZVF31Vof90u_TU',
     authorship: {
       contributor: '0xf9e0206f9f020DE9423A80ace7A64B322D0CE334',
@@ -245,7 +352,10 @@ export const arweaves = {
         'dDbEgnrp9nss4FaEQ2xIwXsXJhgP_jHAuW6jPhVv6zX9fvSj_GwY8nNOqs8kv2bfHRgyebY2_EJhmj7p9afNGw',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"hSt6BW_TbApshx0mIsqnN2AT0uf2OnpR5-FY_eIcl08","y":"6mCANzo8luqeCwGSg-DbA3SR1ZJ9mJ2kFgcNQ-R3S4A"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+      algorithm: {
+        name: 'ECDSA',
+        hash: 'SHA-256',
+      },
     },
     version: '04-25-2022',
     wnft: {
@@ -263,44 +373,6 @@ export const arweaves = {
       renderer: '0x0000000000000000000000000000000000000000',
       supply: 100,
       symbol: 'PETIS',
-    },
-  },
-  'D-InXuDVczYGgpI82Ivudt1i7LIw_N3BJ3xC719Flwo': {
-    content: {
-      body: "***Blackbird is reshaping the hospitality landscape, fostering authentic loyalty and engagement between restaurants and their best customers. Discover how their exclusive Onchain Summer passes unlock real-world excitement and sweet rewards for diners.***\n\nThe restaurant industry has always been dynamic and ever-evolving. With countless restaurants vying for attention, owners face the challenge of not only attracting new customers but also fostering loyalty among their existing patrons. In this fast-paced environment, technology can be a powerful ally — the trouble is, restaurants and their customers aren’t particularly well connected today, even as point-of-sale machines have grown more advanced.\n\nBlackbird wants to change all that, and is using onchain technology to give restaurant owners around the country the ability to unlock new levels of value for customers. Ben Leventhal, Blackbird’s founder and CEO, envisions a future where taking restaurants onchain enables new levels of connection between these restaurants and their most loyal patrons.\n\n“We've built a small bit of hardware with our NFC chips that really allows for a very easy and direct digital connection between restaurants and customers,” says Leventhal, “and that digital handshake is something that restaurants haven't previously had at their disposal.” By using Blackbird’s technology, business owners can learn a lot about customers, such as when they last came in, what they like to eat, and even where they last sat. The goal is to make the customers feel at home in the establishments they frequent.\n\nOf course, Blackbird has to provide something to keep those customers coming back, and that’s where $FLY tokens come in. A token that guests earn with every ‘tap-in’, $FLY will soon be redeemable for items and rewards, making getting dinner at your favorite restaurant more enticing than ever. Tap in enough times to become a regular and unlock ‘friends and family’ style perks like off-the-menu dishes sent from the kitchen to your table and the ability to text a concierge for a more spontaneous RSVP system than a traditional reservation-based system would allow. Blackbird works with each restaurant partner to create these bespoke rewards programs and loyalty tiers. As Leventhal says, “We've seen that when businesses show their customers what tapping in with Blackbird can get you, they see increased activity at their restaurant.”\n\nIf all this talk has made you hungry, you’ll be happy to know that Blackbird is introducing two exclusive summer passes for Onchain Summer, designed in partnership with the artist Lucian Smith. The first, the Supercharge Summer pass, gives holders a bonus in $FLY tokens for their next tap-in. The second, the Summertime Sweet Pass, gives holders not only $FLY tokens, but a little something more. “To me,” says Ben, “Summer time is about ice cream, sweets, desserts. So with the Summertime Sweet Pass, you earn complimentary sweets at a handful of Blackbird restaurants.” The complimentary ‘sweet surprise’ can be redeemed at eight Blackbird restaurants between August 15th and the 22nd.\n\nThough Blackbird is focused on providing a great summer for participants in Onchain Summer, their impact goes way beyond the passes available today. By incentivizing customers to tap-in and engage with the restaurant onchain, Blackbird hopes those users will become longtime repeat customers at these restaurants. In a competitive landscape where major players like Starbucks continually invest in loyalty programs, Blackbird recognizes the need for independent restaurants to create loyal customers even more diligently. By offering easy and direct digital connections between restaurants and their customers, Blackbird enables these establishments to leverage the power of onchain technology to strengthen customer relationships.\n\nBlackbird is excited for Base to join them in their ambitious goal of removing roadblocks that hinder the adoption of going onchain, bringing the technology to people on a massive scale. As Ben puts it, \"The best news of all is that you don't need to know anything about 'crypto' to unlock the magic of Blackbird. So I would say: Grab yourself a pass and go have some ice cream.\"",
-      timestamp: '1692115071',
-      title: 'Bringing Dining Onchain with Blackbird',
-    },
-    digest: 'oqzavLTE-HjMLUQTSQm_LLXprWMmwgTIGw8krvTSdDs',
-    authorship: {
-      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      signingKey:
-        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      signature:
-        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
-      signingKeySignature:
-        'TaWMInDap6xwspFgyUJNNMzJzSNNUW7lW816Z9VMoI5MC04AjN3oH-1CROKGVP56tW87TtgR5JWHV6DugvqM4A',
-      signingKeyMessage:
-        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
-    },
-    version: '04-25-2022',
-    wnft: {
-      chainId: 8453,
-      description:
-        'Blackbird is reshaping the hospitality landscape, fostering authentic loyalty and engagement between restaurants and their best customers. Discover how their exclusive Onchain Summer passes unlock real-world excitement and sweet rewards for diners.\n',
-      fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      imageURI: 'Qma2DgT1a14gcUTQJMtefAFjamBZGGMTtLkkY7q3X2Syg8',
-      mediaAssetId: 648997,
-      name: 'Bringing Dining Onchain with Blackbird',
-      nonce: 8508923,
-      owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      price: 0,
-      proxyAddress: '0xB512D78DC9adA3e79743690c1349cFCE12CDed42',
-      renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
-      supply: 0,
-      symbol: 'BRINGINGDININGONCHAINWITHBLACKBIRD',
-      hasCustomWnftMedia: false,
     },
   },
 }
