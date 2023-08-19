@@ -28,13 +28,10 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
         '',
       )
       .trim()
-    return text.length > 100
+    return text.length > 92
       ? text.substring(
           0,
-          tweet.text.indexOf(
-            ' ',
-            media ? 100 : Math.min(tweet.text.length, 240),
-          ),
+          tweet.text.indexOf(' ', media ? 92 : Math.min(tweet.text.length, 240))
         ) + '...'
       : text
   }, [tweet.text, media])
