@@ -7,15 +7,20 @@ import { Address } from 'viem'
 
 interface AddressPillProps {
   address: Address
+  className?: string
 }
 
-export const AddressPill: FC<AddressPillProps> = ({ address }) => {
+export const AddressPill: FC<AddressPillProps> = ({
+  address,
+  className = '',
+}) => {
   const { avatar, name } = useEns(address)
   return (
     <a
       className={clsx(
-        'max-w-full overflow-hidden rounded-[58px] bg-ocs-blue text-white p-1 pr-2 w-max flex gap-2 items-center text-sm leading-none font-mono',
-        { 'pl-2': !avatar }
+        'max-w-full overflow-hidden rounded-[58px] bg-ocs-blue text-white p-1 pr-2 w-max flex gap-2 items-center desktop-label-2',
+        { 'pl-2': !avatar },
+        className
       )}
       href={`https://profile.coinbase.com/${name || address}`}
       target="_blank"
@@ -23,7 +28,7 @@ export const AddressPill: FC<AddressPillProps> = ({ address }) => {
     >
       {avatar ? (
         <div
-          className="h-5 w-5 bg-black rounded-full bg-cover relative"
+          className="h-4 w-4 bg-black rounded-full bg-cover relative"
           style={{ backgroundImage: `url(${avatar})` }}
         />
       ) : null}

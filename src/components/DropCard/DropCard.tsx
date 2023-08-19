@@ -9,6 +9,7 @@ import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { NFTAsset } from '@/components/NFTAsset'
 import { Hex } from 'viem'
 import { Drop, DropDataSuffix } from '@/config/partners/types'
+import clsx from 'clsx'
 
 type DropCardProps = {
   address: Address
@@ -63,8 +64,13 @@ export const DropCard: FC<DropCardProps> = ({
     contractAddress: address,
   })
 
+  const className = 'desktop-h3 line-clamp-2 px-4 flex-auto max-h-[60px]'
+
   return (
-    <Card className="relative flex flex-col font-text w-[290px] md:w-[320px] flex-auto border border-[#EFEFEF]">
+    <Card
+      li
+      className="relative flex flex-col max-h-[580px] gap-4 font-text w-[290px] md:w-[320px]"
+    >
       <div className="relative w-full aspect-[4/3] bg-black flex items-center rounded-t-2xl md:rounded-t-3xl">
         <NFTAsset
           source={image}
@@ -72,63 +78,59 @@ export const DropCard: FC<DropCardProps> = ({
           className="object-cover rounded-t-2xl md:rounded-t-3xl"
         />
       </div>
-      <div className="p-4 flex flex-col flex-auto gap-2.5 justify-between">
-        {isExternalLink && externalLinkStatus === 'valid' ? (
-          <a
-            href={externalLinkHref}
-            className="desktop-h3 after:absolute after:inset-0  line-clamp-2"
-            target="_blank"
-          >
-            {name}
-          </a>
-        ) : (
-          <span className="desktop-h3 line-clamp-2">{name}</span>
-        )}
 
-        <div>
-          <div>
-            <AddressPill address={creator as Address} />
-          </div>
-          {description && (
-            <span className="text-sm line-clamp-3 text-ocs-gray font-sans mt-2.5">
-              {description}
-            </span>
-          )}
-          <div className="pt-[38px] mt-auto">
-            {isExternalLink ? (
-              <ExternalDrop
-                endDate={endDate}
-                externalLink={externalLink}
-                startDate={startDate}
-                partner={partner}
-                contractAddress={address}
-                openSeaLink={openSeaLink}
-                className="!flex !justify-center mt-auto"
-                buttonText={buttonText}
-              />
-            ) : (
-              <MintButton
-                price={price}
-                address={address}
-                crossMintClientId={crossMintClientId}
-                partnerIcon={partnerIcon}
-                partnerName={partner}
-                dropImage={image}
-                dropName={name}
-                creatorAddress={creator}
-                endDate={endDate}
-                mintType={
-                  mintType ||
-                  (externalLink ? MintType.External : MintType.ThirdWeb)
-                }
-                openSeaLink={openSeaLink}
-                interactWithNFTLink={interactWithNFTLink}
-                dataSuffix={siteDataSuffix}
-                dropDataSuffix={dropDataSuffix}
-              />
-            )}
-          </div>
-        </div>
+      {isExternalLink && externalLinkStatus === 'valid' ? (
+        <a
+          href={externalLinkHref}
+          className={clsx('after:absolute after:inset-0', className)}
+          target="_blank"
+        >
+          {name}
+        </a>
+      ) : (
+        <span className={className}>{name}</span>
+      )}
+
+      <AddressPill address={creator as Address} className="h-max mx-4" />
+
+      {description ? (
+        <span className="desktop-body line-clamp-3 text-ocs-gray font-sans px-4 h-[66px]">
+          {description}
+        </span>
+      ) : null}
+
+      <div className="pt-8 px-4 pb-4 mt-auto">
+        {isExternalLink ? (
+          <ExternalDrop
+            endDate={endDate}
+            externalLink={externalLink}
+            startDate={startDate}
+            partner={partner}
+            contractAddress={address}
+            openSeaLink={openSeaLink}
+            className="!flex !justify-center mt-auto"
+            buttonText={buttonText}
+          />
+        ) : (
+          <MintButton
+            price={price}
+            address={address}
+            crossMintClientId={crossMintClientId}
+            partnerIcon={partnerIcon}
+            partnerName={partner}
+            dropImage={image}
+            dropName={name}
+            creatorAddress={creator}
+            endDate={endDate}
+            mintType={
+              mintType || (externalLink ? MintType.External : MintType.ThirdWeb)
+            }
+            openSeaLink={openSeaLink}
+            interactWithNFTLink={interactWithNFTLink}
+            dataSuffix={siteDataSuffix}
+            dropDataSuffix={dropDataSuffix}
+          />
+        )}
       </div>
     </Card>
   )
