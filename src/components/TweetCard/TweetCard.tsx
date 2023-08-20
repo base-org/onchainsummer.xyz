@@ -23,15 +23,18 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
 
   const message = useMemo(() => {
     const text = tweet.text
-      .replace(
-        /(?:((?<=[\s\W])|^)[#](\w+|[^#]|$)|((?<=[\s\W])|^)[@]([a-zA-Z0-9_]+|$))/gm,
-        '',
-      )
+      // .replace(
+      //   /(?:((?<=[\s\W])|^)[#](\w+|[^#]|$)|((?<=[\s\W])|^)[@]([a-zA-Z0-9_]+|$))/gm,
+      //   '',
+      // )
       .trim()
-    return text.length > 92
+    return text.length > 120
       ? text.substring(
           0,
-          tweet.text.indexOf(' ', media ? 92 : Math.min(tweet.text.length, 240))
+          tweet.text.indexOf(
+            ' ',
+            media ? 120 : Math.min(tweet.text.length, 240)
+          )
         ) + '...'
       : text
   }, [tweet.text, media])
