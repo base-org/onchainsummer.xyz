@@ -24,24 +24,8 @@ const manifold: Partner = {
 2023
       
 As part of my first-ever open edition on the blockchain and in conjunction with Coinbase's Onchain Summer, this piece is being offered at an exclusive price, allowing for wider accessibility to a broader audience.
-      
-To add to the excitement, collectors of this piece will have the opportunity to acquire another artwork through a token-gated burn process!
-      
-Here is how it goes:
-      
-◉ Collectors of "Epiphany - 夜 (Night)" will have exclusive access to a new artwork, "Epiphany - 昼 (Day)", through a burn and claim later.
-      
-◉ To claim ONE "Epiphany - 昼 (Day)", TWO tokens of "Epiphany - 夜 (Night") will be burnt.
-      
-      
-      
-The Ether stirs; a new realm beckons,
-      
-Seek the Epiphany from shadow to light,
-      
-Come, share in the horizon's embrace,
-      
-Choose your ride, and set forth with grace.`,
+
+To add to the excitement, collectors of this piece will have the opportunity to acquire another artwork through a token-gated burn process!`,
       crossMintClientId: '',
       mintType: MintType.External,
       externalLink: 'https://app.manifold.xyz/c/Epiphany-night',
@@ -103,7 +87,7 @@ Bidding for Carpe Unum will start late 2023`,
       price: '0.01',
     },
     {
-      image: '/partners/manifold/drops/drop-7.jpeg',
+      image: '/partners/manifold/drops/drop-7.png',
       creator: '0x11FCBEb2680905bC5922e7a3598a2d3b2e6D5b38',
       name: 'The Nostalgia Machine',
       description: `"You're living in the past dude!"
