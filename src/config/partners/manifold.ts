@@ -5,21 +5,43 @@ import { MintType } from '@/components/MintDialog/types'
 const manifold: Partner = {
   slug: 'manifold',
   name: 'Manifold',
-  url: 'https://studio.manifold.xyz/',
+  url: 'https://app.manifold.xyz/',
   description:
     'Manifold is bringing their favorite artists to Onchain Summer as part of their mission to empower digital creators with the tools that enable true creative sovereignty.',
   brandColor: '#000000',
   icon: '/partners/manifold/icon.png',
   banner: '/partners/manifold/banner-icon.svg',
   aarweaveDigest: '49DSIXV0UonHaisSqARUELRcKhfsmTtr_tnjShKPwMM',
-  twitter: '@manifold_labs',
+  twitter: '@manifoldxyz',
   drops: [
     {
       image: 'https://assets.onchainsummer.xyz/willzvey.jpeg',
       creator: '0xB802162900a4e2d1b2472B14895D56A73aE647E8',
       name: 'Epiphany - 夜',
       address: '0x44aA8003184e46fD1D703b6AFbA9bF0Eb3C3F20c',
-      description: `Epiphany - 夜`,
+      description: `Epiphany - 夜
+
+2023
+      
+As part of my first-ever open edition on the blockchain and in conjunction with Coinbase's Onchain Summer, this piece is being offered at an exclusive price, allowing for wider accessibility to a broader audience.
+      
+To add to the excitement, collectors of this piece will have the opportunity to acquire another artwork through a token-gated burn process!
+      
+Here is how it goes:
+      
+◉ Collectors of "Epiphany - 夜 (Night)" will have exclusive access to a new artwork, "Epiphany - 昼 (Day)", through a burn and claim later.
+      
+◉ To claim ONE "Epiphany - 昼 (Day)", TWO tokens of "Epiphany - 夜 (Night") will be burnt.
+      
+      
+      
+The Ether stirs; a new realm beckons,
+      
+Seek the Epiphany from shadow to light,
+      
+Come, share in the horizon's embrace,
+      
+Choose your ride, and set forth with grace.`,
       crossMintClientId: '',
       mintType: MintType.External,
       externalLink: 'https://app.manifold.xyz/c/Epiphany-night',
@@ -94,8 +116,8 @@ Completed August 2023.`,
     },
     {
       image: '/partners/manifold/drops/drop-6.jpg',
-      creator: '0xB0e11aeB377Ba41d493C8C1bdE123f6991016a03',
-      name: 'SlimeSunday',
+      creator: '0xD56a709Ca8cd4B7988034206ddde0097512652D8',
+      name: 'The Great Purge',
       description: `The Great Purge
 
 Burn 10 of ANY token to redeem 1 Slimesunday 😃`,
@@ -111,7 +133,7 @@ Burn 10 of ANY token to redeem 1 Slimesunday 😃`,
     {
       image: '/partners/manifold/drops/drop-7.jpeg',
       creator: '0x11FCBEb2680905bC5922e7a3598a2d3b2e6D5b38',
-      name: 'Young & Sick',
+      name: 'The Nostalgia Machine',
       description: `"You're living in the past dude!"
 
 Yep, I am... all the time! Usually when I draw I sit at my desk (often stoned as a goose) and watch old movies or play old records. When I'm not doing that you can find me in some online wormhole unlocking forgotten chunks of my childhood. The things that form us do so very early. I found out while ""researching"" for this piece that a lot of my fascination and obsession over character design comes from 90s toys. I love drawing my lil demons more than anything and I'm pretty sure it's because of the Tamagotchis that perished in my care, the mushrooms I squashed while being Mario, and the terrifying blank stare of a friend's Furby.`,
@@ -127,7 +149,7 @@ Yep, I am... all the time! Usually when I draw I sit at my desk (often stoned as
     {
       image: 'https://assets.onchainsummer.xyz/AndreOshea.png',
       creator: '0x34d05Abb475c6F65F70fF6427edA8dB9CE4D40ad',
-      name: 'Andre Oshea',
+      name: 'Carpe GM V',
       description: `This is my fifth limited Carpe GM edition, an expanded tribute to the culture. This is mint is to celebrate Onchain Summer & the BASE network
 
 “Carpe diem! Rejoice while you are alive; enjoy the day; live life to the fullest; make the most of what you have. It is later than you think.” - Horace
