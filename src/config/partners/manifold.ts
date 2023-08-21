@@ -15,7 +15,7 @@ const manifold: Partner = {
   twitter: '@manifold_labs',
   drops: [
     {
-      image: '/partners/manifold/drops/drop-1.jpeg',
+      image: 'https://assets.onchainsummer.xyz/willzvey.jpeg',
       creator: '0xB802162900a4e2d1b2472B14895D56A73aE647E8',
       name: 'Epiphany - 夜',
       address: '0x44aA8003184e46fD1D703b6AFbA9bF0Eb3C3F20c',
@@ -29,7 +29,7 @@ const manifold: Partner = {
       price: '0.0089',
     },
     {
-      image: '/partners/manifold/drops/drop-2.png',
+      image: 'https://assets.onchainsummer.xyz/iartsometimes.png',
       creator: '0x0C88aF8b65C68D1d3cb9eC719E9Ce2A76642E135',
       name: 'Hood Angel',
       address: '0x0145bA1612C794cF325Cc53a1CB34f14F2f96E7b',
@@ -45,7 +45,7 @@ START TIME: 8/21, 12:00 AM CENTRAL - END TIME 8/24, 12:00 AM CENTRAL`,
       price: '0.0089',
     },
     {
-      image: '/partners/manifold/drops/drop-3.jpeg',
+      image: 'https://assets.onchainsummer.xyz/xsullo.jpeg',
       creator: '0x507D4e199F1f418679dbBd9CC775d846717BeAF2',
       name: 'Carpe Omnia',
       description: `Collecting multiple Carpe Omnia (CO) will enable the collector to eventually bid on a 1 of 1 artwork Carpe Unum using the CO tokens. The more tokens, the more likely a collector is to pick up Carpe Unum.
@@ -63,7 +63,7 @@ Bidding for Carpe Unum will start late 2023`,
       price: '0.0046',
     },
     {
-      image: '/partners/manifold/drops/drop-4.png',
+      image: 'https://assets.onchainsummer.xyz/plantdaddi.png',
       creator: '0x90902DC0a9C7F695A8600eE9319EE7c195A0e0b9',
       name: 'CAV!TY',
       description: `Digital Sculpture created using Zbrush, Maya, Substance Painter, Cinema 4D, Octane Render, and Photoshop.
@@ -79,7 +79,7 @@ Completed August 2023.`,
       price: '0.0039',
     },
     {
-      image: '/partners/manifold/drops/drop-5.png',
+      image: 'https://assets.onchainsummer.xyz/Klara.png',
       creator: '0xbdb8ff99D03f45DF9A38a20Fa80da44C5Ad88B24',
       name: 'Family Photo',
       description: `A photo of the KlaraLabs crew.`,
@@ -125,7 +125,7 @@ Yep, I am... all the time! Usually when I draw I sit at my desk (often stoned as
       price: '0.08',
     },
     {
-      image: '/partners/manifold/drops/drop-8.png',
+      image: 'https://assets.onchainsummer.xyz/AndreOshea.png',
       creator: '0x34d05Abb475c6F65F70fF6427edA8dB9CE4D40ad',
       name: 'Andre Oshea',
       description: `This is my fifth limited Carpe GM edition, an expanded tribute to the culture. This is mint is to celebrate Onchain Summer & the BASE network
