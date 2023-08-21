@@ -1,6 +1,7 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const highlight: Partner = {
   slug: 'highlight',
@@ -15,14 +16,79 @@ const highlight: Partner = {
   twitter: '@Highlight_xyz',
   drops: [
     {
+      // TODO: Need video url from s3
       image: '',
-      creator: '',
-      name: '',
-      ...limited,
-      type: 'erc-721',
+      creator: '0x168FEB2E7de2aC0c37a239261D3F9e1b396F22a2',
+      name: 'Generative Summer',
+      description: `Highlight, in partnership with four brilliant artists and Fingerprints DAO, is bringing generative art to Base. Discover and collect art supported by Highlight’s generative art toolkit`,
+      address: '0x0',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      externalLink: 'https://highlight.xyz/',
+      type: 'external',
       startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 23, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0',
+    },
+    {
+      // TODO: Need video url from s3
+      image: '',
+      creator: '0xAE487e1cF3A74fBC1AA157e13a41Dc0295CA8684',
+      name: '1,000 True Fans by Leander Herzog',
+      description: ``,
+      address: '0x0',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      externalLink: 'https://highlight.xyz/1000truefans',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0042',
+    },
+    {
+      // TODO: Need video url from s3
+      image: '',
+      creator: '0x236676cc4E112D9dE66221aFABBD43B03663474e',
+      name: 'Fractal Tapestries',
+      description: ``,
+      address: '0x0',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      externalLink: 'https://highlight.xyz/fractaltapestries',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0042',
+    },
+    {
+      // TODO: Need video url from s3
+      image: '',
+      creator: '0xB3B212da1F50DE8eCDE59C932e36DF7aFb6319cB',
+      name: 'RUNAWAY by James Merrill',
+      description: ``,
+      address: '0x0',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      externalLink: 'https://highlight.xyz/runaway',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0042',
+    },
+    {
+      // TODO: Need video url from s3
+      image: '',
+      creator: '0x4bED1D532b7c7bd148eB43C8473DcA3685Fd271d',
+      name: 'Crypto-Native by Melissa Wiederrecht',
+      description: ``,
+      address: '0x0',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      externalLink: 'https://highlight.xyz/cryptonative',
+      type: 'external',
+      startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.0042',
     },
   ],
 }
