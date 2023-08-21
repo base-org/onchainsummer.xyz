@@ -255,7 +255,9 @@ async function getPageData(spoofDate?: string) {
 
       const active = drops.filter((drop) => {
         const comparison = compareAsc(now, drop.endDate)
-        const isInfo = drop.address === '0x0' || drop.address === '0x'
+        const isExternal = !!drop.externalLink && !drop.buttonText
+        const isInfo =
+          (drop.address === '0x0' || drop.address === '0x') && !isExternal
 
         return !isInfo && (comparison === -1 || comparison === 0)
       })
