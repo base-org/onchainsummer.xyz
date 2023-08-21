@@ -1,8 +1,5 @@
-import { get } from 'lodash'
 import { notFound, redirect } from 'next/navigation'
 import compareAsc from 'date-fns/compareAsc'
-import format from 'date-fns/format'
-import { schedule } from '@/config/schedule'
 import { PartnerHero } from '@/components/PartnerHero'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
 import React from 'react'
@@ -16,6 +13,7 @@ import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 import { siteDataSuffix } from '@/components/MintDialog/types'
 import { DropCardList } from '@/components/DropCard/DropCardList'
+import { getSchedule } from '@/utils/getSchedule'
 
 type Props = {
   params: { slug: string }
@@ -92,7 +90,7 @@ const Page = async ({ params, searchParams }: Props) => {
 
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
   const slug = params.slug
@@ -143,11 +141,12 @@ export async function generateMetadata(
 }
 
 async function getPartner(slug: string, spoofDate?: string) {
-  const now = getNow(spoofDate)
   const today = getDropDate(spoofDate)
 
+  const schedule = await getSchedule()
+
   const date = Object.keys(schedule).find(
-    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase(),
+    (date) => schedule[date].slug.toLowerCase() === slug.toLowerCase()
   )
 
   if (!date) {

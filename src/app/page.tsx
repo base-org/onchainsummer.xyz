@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { DropCard } from '@/components/DropCard'
 import { PartnerHero } from '@/components/PartnerHero'
-import { schedule } from '@/config/schedule'
 import { Tabs, TabsComponentProps } from '@/components/Tabs'
 import { ReactMarkdown } from '@/components/ReactMarkdown'
 import { PageContainer } from '@/components/PageContainer'
@@ -22,6 +21,7 @@ import { siteDataSuffix } from '@/components/MintDialog/types'
 import { Drop } from '@/config/partners/types'
 import { Gift } from '@/components/icons/Gift'
 import { DropCardList } from '@/components/DropCard/DropCardList'
+import { getSchedule } from '@/utils/getSchedule'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -208,6 +208,8 @@ interface DropWithPartnerData extends Drop {
 async function getPageData(spoofDate?: string) {
   const now = getNow(spoofDate)
   const today = getDropDate(spoofDate)
+
+  const schedule = await getSchedule()
 
   const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
 
