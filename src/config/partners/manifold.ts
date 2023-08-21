@@ -116,7 +116,7 @@ Completed August 2023.`,
     },
     {
       image: '/partners/manifold/drops/drop-6.jpg',
-      creator: '0xB0e11aeB377Ba41d493C8C1bdE123f6991016a03',
+      creator: '0xD56a709Ca8cd4B7988034206ddde0097512652D8',
       name: 'The Great Purge',
       description: `The Great Purge
 
