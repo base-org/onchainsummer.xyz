@@ -10,6 +10,7 @@ const nextConfig = {
       'mint.fun',
       'image.mux.com',
       'testnet.mint.fun',
+      'assets.onchainsummer.xyz'
     ],
     dangerouslyAllowSVG: true,
   },
