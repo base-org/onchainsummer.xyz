@@ -255,8 +255,9 @@ async function getPageData(spoofDate?: string) {
 
       const active = drops.filter((drop) => {
         const comparison = compareAsc(now, drop.endDate)
+        const isInfo = drop.address === '0x0' || drop.address === '0x'
 
-        return comparison === -1 || comparison === 0
+        return !isInfo && (comparison === -1 || comparison === 0)
       })
 
       const next = active.map((drop) => ({
