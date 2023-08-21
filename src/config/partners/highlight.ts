@@ -20,7 +20,15 @@ const highlight: Partner = {
         'https://assets.onchainsummer.xyz/final_art-highlight-ocs-artists.m4v',
       creator: '0x168FEB2E7de2aC0c37a239261D3F9e1b396F22a2',
       name: 'Generative Summer',
-      description: `Highlight, in partnership with four brilliant artists and Fingerprints DAO, is bringing generative art to Base. Discover and collect art supported by Highlight’s generative art toolkit`,
+      description: `
+Highlight and Fingerprints DAO are teaming up with world-renowned artists Melissa Wiederrecht, James Merrill, Holger Lippmann, and Leander Herzog to bring generative art to Base.
+
+Collections feature generative artwork where each NFT is dynamically created through code at the moment of mint, unique to the owner.
+
+Each collection expresses different themes and generative techniques. Lippmann blends structure and chaos, Merrill pushes the edges of algorithmic diversity, Wiederrecht breaks all the crypto art rules, and Herzog imagines an immersive, interactive garden.
+
+All collections will be accessible open editions, available to mint for one week on Highlight. Credit cards supported, self-custodied wallets encouraged but not required.
+      `,
       address: '0x0',
       crossMintClientId: '',
       mintType: MintType.External,
@@ -47,7 +55,7 @@ const highlight: Partner = {
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-holger-lippmann.m4v',
       creator: '0x236676cc4E112D9dE66221aFABBD43B03663474e',
-      name: 'Fractal Tapestries',
+      name: 'Fractal Tapestries by Holger Lippmann',
       description: ``,
       address: '0x0',
       crossMintClientId: '',
