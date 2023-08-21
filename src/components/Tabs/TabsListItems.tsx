@@ -16,7 +16,7 @@ export const TabsListItems: FC<TabsListItemsProps> = ({
   return (
     <>
       <Tabs.Trigger
-        className="text-neutral-900 md:min-w-[200px] border-2 border-solid border-[#858585] data-[state=active]:border-none data-[state=active]:bg-[#FCD22D] px-3 pt-10 pb-2 md:px-4 rounded-2xl relative"
+        className="md:min-w-[200px] border-2 border-solid border-[#858585] radix-state-active:border-ocs-yellow radix-state-active:bg-ocs-yellow px-3 pt-10 pb-2 md:px-4 rounded-2xl relative"
         value="tab1"
       >
         <div className="flex items-center desktop-h3 md:desktop-h2">
@@ -27,7 +27,7 @@ export const TabsListItems: FC<TabsListItemsProps> = ({
         </div>
       </Tabs.Trigger>
       <Tabs.Trigger
-        className="text-neutral-900 md:min-w-[200px] border-2 border-solid border-[#858585] data-[state=active]:border-none data-[state=active]:bg-[#FCD22D] px-3 pt-10 pb-2 md:px-4 rounded-2xl relative"
+        className="md:min-w-[200px] border-2 border-solid border-[#858585] radix-state-active:border-none radix-state-active:bg-ocs-yellow px-3 pt-10 pb-2 md:px-4 rounded-2xl relative"
         value="tab2"
       >
         <div className="flex items-center desktop-h3 md:desktop-h2">

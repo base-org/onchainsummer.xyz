@@ -35,6 +35,7 @@ module.exports = {
         'ocs-blue': '#0052FF',
         'ocs-turquoise': '#54DCE7',
         'ocs-gray': '#444444',
+        'ocs-yellow': '#FCD22D',
         'light-palette-line': 'rgba(91, 97, 110, 0.20)',
         'light-palette-line-heavy': 'rgba(91, 97, 110, 0.66)',
       },
