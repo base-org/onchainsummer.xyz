@@ -19,7 +19,7 @@ export const NFTAsset: FC<NFTAssetProps> = ({
   ...props
 }) => {
   const extension = source.split('.').pop()?.toLowerCase()
-  return extension && ['mov', 'mp4'].includes(extension) ? (
+  return extension && ['mov', 'mp4', 'm4v'].includes(extension) ? (
     <video
       loop
       playsInline
