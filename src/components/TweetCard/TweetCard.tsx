@@ -5,6 +5,7 @@ import { FunctionComponent, useMemo } from 'react'
 
 import { TwitterVerified } from '@/components/icons/TwitterVerified'
 import { ITweet, ITweetMedia, ITweetAuthor } from '@/models/Tweet'
+import clsx from 'clsx'
 
 export interface ITweetCardProps {
   author: ITweetAuthor
@@ -21,23 +22,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
     return `https://twitter.com/${author.username}/status/${tweet.id}`
   }, [author.username, tweet.id])
 
-  const message = useMemo(() => {
-    const text = tweet.text
-      // .replace(
-      //   /(?:((?<=[\s\W])|^)[#](\w+|[^#]|$)|((?<=[\s\W])|^)[@]([a-zA-Z0-9_]+|$))/gm,
-      //   '',
-      // )
-      .trim()
-    return text.length > 120
-      ? text.substring(
-          0,
-          tweet.text.indexOf(
-            ' ',
-            media ? 120 : Math.min(tweet.text.length, 240)
-          )
-        ) + '...'
-      : text
-  }, [tweet.text, media])
+  const message = tweet.text.trim()
 
   const url = useMemo(() => {
     const firstUrl = tweet?.entities?.urls?.[0]
@@ -78,7 +63,17 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             </div>
           </div>
         </div>
-        <div className="mt-2">
+        <div
+          className={clsx(
+            'my-2.5',
+            {
+              'line-clamp-3': !!media,
+            },
+            {
+              'line-clamp-6': !media,
+            }
+          )}
+        >
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
