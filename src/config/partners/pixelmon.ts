@@ -56,7 +56,7 @@ Fun Fact: Did you know that Kevin cannot swim?`,
       address: '0x',
       mintType: MintType.External,
       crossMintClientId: '',
-      buttonText: 'Shop',
+      buttonText: 'Sold Out',
     },
   ],
 }
