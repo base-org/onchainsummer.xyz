@@ -16,8 +16,8 @@ const highlight: Partner = {
   twitter: '@Highlight_xyz',
   drops: [
     {
-      // TODO: Need video url from s3
-      image: '',
+      image:
+        'https://assets.onchainsummer.xyz/final_art-highlight-ocs-artists.m4v',
       creator: '0x168FEB2E7de2aC0c37a239261D3F9e1b396F22a2',
       name: 'Generative Summer',
       description: `Highlight, in partnership with four brilliant artists and Fingerprints DAO, is bringing generative art to Base. Discover and collect art supported by Highlight’s generative art toolkit`,
@@ -31,8 +31,7 @@ const highlight: Partner = {
       price: '0',
     },
     {
-      // TODO: Need video url from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/final_art-leander-herzog.m4v',
       creator: '0xAE487e1cF3A74fBC1AA157e13a41Dc0295CA8684',
       name: '1,000 True Fans by Leander Herzog',
       description: ``,
@@ -46,8 +45,7 @@ const highlight: Partner = {
       price: '0.0042',
     },
     {
-      // TODO: Need video url from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/Final_Art-holger-lippmann.m4v',
       creator: '0x236676cc4E112D9dE66221aFABBD43B03663474e',
       name: 'Fractal Tapestries',
       description: ``,
@@ -61,8 +59,7 @@ const highlight: Partner = {
       price: '0.0042',
     },
     {
-      // TODO: Need video url from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/final_art-james-merrill.m4v',
       creator: '0xB3B212da1F50DE8eCDE59C932e36DF7aFb6319cB',
       name: 'RUNAWAY by James Merrill',
       description: ``,
@@ -76,8 +73,8 @@ const highlight: Partner = {
       price: '0.0042',
     },
     {
-      // TODO: Need video url from s3
-      image: '',
+      image:
+        'https://assets.onchainsummer.xyz/final_art-melissa-wiederrecht.m4v',
       creator: '0x4bED1D532b7c7bd148eB43C8473DcA3685Fd271d',
       name: 'Crypto-Native by Melissa Wiederrecht',
       description: ``,
