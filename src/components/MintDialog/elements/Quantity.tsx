@@ -17,8 +17,7 @@ export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
   // zora has 2^32 max, thirdweb 2^256, in any case 2^32 is a lot and effectively no limit.
   if (
     mintType === MintType.MintDotFun ||
-    (maxClaimablePerWallet &&
-      maxClaimablePerWallet > (2n ** 32n - 1n).toString())
+    (maxClaimablePerWallet && maxClaimablePerWallet < 2n ** 32n - 1n)
   ) {
     return null
   }

@@ -13,7 +13,7 @@ export type Validation = {
   isValidating: boolean
   price: string
   mintStatus: MintStatus
-  maxClaimablePerWallet?: string
+  maxClaimablePerWallet?: bigint
 }
 
 type ValidationLocal = {
@@ -97,7 +97,7 @@ export const useValidate = (
     isValidating: isLoading,
     message: message || '',
     price: formatEther(validation.price),
-    maxClaimablePerWallet: validation.maxPerAddress?.toString(),
+    maxClaimablePerWallet: validation.maxPerAddress,
     mintStatus: validation.status,
   }
 }
@@ -205,11 +205,19 @@ async function validateThirdWeb(
   const now = Date.now() / 1000
 
   if (now < condition.startTimestamp) {
-    return { status: MintStatus.NotStarted, price: condition.pricePerToken }
+    return {
+      status: MintStatus.NotStarted,
+      price: condition.pricePerToken,
+      maxPerAddress: condition.quantityLimitPerWallet,
+    }
   }
 
   if (condition.supplyClaimed >= condition.maxClaimableSupply) {
-    return { status: MintStatus.MintedOut, price: condition.pricePerToken }
+    return {
+      status: MintStatus.MintedOut,
+      price: condition.pricePerToken,
+      maxPerAddress: condition.quantityLimitPerWallet,
+    }
   }
 
   const userMints = await readTw721({
@@ -227,5 +235,9 @@ async function validateThirdWeb(
     }
   }
 
-  return { status: MintStatus.Mintable, price: condition.pricePerToken }
+  return {
+    status: MintStatus.Mintable,
+    price: condition.pricePerToken,
+    maxPerAddress: condition.quantityLimitPerWallet,
+  }
 }
