@@ -13,10 +13,10 @@ const nestcoin: Partner = {
   banner: '/partners/onboard/banner-icon.svg',
   aarweaveDigest: 'isGtzFoGSsXNZl42Xt3SnNM9BoDOo_QrJ6F6mJNB2JA',
   twitter: '@nestcoin',
+
   drops: [
     {
-      // TODO: Get image from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/FINAL_ART-SANGO.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Sango: The Orisa’s & The Sonic Extension',
       description: `In this art piece, the Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. 
@@ -36,8 +36,7 @@ This work serves as a call to action, urging Africans to reclaim their narrative
       price: '0.003',
     },
     {
-      // TODO: Get image from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/FINAL_ART-OYA.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Oya: The Orisa’s & The Sonic Extension',
       description: `In this art piece, the Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. 
@@ -57,8 +56,7 @@ This work serves as a call to action, urging Africans to reclaim their narrative
       price: '0.003',
     },
     {
-      // TODO: Get image from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/FINAL_ART-OGUN.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Ogun: The Orisa’s & The Sonic Extension',
       description: `In this art piece, the Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. 
@@ -78,8 +76,7 @@ This work serves as a call to action, urging Africans to reclaim their narrative
       price: '0.003',
     },
     {
-      // TODO: Get image from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/FINAL-ART_Friday-the-fourth.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Masked Glory & African Man',
       description: `"Masked Glory" beautifully unveils the essence of African heritage, celebrating its rich cultural traditions and empowering viewers to embrace their masked glory with pride, while "African Man" is an inspiring anthem that fearlessly celebrates African identity, urging others to break free from societal masks and embrace their true selves with pride.`,
@@ -92,8 +89,7 @@ This work serves as a call to action, urging Africans to reclaim their narrative
       price: '0.003',
     },
     {
-      // TODO: Get image from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/FINAL-ART_Rayok.jpg',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Selfcare',
       description: `Selfcare celebrates being African by capturing the journey of embracing one's true self, with all its complexities and raw beauty. It serves as a powerful reminder for Africans to look within, to explore and accept themselves fully. 
@@ -112,8 +108,7 @@ By doing so, we can then zoom out and see the bigger picture of the extraordinar
       price: '0.003',
     },
     {
-      // TODO: Get image from s3
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/FINAL-ART_ElowT.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Lagos Labs',
       description: `This illustration is inspired by the Lagos Labs album by Elow.T.  
