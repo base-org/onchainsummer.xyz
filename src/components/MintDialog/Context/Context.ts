@@ -19,7 +19,7 @@ export interface MintDialogInfo {
   mintDotFunStatus?: MintStatus
   trendingPageNativeMint?: boolean
   mintButtonStyles?: string
-  maxClaimablePerWallet?: string
+  maxClaimablePerWallet?: bigint
   openSeaLink?: string
   interactWithNFTLink?: Drop['interactWithNFTLink']
   dataSuffix: Hex

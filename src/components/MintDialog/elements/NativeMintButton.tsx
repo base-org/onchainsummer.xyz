@@ -38,7 +38,13 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
   setMintError,
 }) => {
   const {
-    info: { address, mintType, creatorAddress, dataSuffix },
+    info: {
+      address,
+      mintType,
+      creatorAddress,
+      dataSuffix,
+      maxClaimablePerWallet,
+    },
     setInfo,
   } = useMintDialogContext()
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined)
@@ -99,7 +105,9 @@ export const NativeMintButton: FC<NativeMintButtonProps> = ({
               price / BigInt(quantity),
               {
                 proof: [],
-                quantityLimitPerWallet: 2n ** 256n - 1n,
+                quantityLimitPerWallet: maxClaimablePerWallet
+                  ? BigInt(maxClaimablePerWallet)
+                  : 2n ** 256n - 1n,
                 pricePerToken: price / BigInt(quantity),
                 currency: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
               },
