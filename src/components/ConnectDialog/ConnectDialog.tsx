@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import clsx from 'clsx'
 import { Button, ButtonProps } from '../Button'
-import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
 
 type ConnectDialogProps = {
   title?: React.ReactNode
