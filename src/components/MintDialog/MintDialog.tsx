@@ -1,7 +1,7 @@
 import { formatEther as formatEtherByEthers } from 'ethers/lib/utils'
 import * as Dialog from '@radix-ui/react-dialog'
 
-import { FC, useEffect, useMemo, useState } from 'react'
+import { FC, useCallback, useEffect, useMemo, useState } from 'react'
 import { Button, ButtonProps } from '../Button'
 import { Close } from '../icons/Close'
 
@@ -21,6 +21,8 @@ import dialogClasses from '@/components/dialog.module.css'
 import useBalances from '@/utils/useBalances'
 import { Checkmark } from '../icons/Checkmark'
 import { l2GasToMint, useMintThresholds } from '@/utils/useMintThresholds'
+import { useDesiredNetworkContext } from '../DesiredNetworkContext/useDesiredNetworkContext'
+import { l2 } from '@/config/chain'
 export type TxDetails = {
   hash: string
 }
@@ -41,6 +43,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
       mintButtonStyles,
     },
   } = useMintDialogContext()
+  const { setDesiredNetwork } = useDesiredNetworkContext()
 
   const [open, setOpen] = useState(false)
   const { l2Balance, l1Balance } = useBalances()
@@ -110,13 +113,32 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fundsStatus])
 
-  const resetModal = () => {
+  useEffect(() => {
+    if (
+      page &&
+      ![
+        ModalPage.BRIDGE_PENDING,
+        ModalPage.BRIDGE_SUCCESS,
+        ModalPage.BRIDGE,
+      ].includes(page)
+    ) {
+      setDesiredNetwork(l2)
+    }
+  }, [page, setDesiredNetwork])
+
+  const resetModal = useCallback(() => {
+    setDesiredNetwork(l2)
     setPage(ModalPage.NATIVE_MINT)
     setTxDetails(null)
     setMintError(null)
     setCrossMintOrderIdentifier('')
     setQuantity(1)
-  }
+  }, [setDesiredNetwork])
+
+  const closeModal = useCallback(() => {
+    setOpen(false)
+    setDesiredNetwork(l2)
+  }, [setDesiredNetwork])
 
   const buttonTitle = useMemo(() => {
     switch (page) {
@@ -187,7 +209,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
           <Success
             resetModal={resetModal}
             txHash={txDetails?.hash ?? ''}
-            closeModal={() => setOpen(false)}
+            closeModal={closeModal}
           />
         )
       case ModalPage.CROSS_MINT_FORM:
@@ -231,6 +253,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             l1Balance={l1Balance}
             minAmount={Number(formatEtherByEthers(minL2BalanceWei)).toFixed(4)}
             setPage={setPage}
+            isOpen={open}
           />
         )
       case ModalPage.INSUFFICIENT_FUNDS:
@@ -249,6 +272,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
         return ''
     }
   }, [
+    closeModal,
     crossMintClientId,
     crossMintOrderIdentifier,
     fundsStatus,
@@ -256,8 +280,10 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     l2Balance,
     minL2BalanceWei,
     mintError,
+    open,
     page,
     quantity,
+    resetModal,
     totalPrice,
     txDetails,
   ])
@@ -271,7 +297,16 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
     page === ModalPage.BRIDGE_SUCCESS
 
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
+    <Dialog.Root
+      open={open}
+      onOpenChange={(open) => {
+        if (open) {
+          setOpen(open)
+        } else {
+          closeModal()
+        }
+      }}
+    >
       <Dialog.Trigger asChild>
         <Button size={size} tabIndex={-1} className={clsx(mintButtonStyles)}>
           {buttonTitle}
@@ -292,6 +327,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
             <button
               className="p-[10px] lg:p-0 bg-white rounded-full  z-30  absolute top-[1.75rem] right-[1.75rem] lg:rounded-none appearance-none items-center justify-center"
               aria-label="Close"
+              onClick={closeModal}
             >
               <Close height={20} width={20} />
               <span className="sr-only">Close</span>

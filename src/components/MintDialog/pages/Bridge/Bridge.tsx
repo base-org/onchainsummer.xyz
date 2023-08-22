@@ -15,6 +15,7 @@ interface BridgeProps {
   l1Balance: bigint
   minAmount: string
   setPage: React.Dispatch<ModalPage>
+  isOpen: boolean
 }
 
 const roundDownToDecimals = (value: number) => {
@@ -27,6 +28,7 @@ export const Bridge: FC<BridgeProps> = ({
   l1Balance,
   minAmount = '0.001',
   setPage,
+  isOpen,
 }) => {
   const recommendedAmount = useMemo(() => {
     return roundDownToDecimals(
@@ -66,6 +68,7 @@ export const Bridge: FC<BridgeProps> = ({
             recommendedAmount={recommendedAmount}
             minAmount={minAmount}
             setPage={setPage}
+            isOpen={isOpen}
           />
         )
       case BridgeState.L1_TX_PROCESSING:
@@ -97,6 +100,7 @@ export const Bridge: FC<BridgeProps> = ({
     awaitingConfirmation,
     bridge,
     bridgeState,
+    isOpen,
     l1TxHash,
     l2TxHash,
     minAmount,
