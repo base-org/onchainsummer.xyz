@@ -166,11 +166,11 @@ export async function GET(
         if (arweaveArticle?.content?.title) {
           info.push(`Arweave article title: ${arweaveArticle?.content?.title}`)
         } else {
-          error.push(`Arweave article not found`)
+          warn.push(`Arweave article not found`)
         }
       }
     } catch (ex) {
-      error.push(`Arweave article not invalid`)
+      error.push(`Arweave article invalid`)
     }
 
     // Check Twitter handle
