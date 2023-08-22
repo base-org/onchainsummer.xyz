@@ -11,7 +11,7 @@ import mirrorWellness from './mirror-wellness'
 import indelible from './indelible'
 import manifold from './manifold'
 import blackbird from './blackbird'
-import nestcoin from './nestcoin'
+import onboard from './onboard'
 import optimism from './optimism'
 import atari from './atari'
 import rainbowWallet from './rainbow-wallet'
@@ -39,7 +39,7 @@ export const partners = [
   indelible,
   manifold,
   blackbird,
-  nestcoin,
+  onboard,
   optimism,
   atari,
   rainbowWallet,
@@ -65,7 +65,7 @@ export {
   indelible,
   manifold,
   blackbird,
-  nestcoin,
+  onboard,
   optimism,
   atari,
   rainbowWallet,
