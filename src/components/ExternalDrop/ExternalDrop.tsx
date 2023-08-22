@@ -5,6 +5,8 @@ import { useValidateExternalLink } from './useValidateExternalLink'
 import { Button } from '../Button'
 
 import { CollectButton } from '../CollectButton/CollectButton'
+import { FloorAsk } from '@reservoir0x/reservoir-kit-ui'
+import { ExternalLinkButton } from '@/components/ExternalLinkButton/ExternalLinkButton'
 
 export interface ExternalDropProps {
   externalLink?: string
@@ -15,6 +17,7 @@ export interface ExternalDropProps {
   className?: string
   openSeaLink?: string
   buttonText?: string
+  floorAsk?: FloorAsk
 }
 
 export const ExternalDrop: FC<ExternalDropProps> = ({
@@ -29,10 +32,19 @@ export const ExternalDrop: FC<ExternalDropProps> = ({
   }
 
   if (status === 'ended') {
+    if (props.contractAddress === '0x') {
+      return (
+        <ExternalLinkButton
+          partner={props.partner}
+          externalLink={props.externalLink}
+        />
+      )
+    }
+
     return (
       <CollectButton
         address={props.contractAddress}
-        openSeaLink={props.openSeaLink}
+        floorAsk={props.floorAsk}
       />
     )
   }

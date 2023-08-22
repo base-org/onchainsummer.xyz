@@ -23,13 +23,26 @@ npm install
 yarn
 ```
 
-2. Generate necessary data by running
+2. Add the necessary env variables:
+
+```
+NEXT_PUBLIC_AARWEAVE_API_URL
+NEXT_PUBLIC_CHAIN_ENV
+NEXT_PUBLIC_MINT_DOT_FUN_API_URL
+NEXT_PUBLIC_MINT_DOT_FUN_CHAIN_ID
+NEXT_PUBLIC_RESERVOIR_API_URL
+RESERVOIR_API_KEY
+```
+
+You'll find the variable values in the Dockerfile.
+
+3. Generate necessary data by running
 
 ```bash
 yarn generate
 ```
 
-3. Start the dev server by running this command
+4. Start the dev server by running this command
 
 ```bash
 npm run dev

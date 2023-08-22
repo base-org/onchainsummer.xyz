@@ -11,6 +11,7 @@ import { Address } from 'viem'
 import { NFTAsset } from '@/components/NFTAsset'
 import { ExternalDrop } from '../ExternalDrop/ExternalDrop'
 import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
+import { FloorAsk } from '@reservoir0x/reservoir-kit-ui'
 
 interface PartnerHeroProps {
   partner: Partner
@@ -18,6 +19,7 @@ interface PartnerHeroProps {
   staticHeadline: boolean
   teaser?: boolean
   customHeader?: String
+  floorAsk?: FloorAsk
 }
 
 export const PartnerHero: FC<PartnerHeroProps> = ({
@@ -25,6 +27,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
   headline,
   teaser,
   customHeader,
+  floorAsk,
 }) => {
   return (
     <section className="grid p-5 md:p-6 rounded-3xl md:rounded-[32px] bg-white shadow-large w-full md:grid-cols-[5fr,7fr] lg:grid-cols-[456px,1fr] gap-5 md:gap-10">
@@ -65,6 +68,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 partner={name}
                 contractAddress={headline.address}
                 openSeaLink={headline.openSeaLink}
+                floorAsk={floorAsk}
               />
             ) : (
               <MintButton
@@ -87,6 +91,7 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
                 interactWithNFTLink={headline.interactWithNFTLink}
                 dataSuffix={siteDataSuffix}
                 dropDataSuffix={headline.dataSuffix}
+                floorAsk={floorAsk}
               />
             )}
           </>

@@ -10,6 +10,7 @@ import { NFTAsset } from '@/components/NFTAsset'
 import { Hex } from 'viem'
 import { Drop, DropDataSuffix } from '@/config/partners/types'
 import clsx from 'clsx'
+import { FloorAsk } from '@reservoir0x/reservoir-kit-ui'
 
 type DropCardProps = {
   address: Address
@@ -30,6 +31,7 @@ type DropCardProps = {
   dataSuffix: Hex
   dropDataSuffix?: DropDataSuffix
   buttonText?: string
+  floorAsk?: FloorAsk
 }
 
 export const DropCard: FC<DropCardProps> = ({
@@ -51,6 +53,7 @@ export const DropCard: FC<DropCardProps> = ({
   dropDataSuffix,
   interactWithNFTLink,
   buttonText,
+  floorAsk,
 }) => {
   const {
     isExternalLink,
@@ -110,6 +113,7 @@ export const DropCard: FC<DropCardProps> = ({
             openSeaLink={openSeaLink}
             className="!flex !justify-center mt-auto"
             buttonText={buttonText}
+            floorAsk={floorAsk}
           />
         ) : (
           <MintButton
@@ -129,6 +133,7 @@ export const DropCard: FC<DropCardProps> = ({
             interactWithNFTLink={interactWithNFTLink}
             dataSuffix={siteDataSuffix}
             dropDataSuffix={dropDataSuffix}
+            floorAsk={floorAsk}
           />
         )}
       </div>
