@@ -2,6 +2,7 @@ import { Minus } from '@/components/icons/Minus'
 import { Plus } from '@/components/icons/Plus'
 import { FC } from 'react'
 import { useMintDialogContext } from '../Context/useMintDialogContext'
+import { MintType } from '../types'
 
 interface QuantityProps {
   quantity: number
@@ -10,13 +11,14 @@ interface QuantityProps {
 const buttonClassName = 'py-1.5 px-4 rounded-[100px] border border-[#EFEFEF]'
 export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
   const {
-    info: { maxClaimablePerWallet },
+    info: { maxClaimablePerWallet, mintType },
   } = useMintDialogContext()
 
   // zora has 2^32 max, thirdweb 2^256, in any case 2^32 is a lot and effectively no limit.
   if (
-    maxClaimablePerWallet &&
-    maxClaimablePerWallet > (2n ** 32n - 1n).toString()
+    mintType === MintType.MintDotFun ||
+    (maxClaimablePerWallet &&
+      maxClaimablePerWallet > (2n ** 32n - 1n).toString())
   ) {
     return null
   }
