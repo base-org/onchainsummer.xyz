@@ -1,6 +1,7 @@
 import { Partner } from './types'
 import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const openSeaConfig: Partner = {
   slug: 'opensea',
@@ -15,14 +16,60 @@ const openSeaConfig: Partner = {
   twitter: '@opensea',
   drops: [
     {
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/',
       creator: '',
       name: '',
-      ...unlimited,
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.External,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 7, 32, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.015',
+      externalLink: 'opensea.io',
+    },
+    {
+      image: 'https://assets.onchainsummer.xyz/',
+      creator: '',
+      name: '',
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      type: 'erc-721',
+      startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 32, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.015',
+      externalLink: 'opensea.io',
+    },
+    {
+      image: 'https://assets.onchainsummer.xyz/',
+      creator: '',
+      name: '',
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      type: 'erc-721',
+      startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 32, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.015',
+      externalLink: 'opensea.io',
+    },
+    {
+      image: 'https://assets.onchainsummer.xyz/',
+      creator: '',
+      name: '',
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      type: 'erc-721',
+      startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 32, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.015',
+      externalLink: 'opensea.io',
     },
   ],
 }
