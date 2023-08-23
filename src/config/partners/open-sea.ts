@@ -1,5 +1,4 @@
 import { Partner } from './types'
-import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 import { MintType } from '@/components/MintDialog/types'
 
