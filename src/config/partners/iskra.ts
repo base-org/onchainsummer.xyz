@@ -1,6 +1,6 @@
 import { Partner } from './types'
-import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const iskra: Partner = {
   slug: 'iskra',
@@ -15,14 +15,22 @@ const iskra: Partner = {
   twitter: '@iskra_world',
   drops: [
     {
-      image: '',
-      creator: '',
-      name: '',
-      ...limited,
+      image:
+        'https://assets.onchainsummer.xyz/FINALART--[NFT]_BASE_MysteryBox-TaekyungYoun.mp4',
+      creator: '0x792EF9312e62E9ef3d92Db050F3ca3436c287a7D',
+      name: 'ClashMon Game NFT Mystery Box',
+      description: `Fun to play and easy to access through any web browser.
+
+Build and Actually ‘own’ your team of Clashmons for trading, collecting, battling or … fishing?  
+
+The Collectible Battle RPG comes alive with fast-paced RPG-style monster battles, high-stakes tournament rounds and a soothing fishing mode to gather resources for gear or other enhancements.`,
+      address: '0x75ed58e1D029853231A9e9825F0035E0449FBAfa',
+      crossMintClientId: '',
+      mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 28, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 8, 3, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0',
     },
   ],
 }
