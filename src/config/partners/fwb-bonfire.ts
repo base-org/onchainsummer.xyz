@@ -1,6 +1,6 @@
 import { Partner } from './types'
-import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const fwbBonfire: Partner = {
   slug: 'bonfire',
@@ -15,14 +15,32 @@ const fwbBonfire: Partner = {
   twitter: '@bonfire',
   drops: [
     {
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/',
       creator: '',
       name: '',
-      ...limited,
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.Zora,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.01',
+      externalLink: '',
+    },
+    {
+      image: 'https://assets.onchainsummer.xyz/',
+      creator: '',
+      name: '',
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.External,
+      type: 'erc-721',
+      startDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.01',
+      externalLink: 'https://www.bonfiretoken.co/',
     },
   ],
 }
