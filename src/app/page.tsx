@@ -276,7 +276,7 @@ async function getPageData(spoofDate?: string) {
 
       return [...acc, ...next]
     }, [] as DropWithPartnerData[])
-    .sort((a, b) => b.startDate - a.startDate)
+    .sort((a, b) => a.startDate - b.startDate)
 
   const [article, tweets] = await Promise.all([
     getArweaveById(featuredPartner.aarweaveDigest),
