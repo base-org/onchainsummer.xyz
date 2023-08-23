@@ -38,7 +38,7 @@ iii. Download your Citizen’s Blender file
     },
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-CharacterCreator.gif',
-      creator: '',
+      creator: '0x2B70937AeaCf490b48e1973bD2A40Ba1233569f9',
       name: 'Enter the Character Creator',
       description: `Once minted, bring your Citizens to life, style them in technicolor skins and unlock exclusive loot.`,
       address: '0x',
@@ -52,7 +52,7 @@ iii. Download your Citizen’s Blender file
     },
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-RainbowPerks.png',
-      creator: '',
+      creator: '0x2B70937AeaCf490b48e1973bD2A40Ba1233569f9',
       name: 'Rainbow Perks',
       description: `Use your Citizen to unlock exclusive Rainbow App Icons & more 🌈 surprises`,
       address: '0x',
