@@ -20,8 +20,8 @@ const optimism: Partner = {
         'https://assets.onchainsummer.xyz/FINAL_ART-Onchain-and-Optimistic.jpg',
       creator: '0x10373C24796a5f51DFa94bC9b849e6ea8187fe8f',
       name: 'Onchain + Optimistic',
-      description: `Onchain + Optimistic is an ode to the continued growth of onchain communities, creators, and collectors. 
-        
+      description: `Onchain + Optimistic, an artwork by Ryan Hawthorne, is an ode to the continued growth of onchain communities, creators, and collectors.
+
 The art nods to an interconnected Superchain future built on the open-source OP Stack where people are empowered by the new internet they use to coordinate.`,
       address: '0x6f4168C0207df6561527af1059D788BB0b09beB1',
       crossMintClientId: '7062-967d-4e00-b18b-620dd75ee0f7',
