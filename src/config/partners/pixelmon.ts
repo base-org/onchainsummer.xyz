@@ -21,7 +21,7 @@ const pixelmon: Partner = {
       name: 'Summer Kevin',
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 8, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.001',
       description: `The Summer Kevin NFT serves as a commemorative art piece to mark the launch of BASE Onchain Summer. Each Summer Kevin NFT entitles you to 
 
@@ -50,7 +50,7 @@ Fun Fact: Did you know that Kevin cannot swim?`,
         'https://pixelmonshop.myshopify.com/products/kevin-buildoor-block',
       type: 'external',
       startDate: Date.UTC(2023, 7, 17, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 8, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
       description: `ONLY available for Summer Kevin, Pixelmon and Pixelmon Trainers NFT holders.`,
       address: '0x',
