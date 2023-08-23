@@ -1,6 +1,7 @@
 import { Partner } from './types'
 import { limited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const oak: Partner = {
   slug: 'oak',
@@ -15,14 +16,18 @@ const oak: Partner = {
   twitter: '@oak_network',
   drops: [
     {
-      image: '',
+      image: 'https://assets.onchainsummer.xyz/',
       creator: '',
       name: '',
-      ...limited,
+      description: ``,
+      address: '0x',
+      crossMintClientId: '',
+      mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 28, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '10',
+      externalLink: '',
     },
   ],
 }
