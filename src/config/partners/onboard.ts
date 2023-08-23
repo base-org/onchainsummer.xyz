@@ -36,11 +36,7 @@ Orisa: The Sonic Extension blends African melodies with modern sounds, celebrati
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-OYA.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Oya: The Orisas & The Sonic Extension',
-      description: `The Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. They remind us of the vibrant tapestry of gods and goddesses woven into the continent's history, reflecting the diverse mosaic of African traditions. 
-      
-Ọya, the queen goddess of the storm, River Niger, and rebirth, her presence fierce and transformative. 
-
-Orisa: The Sonic Extension blends African melodies with modern sounds, celebrating our heritage and embracing the future.`,
+      description: `Ọya, the queen goddess of the storm, River Niger, and rebirth, her presence fierce and transformative.`,
       address: '0x17468291F70765617B8f29eBEe6Ee7bFdD0cD0e8',
       crossMintClientId: '83ef0199-6676-46a7-90a3-678e7e1096dd',
       mintType: MintType.ThirdWeb,
@@ -53,11 +49,7 @@ Orisa: The Sonic Extension blends African melodies with modern sounds, celebrati
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-OGUN.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
       name: 'Ogun: The Orisas & The Sonic Extension',
-      description: `The Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. They remind us of the vibrant tapestry of gods and goddesses woven into the continent's history, reflecting the diverse mosaic of African traditions.
-     
-Ògún, the Yorùbá god of war and iron, embodying strength and innovation. 
-
-Orisa: The Sonic Extension blends African melodies with modern sounds, celebrating our heritage and embracing the future.`,
+      description: `Ògún, the Yorùbá god of war and iron, embodying strength and innovation.`,
       address: '0x777CbC36e0eC88D07c82a62259E7BfD6dc54692B',
       crossMintClientId: 'c1d8962f-480e-4c6a-9e2e-9d159ab701c4',
       mintType: MintType.ThirdWeb,
