@@ -6,6 +6,7 @@ RUN yarn global add pm2
 
 ENV NODE_ENV="production"
 ENV NEXT_PUBLIC_AARWEAVE_API_URL="https://arweave.net/graphql"
+ENV NEXT_PUBLIC_RESERVOIR_API_URL="https://onchainsummer.xyz/api/reservoir"
 ENV NEXT_PUBLIC_CHAIN_ENV="mainnet"
 ENV NEXT_PUBLIC_MINT_DOT_FUN_API_URL="https://api.mint.fun/api/v1"
 ENV NEXT_PUBLIC_MINT_DOT_FUN_CHAIN_ID="8453"
