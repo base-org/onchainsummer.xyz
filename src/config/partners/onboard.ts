@@ -18,11 +18,11 @@ const nestcoin: Partner = {
     {
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-SANGO.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
-      name: 'Sango: The Orisa’s & The Sonic Extension',
+      name: 'Sango: The Orisas & The Sonic Extension',
       description: `In this art piece, the Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. 
 They remind us of the vibrant tapestry of gods and goddesses woven into the continent's history, reflecting the diverse mosaic of African traditions.  
 
-Ṣàngó, the Yorùbá god of lightning, thunder, and justice, his resounding power echoing through time. Ọya, the queen goddess of the storm, River Niger, and rebirth, her presence fierce and transformative. Lastly, Ògún, the Yorùbá god of war and iron, embodying strength and innovation.  
+Ṣàngó, the Yorùbá god of lightning, thunder, and justice, his resounding power echoing through time.
 
 Orisa: The Sonic Extension blends African melodies with modern sounds, celebrating our heritage and embracing the future.   
 
@@ -38,11 +38,11 @@ This work serves as a call to action, urging Africans to reclaim their narrative
     {
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-OYA.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
-      name: 'Oya: The Orisa’s & The Sonic Extension',
+      name: 'Oya: The Orisas & The Sonic Extension',
       description: `In this art piece, the Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. 
 They remind us of the vibrant tapestry of gods and goddesses woven into the continent's history, reflecting the diverse mosaic of African traditions.  
 
-Ṣàngó, the Yorùbá god of lightning, thunder, and justice, his resounding power echoing through time. Ọya, the queen goddess of the storm, River Niger, and rebirth, her presence fierce and transformative. Lastly, Ògún, the Yorùbá god of war and iron, embodying strength and innovation.  
+Ọya, the queen goddess of the storm, River Niger, and rebirth, her presence fierce and transformative.
 
 Orisa: The Sonic Extension blends African melodies with modern sounds, celebrating our heritage and embracing the future.   
 
@@ -58,11 +58,11 @@ This work serves as a call to action, urging Africans to reclaim their narrative
     {
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-OGUN.mp4',
       creator: '0xaC94c7Be91204716dfb149a69ABf79E837e334B0',
-      name: 'Ogun: The Orisa’s & The Sonic Extension',
+      name: 'Ogun: The Orisas & The Sonic Extension',
       description: `In this art piece, the Orisas stand tall, not only as symbols of ancient beliefs but as a testament to the unyielding spirit of African heritage. 
 They remind us of the vibrant tapestry of gods and goddesses woven into the continent's history, reflecting the diverse mosaic of African traditions.  
 
-Ṣàngó, the Yorùbá god of lightning, thunder, and justice, his resounding power echoing through time. Ọya, the queen goddess of the storm, River Niger, and rebirth, her presence fierce and transformative. Lastly, Ògún, the Yorùbá god of war and iron, embodying strength and innovation.  
+Ògún, the Yorùbá god of war and iron, embodying strength and innovation.  
 
 Orisa: The Sonic Extension blends African melodies with modern sounds, celebrating our heritage and embracing the future.   
 
