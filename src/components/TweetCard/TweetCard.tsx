@@ -64,15 +64,9 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           </div>
         </div>
         <div
-          className={clsx(
-            'my-2.5',
-            {
-              'line-clamp-3': !!media,
-            },
-            {
-              'line-clamp-6': !media,
-            }
-          )}
+          className={clsx('my-2.5', {
+            'line-clamp-3': !!media || !!url,
+          })}
         >
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
@@ -89,7 +83,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
         {media ? (
           media?.variants?.[0]?.content_type === 'video/mp4' ? (
             <video
-              className="mt-auto rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
+              className="mt-auto rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[272px] flex-auto w-full object-cover"
               controls
               muted
               loop
@@ -100,7 +94,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              className="mt-auto rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[200px] w-full object-cover"
+              className="mt-auto rounded-2xl border border-gray-100 rk:border-gray-700 max-h-[272px] flex-auto w-full object-cover"
               src={media.preview_image_url || media.url}
               alt="tweet media"
             />
