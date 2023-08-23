@@ -23,11 +23,11 @@ Interactive.
 Customizable.
 Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
 1. Mint to receive your one-of-a-kind Citizen (look out for rare Bald Brian)
-2. Enter the Character Creator to bring your Citizen to life
-i. Animate your Citizen, evolving your .jpg into a .gif  
-ii. “Customize your Citizen with technicolor skins and exclusive loot unlocked by holding your NFT & ERC-20 tokens”
-iii. Download your Citizen’s Blender file
-4. Redeem a custom Rainbow App icon and other 🌈 surprises  🤫`,
+2. Enter the Character Creator to bring your Citizen to life\n
+   i. Animate your Citizen, evolving your .jpg into a .gif\n
+   ii. Customize your Citizen with technicolor skins and exclusive loot unlocked by holding your NFT & ERC-20 tokens\n
+   iii. Download your Citizen’s Blender file\n
+3. Redeem a custom Rainbow App icon and other 🌈 surprises  🤫`,
       address: '0x6171F829e107F70B58D67594c6B62A7d3eb7F23B',
       crossMintClientId: 'c936df08-17e8-4f03-a843-277ed1618d67',
       mintType: MintType.ThirdWeb,
@@ -49,6 +49,7 @@ iii. Download your Citizen’s Blender file
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
       externalLink: 'https://rnbwapp.com/rainbow-world',
+      buttonText: 'Customize Your Citizen',
     },
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-RainbowPerks.png',
@@ -63,6 +64,7 @@ iii. Download your Citizen’s Blender file
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
       externalLink: 'https://rnbwapp.com/rainbow-world',
+      buttonText: 'Download and Redeem',
     },
   ],
 }
