@@ -28,6 +28,7 @@ const zora: Partner = {
       address: '0xbd52c54ab5116b1d9326352f742e6544ffdeb2cb',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 9000,
     },
     {
       image: `/partners/zora/drops/Jah.png`,
@@ -42,6 +43,7 @@ const zora: Partner = {
       address: '0x0651996B6a6EebD1fc697E5735A2dca541BbE06B',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 10000,
     },
     {
       image: `/partners/zora/drops/Heno.png`,
@@ -70,6 +72,7 @@ const zora: Partner = {
       address: '0xb999ec5e57000540cbf821addbc69c37bf506f9f',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 11000,
     },
   ],
 }

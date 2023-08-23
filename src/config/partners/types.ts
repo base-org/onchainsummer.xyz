@@ -33,6 +33,7 @@ export interface Drop {
   }
   dataSuffix?: DropDataSuffix
   buttonText?: string
+  sequence?: number
 }
 
 export interface Partner {

@@ -31,6 +31,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 13000,
     },
     {
       image: '/partners/showtime/drops/drop-2.jpg',
@@ -44,6 +45,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 14000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-2.mp4',
@@ -57,6 +59,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 15000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/RosaLinn.MP4',
@@ -70,6 +73,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 16000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-4.mp4',
@@ -83,6 +87,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 17000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-5.mp4',
@@ -96,6 +101,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 18000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-6.mp4',
@@ -110,6 +116,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 19000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/showtime-drop-7.mp4',
@@ -124,6 +131,7 @@ Wrap It Up with Incredible Raffles: Stick around to the end, and you could score
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 20000,
     },
   ],
 }

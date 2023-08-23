@@ -37,6 +37,7 @@ All collections will be accessible open editions, available to mint for one week
       startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
+      sequence: 29000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/final_art-leander-herzog.m4v',
@@ -51,6 +52,7 @@ All collections will be accessible open editions, available to mint for one week
       startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0042',
+      sequence: 30000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-holger-lippmann.m4v',
@@ -65,6 +67,7 @@ All collections will be accessible open editions, available to mint for one week
       startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0042',
+      sequence: 31000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/final_art-james-merrill.m4v',
@@ -79,6 +82,7 @@ All collections will be accessible open editions, available to mint for one week
       startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0042',
+      sequence: 32000,
     },
     {
       image:
@@ -94,6 +98,7 @@ All collections will be accessible open editions, available to mint for one week
       startDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0042',
+      sequence: 33000,
     },
   ],
 }

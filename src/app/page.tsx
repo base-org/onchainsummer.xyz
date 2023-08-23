@@ -33,9 +33,8 @@ const Home = async ({ searchParams }: Props) => {
   const spoofDate = Array.isArray(spoofDateParam)
     ? spoofDateParam[0]
     : spoofDateParam
-  const { partner, tabs, article, tweets, activeDrops } = await getPageData(
-    spoofDate
-  )
+  const { partner, tabs, article, tweets, activeDrops } =
+    await getPageData(spoofDate)
   const { drops, name, icon } = partner
 
   const dropAddressParam = searchParams.drop
@@ -260,11 +259,14 @@ async function getPageData(spoofDate?: string) {
     .reduce((acc, partner) => {
       const { drops, name, icon } = partner
 
-      const active = drops.filter((drop) => {
-        const comparison = compareAsc(now, drop.endDate)
+      const active = drops
+        .filter((drop) => {
+          const comparison = compareAsc(now, drop.endDate)
+          const hasSequence = typeof drop.sequence !== 'undefined'
 
-        return comparison === -1 || comparison === 0
-      })
+          return (hasSequence && comparison === -1) || comparison === 0
+        })
+        .sort((a, b) => Number(b.sequence) - Number(a.sequence))
 
       const next = active.map((drop) => ({
         ...drop,

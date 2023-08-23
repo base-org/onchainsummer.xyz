@@ -38,6 +38,7 @@ const base: Partner = {
             mintType: MintType.Zora,
           }
         : zora),
+      sequence: 5000,
     },
   ],
 }

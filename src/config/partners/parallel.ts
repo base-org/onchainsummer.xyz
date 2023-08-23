@@ -33,6 +33,7 @@ The drop is live now and will be available throughout Onchain Summer or until so
       startDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.05',
+      sequence: 6000,
     },
     {
       image: '/partners/parallel/drops/card-backs.png',
@@ -47,6 +48,7 @@ The drop is live now and will be available throughout Onchain Summer or until so
       startDate: Date.UTC(2023, 7, 11, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01',
+      sequence: 7000,
     },
   ],
 }
