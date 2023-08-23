@@ -7,7 +7,7 @@ const fini: Partner = {
   name: 'Fini',
   url: 'https://fini.world/',
   description:
-    'Mint an adorable, dynamic Fini character whose moods and actions are tied to your activity on Base.',
+    'Join the Base Wars with an adorable Fini that responds to your onchain activity.',
   brandColor: 'rgb(255, 121, 121)',
   icon: '/partners/fini/icon.png',
   banner: '/partners/fini/banner-icon.svg',
