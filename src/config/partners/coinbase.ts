@@ -29,7 +29,6 @@ const base: Partner = {
       crossMintClientId: '',
       externalLink: 'http://coinbase.com/crypto-rundown?index=1',
       buttonText: 'Claim on Coinbase',
-      sequence: 1000,
     },
     {
       image: '/partners/coinbase/drop/drop-1.gif',
@@ -46,7 +45,6 @@ const base: Partner = {
       crossMintClientId: '',
       buttonText: 'Claim on Coinbase Wallet',
       externalLink: 'https://go.cb-w.com/buyAndMint',
-      sequence: 2000,
     },
     {
       image: '/partners/coinbase/drop/drop-3.gif',
@@ -63,7 +61,6 @@ const base: Partner = {
       crossMintClientId: '',
       externalLink: 'http://cb1.onchainsummer.xyz/',
       buttonText: 'Claim',
-      sequence: 3000,
     },
     {
       image: '/partners/coinbase/drop/drop-4.gif',
@@ -80,7 +77,6 @@ const base: Partner = {
       crossMintClientId: '',
       externalLink: 'https://nft.coinbase.com',
       buttonText: 'Discover',
-      sequence: 4000,
     },
   ],
 }

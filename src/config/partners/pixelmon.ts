@@ -41,7 +41,7 @@ Fun Fact: Did you know that Kevin cannot swim?`,
         url: 'https://pixelmonshop.myshopify.com/products/kevin-buildoor-block',
         label: 'Shop',
       },
-      sequence: 12000,
+      sequence: 4000,
     },
     {
       image: '/partners/pixelmon/drops/Toy.png',
