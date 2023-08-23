@@ -67,7 +67,7 @@ export const DropCard: FC<DropCardProps> = ({
     contractAddress: address,
   })
 
-  const className = 'desktop-h3 line-clamp-2 px-4 flex-auto max-h-[60px]'
+  const className = 'desktop-h3 line-clamp-2 px-4 flex-auto'
 
   return (
     <Card
@@ -78,7 +78,7 @@ export const DropCard: FC<DropCardProps> = ({
         <NFTAsset
           source={image}
           name={`${name} from ${partner}`}
-          className="object-cover rounded-t-2xl md:rounded-t-3xl"
+          className="object-cover rounded-t-2xl md:rounded-t-3xl aspect-[4/3]"
         />
       </div>
 
