@@ -65,7 +65,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
         </div>
         <div
           className={clsx('my-2.5', {
-            'line-clamp-3': !!media || !!url,
+            'line-clamp-6': !!media || !!url,
           })}
         >
           <ReactMarkdown
@@ -100,14 +100,14 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             />
           )
         ) : url ? (
-          <div className="rounded-3xl border">
+          <div className="rounded-3xl border mt-auto">
             <img
               src={url?.images?.[0]?.url || ''}
               className="rounded-t-3xl object-cover aspect-[4/2]"
               alt={url?.title || ''}
             />
             <div className="bg-gray-200 rounded-b-3xl p-3">
-              <h3 className="text-lg">{url?.title}</h3>
+              <h3 className="text-lg line-clamp-1">{url?.title}</h3>
               <p className="line-clamp-2 text-sm">{url?.description}</p>
             </div>
           </div>
