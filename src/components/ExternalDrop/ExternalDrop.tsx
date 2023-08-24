@@ -32,7 +32,7 @@ export const ExternalDrop: FC<ExternalDropProps> = ({
   }
 
   if (status === 'ended') {
-    if (props.contractAddress === '0x') {
+    if (props.contractAddress === '0x' || props.contractAddress === '0x0') {
       return (
         <ExternalLinkButton
           partner={props.partner}
