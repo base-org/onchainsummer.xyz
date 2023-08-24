@@ -26,7 +26,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
 2. Enter the Character Creator to bring your Citizen to life\n
    i. Animate your Citizen, evolving your .jpg into a .gif\n
    ii. Customize your Citizen with technicolor skins and exclusive loot unlocked by holding your NFT & ERC-20 tokens\n
-   iii. Download your Citizen’s Blender file\n
+   iii. Download your Citizen’s 3D file\n
 3. Redeem a custom Rainbow App icon and other 🌈 surprises  🤫`,
       address: '0x6171F829e107F70B58D67594c6B62A7d3eb7F23B',
       crossMintClientId: 'c936df08-17e8-4f03-a843-277ed1618d67',
@@ -48,7 +48,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
       startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      externalLink: 'https://rnbwapp.com/rainbow-world',
+      externalLink: 'https://adworld.game/create',
       buttonText: 'Customize Your Citizen',
     },
     {
