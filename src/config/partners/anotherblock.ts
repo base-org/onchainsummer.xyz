@@ -54,6 +54,7 @@ const anotherblock: Partner = {
       image:
         'https://assets.onchainsummer.xyz/BOYSNOIZE_Oscar_Morke_compressed.mp4',
       type: 'erc-721',
+      sequence: 11000,
     },
     {
       startDate: Date.UTC(2023, 7, 12, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -71,6 +72,7 @@ const anotherblock: Partner = {
       image:
         'https://assets.onchainsummer.xyz/LAIDBACKLUKE_ORIGINATOR_Oscar_Morke_compressed.mp4',
       type: 'erc-721',
+      sequence: 11100,
     },
     {
       startDate: Date.UTC(2023, 7, 12, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -88,6 +90,7 @@ const anotherblock: Partner = {
       image:
         'https://assets.onchainsummer.xyz/KLEERUP_Oscar_Morke_compressed.mp4',
       type: 'erc-721',
+      sequence: 11200,
     },
   ],
 }

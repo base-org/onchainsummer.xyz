@@ -28,6 +28,7 @@ const indelible: Partner = {
       startDate: Date.UTC(2023, 7, 20, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 22, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01',
+      sequence: 16000,
     },
     {
       image: '/partners/indelible/drops/drop-2.gif',

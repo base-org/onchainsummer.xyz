@@ -85,6 +85,7 @@ Bidding for Carpe Unum will start late 2023`,
       startDate: Date.UTC(2023, 7, 21, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01',
+      sequence: 12000,
     },
     {
       image: '/partners/manifold/drops/drop-7.png',
@@ -101,6 +102,7 @@ Yep, I am... all the time! Usually when I draw I sit at my desk (often stoned as
       startDate: Date.UTC(2023, 7, 21, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.08',
+      sequence: 13000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/Klara.png',
