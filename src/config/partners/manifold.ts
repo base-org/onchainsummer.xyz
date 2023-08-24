@@ -115,6 +115,7 @@ Yep, I am... all the time! Usually when I draw I sit at my desk (often stoned as
       startDate: Date.UTC(2023, 7, 21, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.03',
+      sequence: 6000,
     },
     {
       image: 'https://assets.onchainsummer.xyz/iartsometimes.png',
@@ -147,6 +148,7 @@ Completed August 2023.`,
       startDate: Date.UTC(2023, 7, 21, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.0039',
+      sequence: 5000,
     },
   ],
 }

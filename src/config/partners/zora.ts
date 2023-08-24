@@ -28,6 +28,7 @@ const zora: Partner = {
       address: '0xbd52c54ab5116b1d9326352f742e6544ffdeb2cb',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 3000,
     },
     {
       image: `/partners/zora/drops/Jah.png`,
@@ -42,6 +43,7 @@ const zora: Partner = {
       address: '0x0651996B6a6EebD1fc697E5735A2dca541BbE06B',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 7000,
     },
     {
       image: `/partners/zora/drops/Heno.png`,
@@ -56,6 +58,7 @@ const zora: Partner = {
       address: '0x6ee6e88eb8ae143bb9b4b4b0a2269a080a45ef7e',
       mintType: MintType.External,
       crossMintClientId: '',
+      sequence: 8000,
     },
     {
       image: '/partners/zora/drops/FINAL_ART-MalihaAbidi.jpg',

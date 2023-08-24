@@ -33,6 +33,7 @@ const standWithCrypto: Partner = {
       description: `This collectible commemorates the launch of the Stand With Crypto Alliance on August 14, 2023.
 
 Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.S. All proceeds benefit the Alliance.`,
+      sequence: 2000,
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto2.jpg',
@@ -48,6 +49,7 @@ Priced at 0.00435 ETH, this represents the 435 congressional districts in the U.
       address: '0x',
       crossMintClientId: '',
       buttonText: 'join',
+      sequence: 9000,
     },
     {
       image: '/partners/stand-with-crypto/drops/standWithCrypto6.jpg',
