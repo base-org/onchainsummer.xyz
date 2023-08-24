@@ -15,7 +15,7 @@ const oak: Partner = {
   twitter: '@oak_network',
   drops: [
     {
-      image: 'https://assets.onchainsummer.xyz/',
+      image: 'https://assets.onchainsummer.xyz/Final_Art-hero.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: Every City Onchain',
       description: `OAK is an onchain community currency supporting local businesses in Oakland, California. Local currencies can circulate value locally, save small businesses money, and support local causes - join us in your city.   Crypto lets us free ourselves from big banks and financial companies that extract value every time we swipe a credit card. With blockchain we're empowered to exchange value independently peer-to-peer.   For our Onchain Summer collection OAK has teamed up with and will be splitting mint proceeds with local artist Brandon Ruffin, a photographer, web3 futurist, filmmaker, and writer based in Oakland. Currently a Leica Ambassador, Brandon fell in love with the visual medium over 17 years ago. Brandon currently works on a research team in the area of Computational Photography at Google pushing the capabilities of machine learning and traditional photography.   Brandon finds himself drawn to stories that dissect humanity, most often through the world of portraiture and photojournalism. Brandon has given lectures at academic institutions such as UC Berkeley as well as instructional workshops inside tech spaces such as Apple, VSCO, and Google.  Brandon has a passion for working with marginalized communities and in neighborhoods that are often overlooked and underrepresented.   Brandon is a contributor for publications such as Rolling Stone, New York Times, and the SF Chronicle.  All collectors will be invited to join the global movement for onchain community currency 0.01 ETH “OAK Global Community” NFT will grant invitations to exclusive webinars, conversations, and reports from the field as we build an IRL onchain economy in Oakland, California.  0.1 ETH “Onchain Cities Champion” NFT will grant invitations to exclusive webinars, conversations, and reports from the field as we build an IRL onchain economy in Oakland, California, as well as a future gift of $50 of OAK at an in-person event  1 ETH “Community Crusader” NFT will grant access to 1:1 calls with OAK team members,  invitations to exclusive webinars, conversations, and reports from the field as we build an IRL onchain economy in Oakland, California, and a future gift of $50 of OAK at an in-person event`,
@@ -28,7 +28,7 @@ const oak: Partner = {
       price: '0.01 ETH',
     },
     {
-      image: 'https://assets.onchainsummer.xyz/',
+      image: 'https://assets.onchainsummer.xyz/Final_Art-lm-bnw.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: '',
       description: ``,
@@ -41,7 +41,7 @@ const oak: Partner = {
       price: '0.001 ETH',
     },
     {
-      image: 'https://assets.onchainsummer.xyz/',
+      image: 'https://assets.onchainsummer.xyz/Final_Art-sal-boathouse.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: '',
       description: ``,
@@ -54,7 +54,7 @@ const oak: Partner = {
       price: '0.1 ETH',
     },
     {
-      image: 'https://assets.onchainsummer.xyz/',
+      image: 'https://assets.onchainsummer.xyz/Final_Art-for-the-children.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: '',
       description: ``,
