@@ -269,7 +269,7 @@ async function getPageData(spoofDate?: string) {
           const comparison = compareAsc(now, drop.endDate)
           const hasSequence = typeof drop.sequence !== 'undefined'
 
-          return (hasSequence && comparison === -1) || comparison === 0
+          return hasSequence && (comparison === -1 || comparison === 0)
         })
         .sort((a, b) => Number(a.sequence) - Number(b.sequence))
 
