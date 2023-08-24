@@ -1,6 +1,7 @@
 import { Partner } from './types'
-import { limited } from '../test-contracts'
+
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
+import { MintType } from '@/components/MintDialog/types'
 
 const fini: Partner = {
   slug: 'fini',
@@ -15,14 +16,19 @@ const fini: Partner = {
   twitter: '@finiliar',
   drops: [
     {
-      image: '',
-      creator: '',
-      name: '',
-      ...limited,
+      image: 'https://assets.onchainsummer.xyz/Final_Art-Fini.png',
+      creator: '0x8Bdd0535D3971C3aB09C7F1e35266e047Fe972cE',
+      name: 'Base Wars',
+      description: `Mint to adopt one of three Finis that respond to your activity on Base.
+Kurt and his Raybot, Ray, are Basenauts locked in combat with Spike, a notorious commando in the Starlight Extinction Corps.
+The more transactions you make each week on Base, the better Kurt and Ray can defend their fleet against the onslaught of attacks. The less you transact, the more powerful Spike becomes.`,
+      address: '0x34E817D631b7FB79A54638c01c03421D124E35a7',
+      crossMintClientId: '',
+      mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 8, 1, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.0001',
+      endDate: Date.UTC(2023, 8, 4, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: ' 0.005',
     },
   ],
 }
