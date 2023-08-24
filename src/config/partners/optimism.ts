@@ -24,7 +24,7 @@ const optimism: Partner = {
 
 The art nods to an interconnected Superchain future built on the open-source OP Stack where people are empowered by the new internet they use to coordinate.`,
       address: '0x6f4168C0207df6561527af1059D788BB0b09beB1',
-      crossMintClientId: '7062-967d-4e00-b18b-620dd75ee0f7',
+      crossMintClientId: 'cade7062-967d-4e00-b18b-620dd75ee0f7',
       mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 24, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
