@@ -63,17 +63,19 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
             </div>
           </div>
         </div>
-        <div
-          className={clsx('my-2.5', {
-            'line-clamp-6': !!media || !!url,
-          })}
-        >
+        <div className={clsx('my-2.5 line-clamp-3')}>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              p: ({ node, ...props }) => <p {...props} className="mb-3" />,
+              p: ({ node, ...props }) => (
+                <p {...props} className="mb-3 inline-block" />
+              ),
               a: ({ node, ...props }) => (
-                <a {...props} className="text-ocs-blue" target="_blank" />
+                <a
+                  {...props}
+                  className="text-ocs-blue"
+                  target="_blank inline-block"
+                />
               ),
             }}
           >
@@ -103,7 +105,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           <div className="rounded-3xl border mt-auto">
             <img
               src={url?.images?.[0]?.url || ''}
-              className="rounded-t-3xl object-cover aspect-[4/2]"
+              className="rounded-t-3xl object-cover aspect-[4/2] w-full"
               alt={url?.title || ''}
             />
             <div className="bg-gray-200 rounded-b-3xl p-3">
