@@ -12,7 +12,7 @@ import { getDrops } from '@/utils/getDrops'
 import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
-import { siteDataSuffix } from '@/components/MintDialog/types'
+import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 import { DropCardList } from '@/components/DropCard/DropCardList'
 import { getCollections } from '@/utils/getCollections'
 
@@ -114,6 +114,27 @@ export async function generateMetadata(
 
   const { featuredDrop } = getDrops(partner.drops, dropAddress)
 
+  const isNft =
+    featuredDrop.mintType === MintType.ThirdWeb ||
+    featuredDrop.mintType === MintType.Zora
+
+  const now = getNow(spoofDate)
+  const comparison = compareAsc(now, featuredDrop.endDate)
+  const mintStatus: 'live' | 'closed' =
+    comparison === -1 || comparison === 0 ? 'live' : 'closed'
+
+  const nftMetadata = isNft
+    ? {
+        'eth:nft:collection': featuredDrop.name,
+        'eth:nft:contract_address': featuredDrop.address,
+        'eth:nft:creator_address': featuredDrop.creator,
+        'eth:nft:schema': 'erc721',
+        'eth:nft:media_url': featuredDrop.image,
+        'eth:nft:mint_status': mintStatus,
+        'eth:nft:chain': 'base',
+      }
+    : {}
+
   return {
     title: partner.name,
     description: partner.description,
@@ -141,11 +162,14 @@ export async function generateMetadata(
       creator: partner.twitter,
       images: [featuredDrop.image],
     },
+    // @ts-expect-error
+    other: {
+      ...nftMetadata,
+    },
   }
 }
 
 async function getPartner(slug: string, spoofDate?: string) {
-  const now = getNow(spoofDate)
   const today = getDropDate(spoofDate)
 
   const date = Object.keys(schedule).find(
