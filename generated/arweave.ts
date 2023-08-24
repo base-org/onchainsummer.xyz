@@ -16,10 +16,7 @@ export const arweaves = {
         'jarkM_-owdaXOCIWFu9Goto72E82__ctg-0U2EhI6zDRyWTKuWKa0lAvJTgs_faREUi7itAT2tnNRfTqtxHJAQ',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
     wnft: {
@@ -56,10 +53,7 @@ export const arweaves = {
         'FM6tH69zWyDj8BDlyn_HcXV2uD3Cbcs7SaCmVU4f2Y67DfwKorrajT2lZIvshgaNo_sG7_s2PrD0ZlDRvp5l9A',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
     wnft: {
@@ -97,10 +91,7 @@ export const arweaves = {
         'SaZVGRADdEhiDOGerjb1FIRe6swLdwTk98B7CWM0NT_aMXGQLkJ-X1ucC4cY6tIx6xB-E42qycT-NjHLZkP2RQ',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
     wnft: {
@@ -138,10 +129,7 @@ export const arweaves = {
         '9zrSNUr2jnWIkCy_0a-v3Dv9gDRkLDpzAt69v7yjVXwxeRM3u5flrv5wLI0DhkSqLdJGjiSCLpneooFw3uALHA',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
@@ -163,10 +151,7 @@ export const arweaves = {
         'UOUI3mZqZ2YKodY4IM_0WDwuVnKxgql5VeVGfc7BL4QWTYjRDWt9_mxBaM8peGin5Eir1vLsPh5gUE03mcbaAA',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"rYILR2cCccpVaiJqcXmOcAadgUvcTI8_15GhQfhNUJU","y":"rr7TXKDoBIc7_tBgChmfmnO6mJjg5UrZBYAlOa2sp8c"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
@@ -187,10 +172,29 @@ export const arweaves = {
         'zmZ7fI7vDRTmJzWTKCVAJC04_Y_xTdOeK-5ZzTbh7pkQ77C8ErKFDbcxYiGmi6gvWlsL5l4GhC6kSHdNstO1Ag',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  'jq_oAd33v0lSB8N9oHzHjyoNE08_gEe7Cfk-XOV81iE': {
+    content: {
+      body: "***Highlight has curated work from four esteemed generative artists: James Merrill, Melissa Wiederrecht, Leander Herzog, and Holger Lippmann — brought onchain. Nat Emodi, founder of Highlight, joined us to discuss the vision behind the drop and how Base is setting the stage for the future of onchain art.***\n\n<https://onchainsummer.xyz/highlight>\n\n“Code-based art has existed for decades,” says Nat Emodi, co-founder of Highlight, “Pretty much ever since computer screens were invented.” Even though the artform isn’t new, it *has* been difficult to collect. While many passionate fans would run code in-browser, there was a lack of permanence — and also a lack of clarity around output. When the very nature of the work is interconnected with its ability to produce different artwork each time, what exactly *is* the art?\n\n“That’s what NFTs and the blockchain have made clear,” says Emodi.\n\nAs generative art has become a core component of onchain art, Highlight emphasizes co-creation between collectors and artists, where various aspects of the minting experience can influence the output of the art itself. The tools which they give creators enable this by allowing different data elements from the minting experience (such as the time of day or the collector’s wallet address) to play a role in the finished result.\n\n“An incredible thing about generative art is the fact that in most cases the artist has never seen your specific artwork until the moment it’s minted,” says Emodi. “The second it's revealed, you are the first person in the world to ever see that artwork, even before the artist. Of course, the artist has spent time designing a system and an algorithm that’s been carefully crafted, but your mint is as much a surprise to them as it is to you. It’s electric.”\n\nHighlight’s ultimate vision is to break down technical barriers that hinder artistic expression, and allow artists to create whatever they want onchain. James Merrill, a multi-disciplinary artist who resides in Vermont, USA, said that his collection for Onchain Summer  is “all about breaking the rules.” “Instead of cohesion across the collection,” Merrill [said on Twitter](https://twitter.com/toThePixel/status/1691185102200397825), “I am specifically trying to make the most diverse set of outputs from a single autonomous generative system to date on the blockchain.”\n\nEmodi envisions two significant trends for the future of the internet. The first is an increasing focus on digital ownership, which could redefine the nature of collecting art and culture. The second is for new systems that will make digital assets become generative. Instead of static assets, Emodi believes NFTs will increasingly be unique, personalized, dynamic and co-created., “This will be reminiscent of how the first wave of the internet unlocked new realms of creative expression over the past few decades.” Emodi anticipates a future where platforms like Highlight empower artists to create unique works while introducing millions of new collectors to generative experiences.\n\nHighlight believes that the reduced transaction costs on Base make it an interesting playground for artists to experiment with in comparison to Ethereum mainnet, which Emodi says can be prohibitive not just for collectors, but also for artists.\n\n“Hopefully,” says Emodi, “this means we'll see thousands of artists creating fascinating, beautiful art and millions of new collectors being introduced to generative works for the first time.”",
+      timestamp: '1692741454',
+      title:
+        'Exploring the Boundaries of Generative Art on Base with Highlight',
+    },
+    digest: 'uPWxyV2ZRm8mZTvWC693TaEOgqANABj1gM145yLjaeg',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'rqIfkQ3lL2owI56LJYF1U6Hop5wILMuGfd3Jz4xwk4sDbqSjE7krebfcZbWcCk1iSkj_s4-MBUofGTKvqOcu3g',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
@@ -212,10 +216,7 @@ export const arweaves = {
         'OtuwFLre_DkYkUDCy6AY8DlYfbz-UegVH7p4SWvuLgI2Id_ZwbtdOK9Ud0n3ZQ0ZruHbk0dRpzNFR9NHE_adVA',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
@@ -237,10 +238,7 @@ export const arweaves = {
         'aMvbiNXX0s-tCB7KWpaqMyJgWKu5dgnCNKo3HzoSZ3XkFtdimv9fhkZ01noBEQWGpCB8VNOE1Nnw_0W1F7BUMw',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
     wnft: {
@@ -279,10 +277,7 @@ export const arweaves = {
         'HrFKgViPvWlzCY1vPK_c0S6Vt5hQHVFW2XlPU0fjrsG_nekXaY1M59HHFyweZ2VAgItMtv2feDua91YXFTyBHg',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
@@ -304,10 +299,69 @@ export const arweaves = {
         '9i4UGYDrLMBWhM7Xocx0NiIEVoiumdv6OvnWpoYsJAXKX46Uhk-Xg3hp9pNTiDBp5lnwDT4kdOMNPgZZchXqtw',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  'XzNUxTbsDb-TbDEEloEHTfRfKPDpVSXAKfORPTfj9zc': {
+    content: {
+      body: '***Indelible Labs is pioneering a frictionless process for artists to securely upload their creations to the blockchain, ushering in a new era of permanence and stability for creative expression.***\n\nBringing art onchain is revolutionizing the way we approach ownership. With its inherent permanence and accessibility, taking a collection of work onchain offers a promising future for artists seeking to find a space for their creations which stands the test of time — but it can be a challenge to find the best way to do so.\n\nMichael Hirsch, the co-founder of Indelible Labs, ran into that headfirst as he began exploring NFTs years ago. "I wanted to create an onchain NFT collection,” Hirsch said, “and realized that there\'s a lot of difficulty that goes into creating specifically onchain NFTs."\n\nTo the Indelible team, the advantages of onchain technology over traditional web 2.0 models are profound. As Hirsch pointed out, hosting a website on a personal server still requires payment for internet service, and even then, the data is not stored in the same way as it would be on the blockchain. The level of permanence and stability offered by onchain art is unparalleled, providing assuring creators that their work will persist throughout the life of the blockchain it resides on. “If your art isn’t onchain,” says Hirsch, “You have decentralized ownership over something, but that something may not be accessible one day.”\n\nTo create more complexity in an already complex subject, many onchain assets are only *partially* onchain, using IPFS (InterPlanetary File System) technology to host the assets. While this decentralized technology offers a greater level of freedom than traditional file servers, they still lack permanence as the assets can become inaccessible if they’re ‘unpinned’ on IPFS. That uncertainty can lead to stress, as artists are forced to contend with regular fees to maintain their work’s existence.\n\nIn response to these challenges, Indelible developed the first no-code tool for creating truly onchain NFTs, no IPFS (or recurring fees) necessary. With the innovative platform, artists can easily upload their artwork onchain. Hirsch elaborated on the simplicity of the process: "You literally drag your art in, it generates a smart contract, and it handholds you through uploading your art to the blockchain." The reduced costs associated with this approach made onchain art accessible to a wider audience.\n\nNow Indelible has brought their platform to Base, and is celebrating Onchain Summer with a variety of releases from artists Pablo Stanley, Amber Vittoria, Spottie WiFi, PIV,  ARTJEDI1, and popular collection Degenerate Ape Academy.\n\nThe ability for Indelible to enable artists to create onchain collections has the power to usher in a new era for the art world. Through their no-code platform, onchain art is becoming accessible, affordable, and enduring.',
+      timestamp: '1692547714',
+      title:
+        'Building a Timeless Web: How Indelible Utilizes Onchain Technology for Artists',
+    },
+    digest: 'QOLcueBNGPJHdpIWtd-t7tQXv6CV1Q5uttCxNIlDSZg',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'KqYEWXlxdbQZ_-3k-s6QXF0NktqSoGOQaOyJoLFdGm6vmHd-9tZkP44qi5QqUVNxINo33R2EHnCJqjPumqAefg',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+    wnft: {
+      chainId: 8453,
+      description:
+        'Indelible Labs is pioneering a frictionless process for artists to securely upload their creations to the blockchain, ushering in a new era of permanence and stability for creative expression.\n',
+      fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      imageURI: 'QmbNqaZi4oWusEUwkqQJf3P4Rv6JDgY7gJ93NeBLvmR1Wc',
+      mediaAssetId: 653514,
+      name: 'Building a Timeless Web: How Indelible Utilizes Onchain Technology for Artists',
+      nonce: 9524994,
+      owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      price: 0,
+      proxyAddress: '0x734Ba2F9dF14496d0284AB0002b9d72c4143964F',
+      renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
+      supply: 0,
+      symbol:
+        'BUILDINGATIMELESSWEBHOWINDELIBLEUTILIZESONCHAINTECHNOLOGYFORARTISTS',
+      hasCustomWnftMedia: false,
+    },
+  },
+  '49DSIXV0UonHaisSqARUELRcKhfsmTtr_tnjShKPwMM': {
+    content: {
+      body: '***Discover how Manifold is shaping a new era for artists through their Studio and a variety of extensions that let creators customize their work.***\n\n<https://onchainsummer.xyz/manifold>\n\nAt the heart of Manifold\'s philosophy lies the belief that everyone should be fully in charge of their creations. Led in part by co-founder Richerd Chan, Manifold is on a mission to unlock a special set of tools that unlock a new realm of possibilities. "At a high level,” says Chan, “What Manifold does is support creators by building tools for putting their work onchain.” Manifold’s belief that creators should have full ownership and control over their work has led them to develop a platform that puts the artist in the driver seat from start to finish, with creators deploying their own smart contracts and making decisions every step of the way.\n\nManifold provides this level of minute control via extensions: onchain apps that seamlessly integrate with the smart contracts to expand their functionality. These unlock a myriad of creative possibilities. One extension enables the creation of Open Editions, allowing work to be distributed to a broader audience without compromising ownership. Another extension enables creators to reward holders with digital or physical goods. Yet another facilitates the creation of one onchain asset at the cost of the destruction of a different asset (known as ‘burning’), granting creators the freedom to continuously reinvent their offerings.\n\nAs platforms like Manifold soared in popularity, the cost of transactions on Ethereum also soared to unreasonable heights. Chan acknowledges this hurdle, stating, "There\'s a lot of prohibitive things that you can\'t do on Ethereum just because of the cost of operations for it." High transaction fees resulted in the act of creation becoming a burdensome ordeal, impacting creators and making them question if it was worth it to go onchain at all — and some of the extensions that Manifold provides, such as the ability to burn past work, can become quite costly when a user is required to make multiple transactions.\n\nBeyond the reduced transaction cost that L2s like Base provide, Manifold acknowledges that there’s plenty of work ahead in order to onboard a billion users into this ecosystem. “In order to bring the whole world onchain,” says Chan, “We need to reframe what NFTs are. We need to create more compelling content that everyone wants to engage with while giving people access to the things that they really want to interact with."\n\nSlimesunday, one of the artists that Manifold has brought for Onchain Summer, is taking advantage of Manifold’s burn technology to create a reframing of his own with a work entitled ‘The Great Purge’. Acknowledging that “with the explosion of popularity came a dark side,” Sunday is offering a “symbolic cleanse”, requiring collectors to take any asset in their wallet that ended up being a cash-grab and burn it in order to mint this new work.\n\n“My aim is solely to remind the world that NFTs are not just a passing fad,” said Slimesunday in [an announcement](https://twitter.com/slimesunday/status/1691852523907285420/photo/1) about his Onchain Summer creation. “They are a revolutionary technology that can empower artists, foster genuine connections, and inspire a new era of digital creativity.”\n\n“Our mission has always been to serve creators,” says Chan, “So we know that we have to build good tools for collectors to engage with those creators. We do things the right way, and make sure that we have both the çreator’s backs, and in turn, the customer’s back.” Manifold\'s pioneering work in developing creator tools is a testament to the transformative power of bringing work onchain.',
+      timestamp: '1692634970',
+      title:
+        "Embracing the Digital Canvas: Manifold's Onchain Tools for Artists",
+    },
+    digest: 'btPaJaH0wGAMK7OojAY2aMMTYAEUdx_avnhh23No1e8',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'h0KtjTjKLCJH0MdCdLk4QNp3D0Dw6TCW6MO1JzqgXIA1AMCDPFY0N8dvNFxm1Q17OPGTmTfl0F4zRWn6W7cyPg',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
@@ -328,19 +382,72 @@ export const arweaves = {
         't5yd-pAPZVap7_ymbUetyH6N4G4-C17vQWlWvo9XGafd7B6n_Dgm3NhhmVlU9ba-FDnxwpAw-qoHknGYCkjPNg',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
   },
-  '': {
+  isGtzFoGSsXNZl42Xt3SnNM9BoDOo_QrJ6F6mJNB2JA: {
     content: {
-      body: 'im good',
-      timestamp: '1657046626',
-      title: 'petis',
+      body: '***Onboard’s onchain vision is propelling financial empowerment across Africa, fueled by a vibrant partnership that celebrates culture and connectivity.***\n\n<https://onchainsummer.xyz/onboard>\n\nYele Bademosi is spending a lot of time thinking about credit — or rather, the lack of it in many African countries. “Did you know,” he asks, “that if you move to Nigeria today and want to rent a house, you have to pay for your rent a year or two in advance? To get an iPhone, you have to pay for it up front? To get a car, you have to pay for it up front? There is no credit. People need access to financial services to live a better life, and right now they simply don\'t have that access."\n\nOnboard, founded by Bademosi, exists to create that access, setting its sights on bridging the gap between traditional financial systems and the digital frontier in order to create equal opportunities for all, regardless of geographic location. With digital access becoming increasingly prevalent, especially among young Africans who often have social media accounts before a bank account, the stage is set for a financial revolution. When asked why an onchain future is so important, Bademosi shared his perspective, saying: "This is the first time where as Africans, we\'re building alongside the rest of the world." By actively participating in the onchain digital economy, Africa is positioning itself as a key player in shaping the future of global technology.\n\nHowever, Bademosi recognizes that there are challenges to overcome in order to make going onchain accessible to everyone. "There are so many questions that need to be answered for the uninitiated,” he says. “There\'s this thing called a wallet address, and another thing called gas. All of these technicalities and hurdles are very difficult for a first-time user." To address this, Onboard aims to create an application layer on top of Base to simplify the onboarding process and make onchain services user-friendly.\n\nFor Onchain Summer, Onboard has partnered with artists and musicians to create commemorative onchain assets. "For a lot of people who might not be aware, one of the biggest exports from the African continent right now is our music,” says Bademosi. “Afrobeats is going crazy right now, being listened to by millions of people across the world. As Africans, we have consistently conveyed our history, challenges, and accomplishments through art”. Onboard wants to bring music and art not only displays but also celebrates the African continent onchain.\n\nThe significance of Onboard’s contribution to Onchain Summer goes beyond just celebrating music and culture. Bademosi sees it as an opportunity to showcase Africa\'s spirit and optimism for the future: "I think our drop is an opportunity to introduce the world to a culture that, despite everything that has gone wrong, still has this sense of happiness and belonging, and excitement for the future."\n\nBy empowering frontier markets in Africa, Onboard is forging a path towards a more inclusive and prosperous future for all. “I see myself as a custodian and champion of this mission and vision,” says Bademosi, “and we\'re calling everyone to join us and build an awesome future together, on Base.”',
+      timestamp: '1692812259',
+      title: 'Empowering Frontier Markets in Africa through Onboard',
     },
+    digest: 'pdE3kmFSFooA3HdeN6KdtscjkgY3qZUq_vTOS8sJcEw',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        '8G_tEcWPGN5ygYuRc5KiMc3CKvIYy4gVGCS8UPhpfpvgEh0nUuEQiSxU6fLexn_3krnZneMnhHPncEnPNTClvQ',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  'l-aLggk2ekxjQgNkBVuczKfTZkNbtX9fteJggkTjolE': {
+    content: {
+      body: '***Discover how visionary artist Ryan Hawthorne\'s work \'Onchain + Optimistic\' was inspired by the promise of an interconnected Superchain future, where collective action and creativity thrive.***\n\nWhat if the future of the internet is less reliant on centralized services, putting the power in the hands of each participant? That’s the vision of the [Optimism Collective](https://www.optimism.io/). Powered by the [OP Stack](https://stack.optimism.io/), an open-source codebase that enables the development of L2s like OP Mainnet and Base, Optimism is building towards an interconnected Superchain future where blockchain technology is interoperable and collaboration and standardization lead the way to a more unified approach to development and community growth.\n\nTo celebrate Onchain Summer and allude to this Superchain future, Optimism looked to Ryan Hawthorne, an artist whose work ‘Onchain + Optimistic’ encapsulates the upward trajectory of onchain communities and nods to the OP Stack’s open-source principles. This visual ode reverberates with a promise of the Superchain future where builders, creators, and communities harness the power of the new internet to coordinate, collaborate, and thrive.\n\n"I got into this space,” says Hawthorne, “Because I sensed an opportunity for artists and creators that I hadn’t ever seen before." For Ryan, immersion in the space came alongside a profound realization of the importance of owning what you create. "To take ownership of your art in a way that\'s never really been done before made me excited," he asserts.\n\nTo get to that idyllic future, there’s a lot of work to be done. As Makena Walsh, team member at OP Labs which is a contributor to the Optimism protocol, aptly states, "Even as a crypto-native person, it can be quite difficult to accomplish some things onchain. It needs to be much simpler for anyone to come into crypto and build a dapp, create an NFT collection, participate in governance, or do something onchain with the click of a few buttons." This push for accessibility drives the ongoing effort to make onchain interactions easier for everyone, democratizing access to the technology.\n\nIncreased adoption of the OP Stack signifies a shift towards a more inclusive, collaborative, and user-empowered digital realm. As Walsh underscores, "We are at the whim and mercy of these megalithic tech companies." This mission to restore the internet as a global public utility is a call to action, inviting all to partake in reshaping the digital landscape.\n\nThe interwoven fabric of onchain communities, creators, and collectors propels us toward an internet that is not merely a tool, but a collective endeavor. It’s also an encouragement to participate. "The best way to learn about crypto,” says Hawthorne, “is by getting your hands dirty." It’s time to collectively create a future where openness prevails, connectivity thrives, and the internet is restored to its place as a global public utility, accessible to all who dig in.',
+      timestamp: '1692893240',
+      title:
+        'Empowering the Onchain Era: Collaborative Growth and the OP Stack',
+    },
+    digest: '8-lb0aLOSmTpUTdPEjMDGtPH0iJ6X0wvE1cVUolQEVM',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        '8Go02whwA6Lg2hbdJqd7cKHNdu79AtxsCcAfDp6Xf9wOsVAY5wMckmdEmUCAnp6E6gaRbaYZ6caxdRVExUNY5w',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+    wnft: {
+      chainId: 8453,
+      description:
+        "Discover how visionary artist Ryan Hawthorne's work 'Onchain + Optimistic' was inspired by the promise of an interconnected Superchain future, where collective action and creativity thrive.\n",
+      fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      imageURI: 'QmWgYnwU1dw3sLoSBzm6t3ftMsC7nqTHQvuYagcTA9bZX1',
+      mediaAssetId: 657549,
+      name: 'Empowering the Onchain Era: Collaborative Growth and the OP Stack',
+      nonce: 104870,
+      owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      price: 0,
+      proxyAddress: '0x3476d7D8B98733FF33a6ba0F7dD4bf4B4C2E7664',
+      renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
+      supply: 0,
+      symbol: 'EMPOWERINGTHEONCHAINERACOLLABORATIVEGROWTHANDTHEOPSTACK',
+      hasCustomWnftMedia: false,
+    },
+  },
+  '': {
+    content: { body: 'im good', timestamp: '1657046626', title: 'petis' },
     digest: 'nIJWGywAVkuFY_Q3HzKRsP8UmkTlvZVF31Vof90u_TU',
     authorship: {
       contributor: '0xf9e0206f9f020DE9423A80ace7A64B322D0CE334',
@@ -352,10 +459,7 @@ export const arweaves = {
         'dDbEgnrp9nss4FaEQ2xIwXsXJhgP_jHAuW6jPhVv6zX9fvSj_GwY8nNOqs8kv2bfHRgyebY2_EJhmj7p9afNGw',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"hSt6BW_TbApshx0mIsqnN2AT0uf2OnpR5-FY_eIcl08","y":"6mCANzo8luqeCwGSg-DbA3SR1ZJ9mJ2kFgcNQ-R3S4A"}',
-      algorithm: {
-        name: 'ECDSA',
-        hash: 'SHA-256',
-      },
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
     wnft: {
