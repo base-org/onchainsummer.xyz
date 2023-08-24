@@ -31,6 +31,7 @@ Orisa: The Sonic Extension blends African melodies with modern sounds, celebrati
       startDate: Date.UTC(2023, 7, 23, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.003',
+      sequence: 6100,
     },
     {
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-OYA.mp4',
@@ -70,6 +71,7 @@ Orisa: The Sonic Extension blends African melodies with modern sounds, celebrati
       startDate: Date.UTC(2023, 7, 23, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.003',
+      sequence: 6200,
     },
     {
       image: 'https://assets.onchainsummer.xyz/FINAL-ART_Rayok.jpg',
@@ -89,6 +91,7 @@ By doing so, we can then zoom out and see the bigger picture of the extraordinar
       startDate: Date.UTC(2023, 7, 23, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.003',
+      sequence: 6700,
     },
     {
       image: 'https://assets.onchainsummer.xyz/FINAL-ART_ElowT.mp4',
