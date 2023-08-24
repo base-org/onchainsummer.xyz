@@ -1,7 +1,18 @@
 export const tweets = {
   data: [
     {
+      reply_settings: 'following',
+      id: '1694378456790839445',
+      public_metrics: {
+        retweet_count: 8,
+        reply_count: 1,
+        like_count: 23,
+        quote_count: 5,
+        bookmark_count: 2,
+        impression_count: 2910,
+      },
       entities: {
+        hashtags: [{ start: 112, end: 126, tag: 'OnchainSummer' }],
         urls: [
           {
             start: 280,
@@ -13,7 +24,6 @@ export const tweets = {
             media_key: '13_1694378373361934338',
           },
         ],
-        hashtags: [{ start: 112, end: 126, tag: 'OnchainSummer' }],
         annotations: [
           {
             start: 60,
@@ -31,32 +41,40 @@ export const tweets = {
           },
         ],
       },
-      attachments: { media_keys: ['13_1694378373361934338'] },
+      lang: 'en',
+      edit_history_tweet_ids: ['1694378456790839445'],
       possibly_sensitive: false,
       author_id: '887156762',
-      created_at: '2023-08-23T15:57:58.000Z',
-      reply_settings: 'following',
-      conversation_id: '1694378456790839445',
-      id: '1694378456790839445',
-      lang: 'en',
+      attachments: { media_keys: ['13_1694378373361934338'] },
+      text: '930AM EDT 24 Aug, I’m releasing my first art drop in YEARS—“I Am Not A Security,” a short video poem—as part of #OnchainSummer. I rarely do a standalone drop, but this one’s a love letter to our crypto fam as we catch FUD from decision makers worldwide. Mint+Space details below🧵 https://t.co/rrfXJhOJar',
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: false,
         editable_until: '2023-08-23T16:57:58.000Z',
       },
-      edit_history_tweet_ids: ['1694378456790839445'],
-      text: '930AM EDT 24 Aug, I’m releasing my first art drop in YEARS—“I Am Not A Security,” a short video poem—as part of #OnchainSummer. I rarely do a standalone drop, but this one’s a love letter to our crypto fam as we catch FUD from decision makers worldwide. Mint+Space details below🧵 https://t.co/rrfXJhOJar',
-      public_metrics: {
-        retweet_count: 6,
-        reply_count: 1,
-        like_count: 20,
-        quote_count: 4,
-        bookmark_count: 2,
-        impression_count: 2544,
-      },
+      conversation_id: '1694378456790839445',
+      created_at: '2023-08-23T15:57:58.000Z',
     },
     {
+      reply_settings: 'everyone',
+      id: '1694372865259278689',
+      public_metrics: {
+        retweet_count: 31,
+        reply_count: 20,
+        like_count: 290,
+        quote_count: 5,
+        bookmark_count: 109,
+        impression_count: 41599,
+      },
       entities: {
+        mentions: [
+          {
+            start: 161,
+            end: 172,
+            username: 'friendtech',
+            id: '1635284454003597314',
+          },
+        ],
         urls: [
           {
             start: 253,
@@ -92,14 +110,6 @@ export const tweets = {
             display_url: 'twitter.com/i/web/status/1…',
           },
         ],
-        mentions: [
-          {
-            start: 161,
-            end: 172,
-            username: 'friendtech',
-            id: '1635284454003597314',
-          },
-        ],
         annotations: [
           {
             start: 12,
@@ -110,11 +120,10 @@ export const tweets = {
           },
         ],
       },
+      lang: 'en',
+      edit_history_tweet_ids: ['1694372865259278689'],
       possibly_sensitive: false,
       author_id: '358613542',
-      created_at: '2023-08-23T15:35:45.000Z',
-      reply_settings: 'everyone',
-      conversation_id: '1694372865259278689',
       context_annotations: [
         {
           domain: {
@@ -204,91 +213,84 @@ export const tweets = {
           },
         },
       ],
-      id: '1694372865259278689',
-      lang: 'en',
+      text: 'Introducing Base64 - a smart contract framework for onchain power-of-2 tournament prediction markets.\n\nImagine onchain March Madness:\n\n- Competitors are NFTs or @friendtech accounts\n\n- Participants are ENS holders\n\n- Results are oracle or voting based\n\nhttps://t.co/foR0llthTN https://t.co/y51uzploXj',
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: false,
         editable_until: '2023-08-23T16:35:45.000Z',
       },
-      edit_history_tweet_ids: ['1694372865259278689'],
-      text: 'Introducing Base64 - a smart contract framework for onchain power-of-2 tournament prediction markets.\n\nImagine onchain March Madness:\n\n- Competitors are NFTs or @friendtech accounts\n\n- Participants are ENS holders\n\n- Results are oracle or voting based\n\nhttps://t.co/foR0llthTN https://t.co/y51uzploXj',
-      public_metrics: {
-        retweet_count: 31,
-        reply_count: 20,
-        like_count: 290,
-        quote_count: 5,
-        bookmark_count: 109,
-        impression_count: 40789,
-      },
+      conversation_id: '1694372865259278689',
+      created_at: '2023-08-23T15:35:45.000Z',
     },
     {
-      referenced_tweets: [{ type: 'replied_to', id: '1693793665708106064' }],
+      reply_settings: 'everyone',
+      id: '1694337991899058558',
+      public_metrics: {
+        retweet_count: 31,
+        reply_count: 9,
+        like_count: 84,
+        quote_count: 4,
+        bookmark_count: 10,
+        impression_count: 20817,
+      },
       entities: {
-        urls: [
+        mentions: [
           {
-            start: 160,
-            end: 183,
-            url: 'https://t.co/JJ6jGT1CWV',
-            expanded_url:
-              'https://zora.co/collect/base:0xec0096e8b9f51c9c9c66ce6f4a9e2301b0648ebb',
-            display_url: 'zora.co/collect/base:0…',
-            status: 200,
-            title: 'Blue Meme',
-            images: [
-              {
-                url: 'https://remote-image.decentralized-content.com/image?url=https%3A%2F%2Fipfs.decentralized-content.com%2Fipfs%2Fbafkreifomdqikcdlr4eacu5nvlihyt27lqocd6ueprbqfmdm6qimdqiz4m&w=1920&q=75',
-              },
-            ],
-            description:
-              'Base blue is the meme. Mint it, spread it, remix it, share it or just collect it as proof that you were bridged very early. 🟦',
-            unwound_url:
-              'https://zora.co/collect/base:0xec0096e8b9f51c9c9c66ce6f4a9e2301b0648ebb',
+            start: 38,
+            end: 50,
+            username: 'BuildOnBase',
+            id: '1628067904083181570',
+          },
+          {
+            start: 65,
+            end: 78,
+            username: 'LensProtocol',
+            id: '1478109975406858245',
           },
         ],
-        annotations: [
+        urls: [
           {
-            start: 0,
-            end: 14,
-            probability: 0.8198,
-            type: 'Other',
-            normalized_text: 'Blue Meme\n\nBase',
+            start: 201,
+            end: 224,
+            url: 'https://t.co/ulWJe6HzgO',
+            expanded_url: 'https://madfi.xyz/creators/madfinance',
+            display_url: 'madfi.xyz/creators/madfi…',
+            status: 200,
+            unwound_url: 'https://madfi.xyz/creators/madfinance',
+            images: [
+              {
+                url: 'https://pbs.twimg.com/card_img/1694170968514596864/oB5MvoHu?format=webp&name=small',
+              },
+            ],
+            title: 'MadFi | Subscribe to @madfinance.lens',
+            description:
+              'Support your favorite creators on Lens for bonus content, rewards, and access to gated content.',
           },
         ],
       },
-      possibly_sensitive: false,
-      author_id: '794227',
-      created_at: '2023-08-22T01:14:14.000Z',
-      reply_settings: 'everyone',
-      conversation_id: '1693793665708106064',
-      id: '1693793669394870405',
       lang: 'en',
-      in_reply_to_user_id: '794227',
+      edit_history_tweet_ids: ['1694337991899058558'],
+      possibly_sensitive: false,
+      author_id: '1508860381049065472',
+      text: 'We shipped Creator Subscriptions 🤑 on @BuildOnBase \n\nCreators on @LensProtocol now have a way to receive crypto subscriptions and offer exclusive content for their top fans - in one place\n\nTry it out: https://t.co/ulWJe6HzgO',
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: false,
-        editable_until: '2023-08-22T02:14:14.000Z',
+        editable_until: '2023-08-23T14:17:11.000Z',
       },
-      edit_history_tweet_ids: ['1693793669394870405'],
-      text: 'Blue Meme\n\nBase blue is the meme.\n\nMint it, spread it, remix it, share it or just collect it as proof that you were bridged very early. 🟦\n\nNow minting on Base:\nhttps://t.co/JJ6jGT1CWV',
-      public_metrics: {
-        retweet_count: 2,
-        reply_count: 0,
-        like_count: 17,
-        quote_count: 0,
-        bookmark_count: 3,
-        impression_count: 1299,
-      },
+      conversation_id: '1694337991899058558',
+      created_at: '2023-08-23T13:17:11.000Z',
     },
   ],
   includes: {
     media: [
       {
         height: 1280,
-        type: 'video',
+        duration_ms: 45001,
         preview_image_url:
           'https://pbs.twimg.com/amplify_video_thumb/1694378373361934338/img/pnAyM5jT9JWFGe0M.jpg',
         width: 720,
+        type: 'video',
         variants: [
           {
             content_type: 'application/x-mpegURL',
@@ -310,33 +312,23 @@ export const tweets = {
             url: 'https://video.twimg.com/amplify_video/1694378373361934338/vid/320x568/GrbtmWl2Ipyf5AK8.mp4?tag=14',
           },
         ],
-        public_metrics: { view_count: 304 },
         media_key: '13_1694378373361934338',
-        duration_ms: 45001,
+        public_metrics: { view_count: 343 },
       },
     ],
     users: [
       {
-        pinned_tweet_id: '1694710670925963568',
         public_metrics: {
-          followers_count: 10786,
-          following_count: 8687,
-          tweet_count: 28369,
+          followers_count: 10788,
+          following_count: 8689,
+          tweet_count: 28373,
           listed_count: 168,
         },
-        created_at: '2012-10-17T16:38:26.000Z',
-        name: 'lorepunk.eth (and .tez!)',
-        id: '887156762',
-        verified_type: 'blue',
-        username: 'lorepunkdoteth',
-        protected: false,
-        verified: true,
-        url: 'https://t.co/xqFWRRBuMj',
-        location: 'Plymouth, England',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1597384819218022405/mwzoZV15_normal.jpg',
         description:
           '@punksden_io council Words incl—@forgottenrunes @rasc_wtf @patriciancom @nounsdao @accelerateart ✍️ She/her Punk6825 Follow/❤️/RT!=support views—own Socialist🌹',
+        pinned_tweet_id: '1694710670925963568',
+        verified: true,
+        username: 'lorepunkdoteth',
         entities: {
           url: {
             urls: [
@@ -360,27 +352,28 @@ export const tweets = {
             ],
           },
         },
+        id: '887156762',
+        url: 'https://t.co/xqFWRRBuMj',
+        created_at: '2012-10-17T16:38:26.000Z',
+        verified_type: 'blue',
+        location: 'Plymouth, England',
+        name: 'lorepunk.eth (and .tez!)',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1597384819218022405/mwzoZV15_normal.jpg',
+        protected: false,
       },
       {
-        pinned_tweet_id: '1645797325632327694',
         public_metrics: {
-          followers_count: 12278,
+          followers_count: 12279,
           following_count: 843,
-          tweet_count: 2924,
+          tweet_count: 2925,
           listed_count: 179,
         },
-        created_at: '2011-08-20T06:05:23.000Z',
-        name: 'yuga.eth 🛡',
-        id: '358613542',
-        verified_type: 'blue',
-        username: 'yugacohler',
-        protected: false,
-        verified: true,
-        url: 'https://t.co/uWgaPbSxmv',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1671701021179928580/MHJRmIyi_normal.png',
         description:
           'Senior Staff Software Engineer @coinbase, via @google and @harvard.  Orchestral Conductor, 🇺🇸🇯🇵. ラッキーで埋め尽くしてレストインピースまでいこうぜ',
+        pinned_tweet_id: '1645797325632327694',
+        verified: true,
+        username: 'yugacohler',
         entities: {
           url: {
             urls: [
@@ -401,26 +394,26 @@ export const tweets = {
             ],
           },
         },
+        id: '358613542',
+        url: 'https://t.co/uWgaPbSxmv',
+        created_at: '2011-08-20T06:05:23.000Z',
+        verified_type: 'blue',
+        name: 'yuga.eth 🛡',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1671701021179928580/MHJRmIyi_normal.png',
+        protected: false,
       },
       {
-        pinned_tweet_id: '1691944617841938756',
         public_metrics: {
-          followers_count: 109017,
+          followers_count: 109063,
           following_count: 285,
           tweet_count: 181,
-          listed_count: 304,
+          listed_count: 303,
         },
-        created_at: '2023-03-13T14:19:54.000Z',
-        name: 'friend.tech',
-        id: '1635284454003597314',
-        verified_type: 'blue',
-        username: 'friendtech',
-        protected: false,
-        verified: true,
-        url: 'https://t.co/hlfoTWKTjO',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1678058640274763777/suWn898y_normal.jpg',
         description: 'Your network is your net worth. Coming soon!',
+        pinned_tweet_id: '1691944617841938756',
+        verified: true,
+        username: 'friendtech',
         entities: {
           url: {
             urls: [
@@ -434,46 +427,138 @@ export const tweets = {
             ],
           },
         },
+        id: '1635284454003597314',
+        url: 'https://t.co/hlfoTWKTjO',
+        created_at: '2023-03-13T14:19:54.000Z',
+        verified_type: 'blue',
+        name: 'friend.tech',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1678058640274763777/suWn898y_normal.jpg',
+        protected: false,
       },
       {
-        pinned_tweet_id: '1688954240041930752',
         public_metrics: {
-          followers_count: 3677,
-          following_count: 312,
-          tweet_count: 2551,
-          listed_count: 188,
+          followers_count: 1234,
+          following_count: 3,
+          tweet_count: 141,
+          listed_count: 45,
         },
-        created_at: '2007-02-25T22:44:20.000Z',
-        name: 'ccarella',
-        id: '794227',
-        verified_type: 'none',
-        username: 'ccarella',
-        protected: false,
-        verified: false,
-        url: 'https://t.co/PYtJyAGAi5',
-        location: 'Miami, FL',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1690146796390039553/fYmW5RyM_normal.jpg',
-        description: 'hyperpunk. artist. energy. purple. charmverse.',
+        description:
+          'MadFi enables creators to manage & monetize attention in web3',
+        pinned_tweet_id: '1694337991899058558',
+        verified: true,
+        username: 'madfiprotocol',
         entities: {
           url: {
             urls: [
               {
                 start: 0,
                 end: 23,
-                url: 'https://t.co/PYtJyAGAi5',
-                expanded_url:
-                  'https://zora.co/collections/0x4ddb6c17f462f718f856ecc7d89ac6727c87cca2',
-                display_url: 'zora.co/collections/0x…',
+                url: 'https://t.co/vEsjyK7ufM',
+                expanded_url: 'https://madfinance.xyz',
+                display_url: 'madfinance.xyz',
+                images: [
+                  {
+                    url: 'https://pbs.twimg.com/card_img/1694170968514596864/oB5MvoHu?format=webp&name=small',
+                  },
+                ],
+                title: 'foo',
               },
             ],
           },
         },
+        id: '1508860381049065472',
+        url: 'https://t.co/vEsjyK7ufM',
+        created_at: '2022-03-29T17:35:49.000Z',
+        verified_type: 'blue',
+        location: 'madfinance.lens',
+        name: 'MadFi 💸',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1595558381137399810/7sP7QN92_normal.jpg',
+        protected: false,
+      },
+      {
+        public_metrics: {
+          followers_count: 438360,
+          following_count: 27,
+          tweet_count: 615,
+          listed_count: 1255,
+        },
+        description:
+          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
+        pinned_tweet_id: '1694380755265507622',
+        verified: true,
+        username: 'BuildOnBase',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/6pgVoBTD5h',
+                expanded_url: 'http://base.org',
+                display_url: 'base.org',
+              },
+            ],
+          },
+        },
+        id: '1628067904083181570',
+        url: 'https://t.co/6pgVoBTD5h',
+        created_at: '2023-02-21T16:26:04.000Z',
+        verified_type: 'business',
+        name: 'Base 🛡️',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
+        protected: false,
+      },
+      {
+        public_metrics: {
+          followers_count: 358970,
+          following_count: 74,
+          tweet_count: 2877,
+          listed_count: 1991,
+        },
+        description: 'The Social Layer For Web3',
+        pinned_tweet_id: '1680872693200199680',
+        verified: true,
+        username: 'LensProtocol',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/nbBC5Iuyl9',
+                expanded_url: 'https://www.lens.xyz',
+                display_url: 'lens.xyz',
+              },
+            ],
+          },
+        },
+        id: '1478109975406858245',
+        url: 'https://t.co/nbBC5Iuyl9',
+        created_at: '2022-01-03T21:04:24.000Z',
+        verified_type: 'business',
+        name: 'Lens Protocol',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1654121403669680129/Ebc2fvyq_normal.jpg',
+        protected: false,
       },
     ],
     tweets: [
       {
+        reply_settings: 'following',
+        id: '1694378456790839445',
+        public_metrics: {
+          retweet_count: 8,
+          reply_count: 1,
+          like_count: 23,
+          quote_count: 5,
+          bookmark_count: 2,
+          impression_count: 2910,
+        },
         entities: {
+          hashtags: [{ start: 112, end: 126, tag: 'OnchainSummer' }],
           urls: [
             {
               start: 280,
@@ -485,7 +570,6 @@ export const tweets = {
               media_key: '13_1694378373361934338',
             },
           ],
-          hashtags: [{ start: 112, end: 126, tag: 'OnchainSummer' }],
           annotations: [
             {
               start: 60,
@@ -503,32 +587,40 @@ export const tweets = {
             },
           ],
         },
-        attachments: { media_keys: ['13_1694378373361934338'] },
+        lang: 'en',
+        edit_history_tweet_ids: ['1694378456790839445'],
         possibly_sensitive: false,
         author_id: '887156762',
-        created_at: '2023-08-23T15:57:58.000Z',
-        reply_settings: 'following',
-        conversation_id: '1694378456790839445',
-        id: '1694378456790839445',
-        lang: 'en',
+        attachments: { media_keys: ['13_1694378373361934338'] },
+        text: '930AM EDT 24 Aug, I’m releasing my first art drop in YEARS—“I Am Not A Security,” a short video poem—as part of #OnchainSummer. I rarely do a standalone drop, but this one’s a love letter to our crypto fam as we catch FUD from decision makers worldwide. Mint+Space details below🧵 https://t.co/rrfXJhOJar',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
           editable_until: '2023-08-23T16:57:58.000Z',
         },
-        edit_history_tweet_ids: ['1694378456790839445'],
-        text: '930AM EDT 24 Aug, I’m releasing my first art drop in YEARS—“I Am Not A Security,” a short video poem—as part of #OnchainSummer. I rarely do a standalone drop, but this one’s a love letter to our crypto fam as we catch FUD from decision makers worldwide. Mint+Space details below🧵 https://t.co/rrfXJhOJar',
-        public_metrics: {
-          retweet_count: 6,
-          reply_count: 1,
-          like_count: 20,
-          quote_count: 4,
-          bookmark_count: 2,
-          impression_count: 2544,
-        },
+        conversation_id: '1694378456790839445',
+        created_at: '2023-08-23T15:57:58.000Z',
       },
       {
+        reply_settings: 'everyone',
+        id: '1694372865259278689',
+        public_metrics: {
+          retweet_count: 31,
+          reply_count: 20,
+          like_count: 290,
+          quote_count: 5,
+          bookmark_count: 109,
+          impression_count: 41599,
+        },
         entities: {
+          mentions: [
+            {
+              start: 161,
+              end: 172,
+              username: 'friendtech',
+              id: '1635284454003597314',
+            },
+          ],
           urls: [
             {
               start: 253,
@@ -564,14 +656,6 @@ export const tweets = {
               display_url: 'twitter.com/i/web/status/1…',
             },
           ],
-          mentions: [
-            {
-              start: 161,
-              end: 172,
-              username: 'friendtech',
-              id: '1635284454003597314',
-            },
-          ],
           annotations: [
             {
               start: 12,
@@ -582,11 +666,10 @@ export const tweets = {
             },
           ],
         },
+        lang: 'en',
+        edit_history_tweet_ids: ['1694372865259278689'],
         possibly_sensitive: false,
         author_id: '358613542',
-        created_at: '2023-08-23T15:35:45.000Z',
-        reply_settings: 'everyone',
-        conversation_id: '1694372865259278689',
         context_annotations: [
           {
             domain: {
@@ -679,128 +762,65 @@ export const tweets = {
             },
           },
         ],
-        id: '1694372865259278689',
-        lang: 'en',
+        text: 'Introducing Base64 - a smart contract framework for onchain power-of-2 tournament prediction markets.\n\nImagine onchain March Madness:\n\n- Competitors are NFTs or @friendtech accounts\n\n- Participants are ENS holders\n\n- Results are oracle or voting based\n\nhttps://t.co/foR0llthTN https://t.co/y51uzploXj',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
           editable_until: '2023-08-23T16:35:45.000Z',
         },
-        edit_history_tweet_ids: ['1694372865259278689'],
-        text: 'Introducing Base64 - a smart contract framework for onchain power-of-2 tournament prediction markets.\n\nImagine onchain March Madness:\n\n- Competitors are NFTs or @friendtech accounts\n\n- Participants are ENS holders\n\n- Results are oracle or voting based\n\nhttps://t.co/foR0llthTN https://t.co/y51uzploXj',
+        conversation_id: '1694372865259278689',
+        created_at: '2023-08-23T15:35:45.000Z',
+      },
+      {
+        reply_settings: 'everyone',
+        id: '1694337991899058558',
         public_metrics: {
           retweet_count: 31,
-          reply_count: 20,
-          like_count: 290,
-          quote_count: 5,
-          bookmark_count: 109,
-          impression_count: 40789,
+          reply_count: 9,
+          like_count: 84,
+          quote_count: 4,
+          bookmark_count: 10,
+          impression_count: 20817,
         },
-      },
-      {
-        referenced_tweets: [{ type: 'replied_to', id: '1693793665708106064' }],
         entities: {
+          mentions: [
+            {
+              start: 38,
+              end: 50,
+              username: 'BuildOnBase',
+              id: '1628067904083181570',
+            },
+            {
+              start: 65,
+              end: 78,
+              username: 'LensProtocol',
+              id: '1478109975406858245',
+            },
+          ],
           urls: [
             {
-              start: 160,
-              end: 183,
-              url: 'https://t.co/JJ6jGT1CWV',
-              expanded_url:
-                'https://zora.co/collect/base:0xec0096e8b9f51c9c9c66ce6f4a9e2301b0648ebb',
-              display_url: 'zora.co/collect/base:0…',
+              start: 201,
+              end: 224,
+              url: 'https://t.co/ulWJe6HzgO',
+              expanded_url: 'https://madfi.xyz/creators/madfinance',
+              display_url: 'madfi.xyz/creators/madfi…',
               status: 200,
-              title: 'Blue Meme',
-              images: [
-                {
-                  url: 'https://remote-image.decentralized-content.com/image?url=https%3A%2F%2Fipfs.decentralized-content.com%2Fipfs%2Fbafkreifomdqikcdlr4eacu5nvlihyt27lqocd6ueprbqfmdm6qimdqiz4m&w=1920&q=75',
-                },
-              ],
-              description:
-                'Base blue is the meme. Mint it, spread it, remix it, share it or just collect it as proof that you were bridged very early. 🟦',
-              unwound_url:
-                'https://zora.co/collect/base:0xec0096e8b9f51c9c9c66ce6f4a9e2301b0648ebb',
-            },
-          ],
-          annotations: [
-            {
-              start: 0,
-              end: 14,
-              probability: 0.8198,
-              type: 'Other',
-              normalized_text: 'Blue Meme\n\nBase',
+              unwound_url: 'https://madfi.xyz/creators/madfinance',
             },
           ],
         },
-        possibly_sensitive: false,
-        author_id: '794227',
-        created_at: '2023-08-22T01:14:14.000Z',
-        reply_settings: 'everyone',
-        conversation_id: '1693793665708106064',
-        id: '1693793669394870405',
         lang: 'en',
-        in_reply_to_user_id: '794227',
+        edit_history_tweet_ids: ['1694337991899058558'],
+        possibly_sensitive: false,
+        author_id: '1508860381049065472',
+        text: 'We shipped Creator Subscriptions 🤑 on @BuildOnBase \n\nCreators on @LensProtocol now have a way to receive crypto subscriptions and offer exclusive content for their top fans - in one place\n\nTry it out: https://t.co/ulWJe6HzgO',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
-          editable_until: '2023-08-22T02:14:14.000Z',
+          editable_until: '2023-08-23T14:17:11.000Z',
         },
-        edit_history_tweet_ids: ['1693793669394870405'],
-        text: 'Blue Meme\n\nBase blue is the meme.\n\nMint it, spread it, remix it, share it or just collect it as proof that you were bridged very early. 🟦\n\nNow minting on Base:\nhttps://t.co/JJ6jGT1CWV',
-        public_metrics: {
-          retweet_count: 2,
-          reply_count: 0,
-          like_count: 17,
-          quote_count: 0,
-          bookmark_count: 3,
-          impression_count: 1299,
-        },
-      },
-      {
-        entities: {
-          urls: [
-            {
-              start: 52,
-              end: 75,
-              url: 'https://t.co/qwEkOaFC9o',
-              expanded_url:
-                'https://twitter.com/ccarella/status/1693793665708106064/photo/1',
-              display_url: 'pic.twitter.com/qwEkOaFC9o',
-              media_key: '3_1693793469825798144',
-            },
-          ],
-          annotations: [
-            {
-              start: 17,
-              end: 28,
-              probability: 0.6824,
-              type: 'Other',
-              normalized_text: 'phenomonlogy',
-            },
-          ],
-        },
-        attachments: { media_keys: ['3_1693793469825798144'] },
-        possibly_sensitive: false,
-        author_id: '794227',
-        created_at: '2023-08-22T01:14:13.000Z',
-        reply_settings: 'everyone',
-        conversation_id: '1693793665708106064',
-        id: '1693793665708106064',
-        lang: 'en',
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-22T02:14:13.000Z',
-        },
-        edit_history_tweet_ids: ['1693793665708106064'],
-        text: 'An experiment in phenomonlogy. Please play along. 👇 https://t.co/qwEkOaFC9o',
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 2,
-          like_count: 13,
-          quote_count: 0,
-          bookmark_count: 0,
-          impression_count: 601,
-        },
+        conversation_id: '1694337991899058558',
+        created_at: '2023-08-23T13:17:11.000Z',
       },
     ],
   },
