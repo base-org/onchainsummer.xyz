@@ -53,7 +53,7 @@ Onchain Summer collectors will receive tiered perks such as exclusive updates, 1
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-onchaincities.png',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: Onchain Cities Champion',
-      description: `Mint for invitations to exclusive webinars and reports, as well as a future in-person gift of 50 OA.`,
+      description: `Mint for invitations to exclusive webinars and reports, as well as a future in-person gift of 50 OAK.`,
       address: '0x2642A271F700387FCe74d658A3138987c2FF7aCD',
       crossMintClientId: 'b8d4f833-6d69-470c-a640-5b89ecc5ddca',
       mintType: MintType.ThirdWeb,
@@ -67,7 +67,7 @@ Onchain Summer collectors will receive tiered perks such as exclusive updates, 1
         'https://assets.onchainsummer.xyz/Final_art-thousandcurrencies.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: Onchain Cities Crusader',
-      description: `Mint for access to 1:1 calls with the OAK team, exclusive reports, and a future in-person gift of 50 OA.
+      description: `Mint for access to 1:1 calls with the OAK team, exclusive reports, and a future in-person gift of 50 OAK.
     `,
       address: '0x7fdfeE11045e3575398F6a278008d9B7B2097316',
       crossMintClientId: 'ff0d88fd-7f43-46a7-9014-eda1a3f3f635',
