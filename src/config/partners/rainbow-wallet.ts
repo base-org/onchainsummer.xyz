@@ -11,7 +11,7 @@ const rainbowWallet: Partner = {
   brandColor: '#e9f2ff',
   icon: '/partners/rainbow-wallet/icon.png',
   banner: '/partners/rainbow-wallet/banner-icon.svg',
-  aarweaveDigest: '',
+  aarweaveDigest: 'UD3mCdsfAiOoTqpuccjP13MusI9abvqqQn4gbKpqa24',
   twitter: '@rainbowdotme',
   drops: [
     {
@@ -44,7 +44,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
       address: '0x',
       crossMintClientId: '',
       mintType: MintType.External,
-      type: 'erc-721',
+      type: 'external',
       startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
@@ -59,7 +59,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
       address: '0x',
       crossMintClientId: '',
       mintType: MintType.External,
-      type: 'erc-721',
+      type: 'external',
       startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
