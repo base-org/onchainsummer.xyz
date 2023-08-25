@@ -1,7 +1,6 @@
 export const tweets = {
   data: [
     {
-      attachments: { media_keys: ['16_1694813176934670337'] },
       context_annotations: [
         {
           domain: {
@@ -19,16 +18,15 @@ export const tweets = {
         },
         {
           domain: {
-            id: '46',
-            name: 'Business Taxonomy',
+            id: '66',
+            name: 'Interests and Hobbies Category',
             description:
-              'Categories within Brand Verticals that narrow down the scope of Brands',
+              'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
           },
           entity: {
-            id: '1557697333571112960',
-            name: 'Technology Business',
-            description:
-              'Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares',
+            id: '913142676819648512',
+            name: 'Cryptocurrencies',
+            description: 'Cryptocurrency',
           },
         },
         {
@@ -63,9 +61,9 @@ export const tweets = {
             description: 'A taxonomy of user interests. ',
           },
           entity: {
-            id: '848920371311001600',
-            name: 'Technology',
-            description: 'Technology and computing',
+            id: '913142676819648512',
+            name: 'Cryptocurrencies',
+            description: 'Cryptocurrency',
           },
         },
         {
@@ -79,14 +77,6 @@ export const tweets = {
             name: 'NFTs',
             description: 'Non-fungible tokens',
           },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: { id: '1486271512655003652', name: 'Web3' },
         },
         {
           domain: {
@@ -109,94 +99,89 @@ export const tweets = {
           },
         },
       ],
-      text: 'As part of onchain 🟡 summer from @BuildOnBase, we’re thrilled to announce our entry into web3.\n\nEvery Citi Bike in NYC is now an NFT, powered by @Ethereum.\n\nScan. Mint. Race → https://t.co/RT6AzvEBwc https://t.co/WEYP8x7I32',
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: true,
+        editable_until: '2023-08-18T17:40:05.000Z',
+      },
+      author_id: '1691933139831275520',
+      edit_history_tweet_ids: ['1692577116678766741'],
+      possibly_sensitive: false,
+      reply_settings: 'everyone',
+      text: 'StoryBase is now live on @BuildOnBase ! Explore creative collaboration onchain by writing together, mint your creation, and get rewards. Starting with...\n\nhttps://t.co/2oDCzJlWNs\n\n#nft #BASE #Crypto https://t.co/IyaAsmjLDK',
       entities: {
         annotations: [
           {
-            start: 102,
-            end: 110,
-            probability: 0.7087,
+            start: 0,
+            end: 8,
+            probability: 0.6471,
             type: 'Other',
-            normalized_text: 'Citi Bike',
+            normalized_text: 'StoryBase',
           },
           {
-            start: 115,
-            end: 117,
-            probability: 0.942,
-            type: 'Place',
-            normalized_text: 'NYC',
+            start: 186,
+            end: 189,
+            probability: 0.3023,
+            type: 'Other',
+            normalized_text: 'BASE',
           },
-        ],
-        mentions: [
           {
-            start: 33,
-            end: 45,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
+            start: 192,
+            end: 197,
+            probability: 0.8128,
+            type: 'Other',
+            normalized_text: 'Crypto',
           },
-          { start: 145, end: 154, username: 'ethereum', id: '2312333412' },
         ],
         urls: [
           {
-            start: 176,
-            end: 199,
-            url: 'https://t.co/RT6AzvEBwc',
-            expanded_url: 'http://citibike.xyz',
-            display_url: 'citibike.xyz',
-            images: [
-              {
-                url: 'https://pbs.twimg.com/news_img/1694103792063545344/iDi_Abb-?format=jpg&name=orig',
-                width: 3000,
-                height: 1500,
-              },
-              {
-                url: 'https://pbs.twimg.com/news_img/1694103792063545344/iDi_Abb-?format=jpg&name=150x150',
-                width: 150,
-                height: 150,
-              },
-            ],
+            start: 155,
+            end: 178,
+            url: 'https://t.co/2oDCzJlWNs',
+            expanded_url: 'http://storybase.xyz',
+            display_url: 'storybase.xyz',
             status: 200,
-            title:
-              'Citi Bike Race: NYC’s Most Popular Bike Game | Mint to Ride, Ride to Win',
-            description:
-              'Citi Bike Race, New York’s official digital bike game, is a fun, affordable & convenient way to get around the internet. Start playing now to see if you could be the winner winner chicken dinner.',
-            unwound_url: 'https://citibike.xyz/',
+            unwound_url: 'https://www.storybase.xyz/',
           },
           {
-            start: 200,
-            end: 223,
-            url: 'https://t.co/WEYP8x7I32',
+            start: 199,
+            end: 222,
+            url: 'https://t.co/IyaAsmjLDK',
             expanded_url:
-              'https://twitter.com/CitiBikeNY/status/1694820490127306854/photo/1',
-            display_url: 'pic.twitter.com/WEYP8x7I32',
-            media_key: '16_1694813176934670337',
+              'https://twitter.com/storyonbase/status/1692577116678766741/video/1',
+            display_url: 'pic.twitter.com/IyaAsmjLDK',
+            media_key: '7_1692573755657101312',
+          },
+        ],
+        hashtags: [
+          { start: 180, end: 184, tag: 'nft' },
+          { start: 185, end: 190, tag: 'BASE' },
+          { start: 191, end: 198, tag: 'Crypto' },
+        ],
+        mentions: [
+          {
+            start: 25,
+            end: 37,
+            username: 'BuildOnBase',
+            id: '1628067904083181570',
           },
         ],
       },
-      edit_history_tweet_ids: ['1694820490127306854'],
-      conversation_id: '1694820490127306854',
-      author_id: '1693781658334343168',
-      created_at: '2023-08-24T21:14:27.000Z',
-      public_metrics: {
-        retweet_count: 0,
-        reply_count: 2,
-        like_count: 3,
-        quote_count: 0,
-        bookmark_count: 1,
-        impression_count: 96,
-      },
-      reply_settings: 'everyone',
-      id: '1694820490127306854',
-      possibly_sensitive: false,
       lang: 'en',
-      edit_controls: {
-        edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-08-24T22:14:27.000Z',
+      public_metrics: {
+        retweet_count: 8,
+        reply_count: 3,
+        like_count: 29,
+        quote_count: 1,
+        bookmark_count: 2,
+        impression_count: 2970,
       },
+      id: '1692577116678766741',
+      created_at: '2023-08-18T16:40:05.000Z',
+      attachments: { media_keys: ['7_1692573755657101312'] },
+      conversation_id: '1692577116678766741',
     },
     {
-      attachments: { media_keys: ['7_1694713121158635523'] },
       context_annotations: [
         {
           domain: {
@@ -270,17 +255,18 @@ export const tweets = {
           },
         },
       ],
-      text: "Base (@BuildOnBase) is now live on Fair.\n\nTo mark the occasion, we've launched a free Open Edition NFT.\nMinting page below  ↴ https://t.co/fhjCURYaJW",
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: false,
+        editable_until: '2023-08-24T15:07:58.000Z',
+      },
+      author_id: '1456028313164689413',
       edit_history_tweet_ids: ['1694713160085963085'],
+      possibly_sensitive: false,
+      reply_settings: 'everyone',
+      text: "Base (@BuildOnBase) is now live on Fair.\n\nTo mark the occasion, we've launched a free Open Edition NFT.\nMinting page below  ↴ https://t.co/fhjCURYaJW",
+      lang: 'en',
       entities: {
-        mentions: [
-          {
-            start: 6,
-            end: 18,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
-          },
-        ],
         urls: [
           {
             start: 126,
@@ -292,30 +278,38 @@ export const tweets = {
             media_key: '7_1694713121158635523',
           },
         ],
+        mentions: [
+          {
+            start: 6,
+            end: 18,
+            username: 'BuildOnBase',
+            id: '1628067904083181570',
+          },
+        ],
       },
-      conversation_id: '1694713160085963085',
-      author_id: '1456028313164689413',
-      created_at: '2023-08-24T14:07:58.000Z',
       public_metrics: {
-        retweet_count: 8,
+        retweet_count: 10,
         reply_count: 4,
-        like_count: 27,
+        like_count: 31,
         quote_count: 0,
         bookmark_count: 1,
-        impression_count: 4471,
+        impression_count: 5623,
       },
-      reply_settings: 'everyone',
       id: '1694713160085963085',
-      possibly_sensitive: false,
-      lang: 'en',
+      created_at: '2023-08-24T14:07:58.000Z',
+      attachments: { media_keys: ['7_1694713121158635523'] },
+      conversation_id: '1694713160085963085',
+    },
+    {
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: false,
-        editable_until: '2023-08-24T15:07:58.000Z',
+        editable_until: '2023-08-24T22:15:51.000Z',
       },
-    },
-    {
-      attachments: { media_keys: ['7_1694820333470027776'] },
+      author_id: '1415583046561054720',
+      edit_history_tweet_ids: ['1694820840250941554'],
+      possibly_sensitive: false,
+      reply_settings: 'everyone',
       text: "You'll need this artifact for your onchain journey.\n\nMade by Surreal Technology\nMinted on @BuildOnBase\n#OnchainSummer season\n\nCollect on Zora\nhttps://t.co/QPmKttgsKv https://t.co/60xEJBsTCw",
       entities: {
         annotations: [
@@ -339,14 +333,6 @@ export const tweets = {
             probability: 0.4549,
             type: 'Place',
             normalized_text: 'Zora',
-          },
-        ],
-        mentions: [
-          {
-            start: 90,
-            end: 102,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
           },
         ],
         urls: [
@@ -375,51 +361,69 @@ export const tweets = {
           },
         ],
         hashtags: [{ start: 103, end: 117, tag: 'OnchainSummer' }],
+        mentions: [
+          {
+            start: 90,
+            end: 102,
+            username: 'BuildOnBase',
+            id: '1628067904083181570',
+          },
+        ],
       },
-      edit_history_tweet_ids: ['1694820840250941554'],
-      conversation_id: '1694820840250941554',
-      author_id: '1415583046561054720',
-      created_at: '2023-08-24T21:15:51.000Z',
+      lang: 'en',
       public_metrics: {
         retweet_count: 3,
-        reply_count: 3,
-        like_count: 21,
+        reply_count: 4,
+        like_count: 31,
         quote_count: 0,
-        bookmark_count: 0,
-        impression_count: 1003,
+        bookmark_count: 3,
+        impression_count: 2024,
       },
-      reply_settings: 'everyone',
       id: '1694820840250941554',
-      possibly_sensitive: false,
-      lang: 'en',
-      edit_controls: {
-        edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-08-24T22:15:51.000Z',
-      },
+      created_at: '2023-08-24T21:15:51.000Z',
+      attachments: { media_keys: ['7_1694820333470027776'] },
+      conversation_id: '1694820840250941554',
     },
   ],
   includes: {
     media: [
       {
-        type: 'animated_gif',
-        media_key: '16_1694813176934670337',
-        width: 1280,
+        preview_image_url:
+          'https://pbs.twimg.com/ext_tw_video_thumb/1692573755657101312/pu/img/ERlzQB8KYZMUqUOn.jpg',
+        duration_ms: 16483,
+        type: 'video',
+        public_metrics: { view_count: 620 },
         variants: [
           {
-            bit_rate: 0,
+            content_type: 'application/x-mpegURL',
+            url: 'https://video.twimg.com/ext_tw_video/1692573755657101312/pu/pl/_JcLWZsgEDbf72RN.m3u8?tag=12&container=fmp4',
+          },
+          {
+            bit_rate: 256000,
             content_type: 'video/mp4',
-            url: 'https://video.twimg.com/tweet_video/F4UvmtvXoAEk36M.mp4',
+            url: 'https://video.twimg.com/ext_tw_video/1692573755657101312/pu/vid/480x270/x4G50s_odlkVndG6.mp4?tag=12',
+          },
+          {
+            bit_rate: 832000,
+            content_type: 'video/mp4',
+            url: 'https://video.twimg.com/ext_tw_video/1692573755657101312/pu/vid/640x360/wj1xzL7ukmQCPmDo.mp4?tag=12',
+          },
+          {
+            bit_rate: 2176000,
+            content_type: 'video/mp4',
+            url: 'https://video.twimg.com/ext_tw_video/1692573755657101312/pu/vid/1280x720/tVaTOd_hrKpIVdDQ.mp4?tag=12',
           },
         ],
-        preview_image_url:
-          'https://pbs.twimg.com/tweet_video_thumb/F4UvmtvXoAEk36M.jpg',
-        height: 1076,
+        height: 1080,
+        width: 1920,
+        media_key: '7_1692573755657101312',
       },
       {
+        preview_image_url:
+          'https://pbs.twimg.com/ext_tw_video_thumb/1694713121158635523/pu/img/qgcyHKI9Evb8Ijw1.jpg',
+        duration_ms: 6000,
         type: 'video',
-        media_key: '7_1694713121158635523',
-        width: 1080,
+        public_metrics: { view_count: 1136 },
         variants: [
           {
             bit_rate: 832000,
@@ -441,16 +445,16 @@ export const tweets = {
             url: 'https://video.twimg.com/ext_tw_video/1694713121158635523/pu/pl/kkTff3UBZ58AVMnC.m3u8?tag=12&container=fmp4',
           },
         ],
-        duration_ms: 6000,
-        preview_image_url:
-          'https://pbs.twimg.com/ext_tw_video_thumb/1694713121158635523/pu/img/qgcyHKI9Evb8Ijw1.jpg',
-        public_metrics: { view_count: 893 },
         height: 1080,
+        width: 1080,
+        media_key: '7_1694713121158635523',
       },
       {
+        preview_image_url:
+          'https://pbs.twimg.com/ext_tw_video_thumb/1694820333470027776/pu/img/tcn3oDWnPXRENWUE.jpg',
+        duration_ms: 8149,
         type: 'video',
-        media_key: '7_1694820333470027776',
-        width: 2500,
+        public_metrics: { view_count: 441 },
         variants: [
           {
             content_type: 'application/x-mpegURL',
@@ -472,69 +476,49 @@ export const tweets = {
             url: 'https://video.twimg.com/ext_tw_video/1694820333470027776/pu/vid/540x540/3FQD7mGRTdBP-3ow.mp4?tag=12',
           },
         ],
-        duration_ms: 8149,
-        preview_image_url:
-          'https://pbs.twimg.com/ext_tw_video_thumb/1694820333470027776/pu/img/tcn3oDWnPXRENWUE.jpg',
-        public_metrics: { view_count: 194 },
         height: 2500,
+        width: 2500,
+        media_key: '7_1694820333470027776',
       },
     ],
     users: [
       {
-        protected: false,
-        username: 'CitiBikeNY',
-        url: 'https://t.co/1GKv4giUVp',
-        location: 'New York, NY',
-        created_at: '2023-08-22T00:26:45.000Z',
-        description: 'Mint any Citi Bike as an NFT, powered by @Ethereum.',
-        id: '1693781658334343168',
-        verified_type: 'none',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1693783156795547648/rTj8VXPZ_normal.jpg',
-        verified: false,
-        public_metrics: {
-          followers_count: 55,
-          following_count: 1,
-          tweet_count: 5,
-          listed_count: 1,
-        },
-        name: 'Citi Bike',
+        name: 'StoryBase',
         entities: {
           url: {
             urls: [
               {
                 start: 0,
                 end: 23,
-                url: 'https://t.co/1GKv4giUVp',
-                expanded_url: 'http://citibike.xyz',
-                display_url: 'citibike.xyz',
+                url: 'https://t.co/P5cXOB35Vk',
+                expanded_url: 'https://storybase.xyz/',
+                display_url: 'storybase.xyz',
               },
             ],
           },
           description: {
-            mentions: [{ start: 41, end: 50, username: 'Ethereum' }],
+            mentions: [{ start: 30, end: 42, username: 'BuildOnBase' }],
           },
         },
+        public_metrics: {
+          followers_count: 678,
+          following_count: 4,
+          tweet_count: 36,
+          listed_count: 1,
+        },
+        created_at: '2023-08-16T22:01:27.000Z',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1691979023948079104/bYme3tgr_normal.jpg',
+        url: 'https://t.co/P5cXOB35Vk',
+        id: '1691933139831275520',
+        protected: false,
+        verified_type: 'none',
+        username: 'storyonbase',
+        verified: false,
+        description:
+          'Collaborative writing NFTs on @BuildOnBase. Do you ever wonder how the story will end?',
       },
       {
-        protected: false,
-        username: 'BuildOnBase',
-        url: 'https://t.co/6pgVoBTD5h',
-        created_at: '2023-02-21T16:26:04.000Z',
-        description:
-          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
-        id: '1628067904083181570',
-        verified_type: 'business',
-        pinned_tweet_id: '1694749169645391888',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
-        verified: true,
-        public_metrics: {
-          followers_count: 437938,
-          following_count: 27,
-          tweet_count: 637,
-          listed_count: 1256,
-        },
         name: 'Base 🛡️',
         entities: {
           url: {
@@ -549,61 +533,26 @@ export const tweets = {
             ],
           },
         },
+        pinned_tweet_id: '1695104285141545268',
+        public_metrics: {
+          followers_count: 440677,
+          following_count: 27,
+          tweet_count: 640,
+          listed_count: 1258,
+        },
+        created_at: '2023-02-21T16:26:04.000Z',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
+        url: 'https://t.co/6pgVoBTD5h',
+        id: '1628067904083181570',
+        protected: false,
+        verified_type: 'business',
+        username: 'BuildOnBase',
+        verified: true,
+        description:
+          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
       },
       {
-        protected: false,
-        username: 'ethereum',
-        url: 'https://t.co/eL8HNFWxrK',
-        location: 'worldwide',
-        created_at: '2014-01-26T19:15:24.000Z',
-        description:
-          'EF is a non-profit and part of a community of organizations and people working to fund protocol development, grow the ecosystem, and advocate for Ethereum.',
-        id: '2312333412',
-        verified_type: 'blue',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1627642622645878784/TP1GH9TM_normal.jpg',
-        verified: true,
-        public_metrics: {
-          followers_count: 3123943,
-          following_count: 0,
-          tweet_count: 3559,
-          listed_count: 12968,
-        },
-        name: 'Ethereum Foundation',
-        entities: {
-          url: {
-            urls: [
-              {
-                start: 0,
-                end: 23,
-                url: 'https://t.co/eL8HNFWxrK',
-                expanded_url: 'http://ethereum.foundation',
-                display_url: 'ethereum.foundation',
-              },
-            ],
-          },
-        },
-      },
-      {
-        protected: false,
-        username: 'fairxyz',
-        url: 'https://t.co/OeWciSArUD',
-        location: 'London, United Kingdom',
-        created_at: '2021-11-03T22:39:43.000Z',
-        description:
-          'Create art, collect culture.\n\nDiscord ▹ https://t.co/7tOPPVzfCz\nDocs ▹ https://t.co/WkZzNrqDpR',
-        id: '1456028313164689413',
-        verified_type: 'blue',
-        pinned_tweet_id: '1694713160085963085',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1568184938242899971/VkP-RJzk_normal.jpg',
-        verified: true,
-        public_metrics: {
-          followers_count: 140596,
-          following_count: 496,
-          tweet_count: 1846,
-          listed_count: 169,
-        },
         name: 'FAIR.XYZ',
         entities: {
           url: {
@@ -636,27 +585,27 @@ export const tweets = {
             ],
           },
         },
+        pinned_tweet_id: '1694713160085963085',
+        public_metrics: {
+          followers_count: 140600,
+          following_count: 499,
+          tweet_count: 1847,
+          listed_count: 169,
+        },
+        created_at: '2021-11-03T22:39:43.000Z',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1568184938242899971/VkP-RJzk_normal.jpg',
+        url: 'https://t.co/OeWciSArUD',
+        id: '1456028313164689413',
+        protected: false,
+        location: 'London, United Kingdom',
+        verified_type: 'blue',
+        username: 'fairxyz',
+        verified: true,
+        description:
+          'Create art, collect culture.\n\nDiscord ▹ https://t.co/7tOPPVzfCz\nDocs ▹ https://t.co/WkZzNrqDpR',
       },
       {
-        protected: false,
-        username: 'surrealapp',
-        url: 'https://t.co/z7PSKxsoH7',
-        location: 'New York, NY',
-        created_at: '2021-07-15T08:04:59.000Z',
-        description:
-          'Your go-to app for everything onchain. Download → https://t.co/RSOSSgENeB',
-        id: '1415583046561054720',
-        verified_type: 'none',
-        pinned_tweet_id: '1593310161631944704',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1588497278708453378/qyj5rdy6_normal.jpg',
-        verified: false,
-        public_metrics: {
-          followers_count: 4614,
-          following_count: 12,
-          tweet_count: 268,
-          listed_count: 31,
-        },
         name: 'Surreal',
         entities: {
           url: {
@@ -682,11 +631,29 @@ export const tweets = {
             ],
           },
         },
+        pinned_tweet_id: '1593310161631944704',
+        public_metrics: {
+          followers_count: 4632,
+          following_count: 12,
+          tweet_count: 273,
+          listed_count: 31,
+        },
+        created_at: '2021-07-15T08:04:59.000Z',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1588497278708453378/qyj5rdy6_normal.jpg',
+        url: 'https://t.co/z7PSKxsoH7',
+        id: '1415583046561054720',
+        protected: false,
+        location: 'New York, NY',
+        verified_type: 'none',
+        username: 'surrealapp',
+        verified: false,
+        description:
+          'Your go-to app for everything onchain. Download → https://t.co/RSOSSgENeB',
       },
     ],
     tweets: [
       {
-        attachments: { media_keys: ['16_1694813176934670337'] },
         context_annotations: [
           {
             domain: {
@@ -704,16 +671,15 @@ export const tweets = {
           },
           {
             domain: {
-              id: '46',
-              name: 'Business Taxonomy',
+              id: '66',
+              name: 'Interests and Hobbies Category',
               description:
-                'Categories within Brand Verticals that narrow down the scope of Brands',
+                'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
             },
             entity: {
-              id: '1557697333571112960',
-              name: 'Technology Business',
-              description:
-                'Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares',
+              id: '913142676819648512',
+              name: 'Cryptocurrencies',
+              description: 'Cryptocurrency',
             },
           },
           {
@@ -748,9 +714,9 @@ export const tweets = {
               description: 'A taxonomy of user interests. ',
             },
             entity: {
-              id: '848920371311001600',
-              name: 'Technology',
-              description: 'Technology and computing',
+              id: '913142676819648512',
+              name: 'Cryptocurrencies',
+              description: 'Cryptocurrency',
             },
           },
           {
@@ -764,14 +730,6 @@ export const tweets = {
               name: 'NFTs',
               description: 'Non-fungible tokens',
             },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: { id: '1486271512655003652', name: 'Web3' },
           },
           {
             domain: {
@@ -797,94 +755,89 @@ export const tweets = {
             },
           },
         ],
-        text: 'As part of onchain 🟡 summer from @BuildOnBase, we’re thrilled to announce our entry into web3.\n\nEvery Citi Bike in NYC is now an NFT, powered by @Ethereum.\n\nScan. Mint. Race → https://t.co/RT6AzvEBwc https://t.co/WEYP8x7I32',
+        edit_controls: {
+          edits_remaining: 5,
+          is_edit_eligible: true,
+          editable_until: '2023-08-18T17:40:05.000Z',
+        },
+        author_id: '1691933139831275520',
+        edit_history_tweet_ids: ['1692577116678766741'],
+        possibly_sensitive: false,
+        reply_settings: 'everyone',
+        text: 'StoryBase is now live on @BuildOnBase ! Explore creative collaboration onchain by writing together, mint your creation, and get rewards. Starting with...\n\nhttps://t.co/2oDCzJlWNs\n\n#nft #BASE #Crypto https://t.co/IyaAsmjLDK',
         entities: {
           annotations: [
             {
-              start: 102,
-              end: 110,
-              probability: 0.7087,
+              start: 0,
+              end: 8,
+              probability: 0.6471,
               type: 'Other',
-              normalized_text: 'Citi Bike',
+              normalized_text: 'StoryBase',
             },
             {
-              start: 115,
-              end: 117,
-              probability: 0.942,
-              type: 'Place',
-              normalized_text: 'NYC',
+              start: 186,
+              end: 189,
+              probability: 0.3023,
+              type: 'Other',
+              normalized_text: 'BASE',
             },
-          ],
-          mentions: [
             {
-              start: 33,
-              end: 45,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
+              start: 192,
+              end: 197,
+              probability: 0.8128,
+              type: 'Other',
+              normalized_text: 'Crypto',
             },
-            { start: 145, end: 154, username: 'ethereum', id: '2312333412' },
           ],
           urls: [
             {
-              start: 176,
-              end: 199,
-              url: 'https://t.co/RT6AzvEBwc',
-              expanded_url: 'http://citibike.xyz',
-              display_url: 'citibike.xyz',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1694103792063545344/iDi_Abb-?format=jpg&name=orig',
-                  width: 3000,
-                  height: 1500,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1694103792063545344/iDi_Abb-?format=jpg&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
+              start: 155,
+              end: 178,
+              url: 'https://t.co/2oDCzJlWNs',
+              expanded_url: 'http://storybase.xyz',
+              display_url: 'storybase.xyz',
               status: 200,
-              title:
-                'Citi Bike Race: NYC’s Most Popular Bike Game | Mint to Ride, Ride to Win',
-              description:
-                'Citi Bike Race, New York’s official digital bike game, is a fun, affordable & convenient way to get around the internet. Start playing now to see if you could be the winner winner chicken dinner.',
-              unwound_url: 'https://citibike.xyz/',
+              unwound_url: 'https://www.storybase.xyz/',
             },
             {
-              start: 200,
-              end: 223,
-              url: 'https://t.co/WEYP8x7I32',
+              start: 199,
+              end: 222,
+              url: 'https://t.co/IyaAsmjLDK',
               expanded_url:
-                'https://twitter.com/CitiBikeNY/status/1694820490127306854/photo/1',
-              display_url: 'pic.twitter.com/WEYP8x7I32',
-              media_key: '16_1694813176934670337',
+                'https://twitter.com/storyonbase/status/1692577116678766741/video/1',
+              display_url: 'pic.twitter.com/IyaAsmjLDK',
+              media_key: '7_1692573755657101312',
+            },
+          ],
+          hashtags: [
+            { start: 180, end: 184, tag: 'nft' },
+            { start: 185, end: 190, tag: 'BASE' },
+            { start: 191, end: 198, tag: 'Crypto' },
+          ],
+          mentions: [
+            {
+              start: 25,
+              end: 37,
+              username: 'BuildOnBase',
+              id: '1628067904083181570',
             },
           ],
         },
-        edit_history_tweet_ids: ['1694820490127306854'],
-        conversation_id: '1694820490127306854',
-        author_id: '1693781658334343168',
-        created_at: '2023-08-24T21:14:27.000Z',
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 2,
-          like_count: 3,
-          quote_count: 0,
-          bookmark_count: 1,
-          impression_count: 96,
-        },
-        reply_settings: 'everyone',
-        id: '1694820490127306854',
-        possibly_sensitive: false,
         lang: 'en',
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-24T22:14:27.000Z',
+        public_metrics: {
+          retweet_count: 8,
+          reply_count: 3,
+          like_count: 29,
+          quote_count: 1,
+          bookmark_count: 2,
+          impression_count: 2970,
         },
+        id: '1692577116678766741',
+        created_at: '2023-08-18T16:40:05.000Z',
+        attachments: { media_keys: ['7_1692573755657101312'] },
+        conversation_id: '1692577116678766741',
       },
       {
-        attachments: { media_keys: ['7_1694713121158635523'] },
         context_annotations: [
           {
             domain: {
@@ -961,17 +914,18 @@ export const tweets = {
             },
           },
         ],
-        text: "Base (@BuildOnBase) is now live on Fair.\n\nTo mark the occasion, we've launched a free Open Edition NFT.\nMinting page below  ↴ https://t.co/fhjCURYaJW",
+        edit_controls: {
+          edits_remaining: 5,
+          is_edit_eligible: false,
+          editable_until: '2023-08-24T15:07:58.000Z',
+        },
+        author_id: '1456028313164689413',
         edit_history_tweet_ids: ['1694713160085963085'],
+        possibly_sensitive: false,
+        reply_settings: 'everyone',
+        text: "Base (@BuildOnBase) is now live on Fair.\n\nTo mark the occasion, we've launched a free Open Edition NFT.\nMinting page below  ↴ https://t.co/fhjCURYaJW",
+        lang: 'en',
         entities: {
-          mentions: [
-            {
-              start: 6,
-              end: 18,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
-            },
-          ],
           urls: [
             {
               start: 126,
@@ -983,30 +937,38 @@ export const tweets = {
               media_key: '7_1694713121158635523',
             },
           ],
+          mentions: [
+            {
+              start: 6,
+              end: 18,
+              username: 'BuildOnBase',
+              id: '1628067904083181570',
+            },
+          ],
         },
-        conversation_id: '1694713160085963085',
-        author_id: '1456028313164689413',
-        created_at: '2023-08-24T14:07:58.000Z',
         public_metrics: {
-          retweet_count: 8,
+          retweet_count: 10,
           reply_count: 4,
-          like_count: 27,
+          like_count: 31,
           quote_count: 0,
           bookmark_count: 1,
-          impression_count: 4471,
+          impression_count: 5623,
         },
-        reply_settings: 'everyone',
         id: '1694713160085963085',
-        possibly_sensitive: false,
-        lang: 'en',
+        created_at: '2023-08-24T14:07:58.000Z',
+        attachments: { media_keys: ['7_1694713121158635523'] },
+        conversation_id: '1694713160085963085',
+      },
+      {
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
-          editable_until: '2023-08-24T15:07:58.000Z',
+          editable_until: '2023-08-24T22:15:51.000Z',
         },
-      },
-      {
-        attachments: { media_keys: ['7_1694820333470027776'] },
+        author_id: '1415583046561054720',
+        edit_history_tweet_ids: ['1694820840250941554'],
+        possibly_sensitive: false,
+        reply_settings: 'everyone',
         text: "You'll need this artifact for your onchain journey.\n\nMade by Surreal Technology\nMinted on @BuildOnBase\n#OnchainSummer season\n\nCollect on Zora\nhttps://t.co/QPmKttgsKv https://t.co/60xEJBsTCw",
         entities: {
           annotations: [
@@ -1030,14 +992,6 @@ export const tweets = {
               probability: 0.4549,
               type: 'Place',
               normalized_text: 'Zora',
-            },
-          ],
-          mentions: [
-            {
-              start: 90,
-              end: 102,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
             },
           ],
           urls: [
@@ -1066,28 +1020,28 @@ export const tweets = {
             },
           ],
           hashtags: [{ start: 103, end: 117, tag: 'OnchainSummer' }],
+          mentions: [
+            {
+              start: 90,
+              end: 102,
+              username: 'BuildOnBase',
+              id: '1628067904083181570',
+            },
+          ],
         },
-        edit_history_tweet_ids: ['1694820840250941554'],
-        conversation_id: '1694820840250941554',
-        author_id: '1415583046561054720',
-        created_at: '2023-08-24T21:15:51.000Z',
+        lang: 'en',
         public_metrics: {
           retweet_count: 3,
-          reply_count: 3,
-          like_count: 21,
+          reply_count: 4,
+          like_count: 31,
           quote_count: 0,
-          bookmark_count: 0,
-          impression_count: 1003,
+          bookmark_count: 3,
+          impression_count: 2024,
         },
-        reply_settings: 'everyone',
         id: '1694820840250941554',
-        possibly_sensitive: false,
-        lang: 'en',
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-24T22:15:51.000Z',
-        },
+        created_at: '2023-08-24T21:15:51.000Z',
+        attachments: { media_keys: ['7_1694820333470027776'] },
+        conversation_id: '1694820840250941554',
       },
     ],
   },
