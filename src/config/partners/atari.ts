@@ -1,5 +1,4 @@
 import { Partner } from './types'
-import { unlimited } from '../test-contracts'
 import { CAMPAIGN_HOUR, CAMPAIGN_MINUTE } from '@/config/constants'
 import { MintType } from '@/components/MintDialog/types'
 
@@ -20,7 +19,13 @@ const atari: Partner = {
         'https://assets.onchainsummer.xyz/Atari Coinbase Image - Scott Asbury.png',
       creator: '0xe0B3ab982Bd971998991c7E5775C61C1aa6445b4',
       name: 'Atari Summer Camp',
-      description: `Nobody’s hotter than Atari this summer! We're throwing it back and bringing the heat with a collection that is hotter than your first console. We’ve hand crafted a digital collectible—The Summer Camp postcard—and 3 off-chain items (real physical merch)—a fanny pack (because pockets are so 2006), a raglan t-shirt (for when you need to flex without flexing), and a trucker hat (sun’s out, scores up).`,
+      description: `Nobody’s hotter than Atari this summer! We're throwing it back and bringing the heat with a collection that is hotter than your first console. We’ve hand crafted a digital collectible—The Summer Camp photograph—and 3 off-chain items (real physical merch)—a fanny pack (because pockets are so 2006), a raglan t-shirt (for when you need to flex without flexing), and a trucker hat (sun’s out, scores up).
+
+After minting the fanny pack, shirt, or hat --> head over to our store [https://atari.com/collections/onchain-summer](https://atari.com/collections/onchain-summer) to redeem your physical items*.
+
+Collect all four to get a special easter egg later this year.
+
+*Shipping not included, must redeem before September 8th, 2023.`,
       address: '0xF47A95bf421c2349de30A465a0d54F95ee79920B',
       crossMintClientId: '5f0d1e9a-7ee6-411f-81ec-1bf73485e9f0',
       mintType: MintType.ThirdWeb,
@@ -28,20 +33,6 @@ const atari: Partner = {
       startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.001972',
-    },
-    {
-      image:
-        'https://assets.onchainsummer.xyz/C - Camp Raglan Shirt - Scott Asbury.png',
-      creator: '0xe0B3ab982Bd971998991c7E5775C61C1aa6445b4',
-      name: 'Atari Camp Raglan Shirt',
-      description: `Raglan tee inspired by camp days where high scores met sunscreen; a nod to joystick-era wins.`,
-      address: '0x71B8d8E3c6636656e1344D393811C3E8033f013d',
-      crossMintClientId: 'bfbf9d40-6f17-494c-89ed-cf91fa3ecb27',
-      mintType: MintType.ThirdWeb,
-      type: 'erc-721',
-      startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.01972',
     },
     {
       image:
@@ -56,6 +47,28 @@ const atari: Partner = {
       startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01972',
+      interactWithNFTLink: {
+        url: 'https://atari.com/collections/onchain-summer/',
+        label: 'Redeem Your Merch',
+      },
+    },
+    {
+      image:
+        'https://assets.onchainsummer.xyz/C - Camp Raglan Shirt - Scott Asbury.png',
+      creator: '0xe0B3ab982Bd971998991c7E5775C61C1aa6445b4',
+      name: 'Atari Camp Raglan Shirt',
+      description: `Raglan tee inspired by camp days where high scores met sunscreen; a nod to joystick-era wins.`,
+      address: '0x71B8d8E3c6636656e1344D393811C3E8033f013d',
+      crossMintClientId: 'bfbf9d40-6f17-494c-89ed-cf91fa3ecb27',
+      mintType: MintType.ThirdWeb,
+      type: 'erc-721',
+      startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      price: '0.01972',
+      interactWithNFTLink: {
+        url: 'https://atari.com/collections/onchain-summer/',
+        label: 'Redeem Your Merch',
+      },
     },
     {
       image:
@@ -70,6 +83,10 @@ const atari: Partner = {
       startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01972',
+      interactWithNFTLink: {
+        url: 'https://atari.com/collections/onchain-summer/',
+        label: 'Redeem Your Merch',
+      },
     },
   ],
 }
