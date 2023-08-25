@@ -20,7 +20,8 @@ const atari: Partner = {
       creator: '0xe0B3ab982Bd971998991c7E5775C61C1aa6445b4',
       name: 'Atari Summer Camp',
       description: `Nobody’s hotter than Atari this summer! We're throwing it back and bringing the heat with a collection that is hotter than your first console. We’ve hand crafted a digital collectible—The Summer Camp photograph—and 3 off-chain items (real physical merch)—a fanny pack (because pockets are so 2006), a raglan t-shirt (for when you need to flex without flexing), and a trucker hat (sun’s out, scores up).
-After minting the fanny pack, shirt, or hat --> head over to shop.atar.club to redeem your physical items*.
+
+After minting the fanny pack, shirt, or hat --> head over to our (store)[https://atari.com/collections/onchain-summer] to redeem your physical items*.
 
 Collect all four to get a special easter egg later this year.
 
