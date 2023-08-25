@@ -29,7 +29,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
    iii. Download your Citizen’s 3D file\n
 3. Redeem a custom Rainbow App icon and other 🌈 surprises  🤫`,
       address: '0xDF383E2Be6943018B7a31C59b446bC3FEED64D1B',
-      crossMintClientId: 'c936df08-17e8-4f03-a843-277ed1618d67',
+      crossMintClientId: '47948b70-3465-4aaf-901d-bc2f63f05c38',
       mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
