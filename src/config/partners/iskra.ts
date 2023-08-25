@@ -11,7 +11,7 @@ const iskra: Partner = {
   brandColor: '#007aff',
   icon: '/partners/iskra/icon.png',
   banner: '/partners/iskra/banner-icon.svg',
-  aarweaveDigest: 'UljUffgdatOSkox9nGIt8WbCm-8ZZ5ih049Yc0u-LuE',
+  aarweaveDigest: 'y5GT95QKZOpUEnZ81Jbio_HeYncJaavHpPvrUE2OI_k',
   twitter: '@iskra_world',
   drops: [
     {
