@@ -4,7 +4,7 @@ import { MintType } from '@/components/MintDialog/types'
 
 const oak: Partner = {
   slug: 'oak',
-  name: 'Oak',
+  name: 'OAK',
   url: 'https://oak.tech/',
   description:
     'Support OAK, the first onchain local community currency in the United States.',
@@ -26,7 +26,7 @@ For our Onchain Summer collection OAK has teamed up with and will be splitting m
 
 Brandon currently works on a research team in the area of Computational Photography at Google pushing the capabilities of machine learning and traditional photography, and is a contributor for publications such as Rolling Stone, New York Times, and the SF Chronicle.
 
-Onchain Summer collectors will receive tiered perks such as exclusive updates, 1:1 calls, and a one-time future gift of OAK at an IRL even`,
+Onchain Summer collectors will receive tiered perks such as exclusive updates, 1:1 calls, and a one-time future gift of OAK at an IRL event.`,
       address: '0xc3Fa844b08498fC172B3637CBbBdC3476d55B063',
       crossMintClientId: 'f6a26988-1349-4e74-9848-38dd2fe04627',
       mintType: MintType.ThirdWeb,
@@ -40,7 +40,7 @@ Onchain Summer collectors will receive tiered perks such as exclusive updates, 1
         'https://assets.onchainsummer.xyz/Final_art-thousandcurrencies.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: One Thousand Local Currencies',
-      description: `OAK is an onchain local currency in Oakland, California. Mint & support the onchain local currency effort`,
+      description: `OAK is an onchain local currency in Oakland, California. Mint & support the onchain local currency effort.`,
       address: '0x19cb646bC7d7d23Ba23F4A4CBeFd0aC071A733AB',
       crossMintClientId: '725aff28-ff86-4a3b-b36e-4bc333a52aae',
       mintType: MintType.ThirdWeb,
@@ -53,7 +53,7 @@ Onchain Summer collectors will receive tiered perks such as exclusive updates, 1
       image: 'https://assets.onchainsummer.xyz/FINAL_ART-onchaincities.png',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: Onchain Cities Champion',
-      description: `Mint for invitations to exclusive webinars, chats, and reports as we build an onchain economy in Oakland.`,
+      description: `Mint for invitations to exclusive webinars and reports, as well as a future in-person gift of 50 OA.`,
       address: '0x2642A271F700387FCe74d658A3138987c2FF7aCD',
       crossMintClientId: 'b8d4f833-6d69-470c-a640-5b89ecc5ddca',
       mintType: MintType.ThirdWeb,
@@ -67,7 +67,7 @@ Onchain Summer collectors will receive tiered perks such as exclusive updates, 1
         'https://assets.onchainsummer.xyz/Final_art-thousandcurrencies.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: Onchain Cities Crusader',
-      description: `Mint for access to 1:1 calls with the OAK team, exclusive reports, and a future in-person gift of 50 OA
+      description: `Mint for access to 1:1 calls with the OAK team, exclusive reports, and a future in-person gift of 50 OA.
     `,
       address: '0x7fdfeE11045e3575398F6a278008d9B7B2097316',
       crossMintClientId: 'ff0d88fd-7f43-46a7-9014-eda1a3f3f635',
