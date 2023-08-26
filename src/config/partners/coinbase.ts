@@ -31,11 +31,11 @@ const base: Partner = {
       buttonText: 'Claim on Coinbase',
     },
     {
-      image: '/partners/coinbase/drop/drop-1.gif',
+      image: '/partners/coinbase/drop/drop-2.gif',
       creator: '0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3',
       name: 'Coinbase Wallet',
       description:
-        'Join the Based Challenge in Coinbase Wallet. Claim your free collectible, then watch it evolve as you mint more on Base during Onchain Summer. CLAIM NOW',
+        'Join the Based Challenge in Coinbase Wallet. Claim your free collectible, then watch it evolve as you mint.',
       type: 'external',
       startDate: Date.UTC(2023, 7, 8, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
