@@ -41,7 +41,7 @@ export const communityData: CommunityData[] = [
     grantValue: 5,
     grantsAvailable: 5,
     startDate: new Date('2021-08-12').getTime(),
-    endDate: new Date('2021-08-28').getTime(),
+    endDate: new Date('2021-08-27').getTime(),
     image: BuildOnBase,
   },
   {
@@ -67,7 +67,7 @@ export const communityData: CommunityData[] = [
     grantValue: 5,
     grantsAvailable: 5,
     startDate: new Date('2021-08-14').getTime(),
-    endDate: new Date('2021-09-14').getTime(),
+    endDate: new Date('2021-09-13').getTime(),
     image: BasedAccounts,
   },
 ]
