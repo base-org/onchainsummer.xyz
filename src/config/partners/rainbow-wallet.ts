@@ -35,6 +35,10 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
       startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 30, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01 ETH',
+      interactWithNFTLink: {
+        url: 'https://adworld.game/create',
+        label: 'Customize Your Citizen',
+      },
     },
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-CharacterCreator.gif',

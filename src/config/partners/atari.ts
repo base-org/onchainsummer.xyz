@@ -11,7 +11,7 @@ const atari: Partner = {
   brandColor: 'rgb(209,66,65)',
   icon: '/partners/atari/icon.png',
   banner: '/partners/atari/banner-icon.svg',
-  aarweaveDigest: 'UD3mCdsfAiOoTqpuccjP13MusI9abvqqQn4gbKpqa24',
+  aarweaveDigest: 'N-zdPR5w0qhkgOFi9WJBDEnM2WzD4xfSHjF40i4qvq4',
   twitter: '@atari',
   drops: [
     {
