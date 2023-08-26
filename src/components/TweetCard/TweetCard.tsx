@@ -71,11 +71,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
                 <p {...props} className="mb-3 inline-block" />
               ),
               a: ({ node, ...props }) => (
-                <a
-                  {...props}
-                  className="text-ocs-blue"
-                  target="_blank inline-block"
-                />
+                <a {...props} className="text-ocs-blue" target="_blank" />
               ),
             }}
           >
