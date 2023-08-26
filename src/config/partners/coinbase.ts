@@ -27,16 +27,15 @@ const base: Partner = {
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
-      externalLink:
-        'https://www.coinbase.com/crypto-rundown?id=6bLoUyNhHHQtACOM7k7Nu2&index=1',
+      externalLink: 'http://coinbase.com/crypto-rundown?index=1',
       buttonText: 'Claim on Coinbase',
     },
     {
-      image: '/partners/coinbase/drop/drop-1.gif',
+      image: '/partners/coinbase/drop/drop-2.gif',
       creator: '0x97b4AfF7aa20C3136c9D3c52d3b3Bfb103Dc48c3',
       name: 'Coinbase Wallet',
       description:
-        'Use your Coinbase or Coinbase Wallet app each week during Onchain Summer to collect a free, limited drop.',
+        'Join the Based Challenge in Coinbase Wallet. Claim your free collectible, then watch it evolve as you mint.',
       type: 'external',
       startDate: Date.UTC(2023, 7, 8, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
@@ -45,7 +44,7 @@ const base: Partner = {
       mintType: MintType.External,
       crossMintClientId: '',
       buttonText: 'Claim on Coinbase Wallet',
-      externalLink: 'https://go.cb-w.com/buyAndMint',
+      externalLink: 'https://go.cb-w.com/onchain-summer-subscribe',
     },
     {
       image: '/partners/coinbase/drop/drop-3.gif',
