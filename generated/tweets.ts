@@ -1,93 +1,54 @@
 export const tweets = {
   data: [
     {
+      attachments: { media_keys: ['3_1694870160933543936'] },
+      conversation_id: '1694880415318954358',
+      possibly_sensitive: false,
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: true,
+        editable_until: '2023-08-25T02:12:35.000Z',
+      },
+      author_id: '1635284454003597314',
+      lang: 'en',
+      text: 'You can now send photos to your key holders. Say cheese😁 https://t.co/pzu7xNuvxm',
       reply_settings: 'everyone',
+      edit_history_tweet_ids: ['1694880415318954358'],
       entities: {
-        mentions: [
-          {
-            start: 246,
-            end: 258,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
-          },
-          {
-            start: 259,
-            end: 272,
-            username: 'nounsbuilder',
-            id: '1533989227855331328',
-          },
-        ],
-        annotations: [
-          {
-            start: 11,
-            end: 13,
-            probability: 0.7118,
-            type: 'Other',
-            normalized_text: 'DAO',
-          },
-          {
-            start: 62,
-            end: 64,
-            probability: 0.5274,
-            type: 'Other',
-            normalized_text: 'DAO',
-          },
-          {
-            start: 76,
-            end: 87,
-            probability: 0.8216,
-            type: 'Other',
-            normalized_text: 'BASED MINGOS',
-          },
-        ],
         urls: [
           {
-            start: 217,
-            end: 240,
-            url: 'https://t.co/UdFzVmLTDl',
-            expanded_url: 'https://paragraph.xyz/@nounishprof/basedmingos',
-            display_url: 'paragraph.xyz/@nounishprof/b…',
-            images: [
-              {
-                url: 'https://pbs.twimg.com/news_img/1694692995545640960/YWMYzy9t?format=jpg&name=orig',
-                width: 640,
-                height: 372,
-              },
-              {
-                url: 'https://pbs.twimg.com/news_img/1694692995545640960/YWMYzy9t?format=jpg&name=150x150',
-                width: 150,
-                height: 150,
-              },
-            ],
-            status: 200,
-            title: 'L2s are Based',
-            description:
-              'I set up a new experimental DAO on Base yesterday – BASED MINGOS – and had a true realization of the power of L2s. And it’s a game changer.',
-            unwound_url: 'https://paragraph.xyz/@nounishprof/basedmingos',
-          },
-          {
-            start: 273,
-            end: 296,
-            url: 'https://t.co/TVfmyiETop',
+            start: 57,
+            end: 80,
+            url: 'https://t.co/pzu7xNuvxm',
             expanded_url:
-              'https://twitter.com/i/web/status/1694692951106912407',
-            display_url: 'twitter.com/i/web/status/1…',
-          },
-          {
-            start: 297,
-            end: 320,
-            url: 'https://t.co/1ws61phOif',
-            expanded_url:
-              'https://twitter.com/ProfWerder/status/1694692951106912407/photo/1',
-            display_url: 'pic.twitter.com/1ws61phOif',
-            media_key: '3_1694692117514240000',
+              'https://twitter.com/friendtech/status/1694880415318954358/photo/1',
+            display_url: 'pic.twitter.com/pzu7xNuvxm',
+            media_key: '3_1694870160933543936',
           },
         ],
       },
-      created_at: '2023-08-24T12:47:40.000Z',
-      author_id: '3402992873',
-      lang: 'en',
+      id: '1694880415318954358',
+      created_at: '2023-08-25T01:12:35.000Z',
+      public_metrics: {
+        retweet_count: 468,
+        reply_count: 848,
+        like_count: 2947,
+        quote_count: 452,
+        bookmark_count: 32,
+        impression_count: 1038536,
+      },
+    },
+    {
       context_annotations: [
+        {
+          domain: {
+            id: '30',
+            name: 'Entities [Entity Service]',
+            description:
+              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+          },
+          entity: { id: '781974596794716162', name: 'Financial services' },
+        },
         {
           domain: {
             id: '46',
@@ -104,51 +65,23 @@ export const tweets = {
         },
         {
           domain: {
-            id: '46',
-            name: 'Business Taxonomy',
-            description:
-              'Categories within Brand Verticals that narrow down the scope of Brands',
+            id: '47',
+            name: 'Brand',
+            description: 'Brands and Companies',
           },
-          entity: {
-            id: '1557697333571112960',
-            name: 'Technology Business',
-            description:
-              'Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares',
-          },
+          entity: { id: '1370436971940642819', name: 'Coinbase' },
         },
         {
           domain: {
-            id: '65',
-            name: 'Interests and Hobbies Vertical',
+            id: '66',
+            name: 'Interests and Hobbies Category',
             description:
-              'Top level interests and hobbies groupings, like Food or Travel',
-          },
-          entity: { id: '781974596148793345', name: 'Business & finance' },
-        },
-        {
-          domain: {
-            id: '30',
-            name: 'Entities [Entity Service]',
-            description:
-              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+              'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
           },
           entity: {
-            id: '857879456773357569',
-            name: 'Technology',
-            description: 'Technology',
-          },
-        },
-        {
-          domain: {
-            id: '30',
-            name: 'Entities [Entity Service]',
-            description:
-              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
-          },
-          entity: {
-            id: '1001503516555337728',
-            name: 'Blockchain',
-            description: 'Blockchain',
+            id: '913142676819648512',
+            name: 'Cryptocurrencies',
+            description: 'Cryptocurrency',
           },
         },
         {
@@ -157,7 +90,54 @@ export const tweets = {
             name: 'Unified Twitter Taxonomy',
             description: 'A taxonomy of user interests. ',
           },
-          entity: { id: '1461476432551366659', name: 'DAOs' },
+          entity: { id: '781974596148793345', name: 'Business & finance' },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: { id: '781974596794716162', name: 'Financial services' },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: {
+            id: '913142676819648512',
+            name: 'Cryptocurrencies',
+            description: 'Cryptocurrency',
+          },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: { id: '1370436971940642819', name: 'Coinbase' },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: {
+            id: '1390680741206368263',
+            name: 'Cryptocurrency exchanges',
+          },
+        },
+        {
+          domain: {
+            id: '131',
+            name: 'Unified Twitter Taxonomy',
+            description: 'A taxonomy of user interests. ',
+          },
+          entity: { id: '1491481998862348291', name: 'Digital asset industry' },
         },
         {
           domain: {
@@ -171,76 +151,69 @@ export const tweets = {
             description: 'Cryptocurrency',
           },
         },
-        {
-          domain: {
-            id: '165',
-            name: 'Technology',
-            description:
-              'for individual and types of technology, e.g., food technology, 3D printing',
-          },
-          entity: {
-            id: '848920371311001600',
-            name: 'Technology',
-            description: 'Technology and computing',
-          },
-        },
       ],
+      attachments: { media_keys: ['3_1695131856352710659'] },
+      conversation_id: '1695132114638053779',
+      possibly_sensitive: false,
       edit_controls: {
         edits_remaining: 5,
         is_edit_eligible: true,
-        editable_until: '2023-08-24T13:47:40.000Z',
+        editable_until: '2023-08-25T18:52:44.000Z',
       },
-      edit_history_tweet_ids: ['1694692951106912407'],
-      conversation_id: '1694692951106912407',
-      text: 'During the DAO workshop yesterday, I launched an experimental DAO on Base – BASED MINGOS – and had a true realization of the power of L2s. And it’s a game changer for me and anyone in higher ed teaching blockchain. \n\nhttps://t.co/UdFzVmLTDl\n\ncc: @BuildOnBase @nounsbuilder https://t.co/TVfmyiETop https://t.co/1ws61phOif',
-      id: '1694692951106912407',
-      possibly_sensitive: false,
-      public_metrics: {
-        retweet_count: 6,
-        reply_count: 6,
-        like_count: 24,
-        quote_count: 1,
-        bookmark_count: 1,
-        impression_count: 1672,
-      },
-      attachments: { media_keys: ['3_1694692117514240000'] },
-    },
-    {
+      author_id: '574032254',
+      lang: 'en',
+      text: "ᴏɴᴄʜᴀɪɴ 🟡 ꜱᴜᴍᴍᴇʀ\n\nWhether you're going onchain or going outside, Onchain Summer is the vibe. https://t.co/spVmjg3Q4S https://t.co/FTI8RBoVyI",
       reply_settings: 'everyone',
+      edit_history_tweet_ids: ['1695132114638053779'],
       entities: {
-        mentions: [
-          {
-            start: 234,
-            end: 246,
-            username: 'BuildOnBase',
-            id: '1628067904083181570',
-          },
-        ],
-        annotations: [
-          {
-            start: 252,
-            end: 264,
-            probability: 0.4987,
-            type: 'Other',
-            normalized_text: 'OnchainSummer',
-          },
-        ],
-        hashtags: [{ start: 251, end: 265, tag: 'OnchainSummer' }],
         urls: [
           {
-            start: 281,
-            end: 304,
-            url: 'https://t.co/qHFp2uTbIg',
+            start: 93,
+            end: 116,
+            url: 'https://t.co/spVmjg3Q4S',
+            expanded_url: 'http://onchainsummer.xyz',
+            display_url: 'onchainsummer.xyz',
+            images: [
+              {
+                url: 'https://pbs.twimg.com/news_img/1694710183824351232/4sKaxoJ8?format=png&name=orig',
+                width: 3840,
+                height: 2160,
+              },
+              {
+                url: 'https://pbs.twimg.com/news_img/1694710183824351232/4sKaxoJ8?format=png&name=150x150',
+                width: 150,
+                height: 150,
+              },
+            ],
+            status: 200,
+            title: 'Onchain Summer',
+            description:
+              'Get onchain this summer to join a multi-week celebration of art, culture, gaming, community, and more. New mints happening daily August 9th - 31st. Base is open for everyone; come bask in the Onchain Summer sun.',
+            unwound_url: 'https://onchainsummer.xyz/',
+          },
+          {
+            start: 117,
+            end: 140,
+            url: 'https://t.co/FTI8RBoVyI',
             expanded_url:
-              'https://twitter.com/promatheus_/status/1695168981999509603/photo/1',
-            display_url: 'pic.twitter.com/qHFp2uTbIg',
-            media_key: '3_1695167864586563584',
+              'https://twitter.com/coinbase/status/1695132114638053779/photo/1',
+            display_url: 'pic.twitter.com/FTI8RBoVyI',
+            media_key: '3_1695131856352710659',
           },
         ],
       },
-      created_at: '2023-08-25T20:19:14.000Z',
-      author_id: '1069567489342885889',
-      lang: 'en',
+      id: '1695132114638053779',
+      created_at: '2023-08-25T17:52:44.000Z',
+      public_metrics: {
+        retweet_count: 47,
+        reply_count: 85,
+        like_count: 224,
+        quote_count: 2,
+        bookmark_count: 3,
+        impression_count: 72951,
+      },
+    },
+    {
       context_annotations: [
         {
           domain: {
@@ -250,194 +223,311 @@ export const tweets = {
               'Categories within Brand Verticals that narrow down the scope of Brands',
           },
           entity: {
-            id: '1557696848252391426',
-            name: 'Financial Services Business',
+            id: '1557696802391859201',
+            name: 'Entertainment & Leisure Business',
             description:
-              'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+              'Brands, companies, advertisers and every non-person handle with the profit intent related to movies, music, television, franchises, venues, theme parks, toys, tourism, hotels',
           },
         },
         {
           domain: {
-            id: '30',
-            name: 'Entities [Entity Service]',
-            description:
-              'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            id: '47',
+            name: 'Brand',
+            description: 'Brands and Companies',
           },
-          entity: {
-            id: '1007361429752594432',
-            name: 'Ethereum cryptocurrency',
-            description: 'Ethereum Cryptocurrency',
-          },
-        },
-        {
-          domain: {
-            id: '131',
-            name: 'Unified Twitter Taxonomy',
-            description: 'A taxonomy of user interests. ',
-          },
-          entity: {
-            id: '1007361429752594432',
-            name: 'Ethereum cryptocurrency',
-            description: 'Ethereum Cryptocurrency',
-          },
+          entity: { id: '10045225402', name: 'Twitter' },
         },
       ],
-      edit_controls: {
-        edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-08-25T21:19:14.000Z',
-      },
-      edit_history_tweet_ids: ['1695168981999509603'],
-      conversation_id: '1695168981999509603',
-      text: 'What Onchain Means For You...?  \n\nShare (onchain) what onchain means for you. Show everyone what you think and expect from this new era and this new narrative chapter in crypto.  \n\nSvg fully onchain\n14 days mint window \n0.007 ETH \non @BuildOnBase for #OnchainSummer \n\n(link below) https://t.co/qHFp2uTbIg',
-      id: '1695168981999509603',
-      possibly_sensitive: false,
-      public_metrics: {
-        retweet_count: 0,
-        reply_count: 2,
-        like_count: 1,
-        quote_count: 1,
-        bookmark_count: 0,
-        impression_count: 93,
-      },
-      attachments: { media_keys: ['3_1695167864586563584'] },
-    },
-    {
-      reply_settings: 'everyone',
-      created_at: '2023-08-25T11:01:47.000Z',
-      in_reply_to_user_id: '54483412',
-      author_id: '54483412',
-      lang: 'en',
-      edit_controls: {
-        edits_remaining: 5,
-        is_edit_eligible: false,
-        editable_until: '2023-08-25T12:01:47.000Z',
-      },
-      edit_history_tweet_ids: ['1695028695671464011'],
-      conversation_id: '1695028691116421266',
+      attachments: { media_keys: ['13_1691842228556271616'] },
+      conversation_id: '1691842446802682314',
       entities: {
-        hashtags: [{ start: 146, end: 160, tag: 'OnChainSummer' }],
-        urls: [
+        mentions: [
           {
-            start: 53,
-            end: 76,
-            url: 'https://t.co/ZSd5km0BiP',
-            expanded_url:
-              'https://zora.co/collect/base:0x5d1aff9c5c879e7878252957478343598f5fc078/5/',
-            display_url: 'zora.co/collect/base:0…',
-            status: 200,
-            title: 'We Are Optimistic this Summer',
-            description:
-              '🔴 Created from the ENS of all who mint. 🟡🔵 Summer Ed. of We Are Optimistic. Celebrating Base built on Optimism. 🔴 Original We Are Optimistic https://zora.co/collect/oeth:0xde88fd0e139e276f5c766025fda90ed11fc9b22d/1 Part of the We Are the Art series and Onchainsummer Minters ENS will be updated manually by the artist Best viewed on Desktop Click to zoom',
-            unwound_url:
-              'https://zora.co/collect/base:0x5d1aff9c5c879e7878252957478343598f5fc078/5',
+            start: 106,
+            end: 114,
+            username: 'ourZORA',
+            id: '1168028988091985920',
           },
           {
-            start: 184,
-            end: 207,
-            url: 'https://t.co/PCMjaYRAeb',
+            start: 128,
+            end: 140,
+            username: 'BuildOnBase',
+            id: '1628067904083181570',
+          },
+          { start: 230, end: 239, username: 'gregnwmn', id: '250804556' },
+          { start: 246, end: 260, username: 'JosiahTheGift', id: '162433369' },
+        ],
+        hashtags: [{ start: 141, end: 155, tag: 'OnChainSummer' }],
+        urls: [
+          {
+            start: 284,
+            end: 307,
+            url: 'https://t.co/UxGTdsRIJ6',
             expanded_url:
-              'https://twitter.com/ChrisCoCreated/status/1695028695671464011/photo/1',
-            display_url: 'pic.twitter.com/PCMjaYRAeb',
-            media_key: '16_1694983821593051136',
+              'https://twitter.com/i/web/status/1691842446802682314',
+            display_url: 'twitter.com/i/web/status/1…',
+          },
+          {
+            start: 308,
+            end: 331,
+            url: 'https://t.co/VvdWGHdHaO',
+            expanded_url:
+              'https://twitter.com/ArtByJah/status/1691842446802682314/video/1',
+            display_url: 'pic.twitter.com/VvdWGHdHaO',
+            media_key: '13_1691842228556271616',
+          },
+        ],
+        annotations: [
+          {
+            start: 53,
+            end: 78,
+            probability: 0.8848,
+            type: 'Other',
+            normalized_text: 'Helmet City: Mecha Gardens',
           },
         ],
       },
-      text: '🟡Optimistic this Summer -&gt; Free + fees mint here: https://t.co/ZSd5km0BiP\n\neveryone who mints will be added to the piece\n\nminting on Base 🔵\n\n🟡 #OnChainSummer\n\nOG Optimism version 👆 https://t.co/PCMjaYRAeb',
-      referenced_tweets: [{ type: 'replied_to', id: '1695028693901455619' }],
-      id: '1695028695671464011',
       possibly_sensitive: false,
-      public_metrics: {
-        retweet_count: 0,
-        reply_count: 1,
-        like_count: 3,
-        quote_count: 0,
-        bookmark_count: 0,
-        impression_count: 43,
+      edit_controls: {
+        edits_remaining: 5,
+        is_edit_eligible: false,
+        editable_until: '2023-08-16T17:00:46.000Z',
       },
-      attachments: { media_keys: ['16_1694983821593051136'] },
+      author_id: '2843574891',
+      lang: 'en',
+      text: 'YERR! The teaser trailer for my upcoming short film,“Helmet City: Mecha Gardens”is available FOR FREE, on @ourZORA as a part of @BuildOnBase #OnChainSummer ( Link in the next tweet)\n\nStory, prompts, and Narration by me.\n\nMusic by @gregnwmn &amp; @JosiahTheGift \n\nImages generated on… https://t.co/UxGTdsRIJ6 https://t.co/VvdWGHdHaO',
+      reply_settings: 'everyone',
+      edit_history_tweet_ids: ['1691842446802682314'],
+      id: '1691842446802682314',
+      created_at: '2023-08-16T16:00:46.000Z',
+      public_metrics: {
+        retweet_count: 73,
+        reply_count: 41,
+        like_count: 174,
+        quote_count: 23,
+        bookmark_count: 16,
+        impression_count: 27247,
+      },
     },
   ],
   includes: {
     media: [
       {
-        media_key: '3_1694692117514240000',
-        url: 'https://pbs.twimg.com/media/F4TBgIQXQAAmqvq.png',
-        width: 600,
+        width: 1200,
+        media_key: '3_1694870160933543936',
+        height: 675,
+        url: 'https://pbs.twimg.com/media/F4VjbnraYAA4_pI.jpg',
         type: 'photo',
-        height: 600,
       },
       {
-        media_key: '3_1695167864586563584',
-        url: 'https://pbs.twimg.com/media/F4ZyMQNW8AADq9J.png',
-        width: 478,
+        width: 4096,
+        media_key: '3_1695131856352710659',
+        height: 2304,
+        url: 'https://pbs.twimg.com/media/F4ZRcTFaEAMx9Lg.jpg',
         type: 'photo',
-        height: 608,
       },
       {
-        media_key: '16_1694983821593051136',
-        width: 400,
-        type: 'animated_gif',
+        public_metrics: { view_count: 3355 },
+        duration_ms: 61833,
+        width: 1536,
+        media_key: '13_1691842228556271616',
+        height: 896,
         preview_image_url:
-          'https://pbs.twimg.com/tweet_video_thumb/F4XKzioWgAAv2CH.jpg',
+          'https://pbs.twimg.com/amplify_video_thumb/1691842228556271616/img/zzWfjA-mL9SBgYe_.jpg',
+        type: 'video',
         variants: [
           {
-            bit_rate: 0,
+            bit_rate: 288000,
             content_type: 'video/mp4',
-            url: 'https://video.twimg.com/tweet_video/F4XKzioWgAAv2CH.mp4',
+            url: 'https://video.twimg.com/amplify_video/1691842228556271616/vid/462x270/QIdGRVjAhUEsbWMj.mp4?tag=14',
+          },
+          {
+            content_type: 'application/x-mpegURL',
+            url: 'https://video.twimg.com/amplify_video/1691842228556271616/pl/dUaYcUPc06Y5apvs.m3u8?tag=14&container=fmp4&v=52f',
+          },
+          {
+            bit_rate: 832000,
+            content_type: 'video/mp4',
+            url: 'https://video.twimg.com/amplify_video/1691842228556271616/vid/616x360/bp1ExZUjL_0RcY4M.mp4?tag=14',
+          },
+          {
+            bit_rate: 2176000,
+            content_type: 'video/mp4',
+            url: 'https://video.twimg.com/amplify_video/1691842228556271616/vid/1234x720/imxKXXfVBI4eCOn5.mp4?tag=14',
           },
         ],
-        height: 400,
       },
     ],
     users: [
       {
+        username: 'friendtech',
+        public_metrics: {
+          followers_count: 112002,
+          following_count: 286,
+          tweet_count: 184,
+          listed_count: 310,
+        },
+        verified: true,
+        verified_type: 'blue',
+        url: 'https://t.co/hlfoTWKTjO',
+        name: 'friend.tech',
+        protected: false,
+        created_at: '2023-03-13T14:19:54.000Z',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1678058640274763777/suWn898y_normal.jpg',
+        pinned_tweet_id: '1691944617841938756',
+        description: 'Your network is your net worth. Coming soon!',
+        id: '1635284454003597314',
         entities: {
           url: {
             urls: [
               {
                 start: 0,
                 end: 23,
-                url: 'https://t.co/XdT1po4tH3',
-                expanded_url: 'https://paragraph.xyz/@nounishprof',
-                display_url: 'paragraph.xyz/@nounishprof',
+                url: 'https://t.co/hlfoTWKTjO',
+                expanded_url: 'https://friend.tech',
+                display_url: 'friend.tech',
+              },
+            ],
+          },
+        },
+      },
+      {
+        username: 'coinbase',
+        public_metrics: {
+          followers_count: 5862537,
+          following_count: 29,
+          tweet_count: 5264,
+          listed_count: 24695,
+        },
+        verified: true,
+        verified_type: 'business',
+        url: 'https://t.co/O1gzmT4HCi',
+        name: 'Coinbase 🛡️',
+        protected: false,
+        created_at: '2012-05-07T23:06:31.000Z',
+        location: 'Remote First',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1484586799921909764/A9yYenz3_normal.png',
+        pinned_tweet_id: '1687087044579966976',
+        description:
+          'The most trusted crypto exchange.\n\nFor support ➡️ @CoinbaseSupport',
+        id: '574032254',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/O1gzmT4HCi',
+                expanded_url: 'https://coinbase.com',
+                display_url: 'coinbase.com',
               },
             ],
           },
           description: {
+            mentions: [{ start: 50, end: 66, username: 'CoinbaseSupport' }],
+          },
+        },
+      },
+      {
+        username: 'ArtByJah',
+        public_metrics: {
+          followers_count: 8230,
+          following_count: 2798,
+          tweet_count: 15140,
+          listed_count: 125,
+        },
+        verified: true,
+        verified_type: 'blue',
+        url: 'https://t.co/2n7fec7SuX',
+        name: 'Jah.',
+        protected: false,
+        created_at: '2014-10-25T12:26:17.000Z',
+        location: 'Lytehaus',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1620833842595786754/nQii_165_normal.jpg',
+        pinned_tweet_id: '1691842446802682314',
+        description:
+          'Filmmaker. Visual Artist. Storyteller. || Content Lead @zoratopia. || @timepieces artist, @wildxyz season 2, @feralfile #Lytehaus forever',
+        id: '2843574891',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/2n7fec7SuX',
+                expanded_url: 'https://linktr.ee/Jahmelr',
+                display_url: 'linktr.ee/Jahmelr',
+              },
+            ],
+          },
+          description: {
+            hashtags: [{ start: 120, end: 129, tag: 'Lytehaus' }],
             mentions: [
-              { start: 12, end: 17, username: 'fgcu' },
-              { start: 54, end: 62, username: 'nouncil' },
-              { start: 63, end: 73, username: 'uglynouns' },
-              { start: 74, end: 85, username: 'FloriNouns' },
-              { start: 86, end: 100, username: 'nounishmingos' },
-              { start: 103, end: 114, username: 'timepieces' },
-              { start: 134, end: 148, username: 'realgood_news' },
+              { start: 55, end: 65, username: 'zoratopia' },
+              { start: 70, end: 81, username: 'timepieces' },
+              { start: 90, end: 98, username: 'wildxyz' },
+              { start: 109, end: 119, username: 'feralfile' },
             ],
           },
         },
-        name: 'thenounishprof.eth ᵍᵐ ⌐ⓝ°ⓒ profwerder.⌐◨-◨',
-        verified_type: 'blue',
-        id: '3402992873',
-        url: 'https://t.co/XdT1po4tH3',
-        location: 'Down the crypto 🐰 hole ',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1605898427673501698/jQAQY5cr_normal.jpg',
-        public_metrics: {
-          followers_count: 4360,
-          following_count: 4894,
-          tweet_count: 14518,
-          listed_count: 42,
-        },
-        description:
-          '🎓Instructor @fgcu teaching Blockchain, NFTs, DAOs⌐◨-◨ @nouncil @uglynouns @FloriNouns @nounishmingos🦩 ⏰@timepieces community council⏰ @realgood_news advisor',
-        verified: true,
-        pinned_tweet_id: '1694692951106912407',
-        protected: false,
-        username: 'ProfWerder',
-        created_at: '2015-08-04T17:21:38.000Z',
       },
       {
+        username: 'ourZORA',
+        public_metrics: {
+          followers_count: 132940,
+          following_count: 1041,
+          tweet_count: 5345,
+          listed_count: 1483,
+        },
+        verified: true,
+        verified_type: 'business',
+        url: 'https://t.co/Vx66LlIe0G',
+        name: 'Zora',
+        protected: false,
+        created_at: '2019-09-01T05:14:44.000Z',
+        location: 'Ethereum+',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1687148532527251456/l9l05oJg_normal.jpg',
+        pinned_tweet_id: '1687146881791791104',
+        description: 'Imagine. Mint. Enjoy.',
+        id: '1168028988091985920',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/Vx66LlIe0G',
+                expanded_url: 'http://zora.co',
+                display_url: 'zora.co',
+              },
+            ],
+          },
+        },
+      },
+      {
+        username: 'BuildOnBase',
+        public_metrics: {
+          followers_count: 440156,
+          following_count: 27,
+          tweet_count: 643,
+          listed_count: 1263,
+        },
+        verified: true,
+        verified_type: 'business',
+        url: 'https://t.co/6pgVoBTD5h',
+        name: 'Base 🛡️',
+        protected: false,
+        created_at: '2023-02-21T16:26:04.000Z',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
+        pinned_tweet_id: '1695104285141545268',
+        description:
+          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
+        id: '1628067904083181570',
         entities: {
           url: {
             urls: [
@@ -451,243 +541,146 @@ export const tweets = {
             ],
           },
         },
-        name: 'Base 🛡️',
-        verified_type: 'business',
-        id: '1628067904083181570',
-        url: 'https://t.co/6pgVoBTD5h',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1632431836096782338/W-9qsu1e_normal.jpg',
+      },
+      {
+        username: 'gregnwmn',
         public_metrics: {
-          followers_count: 440154,
-          following_count: 27,
-          tweet_count: 643,
-          listed_count: 1263,
+          followers_count: 1093,
+          following_count: 550,
+          tweet_count: 7315,
+          listed_count: 20,
         },
-        description:
-          'A new Ethereum L2, incubated by Coinbase and built on the open-source OP Stack. We have no plans to issue a new network token.',
         verified: true,
-        pinned_tweet_id: '1695104285141545268',
-        protected: false,
-        username: 'BuildOnBase',
-        created_at: '2023-02-21T16:26:04.000Z',
-      },
-      {
-        entities: {
-          url: {
-            urls: [
-              {
-                start: 0,
-                end: 23,
-                url: 'https://t.co/q1Q6iEEA9F',
-                expanded_url: 'http://nouns.build',
-                display_url: 'nouns.build',
-              },
-            ],
-          },
-          description: {
-            urls: [
-              {
-                start: 81,
-                end: 104,
-                url: 'https://t.co/AMFm9Coc7C',
-                expanded_url: 'https://github.com/ourzora/nouns-builder',
-                display_url: 'github.com/ourzora/nouns-…',
-              },
-            ],
-            mentions: [
-              { start: 48, end: 57, username: 'nounsdao' },
-              { start: 60, end: 68, username: 'ourzora' },
-            ],
-          },
-        },
-        name: 'Nouns Builder',
-        verified_type: 'none',
-        id: '1533989227855331328',
-        url: 'https://t.co/q1Q6iEEA9F',
-        location: 'Nouns Protocol',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1587230850483191808/nOt4mjKu_normal.jpg',
-        public_metrics: {
-          followers_count: 3775,
-          following_count: 39,
-          tweet_count: 608,
-          listed_count: 67,
-        },
-        description:
-          'Create your Nouns DAO. Public Infrastructure by @nounsdao & @ourzora Contribute: https://t.co/AMFm9Coc7C  ⌐◨-◨ ❘❙❚',
-        verified: false,
-        pinned_tweet_id: '1587460414488576000',
-        protected: false,
-        username: 'nounsbuilder',
-        created_at: '2022-06-07T01:48:54.000Z',
-      },
-      {
-        entities: {
-          description: {
-            urls: [
-              {
-                start: 77,
-                end: 100,
-                url: 'https://t.co/qeSe5neeQR',
-                expanded_url: 'http://bluenetraven.xyz',
-                display_url: 'bluenetraven.xyz',
-              },
-            ],
-          },
-        },
-        name: 'Matt',
-        verified_type: 'none',
-        id: '1069567489342885889',
-        location: 'universe',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1606298257231159302/3cTcU219_normal.jpg',
-        public_metrics: {
-          followers_count: 323,
-          following_count: 587,
-          tweet_count: 4129,
-          listed_count: 9,
-        },
-        description:
-          'dropped out and jumped for web3 | learning genart | programming | writing in https://t.co/qeSe5neeQR | overthinking',
-        verified: false,
-        pinned_tweet_id: '1681130801948131329',
-        protected: false,
-        username: 'promatheus_',
-        created_at: '2018-12-03T12:22:15.000Z',
-      },
-      {
-        entities: {
-          url: {
-            urls: [
-              {
-                start: 0,
-                end: 23,
-                url: 'https://t.co/xqywkYeWMY',
-                expanded_url: 'https://chriscocreated.xyz',
-                display_url: 'chriscocreated.xyz',
-              },
-            ],
-          },
-          description: {
-            mentions: [
-              { start: 66, end: 79, username: 'NounProfiles' },
-              { start: 94, end: 103, username: 'NounsDAO' },
-              { start: 104, end: 113, username: 'FoxesNFT' },
-              { start: 116, end: 126, username: 'UglyNouns' },
-            ],
-          },
-        },
-        name: 'Chris.CoCreated.⌐◨-◨',
         verified_type: 'blue',
-        id: '54483412',
-        url: 'https://t.co/xqywkYeWMY',
-        location: 'UK 🇪🇺',
-        profile_image_url:
-          'https://pbs.twimg.com/profile_images/1580675921647902728/JQ6_xL82_normal.jpg',
-        public_metrics: {
-          followers_count: 553,
-          following_count: 595,
-          tweet_count: 953,
-          listed_count: 12,
-        },
-        description:
-          '⌐◨-◨ builder - making open👋 curious👀 and playful🐒 things. Founder @NounProfiles ⌐| Nouncillor @NounsDAO @FoxesNFT 🦊 @UglyNouns ⌐📦-📦 ⌐◨-◨ 🟪 find me on 🚾',
-        verified: true,
-        pinned_tweet_id: '1689675854861803533',
+        url: 'https://t.co/n8uvjKorPz',
+        name: 'G°',
         protected: false,
-        username: 'ChrisCoCreated',
-        created_at: '2009-07-07T07:42:59.000Z',
+        created_at: '2011-02-11T21:02:16.000Z',
+        location: 'mgmt@gregnwmn.com',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1461806747782287364/fjbkg4Bp_normal.jpg',
+        pinned_tweet_id: '1572647996944453632',
+        description: 'Now We Mirror Nature ↭ Voice @catalogworks',
+        id: '250804556',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/n8uvjKorPz',
+                expanded_url: 'http://gregnwmn.cloud',
+                display_url: 'gregnwmn.cloud',
+              },
+            ],
+          },
+          description: {
+            mentions: [{ start: 29, end: 42, username: 'catalogworks' }],
+          },
+        },
+      },
+      {
+        username: 'JosiahTheGift',
+        public_metrics: {
+          followers_count: 3049,
+          following_count: 1650,
+          tweet_count: 6329,
+          listed_count: 10,
+        },
+        verified: false,
+        verified_type: 'none',
+        url: 'https://t.co/QfxvRwDQuq',
+        name: 'Josiah',
+        protected: false,
+        created_at: '2010-07-03T17:15:14.000Z',
+        location: 'Path Train(NY/NJ)',
+        profile_image_url:
+          'https://pbs.twimg.com/profile_images/1569685438578712576/w0PPipmn_normal.jpg',
+        pinned_tweet_id: '1623313486230044673',
+        description:
+          'joblak718@yahoo.com . #GODISGRACIOUS OUT NOW #TheBoardOfOWN #TheUmbrella https://t.co/rgIdEuVuSm',
+        id: '162433369',
+        entities: {
+          url: {
+            urls: [
+              {
+                start: 0,
+                end: 23,
+                url: 'https://t.co/QfxvRwDQuq',
+                expanded_url: 'https://josiahthegift.bandcamp.com/album/togo',
+                display_url: 'josiahthegift.bandcamp.com/album/togo',
+              },
+            ],
+          },
+          description: {
+            urls: [
+              {
+                start: 73,
+                end: 96,
+                url: 'https://t.co/rgIdEuVuSm',
+                expanded_url: 'https://songwhip.com/josiahthegift',
+                display_url: 'songwhip.com/josiahthegift',
+              },
+            ],
+            hashtags: [
+              { start: 22, end: 36, tag: 'GODISGRACIOUS' },
+              { start: 45, end: 59, tag: 'TheBoardOfOWN' },
+              { start: 60, end: 72, tag: 'TheUmbrella' },
+            ],
+          },
+        },
       },
     ],
     tweets: [
       {
+        attachments: { media_keys: ['3_1694870160933543936'] },
+        conversation_id: '1694880415318954358',
+        possibly_sensitive: false,
+        edit_controls: {
+          edits_remaining: 5,
+          is_edit_eligible: true,
+          editable_until: '2023-08-25T02:12:35.000Z',
+        },
+        author_id: '1635284454003597314',
+        lang: 'en',
+        text: 'You can now send photos to your key holders. Say cheese😁 https://t.co/pzu7xNuvxm',
         reply_settings: 'everyone',
+        edit_history_tweet_ids: ['1694880415318954358'],
         entities: {
-          mentions: [
-            {
-              start: 246,
-              end: 258,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
-            },
-            {
-              start: 259,
-              end: 272,
-              username: 'nounsbuilder',
-              id: '1533989227855331328',
-            },
-          ],
-          annotations: [
-            {
-              start: 11,
-              end: 13,
-              probability: 0.7118,
-              type: 'Other',
-              normalized_text: 'DAO',
-            },
-            {
-              start: 62,
-              end: 64,
-              probability: 0.5274,
-              type: 'Other',
-              normalized_text: 'DAO',
-            },
-            {
-              start: 76,
-              end: 87,
-              probability: 0.8216,
-              type: 'Other',
-              normalized_text: 'BASED MINGOS',
-            },
-          ],
           urls: [
             {
-              start: 217,
-              end: 240,
-              url: 'https://t.co/UdFzVmLTDl',
-              expanded_url: 'https://paragraph.xyz/@nounishprof/basedmingos',
-              display_url: 'paragraph.xyz/@nounishprof/b…',
-              images: [
-                {
-                  url: 'https://pbs.twimg.com/news_img/1694692995545640960/YWMYzy9t?format=jpg&name=orig',
-                  width: 640,
-                  height: 372,
-                },
-                {
-                  url: 'https://pbs.twimg.com/news_img/1694692995545640960/YWMYzy9t?format=jpg&name=150x150',
-                  width: 150,
-                  height: 150,
-                },
-              ],
-              status: 200,
-              title: 'L2s are Based',
-              description:
-                'I set up a new experimental DAO on Base yesterday – BASED MINGOS – and had a true realization of the power of L2s. And it’s a game changer.',
-              unwound_url: 'https://paragraph.xyz/@nounishprof/basedmingos',
-            },
-            {
-              start: 273,
-              end: 296,
-              url: 'https://t.co/TVfmyiETop',
+              start: 57,
+              end: 80,
+              url: 'https://t.co/pzu7xNuvxm',
               expanded_url:
-                'https://twitter.com/i/web/status/1694692951106912407',
-              display_url: 'twitter.com/i/web/status/1…',
-            },
-            {
-              start: 297,
-              end: 320,
-              url: 'https://t.co/1ws61phOif',
-              expanded_url:
-                'https://twitter.com/ProfWerder/status/1694692951106912407/photo/1',
-              display_url: 'pic.twitter.com/1ws61phOif',
-              media_key: '3_1694692117514240000',
+                'https://twitter.com/friendtech/status/1694880415318954358/photo/1',
+              display_url: 'pic.twitter.com/pzu7xNuvxm',
+              media_key: '3_1694870160933543936',
             },
           ],
         },
-        created_at: '2023-08-24T12:47:40.000Z',
-        author_id: '3402992873',
-        lang: 'en',
+        id: '1694880415318954358',
+        created_at: '2023-08-25T01:12:35.000Z',
+        public_metrics: {
+          retweet_count: 468,
+          reply_count: 848,
+          like_count: 2947,
+          quote_count: 452,
+          bookmark_count: 32,
+          impression_count: 1038536,
+        },
+      },
+      {
         context_annotations: [
+          {
+            domain: {
+              id: '30',
+              name: 'Entities [Entity Service]',
+              description:
+                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+            },
+            entity: { id: '781974596794716162', name: 'Financial services' },
+          },
           {
             domain: {
               id: '46',
@@ -704,51 +697,23 @@ export const tweets = {
           },
           {
             domain: {
-              id: '46',
-              name: 'Business Taxonomy',
-              description:
-                'Categories within Brand Verticals that narrow down the scope of Brands',
+              id: '47',
+              name: 'Brand',
+              description: 'Brands and Companies',
             },
-            entity: {
-              id: '1557697333571112960',
-              name: 'Technology Business',
-              description:
-                'Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares',
-            },
+            entity: { id: '1370436971940642819', name: 'Coinbase' },
           },
           {
             domain: {
-              id: '65',
-              name: 'Interests and Hobbies Vertical',
+              id: '66',
+              name: 'Interests and Hobbies Category',
               description:
-                'Top level interests and hobbies groupings, like Food or Travel',
-            },
-            entity: { id: '781974596148793345', name: 'Business & finance' },
-          },
-          {
-            domain: {
-              id: '30',
-              name: 'Entities [Entity Service]',
-              description:
-                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+                'A grouping of interests and hobbies entities, like Novelty Food or Destinations',
             },
             entity: {
-              id: '857879456773357569',
-              name: 'Technology',
-              description: 'Technology',
-            },
-          },
-          {
-            domain: {
-              id: '30',
-              name: 'Entities [Entity Service]',
-              description:
-                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
-            },
-            entity: {
-              id: '1001503516555337728',
-              name: 'Blockchain',
-              description: 'Blockchain',
+              id: '913142676819648512',
+              name: 'Cryptocurrencies',
+              description: 'Cryptocurrency',
             },
           },
           {
@@ -757,7 +722,57 @@ export const tweets = {
               name: 'Unified Twitter Taxonomy',
               description: 'A taxonomy of user interests. ',
             },
-            entity: { id: '1461476432551366659', name: 'DAOs' },
+            entity: { id: '781974596148793345', name: 'Business & finance' },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: { id: '781974596794716162', name: 'Financial services' },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '913142676819648512',
+              name: 'Cryptocurrencies',
+              description: 'Cryptocurrency',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: { id: '1370436971940642819', name: 'Coinbase' },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '1390680741206368263',
+              name: 'Cryptocurrency exchanges',
+            },
+          },
+          {
+            domain: {
+              id: '131',
+              name: 'Unified Twitter Taxonomy',
+              description: 'A taxonomy of user interests. ',
+            },
+            entity: {
+              id: '1491481998862348291',
+              name: 'Digital asset industry',
+            },
           },
           {
             domain: {
@@ -771,76 +786,69 @@ export const tweets = {
               description: 'Cryptocurrency',
             },
           },
-          {
-            domain: {
-              id: '165',
-              name: 'Technology',
-              description:
-                'for individual and types of technology, e.g., food technology, 3D printing',
-            },
-            entity: {
-              id: '848920371311001600',
-              name: 'Technology',
-              description: 'Technology and computing',
-            },
-          },
         ],
+        attachments: { media_keys: ['3_1695131856352710659'] },
+        conversation_id: '1695132114638053779',
+        possibly_sensitive: false,
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: true,
-          editable_until: '2023-08-24T13:47:40.000Z',
+          editable_until: '2023-08-25T18:52:44.000Z',
         },
-        edit_history_tweet_ids: ['1694692951106912407'],
-        conversation_id: '1694692951106912407',
-        text: 'During the DAO workshop yesterday, I launched an experimental DAO on Base – BASED MINGOS – and had a true realization of the power of L2s. And it’s a game changer for me and anyone in higher ed teaching blockchain. \n\nhttps://t.co/UdFzVmLTDl\n\ncc: @BuildOnBase @nounsbuilder https://t.co/TVfmyiETop https://t.co/1ws61phOif',
-        id: '1694692951106912407',
-        possibly_sensitive: false,
-        public_metrics: {
-          retweet_count: 6,
-          reply_count: 6,
-          like_count: 24,
-          quote_count: 1,
-          bookmark_count: 1,
-          impression_count: 1672,
-        },
-        attachments: { media_keys: ['3_1694692117514240000'] },
-      },
-      {
+        author_id: '574032254',
+        lang: 'en',
+        text: "ᴏɴᴄʜᴀɪɴ 🟡 ꜱᴜᴍᴍᴇʀ\n\nWhether you're going onchain or going outside, Onchain Summer is the vibe. https://t.co/spVmjg3Q4S https://t.co/FTI8RBoVyI",
         reply_settings: 'everyone',
+        edit_history_tweet_ids: ['1695132114638053779'],
         entities: {
-          mentions: [
-            {
-              start: 234,
-              end: 246,
-              username: 'BuildOnBase',
-              id: '1628067904083181570',
-            },
-          ],
-          annotations: [
-            {
-              start: 252,
-              end: 264,
-              probability: 0.4987,
-              type: 'Other',
-              normalized_text: 'OnchainSummer',
-            },
-          ],
-          hashtags: [{ start: 251, end: 265, tag: 'OnchainSummer' }],
           urls: [
             {
-              start: 281,
-              end: 304,
-              url: 'https://t.co/qHFp2uTbIg',
+              start: 93,
+              end: 116,
+              url: 'https://t.co/spVmjg3Q4S',
+              expanded_url: 'http://onchainsummer.xyz',
+              display_url: 'onchainsummer.xyz',
+              images: [
+                {
+                  url: 'https://pbs.twimg.com/news_img/1694710183824351232/4sKaxoJ8?format=png&name=orig',
+                  width: 3840,
+                  height: 2160,
+                },
+                {
+                  url: 'https://pbs.twimg.com/news_img/1694710183824351232/4sKaxoJ8?format=png&name=150x150',
+                  width: 150,
+                  height: 150,
+                },
+              ],
+              status: 200,
+              title: 'Onchain Summer',
+              description:
+                'Get onchain this summer to join a multi-week celebration of art, culture, gaming, community, and more. New mints happening daily August 9th - 31st. Base is open for everyone; come bask in the Onchain Summer sun.',
+              unwound_url: 'https://onchainsummer.xyz/',
+            },
+            {
+              start: 117,
+              end: 140,
+              url: 'https://t.co/FTI8RBoVyI',
               expanded_url:
-                'https://twitter.com/promatheus_/status/1695168981999509603/photo/1',
-              display_url: 'pic.twitter.com/qHFp2uTbIg',
-              media_key: '3_1695167864586563584',
+                'https://twitter.com/coinbase/status/1695132114638053779/photo/1',
+              display_url: 'pic.twitter.com/FTI8RBoVyI',
+              media_key: '3_1695131856352710659',
             },
           ],
         },
-        created_at: '2023-08-25T20:19:14.000Z',
-        author_id: '1069567489342885889',
-        lang: 'en',
+        id: '1695132114638053779',
+        created_at: '2023-08-25T17:52:44.000Z',
+        public_metrics: {
+          retweet_count: 47,
+          reply_count: 85,
+          like_count: 224,
+          quote_count: 2,
+          bookmark_count: 3,
+          impression_count: 72951,
+        },
+      },
+      {
         context_annotations: [
           {
             domain: {
@@ -850,156 +858,95 @@ export const tweets = {
                 'Categories within Brand Verticals that narrow down the scope of Brands',
             },
             entity: {
-              id: '1557696848252391426',
-              name: 'Financial Services Business',
+              id: '1557696802391859201',
+              name: 'Entertainment & Leisure Business',
               description:
-                'Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks ',
+                'Brands, companies, advertisers and every non-person handle with the profit intent related to movies, music, television, franchises, venues, theme parks, toys, tourism, hotels',
             },
           },
           {
             domain: {
-              id: '30',
-              name: 'Entities [Entity Service]',
-              description:
-                'Entity Service top level domain, every item that is in Entity Service should be in this domain',
+              id: '47',
+              name: 'Brand',
+              description: 'Brands and Companies',
             },
-            entity: {
-              id: '1007361429752594432',
-              name: 'Ethereum cryptocurrency',
-              description: 'Ethereum Cryptocurrency',
-            },
-          },
-          {
-            domain: {
-              id: '131',
-              name: 'Unified Twitter Taxonomy',
-              description: 'A taxonomy of user interests. ',
-            },
-            entity: {
-              id: '1007361429752594432',
-              name: 'Ethereum cryptocurrency',
-              description: 'Ethereum Cryptocurrency',
-            },
+            entity: { id: '10045225402', name: 'Twitter' },
           },
         ],
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-25T21:19:14.000Z',
-        },
-        edit_history_tweet_ids: ['1695168981999509603'],
-        conversation_id: '1695168981999509603',
-        text: 'What Onchain Means For You...?  \n\nShare (onchain) what onchain means for you. Show everyone what you think and expect from this new era and this new narrative chapter in crypto.  \n\nSvg fully onchain\n14 days mint window \n0.007 ETH \non @BuildOnBase for #OnchainSummer \n\n(link below) https://t.co/qHFp2uTbIg',
-        id: '1695168981999509603',
-        possibly_sensitive: false,
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 2,
-          like_count: 1,
-          quote_count: 1,
-          bookmark_count: 0,
-          impression_count: 93,
-        },
-        attachments: { media_keys: ['3_1695167864586563584'] },
-      },
-      {
-        reply_settings: 'everyone',
-        created_at: '2023-08-25T11:01:47.000Z',
-        in_reply_to_user_id: '54483412',
-        author_id: '54483412',
-        lang: 'en',
-        edit_controls: {
-          edits_remaining: 5,
-          is_edit_eligible: false,
-          editable_until: '2023-08-25T12:01:47.000Z',
-        },
-        edit_history_tweet_ids: ['1695028695671464011'],
-        conversation_id: '1695028691116421266',
+        attachments: { media_keys: ['13_1691842228556271616'] },
+        conversation_id: '1691842446802682314',
         entities: {
-          hashtags: [{ start: 146, end: 160, tag: 'OnChainSummer' }],
+          mentions: [
+            {
+              start: 106,
+              end: 114,
+              username: 'ourZORA',
+              id: '1168028988091985920',
+            },
+            {
+              start: 128,
+              end: 140,
+              username: 'BuildOnBase',
+              id: '1628067904083181570',
+            },
+            { start: 230, end: 239, username: 'gregnwmn', id: '250804556' },
+            {
+              start: 246,
+              end: 260,
+              username: 'JosiahTheGift',
+              id: '162433369',
+            },
+          ],
+          hashtags: [{ start: 141, end: 155, tag: 'OnChainSummer' }],
           urls: [
+            {
+              start: 284,
+              end: 307,
+              url: 'https://t.co/UxGTdsRIJ6',
+              expanded_url:
+                'https://twitter.com/i/web/status/1691842446802682314',
+              display_url: 'twitter.com/i/web/status/1…',
+            },
+            {
+              start: 308,
+              end: 331,
+              url: 'https://t.co/VvdWGHdHaO',
+              expanded_url:
+                'https://twitter.com/ArtByJah/status/1691842446802682314/video/1',
+              display_url: 'pic.twitter.com/VvdWGHdHaO',
+              media_key: '13_1691842228556271616',
+            },
+          ],
+          annotations: [
             {
               start: 53,
-              end: 76,
-              url: 'https://t.co/ZSd5km0BiP',
-              expanded_url:
-                'https://zora.co/collect/base:0x5d1aff9c5c879e7878252957478343598f5fc078/5/',
-              display_url: 'zora.co/collect/base:0…',
-              status: 200,
-              title: 'We Are Optimistic this Summer',
-              description:
-                '🔴 Created from the ENS of all who mint. 🟡🔵 Summer Ed. of We Are Optimistic. Celebrating Base built on Optimism. 🔴 Original We Are Optimistic https://zora.co/collect/oeth:0xde88fd0e139e276f5c766025fda90ed11fc9b22d/1 Part of the We Are the Art series and Onchainsummer Minters ENS will be updated manually by the artist Best viewed on Desktop Click to zoom',
-              unwound_url:
-                'https://zora.co/collect/base:0x5d1aff9c5c879e7878252957478343598f5fc078/5',
-            },
-            {
-              start: 184,
-              end: 207,
-              url: 'https://t.co/PCMjaYRAeb',
-              expanded_url:
-                'https://twitter.com/ChrisCoCreated/status/1695028695671464011/photo/1',
-              display_url: 'pic.twitter.com/PCMjaYRAeb',
-              media_key: '16_1694983821593051136',
+              end: 78,
+              probability: 0.8848,
+              type: 'Other',
+              normalized_text: 'Helmet City: Mecha Gardens',
             },
           ],
         },
-        text: '🟡Optimistic this Summer -&gt; Free + fees mint here: https://t.co/ZSd5km0BiP\n\neveryone who mints will be added to the piece\n\nminting on Base 🔵\n\n🟡 #OnChainSummer\n\nOG Optimism version 👆 https://t.co/PCMjaYRAeb',
-        referenced_tweets: [{ type: 'replied_to', id: '1695028693901455619' }],
-        id: '1695028695671464011',
         possibly_sensitive: false,
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 1,
-          like_count: 3,
-          quote_count: 0,
-          bookmark_count: 0,
-          impression_count: 43,
-        },
-        attachments: { media_keys: ['16_1694983821593051136'] },
-      },
-      {
-        reply_settings: 'everyone',
-        created_at: '2023-08-25T11:01:47.000Z',
-        in_reply_to_user_id: '54483412',
-        author_id: '54483412',
-        lang: 'en',
         edit_controls: {
           edits_remaining: 5,
           is_edit_eligible: false,
-          editable_until: '2023-08-25T12:01:47.000Z',
+          editable_until: '2023-08-16T17:00:46.000Z',
         },
-        edit_history_tweet_ids: ['1695028693901455619'],
-        conversation_id: '1695028691116421266',
-        entities: {
-          hashtags: [{ start: 145, end: 159, tag: 'OnChainSummer' }],
-          urls: [
-            {
-              start: 48,
-              end: 71,
-              url: 'https://t.co/QYR69TJuV9',
-              expanded_url:
-                'https://zora.co/collect/oeth:0xde88fd0e139e276f5c766025fda90ed11fc9b22d/1',
-              display_url: 'zora.co/collect/oeth:0…',
-              status: 200,
-              title: 'We Are Optimistic',
-              description:
-                '🔴 Created from the ENS of everyone who mints and the ~20k most active addresses on Optimism 🔴 The network is created by the people who participate 🔴 CUSTOM PIECE FOR YOUR ENS - Mint 77 and get a 1/1 zooming to your ENS 🟡 Onchainsummer ed: https://zora.co/collect/base:0x5d1aff9c5c879e7878252957478343598f5fc078/5/ 🔴 View on desktop for optimum experience 🔴 Click to Zoom',
-              unwound_url:
-                'https://zora.co/collect/oeth:0xde88fd0e139e276f5c766025fda90ed11fc9b22d/1',
-            },
-          ],
-        },
-        text: '🔴We Are Optimistic -&gt; Free + fees mint here: https://t.co/QYR69TJuV9\n\neveryone who mints will be added to the piece\n\nminting on Optimism 🔴\n\n🟡 #OnChainSummer Base version ⤵',
-        referenced_tweets: [{ type: 'replied_to', id: '1695028691116421266' }],
-        id: '1695028693901455619',
-        possibly_sensitive: false,
+        author_id: '2843574891',
+        lang: 'en',
+        text: 'YERR! The teaser trailer for my upcoming short film,“Helmet City: Mecha Gardens”is available FOR FREE, on @ourZORA as a part of @BuildOnBase #OnChainSummer ( Link in the next tweet)\n\nStory, prompts, and Narration by me.\n\nMusic by @gregnwmn &amp; @JosiahTheGift \n\nImages generated on… https://t.co/UxGTdsRIJ6 https://t.co/VvdWGHdHaO',
+        reply_settings: 'everyone',
+        edit_history_tweet_ids: ['1691842446802682314'],
+        id: '1691842446802682314',
+        created_at: '2023-08-16T16:00:46.000Z',
         public_metrics: {
-          retweet_count: 0,
-          reply_count: 1,
-          like_count: 3,
-          quote_count: 0,
-          bookmark_count: 0,
-          impression_count: 27,
+          retweet_count: 73,
+          reply_count: 41,
+          like_count: 174,
+          quote_count: 23,
+          bookmark_count: 16,
+          impression_count: 27247,
         },
       },
     ],
