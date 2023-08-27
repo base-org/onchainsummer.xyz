@@ -446,6 +446,88 @@ export const arweaves = {
       hasCustomWnftMedia: false,
     },
   },
+  'N-zdPR5w0qhkgOFi9WJBDEnM2WzD4xfSHjF40i4qvq4': {
+    content: {
+      body: "***Explore how Atari's 50-year legacy blends with onchain technology to redefine community, gaming, and tangible interactions in a digital age.***\n\n<https://onchainsummer.xyz/atari>\n\nThere are few names as iconic and enduring as Atari.\n\nEstablished over half a century ago, Atari's journey from early tech pioneer to present-day is a testament to its resilience and adaptability — and that’s why going onchain should come as no surprise. “Atari was founded to utilize the new technology that was arriving in the 70s,” says Director of Atari X Tyler Drewitz.\n\nNow, with the dawn of a new era marked by a new technology, Atari is once again poised to capitalize on being at the cutting edge, going on its next new adventure, by leveraging the potential of an onchain ecosystem to unlock not only gaming experiences but reshape community and redefine real-world utility.\n\nAtari's journey to becoming an iconic brand was punctuated by their willingness to embrace new technology, take bold risks, and create joyful and immersive interactions. This very ethos propels Atari's venture into the onchain landscape as well, seeking to continue the legacy of innovation. Drewitz reinforces this sentiment, stating, \"We're taking a look back at what made Atari become an iconic brand, and trying to bring it onchain.\"\n\nAs Drewitz says, \"We are building Atari X to be a gateway to different experiences using new technologies.\" This gateway serves as a testament to Atari's enduring mission of providing avenues for individuals to immerse themselves in novel and captivating encounters. \"Being onchain makes everything so much easier,” says Drewitz, “Especially within a gaming ecosystem where interoperability can start to become viable. Atari's place as a connecting point.\"\n\nFor Onchain Summer, Atari is resurrecting the essence of its iconic 80s computer camps in an onchain manifestation. “In the 80s there were Atari Summer Computer Camps,” says Drewitz, “and we're traveling back to 1982 with this retro-inspired Atari Summer Camp collection.\"\n\nWith a rich history that spans decades, Atari's legacy of creating joyous and immersive experiences is finding renewed energy in the onchain era.",
+      timestamp: '1693059807',
+      title: "Beyond Pixels: Atari's Onchain Revolution",
+    },
+    digest: '0JFCdwi5DWaQybnWS9fd822NG4bHsl9udcoqOww8oNg',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        '3RgNxAY62IS9ex-cY62b157tAzSylarRKDWIjKAyxde90N2YTRiM5yZ0IJlusSieuUEiEykZdTjWKQUeAXsYYA',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  UD3mCdsfAiOoTqpuccjP13MusI9abvqqQn4gbKpqa24: {
+    content: {
+      body: '***Uncover the hidden layers of onchain activity through RainbowWorld\'s dynamic Citizens, which traverse onchain realms and offer an interactive journey into the future of the internet.***\n\n<https://onchainsummer.xyz/rainbow>\n\nRainbow, a trusted mobile wallet, has been spending a lot of time thinking about what’s next — and they’re working with AdWorld to bring the vision to Base for Onchain Summer.\n\nAs Tim Gruber, the partnerships expert at Rainbow, says, "Rainbow is becoming more than just a mobile wallet. We\'re an ecosystem, and we\'re gonna keep growing this product suite into what we call RainbowWorld." Central to the RainbowWorld experience is the concept of "citizens," customizable digital personas created by an onchain art studio AdWorld which serve as the embodiment of each individual\'s presence. Co-founder of AdWorld, gfsurvivor, explains the significance of citizens, stating, "Thematically, this character can kind of traverse between all the different onchain worlds. It\'s a citizen that doesn\'t belong specifically in Adworld, but in the greater ecosystem."\n\nTo bring this vision to life, the collaboration between Rainbow and AdWorld has resulted in the creation of not only a unique character creator, but a tool called ‘X-Scan’, an innovative feature that allows users to personalize their characters based on other onchain assets they own. Santangelo, the creative force behind AdWorld, says that "Having something like RainbowWorld be one of the first things Base users collect helps expand the idea of what an NFT can be. Citizens exist to be fluid. You can change this thing, it changes along with you, it tracks what\'s in your wallet and applies that in a visual and interactive way."\n\nAt the core of this transformative movement is the desire to empower artists. Pedro Bello, the artist behind the AdWorld citizens, revels in the newfound opportunities onchain technology has brought to the creative space. "Taking my art onchain has allowed me to find a space to experiment and an audience that\'s excited about digital work. I feel truly blessed that I got into this space in the past few years, and I love how making onchain art is an interactive experience that’s always changing."\n\nMike Demarais, the co-founder of Rainbow, believes that projects like RainbowWorld demonstrate the novel and interesting possibilities inherent in this onchain medium, saying that "Instead of just being a static one-and-done piece of media, this has the potential to connect a bunch of dots subconsciously in the mind of anyone new to this onchain space — and to do it in a way that can truly educate people." Demarais emphasizes the importance of a creator-friendly approach, saying, "I\'m just really excited to give people who might be new to crypto an opportunity to see how fun NFTs can be, and show them that there\'s all of these layers to it. I think it\'s gonna give people a chance to actually dive in and start playing with things as opposed to just more passively collecting."\n\nSpeaking to the visual aesthetic, Bello says “I grew up playing video games, so there\'s definitely a nostalgia element to it. I grew up glued to the TV. The aesthetics from my childhood give me a sense of comfort, a sense of curiosity. I want to make the things I saw in those worlds, and I like that, I\'m now part of its history to a certain degree.” Through a harmonious blend of nostalgia and cutting-edge tech, RainbowWorld exemplifies the metamorphic potential of a more interactive and interconnected onchain internet.',
+      timestamp: '1693066011',
+      title: 'Embracing Onchain Identity by Becoming a Citizen of RainbowWorld',
+    },
+    digest: 'IG0K7sys24rZYA8t9kq1KlxXyjD9ZtrDUJ0mZSusFvc',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'SvRr8hUP9YzlPVUtM4lG6CFIgOz9T1ka9YydWHPOV6AXT156uldLJxY3Gec1SapTdDGK9NvqdmcKeoTPGfcSfg',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  y5GT95QKZOpUEnZ81Jbio_HeYncJaavHpPvrUE2OI_k: {
+    content: {
+      body: "***Iskra's all-in-one onchain game ecosystem empowers players and game studios through community-driven rewards, propelling the future of gaming towards decentralized horizons.***\n\nWith roots in the world of MMORPGs, Iskra is a culmination of diverse talent who’ve navigated big moments in gaming before.\n\n“When we started making online games years ago,” says Ben Colayco, the Chief Business Officer of Iskra, “MMORPGs were an incredibly niche component of western-based gaming.Then Korea proved that they could be popular when one blew up and became a nationwide hit. At that point, companies like Blizzard looked at that success and created games that became worldwide phenomena.”\n\nNow, Iskra believes that we’re at a similar crossroads, with an onchain ecosystem ready to catalyze a new paradigm shift that transforms today’s niche into tomorrow’s global phenomena. “We really believe that content is going to be a key to taking this ecosystem mainstream,” says Colayco. “If you look at the rest of the world, especially emerging markets, where we are focused in, people are extremely open to the changes that the blockchain can provide.”\n\nIskra is bringing their latest game to Onchain Summer. A collectible battle RPG that seamlessly melds fast-paced monster battles with captivating tournament rounds, ClashMon draws players into a world brimming with competitive excitement. Yet, in a testament to Iskra's holistic design philosophy, the game also offers moments of tranquility through a fishing mode, allowing players to gather resources and take a breather from intense battles.\n\nIskra is building much more than game experiences, creating its own ecosystem. “We're one of the first all-in-one onchain game platforms,” says Colayco, “Where you have not just different kinds of games, but also different services. We have our own wallet, our own DEX, a launchpad, a market, all these other services that go all together. So it's all in one place.” A distinctive facet of this approach lies in its unique community system, an innovative model which shares platform fees with the players and game studios, rewarding them based on their active participation.\n\nIskra is confident that they’re onto something, and that it’s only a matter of time until the whole world joins them. \"Once this is proven to be not only lucrative but sustainable,” says Colayco, “I feel like it's a matter of time before large companies like Epic start making big moves.\"",
+      timestamp: '1693154270',
+      title:
+        "Redefining the Gaming Landscape: Iskra's ClashMon and the Rise of Onchain Innovation",
+    },
+    digest: 'vl-qp1C-MjVEKwklyfXCTnfKWdnmjmOAS0dVXs8Rbx8',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'lKo4r22cZ58vc0lOaJPyP0d7_d4STVa0YQ0vU9Z5RU0TuuDPdFDSpFN_zhMDzLgKG_KJp1m5BmlwwsJuLli07g',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+    wnft: {
+      chainId: 8453,
+      description:
+        "Iskra's all-in-one onchain game ecosystem empowers players and game studios through community-driven rewards, propelling the future of gaming towards decentralized horizons.\n",
+      fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      imageURI: 'QmVmsbwjswTAhX5BiHxRqypU3rawME4bY1oahxSVbzy3KF',
+      mediaAssetId: 659488,
+      name: "Redefining the Gaming Landscape: Iskra's ClashMon and the Rise of Onchain Innovation",
+      nonce: 961504,
+      owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      price: 0,
+      proxyAddress: '0x0Cc631fbFaad24d140D87F7334748f20D348CAE8',
+      renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
+      supply: 0,
+      symbol:
+        'REDEFININGTHEGAMINGLANDSCAPEISKRASCLASHMONANDTHERISEOFONCHAININNOVATION',
+      hasCustomWnftMedia: false,
+    },
+  },
   '': {
     content: { body: 'im good', timestamp: '1657046626', title: 'petis' },
     digest: 'nIJWGywAVkuFY_Q3HzKRsP8UmkTlvZVF31Vof90u_TU',
