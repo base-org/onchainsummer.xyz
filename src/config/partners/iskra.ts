@@ -23,7 +23,7 @@ const iskra: Partner = {
 
 Players are able to build and ‘own’ their team of Clashmons for trading, collecting and fishing (resource farming). The Collectible Battle RPG comes alive with fast-paced RPG-style monster fights and high-stakes tournament rounds, but balances out the pacing with a soothing fishing mode where players can gather resources for gear or pursue other enhancements.`,
       address: '0x75ed58e1D029853231A9e9825F0035E0449FBAfa',
-      crossMintClientId: '',
+      crossMintClientId: '521f028e-b728-491a-9336-e2f5a904d3cf',
       mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
