@@ -165,7 +165,7 @@ export const MintDialog: FC<{ size?: ButtonProps['size'] }> = ({ size }) => {
               <>
                 {price === '0' ? (
                   <>
-                    Bridge and Mint For Free <ArrowRight className="ml-auto" />
+                    Mint For Free <ArrowRight className="ml-auto" />
                   </>
                 ) : (
                   <>
