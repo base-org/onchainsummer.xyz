@@ -9,6 +9,7 @@ import { l1, l2 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 import { ModalPage } from '../../types'
 import { useDesiredNetworkContext } from '@/components/DesiredNetworkContext/useDesiredNetworkContext'
+import { useMintDialogContext } from '../../Context/useMintDialogContext'
 
 interface NotStartedProps {
   amount: string
@@ -32,6 +33,9 @@ export const NotStarted: FC<NotStartedProps> = ({
   const { switchNetwork } = useSwitchNetwork()
   const { chain } = useNetwork()
   const { setDesiredNetwork, desiredNetwork } = useDesiredNetworkContext()
+  const {
+    info: { crossMintClientId },
+  } = useMintDialogContext()
 
   const wrongChain = chain && chain.id !== l1.id
   const wrongDesiredChain = desiredNetwork && desiredNetwork.id !== l1.id
@@ -118,12 +122,14 @@ export const NotStarted: FC<NotStartedProps> = ({
               Bridge now
             </Button>
           )}
-          <Button
-            variant="LIGHT"
-            onClick={() => setPage(ModalPage.CROSS_MINT_FORM)}
-          >
-            Mint with credit card
-          </Button>
+          {crossMintClientId && (
+            <Button
+              variant="LIGHT"
+              onClick={() => setPage(ModalPage.CROSS_MINT_FORM)}
+            >
+              Mint with credit card
+            </Button>
+          )}
         </div>
       </div>
     </div>
