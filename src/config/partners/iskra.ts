@@ -46,7 +46,8 @@ Players are able to build and ‘own’ their team of Clashmons for trading, col
       startDate: Date.UTC(2023, 7, 27, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 3, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      externalLink: 'https://go.iskra.world/clashmon-onchainsummer/',
+      externalLink:
+        'https://news.iskra.world/2023/08/17/clashmon-ignitions-onchain-summer-free-mint-guide/',
       buttonText: 'Learn More',
     },
     {
