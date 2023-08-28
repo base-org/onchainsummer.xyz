@@ -40,7 +40,7 @@ const openSeaConfig: Partner = {
       type: 'external',
       startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.015',
+      price: '0.009',
       externalLink: 'https://opensea.io/collection/jessica-yatrofsky-ocs/drop',
     },
     {
@@ -55,7 +55,7 @@ const openSeaConfig: Partner = {
       type: 'external',
       startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.015',
+      price: '0.009',
       externalLink: 'https://opensea.io/collection/max-kulchinsky-ocs/drop',
     },
     {
@@ -69,7 +69,7 @@ const openSeaConfig: Partner = {
       type: 'external',
       startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.015',
+      price: '0.009',
       externalLink: 'https://opensea.io/collection/zwist-ocs/dropensea.io',
     },
     {
@@ -84,7 +84,7 @@ const openSeaConfig: Partner = {
       type: 'external',
       startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      price: '0.015',
+      price: '0.009',
       externalLink: 'https://opensea.io/collection/jordan-devant-ocs/drop',
     },
   ],
