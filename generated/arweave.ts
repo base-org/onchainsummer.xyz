@@ -490,12 +490,12 @@ export const arweaves = {
   },
   y5GT95QKZOpUEnZ81Jbio_HeYncJaavHpPvrUE2OI_k: {
     content: {
-      body: "***Iskra's all-in-one onchain game ecosystem empowers players and game studios through community-driven rewards, propelling the future of gaming towards decentralized horizons.***\n\nWith roots in the world of MMORPGs, Iskra is a culmination of diverse talent who’ve navigated big moments in gaming before.\n\n“When we started making online games years ago,” says Ben Colayco, the Chief Business Officer of Iskra, “MMORPGs were an incredibly niche component of western-based gaming.Then Korea proved that they could be popular when one blew up and became a nationwide hit. At that point, companies like Blizzard looked at that success and created games that became worldwide phenomena.”\n\nNow, Iskra believes that we’re at a similar crossroads, with an onchain ecosystem ready to catalyze a new paradigm shift that transforms today’s niche into tomorrow’s global phenomena. “We really believe that content is going to be a key to taking this ecosystem mainstream,” says Colayco. “If you look at the rest of the world, especially emerging markets, where we are focused in, people are extremely open to the changes that the blockchain can provide.”\n\nIskra is bringing their latest game to Onchain Summer. A collectible battle RPG that seamlessly melds fast-paced monster battles with captivating tournament rounds, ClashMon draws players into a world brimming with competitive excitement. Yet, in a testament to Iskra's holistic design philosophy, the game also offers moments of tranquility through a fishing mode, allowing players to gather resources and take a breather from intense battles.\n\nIskra is building much more than game experiences, creating its own ecosystem. “We're one of the first all-in-one onchain game platforms,” says Colayco, “Where you have not just different kinds of games, but also different services. We have our own wallet, our own DEX, a launchpad, a market, all these other services that go all together. So it's all in one place.” A distinctive facet of this approach lies in its unique community system, an innovative model which shares platform fees with the players and game studios, rewarding them based on their active participation.\n\nIskra is confident that they’re onto something, and that it’s only a matter of time until the whole world joins them. \"Once this is proven to be not only lucrative but sustainable,” says Colayco, “I feel like it's a matter of time before large companies like Epic start making big moves.\"",
-      timestamp: '1693154270',
+      body: "***Iskra's all-in-one onchain game ecosystem empowers players and game studios through community-driven rewards, propelling the future of gaming towards decentralized horizons.***\n\n<https://onchainsummer.xyz/iskra>\n\nWith roots in the world of MMORPGs, Iskra is a culmination of diverse talent who’ve navigated big moments in gaming before.\n\n“When we started making online games years ago,” says Ben Colayco, the Chief Business Officer of Iskra, “MMORPGs were an incredibly niche component of western-based gaming.Then Korea proved that they could be popular when one blew up and became a nationwide hit. At that point, companies like Blizzard looked at that success and created games that became worldwide phenomena.”\n\nNow, Iskra believes that we’re at a similar crossroads, with an onchain ecosystem ready to catalyze a new paradigm shift that transforms today’s niche into tomorrow’s global phenomena. “We really believe that content is going to be a key to taking this ecosystem mainstream,” says Colayco. “If you look at the rest of the world, especially emerging markets, where we are focused in, people are extremely open to the changes that the blockchain can provide.”\n\nIskra is bringing their latest game to Onchain Summer. A collectible battle RPG that seamlessly melds fast-paced monster battles with captivating tournament rounds, ClashMon draws players into a world brimming with competitive excitement. Yet, in a testament to Iskra's holistic design philosophy, the game also offers moments of tranquility through a fishing mode, allowing players to gather resources and take a breather from intense battles.\n\nIskra is building much more than game experiences, creating its own ecosystem. “We're one of the first all-in-one onchain game platforms,” says Colayco, “Where you have not just different kinds of games, but also different services. We have our own wallet, our own DEX, a launchpad, a market, all these other services that go all together. So it's all in one place.” A distinctive facet of this approach lies in its unique community system, an innovative model which shares platform fees with the players and game studios, rewarding them based on their active participation.\n\nIskra is confident that they’re onto something, and that it’s only a matter of time until the whole world joins them. \"Once this is proven to be not only lucrative but sustainable,” says Colayco, “I feel like it's a matter of time before large companies like Epic start making big moves.\"",
+      timestamp: '1693167391',
       title:
         "Redefining the Gaming Landscape: Iskra's ClashMon and the Rise of Onchain Innovation",
     },
-    digest: 'vl-qp1C-MjVEKwklyfXCTnfKWdnmjmOAS0dVXs8Rbx8',
+    digest: 'pjsExzPThAveiNQmLKbekN9mmw9N6XAUjwVJIt3lU3g',
     authorship: {
       contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
       signingKey:
@@ -503,7 +503,28 @@ export const arweaves = {
       signature:
         '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
       signingKeySignature:
-        'lKo4r22cZ58vc0lOaJPyP0d7_d4STVa0YQ0vU9Z5RU0TuuDPdFDSpFN_zhMDzLgKG_KJp1m5BmlwwsJuLli07g',
+        'WVIJknD84_cDrk7-Wvb0nmXwPGUSzawyV0bQUCUD5xhq0UcHe_pve4KeZxe4lMueT_0xO0ZnuqSXCRy6wkjuKQ',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  'UljUffgdatOSkox9nGIt8WbCm-8ZZ5ih049Yc0u-LuE': {
+    content: {
+      body: '***In the vibrant city of Oakland, a transformative movement is underway fueled by the power of onchain technology. At its heart lies Oak, a community currency founded by Darrell Jones, dedicated to creating a thriving local economy which empowers small businesses.***\n\nYou can find Darrell Jones at the West Oakland Farmers Market, week after week. Over the past few months he’s worked with over a dozen merchants to facilitate thousands of dollars of transactions, helping each of them bring their business onchain. This is the power of Oak, which exists not only to create a microcosm of commerce, but to bypass traditional financial intermediaries. “We don’t want these merchants to give their money away to Visa with every transaction," Jones explains. The farmer’s market is an excellent showcase of the potential that onchain technology can bring to small businesses, promoting their growth and also keeping money circulating within the community. \n\nBeyond financial empowerment, Oak is committed to fostering inclusivity. By bridging the gap between communities of color and cryptocurrency adoption, the project has successfully onboarded over 1,000 residents in the Oakland area, providing easy on-ramps for those unfamiliar with digital assets. Financial inclusion, after all, is the cornerstone of a fair and community-oriented economic system.\n\nLooking to the future, Oak envisions the integration of onchain transactions into more payment processing avenues. Jones notes, "Maybe the point-of-sale units these local businesses are using will make onchain transactions as easy as a click of the button." Such seamless adoption of onchain technology is essential to fuel widespread change.\n\nOak stands as a model for other cities seeking to leverage onchain technology for community development. Part of the larger City3 project, Oak seeks to disseminate tools and strategies for bringing cities onchain, inspiring others to follow suit and create positive change within their own communities.\n\nThe transformative power of Oak\'s onchain initiative extends beyond its geographical boundaries. With a vision for a fair and just economic and political system, Oak aims to create a blueprint. As Jones passionately states, "We want the world to see that there is a faction of crypto that cares about community, that\'s very diverse, and that is using the technology to try and bring about a better world."\n\nBy bringing small businesses onchain, Oak\'s use of onchain technology in empowering small businesses and promoting community resilience in Oakland is a testament to the positive role of onchain technology in shaping the future of the internet.',
+      timestamp: '1693238414',
+      title: 'Taking Oakland Onchain, One Small Business at a Time ',
+    },
+    digest: 'w7QgDcsxOwm5omokGkKNxyJ0GjTGQJcIH_csB8XUUJk',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'bGZxoBKq_dzzxG8lxCbsOIJHOMubVDAunNGWesKSyT5wU-HAiMCo8NZ4P_vJHroYPesdlK-YDo4XN7gzw3VpWA',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
       algorithm: { name: 'ECDSA', hash: 'SHA-256' },
@@ -512,19 +533,18 @@ export const arweaves = {
     wnft: {
       chainId: 8453,
       description:
-        "Iskra's all-in-one onchain game ecosystem empowers players and game studios through community-driven rewards, propelling the future of gaming towards decentralized horizons.\n",
+        'In the vibrant city of Oakland, a transformative movement is underway fueled by the power of onchain technology. At its heart lies Oak, a community currency founded by Darrell Jones, dedicated to creating a thriving local economy which empowers small businesses.\n',
       fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      imageURI: 'QmVmsbwjswTAhX5BiHxRqypU3rawME4bY1oahxSVbzy3KF',
-      mediaAssetId: 659488,
-      name: "Redefining the Gaming Landscape: Iskra's ClashMon and the Rise of Onchain Innovation",
-      nonce: 961504,
+      imageURI: 'QmYDAikSgDbie96GFnmafUv3Urp4PgBqxt4XSKRekHo3YP',
+      mediaAssetId: 660273,
+      name: 'Taking Oakland Onchain, One Small Business at a Time ',
+      nonce: 5645884,
       owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
       price: 0,
-      proxyAddress: '0x0Cc631fbFaad24d140D87F7334748f20D348CAE8',
+      proxyAddress: '0x2A7F2ac440AcbBB83552677A59f8C0CC15383621',
       renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
       supply: 0,
-      symbol:
-        'REDEFININGTHEGAMINGLANDSCAPEISKRASCLASHMONANDTHERISEOFONCHAININNOVATION',
+      symbol: 'TAKINGOAKLANDONCHAINONESMALLBUSINESSATATIME',
       hasCustomWnftMedia: false,
     },
   },
