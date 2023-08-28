@@ -5,14 +5,14 @@ import { MintType } from '@/components/MintDialog/types'
 const oak: Partner = {
   slug: 'oak',
   name: 'OAK',
-  url: 'https://oak.tech/',
+  url: 'https://www.oak.community/',
   description:
     'Support OAK, the first onchain local community currency in the United States.',
   brandColor: '#95098b',
   icon: '/partners/oak/icon.png',
   banner: '/partners/oak/banner-icon.svg',
   aarweaveDigest: 'UljUffgdatOSkox9nGIt8WbCm-8ZZ5ih049Yc0u-LuE',
-  twitter: '@oak_network',
+  twitter: '@oakcurrency',
   drops: [
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-HeroImage.jpg',
