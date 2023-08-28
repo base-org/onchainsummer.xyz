@@ -63,8 +63,7 @@ Onchain Summer collectors will receive tiered perks such as exclusive updates, 1
       price: '0.1',
     },
     {
-      image:
-        'https://assets.onchainsummer.xyz/Final_art-thousandcurrencies.jpg',
+      image: 'https://assets.onchainsummer.xyz/Final_Art-forthcarousel.jpg',
       creator: '0x6C8bdE31530Ca3382150Fb18e17D8f920CcF86BE',
       name: 'OAK: Onchain Cities Crusader',
       description: `Mint for access to 1:1 calls with the OAK team, exclusive reports, and a future in-person gift of 50 OAK.
