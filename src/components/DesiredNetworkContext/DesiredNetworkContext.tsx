@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC, PropsWithChildren } from 'react'
+import React, { FC, PropsWithChildren, useRef } from 'react'
 import { l1, l2 } from '@/config/chain'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 import { getIsCoinbaseBrowser } from '@/utils/getIsCoinbaseBrowser'
@@ -19,21 +19,23 @@ export const DesiredNetworkContext =
 export const DesiredNetworkContextProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const { chain } = useNetwork()
   const { switchNetwork } = useSwitchNetwork()
+  const switchNetworkRef = useRef(switchNetwork)
+
+  switchNetworkRef.current = switchNetwork
 
   const [desiredNetwork, setDesiredNetwork] = React.useState<
     typeof l1 | typeof l2
   >(l2)
 
-  const isCoinbaseBrowser = getIsCoinbaseBrowser()
   const desiredNetworkId = desiredNetwork.id
 
   React.useEffect(() => {
-    if (isCoinbaseBrowser && switchNetwork) {
-      switchNetwork(desiredNetworkId)
+    const isCoinbaseBrowser = getIsCoinbaseBrowser()
+    if (isCoinbaseBrowser) {
+      switchNetworkRef.current?.(desiredNetworkId)
     }
-  }, [desiredNetworkId, isCoinbaseBrowser, switchNetwork])
+  }, [desiredNetworkId])
 
   return (
     <DesiredNetworkContext.Provider
