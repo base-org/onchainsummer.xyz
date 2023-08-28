@@ -63,7 +63,7 @@ export type LogEvent = (
 
 declare global {
   interface Window {
-    ClientAnalytics: {
+    ClientAnalytics?: {
       logEvent: LogEvent
     }
   }
@@ -121,6 +121,15 @@ export const events: Record<string, CCAEvent> = {
       loggingId: 'c329a419-0bff-4347-8065-621c614e3b34',
       componentType: ComponentType.page,
       action: ActionType.unknown,
+    },
+    importance: AnalyticsEventImportance.high,
+  },
+  walletConnected: {
+    eventName: 'wallet_connected',
+    eventData: {
+      loggingId: 'ae30ed1e-9c15-4bce-bd44-e84e137dba27',
+      componentType: ComponentType.page,
+      action: ActionType.change,
     },
     importance: AnalyticsEventImportance.high,
   },
