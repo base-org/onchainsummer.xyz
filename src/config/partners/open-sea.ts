@@ -77,7 +77,7 @@ const openSeaConfig: Partner = {
         'https://assets.onchainsummer.xyz/Final Artwork (I should see a doctor).MP4',
       creator: '0x03794673064dA7862D4e08a09927fC59A9Dd3f4f',
       name: 'Jordan Devant',
-      description: `"Being unhealthy feels like a constant fight to feel control over your body but not having the energy to do that. Trying to stand straight and stay awake becomes a tedious task that feels like an endless cycle full of constant stress. Desperately wanting to stand on your own again without feeling weak. This piece is a nod to those feelings."`,
+      description: `Being unhealthy feels like a constant fight to feel control over your body but not having the energy to do that. Trying to stand straight and stay awake becomes a tedious task that feels like an endless cycle full of constant stress. Desperately wanting to stand on your own again without feeling weak. This piece is a nod to those feelings.`,
       address: '0x',
       crossMintClientId: '',
       mintType: MintType.External,
