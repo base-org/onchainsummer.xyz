@@ -33,6 +33,7 @@ Players are able to build and ‘own’ their team of Clashmons for trading, col
         url: 'https://iskra.world/clashmon_reveal',
         label: 'Reveal Now',
       },
+      sequence: 100,
     },
     {
       image: 'https://assets.onchainsummer.xyz/Box1_Learn About ClashMon.png',
