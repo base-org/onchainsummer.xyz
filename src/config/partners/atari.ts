@@ -33,6 +33,7 @@ Collect all four to get a special easter egg later this year.
       startDate: Date.UTC(2023, 7, 25, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 2, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.001972',
+      sequence: 300,
     },
     {
       image:
@@ -51,6 +52,7 @@ Collect all four to get a special easter egg later this year.
         url: 'https://atari.com/collections/onchain-summer/',
         label: 'Redeem Your Merch',
       },
+      sequence: 1900,
     },
     {
       image:
@@ -69,6 +71,7 @@ Collect all four to get a special easter egg later this year.
         url: 'https://atari.com/collections/onchain-summer/',
         label: 'Redeem Your Merch',
       },
+      sequence: 1800,
     },
     {
       image:
@@ -87,6 +90,7 @@ Collect all four to get a special easter egg later this year.
         url: 'https://atari.com/collections/onchain-summer/',
         label: 'Redeem Your Merch',
       },
+      sequence: 20000,
     },
   ],
 }

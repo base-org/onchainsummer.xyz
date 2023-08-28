@@ -39,6 +39,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
         url: 'https://adworld.game/create',
         label: 'Customize Your Citizen',
       },
+      sequence: 200,
     },
     {
       image: 'https://assets.onchainsummer.xyz/Final_Art-CharacterCreator.gif',
