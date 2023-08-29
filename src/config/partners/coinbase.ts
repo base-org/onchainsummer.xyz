@@ -27,7 +27,7 @@ const base: Partner = {
       address: '0x0',
       mintType: MintType.External,
       crossMintClientId: '',
-      externalLink: 'http://coinbase.com/crypto-rundown?index=1',
+      externalLink: 'https://coinbase.com/crypto-rundown?id=3eoHiQpnycDgdCORLPTTSw',
       buttonText: 'Claim on Coinbase',
     },
     {
