@@ -97,7 +97,7 @@ export const DropCard: FC<DropCardProps> = ({
       <AddressPill address={creator as Address} className="h-max mx-4" />
 
       {description ? (
-        <span className="desktop-body line-clamp-3 text-ocs-gray font-sans px-4 h-[66px]">
+        <span className="desktop-body line-clamp-3 text-ocs-dark-gray font-sans px-4 h-[66px]">
           {description}
         </span>
       ) : null}

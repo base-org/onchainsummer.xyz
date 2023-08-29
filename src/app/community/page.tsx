@@ -16,15 +16,15 @@ const Community = async () => {
     <PageContainer>
       <section className="sm:mt-0 mt-4">
         <div>
-          <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FF7DCB]">
+          <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-ocs-pink">
             <Heart />
           </div>
           <h1 className="desktop-h1 my-6 font-display">Community</h1>
-          <p className="desktop-h4 md:desktop-h3 text-[#151515] font-display">
+          <p className="desktop-h4 md:desktop-h3 text-ocs-black font-display">
             Base is for everyone and with that, we want to invite all builders
             to Base as part of Onchain Summer!
           </p>
-          <p className="desktop-h4 md:desktop-h3 text-[#151515] mt-6 font-display">
+          <p className="desktop-h4 md:desktop-h3 text-ocs-black mt-6 font-display">
             We are excited to be partnering with Prop House to run several
             rounds of retro prizes for those building on Base. Holders of a
             variety of Base NFTs will be able to vote in these rounds.
@@ -41,7 +41,7 @@ const Community = async () => {
               className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none !relative"
             />
           </div>
-          <h2 className="text-[32px] font-display text-[#151515]">Featured</h2>
+          <h2 className="text-[32px] font-display text-ocs-black">Featured</h2>
         </div>
         {tweets && Array.isArray(tweets.data) && (
           <div className="mt-12">
@@ -62,8 +62,8 @@ const Community = async () => {
             />
           </div>
           <div>
-            <h2 className="desktop-h2 text-[#151515]">Base Grants</h2>
-            <span className="font-mono text-[#444]">
+            <h2 className="desktop-h2 text-ocs-black">Base Grants</h2>
+            <span className="font-mono text-ocs-dark-gray">
               {communityData?.length} rounds
             </span>
           </div>
@@ -112,7 +112,7 @@ const Community = async () => {
                   </div>
                   <div className="flex flex-col md:w-[70%] justify-between p-4 md:mt-0">
                     <div className="md:flex md:flex-col md:justify-start">
-                      <span className="desktop-label-2 uppercase text-[#444] mb-3">
+                      <span className="desktop-label-2 uppercase text-ocs-dark-gray mb-3">
                         {format(new Date(startDate), 'MMMM d')} -{' '}
                         {format(new Date(endDate), 'MMMM d')}
                       </span>

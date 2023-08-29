@@ -57,7 +57,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
               >
                 <span className="sr-only">View tweet on Twitter</span>
               </a>
-              <span className="text-[#444] font-normal block">
+              <span className="text-ocs-dark-gray font-normal block">
                 @{author.username}
               </span>
             </div>
@@ -113,7 +113,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
           </div>
         ) : null}
       </div>
-      <p className="text-[#444] text-sm mt-2">
+      <p className="text-ocs-dark-gray text-sm mt-2">
         {moment(tweet.created_at).format('h:mm A · MMM D, YYYY')}
       </p>
     </div>

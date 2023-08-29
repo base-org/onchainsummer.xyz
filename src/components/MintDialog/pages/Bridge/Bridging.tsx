@@ -29,7 +29,7 @@ const Step = ({
   return (
     <div
       className={clsx(
-        'flex gap-4 text-[#444]',
+        'flex gap-4 text-ocs-dark-gray',
         {
           'h-[62px]': !finalStep && (!isStep || (isStep && !txHash)),
         },

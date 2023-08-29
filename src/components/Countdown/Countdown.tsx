@@ -32,13 +32,13 @@ export const Countdown: FC<CustomCountdownProps> = ({
   const textColor = isBeforeStartDate
     ? 'text-black'
     : isAfterEndDate
-    ? 'text-[#444]'
+    ? 'text-ocs-dark-gray'
     : 'text-ocs-blue'
 
   return (
     <div
       className={clsx(
-        'flex items-center flex-row text-[#444]',
+        'flex items-center flex-row text-ocs-dark-gray',
         textColor,
         className
       )}

@@ -14,7 +14,7 @@ export const ChainChecker: React.FC = () => {
   return (
     <>
       {isMismatched && (
-        <div className="flex flex-col md:flex-row relative top-4 md:top-auto justify-between items-center gap-4 px-6 md:px-8 py-4 bg-[#EFEFEF] rounded-3xl md:rounded-[2.5rem] w-full mx-6 md:mx-16 shadow-large h-max max-w-7xl">
+        <div className="flex flex-col md:flex-row relative top-4 md:top-auto justify-between items-center gap-4 px-6 md:px-8 py-4 bg-ocs-light-gray rounded-3xl md:rounded-[2.5rem] w-full mx-6 md:mx-16 shadow-large h-max max-w-7xl">
           <div className="basis-[2/3]">
             <h2 className="desktop-headline mb-2 md:mb-0">
               Network unsupported

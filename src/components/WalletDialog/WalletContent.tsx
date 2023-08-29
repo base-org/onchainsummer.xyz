@@ -55,7 +55,7 @@ export const WalletContent: FC<WalletContentProps> = ({}) => {
           <span className="desktop-headline">
             {isLoadingEns ? '...' : name}
           </span>
-          <span className="desktop-label-2 text-[#444]">
+          <span className="desktop-label-2 text-ocs-dark-gray">
             {shortenedAddress}
           </span>
         </div>
