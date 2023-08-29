@@ -23,10 +23,18 @@ import { Drop } from '@/config/partners/types'
 import { Gift } from '@/components/icons/Gift'
 import { DropCardList } from '@/components/DropCard/DropCardList'
 import { getCollections } from '@/utils/getCollections'
+import { ArrowRight } from '@/components/icons/ArrowRight'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
+
+const CHALLENGE_IMAGES = [
+  { url: '/partners/base/drop/giphy.gif', alt: 'Base NFT Drop' },
+  { url: '/partners/base-day-one/drop/asset.gif', alt: 'Base NFT Drop' },
+  { url: '/partners/base/drop/giphy.gif', alt: 'Base NFT Drop' },
+  { url: '/partners/base-day-one/drop/asset.gif', alt: 'Base NFT Drop' },
+]
 
 const Home = async ({ searchParams }: Props) => {
   const spoofDateParam = searchParams.spoofDate
@@ -55,6 +63,27 @@ const Home = async ({ searchParams }: Props) => {
           staticHeadline={!!dropAddress}
           floorAsk={collections[featuredDrop.address.toLowerCase()]?.floorAsk}
         />
+        <section className="bg-ocs-light-gray w-full shadow-large rounded-3xl p-6 flex flex-col gap-6 lg:flex-row">
+          <div className="flex flex-col gap-4 max-w-[520px]">
+            <h2 className="desktop-h2">Join the Based Challenge</h2>
+            <p className="desktop-body">
+              Claim your free onchain art, then watch it evolve as you mint more
+              on Base during Onchain Summer. Scan the QR code to get started.
+            </p>
+            <Button className="">
+              <span>Claim now</span>{' '}
+              <span className="hidden md:inline">on Coinbase Wallet</span>
+              <ArrowRight className="ml-auto" />
+            </Button>
+          </div>
+          <div className="grid gap-6 grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 w-full items-center max-w-[624px] lg:ml-auto">
+            {CHALLENGE_IMAGES.map(({ url, alt }) => (
+              <div key={url} className="relative z-20 w-full aspect-square">
+                <Image fill src={url} alt={alt} className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
         {remainingDrops?.length > 0 || article?.content ? (
           <section className="bg-ocs-light-gray w-full shadow-large rounded-3xl">
             <div className="p-[20px] lg:p-4 rounded-3xl">
