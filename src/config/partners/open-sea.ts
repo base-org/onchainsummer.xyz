@@ -29,7 +29,7 @@ const openSeaConfig: Partner = {
       externalLink: 'https://opensea.io',
     },
     {
-      image: 'https://assets.onchainsummer.xyz/Jessica Yatrofsky.png',
+      image: 'https://assets.onchainsummer.xyz/Jessica_Yatrofsky_2.png',
       creator: '0xFc3D6045934890e2F59283F8f373998121725291',
       name: 'Jessica Yatrofsky',
       description: `"Leave No Trace" is a poem that gracefully captivates within the pages of GOLDEN THROWN, a remarkable poetry collection by artist and author Jessica Yatrofsky. This collection boldly explores the realms of love, sensuality, and ambition, pushing boundaries with its cynicism and intensity. Jessica's evocative poem, "Leave No Trace," delicately balances the ephemeral nature of existence, urging readers to reflect on the significance of their presence. In the tapestry of GOLDEN THROWN, this poem shines as a radiant reminder of the power of words to illuminate the complexities of human experience.`,
