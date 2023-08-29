@@ -24,16 +24,17 @@ import { Gift } from '@/components/icons/Gift'
 import { DropCardList } from '@/components/DropCard/DropCardList'
 import { getCollections } from '@/utils/getCollections'
 import { ArrowRight } from '@/components/icons/ArrowRight'
+import { CBSubscribeDialog } from '@/components/CBSubscribeDialog'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
 const CHALLENGE_IMAGES = [
-  { url: '/partners/base/drop/giphy.gif', alt: 'Base NFT Drop' },
-  { url: '/partners/base-day-one/drop/asset.gif', alt: 'Base NFT Drop' },
-  { url: '/partners/base/drop/giphy.gif', alt: 'Base NFT Drop' },
-  { url: '/partners/base-day-one/drop/asset.gif', alt: 'Base NFT Drop' },
+  { url: '/challenge/1.png', alt: 'Based NFT Drop' },
+  { url: '/challenge/2.png', alt: '' },
+  { url: '/challenge/3.png', alt: '' },
+  { url: '/challenge/4.png', alt: '' },
 ]
 
 const Home = async ({ searchParams }: Props) => {
@@ -70,11 +71,13 @@ const Home = async ({ searchParams }: Props) => {
               Claim your free onchain art, then watch it evolve as you mint more
               on Base during Onchain Summer. Scan the QR code to get started.
             </p>
-            <Button className="">
-              <span>Claim now</span>{' '}
-              <span className="hidden md:inline">on Coinbase Wallet</span>
-              <ArrowRight className="ml-auto" />
-            </Button>
+            <CBSubscribeDialog>
+              <Button>
+                <span>Claim now</span>{' '}
+                <span className="hidden md:inline">on Coinbase Wallet</span>
+                <ArrowRight className="ml-auto" />
+              </Button>
+            </CBSubscribeDialog>
           </div>
           <div className="grid gap-6 grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 w-full items-center max-w-[624px] lg:ml-auto">
             {CHALLENGE_IMAGES.map(({ url, alt }) => (
