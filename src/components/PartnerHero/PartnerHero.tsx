@@ -52,10 +52,12 @@ export const PartnerHero: FC<PartnerHeroProps> = ({
         <h1 className="desktop-h2 md:desktop-h1">
           {customHeader ? customHeader : headline.name}
         </h1>
-        <div className="flex items-center mb-2">
-          <span className="mr-2 text-slate-500 desktop-body">By</span>
-          <AddressPill address={headline.creator as Address} />
-        </div>
+        {headline.creator && headline.creator != '0x' && (
+          <div className="flex items-center mb-2">
+            <span className="mr-2 text-slate-500 desktop-body">By</span>
+            <AddressPill address={headline.creator as Address} />
+          </div>
+        )}
         <div className="prose">
           <ReactMarkdown>{headline.description || description}</ReactMarkdown>
         </div>
