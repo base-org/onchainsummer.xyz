@@ -52,4 +52,5 @@ export const schedule: Record<string, Partner> = {
   '2023-08-29': openSea,
   '2023-08-30': fwbBonfire,
   '2023-08-31': fini,
+  '2023-09-01': fini,
 }
