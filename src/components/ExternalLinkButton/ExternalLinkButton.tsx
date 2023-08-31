@@ -19,13 +19,14 @@ export const ExternalLinkButton: FC<ExternalLinkButtonProps> = ({
     try {
       href = new URL(externalLink).origin
       message = `View on ${partner}`
+      return (
+        <Button size={size} href={href} external>
+          <>
+            {message} <RightArrow fill="white" className="ml-auto" />
+          </>
+        </Button>
+      )
     } catch (e) {}
   }
-  return (
-    <Button size={size} href={href} external>
-      <>
-        {message} <RightArrow fill="white" className="ml-auto" />
-      </>
-    </Button>
-  )
+  return null
 }
