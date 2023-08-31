@@ -29,7 +29,7 @@ export const PageContainer: React.FC<PageContainerProps> = ({
     <>
       <SubNav subNavBgColor={subNavBgColor} />
       {postFestival ? (
-        <div className="flex flex-col gap-6 bg-ocs-blue items-center justify-center py-24 w-full">
+        <div className="flex flex-col gap-6 bg-ocs-blue items-center justify-center pb-24 pt-14 w-full">
           <div className="w-14 h-14 bg-ocs-yellow rounded-full" />
           <h1 className="text-white text-center font-display text-[64px] font-bold leading-[120%] uppercase">
             Summer Never Ends
