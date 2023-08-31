@@ -26,7 +26,6 @@ const openSeaConfig: Partner = {
       startDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0',
-      externalLink: 'https://opensea.io',
     },
     {
       image: 'https://assets.onchainsummer.xyz/Jessica_Yatrofsky_2.png',
