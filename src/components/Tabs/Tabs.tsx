@@ -13,9 +13,11 @@ export interface TabsComponentProps {
 }
 
 export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
+  const hasUpcomingDrops = upcomingDrops.length > 0
+
   return (
     <section className="p-4 bg-ocs-light-gray rounded-3xl shadow-large">
-      <TabsComponent.Root defaultValue="tab1">
+      <TabsComponent.Root defaultValue={hasUpcomingDrops ? 'upcoming' : 'past'}>
         <TabsComponent.List
           className="flex [@media(max-width:374px)]:flex-wrap gap-2"
           aria-label="Manage your account"
@@ -25,7 +27,7 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
             pastLength={pastDrops.length}
           />
         </TabsComponent.List>
-        <TabsComponent.Content value="tab1">
+        <TabsComponent.Content value="upcoming">
           {upcomingDrops.map(
             ({ name, drops, banner, description, slug, brandColor }) => (
               <div key={name} className="my-8 first:mt-6 last:mb-0">
@@ -43,7 +45,7 @@ export const Tabs: FC<TabsComponentProps> = ({ upcomingDrops, pastDrops }) => {
             )
           )}
         </TabsComponent.Content>
-        <TabsComponent.Content className="" value="tab2">
+        <TabsComponent.Content className="" value="past">
           {pastDrops.map(
             ({ name, drops, banner, description, slug, brandColor }) => (
               <div key={name} className="my-8 first:mt-6 last:mb-0">

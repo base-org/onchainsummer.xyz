@@ -19,23 +19,18 @@ import { getNow } from '@/utils/getNow'
 import { getArweaveById } from '@/utils/getArweaveById'
 import { getDropDate } from '@/utils/getDropDate'
 import { siteDataSuffix } from '@/components/MintDialog/types'
-import { Drop } from '@/config/partners/types'
+import { Drop, Partner } from '@/config/partners/types'
 import { Gift } from '@/components/icons/Gift'
 import { DropCardList } from '@/components/DropCard/DropCardList'
 import { getCollections } from '@/utils/getCollections'
 import { ArrowRight } from '@/components/icons/ArrowRight'
 import { CBSubscribeDialog } from '@/components/CBSubscribeDialog'
+import { PostFestivalPage } from '@/components/PostFestivalPage/PostFestivalPage'
+import { BasedChallenge } from '@/components/BasedChallenge/BasedChallenge'
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
-
-const CHALLENGE_IMAGES = [
-  { url: '/challenge/1.png', alt: 'Based NFT Drop' },
-  { url: '/challenge/2.png', alt: '' },
-  { url: '/challenge/3.png', alt: '' },
-  { url: '/challenge/4.png', alt: '' },
-]
 
 const Home = async ({ searchParams }: Props) => {
   const spoofDateParam = searchParams.spoofDate
@@ -44,7 +39,7 @@ const Home = async ({ searchParams }: Props) => {
     : spoofDateParam
   const { partner, tabs, article, tweets, activeDrops } =
     await getPageData(spoofDate)
-  const { drops, name, icon } = partner
+  const { drops, name, icon } = partner || { drops: [], name: '', icon: '' }
 
   const dropAddressParam = searchParams.drop
 
@@ -55,6 +50,10 @@ const Home = async ({ searchParams }: Props) => {
   const { featuredDrop, remainingDrops } = getDrops(drops, dropAddress)
   const collections = await getCollections(drops)
 
+  if (!partner) {
+    return <PostFestivalPage activeDrops={activeDrops} tabs={tabs} />
+  }
+
   return (
     <PageContainer subNavOverlap>
       <div className="flex h-full flex-col items-center justify-between relative pb-36 gap-10 md:gap-[54px]">
@@ -64,29 +63,8 @@ const Home = async ({ searchParams }: Props) => {
           staticHeadline={!!dropAddress}
           floorAsk={collections[featuredDrop.address.toLowerCase()]?.floorAsk}
         />
-        <section className="bg-ocs-light-gray w-full shadow-large rounded-3xl p-6 flex flex-col gap-6 lg:flex-row">
-          <div className="flex flex-col gap-4 max-w-[520px]">
-            <h2 className="desktop-h2">Join the Based Challenge</h2>
-            <p className="desktop-body">
-              Claim your free onchain art, then watch it evolve as you mint more
-              on Base during Onchain Summer. Scan the QR code to get started.
-            </p>
-            <CBSubscribeDialog>
-              <Button>
-                <span>Claim now</span>{' '}
-                <span className="hidden md:inline">on Coinbase Wallet</span>
-                <ArrowRight className="ml-auto" />
-              </Button>
-            </CBSubscribeDialog>
-          </div>
-          <div className="grid gap-6 grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 w-full items-center max-w-[624px] lg:ml-auto">
-            {CHALLENGE_IMAGES.map(({ url, alt }) => (
-              <div key={url} className="relative z-20 w-full aspect-square">
-                <Image fill src={url} alt={alt} className="object-cover" />
-              </div>
-            ))}
-          </div>
-        </section>
+
+        <BasedChallenge />
         {remainingDrops?.length > 0 || article?.content ? (
           <section className="bg-ocs-light-gray w-full shadow-large rounded-3xl">
             <div className="p-[20px] lg:p-4 rounded-3xl">
@@ -243,7 +221,7 @@ const INITIAL_TABS: TabsComponentProps = {
   pastDrops: [],
 }
 
-interface DropWithPartnerData extends Drop {
+export interface DropWithPartnerData extends Drop {
   partner: string
   partnerIcon: string
 }
@@ -252,7 +230,7 @@ async function getPageData(spoofDate?: string) {
   const now = getNow(spoofDate)
   const today = getDropDate(spoofDate)
 
-  const featuredPartner = schedule[today] || schedule[Object.keys(schedule)[0]]
+  const featuredPartner = (schedule[today] || null) as Partner | null
 
   const tabs: TabsComponentProps = Object.keys(schedule).reduce((acc, date) => {
     const scheduleDate = new Date(date)
@@ -314,7 +292,7 @@ async function getPageData(spoofDate?: string) {
     .sort((a, b) => (a?.sequence ?? 0) - (b?.sequence ?? 0))
 
   const [article, tweets] = await Promise.all([
-    getArweaveById(featuredPartner.aarweaveDigest),
+    getArweaveById(featuredPartner?.aarweaveDigest ?? ''),
     getTweets(),
   ])
 
