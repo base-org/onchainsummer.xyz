@@ -8,7 +8,8 @@ interface QuantityProps {
   quantity: number
   setQuantity: React.Dispatch<React.SetStateAction<number>>
 }
-const buttonClassName = 'py-1.5 px-4 rounded-[100px] border border-[#EFEFEF]'
+const buttonClassName =
+  'py-1.5 px-4 rounded-[100px] border border-ocs-light-gray'
 export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
   const {
     info: { maxClaimablePerWallet, mintType },
@@ -56,7 +57,7 @@ export const Quantity: FC<QuantityProps> = ({ quantity, setQuantity }) => {
         }}
         min={1}
         step={1}
-        className="flex items-center justify-center bg-[#EFEFEF] border border-[#EFEFEF] rounded-[100px] text-center desktop-mono w-full px-4 py-1.5 appearance-none"
+        className="flex items-center justify-center bg-ocs-light-gray border border-ocs-light-gray rounded-[100px] text-center desktop-mono w-full px-4 py-1.5 appearance-none"
       />
       <button
         className={buttonClassName}

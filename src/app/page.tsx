@@ -101,7 +101,7 @@ const Home = async ({ searchParams }: Props) => {
                 </div>
                 <div className="flex-1 flex flex-col justify-end">
                   <h2 className="desktop-h2">{name}</h2>
-                  <p className="desktop-mono uppercase text-[#444]">
+                  <p className="desktop-mono uppercase text-ocs-dark-gray">
                     Collection
                   </p>
                 </div>
@@ -198,7 +198,7 @@ const Home = async ({ searchParams }: Props) => {
         )}
         {activeDrops && Array.isArray(activeDrops) && activeDrops.length > 0 ? (
           <section className="w-full shadow-large rounded-3xl">
-            <div className="bg-[#EFEFEF] p-[20px] lg:p-4 rounded-3xl">
+            <div className="bg-ocs-light-gray p-[20px] lg:p-4 rounded-3xl">
               <div className="mb-4 flex gap-2 items-center">
                 <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-ocs-turquoise">
                   <Gift />

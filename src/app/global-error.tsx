@@ -121,7 +121,7 @@ export default function GlobalError({ reset }: { reset: () => void }) {
         <div className="h-screen w-full flex flex-col items-center justify-center">
           <div className="w-auto flex flex-col items-center space-y-4 bg-red">
             <h2 className="text-center text-2xl">Something went wrong...</h2>
-            <span className="text-center text-ocs-gray">
+            <span className="text-center text-ocs-dark-gray">
               Please try again later.
             </span>
             <Button size="SMALL" className="w-full" onClick={reset}>

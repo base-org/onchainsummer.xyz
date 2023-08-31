@@ -41,7 +41,7 @@ export const CBSubscribeDialog: FC<
               <h2 className="text-[32px] leading-[120%] mb-4 lg:mb-10 font-normal font-display">
                 Say “gm” and get Onchain Summer updates straight to your wallet
               </h2>
-              <ol className="text-base font-display text-[#444]">
+              <ol className="text-base font-display text-ocs-dark-gray">
                 <li className="mb-4">
                   <span className="hidden lg:block">
                     1. Scan the QR code with your mobile device
@@ -70,9 +70,9 @@ export const CBSubscribeDialog: FC<
               <QRCode />
             </div>
           </div>
-          <p className="text-[#858585] font-mono text-[14px] text-center mt-4">
-            Wallet messaging is powered by XMTP. You can use Coinbase Wallet
-            to access these messages, or another client like{' '}
+          <p className="text-ocs-dark-gray font-mono text-[14px] text-center mt-4">
+            Wallet messaging is powered by XMTP. You can use Coinbase Wallet to
+            access these messages, or another client like{' '}
             <a href="https://xmtp.chat/" target="_blank" className="underline">
               the XMTP web client
             </a>{' '}

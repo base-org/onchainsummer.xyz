@@ -29,7 +29,7 @@ const WalletAddressCopy: FunctionComponent = () => {
         <span>{formatEther(l2Balance)} ETH</span>
       </div>
       <button
-        className="border border-[#EFEFEF] bg-white hover:bg-[#EFEFEF] p-3 rounded-[100px] text-button-text-text relative pr-12 whitespace-nowrap overflow-hidden text-ellipsis"
+        className="border border-ocs-light-gray bg-white hover:bg-ocs-light-gray p-3 rounded-[100px] text-button-text-text relative pr-12 whitespace-nowrap overflow-hidden text-ellipsis"
         onClick={() => {
           if (!address || !navigator) return
           navigator.clipboard.writeText(address)

@@ -37,7 +37,7 @@ export const Share: FC<ShareComponentProps> = () => {
           className="flex flex-col items-center"
         >
           <TwitterIcon />
-          <p className="text-sm font-mono uppercase text-[#858585] mt-[6px]">
+          <p className="text-sm font-mono uppercase text-ocs-dark-gray mt-[6px]">
             X
           </p>
         </Link>
@@ -50,7 +50,7 @@ export const Share: FC<ShareComponentProps> = () => {
           className="flex flex-col items-center"
         >
           <WarpCast />
-          <p className="text-sm font-mono uppercase text-[#858585] mt-[6px]">
+          <p className="text-sm font-mono uppercase text-ocs-dark-gray mt-[6px]">
             Warpcast
           </p>
         </Link>
@@ -63,7 +63,7 @@ export const Share: FC<ShareComponentProps> = () => {
           className="flex flex-col items-center"
         >
           <Lens />
-          <p className="text-sm font-mono uppercase text-[#858585] mt-[6px]">
+          <p className="text-sm font-mono uppercase text-ocs-dark-gray mt-[6px]">
             Lens
           </p>
         </Link>

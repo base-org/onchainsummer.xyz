@@ -50,7 +50,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
       <div className="flex justify-between mb-4">
         <div className="flex flex-col [@media(min-width:724px)]:flex-row gap-4 items-start sm:items-center">
           <div className="flex gap-4 items-center">
-            <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-[#FCD22D]">
+            <div className="flex justify-center items-center h-[64px] w-[64px] rounded-2xl bg-ocs-yellow">
               <UpArrow height={32} width={32} />
             </div>
             <div className="">
@@ -60,7 +60,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
 
           <div className="flex flex-col md:flex-row md:gap-6">
             <div className="flex items-center">
-              <p className="desktop-mono !text-[#444] uppercase mr-3">
+              <p className="desktop-mono !text-ocs-dark-gray uppercase mr-3">
                 Powered by{' '}
               </p>
               <a href="https://mint.fun" target="_blank">
@@ -114,7 +114,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
                     <div className="flex flex-row flex-wrap order-1 w-full lg:w-[60%]">
                       <div className="flex flex-wrap lg:flex-nowrap basis-full md:mb-3 overflow-hidden">
                         <div className="flex items-start w-full md:w-auto relative top-[3px]">
-                          <p className="text-[#444] mr-3 md:mr-[29px] desktop-mono md:text-lg mb-4 md:mb-0">
+                          <p className="text-ocs-dark-gray mr-3 md:mr-[29px] desktop-mono md:text-lg mb-4 md:mb-0">
                             #{idx + 1}
                           </p>
                         </div>
@@ -137,10 +137,10 @@ export const Trending: FC<TrendingComponentProps> = () => {
                             <h3 className="desktop-h4 md:desktop-h3 whitespace-normal overflow-hidden break-all">
                               {name}
                             </h3>
-                            <h4 className="desktop-label-1 text-[#444]">
+                            <h4 className="desktop-label-1 text-ocs-dark-gray">
                               {shortenAddress(contract)}
                             </h4>
-                            <p className="text-[#444] desktop-label-2">
+                            <p className="text-ocs-dark-gray desktop-label-2">
                               {mintsLastHour} mints last hour •{' '}
                               {formatEther(BigInt(mintStatus.price))} ETH
                             </p>

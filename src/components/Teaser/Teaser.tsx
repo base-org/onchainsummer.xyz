@@ -36,11 +36,11 @@ export const Teaser: FC<TeaserProps> = ({
           !showPartnerHero && 'h-1/2'
         )}
       >
-        <div className="mb-8 h-[54px] w-[54px] rounded-full bg-[#FCD22D]"></div>
+        <div className="mb-8 h-[54px] w-[54px] rounded-full bg-ocs-yellow"></div>
         <h1 className="text-4xl sm:text-[64px] font-display text-center uppercase font-bold">
           Onchain Summer 08.09.23
         </h1>
-        <h3 className="mt-7 mb-8 text-2xl font-display text-center text-[#444]">
+        <h3 className="mt-7 mb-8 text-2xl font-display text-center text-ocs-dark-gray">
           Bridge and mint today to experience the best of onchain this summer.
         </h3>
         <div className="flex justify-center gap-2 md:mb-14 mb-8 flex-wrap">
@@ -66,7 +66,7 @@ export const Teaser: FC<TeaserProps> = ({
           </div>
         )}
       </div>
-      <div className="w-full bg-[#0052FF] h-16 md:h-36 absolute">
+      <div className="w-full bg-ocs-blue h-16 md:h-36 absolute">
         <PartnerCarousel />
       </div>
     </div>

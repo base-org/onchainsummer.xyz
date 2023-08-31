@@ -59,10 +59,10 @@ export const Success: FC<SuccessProps> = ({
       </div>
 
       <div>
-        <h3 className="font-sans text-[16px] text-[#151515]">Share on </h3>
+        <h3 className="font-sans text-[16px] text-ocs-black">Share on </h3>
         <Share />
         {mintType === MintType.ThirdWeb && (
-          <p className="text-sm font-mono text-[#5B616E] mt-6 flex items-center">
+          <p className="text-sm font-mono text-foreground-muted mt-6 flex items-center">
             Mint contract powered by <ThirdWebPill className="inline ml-2" />
           </p>
         )}

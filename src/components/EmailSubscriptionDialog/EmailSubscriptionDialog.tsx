@@ -40,7 +40,7 @@ export const EmailSubscriptionDialog: React.FC<
           <Dialog.Title className="text-[32px] font-display m-0">
             {formSubmitted ? 'You’re in the know!' : "Don't miss a mint!"}
           </Dialog.Title>
-          <Dialog.Description className="font-sans mt-[10px] mb-8 leading-normal text-[#444]">
+          <Dialog.Description className="font-sans mt-[10px] mb-8 leading-normal text-ocs-dark-gray">
             {formSubmitted ? (
               'Check your email to confirm subscription to Mirror.'
             ) : (
@@ -82,7 +82,7 @@ export const EmailSubscriptionDialog: React.FC<
             />
             <label className="mb-4 font-medium">Email</label>
             <input
-              className="border-[1px] border-[#EFEFEF] border-solid rounded-full py-3 px-5 w-full mb-8 mt-2"
+              className="border-[1px] border-ocs-light-gray border-solid rounded-full py-3 px-5 w-full mb-8 mt-2"
               name="email"
               placeholder="Email Address"
               required
