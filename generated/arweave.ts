@@ -512,11 +512,11 @@ export const arweaves = {
   },
   'UljUffgdatOSkox9nGIt8WbCm-8ZZ5ih049Yc0u-LuE': {
     content: {
-      body: '***In the vibrant city of Oakland, a transformative movement is underway fueled by the power of onchain technology. At its heart lies Oak, a community currency founded by Darrell Jones, dedicated to creating a thriving local economy which empowers small businesses.***\n\nYou can find Darrell Jones at the West Oakland Farmers Market, week after week. Over the past few months he’s worked with over a dozen merchants to facilitate thousands of dollars of transactions, helping each of them bring their business onchain. This is the power of Oak, which exists not only to create a microcosm of commerce, but to bypass traditional financial intermediaries. “We don’t want these merchants to give their money away to Visa with every transaction," Jones explains. The farmer’s market is an excellent showcase of the potential that onchain technology can bring to small businesses, promoting their growth and also keeping money circulating within the community. \n\nBeyond financial empowerment, Oak is committed to fostering inclusivity. By bridging the gap between communities of color and cryptocurrency adoption, the project has successfully onboarded over 1,000 residents in the Oakland area, providing easy on-ramps for those unfamiliar with digital assets. Financial inclusion, after all, is the cornerstone of a fair and community-oriented economic system.\n\nLooking to the future, Oak envisions the integration of onchain transactions into more payment processing avenues. Jones notes, "Maybe the point-of-sale units these local businesses are using will make onchain transactions as easy as a click of the button." Such seamless adoption of onchain technology is essential to fuel widespread change.\n\nOak stands as a model for other cities seeking to leverage onchain technology for community development. Part of the larger City3 project, Oak seeks to disseminate tools and strategies for bringing cities onchain, inspiring others to follow suit and create positive change within their own communities.\n\nThe transformative power of Oak\'s onchain initiative extends beyond its geographical boundaries. With a vision for a fair and just economic and political system, Oak aims to create a blueprint. As Jones passionately states, "We want the world to see that there is a faction of crypto that cares about community, that\'s very diverse, and that is using the technology to try and bring about a better world."\n\nBy bringing small businesses onchain, Oak\'s use of onchain technology in empowering small businesses and promoting community resilience in Oakland is a testament to the positive role of onchain technology in shaping the future of the internet.',
-      timestamp: '1693238414',
+      body: '***In the vibrant city of Oakland, a transformative movement is underway fueled by the power of onchain technology. At its heart lies OAK, a community currency dedicated to creating a thriving local economy and a more just political system.***\n\n<https://onchainsummer.xyz/oak>\n\nYou can find OAK at the West Oakland Farmers Market, week after week. Over the past few months the team has worked with over a dozen merchants to facilitate thousands of dollars of transactions, helping each of them bring their business onchain. This is the power of OAK, enabling residents and small businesses to share value without traditional financial intermediaries.. “In high trust environments we don’t need expensive financial intermediaries to siphon value from every transaction," Jones explains. The farmer’s market is an excellent showcase of the potential that onchain technology can bring to small businesses, promoting their growth and also keeping money circulating within the community.\n\nLooking to the future, OAK envisions the integration of onchain transactions into more payment processing avenues. Jones notes, "Maybe the point-of-sale units these local businesses are using will make onchain transactions as easy as a click of the button." Such seamless adoption of onchain technology is essential to fuel widespread change.\n\nBeyond financial empowerment, OAK is committed to empowering community governance. OAK launched a citywide quadratic funding round where 242 community members collectively allocated funding to 7 different local nonprofits. Collective governance, after all, is the cornerstone of a fair and community-oriented political and economic system\n\nOAK stands as a model for other cities seeking to leverage onchain technology for community development. Part of the larger City3 project, OAK seeks to disseminate tools and strategies for bringing cities onchain, inspiring others to create communities that are more collaborative, abundant, and empowered.\n\nThe transformative power of OAK\'s onchain initiative extends beyond its geographical boundaries. With a vision for a fair and just economic and political system, OAK aims to create a blueprint. As Jones passionately states, "We want everyone to see that there is a faction of crypto that cares about community, that\'s very diverse, and is using the technology to bring about a better world."\n\nBy bringing small businesses onchain, OAK’s use of onchain technology in empowering small businesses and promoting community resilience in Oakland is a testament to the positive role of onchain technology in shaping the future of the internet\n\nOAK promotes community resilience in Oakland by empowering small businesses with onchain technology. In so doing, OAK models the potential onchain technology holds in shaping the future of cities and the internet alike.',
+      timestamp: '1693249181',
       title: 'Taking Oakland Onchain, One Small Business at a Time ',
     },
-    digest: 'w7QgDcsxOwm5omokGkKNxyJ0GjTGQJcIH_csB8XUUJk',
+    digest: 'KcAPd1sTNbihJNiisdp9LwKNYK-xA2wuXKTXB-Fc-aw',
     authorship: {
       contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
       signingKey:
@@ -524,29 +524,55 @@ export const arweaves = {
       signature:
         '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
       signingKeySignature:
-        'bGZxoBKq_dzzxG8lxCbsOIJHOMubVDAunNGWesKSyT5wU-HAiMCo8NZ4P_vJHroYPesdlK-YDo4XN7gzw3VpWA',
+        'O3yW75kpAkrRBnBSGMC6FKzUaH9xrvSGRrNChJ8DsGZahYTcfbzNPQelXv_Z0cOusAfL4ezyJquRWkNTpeD85w',
       signingKeyMessage:
         'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
       algorithm: { name: 'ECDSA', hash: 'SHA-256' },
     },
     version: '04-25-2022',
-    wnft: {
-      chainId: 8453,
-      description:
-        'In the vibrant city of Oakland, a transformative movement is underway fueled by the power of onchain technology. At its heart lies Oak, a community currency founded by Darrell Jones, dedicated to creating a thriving local economy which empowers small businesses.\n',
-      fundingRecipient: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      imageURI: 'QmYDAikSgDbie96GFnmafUv3Urp4PgBqxt4XSKRekHo3YP',
-      mediaAssetId: 660273,
-      name: 'Taking Oakland Onchain, One Small Business at a Time ',
-      nonce: 5645884,
-      owner: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
-      price: 0,
-      proxyAddress: '0x2A7F2ac440AcbBB83552677A59f8C0CC15383621',
-      renderer: '0xfd7c7F0B10ACDD4F2Ee2Ea5111767B98d42D0a07',
-      supply: 0,
-      symbol: 'TAKINGOAKLANDONCHAINONESMALLBUSINESSATATIME',
-      hasCustomWnftMedia: false,
+  },
+  'Tr9jYWfv8hDOQIs3h4By1hg62rC9nFADuITd41Kgc-Q': {
+    content: {
+      body: '***OpenSea\'s curated drop of three artists illuminates how going onchain not only enhances creative expression but also enriches the broader digital landscape.***\n\n<https://onchainsummer.xyz/opensea>\n\nOpenSea has spent the last several years building their platform into the premier marketplace for artists bringing their work onchain — but their engagement with artists isn\'t merely transactional, as they cultivate meaningful collaborations with burgeoning artists through their Drops program.\n\n“We want artists to see that there are new avenues for them to leverage to expand their communities and continue to build their careers,” says a representative from OpenSea, “And we’re so excited to see Base’s launch both signify continued momentum in the NFT space and encourage broader adoption through entry points for new collectors.”\n\nAs the art world and the ever-evolving onchain ecosystem intersect, OpenSea is bringing a glimpse into their curation efforts to Onchain Summer as they showcase the creative journeys of three artists: Max Kulchinsky, Sarah Jiang (ZWIST), and Jessica Yatrofsky.\n\nMax Kulchinsky, a 25-year-old artist based in New York City, brings his distinctive "Watcher" iconography to today’s release. A powerful symbol of protection and belonging, the intention behind it is profound: "Symbols make people feel a wide range of emotions,” says Kulchinksy, “And I created one that makes people feel seen and protected." Through his exploration of this iconography, he not only draws attention to the potential of symbols but also harnesses their power to create a sense of security for both the world and the digital ecosystem we care so much about.\n\nSarah Jiang, who goes by ZWIST, introduces her own captivating perspective to the ensemble. Her "DreamCatcher\'s Quest" invites viewers to immerse themselves in a world where butterfly clouds symbolize aspirations. In an art world often crowded with imitations, Jiang\'s pursuit stands out: "My goal is to move the mainstream artistic narrative of NFTs from ‘questionable art experiments’ to \'pieces by those who have spent the time and effort to hone their skills,’" says Jiang. Her journey reflects the aspiration to elevate artistry in the digital realm beyond mere experimentation.\n\nJessica Yatrofsky, renowned for her exploration of body politics and gender, imparts an intimate dimension to Onchain Summer with "Leave No Trace." Nestled within her poetry collection "GOLDEN THROWN," Yatrofsky\'s poem delicately prompts contemplation about the fleeting nature of our existence.\n\nOpenSea\'s dedication to making the onchain experience enriching, discoverable, and accessible is present within this curatorial effort. As OpenSea’s platform opens pathways for the next billion users to embark on their own onchain journeys, it is evident that these three artists, with their unique narratives and perspectives, are integral to this broader mission.',
+      timestamp: '1693329941',
+      title: "Onchain Imagination: OpenSea's Creative Constellation of Art  ",
     },
+    digest: '9jmIKH3v1iEVzumJAylonnNF7_NWeWPqmkut--0oQtw',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'ux6k-gFFUQleT3UCNBWLkRyZkRKRqVRImdmSij68EVCseK2kK8hMSftI_AUtJDB0KJlo0pduf4mK-fYAkiSP_g',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
+  },
+  'HTXHZIR5WXI3N7rehIKBtir-Th0QV7d_u12Ss6w6cqw': {
+    content: {
+      body: '***Explore the future of content creation with Bonfire\'s token-gated website builder, enabling artists to interact directly with their superfans, unleashing a new era of engagement and appreciation.***\n\n<https://onchainsummer.xyz/bonfire>\n\n"The big vision for Bonfire is that the creator really is the platform," says Alston.\n\nThat’s exactly what Bonfire enables through its no-code website builder that allows creators to host token-gated content and create unique drops and experiences for their fans. This model comes out of a realization that artists and their audiences are more separate than ever, as web 2.0 platforms built a perfect foundation for parasocial relationships where audiences form deep emotional bonds with creators yet remain for all intents and purposes anonymous.  As Alston astutely observes, "There’s not really any way for the creators to even understand who their biggest fans are."\n\nBonfire aims to change this, empowering creators to embrace their most devoted supporters and cultivate profound interactions. This transformative approach allows creators to anticipate their audience\'s desires, fueling unprecedented interaction and engagement. By offering exclusive early album releases and tailoring content to their superfans\' preferences, creators forge authentic connections that transcend the confines of traditional engagement.\n\nLNRZ, a music collective on Bonfire, is releasing “Everytime”, a previously unreleased song from electronic duo Marian Hill. Bringing music onchain and utilizing collective decision making has allowed this music, previously “lost on their hard drive” to be released to the world. Additionally, UFO, a collectively curated onchain radio, is bringing an early experimental test for their upcoming onchain radio station to today’s drop. The FM TOUR 2023 NFT is your ticket to UFO\'s upcoming "mystery FM TOUR". Both releases encapsulate Bonfire’s ethos of helping creators and communities come together to breathe new life into artistic legacies. Through this platform, creators like LNRZ and UFO can infuse fresh vitality into the past, uniting their audience through shared appreciation for the unexplored and the extraordinary\n\nBy bringing Bonfire to Base, creators and audiences alike are ushered into a new era of empowerment. Through its intuitive platform, Bonfire grants artists the means to construct their own custom-branded digital spaces, where they can nurture deep connections with their fans and unlock unprecedented levels of interaction and engagement. By breaking free from the constraints of the previous web and embracing the promise of going onchain, Bonfire is fanning the flames of transformation towards a more inclusive, rewarding, and artistically enriching digital landscape for all.',
+      timestamp: '1693413558',
+      title:
+        'How Bonfire’s Onchain Platform Puts the Power Back in the Creator’s Hands',
+    },
+    digest: 'WkDKPs0qYMP3n0Oql3lI9CBEg59yGjPtpRsv1uNvxvU',
+    authorship: {
+      contributor: '0xd3271DF159F18E07AAD79E79A24580BB5c4776e9',
+      signingKey:
+        '{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      signature:
+        '0x263292cca8ed94d6e555371ac8cc1f206cf5c52b0125119a3d0dd2f697047568577547c39e970f0794516bab50c01a505705a25d71be659be667f1b0a7fac1e91c',
+      signingKeySignature:
+        'CaWuZoH2UsFHobJzZTmfyYLpRVY3Pjc1IUXCesrhw2Bx2TUqvfq7fvGlF7RGv8GwmKH43s1LN_m9BbwO2ez7yg',
+      signingKeyMessage:
+        'I authorize publishing on mirror.xyz from this device using:\n{"crv":"P-256","ext":true,"key_ops":["verify"],"kty":"EC","x":"4rctKDcQjyON5iCH9LUJvY1gcXyn-6stR_-JtvgKHIc","y":"8RMrQUIMyKkNzsL80ffsgFsH6Ii_--I2QYFSTswYC-M"}',
+      algorithm: { name: 'ECDSA', hash: 'SHA-256' },
+    },
+    version: '04-25-2022',
   },
   '': {
     content: { body: 'im good', timestamp: '1657046626', title: 'petis' },
