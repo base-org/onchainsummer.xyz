@@ -36,7 +36,7 @@ export const TweetCard: FunctionComponent<ITweetCardProps> = ({
   }, [tweet])
 
   return (
-    <div className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[300px] relative">
+    <div className="bg-white p-6 rounded-3xl flex-1 flex flex-col justify-between min-w-[320px] relative">
       <div className="flex flex-col h-full">
         <div className="flex justify-between">
           <div className="flex items-center">
