@@ -24,7 +24,7 @@ import { MintType, siteDataSuffix } from '@/components/MintDialog/types'
 
 export interface TrendingComponentProps {}
 
-interface QueryResult {
+export interface TrendingQueryResult {
   collections: Collection[]
 }
 
@@ -32,7 +32,7 @@ export const Trending: FC<TrendingComponentProps> = () => {
   const { address: connectedWallet } = useAccount()
   const chainId = l2.id
 
-  const { data, error, isLoading } = useQuery<QueryResult>({
+  const { data, error, isLoading } = useQuery<TrendingQueryResult>({
     queryKey: [connectedWallet, chainId],
     queryFn: ({ queryKey }) => {
       const [connectedWallet, chainId] = queryKey
