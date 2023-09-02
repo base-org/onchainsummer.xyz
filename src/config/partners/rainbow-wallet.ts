@@ -33,7 +33,7 @@ Become a Citizen in RainbowWorld, a new universe on BASE powered by Adworld.
       mintType: MintType.ThirdWeb,
       type: 'erc-721',
       startDate: Date.UTC(2023, 7, 26, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
-      endDate: Date.UTC(2023, 7, 29, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
+      endDate: Date.UTC(2023, 8, 3, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.01 ETH',
       interactWithNFTLink: {
         url: 'https://adworld.game/create',

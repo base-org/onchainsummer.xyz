@@ -31,6 +31,7 @@ The more transactions you make each week on Base, the better Kurt and Ray can de
       startDate: Date.UTC(2023, 7, 31, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       endDate: Date.UTC(2023, 8, 7, CAMPAIGN_HOUR, CAMPAIGN_MINUTE, 0, 0),
       price: '0.004223',
+      sequence: 99,
     },
   ],
 }

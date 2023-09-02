@@ -275,10 +275,9 @@ async function getPageData(spoofDate?: string) {
       const { drops, name, icon } = partner
 
       const active = drops.filter((drop) => {
-        const comparison = compareAsc(now, drop.endDate)
         const hasSequence = typeof drop.sequence !== 'undefined'
 
-        return hasSequence && (comparison === -1 || comparison === 0)
+        return hasSequence
       })
 
       const next = active.map((drop) => ({

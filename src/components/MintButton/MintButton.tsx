@@ -42,7 +42,11 @@ export const MintButton: FC<MintButtonProps> = ({
 
   const isMintedOut = mintStatus === MintStatus.MintedOut
 
-  if ((mintProps.endDate && now >= mintProps.endDate) || isMintedOut) {
+  if (
+    (mintProps.endDate && now >= mintProps.endDate) ||
+    isMintedOut ||
+    mintStatus == MintStatus.UserMintedMax
+  ) {
     if (mintProps.address === '0x') {
       return <ExternalLinkButton partner={mintProps.partnerName} />
     }
