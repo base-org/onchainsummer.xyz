@@ -25,7 +25,7 @@ Each Starter Deck includes Beta access, 40 cards to get started playing and earn
 Each purchase also includes a Heroes of Parallel Cardback which can also be used in game.
 
 The drop is live now and will be available throughout Onchain Summer or until sold out. Each deck will be available for .05 ETH on Base.`,
-      address: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
+      address: '0x',
       crossMintClientId: '',
       mintType: MintType.External,
       externalLink: 'https://parallel.life/starter-decks',
@@ -39,7 +39,7 @@ The drop is live now and will be available throughout Onchain Summer or until so
       creator: '0x02f086dBC384d69b3041BC738F0a8af5e49dA181',
       name: 'Parallel Card Backs',
       description: `Heroes of Parallel Open Edition Card Back is available now and during the entirety of Onchain Summer! Card Backs are like skins for your decks in Parallel. Use them to flex on your opponents. This is an open edition available at a price of .01 ETH on base. After the end of August, we will update the IPFS to reflect the total supply minted.`,
-      address: '0x206571b68c66E1d112b74d65695043ad2b5F95D5',
+      address: '0x',
       mintType: MintType.External,
       externalLink: 'https://parallel.life/starter-decks',
       crossMintClientId: '',
