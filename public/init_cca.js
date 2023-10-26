@@ -11,40 +11,7 @@ const initCCA = () => {
       apiEndpoint: 'https://cca-lite.coinbase.com',
     })
 
-    function getCookie(cname) {
-      let name = cname + '='
-      let decodedCookie = decodeURIComponent(document.cookie)
-      let ca = decodedCookie.split(';')
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i]
-        while (c.charAt(0) === ' ') {
-          c = c.substring(1)
-        }
-        if (c.indexOf(name) === 0) {
-          return c.substring(name.length, c.length)
-        }
-      }
-      return ''
-    }
-    const TWENTY_YEARS_AS_MS = 630_720_000_000
-    const COOKIE_DEVICE_ID = 'onchainsummer_device_id'
-    function getDeviceId() {
-      let id = getCookie(COOKIE_DEVICE_ID)
-      if (!id) {
-        id = crypto.randomUUID()
-        const d = new Date()
-        d.setTime(d.getTime() + TWENTY_YEARS_AS_MS)
-        document.cookie =
-          COOKIE_DEVICE_ID +
-          '=' +
-          id +
-          ';expires=' +
-          d.toUTCString() +
-          ';path=/'
-      }
-      return id
-    }
-    identify({ deviceId: getDeviceId() })
+    identify({ deviceId: 'onchain_summer_device_id' })
 
     function handleLocationChange() {
       logPageView()
