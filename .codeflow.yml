@@ -13,3 +13,7 @@ build:
     - BaldurECR:
         name: cdnsync
         path: ./Dockerfile.cdnsync
+
+operate:
+  slack_channels:
+    - "#base-codeflow-notifications"
