@@ -8,7 +8,7 @@ import { Lens } from '@/components/icons/Lens'
 
 const twitterURL: string = 'https://twitter.com/intent/tweet'
 const warpCastURL: string = 'https://warpcast.com'
-const lensURL: string = 'https://lenster.xyz'
+const lensURL: string = 'https://hey.xyz'
 
 type ShareComponentProps = {}
 export const Share: FC<ShareComponentProps> = () => {
