@@ -12,6 +12,7 @@ import { Navbar } from '@/components/Navbar'
 import { TeaserNav } from '@/components/Teaser/TeaserNav'
 import { Footer } from '@/components/Footer'
 import Script from 'next/script'
+import { getFrameMetadata } from '@coinbase/onchainkit';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -108,6 +109,22 @@ const SHOW_TEASER = process.env.TEASER === 'true'
 const MIRROR_SUBSCRIBE_URL = process.env.MIRROR_SUBSCRIBE_URL
 const MIRROR_PROJECT_ADDRESS = process.env.MIRROR_PROJECT_ADDRESS
 
+const frameMetadata = getFrameMetadata({
+  buttons: [
+    {
+      action: 'link',
+      label: 'Trending',
+      target: 'https://onchainsummer.xyz/trending',
+    },
+    {
+      action: 'link',
+      label: 'Community',
+      target: 'https://onchainsummer.xyz/community',
+    },
+  ],
+  image: website.logo.url,
+});
+
 export const metadata = {
   title: {
     template: `%s | ${website.siteName}`,
@@ -148,6 +165,9 @@ export const metadata = {
     site: website.twitter.site,
     creator: website.twitter.creator,
     images: [website.logo.url],
+  },
+  other: {
+    ...frameMetadata
   },
 }
 

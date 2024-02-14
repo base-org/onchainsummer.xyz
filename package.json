@@ -17,6 +17,7 @@
     "generate": "yarn graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@coinbase/onchainkit": "^0.6.1",
     "@commitlint/cli": "^17.6.5",
     "@crossmint/client-sdk-react-ui": "^1.0.1-alpha.4",
     "@eth-optimism/sdk": "^0.0.0-develop-20230720165249",
